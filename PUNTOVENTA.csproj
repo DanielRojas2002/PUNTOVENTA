@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <Folder Include="MENU\ALMACEN\" />
-    <Folder Include="MENU\PROVEEDOR\" />
     <Folder Include="MENU\VENTA\" />
   </ItemGroup>
 
