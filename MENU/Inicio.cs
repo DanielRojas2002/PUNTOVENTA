@@ -208,5 +208,12 @@ namespace Punto_de_Venta
         {
 
         }
+
+    
+
+        private void Inicio_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

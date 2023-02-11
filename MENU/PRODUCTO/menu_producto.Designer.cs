@@ -166,6 +166,8 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "menu_producto";
             this.Text = "menu_producto";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.menu_producto_FormClosing);
+            this.Load += new System.EventHandler(this.menu_producto_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

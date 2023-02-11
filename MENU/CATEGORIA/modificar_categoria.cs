@@ -178,5 +178,17 @@ namespace PUNTOVENTA.MENU.CATEGORIA
 
             }
         }
+
+        private void modificar_categoria_Load(object sender, EventArgs e)
+        {
+
+        }
+
+      
+
+        private void modificar_categoria_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

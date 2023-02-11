@@ -157,5 +157,17 @@
                 txt_contraseña.UseSystemPasswordChar = true;
             }
         }
+
+        private void seguridad_Load(object sender, EventArgs e)
+        {
+
+        }
+
+    
+
+        private void seguridad_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

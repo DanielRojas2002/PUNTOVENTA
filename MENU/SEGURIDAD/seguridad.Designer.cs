@@ -335,6 +335,8 @@
             this.Text = "a";
             this.TransparencyKey = System.Drawing.Color.Black;
             this.Activated += new System.EventHandler(this.seguridad_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.seguridad_FormClosing);
+            this.Load += new System.EventHandler(this.seguridad_Load);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.panel11.ResumeLayout(false);

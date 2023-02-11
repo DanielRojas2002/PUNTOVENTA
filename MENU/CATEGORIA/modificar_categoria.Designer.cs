@@ -247,6 +247,8 @@
             this.Name = "modificar_categoria";
             this.Text = "modificar_categoria";
             this.Activated += new System.EventHandler(this.modificar_categoria_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.modificar_categoria_FormClosing);
+            this.Load += new System.EventHandler(this.modificar_categoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();

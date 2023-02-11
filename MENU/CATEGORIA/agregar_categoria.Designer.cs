@@ -201,6 +201,7 @@
             this.Controls.Add(this.panel12);
             this.Name = "agregar_categoria";
             this.Text = "agregar_categoria";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.agregar_categoria_FormClosing);
             this.Load += new System.EventHandler(this.agregar_categoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

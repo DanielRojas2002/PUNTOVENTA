@@ -130,5 +130,12 @@ namespace PUNTOVENTA.MENU.CATEGORIA
             }
 
         }
+
+   
+
+        private void agregar_categoria_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

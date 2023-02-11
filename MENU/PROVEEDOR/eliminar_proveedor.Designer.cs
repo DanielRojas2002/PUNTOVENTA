@@ -182,6 +182,7 @@
             this.Controls.Add(this.label1);
             this.Name = "eliminar_proveedor";
             this.Text = "eliminar_proveedor";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.eliminar_proveedor_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();

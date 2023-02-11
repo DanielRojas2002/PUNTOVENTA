@@ -1,4 +1,8 @@
-﻿using System.Data.SqlClient;
+﻿using PUNTOVENTA.Conexion;
+using System.Data;
+using System.Data.SqlClient;
+using System.Reflection.Metadata;
+
 
 namespace PUNTOVENTA.CLASES
 {
@@ -45,138 +49,44 @@ namespace PUNTOVENTA.CLASES
         }
 
 
-        public List<string> ChecarDescripcion(string id)
+
+
+
+        public static string EliminarCategoria(string IdCategoria)
         {
-            // funcion para retornar una lista de descripcion cuando le demos el id 
-            SqlConnection conexion = new SqlConnection(string.Format("server = {0}; database = PUNTOVENTA; integrated security = true ", servidor));
-            string sql = "select Descripcion,Id_Categoria from CATEGORIA where Id_Categoria=@idd";
-            conexion.Open();
-            SqlCommand comando = new SqlCommand(sql, conexion);
-
-            int idd;
-            idd = Int16.Parse(id);
-            comando.Parameters.AddWithValue("@idd", idd);
-
-            SqlDataReader registro = comando.ExecuteReader();
-
-            string descripcion;
-
-            string idCategoria;
-
-            List<string> Lista = new List<string>();
-            try
-            {
-                while (registro.Read())
-                {
-
-                    descripcion = (string)registro["Descripcion"];
-
-                    idCategoria = Convert.ToString(registro["Id_Categoria"]);
-
-                    Lista.Add(descripcion);
-                    Lista.Add(idCategoria);
-                    conexion.Close();
-                    return Lista;
-
-                }
-            }
-
-            catch
-            {
-                conexion.Close();
-                return Lista;
-            }
-            return Lista;
 
 
-
-
-
-        }
-
-        public string ChecarDescrip(string id)
-        {
-            // funcion para retornar la descripcion cuando le demos el id 
-            SqlConnection conexion = new SqlConnection(string.Format("server = {0}; database = PUNTOVENTA; integrated security = true ", servidor));
-            string sql = "select Descripcion from CATEGORIA where Id_Categoria=@idd";
-            conexion.Open();
-            SqlCommand comando = new SqlCommand(sql, conexion);
-
-            int idd;
-            idd = Int16.Parse(id);
-            comando.Parameters.AddWithValue("@idd", idd);
-
-            SqlDataReader registro = comando.ExecuteReader();
-
-            string descripcion;
-
+            string control = "";
 
             try
             {
-                while (registro.Read())
+
+                DataTable tabla = new DataTable();
+
+                SqlParameter[] parametros =
                 {
+                    new SqlParameter("@Accion",1),
+                    new SqlParameter("@P_IdCategoria",Convert.ToInt16(IdCategoria))
 
-                    descripcion = (string)registro["Descripcion"];
-                    conexion.Close();
-                    return descripcion;
 
-                }
+                };
+
+                tabla = bdContext.funcionStored("spCategoria", parametros);
+                control = tabla.Rows[0][0].ToString();
+
+
+
             }
 
-            catch
+            catch (Exception error)
             {
-                conexion.Close();
-                return "";
+                control = error.ToString();
             }
-            return "";
-
-
-
-
+            return control;
 
         }
 
-        public List<string> ChecarCategoriaTodos()
-        {
-            // funcion para retornar las categorias de todos los usuarios
-            SqlConnection conexion = new SqlConnection(string.Format("server = {0}; database = PUNTOVENTA; integrated security = true ", servidor));
-            string sql = "select Descripcion from CATEGORIA";
-            conexion.Open();
-            SqlCommand comando = new SqlCommand(sql, conexion);
-
-            List<string> ListaCategorias = new List<string>();
 
 
-            SqlDataReader registro = comando.ExecuteReader();
-
-            string descripcion;
-
-
-            try
-            {
-                while (registro.Read())
-                {
-
-                    descripcion = (string)registro["Descripcion"];
-                    ListaCategorias.Add(descripcion);
-
-
-                }
-                conexion.Close();
-                return ListaCategorias;
-            }
-
-            catch
-            {
-                conexion.Close();
-                return ListaCategorias;
-            }
-
-
-
-
-
-
-        }
     }
 }

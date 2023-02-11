@@ -52,5 +52,16 @@ namespace PUNTOVENTA.MENU.PRODUCTO
         {
 
         }
+
+        private void menu_producto_Load(object sender, EventArgs e)
+        {
+
+        }
+     
+
+        private void menu_producto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

@@ -6,5 +6,10 @@
         {
             InitializeComponent();
         }
+
+        private void menu_proveedor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // menu_proveedor
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "menu_proveedor";
             this.Text = "menu_proveedor";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.menu_proveedor_FormClosing);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

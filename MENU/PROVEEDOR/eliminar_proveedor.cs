@@ -6,5 +6,10 @@
         {
             InitializeComponent();
         }
+
+        private void eliminar_proveedor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

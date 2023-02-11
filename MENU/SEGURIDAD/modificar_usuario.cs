@@ -204,5 +204,12 @@
         {
 
         }
+
+      
+
+        private void modificar_usuario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

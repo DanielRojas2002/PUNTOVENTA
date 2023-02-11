@@ -42,6 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.lbl_id_categoria = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -206,11 +207,25 @@
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // lbl_id_categoria
+            // 
+            this.lbl_id_categoria.AutoSize = true;
+            this.lbl_id_categoria.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_id_categoria.ForeColor = System.Drawing.Color.White;
+            this.lbl_id_categoria.Location = new System.Drawing.Point(404, 125);
+            this.lbl_id_categoria.Name = "lbl_id_categoria";
+            this.lbl_id_categoria.Size = new System.Drawing.Size(73, 23);
+            this.lbl_id_categoria.TabIndex = 49;
+            this.lbl_id_categoria.Text = "perfil:";
+            this.lbl_id_categoria.Visible = false;
+            this.lbl_id_categoria.Click += new System.EventHandler(this.lbl_id_categoria_Click);
+            // 
             // eliminar_categoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(569, 406);
+            this.Controls.Add(this.lbl_id_categoria);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblperfil);
             this.Controls.Add(this.label2);
@@ -225,6 +240,8 @@
             this.Name = "eliminar_categoria";
             this.Text = "eliminar_categoria";
             this.Activated += new System.EventHandler(this.eliminar_categoria_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.eliminar_categoria_FormClosing);
+            this.Load += new System.EventHandler(this.eliminar_categoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
             this.panel13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -249,5 +266,6 @@
         private Label label1;
         private PictureBox pictureBox2;
         private Label label3;
+        public Label lbl_id_categoria;
     }
 }

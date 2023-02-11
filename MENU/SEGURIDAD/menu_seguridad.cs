@@ -59,5 +59,12 @@
         {
 
         }
+
+       
+
+        private void menu_seguridad_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

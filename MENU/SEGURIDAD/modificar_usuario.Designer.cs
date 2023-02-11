@@ -391,6 +391,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "modificar_usuario";
             this.Activated += new System.EventHandler(this.modificar_usuario_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.modificar_usuario_FormClosing);
             this.Load += new System.EventHandler(this.modificar_usuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
             this.panel5.ResumeLayout(false);

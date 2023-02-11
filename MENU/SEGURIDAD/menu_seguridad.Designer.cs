@@ -272,6 +272,7 @@
             this.Name = "menu_seguridad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "menu_seguridad";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.menu_seguridad_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
