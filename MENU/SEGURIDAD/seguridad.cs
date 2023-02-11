@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Punto_de_Venta
+﻿namespace Punto_de_Venta
 {
     public partial class seguridad : Form
     {
@@ -18,8 +8,8 @@ namespace Punto_de_Venta
             List<string> listap = new List<string>();
 
             c_seguridad log = new c_seguridad();
-            listap=log.ChecarPerfiles();
-            int c_lista=listap.Count;
+            listap = log.ChecarPerfiles();
+            int c_lista = listap.Count;
             string valorl;
 
             for (int i = 0; i < c_lista; i++)
@@ -52,13 +42,13 @@ namespace Punto_de_Venta
 
         private void seguridad_Activated(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btn_crear_usuario_Click(object sender, EventArgs e)
         {
-            string usuario, contraseña,perfil,tabla;
-     
+            string usuario, contraseña, perfil, tabla;
+
 
             if (txt_usuarioo.Text == "")
             {
@@ -83,16 +73,16 @@ namespace Punto_de_Venta
                 usuario = txt_usuarioo.Text;
                 contraseña = txt_contraseña.Text;
                 perfil = bx_permisos.Text;
-                if (perfil=="Administrador")
+                if (perfil == "Administrador")
                 {
                     perfil = "1";
                 }
-                else if (perfil=="Vendedor") 
+                else if (perfil == "Vendedor")
                 {
                     perfil = "2";
                 }
 
-            
+
 
                 else if (perfil == "Comprador")
                 {
@@ -113,7 +103,7 @@ namespace Punto_de_Venta
                 listatipodato.Add("string");
                 listatipodato.Add("int");
 
-                
+
                 listavalores.Add(usuario);
                 listavalores.Add(contraseña);
                 listavalores.Add(perfil);
@@ -122,11 +112,11 @@ namespace Punto_de_Venta
                 {
                     c_crud log = new c_crud();
                     log.Insert(tabla, listacampos, listavalores, listatipodato);
-                    MessageBox.Show("Usuario Dado de alta","Correcto");
+                    MessageBox.Show("Usuario Dado de alta", "Correcto");
                 }
                 catch
                 {
-                    MessageBox.Show("Error 203","Incorrecto");
+                    MessageBox.Show("Error 203", "Incorrecto");
                 }
                 finally
                 {
@@ -148,9 +138,9 @@ namespace Punto_de_Venta
                     formulario.txt_usuario.Text = Convert.ToString(retorno1);
                     formulario.Show();
                 }
-               
-                
-                
+
+
+
 
             }
         }

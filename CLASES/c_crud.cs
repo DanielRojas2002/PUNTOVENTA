@@ -1,59 +1,53 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
-using System.Data;
+﻿using System.Data.SqlClient;
 namespace Punto_de_Venta
 {
     class c_crud
     {
         string servidor = "DANIELROJAS";
-        public List<string> SelectNormal(string tabla, List<string> Listacampos,List<string> Listatipodato)
+        public List<string> SelectNormal(string tabla, List<string> Listacampos, List<string> Listatipodato)
         {
             // funcion para retornar el usuario cuando le demos el id 
             // tabla para hacer el Select
             // listacampos lista que debes de poner los nombres de los campos a buscar
             // lista tipo de dato de los campos a buscar 
             // es un select * from pero sin el asterisco asi: select nombre,apellido los campos que le pidas from tabla
-            SqlConnection conexion = new SqlConnection( string.Format("server = {0}; database = PUNTOVENTA; integrated security = true ", servidor));
+            SqlConnection conexion = new SqlConnection(string.Format("server = {0}; database = PUNTOVENTA; integrated security = true ", servidor));
 
             string s1 = "select ";
             string s2 = "";
             string s3 = "";
-          
+
 
             int c_Listacampos = Listacampos.Count;
-         
-            
+
+
             for (int x = 0; x < c_Listacampos; x++)
             {
-                
+
 
                 if (c_Listacampos == x + 1)
                 {
                     s3 = Listacampos[x];
-                   
+
 
                 }
                 else
                 {
                     s3 = Listacampos[x] + ",";
-                    
+
 
                 }
 
 
                 s2 = s2 + s3;
-              
+
 
             }
 
 
 
             string sql = s1 + s2 + " from " + tabla;
-            
+
             conexion.Open();
             SqlCommand comando = new SqlCommand(sql, conexion);
 
@@ -62,7 +56,7 @@ namespace Punto_de_Venta
             SqlDataReader registro = comando.ExecuteReader();
 
             int contador = 0;
-       
+
             string dato = "";
             int datoint = 0;
             double datofloat = 0;
@@ -72,17 +66,17 @@ namespace Punto_de_Venta
 
             while (registro.Read())
             {
-            
+
                 contador = 0;
-            
-                for (int x=0; x < c_Listacampos; x++)
+
+                for (int x = 0; x < c_Listacampos; x++)
                 {
-                    
+
                     if (Listatipodato[contador] == "int")
                     {
                         datoint = (int)(registro[Listacampos[contador]]);
                         dato = Convert.ToString(datoint);
-                      
+
                         Listareturn1.Add(dato);
 
                     }
@@ -91,36 +85,36 @@ namespace Punto_de_Venta
                     {
                         datofloat = (double)(registro[Listacampos[contador]]);
                         dato = Convert.ToString(datofloat);
-                      
+
                         Listareturn1.Add(dato);
                     }
                     else
                     {
                         dato = (string)(registro[Listacampos[contador]]);
 
-                      
+
                         Listareturn1.Add(dato);
 
                     }
-                    
+
                     contador = contador + 1;
-                    
+
 
 
                 }
-               
+
             }
 
 
 
 
-           
 
-           
+
+
             conexion.Close();
             return Listareturn1;
 
-          
+
 
 
 
@@ -128,7 +122,7 @@ namespace Punto_de_Venta
 
 
         }
-        
+
         public List<string> Select(string tabla, List<string> listacampos, List<string> listacamposwhere, List<string> listavaloreswhere, List<string> listatipodatowhere)
         {
             // select normal  con where
@@ -149,10 +143,10 @@ namespace Punto_de_Venta
             var s10 = "";
 
             int c_listacampos = listacampos.Count;
-            int c_listacamposw= listacamposwhere.Count;
+            int c_listacamposw = listacamposwhere.Count;
             int c_listavaloresw = listavaloreswhere.Count;
             int c_listatipodatow = listatipodatowhere.Count;
-            
+
 
 
             for (int x = 0; x < c_listacampos; x++)
@@ -162,12 +156,12 @@ namespace Punto_de_Venta
                 if (c_listacampos == x + 1)
                 {
                     s9 = listacampos[x];
-                   
+
                 }
                 else
                 {
                     s9 = listacampos[x] + ",";
-                    
+
 
                 }
 
@@ -198,7 +192,7 @@ namespace Punto_de_Venta
 
             SqlConnection conexion = new SqlConnection(string.Format("server = {0}; database = PUNTOVENTA; integrated security = true ", servidor));
             conexion.Open();
-            sqlfinal = s1 + s10+ "from "+tabla+ s5 + s8;
+            sqlfinal = s1 + s10 + "from " + tabla + s5 + s8;
             MessageBox.Show(sqlfinal, sqlfinal);
 
             SqlCommand comando = new SqlCommand(sqlfinal, conexion);
@@ -257,12 +251,13 @@ namespace Punto_de_Venta
                 conexion.Close();
                 return Listaselect;
             }
-            finally {
+            finally
+            {
                 conexion.Close();
             }
 
 
-            
+
 
         }
         public string Insert(string tabla, List<string> listacampos, List<string> listavalores, List<string> listatipodato)

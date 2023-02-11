@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 
 namespace Punto_de_Venta
 {
@@ -14,7 +9,7 @@ namespace Punto_de_Venta
         {
             // funcion para ingresar al sistema
             SqlConnection conexion = new SqlConnection(string.Format("server = {0}; database = PUNTOVENTA; integrated security = true ", servidor));
-            
+
             string sql = "select Id_Usuario from USUARIO where Usuario=@usu and Contrasenia=@contra";
             conexion.Open();
             SqlCommand comando = new SqlCommand(sql, conexion);
@@ -234,9 +229,9 @@ namespace Punto_de_Venta
 
             int idd;
             idd = Int16.Parse(id);
-      
+
             comando.Parameters.AddWithValue("@idd", idd);
-            
+
 
             SqlDataReader registro = comando.ExecuteReader();
 

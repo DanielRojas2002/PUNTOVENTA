@@ -1,9 +1,3 @@
-
-
-
-using System.Runtime.InteropServices;
-
-
 namespace Punto_de_Venta
 {
     public partial class Form1 : Form
@@ -13,7 +7,7 @@ namespace Punto_de_Venta
         public Form1()
         {
             InitializeComponent();
-       
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -39,12 +33,12 @@ namespace Punto_de_Venta
 
             if (txt_usuario.Text == "")
             {
-              
+
                 MessageBox.Show("Ingrese el Usuario ");
             }
             else if (txt_contraseña.Text == "")
             {
-                
+
                 MessageBox.Show("Ingrese la Contraseña ");
             }
 
@@ -52,10 +46,10 @@ namespace Punto_de_Venta
             {
                 usuario = txt_usuario.Text;
                 contraseña = txt_contraseña.Text;
-               
+
                 c_seguridad log = new c_seguridad();
-                retorno=log.Identificacion_Login(usuario, contraseña);
-              
+                retorno = log.Identificacion_Login(usuario, contraseña);
+
                 if (retorno > 0)
                 {
                     this.Hide();
@@ -67,27 +61,27 @@ namespace Punto_de_Venta
                 {
                     MessageBox.Show("Credenciales Incorrectas", "Credenciales Incorrectas");
                 }
-               
+
             }
         }
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
-           
+
         }
 
         private void barra_panel_MouseDown(object sender, MouseEventArgs e)
         {
-           
-           
+
+
 
         }
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
 
-       
+
+
         }
 
         private void txt_contraseña_TextChanged(object sender, EventArgs e)
@@ -111,8 +105,8 @@ namespace Punto_de_Venta
             {
                 txt_contraseña.UseSystemPasswordChar = true;
             }
-           
-            
+
+
         }
     }
 }

@@ -1,22 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Punto_de_Venta
+﻿namespace Punto_de_Venta
 {
     public partial class eliminar_usuario : Form
     {
         public eliminar_usuario()
         {
             InitializeComponent();
-           
+
         }
 
         private void btn_eliminar_usuario_Click(object sender, EventArgs e)
@@ -41,7 +30,7 @@ namespace Punto_de_Venta
                 List<string> listavalores = new List<string>();
 
                 listacampos.Add("Usuario");
-                
+
 
                 listatipodato.Add("string");
 
@@ -52,8 +41,8 @@ namespace Punto_de_Venta
                 c_crud log2 = new c_crud();
                 log2.Delete(tabla, listacampos, listavalores, listatipodato);
                 MessageBox.Show("Usuario Eliminado", "Correcto");
-              
-                
+
+
                 string id;
                 id = lbl_id.Text;
                 string retorno1, retorno2;
@@ -71,7 +60,7 @@ namespace Punto_de_Venta
                 formulario.lbl_perfil.Text = Convert.ToString(retorno2);
                 formulario.txt_usuario.Text = Convert.ToString(retorno1);
                 formulario.Show();
-                
+
             }
         }
 
@@ -91,7 +80,7 @@ namespace Punto_de_Venta
 
             c_seguridad log2 = new c_seguridad();
             Lista = log2.ChecarUC(idd);
-           
+
 
             c_seguridad log3 = new c_seguridad();
             retorno2 = log3.ChecarPerfil(Convert.ToString(Lista[2]));
@@ -124,7 +113,7 @@ namespace Punto_de_Venta
             string id;
             int c_Listausuarios = 0;
             string usuario = "";
-            
+
             id = lbl_id.Text;
 
 

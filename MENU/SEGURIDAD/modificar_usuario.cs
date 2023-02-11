@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Punto_de_Venta
+﻿namespace Punto_de_Venta
 {
     public partial class modificar_usuario : Form
     {
@@ -72,7 +62,7 @@ namespace Punto_de_Venta
                 int id;
                 string ids;
 
-                string usuario,usuarioo,contraseña;
+                string usuario, usuarioo, contraseña;
                 usuarioo = txt_usuarioo.Text;
                 usuario = bx_usuario.Text;
                 contraseña = txt_contraseña.Text;
@@ -80,8 +70,8 @@ namespace Punto_de_Venta
                 c_seguridad log = new c_seguridad();
                 id = log.Checar_id(usuario);
 
-                ids=Convert.ToString(id);
-               
+                ids = Convert.ToString(id);
+
                 tabla = "USUARIO";
 
                 List<string> listacampos = new List<string>();
@@ -90,18 +80,18 @@ namespace Punto_de_Venta
 
                 List<string> listacamposwhere = new List<string>();
                 List<string> listacamposwheretipodato = new List<string>();
-                List<string> listavaloreswhere= new List<string>();
+                List<string> listavaloreswhere = new List<string>();
 
                 listacampos.Add("Usuario");
                 listacampos.Add("Contrasenia");
 
-              
+
                 listatipodato.Add("string");
                 listatipodato.Add("string");
 
 
 
-                
+
                 listavalores.Add(usuarioo);
                 listavalores.Add(contraseña);
 
@@ -197,7 +187,7 @@ namespace Punto_de_Venta
             Lista = log2.ChecarUC(idd);
             txt_usuarioo.Text = Lista[0];
             txt_contraseña.Text = Lista[1];
-       
+
 
             c_seguridad log3 = new c_seguridad();
             retorno2 = log3.ChecarPerfil(Convert.ToString(Lista[2]));
