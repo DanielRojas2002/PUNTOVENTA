@@ -18,10 +18,12 @@ namespace PUNTOVENTA.MENU.CATEGORIA
             int id;
             string descripcion;
             descripcion = bx_categorias.Text;
-            
-       
 
-            List<dgCategoria> lista = c_categoria.LeerCategoria(2, descripcion);
+            dgCategoria parametro = new dgCategoria();
+
+            parametro.Descripcion = descripcion;
+
+            List<dgCategoria> lista = c_categoria.LeerCategoria(2, parametro);
 
             if (lista.Count > 0)
 
@@ -69,71 +71,79 @@ namespace PUNTOVENTA.MENU.CATEGORIA
 
         private void btn_eliminar_usuario_Click(object sender, EventArgs e)
         {
-           
-
-            if (bx_categorias.Text == "" && lbl_id_categoria.Text=="")
+            try
             {
-
-                MessageBox.Show("Seleccione la Categoria a eliminar ");
-            }
-
-
-            else
-            {
-                dgCategoria parametro = new dgCategoria();
-
-                parametro.Id_Categoria = Convert.ToInt16(lbl_id_categoria.Text);
-
-              
-
-               
-                string control = "";
-
-                control = c_categoria.EliminarCategoria(parametro);
-
-                if (control == "1")
+                if (bx_categorias.Text == "" && lbl_id_categoria.Text == "")
                 {
-                   
-                    MessageBox.Show("No se puede eliminar esta Categoria", "Error");
+
+                    MessageBox.Show("Seleccione la Categoria a eliminar ");
                 }
+
 
                 else
                 {
-                    MessageBox.Show("Categoria Eliminada", "Correcto");
+                    dgCategoria parametro = new dgCategoria();
 
-                    string id;
-                    id = lbl_id.Text;
-                    string retorno1, retorno2;
-                    c_seguridad log = new c_seguridad();
-                    retorno1 = log.ChecarUsuario(id);
-                    txt_usuario.Text = "";
+                    parametro.Id_Categoria = Convert.ToInt16(lbl_id_categoria.Text);
 
-                    c_seguridad log3 = new c_seguridad();
-                    retorno2 = log3.ChecarPerfil(id);
-                    lbl_perfil.Text = "";
 
-                    this.Hide();
-                    menu_producto formulario = new menu_producto();
-                    formulario.lbl_id.Text = id;
-                    formulario.lbl_perfil.Text = Convert.ToString(retorno2);
-                    formulario.txt_usuario.Text = Convert.ToString(retorno1);
-                    formulario.Show();
+
+
+                    string control = "";
+
+                    control = c_categoria.EliminarCategoria(parametro);
+
+                    if (control == "1")
+                    {
+
+                        MessageBox.Show("No se puede eliminar esta Categoria", "Error");
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Categoria Eliminada", "Correcto");
+
+                        string id;
+                        id = lbl_id.Text;
+                        string retorno1, retorno2;
+                        c_seguridad log = new c_seguridad();
+                        retorno1 = log.ChecarUsuario(id);
+                        txt_usuario.Text = "";
+
+                        c_seguridad log3 = new c_seguridad();
+                        retorno2 = log3.ChecarPerfil(id);
+                        lbl_perfil.Text = "";
+
+                        this.Hide();
+                        menu_producto formulario = new menu_producto();
+                        formulario.lbl_id.Text = id;
+                        formulario.lbl_perfil.Text = Convert.ToString(retorno2);
+                        formulario.txt_usuario.Text = Convert.ToString(retorno1);
+                        formulario.Show();
+                    }
+
+
+
+
+
+
                 }
-
-               
-
-
-               
-
             }
+            catch
+            {
+                MessageBox.Show("Seleccione una Categoria", "Error");
+            }
+            
         }
 
         private void eliminar_categoria_Activated(object sender, EventArgs e)
         {
+            bx_categorias.Items.Clear();
+            dgCategoria parametro = new dgCategoria();
 
-           
-        
-            List<dgCategoria> lista = c_categoria.LeerCategoria(1,"no");
+            parametro.Descripcion = "no";
+
+            List<dgCategoria> lista = c_categoria.LeerCategoria(1,parametro);
 
             if (lista.Count > 0)
 
@@ -150,11 +160,7 @@ namespace PUNTOVENTA.MENU.CATEGORIA
 
             }
 
-            else
-
-            {
-                MessageBox.Show("No tiene Categorias Agregadas", "Advertencia");
-            }
+         
 
 
              

@@ -2,29 +2,39 @@
 using PUNTOVENTA.CLASES;
 using PUNTOVENTA.ENTIDAD;
 using PUNTOVENTA.MENU.PRODUCTO;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace PUNTOVENTA.MENU.CATEGORIA
+namespace PUNTOVENTA.MENU.MEDIDA
 {
-    public partial class modificar_categoria : Form
+    public partial class modificar_medida : Form
     {
-        public modificar_categoria()
+        public modificar_medida()
         {
             InitializeComponent();
 
            
-            dgCategoria parametro = new dgCategoria();
+            dgMedida parametro = new dgMedida();
 
             parametro.Descripcion = "no";
 
-            List<dgCategoria> lista = c_categoria.LeerCategoria(1, parametro);
+            List<dgMedida> lista = c_medida.LeerMedida(1, parametro);
 
             if (lista.Count > 0)
 
             {
 
-                foreach (dgCategoria d in lista)
+                foreach (dgMedida d in lista)
                 {
-                    bx_categorias.Items.Add(d.Descripcion.ToString());
+                    bx_medida.Items.Add(d.Descripcion.ToString());
                 }
 
 
@@ -34,47 +44,54 @@ namespace PUNTOVENTA.MENU.CATEGORIA
             }
         }
 
-        private void btn_modificar_categoria_Click(object sender, EventArgs e)
+        private void modificar_medida_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void btn_modificar_medida_Click(object sender, EventArgs e)
         {
             try
             {
-                string valor = bx_categorias.SelectedItem.ToString();
+               
 
-                if (valor == null)
+                string valor = bx_medida.SelectedItem.ToString();
+
+                if (valor==null)
                 {
-                    MessageBox.Show("Selecione una Categoria a Modificar ");
-
+                    MessageBox.Show("Selecione una Medida a Modificar ");
+                   
                 }
 
-                else if (txt_descripcion.Text == "")
+                else if ( txt_descripcion.Text == "")
                 {
                     MessageBox.Show(" Ingrese la Descripcion a Modificar");
-
+                   
                 }
 
                 else
                 {
-                    dgCategoria parametro = new dgCategoria();
+                    
+                    dgMedida parametro = new dgMedida
+                    {
+                        Id_Medida = Convert.ToInt16(lbl_id_medida.Text),
 
-                    parametro.Id_Categoria = Convert.ToInt16(lbl_id_categoria.Text);
-
-                    parametro.Descripcion=Convert.ToString(txt_descripcion.Text.Trim().ToUpper());
-                   
-
+                        Descripcion = Convert.ToString(txt_descripcion.Text.Trim().ToUpper())
+                    };
 
                     string control = "";
 
-                    control = c_categoria.ModificarCategoria(parametro);
+                    control = c_medida.ModificarMedida(parametro);
 
                     if (control == "1")
                     {
 
-                        MessageBox.Show("No se puede modificar esta Categoria", "Error");
+                        MessageBox.Show("No se puede modificar esta Medida", "Error");
                     }
 
                     else
                     {
-                        MessageBox.Show("Categoria Modificada", "Correcto");
+                        MessageBox.Show("Medida Modificada", "Correcto");
 
                         string id;
                         id = lbl_id.Text;
@@ -104,62 +121,54 @@ namespace PUNTOVENTA.MENU.CATEGORIA
             }
             catch
             {
-                MessageBox.Show("Seleccione una Categoria", "Error");
+                MessageBox.Show("Seleccione una Medida", "Error");
             }
-
         }
 
-        private void txt_descripcion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bx_categorias_SelectedIndexChanged(object sender, EventArgs e)
+        private void bx_medida_SelectedIndexChanged(object sender, EventArgs e)
         {
             int id;
             string descripcion;
-            descripcion = bx_categorias.Text;
-            
+            descripcion = bx_medida.Text;
 
-            dgCategoria parametro = new dgCategoria();
+
+            dgMedida parametro = new dgMedida();
 
             parametro.Descripcion = descripcion;
 
-            List<dgCategoria> lista = c_categoria.LeerCategoria(2, parametro);
+            List<dgMedida> lista = c_medida.LeerMedida(2, parametro);
 
             if (lista.Count > 0)
 
             {
 
-                foreach (dgCategoria d in lista)
+                foreach (dgMedida d in lista)
                 {
-                    lbl_id_categoria.Text = d.Id_Categoria.ToString();
+                    lbl_id_medida.Text = d.Id_Medida.ToString();
                 }
             }
 
             else
 
             {
-                MessageBox.Show("No tiene Categorias Agregadas", "Advertencia");
+                MessageBox.Show("No tiene Medidas Agregadas", "Advertencia");
             }
 
-            dgCategoria parametro2 = new dgCategoria();
+            dgMedida parametro2 = new dgMedida();
 
-            parametro2.Id_Categoria = Convert.ToInt16(lbl_id_categoria.Text);
+            parametro2.Id_Medida = Convert.ToInt16(lbl_id_medida.Text);
 
-            List<dgCategoria> listadesc = c_categoria.LeerCategoria(3, parametro2);
+            List<dgMedida> listadesc = c_medida.LeerMedida(3, parametro2);
 
             if (listadesc.Count > 0)
 
             {
 
-                foreach (dgCategoria dg in listadesc)
+                foreach (dgMedida dg in listadesc)
                 {
                     txt_descripcion.Text = dg.Descripcion.ToString();
                 }
             }
-
-          
         }
 
         private void btn_regresar_Click(object sender, EventArgs e)
@@ -183,23 +192,16 @@ namespace PUNTOVENTA.MENU.CATEGORIA
             formulario.Show();
         }
 
-        private void modificar_categoria_Activated(object sender, EventArgs e)
+        private void modificar_medida_Load(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void modificar_medida_Activated(object sender, EventArgs e)
+        {
+           
 
            
-        }
-
-        private void modificar_categoria_Load(object sender, EventArgs e)
-        {
-
-        }
-
-      
-
-        private void modificar_categoria_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            System.Windows.Forms.Application.Exit();
         }
     }
 }

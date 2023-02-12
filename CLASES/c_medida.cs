@@ -1,18 +1,16 @@
 ﻿using PUNTOVENTA.Conexion;
 using PUNTOVENTA.ENTIDAD;
-using System.Data;
 using System.Data.SqlClient;
-using System.Reflection.Metadata;
-
+using System.Data;
 
 namespace PUNTOVENTA.CLASES
 {
-    class c_categoria
+    public class c_medida
     {
-        
- 
+       
 
-        public static string InsertarCategoria(dgCategoria Parametro)
+
+        public static string InsertarMedida(dgMedida Parametro)
         {
 
 
@@ -31,7 +29,7 @@ namespace PUNTOVENTA.CLASES
 
                 };
 
-                tabla = bdContext.funcionStored("spCategoria", parametros);
+                tabla = bdContext.funcionStored("spMedida", parametros);
                 control = tabla.Rows[0][0].ToString();
 
 
@@ -47,7 +45,7 @@ namespace PUNTOVENTA.CLASES
         }
 
 
-        public static string ModificarCategoria(dgCategoria Parametro)
+        public static string ModificarMedida(dgMedida Parametro)
         {
 
 
@@ -61,13 +59,13 @@ namespace PUNTOVENTA.CLASES
                 SqlParameter[] parametros =
                 {
                     new SqlParameter("@Accion",3),
-                    new SqlParameter("@P_IdCategoria",Parametro.Id_Categoria),
+                    new SqlParameter("@P_IdMedida",Parametro.Id_Medida),
                     new SqlParameter("@P_Descripcion",Parametro.Descripcion)
 
 
                 };
 
-                tabla = bdContext.funcionStored("spCategoria", parametros);
+                tabla = bdContext.funcionStored("spMedida", parametros);
                 control = tabla.Rows[0][0].ToString();
 
 
@@ -81,7 +79,7 @@ namespace PUNTOVENTA.CLASES
             return control;
 
         }
-        public static string EliminarCategoria(dgCategoria Parametro)
+        public static string EliminarMedida(dgMedida Parametro)
         {
 
 
@@ -95,12 +93,12 @@ namespace PUNTOVENTA.CLASES
                 SqlParameter[] parametros =
                 {
                     new SqlParameter("@Accion",4),
-                    new SqlParameter("@P_IdCategoria",Parametro.Id_Categoria)
+                    new SqlParameter("@P_IdMedida",Parametro.Id_Medida)
 
 
                 };
 
-                tabla = bdContext.funcionStored("spCategoria", parametros);
+                tabla = bdContext.funcionStored("spMedida", parametros);
                 control = tabla.Rows[0][0].ToString();
 
 
@@ -115,10 +113,10 @@ namespace PUNTOVENTA.CLASES
 
         }
 
-        public static List<dgCategoria> LeerCategoria(int tipo,dgCategoria Parametro)
+        public static List<dgMedida> LeerMedida(int tipo, dgMedida Parametro)
         {
 
-            List<dgCategoria> lista = new List<dgCategoria>();
+            List<dgMedida> lista = new List<dgMedida>();
             DataTable tabla = new DataTable();
 
             //5 = con descripcion
@@ -130,12 +128,12 @@ namespace PUNTOVENTA.CLASES
                 new SqlParameter("@Accion",5)
                 };
 
-                tabla = bdContext.funcionStored("spCategoria", Parametros);
+                tabla = bdContext.funcionStored("spMedida", Parametros);
 
                 if (tabla.Rows.Count > 0)
                 {
                     lista = (from DataRow fila in tabla.Rows
-                             select new dgCategoria
+                             select new dgMedida
                              {
                                  Descripcion = Convert.ToString(fila["Descripcion"].ToString())
 
@@ -148,8 +146,8 @@ namespace PUNTOVENTA.CLASES
 
             }
             // 6 con Id_Categoria
-            else if (tipo == 2) 
-            
+            else if (tipo == 2)
+
             {
 
                 SqlParameter[] Parametros =
@@ -158,14 +156,14 @@ namespace PUNTOVENTA.CLASES
                     new SqlParameter("@P_Descripcion",Parametro.Descripcion)
                 };
 
-                tabla = bdContext.funcionStored("spCategoria", Parametros);
+                tabla = bdContext.funcionStored("spMedida", Parametros);
 
                 if (tabla.Rows.Count > 0)
                 {
                     lista = (from DataRow fila in tabla.Rows
-                             select new dgCategoria
+                             select new dgMedida
                              {
-                                 Id_Categoria = Convert.ToInt16(fila["Id_Categoria"].ToString())
+                                 Id_Medida = Convert.ToInt16(fila["Id_Medida"].ToString())
 
 
 
@@ -181,15 +179,15 @@ namespace PUNTOVENTA.CLASES
                 SqlParameter[] Parametros =
                 {
                     new SqlParameter("@Accion",7),
-                    new SqlParameter("@P_IdCategoria",Parametro.Id_Categoria)
+                    new SqlParameter("@P_IdMedida",Parametro.Id_Medida)
                 };
 
-                tabla = bdContext.funcionStored("spCategoria", Parametros);
+                tabla = bdContext.funcionStored("spMedida", Parametros);
 
                 if (tabla.Rows.Count > 0)
                 {
                     lista = (from DataRow fila in tabla.Rows
-                             select new dgCategoria
+                             select new dgMedida
                              {
                                  Descripcion = Convert.ToString(fila["Descripcion"].ToString())
 
@@ -209,6 +207,5 @@ namespace PUNTOVENTA.CLASES
 
 
         }
-
     }
 }

@@ -71,7 +71,7 @@ namespace PUNTOVENTA.MENU.CATEGORIA
         private void btn_crear_categoria_Click(object sender, EventArgs e)
         {
 
-            string descripcion, tabla;
+            
 
 
             if (txt_descripcion.Text == "")

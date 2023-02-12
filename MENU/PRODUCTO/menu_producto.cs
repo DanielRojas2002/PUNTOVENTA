@@ -1,4 +1,5 @@
 ﻿using PUNTOVENTA.MENU.CATEGORIA;
+using PUNTOVENTA.MENU.MEDIDA;
 
 namespace PUNTOVENTA.MENU.PRODUCTO
 {
@@ -38,20 +39,8 @@ namespace PUNTOVENTA.MENU.PRODUCTO
             forms.Show();
         }
 
-        private void agregarUnidadToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void modificarUnidadToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void eliminarUnidadToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+        
+        
 
         private void menu_producto_Load(object sender, EventArgs e)
         {
@@ -62,6 +51,30 @@ namespace PUNTOVENTA.MENU.PRODUCTO
         private void menu_producto_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void agregarMedidaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            agregar_medida forms = new agregar_medida();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
+        }
+
+        private void modificarMedidaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            modificar_medida forms = new modificar_medida();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
+        }
+
+        private void eliminarMedidaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            eliminar_medida forms = new eliminar_medida();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
         }
     }
 }

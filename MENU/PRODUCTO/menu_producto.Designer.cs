@@ -33,13 +33,13 @@
             this.agregarCategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarCategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarCategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.unidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarUnidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarUnidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarUnidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl_id = new System.Windows.Forms.Label();
             this.lbl_perfil = new System.Windows.Forms.Label();
             this.txt_usuario = new System.Windows.Forms.Label();
+            this.medidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarMedidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarMedidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarMedidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +48,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.categoriaToolStripMenuItem,
-            this.unidadToolStripMenuItem});
+            this.medidaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -87,37 +87,6 @@
             this.eliminarCategoriaToolStripMenuItem.Text = "Eliminar Categoria";
             this.eliminarCategoriaToolStripMenuItem.Click += new System.EventHandler(this.eliminarCategoriaToolStripMenuItem_Click);
             // 
-            // unidadToolStripMenuItem
-            // 
-            this.unidadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarUnidadToolStripMenuItem,
-            this.modificarUnidadToolStripMenuItem,
-            this.eliminarUnidadToolStripMenuItem});
-            this.unidadToolStripMenuItem.Name = "unidadToolStripMenuItem";
-            this.unidadToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
-            this.unidadToolStripMenuItem.Text = "Unidad";
-            // 
-            // agregarUnidadToolStripMenuItem
-            // 
-            this.agregarUnidadToolStripMenuItem.Name = "agregarUnidadToolStripMenuItem";
-            this.agregarUnidadToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
-            this.agregarUnidadToolStripMenuItem.Text = "Agregar Unidad";
-            this.agregarUnidadToolStripMenuItem.Click += new System.EventHandler(this.agregarUnidadToolStripMenuItem_Click);
-            // 
-            // modificarUnidadToolStripMenuItem
-            // 
-            this.modificarUnidadToolStripMenuItem.Name = "modificarUnidadToolStripMenuItem";
-            this.modificarUnidadToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
-            this.modificarUnidadToolStripMenuItem.Text = "Modificar Unidad";
-            this.modificarUnidadToolStripMenuItem.Click += new System.EventHandler(this.modificarUnidadToolStripMenuItem_Click);
-            // 
-            // eliminarUnidadToolStripMenuItem
-            // 
-            this.eliminarUnidadToolStripMenuItem.Name = "eliminarUnidadToolStripMenuItem";
-            this.eliminarUnidadToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
-            this.eliminarUnidadToolStripMenuItem.Text = "Eliminar Unidad";
-            this.eliminarUnidadToolStripMenuItem.Click += new System.EventHandler(this.eliminarUnidadToolStripMenuItem_Click);
-            // 
             // lbl_id
             // 
             this.lbl_id.AutoSize = true;
@@ -154,6 +123,37 @@
             this.txt_usuario.Text = "usuario:";
             this.txt_usuario.Visible = false;
             // 
+            // medidaToolStripMenuItem
+            // 
+            this.medidaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarMedidaToolStripMenuItem,
+            this.modificarMedidaToolStripMenuItem,
+            this.eliminarMedidaToolStripMenuItem});
+            this.medidaToolStripMenuItem.Name = "medidaToolStripMenuItem";
+            this.medidaToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.medidaToolStripMenuItem.Text = "Medida";
+            // 
+            // agregarMedidaToolStripMenuItem
+            // 
+            this.agregarMedidaToolStripMenuItem.Name = "agregarMedidaToolStripMenuItem";
+            this.agregarMedidaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.agregarMedidaToolStripMenuItem.Text = "Agregar Medida";
+            this.agregarMedidaToolStripMenuItem.Click += new System.EventHandler(this.agregarMedidaToolStripMenuItem_Click);
+            // 
+            // modificarMedidaToolStripMenuItem
+            // 
+            this.modificarMedidaToolStripMenuItem.Name = "modificarMedidaToolStripMenuItem";
+            this.modificarMedidaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.modificarMedidaToolStripMenuItem.Text = "Modificar Medida";
+            this.modificarMedidaToolStripMenuItem.Click += new System.EventHandler(this.modificarMedidaToolStripMenuItem_Click);
+            // 
+            // eliminarMedidaToolStripMenuItem
+            // 
+            this.eliminarMedidaToolStripMenuItem.Name = "eliminarMedidaToolStripMenuItem";
+            this.eliminarMedidaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.eliminarMedidaToolStripMenuItem.Text = "Eliminar Medida";
+            this.eliminarMedidaToolStripMenuItem.Click += new System.EventHandler(this.eliminarMedidaToolStripMenuItem_Click);
+            // 
             // menu_producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -182,12 +182,12 @@
         private ToolStripMenuItem agregarCategoriaToolStripMenuItem;
         private ToolStripMenuItem modificarCategoriaToolStripMenuItem;
         private ToolStripMenuItem eliminarCategoriaToolStripMenuItem;
-        private ToolStripMenuItem unidadToolStripMenuItem;
-        private ToolStripMenuItem agregarUnidadToolStripMenuItem;
-        private ToolStripMenuItem modificarUnidadToolStripMenuItem;
-        private ToolStripMenuItem eliminarUnidadToolStripMenuItem;
         public Label lbl_id;
         public Label lbl_perfil;
         public Label txt_usuario;
+        private ToolStripMenuItem medidaToolStripMenuItem;
+        private ToolStripMenuItem agregarMedidaToolStripMenuItem;
+        private ToolStripMenuItem modificarMedidaToolStripMenuItem;
+        private ToolStripMenuItem eliminarMedidaToolStripMenuItem;
     }
 }
