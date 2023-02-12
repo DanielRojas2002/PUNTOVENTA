@@ -40,17 +40,28 @@
             this.txt_usuario = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.cerrarapp = new System.Windows.Forms.PictureBox();
+            this.btn_minimzar = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cerrarapp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_minimzar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_regresar
             // 
             this.btn_regresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_regresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_regresar.Image")));
-            this.btn_regresar.Location = new System.Drawing.Point(12, 13);
+            this.btn_regresar.Location = new System.Drawing.Point(5, 47);
             this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_regresar.Name = "btn_regresar";
             this.btn_regresar.Size = new System.Drawing.Size(49, 34);
@@ -130,7 +141,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Cooper Black", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(60, 51);
+            this.label1.Location = new System.Drawing.Point(80, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(444, 46);
             this.label1.TabIndex = 48;
@@ -184,6 +195,89 @@
             this.panel12.Size = new System.Drawing.Size(270, 81);
             this.panel12.TabIndex = 39;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(43, 29);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(9, 11);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // cerrarapp
+            // 
+            this.cerrarapp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cerrarapp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cerrarapp.Image = ((System.Drawing.Image)(resources.GetObject("cerrarapp.Image")));
+            this.cerrarapp.Location = new System.Drawing.Point(1456, 4);
+            this.cerrarapp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cerrarapp.Name = "cerrarapp";
+            this.cerrarapp.Size = new System.Drawing.Size(29, 31);
+            this.cerrarapp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cerrarapp.TabIndex = 0;
+            this.cerrarapp.TabStop = false;
+            // 
+            // btn_minimzar
+            // 
+            this.btn_minimzar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_minimzar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_minimzar.Image = ((System.Drawing.Image)(resources.GetObject("btn_minimzar.Image")));
+            this.btn_minimzar.Location = new System.Drawing.Point(1411, 4);
+            this.btn_minimzar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_minimzar.Name = "btn_minimzar";
+            this.btn_minimzar.Size = new System.Drawing.Size(39, 31);
+            this.btn_minimzar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_minimzar.TabIndex = 1;
+            this.btn_minimzar.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(550, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(29, 31);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 51;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click_1);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(505, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(39, 31);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 52;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.btn_minimzar);
+            this.panel1.Controls.Add(this.cerrarapp);
+            this.panel1.Controls.Add(this.tableLayoutPanel1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(582, 39);
+            this.panel1.TabIndex = 50;
+            // 
             // agregar_categoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -199,7 +293,10 @@
             this.Controls.Add(this.txt_usuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel12);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "agregar_categoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "agregar_categoria";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.agregar_categoria_FormClosing);
             this.Load += new System.EventHandler(this.agregar_categoria_Load);
@@ -208,6 +305,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cerrarapp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_minimzar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,5 +328,11 @@
         public Label txt_usuario;
         private Label label2;
         private Panel panel12;
+        private TableLayoutPanel tableLayoutPanel1;
+        private PictureBox cerrarapp;
+        private PictureBox btn_minimzar;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox2;
+        private Panel panel1;
     }
 }

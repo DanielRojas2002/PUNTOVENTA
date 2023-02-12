@@ -203,5 +203,15 @@ namespace PUNTOVENTA.MENU.MEDIDA
 
            
         }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
