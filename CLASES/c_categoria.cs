@@ -1,4 +1,5 @@
 ﻿using PUNTOVENTA.Conexion;
+using PUNTOVENTA.ENTIDAD;
 using System.Data;
 using System.Data.SqlClient;
 using System.Reflection.Metadata;
@@ -9,50 +10,9 @@ namespace PUNTOVENTA.CLASES
     class c_categoria
     {
         string servidor = "DANIELROJAS";
-        public int Checar_id(string descripcion)
-        {
-            // funcion para retornar el id cuando le demos el nombre de la descripcion categoria
-            SqlConnection conexion = new SqlConnection(string.Format("server = {0}; database = PUNTOVENTA; integrated security = true ", servidor));
-            string sql = "select Id_Categoria from CATEGORIA where Descripcion=@descrip";
-            conexion.Open();
-            SqlCommand comando = new SqlCommand(sql, conexion);
-            comando.Parameters.AddWithValue("@descrip", descripcion);
+ 
 
-            SqlDataReader registro = comando.ExecuteReader();
-
-            int id;
-
-
-            try
-            {
-                while (registro.Read())
-                {
-
-                    id = (int)registro["Id_Categoria"];
-                    conexion.Close();
-                    return id;
-
-                }
-            }
-
-            catch
-            {
-                conexion.Close();
-                return 0;
-            }
-            return 0;
-
-
-
-
-
-        }
-
-
-
-
-
-        public static string EliminarCategoria(string IdCategoria)
+        public static string InsertarCategoria(dgCategoria Parametro)
         {
 
 
@@ -66,7 +26,7 @@ namespace PUNTOVENTA.CLASES
                 SqlParameter[] parametros =
                 {
                     new SqlParameter("@Accion",1),
-                    new SqlParameter("@P_IdCategoria",Convert.ToInt16(IdCategoria))
+                    new SqlParameter("@P_Descripcion",Parametro.Descripcion)
 
 
                 };
@@ -86,7 +46,108 @@ namespace PUNTOVENTA.CLASES
 
         }
 
+        public static string EliminarCategoria(dgCategoria Parametro)
+        {
 
+
+            string control = "";
+
+            try
+            {
+
+                DataTable tabla = new DataTable();
+
+                SqlParameter[] parametros =
+                {
+                    new SqlParameter("@Accion",4),
+                    new SqlParameter("@P_IdCategoria",Parametro.Id_Categoria)
+
+
+                };
+
+                tabla = bdContext.funcionStored("spCategoria", parametros);
+                control = tabla.Rows[0][0].ToString();
+
+
+
+            }
+
+            catch (Exception error)
+            {
+                control = error.ToString();
+            }
+            return control;
+
+        }
+
+        public static List<dgCategoria> LeerCategoria(int tipo,string? Descripcion)
+        {
+
+            List<dgCategoria> lista = new List<dgCategoria>();
+            DataTable tabla = new DataTable();
+
+            //5 = descripcion
+            if (tipo == 1)
+            {
+
+                SqlParameter[] Parametros =
+                {
+                new SqlParameter("@Accion",5)
+                };
+
+                tabla = bdContext.funcionStored("spCategoria", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgCategoria
+                             {
+                                 Descripcion = Convert.ToString(fila["Descripcion"].ToString())
+
+
+
+                             }
+                   ).ToList();
+                }
+
+
+            }
+
+            else if (tipo == 2) 
+            
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",6),
+                    new SqlParameter("@P_Descripcion",Descripcion)
+                };
+
+                tabla = bdContext.funcionStored("spCategoria", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgCategoria
+                             {
+                                 Id_Categoria = Convert.ToInt16(fila["Id_Categoria"].ToString())
+
+
+
+                             }
+                   ).ToList();
+                }
+            }
+
+
+           
+
+            return lista;
+
+
+
+
+        }
 
     }
 }

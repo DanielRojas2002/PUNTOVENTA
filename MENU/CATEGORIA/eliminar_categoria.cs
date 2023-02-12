@@ -1,5 +1,6 @@
 ﻿using Punto_de_Venta;
 using PUNTOVENTA.CLASES;
+using PUNTOVENTA.ENTIDAD;
 using PUNTOVENTA.MENU.PRODUCTO;
 using System.Reflection.Metadata;
 
@@ -17,14 +18,26 @@ namespace PUNTOVENTA.MENU.CATEGORIA
             int id;
             string descripcion;
             descripcion = bx_categorias.Text;
-            c_categoria log = new c_categoria();
-            id = log.Checar_id(descripcion);
+            
+       
 
-            string idd;
-            idd = Convert.ToString(id);
-            lbl_id_categoria.Text= idd;
+            List<dgCategoria> lista = c_categoria.LeerCategoria(2, descripcion);
 
+            if (lista.Count > 0)
 
+            {
+
+                foreach (dgCategoria d in lista)
+                {
+                    lbl_id_categoria.Text=d.Id_Categoria.ToString();
+                }
+            }
+
+            else
+
+            {
+                MessageBox.Show("No tiene Categorias Agregadas", "Advertencia");
+            }
 
         }
 
@@ -56,8 +69,7 @@ namespace PUNTOVENTA.MENU.CATEGORIA
 
         private void btn_eliminar_usuario_Click(object sender, EventArgs e)
         {
-            string usuario, tabla;
-
+           
 
             if (bx_categorias.Text == "" && lbl_id_categoria.Text=="")
             {
@@ -68,18 +80,20 @@ namespace PUNTOVENTA.MENU.CATEGORIA
 
             else
             {
+                dgCategoria parametro = new dgCategoria();
 
+                parametro.Id_Categoria = Convert.ToInt16(lbl_id_categoria.Text);
 
-                string idcategoria =lbl_id_categoria.Text;
+              
 
                
                 string control = "";
 
-                control = c_categoria.EliminarCategoria(idcategoria);
+                control = c_categoria.EliminarCategoria(parametro);
 
                 if (control == "1")
                 {
-                    //swal("Error", "Favor de llenar todos los Campos", "error");
+                   
                     MessageBox.Show("No se puede eliminar esta Categoria", "Error");
                 }
 
@@ -117,29 +131,33 @@ namespace PUNTOVENTA.MENU.CATEGORIA
         private void eliminar_categoria_Activated(object sender, EventArgs e)
         {
 
-            int c_ListaCategorias = 0;
+           
+        
+            List<dgCategoria> lista = c_categoria.LeerCategoria(1,"no");
 
-            string tabla = "CATEGORIA";
-            List<string> ListaCampos = new List<string>();
-            List<string> ListaTipoDato = new List<string>();
+            if (lista.Count > 0)
 
-            ListaCampos.Add("Descripcion");
-            ListaTipoDato.Add("string");
-
-
-            List<string> ListaCategoria = new List<string>();
-            c_crud log2 = new c_crud();
-            ListaCategoria = log2.SelectNormal(tabla,ListaCampos,ListaTipoDato);
-
-            c_ListaCategorias = ListaCategoria.Count();
-
-            for (int i = 0; i < c_ListaCategorias; i++)
             {
-               
-                bx_categorias.Items.Add(ListaCategoria[i]);
-                
+
+                foreach (dgCategoria d in lista)
+                {
+                    bx_categorias.Items.Add(d.Descripcion.ToString());
+                }
+
+           
+
+
 
             }
+
+            else
+
+            {
+                MessageBox.Show("No tiene Categorias Agregadas", "Advertencia");
+            }
+
+
+             
         }
 
         private void lbl_id_categoria_Click(object sender, EventArgs e)

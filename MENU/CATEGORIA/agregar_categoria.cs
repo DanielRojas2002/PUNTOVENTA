@@ -1,4 +1,6 @@
 ﻿using Punto_de_Venta;
+using PUNTOVENTA.CLASES;
+using PUNTOVENTA.ENTIDAD;
 using PUNTOVENTA.MENU.PRODUCTO;
 
 namespace PUNTOVENTA.MENU.CATEGORIA
@@ -80,35 +82,25 @@ namespace PUNTOVENTA.MENU.CATEGORIA
 
             else
             {
-                descripcion = txt_descripcion.Text;
+                dgCategoria parametro = new dgCategoria();
+
+                parametro.Descripcion= txt_descripcion.Text.Trim().ToUpper();
+               
 
 
+                string control = "";
 
-                tabla = "CATEGORIA";
+                control = c_categoria.InsertarCategoria(parametro);
 
-                List<string> listacampos = new List<string>();
-                List<string> listatipodato = new List<string>();
-                List<string> listavalores = new List<string>();
-
-                listacampos.Add("Descripcion");
-
-                listatipodato.Add("string");
-
-                listavalores.Add(descripcion);
-
-
-                try
+                if (control == "1")
                 {
-                    c_crud log = new c_crud();
-                    log.Insert(tabla, listacampos, listavalores, listatipodato);
+                    
+                    MessageBox.Show("Ya Existe una Categoria Similar", "Error");
+                }
+
+                else
+                {
                     MessageBox.Show("Categoria Dado de alta", "Correcto");
-                }
-                catch
-                {
-                    MessageBox.Show("Error 203", "Incorrecto");
-                }
-                finally
-                {
                     string id;
                     id = lbl_id.Text;
                     string retorno1, retorno2;
@@ -127,6 +119,7 @@ namespace PUNTOVENTA.MENU.CATEGORIA
                     formulario.txt_usuario.Text = Convert.ToString(retorno1);
                     formulario.Show();
                 }
+              
             }
 
         }
