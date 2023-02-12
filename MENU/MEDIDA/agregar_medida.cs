@@ -32,9 +32,10 @@ namespace PUNTOVENTA.MENU.MEDIDA
 
             else
             {
-                dgMedida parametro = new dgMedida();
-
-                parametro.Descripcion = txt_descripcion.Text.Trim().ToUpper();
+                dgMedida parametro = new dgMedida
+                {
+                    Descripcion = txt_descripcion.Text.Trim().ToUpper()
+                };
 
 
 

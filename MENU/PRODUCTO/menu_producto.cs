@@ -1,4 +1,5 @@
-﻿using PUNTOVENTA.MENU.CATEGORIA;
+﻿using Punto_de_Venta;
+using PUNTOVENTA.MENU.CATEGORIA;
 using PUNTOVENTA.MENU.MEDIDA;
 
 namespace PUNTOVENTA.MENU.PRODUCTO
@@ -75,6 +76,27 @@ namespace PUNTOVENTA.MENU.PRODUCTO
             eliminar_medida forms = new eliminar_medida();
             forms.lbl_id.Text = lbl_id.Text;
             forms.Show();
+        }
+
+        private void btn_regresar_Click(object sender, EventArgs e)
+        {
+            string id;
+            id = lbl_id.Text;
+            string retorno, retorno2;
+            c_seguridad log = new c_seguridad();
+            retorno = log.ChecarUsuario(id);
+            txt_usuario.Text = "";
+
+            c_seguridad log2 = new c_seguridad();
+            retorno2 = log2.ChecarPerfil(id);
+            lbl_perfil.Text = "";
+
+            this.Hide();
+            Inicio formulario = new Inicio();
+            formulario.lbl_id.Text = id;
+            formulario.lbl_perfil.Text = Convert.ToString(retorno2);
+            formulario.txt_usuario.Text = Convert.ToString(retorno);
+            formulario.Show();
         }
     }
 }

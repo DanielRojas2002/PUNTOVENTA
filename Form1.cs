@@ -1,3 +1,6 @@
+using PUNTOVENTA.CLASES;
+using PUNTOVENTA.ENTIDAD;
+
 namespace Punto_de_Venta
 {
     public partial class Form1 : Form
@@ -28,8 +31,8 @@ namespace Punto_de_Venta
         private void button1_Click(object sender, EventArgs e)
         {
             // INCIO DE SESION 
-            string usuario, contraseña;
-            int retorno;
+          
+            int retorno=0;
 
             if (txt_usuario.Text == "")
             {
@@ -44,23 +47,60 @@ namespace Punto_de_Venta
 
             else
             {
-                usuario = txt_usuario.Text;
-                contraseña = txt_contraseña.Text;
+               
 
-                c_seguridad log = new c_seguridad();
-                retorno = log.Identificacion_Login(usuario, contraseña);
+                dgUsuario parametro = new dgUsuario
+                {
+                    Usuario = txt_usuario.Text.Trim().ToUpper(),
+                    Contrasenia= txt_contraseña.Text.Trim().ToUpper()
+                };
 
-                if (retorno > 0)
+
+
+                string control = "";
+
+                List<dgUsuario> lista = c_usuario.LeerUsuario(1, parametro);
+
+                if (lista.Count > 0)
+
+                {
+                   
+                    foreach (dgUsuario d in lista)
+                    {
+                        retorno = Convert.ToInt16(d.Id_Usuario.ToString());
+                    }
+
+
+                    control = "*";
+
+
+                }
+
+                else
+                {
+                    control = "-";
+                }
+
+
+
+
+               
+
+                if (control == "-")
+                {
+
+                    MessageBox.Show("Credenciales Incorrectas", "Credenciales Incorrectas");
+                }
+
+                else
                 {
                     this.Hide();
                     Inicio formulario = new Inicio();
                     formulario.lbl_id.Text = Convert.ToString(retorno);
                     formulario.Show();
                 }
-                else
-                {
-                    MessageBox.Show("Credenciales Incorrectas", "Credenciales Incorrectas");
-                }
+
+             
 
             }
         }
