@@ -1,6 +1,7 @@
 ﻿using PUNTOVENTA.CLASES;
 using PUNTOVENTA.ENTIDAD;
 using PUNTOVENTA.MENU.PRODUCTO;
+using PUNTOVENTA.MENU.PROVEEDOR;
 
 
 namespace Punto_de_Venta
@@ -189,7 +190,10 @@ namespace Punto_de_Venta
 
         private void btn_provedores_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            menu_proveedor forms = new menu_proveedor();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
         }
 
         private void btn_almacen_Click(object sender, EventArgs e)

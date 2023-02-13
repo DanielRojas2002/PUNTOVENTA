@@ -144,6 +144,7 @@ namespace PUNTOVENTA.CLASES
                              select new dgUsuario
                              {
                                  Id_Usuario = Convert.ToInt16(fila["Id_Usuario"].ToString())
+                          
 
 
 
