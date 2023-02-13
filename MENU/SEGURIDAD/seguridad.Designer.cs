@@ -266,6 +266,7 @@
             this.bx_permisos.Name = "bx_permisos";
             this.bx_permisos.Size = new System.Drawing.Size(162, 28);
             this.bx_permisos.TabIndex = 29;
+            this.bx_permisos.SelectedIndexChanged += new System.EventHandler(this.bx_permisos_SelectedIndexChanged);
             // 
             // label1
             // 

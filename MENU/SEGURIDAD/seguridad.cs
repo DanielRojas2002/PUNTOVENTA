@@ -1,21 +1,33 @@
-﻿namespace Punto_de_Venta
+﻿using PUNTOVENTA.CLASES;
+using PUNTOVENTA.ENTIDAD;
+
+namespace Punto_de_Venta
 {
     public partial class seguridad : Form
     {
         public seguridad()
         {
             InitializeComponent();
-            List<string> listap = new List<string>();
 
-            c_seguridad log = new c_seguridad();
-            listap = log.ChecarPerfiles();
-            int c_lista = listap.Count;
-            string valorl;
+            dgPerfil parametro = new dgPerfil();
 
-            for (int i = 0; i < c_lista; i++)
+        
+
+            List<dgPerfil> lista = c_perfil.LeerPerfil(1, parametro);
+
+            if (lista.Count > 0)
+
             {
-                valorl = listap[i];
-                bx_permisos.Items.Add(valorl);
+
+                foreach (dgPerfil d in lista)
+                {
+                    bx_permisos.Items.Add(d.Descripcion.ToString());
+                }
+
+
+
+
+
             }
         }
 
@@ -23,14 +35,62 @@
         {
             string id;
             id = lbl_id.Text;
-            string retorno, retorno2;
-            c_seguridad log = new c_seguridad();
-            retorno = log.ChecarUsuario(id);
-            txt_usuario.Text = "";
+            string retorno = "", retorno2 = "";
 
-            c_seguridad log2 = new c_seguridad();
-            retorno2 = log2.ChecarPerfil(id);
-            lbl_perfil.Text = "";
+            dgUsuario parametro = new dgUsuario
+            {
+                Id_Usuario = Convert.ToInt16(lbl_id.Text)
+
+            };
+
+            List<dgUsuario> lista = c_usuario.LeerUsuario(2, parametro);
+
+            if (lista.Count > 0)
+
+            {
+
+                foreach (dgUsuario d in lista)
+                {
+                    retorno = Convert.ToString(d.Usuario.ToString());
+                }
+
+
+
+
+              
+
+
+            }
+
+
+
+            dgUsuario parametro2 = new dgUsuario
+            {
+                Id_Usuario = Convert.ToInt16(lbl_id.Text)
+
+            };
+
+
+
+            List<dgUsuario> lista2 = c_usuario.LeerUsuario(3, parametro);
+
+            if (lista.Count > 0)
+
+            {
+
+                foreach (dgUsuario d in lista2)
+                {
+                    retorno2 = Convert.ToString(d.DescripcionPerfil.ToString());
+                }
+
+
+               
+
+
+            }
+
+
+           
 
             this.Hide();
             menu_seguridad formulario = new menu_seguridad();
@@ -47,7 +107,7 @@
 
         private void btn_crear_usuario_Click(object sender, EventArgs e)
         {
-            string usuario, contraseña, perfil, tabla;
+            string perfil;
 
 
             if (txt_usuarioo.Text == "")
@@ -70,9 +130,9 @@
 
             else
             {
-                usuario = txt_usuarioo.Text;
-                contraseña = txt_contraseña.Text;
+               
                 perfil = bx_permisos.Text;
+
                 if (perfil == "Administrador")
                 {
                     perfil = "1";
@@ -83,61 +143,95 @@
                 }
 
 
-
-                else if (perfil == "Comprador")
+                dgUsuario parametro = new dgUsuario
                 {
-                    perfil = "3";
+                    Usuario = txt_usuarioo.Text.Trim(),
+                    Contrasenia = txt_contraseña.Text.Trim(),
+                    Id_Perfil = Convert.ToInt16(perfil)
+                };
+
+
+
+                string control = "";
+
+                control = c_usuario.InsertarUsuario(parametro);
+
+                if (control == "1")
+                {
+
+                    MessageBox.Show("Ya Existe un Usuario Similar", "Error");
                 }
 
-                tabla = "USUARIO";
-
-                List<string> listacampos = new List<string>();
-                List<string> listatipodato = new List<string>();
-                List<string> listavalores = new List<string>();
-
-                listacampos.Add("Usuario");
-                listacampos.Add("Contrasenia");
-                listacampos.Add("Id_Perfil");
-
-                listatipodato.Add("string");
-                listatipodato.Add("string");
-                listatipodato.Add("int");
-
-
-                listavalores.Add(usuario);
-                listavalores.Add(contraseña);
-                listavalores.Add(perfil);
-
-                try
+                else
                 {
-                    c_crud log = new c_crud();
-                    log.Insert(tabla, listacampos, listavalores, listatipodato);
                     MessageBox.Show("Usuario Dado de alta", "Correcto");
-                }
-                catch
-                {
-                    MessageBox.Show("Error 203", "Incorrecto");
-                }
-                finally
-                {
+
                     string id;
                     id = lbl_id.Text;
-                    string retorno1, retorno2;
-                    c_seguridad log = new c_seguridad();
-                    retorno1 = log.ChecarUsuario(id);
-                    txt_usuario.Text = "";
+                    string retorno = "", retorno2 = "";
 
-                    c_seguridad log2 = new c_seguridad();
-                    retorno2 = log2.ChecarPerfil(id);
-                    lbl_perfil.Text = "";
+                    dgUsuario parametro2 = new dgUsuario
+                    {
+                        Id_Usuario = Convert.ToInt16(lbl_id.Text)
+
+                    };
+
+                    List<dgUsuario> lista = c_usuario.LeerUsuario(2, parametro2);
+
+                    if (lista.Count > 0)
+
+                    {
+
+                        foreach (dgUsuario d in lista)
+                        {
+                            retorno = Convert.ToString(d.Usuario.ToString());
+                        }
+
+
+
+
+
+
+
+                    }
+
+
+
+                    dgUsuario parametro3 = new dgUsuario
+                    {
+                        Id_Usuario = Convert.ToInt16(lbl_id.Text)
+
+                    };
+
+
+
+                    List<dgUsuario> lista2 = c_usuario.LeerUsuario(3, parametro3);
+
+                    if (lista.Count > 0)
+
+                    {
+
+                        foreach (dgUsuario d in lista2)
+                        {
+                            retorno2 = Convert.ToString(d.DescripcionPerfil.ToString());
+                        }
+
+
+
+
+
+                    }
 
                     this.Hide();
                     menu_seguridad formulario = new menu_seguridad();
                     formulario.lbl_id.Text = id;
                     formulario.lbl_perfil.Text = Convert.ToString(retorno2);
-                    formulario.txt_usuario.Text = Convert.ToString(retorno1);
+                    formulario.txt_usuario.Text = Convert.ToString(retorno);
                     formulario.Show();
                 }
+
+                  
+
 
 
 
@@ -168,6 +262,11 @@
         private void seguridad_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void bx_permisos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

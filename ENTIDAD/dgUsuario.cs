@@ -15,5 +15,7 @@ namespace PUNTOVENTA.ENTIDAD
 
         public int? Id_Perfil { get; set; }
 
+        public string? DescripcionPerfil { get; set; }
+
     }
 }

@@ -45,6 +45,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblperfil = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.descripcioncb = new System.Windows.Forms.Label();
+            this.bl_id_combobox = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel13.SuspendLayout();
@@ -221,7 +223,7 @@
             // 
             this.lblperfil.AutoSize = true;
             this.lblperfil.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblperfil.Location = new System.Drawing.Point(459, 142);
+            this.lblperfil.Location = new System.Drawing.Point(407, 141);
             this.lblperfil.Name = "lblperfil";
             this.lblperfil.Size = new System.Drawing.Size(0, 20);
             this.lblperfil.TabIndex = 37;
@@ -229,6 +231,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Navy;
+            this.panel2.Controls.Add(this.descripcioncb);
+            this.panel2.Controls.Add(this.bl_id_combobox);
             this.panel2.Controls.Add(this.lblperfil);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.btn_regresar);
@@ -247,6 +251,32 @@
             this.panel2.Size = new System.Drawing.Size(550, 519);
             this.panel2.TabIndex = 5;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // descripcioncb
+            // 
+            this.descripcioncb.AutoSize = true;
+            this.descripcioncb.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.descripcioncb.ForeColor = System.Drawing.Color.White;
+            this.descripcioncb.Location = new System.Drawing.Point(359, 327);
+            this.descripcioncb.Name = "descripcioncb";
+            this.descripcioncb.Size = new System.Drawing.Size(153, 23);
+            this.descripcioncb.TabIndex = 39;
+            this.descripcioncb.Text = "descripcioncb";
+            this.descripcioncb.Visible = false;
+            this.descripcioncb.Click += new System.EventHandler(this.descripcioncb_Click);
+            // 
+            // bl_id_combobox
+            // 
+            this.bl_id_combobox.AutoSize = true;
+            this.bl_id_combobox.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.bl_id_combobox.ForeColor = System.Drawing.Color.White;
+            this.bl_id_combobox.Location = new System.Drawing.Point(407, 279);
+            this.bl_id_combobox.Name = "bl_id_combobox";
+            this.bl_id_combobox.Size = new System.Drawing.Size(109, 23);
+            this.bl_id_combobox.TabIndex = 38;
+            this.bl_id_combobox.Text = "idcombox";
+            this.bl_id_combobox.Visible = false;
+            this.bl_id_combobox.Click += new System.EventHandler(this.bl_id_combobox_Click);
             // 
             // eliminar_usuario
             // 
@@ -290,5 +320,7 @@
         private Label label2;
         private Label lblperfil;
         private Panel panel2;
+        public Label bl_id_combobox;
+        public Label descripcioncb;
     }
 }

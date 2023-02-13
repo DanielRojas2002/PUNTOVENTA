@@ -154,7 +154,111 @@ namespace PUNTOVENTA.CLASES
 
 
             }
-           
+
+            else if (tipo==2) // 6 Buscar el Usuario por el Id_Usuario
+            {
+                SqlParameter[] Parametros =
+              {
+                    new SqlParameter("@Accion",6),
+                    new SqlParameter("@P_IdUsuario",Parametro.Id_Usuario)
+                   
+                };
+
+                tabla = bdContext.funcionStored("spUsuario", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgUsuario
+                             {
+                                 Usuario = Convert.ToString(fila["Usuario"].ToString())
+
+
+
+                             }
+                   ).ToList();
+                }
+            }
+
+            else if (tipo == 3) // 7 Buscar el su Perfil por su Id_Usuario y luego buscar la descripcion por la Id_Perfil
+            {
+                SqlParameter[] Parametros =
+              {
+                    new SqlParameter("@Accion",7),
+                    new SqlParameter("@P_IdUsuario",Parametro.Id_Usuario)
+
+                };
+
+                tabla = bdContext.funcionStored("spUsuario", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgUsuario
+                             {
+                                 DescripcionPerfil = Convert.ToString(fila["Descripcion"].ToString())
+
+
+
+                             }
+                   ).ToList();
+                }
+            }
+
+            else if (tipo == 4) // 8 SELECT * FROM USUARIO WHERE ID_USUARIO <> Id logeado
+            {
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",8),
+                    new SqlParameter("@P_IdUsuario",Parametro.Id_Usuario)
+
+                };
+
+                tabla = bdContext.funcionStored("spUsuario", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgUsuario
+                             {
+                                
+                                 Usuario = Convert.ToString(fila["Usuario"].ToString())
+
+
+
+                             }
+                   ).ToList();
+                }
+            }
+
+            else if (tipo == 5) // 9 SELECT Id_Usuario FROM USUARIO WHERE Usuario= @PUsuario
+            {
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",9),
+                    new SqlParameter("@P_Usuario",Parametro.Usuario)
+
+                };
+
+                tabla = bdContext.funcionStored("spUsuario", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgUsuario
+                             {
+
+                                 Id_Usuario = Convert.ToInt16(fila["Id_Usuario"].ToString())
+
+
+
+                             }
+                   ).ToList();
+                }
+            }
+
+
+
 
             return lista;
 
