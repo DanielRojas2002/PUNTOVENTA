@@ -47,14 +47,63 @@ namespace PUNTOVENTA.MENU.CATEGORIA
         {
             string id;
             id = lbl_id.Text;
-            string retorno, retorno2;
-            c_seguridad log = new c_seguridad();
-            retorno = log.ChecarUsuario(id);
-            txt_usuario.Text = "";
 
-            c_seguridad log2 = new c_seguridad();
-            retorno2 = log2.ChecarPerfil(id);
-            lbl_perfil.Text = "";
+            string retorno = "", retorno2 = "";
+
+            dgUsuario parametro = new dgUsuario
+            {
+                Id_Usuario = Convert.ToInt16(lbl_id.Text)
+
+            };
+
+
+
+            List<dgUsuario> lista = c_usuario.LeerUsuario(2, parametro);
+
+            if (lista.Count > 0)
+
+            {
+
+                foreach (dgUsuario d in lista)
+                {
+                    retorno = Convert.ToString(d.Usuario.ToString());
+                }
+
+
+
+
+                txt_usuario.Text = ("Bievenido usuario: " + retorno);
+
+
+            }
+
+
+
+            dgUsuario parametro2 = new dgUsuario
+            {
+                Id_Usuario = Convert.ToInt16(lbl_id.Text)
+
+            };
+
+
+
+            List<dgUsuario> lista2 = c_usuario.LeerUsuario(3, parametro);
+
+            if (lista.Count > 0)
+
+            {
+
+                foreach (dgUsuario d in lista2)
+                {
+                    retorno2 = Convert.ToString(d.DescripcionPerfil.ToString());
+                }
+
+
+                lbl_perfil.Text = ("Perfil: " + retorno2);
+
+
+            }
+
 
             this.Hide();
             menu_producto formulario = new menu_producto();

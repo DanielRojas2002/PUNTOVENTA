@@ -1,0 +1,398 @@
+﻿
+CREATE OR ALTER PROC [dbo].[spCategoria]
+(
+	@Accion			INT,
+	@P_IdCategoria	INT = NULL,
+	@P_Descripcion	NVARCHAR(15) = NULL
+)
+AS
+BEGIN
+	DECLARE @Validacion INT;
+
+
+	IF @Accion = 1 -- INSERT
+	BEGIN
+		
+		SET @Validacion=0;
+
+			IF NOT EXISTS ( SELECT 1 FROM CATEGORIA WHERE Descripcion= @P_Descripcion) 
+			BEGIN 
+				SET @Validacion=@Validacion+1;
+				
+				INSERT INTO CATEGORIA (Descripcion) VALUES (UPPER(@P_Descripcion));
+			END
+			ELSE
+			BEGIN
+				SELECT 1 AS '1' ;
+				RETURN 1;
+				SET @Validacion=0;
+			END
+
+		
+	END
+
+	IF @Accion = 2 -- Leer
+	BEGIN
+		
+		SELECT * FROM CATEGORIA;
+
+		
+	END
+
+	IF @Accion = 3 --ACCION PARA EDITAR LOS REGSITROS EXISTENTES
+			BEGIN
+
+
+				UPDATE CATEGORIA
+					SET 
+					
+						Descripcion=@P_Descripcion
+				WHERE
+					Id_Categoria = @P_IdCategoria
+		END
+
+	IF @Accion = 4 -- Delete especial verificando que no existan productos con el id de categoria a eliminar
+	BEGIN
+		
+		SET @Validacion=0;
+
+			IF NOT EXISTS ( SELECT 1 FROM PRODUCTO WHERE Id_Categoria= @P_IdCategoria) 
+			BEGIN 
+				SET @Validacion=@Validacion+1;
+				DELETE  FROM CATEGORIA  WHERE Id_Categoria = @P_IdCategoria;
+			END
+			ELSE
+			BEGIN
+				SELECT 1 AS '1' ;
+				RETURN 1;
+				SET @Validacion=0;
+			END
+
+		
+	END
+
+
+	IF @Accion = 5 -- Leer Descripcion
+	BEGIN
+		
+		SELECT Descripcion FROM CATEGORIA;
+
+		
+	END
+
+	IF @Accion = 6 -- Leer Id_Categoria cuando la Descripcion sea igual
+	BEGIN
+		
+		SELECT Id_Categoria FROM CATEGORIA WHERE Descripcion=@P_Descripcion;
+
+		
+	END
+
+	IF @Accion = 7 -- Leer Descripcion cuando el ID_Categoria sea el que busques
+	BEGIN
+		
+		SELECT Descripcion FROM CATEGORIA WHERE Id_Categoria=@P_IdCategoria;
+
+		
+	END
+
+END
+GO
+
+CREATE OR ALTER PROC [dbo].[spMedida]
+(
+	@Accion			INT,
+	@P_IdMedida	INT = NULL,
+	@P_Descripcion	NVARCHAR(15) = NULL
+)
+AS
+BEGIN
+	DECLARE @Validacion INT;
+
+
+	IF @Accion = 1 -- INSERT
+	BEGIN
+		
+		SET @Validacion=0;
+
+			IF NOT EXISTS ( SELECT 1 FROM MEDIDA WHERE Descripcion= @P_Descripcion) 
+			BEGIN 
+				SET @Validacion=@Validacion+1;
+				
+				INSERT INTO MEDIDA (Descripcion) VALUES (UPPER(@P_Descripcion));
+			END
+			ELSE
+			BEGIN
+				SELECT 1 AS '1' ;
+				RETURN 1;
+				SET @Validacion=0;
+			END
+
+		
+	END
+
+	IF @Accion = 2 -- Leer
+	BEGIN
+		
+		SELECT * FROM MEDIDA;
+
+		
+	END
+
+	IF @Accion = 3 --ACCION PARA EDITAR LOS REGSITROS EXISTENTES
+			BEGIN
+
+
+				UPDATE MEDIDA
+					SET 
+					
+						Descripcion=@P_Descripcion
+				WHERE
+					Id_Medida = @P_IdMedida
+
+
+					
+
+
+		END
+
+	IF @Accion = 4 -- Delete especial verificando que no existan productos con el id de categoria a eliminar
+	BEGIN
+		
+		SET @Validacion=0;
+
+			IF NOT EXISTS ( SELECT 1 FROM PRODUCTO WHERE Id_Medida= @P_IdMedida) 
+			BEGIN 
+				SET @Validacion=@Validacion+1;
+				DELETE  FROM MEDIDA  WHERE Id_Medida = @P_IdMedida;
+			END
+			ELSE
+			BEGIN
+				SELECT 1 AS '1' ;
+				RETURN 1;
+				SET @Validacion=0;
+			END
+
+		
+	END
+
+
+	IF @Accion = 5 -- Leer Descripcion
+	BEGIN
+		
+		SELECT Descripcion FROM MEDIDA;
+
+		
+	END
+
+	IF @Accion = 6 -- Leer Id_Medida cuando la Descripcion sea igual
+	BEGIN
+		
+		SELECT Id_Medida FROM MEDIDA WHERE Descripcion=@P_Descripcion;
+
+		
+	END
+
+	IF @Accion = 7 -- Leer Descripcion cuando el ID_Medida sea el que busques
+	BEGIN
+		
+		SELECT Descripcion FROM MEDIDA WHERE Id_Medida=@P_IdMedida;
+
+		
+	END
+
+END
+GO
+
+
+
+CREATE OR ALTER PROC [dbo].[spUsuario]
+(
+	@Accion			INT,
+	@P_IdUsuario	INT = NULL,
+	@P_Usuario	NVARCHAR(15) = NULL,
+	@P_Contrasenia	NVARCHAR(15) = NULL,
+	@P_IdPerfil	INT = NULL
+)
+AS
+BEGIN
+	DECLARE @Validacion INT;
+
+
+	IF @Accion = 1 -- INSERT
+	BEGIN
+		
+		SET @Validacion=0;
+
+			IF NOT EXISTS ( SELECT 1 FROM USUARIO WHERE Usuario= @P_Usuario) 
+			BEGIN 
+				SET @Validacion=@Validacion+1;
+				
+				INSERT INTO USUARIO (Usuario,Contrasenia,Id_Perfil) VALUES (@P_Usuario,@P_Contrasenia,@P_IdPerfil);
+			END
+			ELSE
+			BEGIN
+				SELECT 1 AS '1' ;
+				RETURN 1;
+				SET @Validacion=0;
+			END
+
+		
+	END
+
+	IF @Accion = 2 -- Leer
+	BEGIN
+		
+		SELECT * FROM USUARIO;
+
+		
+	END
+
+	IF @Accion = 3 --ACCION PARA EDITAR LOS REGSITROS EXISTENTES
+			BEGIN
+
+
+				UPDATE USUARIO
+					SET 
+					
+						Usuario=@P_Usuario,
+						Contrasenia=@P_Contrasenia
+				WHERE
+					Id_Usuario = @P_Usuario
+
+
+					
+
+
+		END
+
+	IF @Accion = 4 -- Delete especial verificando que no existan productos con el id de categoria a eliminar
+	BEGIN
+	
+			
+		DELETE  FROM USUARIO  WHERE Id_Usuario = @P_IdUsuario;
+		
+			
+
+		
+	END
+
+
+	IF @Accion = 5 -- LOGIN
+	BEGIN
+	
+		
+				
+		SELECT Id_Usuario FROM USUARIO WHERE Usuario= @P_Usuario AND Contrasenia = @P_Contrasenia;
+		
+	
+			
+
+		
+	END
+
+
+	IF @Accion = 6 -- LOGIN  // funcion para retornar el usuario cuando le demos el id 
+	BEGIN
+	
+		
+				
+		select Usuario from USUARIO where Id_Usuario=@P_IdUsuario
+		
+	
+			
+
+		
+	END
+
+	IF @Accion = 7 -- LOGIN // funcion para reotrnar la categoria textual cuando le demos el id del usuario
+	BEGIN
+	
+		DECLARE @idperfil AS INT;
+
+		SET @idperfil = (select Id_Perfil from USUARIO where Id_Usuario=@P_IdUsuario)
+		
+		select Descripcion from PERFIL where Id_Perfil=@idperfil;
+		
+	
+			
+
+		
+	END
+
+	IF @Accion = 8 -- SELECT  Usuario FROM USUARIO WHERE id_Usuario sea difernete al loegeado
+	BEGIN
+	
+		
+		
+		select Usuario from USUARIO WHERE Id_Usuario != @P_IdUsuario;
+		
+	
+			
+
+		
+	END
+
+	
+	IF @Accion = 9 -- SELECT Usuario FROM USUARIO WHERE Usuario = @PUsuario
+	BEGIN
+	
+		
+		
+		select Id_Usuario from USUARIO WHERE Usuario = @P_Usuario;
+		
+	
+			
+
+		
+	END
+
+
+
+	 
+
+	
+
+
+
+END
+GO
+
+
+
+CREATE OR ALTER PROC [dbo].[spPerfil]
+(
+	@Accion			INT,
+	@P_IdPerfil	INT = NULL,
+	@P_Descripcion	NVARCHAR(15) = NULL
+	
+)
+AS
+BEGIN
+	DECLARE @Validacion INT;
+
+
+	IF @Accion = 1 -- Select todos los perfiles
+	BEGIN
+		
+		SELECT Id_Perfil,Descripcion FROM PERFIL;
+
+		
+	END
+
+	IF @Accion = 2 -- Leer
+	BEGIN
+		
+		SELECT * FROM USUARIO;
+
+		
+	END
+
+	 
+
+	
+
+
+
+END
+GO

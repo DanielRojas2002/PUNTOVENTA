@@ -1,5 +1,6 @@
 ﻿using PUNTOVENTA.CLASES;
 using PUNTOVENTA.ENTIDAD;
+using PUNTOVENTA.MENU.PRODUCTO;
 
 namespace Punto_de_Venta
 {
@@ -9,62 +10,125 @@ namespace Punto_de_Venta
         {
             InitializeComponent();
 
+           
+
         }
 
         private void btn_eliminar_usuario_Click(object sender, EventArgs e)
         {
-            string usuario, tabla;
-
-
-            if (bx_usuario.Text == "")
+            try
             {
+                if (bx_usuario.Text == "" && lbl_perfil.Text == "")
+                {
 
-                MessageBox.Show("Seleccione el usuario a eliminar ");
+                    MessageBox.Show("Seleccione el Usuario a eliminar ");
+                }
+
+
+                else
+                {
+                    dgUsuario parametro = new dgUsuario();
+
+                    parametro.Id_Usuario = Convert.ToInt16(bl_id_combobox.Text);
+
+
+
+
+                    string control = "";
+
+                    control = c_usuario.EliminarUsuario(parametro);
+
+                    if (control == "1")
+                    {
+
+                        MessageBox.Show("No se puede eliminar esta Usuario", "Error");
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Usuario Eliminado", "Correcto");
+
+                        string id;
+                        id = lbl_id.Text;
+
+                        string retorno = "", retorno2 = "";
+
+                        dgUsuario parametro2 = new dgUsuario
+                        {
+                            Id_Usuario = Convert.ToInt16(lbl_id.Text)
+
+                        };
+
+
+
+                        List<dgUsuario> lista = c_usuario.LeerUsuario(2, parametro2);
+
+                        if (lista.Count > 0)
+
+                        {
+
+                            foreach (dgUsuario d in lista)
+                            {
+                                retorno = Convert.ToString(d.Usuario.ToString());
+                            }
+
+
+
+
+                          
+
+
+                        }
+
+
+
+                        dgUsuario parametro3 = new dgUsuario
+                        {
+                            Id_Usuario = Convert.ToInt16(lbl_id.Text)
+
+                        };
+
+
+
+                        List<dgUsuario> lista2 = c_usuario.LeerUsuario(3, parametro3);
+
+                        if (lista.Count > 0)
+
+                        {
+
+                            foreach (dgUsuario d in lista2)
+                            {
+                                retorno2 = Convert.ToString(d.DescripcionPerfil.ToString());
+                            }
+
+
+                           
+
+
+                        }
+
+
+                        this.Hide();
+                        menu_seguridad formulario = new menu_seguridad();
+                        formulario.lbl_id.Text = id;
+                        formulario.lbl_perfil.Text = Convert.ToString(retorno2);
+                        formulario.txt_usuario.Text = Convert.ToString(retorno);
+                        formulario.Show();
+                    }
+
+
+
+
+
+
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Seleccione una Usuario a Eliminar", "Error");
             }
 
 
-            else
-            {
-                usuario = bx_usuario.Text;
-                tabla = "USUARIO";
-
-                List<string> listacampos = new List<string>();
-                List<string> listatipodato = new List<string>();
-                List<string> listavalores = new List<string>();
-
-                listacampos.Add("Usuario");
-
-
-                listatipodato.Add("string");
-
-                listavalores.Add(usuario);
-
-
-
-                c_crud log2 = new c_crud();
-                log2.Delete(tabla, listacampos, listavalores, listatipodato);
-                MessageBox.Show("Usuario Eliminado", "Correcto");
-
-
-                string id;
-                id = lbl_id.Text;
-                string retorno1, retorno2;
-                c_seguridad log = new c_seguridad();
-                retorno1 = log.ChecarUsuario(id);
-                txt_usuario.Text = "";
-
-                c_seguridad log3 = new c_seguridad();
-                retorno2 = log3.ChecarPerfil(id);
-                lbl_perfil.Text = "";
-
-                this.Hide();
-                menu_seguridad formulario = new menu_seguridad();
-                formulario.lbl_id.Text = id;
-                formulario.lbl_perfil.Text = Convert.ToString(retorno2);
-                formulario.txt_usuario.Text = Convert.ToString(retorno1);
-                formulario.Show();
-
-            }
         }
 
         private void bx_usuario_SelectedIndexChanged(object sender, EventArgs e)
@@ -197,6 +261,7 @@ namespace Punto_de_Venta
 
         private void eliminar_usuario_Activated(object sender, EventArgs e)
         {
+
             bx_usuario.Items.Clear();
             int id;
             string descripcion;
@@ -206,7 +271,7 @@ namespace Punto_de_Venta
             {
                 Id_Usuario = Convert.ToInt16(lbl_id.Text)
 
-               
+
             };
 
             List<dgUsuario> lista = c_usuario.LeerUsuario(4, parametro);
@@ -217,20 +282,19 @@ namespace Punto_de_Venta
 
                 foreach (dgUsuario d in lista)
                 {
-                    
-                   bx_usuario.Items.Add(d.Usuario);
-                    
 
-                   
+                    bx_usuario.Items.Add(d.Usuario);
+
+
+
                 }
             }
 
             else
 
             {
-                MessageBox.Show("No tiene Usuarios Agregadas", "Advertencia");
+                
             }
-
 
 
         }
