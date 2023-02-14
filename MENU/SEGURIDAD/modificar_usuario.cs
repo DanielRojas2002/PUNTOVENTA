@@ -373,5 +373,15 @@ namespace Punto_de_Venta
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
