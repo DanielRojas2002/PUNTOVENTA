@@ -11,5 +11,10 @@
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void txt_usuario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

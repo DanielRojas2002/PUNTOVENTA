@@ -110,7 +110,7 @@
             this.txt_usuario.AutoSize = true;
             this.txt_usuario.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txt_usuario.ForeColor = System.Drawing.Color.White;
-            this.txt_usuario.Location = new System.Drawing.Point(210, 35);
+            this.txt_usuario.Location = new System.Drawing.Point(183, 9);
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(95, 23);
             this.txt_usuario.TabIndex = 23;
@@ -122,7 +122,7 @@
             this.lbl_perfil.AutoSize = true;
             this.lbl_perfil.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_perfil.ForeColor = System.Drawing.Color.White;
-            this.lbl_perfil.Location = new System.Drawing.Point(347, 35);
+            this.lbl_perfil.Location = new System.Drawing.Point(353, 9);
             this.lbl_perfil.Name = "lbl_perfil";
             this.lbl_perfil.Size = new System.Drawing.Size(73, 23);
             this.lbl_perfil.TabIndex = 24;

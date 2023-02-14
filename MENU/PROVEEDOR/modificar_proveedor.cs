@@ -11,5 +11,10 @@
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void bx_proveedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
