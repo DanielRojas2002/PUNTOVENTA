@@ -64,9 +64,10 @@ namespace PUNTOVENTA.CLASES
                 SqlParameter[] parametros =
                 {
                     new SqlParameter("@Accion",3),
+                    new SqlParameter("@P_IdUsuario",Parametro.Id_Usuario),
                     new SqlParameter("@P_Usuario",Parametro.Usuario),
-                    new SqlParameter("@P_Contrasenia",Parametro.Contrasenia),
-                    new SqlParameter("@P_IdPerfil",Parametro.Id_Perfil)
+                    new SqlParameter("@P_Contrasenia",Parametro.Contrasenia)
+                   
 
 
                 };
@@ -172,7 +173,8 @@ namespace PUNTOVENTA.CLASES
                     lista = (from DataRow fila in tabla.Rows
                              select new dgUsuario
                              {
-                                 Usuario = Convert.ToString(fila["Usuario"].ToString())
+                                 Usuario = Convert.ToString(fila["Usuario"].ToString()),
+                                 Contrasenia= Convert.ToString(fila["Contrasenia"].ToString())
 
 
 

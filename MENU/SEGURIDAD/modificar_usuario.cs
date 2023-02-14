@@ -1,5 +1,6 @@
 ﻿using PUNTOVENTA.CLASES;
 using PUNTOVENTA.ENTIDAD;
+using PUNTOVENTA.MENU.PRODUCTO;
 
 namespace Punto_de_Venta
 {
@@ -89,40 +90,132 @@ namespace Punto_de_Venta
         {
             string tabla;
 
-            if (txt_usuarioo.Text == "")
-            {
-                MessageBox.Show("Ingrese el nuevo nombre de usuario");
-            }
-            else if (txt_contraseña.Text == "")
-            {
-                MessageBox.Show("Ingrese la nueva contraseña");
-            }
-            else if (bx_usuario.Text == "")
+            try
             {
 
-                MessageBox.Show("Seleccione el usuario a cambiar ");
+
+                string valor = bx_usuario.SelectedItem.ToString();
+
+                if (txt_usuarioo.Text == "")
+                {
+                    MessageBox.Show("Ingrese el nuevo nombre de usuario");
+                }
+                else if (txt_contraseña.Text == "")
+                {
+                    MessageBox.Show("Ingrese la nueva contraseña");
+                }
+                else if (bx_usuario.Text == "")
+                {
+
+                    MessageBox.Show("Seleccione el usuario a cambiar ");
+                }
+
+                else
+                {
+
+                    dgUsuario parametro = new dgUsuario
+                    {
+                        Id_Usuario = Convert.ToInt16(bl_id_combobox.Text),
+
+                        Usuario = Convert.ToString(txt_usuarioo.Text.Trim()),
+
+                        Contrasenia = Convert.ToString(txt_contraseña.Text.Trim())
+                    };
+
+                    string control = "";
+
+                    control = c_usuario.ModificarUsuario(parametro);
+
+                    if (control == "1")
+                    {
+
+                        MessageBox.Show("No se puede modificar esta Medida", "Error");
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Usuario Modificada", "Correcto");
+
+                        string id;
+                        id = lbl_id.Text;
+
+                        string retorno = "", retorno2 = "";
+
+                        dgUsuario parametro2 = new dgUsuario
+                        {
+                            Id_Usuario = Convert.ToInt16(lbl_id.Text)
+
+                        };
+
+
+
+                        List<dgUsuario> lista = c_usuario.LeerUsuario(2, parametro2);
+
+                        if (lista.Count > 0)
+
+                        {
+
+                            foreach (dgUsuario d in lista)
+                            {
+                                retorno = Convert.ToString(d.Usuario.ToString());
+                            }
+
+
+
+
+                            txt_usuario.Text = ("Bievenido usuario: " + retorno);
+
+
+                        }
+
+
+
+                        dgUsuario parametro3 = new dgUsuario
+                        {
+                            Id_Usuario = Convert.ToInt16(lbl_id.Text)
+
+                        };
+
+
+
+                        List<dgUsuario> lista2 = c_usuario.LeerUsuario(3, parametro3);
+
+                        if (lista.Count > 0)
+
+                        {
+
+                            foreach (dgUsuario d in lista2)
+                            {
+                                retorno2 = Convert.ToString(d.DescripcionPerfil.ToString());
+                            }
+
+
+                            lbl_perfil.Text = ("Perfil: " + retorno2);
+
+
+                        }
+
+                        this.Hide();
+                        menu_seguridad formulario = new menu_seguridad();
+                        formulario.lbl_id.Text = id;
+                        formulario.lbl_perfil.Text = Convert.ToString(retorno2);
+                        formulario.txt_usuario.Text = Convert.ToString(retorno);
+                        formulario.Show();
+                    }
+
+
+
+
+
+
+                }
             }
-
-
-            else
+            catch
             {
-                int id;
-                string ids;
-
-                string usuario, usuarioo, contraseña;
-                usuarioo = txt_usuarioo.Text;
-                usuario = bx_usuario.Text;
-                contraseña = txt_contraseña.Text;
-
-                
-
-                //this.Hide();
-                //menu_seguridad formulario = new menu_seguridad();
-                //formulario.lbl_id.Text = idd;
-                //formulario.lbl_perfil.Text = Convert.ToString(retorno2);
-                //formulario.txt_usuario.Text = Convert.ToString(retorno1);
-                //formulario.Show();
+                MessageBox.Show("Seleccione una Medida", "Error");
             }
+
+            
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
@@ -140,61 +233,137 @@ namespace Punto_de_Venta
 
         private void modificar_usuario_Activated(object sender, EventArgs e)
         {
-            //string id;
-            //int c_Listausuarios = 0;
-            //string usuario = "";
+            bx_usuario.Items.Clear();
+            int id;
+            string descripcion;
+            descripcion = bx_usuario.Text;
 
-            //id = lbl_id.Text;
-
-
-
-            //c_seguridad log = new c_seguridad();
-            //usuario = log.ChecarUsuario(id);
+            dgUsuario parametro = new dgUsuario
+            {
+                Id_Usuario = Convert.ToInt16(lbl_id.Text)
 
 
+            };
 
-            //List<string> Listausuarios = new List<string>();
-            //c_seguridad log2 = new c_seguridad();
-            //Listausuarios = log2.ChecarUsuarioTodos();
+            List<dgUsuario> lista = c_usuario.LeerUsuario(4, parametro);
 
-            //c_Listausuarios = Listausuarios.Count();
+            if (lista.Count > 0)
 
-            //for (int i = 0; i < c_Listausuarios; i++)
-            //{
-            //    if (Listausuarios[i] != usuario)
-            //    {
-            //        bx_usuario.Items.Add(Listausuarios[i]);
-            //    }
+            {
 
-            //}
+                foreach (dgUsuario d in lista)
+                {
+
+                    bx_usuario.Items.Add(d.Usuario);
+
+
+
+                }
+            }
+
+            else
+
+            {
+
+            }
         }
 
         private void bx_usuario_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //int id;
-            //string usuario;
-            //string retorno2;
-            //usuario = bx_usuario.Text;
-            //c_seguridad log = new c_seguridad();
-            //id = log.Checar_id(usuario);
-
-            //string idd;
-            //idd = Convert.ToString(id);
-            //List<string> Lista = new List<string>();
-
-
-            //c_seguridad log2 = new c_seguridad();
-            //Lista = log2.ChecarUC(idd);
-            //txt_usuarioo.Text = Lista[0];
-            //txt_contraseña.Text = Lista[1];
-
-
-            //c_seguridad log3 = new c_seguridad();
-            //retorno2 = log3.ChecarPerfil(Convert.ToString(Lista[2]));
-            //lblperfil.Text = Convert.ToString(retorno2);
+            int id;
+            string descripcion;
+            descripcion = bx_usuario.Text;
 
 
 
+            // acceder al valor del combobox 
+
+
+
+
+            descripcioncb.Text = bx_usuario.Text;
+
+
+            dgUsuario parametro2 = new dgUsuario
+            {
+                Usuario = Convert.ToString(descripcioncb.Text)
+            };
+
+            List<dgUsuario> lista2 = c_usuario.LeerUsuario(5, parametro2);
+
+            if (lista2.Count > 0)
+
+            {
+
+                foreach (dgUsuario d in lista2)
+                {
+                    bl_id_combobox.Text = d.Id_Usuario.ToString();
+                }
+            }
+
+            else
+
+            {
+                MessageBox.Show("No tiene Usuarios Agregadas", "Advertencia");
+            }
+
+
+
+
+
+
+            dgUsuario parametro3 = new dgUsuario
+            {
+                Id_Usuario = Convert.ToInt16(bl_id_combobox.Text)
+            };
+
+            List<dgUsuario> lista3 = c_usuario.LeerUsuario(3, parametro3);
+
+            if (lista3.Count > 0)
+
+            {
+
+                foreach (dgUsuario d in lista3)
+                {
+                    lblperfil.Text = d.DescripcionPerfil.ToString();
+                }
+            }
+
+            else
+
+            {
+                MessageBox.Show("No tiene Usuarios Agregadas", "Advertencia");
+            }
+
+            int idusuario = Convert.ToInt16(bl_id_combobox.Text);
+
+
+
+
+            dgUsuario parametro4 = new dgUsuario
+            {
+                Id_Usuario = idusuario
+            };
+
+            List<dgUsuario> lista4 = c_usuario.LeerUsuario(2, parametro4);
+
+            if (lista3.Count > 0)
+
+            {
+
+                foreach (dgUsuario d in lista4)
+                {
+                    txt_usuarioo.Text = d.Usuario.ToString();
+                    txt_contraseña.Text = d.Contrasenia.ToString();
+
+                }
+            }
+
+            else
+
+            {
+                MessageBox.Show("No tiene Usuarios Agregadas", "Advertencia");
+            }
 
 
 
