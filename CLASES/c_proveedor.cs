@@ -23,8 +23,9 @@ namespace PUNTOVENTA.CLASES
                 {
                     new SqlParameter("@Accion",1),
                     new SqlParameter("@P_Nombre",Parametro.Nombre),
-                    new SqlParameter("@P_Nombre",Parametro.Correo),
-                    new SqlParameter("@P_Nombre",Parametro.Telefono),
+                    new SqlParameter("@P_Correo",Parametro.Correo),
+                    new SqlParameter("@P_Telefono",Parametro.Telefono),
+                    new SqlParameter("@P_FechaEntrada",Parametro.FechaEntrada)
 
 
                 };

@@ -14,6 +14,6 @@ namespace PUNTOVENTA.ENTIDAD
         public string? Telefono { get; set; }
         public string? Correo { get; set; }
         public DateTime? FechaEntrada { get; set; }
-        public DateTime? FechaSalida { get; set; }
+        public DateTime? FechaModificacion { get; set; }
     }
 }

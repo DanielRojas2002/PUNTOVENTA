@@ -89,7 +89,10 @@ namespace PUNTOVENTA.MENU.PROVEEDOR
 
         private void btn_agregarProveedor_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            agregar_proveedor forms = new agregar_proveedor();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
         }
 
         private void btn_modificar_proveedor_Click(object sender, EventArgs e)
