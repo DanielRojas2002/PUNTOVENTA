@@ -88,13 +88,10 @@ namespace Punto_de_Venta
 
         private void btn_modificar_Click(object sender, EventArgs e)
         {
-            string tabla;
+     
 
             try
             {
-
-
-                string valor = bx_usuario.SelectedItem.ToString();
 
                 if (txt_usuarioo.Text == "")
                 {
@@ -134,7 +131,7 @@ namespace Punto_de_Venta
 
                     else
                     {
-                        MessageBox.Show("Usuario Modificada", "Correcto");
+                        MessageBox.Show("Usuario Modificado", "Correcto");
 
                         string id;
                         id = lbl_id.Text;
@@ -161,11 +158,6 @@ namespace Punto_de_Venta
                             }
 
 
-
-
-                            txt_usuario.Text = ("Bievenido usuario: " + retorno);
-
-
                         }
 
 
@@ -190,7 +182,7 @@ namespace Punto_de_Venta
                             }
 
 
-                            lbl_perfil.Text = ("Perfil: " + retorno2);
+                    
 
 
                         }
@@ -212,7 +204,7 @@ namespace Punto_de_Venta
             }
             catch
             {
-                MessageBox.Show("Seleccione una Medida", "Error");
+                MessageBox.Show("Seleccione un Usuario a Modificar", "Error");
             }
 
             
@@ -233,7 +225,8 @@ namespace Punto_de_Venta
 
         private void modificar_usuario_Activated(object sender, EventArgs e)
         {
-            bx_usuario.Items.Clear();
+     
+            
             int id;
             string descripcion;
             descripcion = bx_usuario.Text;
