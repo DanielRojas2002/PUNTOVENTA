@@ -149,5 +149,20 @@ namespace PUNTOVENTA.MENU.PRODUCTO
             formulario.txt_usuario.Text = Convert.ToString(retorno);
             formulario.Show();
         }
+
+        private void btn_agregar_producto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void datagrid_productos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btn_aplicar_filtro_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
