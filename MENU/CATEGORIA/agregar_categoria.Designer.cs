@@ -61,9 +61,10 @@
             // 
             this.btn_regresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_regresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_regresar.Image")));
-            this.btn_regresar.Location = new System.Drawing.Point(12, 36);
+            this.btn_regresar.Location = new System.Drawing.Point(14, 48);
+            this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(43, 26);
+            this.btn_regresar.Size = new System.Drawing.Size(49, 35);
             this.btn_regresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_regresar.TabIndex = 36;
             this.btn_regresar.TabStop = false;
@@ -72,9 +73,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(10, 91);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 121);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(217, 182);
+            this.pictureBox1.Size = new System.Drawing.Size(248, 243);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 49;
             this.pictureBox1.TabStop = false;
@@ -84,18 +86,20 @@
             this.txt_descripcion.BackColor = System.Drawing.Color.White;
             this.txt_descripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_descripcion.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_descripcion.ForeColor = System.Drawing.Color.White;
-            this.txt_descripcion.Location = new System.Drawing.Point(22, 20);
+            this.txt_descripcion.ForeColor = System.Drawing.Color.Black;
+            this.txt_descripcion.Location = new System.Drawing.Point(25, 27);
+            this.txt_descripcion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_descripcion.Name = "txt_descripcion";
-            this.txt_descripcion.Size = new System.Drawing.Size(203, 19);
+            this.txt_descripcion.Size = new System.Drawing.Size(232, 24);
             this.txt_descripcion.TabIndex = 6;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(240, 233);
+            this.pictureBox4.Location = new System.Drawing.Point(274, 311);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(61, 40);
+            this.pictureBox4.Size = new System.Drawing.Size(70, 53);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 37;
             this.pictureBox4.TabStop = false;
@@ -105,9 +109,9 @@
             this.lbl_id.AutoSize = true;
             this.lbl_id.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_id.ForeColor = System.Drawing.Color.White;
-            this.lbl_id.Location = new System.Drawing.Point(255, 196);
+            this.lbl_id.Location = new System.Drawing.Point(291, 261);
             this.lbl_id.Name = "lbl_id";
-            this.lbl_id.Size = new System.Drawing.Size(25, 19);
+            this.lbl_id.Size = new System.Drawing.Size(30, 23);
             this.lbl_id.TabIndex = 46;
             this.lbl_id.Text = "id";
             this.lbl_id.Visible = false;
@@ -121,9 +125,10 @@
             this.btn_crear_categoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_crear_categoria.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_crear_categoria.ForeColor = System.Drawing.Color.White;
-            this.btn_crear_categoria.Location = new System.Drawing.Point(307, 233);
+            this.btn_crear_categoria.Location = new System.Drawing.Point(351, 311);
+            this.btn_crear_categoria.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_crear_categoria.Name = "btn_crear_categoria";
-            this.btn_crear_categoria.Size = new System.Drawing.Size(180, 40);
+            this.btn_crear_categoria.Size = new System.Drawing.Size(206, 53);
             this.btn_crear_categoria.TabIndex = 35;
             this.btn_crear_categoria.Text = "CREAR CATEGORIA";
             this.btn_crear_categoria.UseVisualStyleBackColor = false;
@@ -135,9 +140,9 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Cooper Black", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(91, 52);
+            this.label1.Location = new System.Drawing.Point(104, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(351, 36);
+            this.label1.Size = new System.Drawing.Size(444, 46);
             this.label1.TabIndex = 48;
             this.label1.Text = "CREAR CATEGORIA";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -147,9 +152,9 @@
             this.lbl_perfil.AutoSize = true;
             this.lbl_perfil.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_perfil.ForeColor = System.Drawing.Color.White;
-            this.lbl_perfil.Location = new System.Drawing.Point(424, 196);
+            this.lbl_perfil.Location = new System.Drawing.Point(485, 261);
             this.lbl_perfil.Name = "lbl_perfil";
-            this.lbl_perfil.Size = new System.Drawing.Size(61, 19);
+            this.lbl_perfil.Size = new System.Drawing.Size(73, 23);
             this.lbl_perfil.TabIndex = 47;
             this.lbl_perfil.Text = "perfil:";
             this.lbl_perfil.Visible = false;
@@ -160,9 +165,9 @@
             this.txt_usuario.AutoSize = true;
             this.txt_usuario.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txt_usuario.ForeColor = System.Drawing.Color.White;
-            this.txt_usuario.Location = new System.Drawing.Point(305, 196);
+            this.txt_usuario.Location = new System.Drawing.Point(349, 261);
             this.txt_usuario.Name = "txt_usuario";
-            this.txt_usuario.Size = new System.Drawing.Size(78, 19);
+            this.txt_usuario.Size = new System.Drawing.Size(95, 23);
             this.txt_usuario.TabIndex = 45;
             this.txt_usuario.Text = "usuario:";
             this.txt_usuario.Visible = false;
@@ -173,9 +178,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label2.Location = new System.Drawing.Point(251, 100);
+            this.label2.Location = new System.Drawing.Point(287, 133);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 21);
+            this.label2.Size = new System.Drawing.Size(114, 28);
             this.label2.TabIndex = 38;
             this.label2.Text = "Descripcion";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -183,9 +188,10 @@
             // panel12
             // 
             this.panel12.Controls.Add(this.txt_descripcion);
-            this.panel12.Location = new System.Drawing.Point(251, 110);
+            this.panel12.Location = new System.Drawing.Point(287, 147);
+            this.panel12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(236, 61);
+            this.panel12.Size = new System.Drawing.Size(270, 81);
             this.panel12.TabIndex = 39;
             // 
             // tableLayoutPanel1
@@ -193,12 +199,13 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(38, 22);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(43, 29);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(8, 8);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(9, 11);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // cerrarapp
@@ -206,9 +213,10 @@
             this.cerrarapp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cerrarapp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cerrarapp.Image = ((System.Drawing.Image)(resources.GetObject("cerrarapp.Image")));
-            this.cerrarapp.Location = new System.Drawing.Point(1274, 3);
+            this.cerrarapp.Location = new System.Drawing.Point(1456, 4);
+            this.cerrarapp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cerrarapp.Name = "cerrarapp";
-            this.cerrarapp.Size = new System.Drawing.Size(25, 23);
+            this.cerrarapp.Size = new System.Drawing.Size(29, 31);
             this.cerrarapp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.cerrarapp.TabIndex = 0;
             this.cerrarapp.TabStop = false;
@@ -218,9 +226,10 @@
             this.btn_minimzar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_minimzar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_minimzar.Image = ((System.Drawing.Image)(resources.GetObject("btn_minimzar.Image")));
-            this.btn_minimzar.Location = new System.Drawing.Point(1235, 3);
+            this.btn_minimzar.Location = new System.Drawing.Point(1411, 4);
+            this.btn_minimzar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_minimzar.Name = "btn_minimzar";
-            this.btn_minimzar.Size = new System.Drawing.Size(34, 23);
+            this.btn_minimzar.Size = new System.Drawing.Size(39, 31);
             this.btn_minimzar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_minimzar.TabIndex = 1;
             this.btn_minimzar.TabStop = false;
@@ -230,9 +239,10 @@
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(481, 3);
+            this.pictureBox3.Location = new System.Drawing.Point(550, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(25, 23);
+            this.pictureBox3.Size = new System.Drawing.Size(29, 31);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 51;
             this.pictureBox3.TabStop = false;
@@ -243,9 +253,10 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(442, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(505, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 23);
+            this.pictureBox2.Size = new System.Drawing.Size(39, 31);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 52;
             this.pictureBox2.TabStop = false;
@@ -261,16 +272,17 @@
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(509, 29);
+            this.panel1.Size = new System.Drawing.Size(582, 39);
             this.panel1.TabIndex = 50;
             // 
             // agregar_categoria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.ClientSize = new System.Drawing.Size(509, 299);
+            this.ClientSize = new System.Drawing.Size(582, 399);
             this.Controls.Add(this.btn_regresar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox4);
@@ -283,7 +295,6 @@
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "agregar_categoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "agregar_categoria";

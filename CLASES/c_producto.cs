@@ -36,7 +36,7 @@ namespace Punto_de_Venta.Clases
 
                 };
 
-                tabla = bdContext.funcionStored("spProveedor", parametros);
+                tabla = bdContext.funcionStored("spProducto", parametros);
                 control = tabla.Rows[0][0].ToString();
 
 
@@ -52,7 +52,7 @@ namespace Punto_de_Venta.Clases
         }
 
 
-        public static string ModificarProducto(dgCategoria Parametro)
+        public static string ModificarProducto(dgProducto Parametro)
         {
 
 
@@ -67,12 +67,18 @@ namespace Punto_de_Venta.Clases
                 {
                     new SqlParameter("@Accion",3),
                     new SqlParameter("@P_IdCategoria",Parametro.Id_Categoria),
-                    new SqlParameter("@P_Descripcion",Parametro.Descripcion)
+                    new SqlParameter("@P_IdMedida",Parametro.Id_Medida),
+                    new SqlParameter("@P_IdProveedor",Parametro.Id_Proveedor),
+                    new SqlParameter("@P_Nombre",Parametro.Nombre),
+                    new SqlParameter("@P_Descripcion",Parametro.Descripcion),
+                    new SqlParameter("@P_PrecioCompra",Parametro.PrecioCompra),
+                    new SqlParameter("@P_PrecioVenta",Parametro.PrecioVenta)
+                    
 
 
                 };
 
-                tabla = bdContext.funcionStored("spCategoria", parametros);
+                tabla = bdContext.funcionStored("spProducto", parametros);
                 control = tabla.Rows[0][0].ToString();
 
 
@@ -86,7 +92,7 @@ namespace Punto_de_Venta.Clases
             return control;
 
         }
-        public static string EliminarProducto(dgCategoria Parametro)
+        public static string EliminarProducto(dgProducto Parametro)
         {
 
 
@@ -100,12 +106,12 @@ namespace Punto_de_Venta.Clases
                 SqlParameter[] parametros =
                 {
                     new SqlParameter("@Accion",4),
-                    new SqlParameter("@P_IdCategoria",Parametro.Id_Categoria)
+                    new SqlParameter("@P_IdProducto",Parametro.Id_Producto)
 
 
                 };
 
-                tabla = bdContext.funcionStored("spCategoria", parametros);
+                tabla = bdContext.funcionStored("spProducto", parametros);
                 control = tabla.Rows[0][0].ToString();
 
 
@@ -135,7 +141,7 @@ namespace Punto_de_Venta.Clases
                 new SqlParameter("@Accion",5)
                 };
 
-                tabla = bdContext.funcionStored("spCategoria", Parametros);
+                tabla = bdContext.funcionStored("spProducto", Parametros);
 
                 if (tabla.Rows.Count > 0)
                 {

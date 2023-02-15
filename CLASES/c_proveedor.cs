@@ -126,7 +126,7 @@ namespace PUNTOVENTA.CLASES
 
                 SqlParameter[] Parametros =
                 {
-                new SqlParameter("@Accion",5)
+                new SqlParameter("@Accion",6)
                 };
 
                 tabla = bdContext.funcionStored("spProveedor", Parametros);
@@ -182,6 +182,33 @@ namespace PUNTOVENTA.CLASES
                 SqlParameter[] Parametros =
                 {
                     new SqlParameter("@Accion",5),
+                    new SqlParameter("@P_Nombre",Parametro.Nombre)
+                };
+
+                tabla = bdContext.funcionStored("spProveedor", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgProveedor
+                             {
+                                 Id_Proveedor = Convert.ToInt16(fila["Id_Proveedor"].ToString())
+
+
+
+                             }
+                   ).ToList();
+                }
+            }
+
+
+            else if (tipo == 4)
+
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",7),
                     new SqlParameter("@P_Nombre",Parametro.Nombre)
                 };
 
