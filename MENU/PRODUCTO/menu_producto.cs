@@ -106,12 +106,6 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                     retorno = Convert.ToString(d.Usuario.ToString());
                 }
 
-
-
-
-                txt_usuario.Text = ("Bievenido usuario: " + retorno);
-
-
             }
 
 
@@ -136,8 +130,6 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                 }
 
 
-                lbl_perfil.Text = ("Perfil: " + retorno2);
-
 
             }
 
@@ -152,7 +144,12 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
         private void btn_agregar_producto_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            agregar_producto formulario = new agregar_producto();
+            formulario.lbl_id.Text = lbl_id.Text;
+            formulario.lbl_perfil.Text = lbl_perfil.Text;
+            formulario.txt_usuario.Text = txt_usuario.Text;
+            formulario.Show();
         }
 
         private void datagrid_productos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -161,6 +158,21 @@ namespace PUNTOVENTA.MENU.PRODUCTO
         }
 
         private void btn_aplicar_filtro_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bx_categorias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bx_medidas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bx_proveedores_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
