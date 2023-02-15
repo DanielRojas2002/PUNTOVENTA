@@ -278,5 +278,10 @@ namespace PUNTOVENTA.MENU.MEDIDA
         {
             Application.Exit();
         }
+
+        private void lbl_id_medida_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

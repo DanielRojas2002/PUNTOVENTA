@@ -46,7 +46,7 @@ namespace PUNTOVENTA.CLASES
         }
 
 
-        public static string ModificarMedida(dgMedida Parametro)
+        public static string ModificarProveedor(dgProveedor Parametro)
         {
 
 
@@ -60,13 +60,13 @@ namespace PUNTOVENTA.CLASES
                 SqlParameter[] parametros =
                 {
                     new SqlParameter("@Accion",3),
-                    new SqlParameter("@P_IdMedida",Parametro.Id_Medida),
-                    new SqlParameter("@P_Descripcion",Parametro.Descripcion)
+                    new SqlParameter("@P_IdProveedor",Parametro.Id_Proveedor),
+                    new SqlParameter("@P_IdProveedor", Parametro.Id_Proveedor)
 
 
                 };
 
-                tabla = bdContext.funcionStored("spMedida", parametros);
+                tabla = bdContext.funcionStored("spNombre", parametros);
                 control = tabla.Rows[0][0].ToString();
 
 
@@ -80,7 +80,7 @@ namespace PUNTOVENTA.CLASES
             return control;
 
         }
-        public static string EliminarMedida(dgMedida Parametro)
+        public static string EliminarProveedor(dgProveedor Parametro)
         {
 
 
@@ -94,12 +94,12 @@ namespace PUNTOVENTA.CLASES
                 SqlParameter[] parametros =
                 {
                     new SqlParameter("@Accion",4),
-                    new SqlParameter("@P_IdMedida",Parametro.Id_Medida)
+                    new SqlParameter("@P_IdProveedor",Parametro.Id_Proveedor)
 
 
                 };
 
-                tabla = bdContext.funcionStored("spMedida", parametros);
+                tabla = bdContext.funcionStored("spProveedor", parametros);
                 control = tabla.Rows[0][0].ToString();
 
 
@@ -114,13 +114,13 @@ namespace PUNTOVENTA.CLASES
 
         }
 
-        public static List<dgMedida> LeerMedida(int tipo, dgMedida Parametro)
+        public static List<dgProveedor> LeerProveedor(int tipo, dgProveedor Parametro)
         {
 
-            List<dgMedida> lista = new List<dgMedida>();
+            List<dgProveedor> lista = new List<dgProveedor>();
             DataTable tabla = new DataTable();
 
-            //5 = con descripcion
+            //5 = con nombre
             if (tipo == 1)
             {
 
@@ -129,14 +129,14 @@ namespace PUNTOVENTA.CLASES
                 new SqlParameter("@Accion",5)
                 };
 
-                tabla = bdContext.funcionStored("spMedida", Parametros);
+                tabla = bdContext.funcionStored("spProveedor", Parametros);
 
                 if (tabla.Rows.Count > 0)
                 {
                     lista = (from DataRow fila in tabla.Rows
-                             select new dgMedida
+                             select new dgProveedor
                              {
-                                 Descripcion = Convert.ToString(fila["Descripcion"].ToString())
+                                 Nombre = Convert.ToString(fila["Nombre"].ToString())
 
 
 
@@ -146,25 +146,27 @@ namespace PUNTOVENTA.CLASES
 
 
             }
-            // 6 con Id_Categoria
+
+
+            // 6 con Id_Proveedor
             else if (tipo == 2)
 
             {
 
                 SqlParameter[] Parametros =
                 {
-                    new SqlParameter("@Accion",6),
-                    new SqlParameter("@P_Descripcion",Parametro.Descripcion)
+                    new SqlParameter("@Accion",2)
+                  
                 };
 
-                tabla = bdContext.funcionStored("spMedida", Parametros);
+                tabla = bdContext.funcionStored("spProveedor", Parametros);
 
                 if (tabla.Rows.Count > 0)
                 {
                     lista = (from DataRow fila in tabla.Rows
-                             select new dgMedida
+                             select new dgProveedor
                              {
-                                 Id_Medida = Convert.ToInt16(fila["Id_Medida"].ToString())
+                                 Nombre = Convert.ToString(fila["Nombre"].ToString())
 
 
 
@@ -179,18 +181,18 @@ namespace PUNTOVENTA.CLASES
 
                 SqlParameter[] Parametros =
                 {
-                    new SqlParameter("@Accion",7),
-                    new SqlParameter("@P_IdMedida",Parametro.Id_Medida)
+                    new SqlParameter("@Accion",5),
+                    new SqlParameter("@P_Nombre",Parametro.Nombre)
                 };
 
-                tabla = bdContext.funcionStored("spMedida", Parametros);
+                tabla = bdContext.funcionStored("spProveedor", Parametros);
 
                 if (tabla.Rows.Count > 0)
                 {
                     lista = (from DataRow fila in tabla.Rows
-                             select new dgMedida
+                             select new dgProveedor
                              {
-                                 Descripcion = Convert.ToString(fila["Descripcion"].ToString())
+                                 Id_Proveedor = Convert.ToInt16(fila["Id_Proveedor"].ToString())
 
 
 

@@ -102,7 +102,10 @@ namespace PUNTOVENTA.MENU.PROVEEDOR
 
         private void btn_eliminar_proveedor_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            eliminar_proveedor forms = new eliminar_proveedor();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
