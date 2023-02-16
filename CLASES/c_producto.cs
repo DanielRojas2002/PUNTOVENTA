@@ -126,10 +126,10 @@ namespace Punto_de_Venta.Clases
 
         }
 
-        public static List<dgCategoria> LeerProducto(int tipo, dgCategoria Parametro)
+        public static List<dgProducto> LeerProducto(int tipo, dgProducto Parametro)
         {
 
-            List<dgCategoria> lista = new List<dgCategoria>();
+            List<dgProducto> lista = new List<dgProducto>();
             DataTable tabla = new DataTable();
 
             //5 = con descripcion
@@ -146,7 +146,7 @@ namespace Punto_de_Venta.Clases
                 if (tabla.Rows.Count > 0)
                 {
                     lista = (from DataRow fila in tabla.Rows
-                             select new dgCategoria
+                             select new dgProducto
                              {
                                  Descripcion = Convert.ToString(fila["Descripcion"].ToString())
 
@@ -174,7 +174,7 @@ namespace Punto_de_Venta.Clases
                 if (tabla.Rows.Count > 0)
                 {
                     lista = (from DataRow fila in tabla.Rows
-                             select new dgCategoria
+                             select new dgProducto
                              {
                                  Id_Categoria = Convert.ToInt16(fila["Id_Categoria"].ToString())
 
@@ -200,9 +200,40 @@ namespace Punto_de_Venta.Clases
                 if (tabla.Rows.Count > 0)
                 {
                     lista = (from DataRow fila in tabla.Rows
-                             select new dgCategoria
+                             select new dgProducto
                              {
                                  Descripcion = Convert.ToString(fila["Descripcion"].ToString())
+
+
+
+                             }
+                   ).ToList();
+                }
+            }
+
+            else if (tipo == 4) // select para el datagridview de productos
+
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",7),
+                    
+                };
+
+                tabla = bdContext.funcionStored("spProducto", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgProducto
+                             {
+                                 Id_Producto = Convert.ToInt16(fila["Id_Producto"].ToString()),
+                                 Id_Categoria = Convert.ToInt16(fila["Id_Categoria"].ToString()),
+                                 Id_Medida = Convert.ToInt16(fila["Id_Medida"].ToString()),
+                                 Nombre = Convert.ToString(fila["Nombre"].ToString()),
+                                 StockInicial = Convert.ToInt16(fila["Stock"].ToString())
+
 
 
 

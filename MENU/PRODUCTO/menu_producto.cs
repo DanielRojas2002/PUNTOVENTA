@@ -3,6 +3,9 @@ using PUNTOVENTA.CLASES;
 using PUNTOVENTA.ENTIDAD;
 using PUNTOVENTA.MENU.CATEGORIA;
 using PUNTOVENTA.MENU.MEDIDA;
+using System.Windows.Forms;
+using System;
+using Punto_de_Venta.Clases;
 
 namespace PUNTOVENTA.MENU.PRODUCTO
 {
@@ -47,6 +50,139 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
         private void menu_producto_Load(object sender, EventArgs e)
         {
+
+
+            dgProducto parametro = new dgProducto();
+
+            List<dgProducto> lista = c_producto.LeerProducto(4, parametro);
+
+
+            if (lista.Count > 0)
+
+            {
+                int idproducto, idcategoria, idmedida,stock;
+                string nombre, categoriadescripcion, medidadescripcion;
+                foreach (dgProducto d in lista)
+                {
+                    idproducto = Convert.ToInt16(d.Id_Producto.ToString());
+                    idcategoria = Convert.ToInt16(d.Id_Categoria.ToString());
+                    idmedida = Convert.ToInt16(d.Id_Medida.ToString());
+                    stock = Convert.ToInt16(d.StockInicial.ToString());
+
+                    nombre = Convert.ToString(d.Nombre.ToString());
+
+                    dgCategoria parametro2 = new dgCategoria
+                    {
+                        Id_Categoria = Convert.ToInt16(idcategoria.ToString())
+                    };
+
+                    List<dgCategoria> listacategoria = c_categoria.LeerCategoria(3, parametro2);
+
+
+                    dgMedida parametro3 = new dgMedida
+                    {
+                        Id_Medida = Convert.ToInt16(idmedida.ToString())
+                    };
+
+                    List<dgMedida> listamedida = c_medida.LeerMedida(3, parametro3);
+
+                    if (listacategoria.Count > 0 && listamedida.Count > 0)
+
+                    {
+                        categoriadescripcion = "";
+                        medidadescripcion = "";
+                        foreach (dgCategoria dg in listacategoria)
+                        {
+                            categoriadescripcion = Convert.ToString(dg.Descripcion.ToString());
+                        }
+
+                        foreach (dgMedida dg in listamedida)
+                        {
+                            medidadescripcion = Convert.ToString(dg.Descripcion.ToString());
+                        }
+
+                        dataGridView_productos.Rows.Add(idproducto, nombre, categoriadescripcion, medidadescripcion, idmedida, stock);
+                    }
+                   
+
+                }
+
+            }
+
+
+
+
+            bx_categorias.Items.Clear();
+            dgCategoria parametro2_1 = new dgCategoria
+            {
+
+            };
+
+            List<dgCategoria> listacategorias = c_categoria.LeerCategoria(1, parametro2_1);
+
+            if (lista.Count > 0)
+
+            {
+
+                foreach (dgCategoria d in listacategorias)
+                {
+                    bx_categorias.Items.Add(d.Descripcion.ToString());
+                }
+
+
+
+
+
+            }
+
+
+
+            bx_medidas.Items.Clear();
+
+            dgMedida parametro4 = new dgMedida
+            {
+
+            };
+
+            List<dgMedida> listamedidas = c_medida.LeerMedida(1, parametro4);
+
+            if (listamedidas.Count > 0)
+
+            {
+
+                foreach (dgMedida d in listamedidas)
+                {
+                    bx_medidas.Items.Add(d.Descripcion.ToString());
+                }
+
+
+
+
+
+            }
+
+
+            bx_proveedores.Items.Clear();
+
+            dgProveedor parametro5 = new dgProveedor
+            {
+
+            };
+
+            List<dgProveedor> listaproveedores = c_proveedor.LeerProveedor(1, parametro5);
+
+            if (listaproveedores.Count > 0)
+
+            {
+
+                foreach (dgProveedor d in listaproveedores)
+                {
+                    bx_proveedores.Items.Add(d.Nombre.ToString());
+                }
+
+            }
+
+
 
         }
      
@@ -173,6 +309,16 @@ namespace PUNTOVENTA.MENU.PRODUCTO
         }
 
         private void bx_proveedores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView_productos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dataGridView_productos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
