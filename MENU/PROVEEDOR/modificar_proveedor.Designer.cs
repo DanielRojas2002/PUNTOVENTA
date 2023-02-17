@@ -32,7 +32,7 @@
             this.lblperfil = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.bx_usuario = new System.Windows.Forms.ComboBox();
+            this.bx_proveedor = new System.Windows.Forms.ComboBox();
             this.panel_modificar_proveedor = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btn_modificar = new System.Windows.Forms.Button();
@@ -93,18 +93,17 @@
             // 
             this.lblperfil.AutoSize = true;
             this.lblperfil.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblperfil.Location = new System.Drawing.Point(545, 88);
+            this.lblperfil.Location = new System.Drawing.Point(477, 66);
             this.lblperfil.Name = "lblperfil";
-            this.lblperfil.Size = new System.Drawing.Size(0, 20);
+            this.lblperfil.Size = new System.Drawing.Size(0, 15);
             this.lblperfil.TabIndex = 62;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(61, 157);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(53, 118);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(223, 352);
+            this.pictureBox1.Size = new System.Drawing.Size(195, 264);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 60;
             this.pictureBox1.TabStop = false;
@@ -114,43 +113,40 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label2.Location = new System.Drawing.Point(343, 131);
+            this.label2.Location = new System.Drawing.Point(300, 98);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 28);
+            this.label2.Size = new System.Drawing.Size(82, 21);
             this.label2.TabIndex = 58;
             this.label2.Text = "Proveedor";
             // 
-            // bx_usuario
+            // bx_proveedor
             // 
-            this.bx_usuario.BackColor = System.Drawing.Color.Navy;
-            this.bx_usuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.bx_usuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bx_usuario.ForeColor = System.Drawing.Color.White;
-            this.bx_usuario.FormattingEnabled = true;
-            this.bx_usuario.Location = new System.Drawing.Point(405, 177);
-            this.bx_usuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.bx_usuario.Name = "bx_usuario";
-            this.bx_usuario.Size = new System.Drawing.Size(205, 28);
-            this.bx_usuario.TabIndex = 57;
-            this.bx_usuario.SelectedIndexChanged += new System.EventHandler(this.bx_proveedor_SelectedIndexChanged);
+            this.bx_proveedor.BackColor = System.Drawing.Color.Navy;
+            this.bx_proveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.bx_proveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bx_proveedor.ForeColor = System.Drawing.Color.White;
+            this.bx_proveedor.FormattingEnabled = true;
+            this.bx_proveedor.Location = new System.Drawing.Point(354, 133);
+            this.bx_proveedor.Name = "bx_proveedor";
+            this.bx_proveedor.Size = new System.Drawing.Size(180, 23);
+            this.bx_proveedor.TabIndex = 57;
+            this.bx_proveedor.SelectedIndexChanged += new System.EventHandler(this.bx_proveedor_SelectedIndexChanged);
             // 
             // panel_modificar_proveedor
             // 
             this.panel_modificar_proveedor.Controls.Add(this.pictureBox4);
             this.panel_modificar_proveedor.Controls.Add(this.btn_modificar);
-            this.panel_modificar_proveedor.Location = new System.Drawing.Point(350, 567);
-            this.panel_modificar_proveedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel_modificar_proveedor.Location = new System.Drawing.Point(306, 425);
             this.panel_modificar_proveedor.Name = "panel_modificar_proveedor";
-            this.panel_modificar_proveedor.Size = new System.Drawing.Size(289, 61);
+            this.panel_modificar_proveedor.Size = new System.Drawing.Size(253, 46);
             this.panel_modificar_proveedor.TabIndex = 56;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(0, 4);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox4.Location = new System.Drawing.Point(0, 3);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(58, 53);
+            this.pictureBox4.Size = new System.Drawing.Size(51, 40);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 15;
             this.pictureBox4.TabStop = false;
@@ -163,10 +159,9 @@
             this.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_modificar.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_modificar.ForeColor = System.Drawing.Color.White;
-            this.btn_modificar.Location = new System.Drawing.Point(69, 4);
-            this.btn_modificar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_modificar.Location = new System.Drawing.Point(60, 3);
             this.btn_modificar.Name = "btn_modificar";
-            this.btn_modificar.Size = new System.Drawing.Size(221, 53);
+            this.btn_modificar.Size = new System.Drawing.Size(193, 40);
             this.btn_modificar.TabIndex = 0;
             this.btn_modificar.Text = "MODIFICAR PROVEEDOR";
             this.btn_modificar.UseVisualStyleBackColor = false;
@@ -177,9 +172,9 @@
             this.lbl_perfil.AutoSize = true;
             this.lbl_perfil.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_perfil.ForeColor = System.Drawing.Color.White;
-            this.lbl_perfil.Location = new System.Drawing.Point(382, 51);
+            this.lbl_perfil.Location = new System.Drawing.Point(334, 38);
             this.lbl_perfil.Name = "lbl_perfil";
-            this.lbl_perfil.Size = new System.Drawing.Size(73, 23);
+            this.lbl_perfil.Size = new System.Drawing.Size(61, 19);
             this.lbl_perfil.TabIndex = 55;
             this.lbl_perfil.Text = "perfil:";
             this.lbl_perfil.Visible = false;
@@ -189,9 +184,9 @@
             this.txt_usuario.AutoSize = true;
             this.txt_usuario.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txt_usuario.ForeColor = System.Drawing.Color.White;
-            this.txt_usuario.Location = new System.Drawing.Point(171, 55);
+            this.txt_usuario.Location = new System.Drawing.Point(150, 41);
             this.txt_usuario.Name = "txt_usuario";
-            this.txt_usuario.Size = new System.Drawing.Size(123, 23);
+            this.txt_usuario.Size = new System.Drawing.Size(99, 19);
             this.txt_usuario.TabIndex = 54;
             this.txt_usuario.Text = "proveedor:";
             this.txt_usuario.Visible = false;
@@ -201,9 +196,9 @@
             this.lbl_id.AutoSize = true;
             this.lbl_id.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_id.ForeColor = System.Drawing.Color.White;
-            this.lbl_id.Location = new System.Drawing.Point(90, 56);
+            this.lbl_id.Location = new System.Drawing.Point(79, 42);
             this.lbl_id.Name = "lbl_id";
-            this.lbl_id.Size = new System.Drawing.Size(30, 23);
+            this.lbl_id.Size = new System.Drawing.Size(25, 19);
             this.lbl_id.TabIndex = 53;
             this.lbl_id.Text = "id";
             this.lbl_id.Visible = false;
@@ -213,9 +208,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cooper Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(138, 77);
+            this.label1.Location = new System.Drawing.Point(121, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(464, 39);
+            this.label1.Size = new System.Drawing.Size(376, 31);
             this.label1.TabIndex = 52;
             this.label1.Text = "MODIFICAR PROVEEDOR";
             // 
@@ -223,10 +218,9 @@
             // 
             this.btn_regresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_regresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_regresar.Image")));
-            this.btn_regresar.Location = new System.Drawing.Point(14, 51);
-            this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_regresar.Location = new System.Drawing.Point(12, 38);
             this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(46, 44);
+            this.btn_regresar.Size = new System.Drawing.Size(40, 33);
             this.btn_regresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_regresar.TabIndex = 51;
             this.btn_regresar.TabStop = false;
@@ -236,7 +230,7 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.Navy;
             this.panel8.Controls.Add(this.panel3);
-            this.panel8.Controls.Add(this.bx_usuario);
+            this.panel8.Controls.Add(this.bx_proveedor);
             this.panel8.Controls.Add(this.lbl_id_proveedor);
             this.panel8.Controls.Add(this.panel2);
             this.panel8.Controls.Add(this.label1);
@@ -251,9 +245,11 @@
             this.panel8.Controls.Add(this.btn_regresar);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(693, 652);
+            this.panel8.Size = new System.Drawing.Size(606, 489);
             this.panel8.TabIndex = 63;
+            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             // 
             // panel3
             // 
@@ -273,9 +269,8 @@
             this.panel3.Controls.Add(this.tableLayoutPanel1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(693, 39);
+            this.panel3.Size = new System.Drawing.Size(606, 29);
             this.panel3.TabIndex = 78;
             // 
             // pictureBox12
@@ -283,36 +278,35 @@
             this.pictureBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(661, 4);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox12.Location = new System.Drawing.Point(578, 3);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(29, 31);
+            this.pictureBox12.Size = new System.Drawing.Size(25, 23);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox12.TabIndex = 68;
             this.pictureBox12.TabStop = false;
+            this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
             // 
             // pictureBox11
             // 
             this.pictureBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(615, 4);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox11.Location = new System.Drawing.Point(538, 3);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(39, 31);
+            this.pictureBox11.Size = new System.Drawing.Size(34, 23);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox11.TabIndex = 67;
             this.pictureBox11.TabStop = false;
+            this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
             // 
             // pictureBox9
             // 
             this.pictureBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(1025, 4);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox9.Location = new System.Drawing.Point(897, 3);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(39, 31);
+            this.pictureBox9.Size = new System.Drawing.Size(34, 23);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 66;
             this.pictureBox9.TabStop = false;
@@ -322,10 +316,9 @@
             this.pictureBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(1070, 4);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox10.Location = new System.Drawing.Point(936, 3);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(29, 31);
+            this.pictureBox10.Size = new System.Drawing.Size(25, 23);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox10.TabIndex = 65;
             this.pictureBox10.TabStop = false;
@@ -335,10 +328,9 @@
             this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(1413, 4);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox7.Location = new System.Drawing.Point(1236, 3);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(39, 31);
+            this.pictureBox7.Size = new System.Drawing.Size(34, 23);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 64;
             this.pictureBox7.TabStop = false;
@@ -348,10 +340,9 @@
             this.pictureBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(1457, 4);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox8.Location = new System.Drawing.Point(1275, 3);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(29, 31);
+            this.pictureBox8.Size = new System.Drawing.Size(25, 23);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 63;
             this.pictureBox8.TabStop = false;
@@ -361,10 +352,9 @@
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(1814, 4);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox5.Location = new System.Drawing.Point(1587, 3);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(39, 31);
+            this.pictureBox5.Size = new System.Drawing.Size(34, 23);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 62;
             this.pictureBox5.TabStop = false;
@@ -374,10 +364,9 @@
             this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(1859, 4);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox6.Location = new System.Drawing.Point(1627, 3);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(29, 31);
+            this.pictureBox6.Size = new System.Drawing.Size(25, 23);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 61;
             this.pictureBox6.TabStop = false;
@@ -387,10 +376,9 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(2198, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(1923, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(39, 31);
+            this.pictureBox2.Size = new System.Drawing.Size(34, 23);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 52;
             this.pictureBox2.TabStop = false;
@@ -400,10 +388,9 @@
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(2243, 4);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(1963, 3);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(29, 31);
+            this.pictureBox3.Size = new System.Drawing.Size(25, 23);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 51;
             this.pictureBox3.TabStop = false;
@@ -413,10 +400,9 @@
             this.btn_minimzar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_minimzar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_minimzar.Image = ((System.Drawing.Image)(resources.GetObject("btn_minimzar.Image")));
-            this.btn_minimzar.Location = new System.Drawing.Point(3104, 4);
-            this.btn_minimzar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_minimzar.Location = new System.Drawing.Point(2716, 3);
             this.btn_minimzar.Name = "btn_minimzar";
-            this.btn_minimzar.Size = new System.Drawing.Size(39, 31);
+            this.btn_minimzar.Size = new System.Drawing.Size(34, 23);
             this.btn_minimzar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_minimzar.TabIndex = 1;
             this.btn_minimzar.TabStop = false;
@@ -426,10 +412,9 @@
             this.cerrarapp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cerrarapp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cerrarapp.Image = ((System.Drawing.Image)(resources.GetObject("cerrarapp.Image")));
-            this.cerrarapp.Location = new System.Drawing.Point(3149, 4);
-            this.cerrarapp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cerrarapp.Location = new System.Drawing.Point(2755, 3);
             this.cerrarapp.Name = "cerrarapp";
-            this.cerrarapp.Size = new System.Drawing.Size(29, 31);
+            this.cerrarapp.Size = new System.Drawing.Size(25, 23);
             this.cerrarapp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.cerrarapp.TabIndex = 0;
             this.cerrarapp.TabStop = false;
@@ -439,13 +424,12 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(43, 29);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(38, 22);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(9, 11);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(8, 8);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lbl_id_proveedor
@@ -453,9 +437,9 @@
             this.lbl_id_proveedor.AutoSize = true;
             this.lbl_id_proveedor.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_id_proveedor.ForeColor = System.Drawing.Color.White;
-            this.lbl_id_proveedor.Location = new System.Drawing.Point(554, 131);
+            this.lbl_id_proveedor.Location = new System.Drawing.Point(485, 98);
             this.lbl_id_proveedor.Name = "lbl_id_proveedor";
-            this.lbl_id_proveedor.Size = new System.Drawing.Size(137, 23);
+            this.lbl_id_proveedor.Size = new System.Drawing.Size(110, 19);
             this.lbl_id_proveedor.TabIndex = 77;
             this.lbl_id_proveedor.Text = "idproveedor";
             this.lbl_id_proveedor.Visible = false;
@@ -464,10 +448,9 @@
             // 
             this.panel2.Controls.Add(this.txt_telefono_proveedor);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(369, 460);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Location = new System.Drawing.Point(323, 345);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(270, 81);
+            this.panel2.Size = new System.Drawing.Size(236, 61);
             this.panel2.TabIndex = 67;
             // 
             // txt_telefono_proveedor
@@ -475,21 +458,21 @@
             this.txt_telefono_proveedor.BackColor = System.Drawing.Color.White;
             this.txt_telefono_proveedor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_telefono_proveedor.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_telefono_proveedor.ForeColor = System.Drawing.Color.White;
-            this.txt_telefono_proveedor.Location = new System.Drawing.Point(25, 27);
-            this.txt_telefono_proveedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_telefono_proveedor.ForeColor = System.Drawing.Color.Black;
+            this.txt_telefono_proveedor.Location = new System.Drawing.Point(22, 20);
             this.txt_telefono_proveedor.Name = "txt_telefono_proveedor";
-            this.txt_telefono_proveedor.Size = new System.Drawing.Size(232, 24);
+            this.txt_telefono_proveedor.Size = new System.Drawing.Size(203, 19);
             this.txt_telefono_proveedor.TabIndex = 6;
+            this.txt_telefono_proveedor.TextChanged += new System.EventHandler(this.txt_telefono_proveedor_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label4.Location = new System.Drawing.Point(3, -5);
+            this.label4.Location = new System.Drawing.Point(3, -4);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 28);
+            this.label4.Size = new System.Drawing.Size(73, 21);
             this.label4.TabIndex = 61;
             this.label4.Text = "Telefono:";
             // 
@@ -497,10 +480,9 @@
             // 
             this.panel1.Controls.Add(this.txt_correo_proveedor);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(369, 349);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Location = new System.Drawing.Point(323, 262);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(270, 81);
+            this.panel1.Size = new System.Drawing.Size(236, 61);
             this.panel1.TabIndex = 66;
             // 
             // txt_correo_proveedor
@@ -508,21 +490,21 @@
             this.txt_correo_proveedor.BackColor = System.Drawing.Color.White;
             this.txt_correo_proveedor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_correo_proveedor.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_correo_proveedor.ForeColor = System.Drawing.Color.White;
-            this.txt_correo_proveedor.Location = new System.Drawing.Point(25, 27);
-            this.txt_correo_proveedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_correo_proveedor.ForeColor = System.Drawing.Color.Black;
+            this.txt_correo_proveedor.Location = new System.Drawing.Point(22, 20);
             this.txt_correo_proveedor.Name = "txt_correo_proveedor";
-            this.txt_correo_proveedor.Size = new System.Drawing.Size(232, 24);
+            this.txt_correo_proveedor.Size = new System.Drawing.Size(203, 19);
             this.txt_correo_proveedor.TabIndex = 6;
+            this.txt_correo_proveedor.TextChanged += new System.EventHandler(this.txt_correo_proveedor_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label3.Location = new System.Drawing.Point(3, -5);
+            this.label3.Location = new System.Drawing.Point(3, -4);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 28);
+            this.label3.Size = new System.Drawing.Size(61, 21);
             this.label3.TabIndex = 59;
             this.label3.Text = "Correo:";
             // 
@@ -530,10 +512,9 @@
             // 
             this.panel12.Controls.Add(this.txt_nombre_proveedor);
             this.panel12.Controls.Add(this.label5);
-            this.panel12.Location = new System.Drawing.Point(369, 244);
-            this.panel12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel12.Location = new System.Drawing.Point(323, 183);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(270, 81);
+            this.panel12.Size = new System.Drawing.Size(236, 61);
             this.panel12.TabIndex = 65;
             // 
             // txt_nombre_proveedor
@@ -541,33 +522,35 @@
             this.txt_nombre_proveedor.BackColor = System.Drawing.Color.White;
             this.txt_nombre_proveedor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_nombre_proveedor.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_nombre_proveedor.ForeColor = System.Drawing.Color.White;
-            this.txt_nombre_proveedor.Location = new System.Drawing.Point(25, 27);
-            this.txt_nombre_proveedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_nombre_proveedor.ForeColor = System.Drawing.Color.Black;
+            this.txt_nombre_proveedor.Location = new System.Drawing.Point(22, 20);
             this.txt_nombre_proveedor.Name = "txt_nombre_proveedor";
-            this.txt_nombre_proveedor.Size = new System.Drawing.Size(232, 24);
+            this.txt_nombre_proveedor.Size = new System.Drawing.Size(203, 19);
             this.txt_nombre_proveedor.TabIndex = 6;
+            this.txt_nombre_proveedor.TextChanged += new System.EventHandler(this.txt_nombre_proveedor_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label5.Location = new System.Drawing.Point(13, -5);
+            this.label5.Location = new System.Drawing.Point(11, -4);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 28);
+            this.label5.Size = new System.Drawing.Size(71, 21);
             this.label5.TabIndex = 64;
             this.label5.Text = "Nombre:";
             // 
             // modificar_proveedor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(693, 652);
+            this.ClientSize = new System.Drawing.Size(606, 489);
             this.Controls.Add(this.lblperfil);
             this.Controls.Add(this.panel8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "modificar_proveedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "modificar_proveedor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.modificar_proveedor_FormClosing);
             this.Load += new System.EventHandler(this.modificar_proveedor_Load);
@@ -606,7 +589,7 @@
         private Label lblperfil;
         private PictureBox pictureBox1;
         private Label label2;
-        private ComboBox bx_usuario;
+        private ComboBox bx_proveedor;
         private Panel panel_modificar_proveedor;
         private PictureBox pictureBox4;
         private Button btn_modificar;

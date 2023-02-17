@@ -76,7 +76,7 @@ namespace PUNTOVENTA.MENU.PROVEEDOR
 
 
             this.Hide();
-            Inicio formulario = new Inicio();
+            menu_proveedor formulario = new menu_proveedor();
             formulario.lbl_id.Text = id;
             formulario.lbl_perfil.Text = Convert.ToString(retorno2);
             formulario.txt_usuario.Text = Convert.ToString(retorno);

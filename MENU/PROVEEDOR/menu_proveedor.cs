@@ -97,7 +97,10 @@ namespace PUNTOVENTA.MENU.PROVEEDOR
 
         private void btn_modificar_proveedor_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            modificar_proveedor forms = new modificar_proveedor();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
         }
 
         private void btn_eliminar_proveedor_Click(object sender, EventArgs e)

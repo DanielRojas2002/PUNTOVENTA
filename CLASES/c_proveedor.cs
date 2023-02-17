@@ -61,12 +61,15 @@ namespace PUNTOVENTA.CLASES
                 {
                     new SqlParameter("@Accion",3),
                     new SqlParameter("@P_IdProveedor",Parametro.Id_Proveedor),
-                    new SqlParameter("@P_IdProveedor", Parametro.Id_Proveedor)
+                    new SqlParameter("@P_Nombre",Parametro.Nombre),
+                    new SqlParameter("@P_Correo",Parametro.Correo),
+                    new SqlParameter("@P_Telefono",Parametro.Telefono),
+                    new SqlParameter("@P_FechaModificacion",Parametro.FechaModificacion)
 
 
                 };
 
-                tabla = bdContext.funcionStored("spNombre", parametros);
+                tabla = bdContext.funcionStored("spProveedor", parametros);
                 control = tabla.Rows[0][0].ToString();
 
 
@@ -255,7 +258,58 @@ namespace PUNTOVENTA.CLASES
                 }
             }
 
+            else if (tipo == 6)
 
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",7),
+                    new SqlParameter("@P_Nombre",Parametro.Nombre)
+                };
+
+                tabla = bdContext.funcionStored("spProveedor", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgProveedor
+                             {
+                                 Id_Proveedor = Convert.ToInt16(fila["Id_Proveedor"].ToString())
+
+
+
+                             }
+                   ).ToList();
+                }
+            }
+
+            else if (tipo == 7)
+
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",10),
+                    new SqlParameter("@P_IdProveedor",Parametro.Id_Proveedor)
+                };
+
+                tabla = bdContext.funcionStored("spProveedor", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgProveedor
+                             {
+                                 Nombre = Convert.ToString(fila["Nombre"].ToString()),
+                                 Correo = Convert.ToString(fila["Correo"].ToString()),
+                                 Telefono = Convert.ToString(fila["Telefono"].ToString()),
+
+
+                             }
+                   ).ToList();
+                }
+            }
 
 
             return lista;
