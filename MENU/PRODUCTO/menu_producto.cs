@@ -101,7 +101,7 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                             medidadescripcion = Convert.ToString(dg.Descripcion.ToString());
                         }
 
-                        dataGridView_productos.Rows.Add(idproducto, nombre, categoriadescripcion, medidadescripcion, idmedida, stock);
+                        dataGridView_productos.Rows.Add(idproducto, nombre, categoriadescripcion, medidadescripcion, stock);
                     }
                    
 
