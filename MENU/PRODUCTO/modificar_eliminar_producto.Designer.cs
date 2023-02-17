@@ -32,6 +32,9 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.btn_regresar = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblidproveedor = new System.Windows.Forms.Label();
+            this.lblidmedida = new System.Windows.Forms.Label();
+            this.lblidcategoria = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -73,9 +76,6 @@
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblidcategoria = new System.Windows.Forms.Label();
-            this.lblidmedida = new System.Windows.Forms.Label();
-            this.lblidproveedor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             this.panel2.SuspendLayout();
@@ -151,6 +151,42 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(480, 388);
             this.panel2.TabIndex = 83;
+            // 
+            // lblidproveedor
+            // 
+            this.lblidproveedor.AutoSize = true;
+            this.lblidproveedor.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblidproveedor.ForeColor = System.Drawing.Color.White;
+            this.lblidproveedor.Location = new System.Drawing.Point(310, 277);
+            this.lblidproveedor.Name = "lblidproveedor";
+            this.lblidproveedor.Size = new System.Drawing.Size(110, 19);
+            this.lblidproveedor.TabIndex = 95;
+            this.lblidproveedor.Text = "idproveedor";
+            this.lblidproveedor.Visible = false;
+            // 
+            // lblidmedida
+            // 
+            this.lblidmedida.AutoSize = true;
+            this.lblidmedida.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblidmedida.ForeColor = System.Drawing.Color.White;
+            this.lblidmedida.Location = new System.Drawing.Point(364, 211);
+            this.lblidmedida.Name = "lblidmedida";
+            this.lblidmedida.Size = new System.Drawing.Size(83, 19);
+            this.lblidmedida.TabIndex = 94;
+            this.lblidmedida.Text = "idmedida";
+            this.lblidmedida.Visible = false;
+            // 
+            // lblidcategoria
+            // 
+            this.lblidcategoria.AutoSize = true;
+            this.lblidcategoria.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblidcategoria.ForeColor = System.Drawing.Color.White;
+            this.lblidcategoria.Location = new System.Drawing.Point(152, 209);
+            this.lblidcategoria.Name = "lblidcategoria";
+            this.lblidcategoria.Size = new System.Drawing.Size(100, 19);
+            this.lblidcategoria.TabIndex = 90;
+            this.lblidcategoria.Text = "idcategoria";
+            this.lblidcategoria.Visible = false;
             // 
             // label8
             // 
@@ -358,6 +394,7 @@
             this.bx_proveedor.Name = "bx_proveedor";
             this.bx_proveedor.Size = new System.Drawing.Size(337, 23);
             this.bx_proveedor.TabIndex = 82;
+            this.bx_proveedor.SelectedIndexChanged += new System.EventHandler(this.bx_proveedor_SelectedIndexChanged);
             // 
             // bx_categoria
             // 
@@ -618,42 +655,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(776, 29);
             this.panel1.TabIndex = 87;
-            // 
-            // lblidcategoria
-            // 
-            this.lblidcategoria.AutoSize = true;
-            this.lblidcategoria.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblidcategoria.ForeColor = System.Drawing.Color.White;
-            this.lblidcategoria.Location = new System.Drawing.Point(152, 209);
-            this.lblidcategoria.Name = "lblidcategoria";
-            this.lblidcategoria.Size = new System.Drawing.Size(100, 19);
-            this.lblidcategoria.TabIndex = 90;
-            this.lblidcategoria.Text = "idcategoria";
-            this.lblidcategoria.Visible = false;
-            // 
-            // lblidmedida
-            // 
-            this.lblidmedida.AutoSize = true;
-            this.lblidmedida.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblidmedida.ForeColor = System.Drawing.Color.White;
-            this.lblidmedida.Location = new System.Drawing.Point(364, 211);
-            this.lblidmedida.Name = "lblidmedida";
-            this.lblidmedida.Size = new System.Drawing.Size(83, 19);
-            this.lblidmedida.TabIndex = 94;
-            this.lblidmedida.Text = "idmedida";
-            this.lblidmedida.Visible = false;
-            // 
-            // lblidproveedor
-            // 
-            this.lblidproveedor.AutoSize = true;
-            this.lblidproveedor.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblidproveedor.ForeColor = System.Drawing.Color.White;
-            this.lblidproveedor.Location = new System.Drawing.Point(310, 277);
-            this.lblidproveedor.Name = "lblidproveedor";
-            this.lblidproveedor.Size = new System.Drawing.Size(110, 19);
-            this.lblidproveedor.TabIndex = 95;
-            this.lblidproveedor.Text = "idproveedor";
-            this.lblidproveedor.Visible = false;
             // 
             // modificar_eliminar_producto
             // 

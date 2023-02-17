@@ -162,6 +162,56 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                 }
 
 
+                // SEPARADOR
+
+                bx_proveedor.Items.Clear();
+
+                string descripcionproveedor = "";
+
+                dgProveedor parametro6 = new dgProveedor
+                {
+                    Id_Proveedor = Convert.ToInt16(lblidproveedor.Text)
+                };
+
+                List<dgProveedor> descripcionproveedores = c_proveedor.LeerProveedor(5, parametro6);
+
+                if (descripcionproveedores.Count > 0)
+
+                {
+
+                    foreach (dgProveedor d in descripcionproveedores)
+                    {
+                        descripcionproveedor = Convert.ToString(d.Nombre.ToString());
+                    }
+
+                }
+
+
+
+
+                dgProveedor parametro6_5 = new dgProveedor
+                {
+
+                };
+
+                List<dgProveedor> listaproveedortodas = c_proveedor.LeerProveedor(1, parametro6_5);
+
+                if (listaproveedortodas.Count > 0)
+
+                {
+
+                    foreach (dgProveedor d in listaproveedortodas)
+                    {
+                        bx_proveedor.Items.Add(d.Nombre.ToString());
+                    }
+
+                    bx_proveedor.SelectedItem = descripcionproveedor;
+
+
+
+
+
+                }
 
             }
         }
@@ -236,6 +286,11 @@ namespace PUNTOVENTA.MENU.PRODUCTO
             formulario.lbl_perfil.Text = Convert.ToString(retorno2);
             formulario.txt_usuario.Text = Convert.ToString(retorno);
             formulario.Show();
+        }
+
+        private void bx_proveedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
