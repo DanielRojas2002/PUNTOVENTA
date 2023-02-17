@@ -1,4 +1,5 @@
-﻿using PUNTOVENTA.CLASES;
+﻿using Punto_de_Venta.Clases;
+using PUNTOVENTA.CLASES;
 using PUNTOVENTA.ENTIDAD;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,36 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
         private void modificar_eliminar_producto_Load(object sender, EventArgs e)
         {
+            int idProducto;
+            idProducto = Convert.ToInt16(lblidproducto.Text);
 
+            
+
+            dgProducto parametro = new dgProducto
+            {
+                Id_Producto = idProducto
+
+            };
+
+
+
+            List<dgProducto> lista = c_producto.LeerProducto(5, parametro);
+
+            if (lista.Count > 0)
+
+            {
+
+                foreach (dgProducto d in lista)
+                {
+                    txt_nombre.Text = Convert.ToString(d.Nombre.ToString());
+                    txt_descripcion.Text = Convert.ToString(d.Descripcion.ToString());
+                    txt_preciocompra.Text = Convert.ToString(d.PrecioCompra.ToString());
+                    txt_precioventa.Text = Convert.ToString(d.PrecioVenta.ToString());
+                    txt_stockinicial.Text = Convert.ToString(d.StockInicial.ToString());
+                    
+                }
+
+            }
         }
 
         private void pictureBox9_Click(object sender, EventArgs e)

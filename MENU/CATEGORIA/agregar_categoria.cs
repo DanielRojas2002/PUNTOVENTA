@@ -132,10 +132,11 @@ namespace PUNTOVENTA.MENU.CATEGORIA
 
             else
             {
-                dgCategoria parametro = new dgCategoria();
+                dgCategoria parametro = new dgCategoria
+                {
+                    Descripcion = txt_descripcion.Text.Trim().ToUpper()
+                };
 
-                parametro.Descripcion= txt_descripcion.Text.Trim().ToUpper();
-               
 
 
                 string control = "";

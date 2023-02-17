@@ -27,9 +27,10 @@ namespace Punto_de_Venta
 
                 else
                 {
-                    dgUsuario parametro = new dgUsuario();
-
-                    parametro.Id_Usuario = Convert.ToInt16(bl_id_combobox.Text);
+                    dgUsuario parametro = new dgUsuario
+                    {
+                        Id_Usuario = Convert.ToInt16(bl_id_combobox.Text)
+                    };
 
 
 
@@ -328,6 +329,11 @@ namespace Punto_de_Venta
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void panel13_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

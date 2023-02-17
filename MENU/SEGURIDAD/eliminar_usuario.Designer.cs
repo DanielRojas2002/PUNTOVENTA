@@ -67,8 +67,9 @@
             this.panel4.Controls.Add(this.pictureBox6);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(481, 32);
+            this.panel4.Size = new System.Drawing.Size(550, 43);
             this.panel4.TabIndex = 6;
             // 
             // pictureBox5
@@ -76,9 +77,10 @@
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(413, 6);
+            this.pictureBox5.Location = new System.Drawing.Point(472, 8);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(34, 23);
+            this.pictureBox5.Size = new System.Drawing.Size(39, 31);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 64;
             this.pictureBox5.TabStop = false;
@@ -86,9 +88,10 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(0, 35);
+            this.panel1.Location = new System.Drawing.Point(0, 47);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(309, 416);
+            this.panel1.Size = new System.Drawing.Size(353, 555);
             this.panel1.TabIndex = 4;
             // 
             // pictureBox6
@@ -96,9 +99,10 @@
             this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(453, 6);
+            this.pictureBox6.Location = new System.Drawing.Point(518, 8);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(25, 23);
+            this.pictureBox6.Size = new System.Drawing.Size(29, 31);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 63;
             this.pictureBox6.TabStop = false;
@@ -107,9 +111,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 110);
+            this.pictureBox2.Location = new System.Drawing.Point(14, 147);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(211, 194);
+            this.pictureBox2.Size = new System.Drawing.Size(241, 259);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -119,9 +124,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cooper Black", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(55, 71);
+            this.label1.Location = new System.Drawing.Point(63, 95);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(359, 36);
+            this.label1.Size = new System.Drawing.Size(453, 46);
             this.label1.TabIndex = 17;
             this.label1.Text = "ELIMINAR USUARIO";
             // 
@@ -132,9 +137,10 @@
             this.bx_usuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bx_usuario.ForeColor = System.Drawing.Color.White;
             this.bx_usuario.FormattingEnabled = true;
-            this.bx_usuario.Location = new System.Drawing.Point(276, 163);
+            this.bx_usuario.Location = new System.Drawing.Point(315, 217);
+            this.bx_usuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bx_usuario.Name = "bx_usuario";
-            this.bx_usuario.Size = new System.Drawing.Size(180, 23);
+            this.bx_usuario.Size = new System.Drawing.Size(205, 28);
             this.bx_usuario.TabIndex = 30;
             this.bx_usuario.SelectedIndexChanged += new System.EventHandler(this.bx_usuario_SelectedIndexChanged);
             // 
@@ -142,17 +148,20 @@
             // 
             this.panel13.Controls.Add(this.pictureBox4);
             this.panel13.Controls.Add(this.btn_eliminar_usuario);
-            this.panel13.Location = new System.Drawing.Point(178, 310);
+            this.panel13.Location = new System.Drawing.Point(203, 413);
+            this.panel13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(291, 46);
+            this.panel13.Size = new System.Drawing.Size(333, 61);
             this.panel13.TabIndex = 31;
+            this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel13_Paint);
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox4.Location = new System.Drawing.Point(3, 4);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(61, 40);
+            this.pictureBox4.Size = new System.Drawing.Size(70, 53);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 15;
             this.pictureBox4.TabStop = false;
@@ -165,9 +174,10 @@
             this.btn_eliminar_usuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_eliminar_usuario.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_eliminar_usuario.ForeColor = System.Drawing.Color.White;
-            this.btn_eliminar_usuario.Location = new System.Drawing.Point(70, 3);
+            this.btn_eliminar_usuario.Location = new System.Drawing.Point(80, 4);
+            this.btn_eliminar_usuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_eliminar_usuario.Name = "btn_eliminar_usuario";
-            this.btn_eliminar_usuario.Size = new System.Drawing.Size(218, 40);
+            this.btn_eliminar_usuario.Size = new System.Drawing.Size(249, 53);
             this.btn_eliminar_usuario.TabIndex = 0;
             this.btn_eliminar_usuario.Text = "ELIMINAR USUARIO";
             this.btn_eliminar_usuario.UseVisualStyleBackColor = false;
@@ -178,9 +188,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label5.Location = new System.Drawing.Point(429, -54);
+            this.label5.Location = new System.Drawing.Point(490, -72);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 21);
+            this.label5.Size = new System.Drawing.Size(90, 28);
             this.label5.TabIndex = 32;
             this.label5.Text = "Permisos";
             // 
@@ -189,9 +199,9 @@
             this.lbl_id.AutoSize = true;
             this.lbl_id.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_id.ForeColor = System.Drawing.Color.White;
-            this.lbl_id.Location = new System.Drawing.Point(80, 48);
+            this.lbl_id.Location = new System.Drawing.Point(91, 64);
             this.lbl_id.Name = "lbl_id";
-            this.lbl_id.Size = new System.Drawing.Size(25, 19);
+            this.lbl_id.Size = new System.Drawing.Size(30, 23);
             this.lbl_id.TabIndex = 33;
             this.lbl_id.Text = "id";
             this.lbl_id.Visible = false;
@@ -201,9 +211,9 @@
             this.txt_usuario.AutoSize = true;
             this.txt_usuario.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txt_usuario.ForeColor = System.Drawing.Color.White;
-            this.txt_usuario.Location = new System.Drawing.Point(248, 48);
+            this.txt_usuario.Location = new System.Drawing.Point(283, 64);
             this.txt_usuario.Name = "txt_usuario";
-            this.txt_usuario.Size = new System.Drawing.Size(78, 19);
+            this.txt_usuario.Size = new System.Drawing.Size(95, 23);
             this.txt_usuario.TabIndex = 34;
             this.txt_usuario.Text = "usuario:";
             this.txt_usuario.Visible = false;
@@ -213,9 +223,9 @@
             this.lbl_perfil.AutoSize = true;
             this.lbl_perfil.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_perfil.ForeColor = System.Drawing.Color.White;
-            this.lbl_perfil.Location = new System.Drawing.Point(140, 52);
+            this.lbl_perfil.Location = new System.Drawing.Point(160, 69);
             this.lbl_perfil.Name = "lbl_perfil";
-            this.lbl_perfil.Size = new System.Drawing.Size(61, 19);
+            this.lbl_perfil.Size = new System.Drawing.Size(73, 23);
             this.lbl_perfil.TabIndex = 35;
             this.lbl_perfil.Text = "perfil:";
             this.lbl_perfil.Visible = false;
@@ -224,9 +234,10 @@
             // 
             this.btn_regresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_regresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_regresar.Image")));
-            this.btn_regresar.Location = new System.Drawing.Point(12, 38);
+            this.btn_regresar.Location = new System.Drawing.Point(14, 51);
+            this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(37, 29);
+            this.btn_regresar.Size = new System.Drawing.Size(42, 39);
             this.btn_regresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_regresar.TabIndex = 12;
             this.btn_regresar.TabStop = false;
@@ -237,9 +248,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label2.Location = new System.Drawing.Point(242, 128);
+            this.label2.Location = new System.Drawing.Point(277, 171);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 21);
+            this.label2.Size = new System.Drawing.Size(79, 28);
             this.label2.TabIndex = 36;
             this.label2.Text = "Usuario";
             // 
@@ -247,9 +258,9 @@
             // 
             this.lblperfil.AutoSize = true;
             this.lblperfil.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblperfil.Location = new System.Drawing.Point(356, 106);
+            this.lblperfil.Location = new System.Drawing.Point(407, 141);
             this.lblperfil.Name = "lblperfil";
-            this.lblperfil.Size = new System.Drawing.Size(0, 15);
+            this.lblperfil.Size = new System.Drawing.Size(0, 20);
             this.lblperfil.TabIndex = 37;
             // 
             // panel2
@@ -270,8 +281,9 @@
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(481, 389);
+            this.panel2.Size = new System.Drawing.Size(550, 519);
             this.panel2.TabIndex = 5;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -280,9 +292,9 @@
             this.descripcioncb.AutoSize = true;
             this.descripcioncb.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.descripcioncb.ForeColor = System.Drawing.Color.White;
-            this.descripcioncb.Location = new System.Drawing.Point(314, 245);
+            this.descripcioncb.Location = new System.Drawing.Point(359, 327);
             this.descripcioncb.Name = "descripcioncb";
-            this.descripcioncb.Size = new System.Drawing.Size(122, 19);
+            this.descripcioncb.Size = new System.Drawing.Size(153, 23);
             this.descripcioncb.TabIndex = 39;
             this.descripcioncb.Text = "descripcioncb";
             this.descripcioncb.Visible = false;
@@ -293,9 +305,9 @@
             this.bl_id_combobox.AutoSize = true;
             this.bl_id_combobox.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.bl_id_combobox.ForeColor = System.Drawing.Color.White;
-            this.bl_id_combobox.Location = new System.Drawing.Point(356, 209);
+            this.bl_id_combobox.Location = new System.Drawing.Point(407, 279);
             this.bl_id_combobox.Name = "bl_id_combobox";
-            this.bl_id_combobox.Size = new System.Drawing.Size(88, 19);
+            this.bl_id_combobox.Size = new System.Drawing.Size(109, 23);
             this.bl_id_combobox.TabIndex = 38;
             this.bl_id_combobox.Text = "idcombox";
             this.bl_id_combobox.Visible = false;
@@ -303,12 +315,13 @@
             // 
             // eliminar_usuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(481, 389);
+            this.ClientSize = new System.Drawing.Size(550, 519);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "eliminar_usuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "eliminar_usuario";

@@ -195,9 +195,10 @@ namespace PUNTOVENTA.MENU.PROVEEDOR
 
                 else
                 {
-                    dgProveedor parametro = new dgProveedor();
-
-                    parametro.Id_Proveedor = Convert.ToInt16(idProveedor.Text);
+                    dgProveedor parametro = new dgProveedor
+                    {
+                        Id_Proveedor = Convert.ToInt16(idProveedor.Text)
+                    };
 
 
 

@@ -109,9 +109,10 @@ namespace PUNTOVENTA.MENU.MEDIDA
 
                 else
                 {
-                    dgMedida parametro = new dgMedida();
-
-                    parametro.Id_Medida = Convert.ToInt16(lbl_id_medida.Text);
+                    dgMedida parametro = new dgMedida
+                    {
+                        Id_Medida = Convert.ToInt16(lbl_id_medida.Text)
+                    };
 
 
 
@@ -216,9 +217,10 @@ namespace PUNTOVENTA.MENU.MEDIDA
             string descripcion;
             descripcion = bx_medidas.Text;
 
-            dgMedida parametro = new dgMedida();
-
-            parametro.Descripcion = descripcion;
+            dgMedida parametro = new dgMedida
+            {
+                Descripcion = descripcion
+            };
 
             List<dgMedida> lista = c_medida.LeerMedida(2, parametro);
 
@@ -242,9 +244,10 @@ namespace PUNTOVENTA.MENU.MEDIDA
         private void eliminar_medida_Activated(object sender, EventArgs e)
         {
             bx_medidas.Items.Clear();
-            dgMedida parametro = new dgMedida();
-
-            parametro.Descripcion = "no";
+            dgMedida parametro = new dgMedida
+            {
+                Descripcion = "no"
+            };
 
             List<dgMedida> lista = c_medida.LeerMedida(1, parametro);
 

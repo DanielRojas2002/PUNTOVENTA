@@ -185,31 +185,7 @@ namespace Punto_de_Venta.Clases
                 }
             }
 
-            else if (tipo == 3)
-
-            {
-
-                SqlParameter[] Parametros =
-                {
-                    new SqlParameter("@Accion",7),
-                    new SqlParameter("@P_IdCategoria",Parametro.Id_Categoria)
-                };
-
-                tabla = bdContext.funcionStored("spCategoria", Parametros);
-
-                if (tabla.Rows.Count > 0)
-                {
-                    lista = (from DataRow fila in tabla.Rows
-                             select new dgProducto
-                             {
-                                 Descripcion = Convert.ToString(fila["Descripcion"].ToString())
-
-
-
-                             }
-                   ).ToList();
-                }
-            }
+           
 
             else if (tipo == 4) // select para el datagridview de productos
 
@@ -233,6 +209,43 @@ namespace Punto_de_Venta.Clases
                                  Id_Medida = Convert.ToInt16(fila["Id_Medida"].ToString()),
                                  Nombre = Convert.ToString(fila["Nombre"].ToString()),
                                  StockInicial = Convert.ToInt16(fila["Stock"].ToString())
+
+
+
+
+                             }
+                   ).ToList();
+                }
+            }
+
+
+            else if (tipo == 5) // select todos los campos cuando le de el idproducto
+
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",2),
+                    new SqlParameter("@P_IdProducto",Parametro.Id_Producto)
+
+                };
+
+                tabla = bdContext.funcionStored("spProducto", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgProducto
+                             {
+                                 
+                                 Id_Categoria = Convert.ToInt16(fila["Id_Categoria"].ToString()),
+                                 Id_Medida = Convert.ToInt16(fila["Id_Medida"].ToString()),
+                                 Id_Proveedor = Convert.ToInt16(fila["Id_Proveedor"].ToString()),
+                                 Nombre = Convert.ToString(fila["Nombre"].ToString()),
+                                 Descripcion = Convert.ToString(fila["Descripcion"].ToString()),
+                                 StockInicial = Convert.ToInt16(fila["Stock"].ToString()),
+                                 PrecioCompra = Convert.ToInt16(fila["PrecioCompra"].ToString()),
+                                 PrecioVenta = Convert.ToInt16(fila["PrecioVenta"].ToString())
 
 
 

@@ -96,5 +96,10 @@ namespace PUNTOVENTA.MENU.PROVEEDOR
             formulario.txt_usuario.Text = Convert.ToString(retorno);
             formulario.Show();
         }
+
+        private void btn_modificar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

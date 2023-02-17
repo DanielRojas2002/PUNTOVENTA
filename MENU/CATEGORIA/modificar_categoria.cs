@@ -11,10 +11,11 @@ namespace PUNTOVENTA.MENU.CATEGORIA
         {
             InitializeComponent();
 
-           
-            dgCategoria parametro = new dgCategoria();
 
-            parametro.Descripcion = "no";
+            dgCategoria parametro = new dgCategoria
+            {
+                Descripcion = "no"
+            };
 
             List<dgCategoria> lista = c_categoria.LeerCategoria(1, parametro);
 
@@ -54,12 +55,13 @@ namespace PUNTOVENTA.MENU.CATEGORIA
 
                 else
                 {
-                    dgCategoria parametro = new dgCategoria();
+                    dgCategoria parametro = new dgCategoria
+                    {
+                        Id_Categoria = Convert.ToInt16(lbl_id_categoria.Text),
 
-                    parametro.Id_Categoria = Convert.ToInt16(lbl_id_categoria.Text);
+                        Descripcion = Convert.ToString(txt_descripcion.Text.Trim().ToUpper())
+                    };
 
-                    parametro.Descripcion=Convert.ToString(txt_descripcion.Text.Trim().ToUpper());
-                   
 
 
                     string control = "";
@@ -167,11 +169,12 @@ namespace PUNTOVENTA.MENU.CATEGORIA
             int id;
             string descripcion;
             descripcion = bx_categorias.Text;
-            
 
-            dgCategoria parametro = new dgCategoria();
 
-            parametro.Descripcion = descripcion;
+            dgCategoria parametro = new dgCategoria
+            {
+                Descripcion = descripcion
+            };
 
             List<dgCategoria> lista = c_categoria.LeerCategoria(2, parametro);
 
@@ -191,9 +194,10 @@ namespace PUNTOVENTA.MENU.CATEGORIA
                 MessageBox.Show("No tiene Categorias Agregadas", "Advertencia");
             }
 
-            dgCategoria parametro2 = new dgCategoria();
-
-            parametro2.Id_Categoria = Convert.ToInt16(lbl_id_categoria.Text);
+            dgCategoria parametro2 = new dgCategoria
+            {
+                Id_Categoria = Convert.ToInt16(lbl_id_categoria.Text)
+            };
 
             List<dgCategoria> listadesc = c_categoria.LeerCategoria(3, parametro2);
 

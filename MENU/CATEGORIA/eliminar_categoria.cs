@@ -19,9 +19,10 @@ namespace PUNTOVENTA.MENU.CATEGORIA
             string descripcion;
             descripcion = bx_categorias.Text;
 
-            dgCategoria parametro = new dgCategoria();
-
-            parametro.Descripcion = descripcion;
+            dgCategoria parametro = new dgCategoria
+            {
+                Descripcion = descripcion
+            };
 
             List<dgCategoria> lista = c_categoria.LeerCategoria(2, parametro);
 
@@ -131,9 +132,10 @@ namespace PUNTOVENTA.MENU.CATEGORIA
 
                 else
                 {
-                    dgCategoria parametro = new dgCategoria();
-
-                    parametro.Id_Categoria = Convert.ToInt16(lbl_id_categoria.Text);
+                    dgCategoria parametro = new dgCategoria
+                    {
+                        Id_Categoria = Convert.ToInt16(lbl_id_categoria.Text)
+                    };
 
 
 
@@ -236,9 +238,12 @@ namespace PUNTOVENTA.MENU.CATEGORIA
         private void eliminar_categoria_Activated(object sender, EventArgs e)
         {
             bx_categorias.Items.Clear();
-            dgCategoria parametro = new dgCategoria();
 
-            parametro.Descripcion = "no";
+
+            dgCategoria parametro = new dgCategoria
+            {
+                Descripcion = "no"
+            };
 
             List<dgCategoria> lista = c_categoria.LeerCategoria(1,parametro);
 

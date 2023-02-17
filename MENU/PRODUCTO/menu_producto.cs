@@ -320,7 +320,15 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
         private void dataGridView_productos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+           
 
+            string idProducto = dataGridView_productos.CurrentRow.Cells["Col_IdProducto"].Value.ToString();
+
+            this.Hide();
+            modificar_eliminar_producto forms = new modificar_eliminar_producto();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.lblidproducto.Text = idProducto;
+            forms.Show();
         }
     }
 }
