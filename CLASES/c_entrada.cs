@@ -13,7 +13,7 @@ namespace PUNTOVENTA.CLASES
     public class c_entrada
     {
 
-        public static string InsertarCategoria(dgCategoria Parametro)
+        public static string InsertarEntrada(dgEntrada Parametro)
         {
 
 
@@ -27,12 +27,15 @@ namespace PUNTOVENTA.CLASES
                 SqlParameter[] parametros =
                 {
                     new SqlParameter("@Accion",1),
-                    new SqlParameter("@P_Descripcion",Parametro.Descripcion)
+                    new SqlParameter("@P_IdProducto",Parametro.IdProducto),
+                    new SqlParameter("@P_IdUsuario",Parametro.Id_Usuario),
+                    new SqlParameter("@P_Stock",Parametro.Stock),
+                    new SqlParameter("@P_FechaEntrada",Parametro.FechaEntrada)
 
 
                 };
 
-                tabla = bdContext.funcionStored("spCategoria", parametros);
+                tabla = bdContext.funcionStored("spEntrada", parametros);
                 control = tabla.Rows[0][0].ToString();
 
 
@@ -48,73 +51,7 @@ namespace PUNTOVENTA.CLASES
         }
 
 
-        public static string ModificarCategoria(dgCategoria Parametro)
-        {
-
-
-            string control = "";
-
-            try
-            {
-
-                DataTable tabla = new DataTable();
-
-                SqlParameter[] parametros =
-                {
-                    new SqlParameter("@Accion",3),
-                    new SqlParameter("@P_IdCategoria",Parametro.Id_Categoria),
-                    new SqlParameter("@P_Descripcion",Parametro.Descripcion)
-
-
-                };
-
-                tabla = bdContext.funcionStored("spCategoria", parametros);
-                control = tabla.Rows[0][0].ToString();
-
-
-
-            }
-
-            catch (Exception error)
-            {
-                control = error.ToString();
-            }
-            return control;
-
-        }
-        public static string EliminarCategoria(dgCategoria Parametro)
-        {
-
-
-            string control = "";
-
-            try
-            {
-
-                DataTable tabla = new DataTable();
-
-                SqlParameter[] parametros =
-                {
-                    new SqlParameter("@Accion",4),
-                    new SqlParameter("@P_IdCategoria",Parametro.Id_Categoria)
-
-
-                };
-
-                tabla = bdContext.funcionStored("spCategoria", parametros);
-                control = tabla.Rows[0][0].ToString();
-
-
-
-            }
-
-            catch (Exception error)
-            {
-                control = error.ToString();
-            }
-            return control;
-
-        }
+     
 
         public static List<dgCategoria> LeerCategoria(int tipo, dgCategoria Parametro)
         {

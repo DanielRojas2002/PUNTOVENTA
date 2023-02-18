@@ -218,12 +218,12 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
         private void pictureBox9_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btn_regresar_Click(object sender, EventArgs e)
@@ -652,7 +652,65 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
         private void btn_agregar_stock_Click(object sender, EventArgs e)
         {
+            string id;
+            id = lbl_id.Text;
 
+            string retorno = "", retorno2 = "";
+
+            dgUsuario parametro2 = new dgUsuario
+            {
+                Id_Usuario = Convert.ToInt16(lbl_id.Text)
+
+            };
+
+
+
+            List<dgUsuario> lista = c_usuario.LeerUsuario(2, parametro2);
+
+            if (lista.Count > 0)
+
+            {
+
+                foreach (dgUsuario d in lista)
+                {
+                    retorno = Convert.ToString(d.Usuario.ToString());
+                }
+
+
+
+            }
+
+
+
+            dgUsuario parametro3 = new dgUsuario
+            {
+                Id_Usuario = Convert.ToInt16(lbl_id.Text)
+
+            };
+
+
+
+            List<dgUsuario> lista2 = c_usuario.LeerUsuario(3, parametro3);
+
+            if (lista.Count > 0)
+
+            {
+
+                foreach (dgUsuario d in lista2)
+                {
+                    retorno2 = Convert.ToString(d.DescripcionPerfil.ToString());
+                }
+
+
+            }
+
+            this.Hide();
+            agregar_stock formulario = new agregar_stock();
+            formulario.lbl_id.Text = id;
+            formulario.lbl_perfil.Text = Convert.ToString(retorno2);
+            formulario.txt_usuario.Text = Convert.ToString(retorno);
+            formulario.lblidproducto.Text = lblidproducto.Text;
+            formulario.Show();
         }
     }
 }

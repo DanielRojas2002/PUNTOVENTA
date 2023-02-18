@@ -21,8 +21,9 @@ namespace PUNTOVENTA.ENTIDAD
 
         public float? PrecioCompra { get; set; }
         public float? PrecioVenta { get; set; }
+
+
         public int? StockInicial { get; set; }
-        
 
     }
 }

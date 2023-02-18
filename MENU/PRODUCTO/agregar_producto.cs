@@ -271,12 +271,7 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                 MessageBox.Show("Ingrese el precio de venta del Producto ");
             }
 
-            else if (txt_stockinicial.Text == "")
-            {
-                MessageBox.Show("Ingrese el stock inicial del Producto ");
-            }
-
-
+        
             else if (bx_categoria.Text == "")
             {
                 MessageBox.Show("Seleccione la categoria del Producto ");
@@ -323,8 +318,9 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                             Nombre = txt_nombre.Text.Trim(),
                             Descripcion = txt_descripcion.Text.Trim(),
                             PrecioCompra = (float?)Convert.ToDouble(txt_preciocompra.Text.Trim()),
-                            PrecioVenta = (float?)Convert.ToDouble(txt_precioventa.Text.Trim()),
-                            StockInicial = Convert.ToInt16(txt_stockinicial.Text)
+                            PrecioVenta = (float?)Convert.ToDouble(txt_precioventa.Text.Trim())
+                           
+
                         };
 
 

@@ -148,7 +148,7 @@ namespace Punto_de_Venta
 
             if (retorno2 == "Administrador")
             {
-                pnl_almacen.Visible = true;
+                
                 pnl_productos.Visible = true;
                 pnl_ventas.Visible = true;
                 pnl_productos.Visible = true;
@@ -161,7 +161,7 @@ namespace Punto_de_Venta
             }
             else if (retorno2 == "Vendedor")
             {
-                pnl_almacen.Visible = false;
+               
                 pnl_productos.Visible = true;
                 pnl_ventas.Visible = true;
                 pnl_seguridad.Visible = false;

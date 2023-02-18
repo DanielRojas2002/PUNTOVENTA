@@ -29,9 +29,9 @@ namespace Punto_de_Venta.Clases
                     new SqlParameter("@P_Nombre",Parametro.Nombre),
                     new SqlParameter("@P_Descripcion",Parametro.Descripcion),
                     new SqlParameter("@P_PrecioCompra",Parametro.PrecioCompra),
-                    new SqlParameter("@P_PrecioVenta",Parametro.PrecioVenta),
-                    new SqlParameter("@P_Stock",Parametro.StockInicial)
+                    new SqlParameter("@P_PrecioVenta",Parametro.PrecioVenta)
                    
+
 
 
                 };

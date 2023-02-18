@@ -42,6 +42,7 @@
             this.panel29 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.btn_regresar = new System.Windows.Forms.PictureBox();
             this.panel26 = new System.Windows.Forms.Panel();
             this.panel27 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -50,10 +51,6 @@
             this.panel25 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.panel22 = new System.Windows.Forms.Panel();
-            this.panel23 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -75,10 +72,6 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.btn_provedores = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pnl_almacen = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.btn_almacen = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pnl_r = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.btn_reportes = new System.Windows.Forms.Button();
@@ -89,6 +82,10 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pnl_reportes = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel18 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
             this.btn_r_ventas = new System.Windows.Forms.Button();
@@ -97,9 +94,10 @@
             this.panel21 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.btn_regresar = new System.Windows.Forms.PictureBox();
             this.pnl_izq = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.btn_cliente = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimzar)).BeginInit();
@@ -108,15 +106,13 @@
             this.panel28.SuspendLayout();
             this.panel29.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             this.panel26.SuspendLayout();
             this.panel27.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.panel24.SuspendLayout();
             this.panel25.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            this.panel22.SuspendLayout();
-            this.panel23.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.panel15.SuspendLayout();
             this.panel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -129,20 +125,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnl_provedores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.pnl_almacen.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.pnl_r.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.pnl_seguridad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.pnl_reportes.SuspendLayout();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             this.pnl_izq.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -238,7 +235,7 @@
             this.lbl_id.AutoSize = true;
             this.lbl_id.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_id.ForeColor = System.Drawing.Color.White;
-            this.lbl_id.Location = new System.Drawing.Point(8, 51);
+            this.lbl_id.Location = new System.Drawing.Point(278, 78);
             this.lbl_id.Name = "lbl_id";
             this.lbl_id.Size = new System.Drawing.Size(30, 23);
             this.lbl_id.TabIndex = 2;
@@ -250,9 +247,9 @@
             // 
             this.pnl_der.BackColor = System.Drawing.Color.Black;
             this.pnl_der.Controls.Add(this.panel28);
+            this.pnl_der.Controls.Add(this.btn_regresar);
             this.pnl_der.Controls.Add(this.panel26);
             this.pnl_der.Controls.Add(this.panel24);
-            this.pnl_der.Controls.Add(this.panel22);
             this.pnl_der.Controls.Add(this.panel15);
             this.pnl_der.Controls.Add(this.panel3);
             this.pnl_der.Controls.Add(this.lbl_perfil);
@@ -308,6 +305,19 @@
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox14.TabIndex = 0;
             this.pictureBox14.TabStop = false;
+            // 
+            // btn_regresar
+            // 
+            this.btn_regresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_regresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_regresar.Image")));
+            this.btn_regresar.Location = new System.Drawing.Point(8, 11);
+            this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_regresar.Name = "btn_regresar";
+            this.btn_regresar.Size = new System.Drawing.Size(95, 67);
+            this.btn_regresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_regresar.TabIndex = 11;
+            this.btn_regresar.TabStop = false;
+            this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
             // 
             // panel26
             // 
@@ -394,49 +404,6 @@
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox12.TabIndex = 0;
             this.pictureBox12.TabStop = false;
-            // 
-            // panel22
-            // 
-            this.panel22.Controls.Add(this.panel23);
-            this.panel22.Controls.Add(this.pictureBox11);
-            this.panel22.Location = new System.Drawing.Point(21, 409);
-            this.panel22.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(229, 171);
-            this.panel22.TabIndex = 6;
-            // 
-            // panel23
-            // 
-            this.panel23.Controls.Add(this.label4);
-            this.panel23.Location = new System.Drawing.Point(3, 85);
-            this.panel23.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(222, 81);
-            this.panel23.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Black;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(0, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(235, 60);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "El Modulo de Almacen nos ayuda \r\npoder registrar las entradas de \r\nnuevos product" +
-    "os en existencia ";
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(229, 67);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox11.TabIndex = 0;
-            this.pictureBox11.TabStop = false;
             // 
             // panel15
             // 
@@ -696,63 +663,12 @@
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
-            // pnl_almacen
-            // 
-            this.pnl_almacen.Controls.Add(this.panel10);
-            this.pnl_almacen.Controls.Add(this.btn_almacen);
-            this.pnl_almacen.Controls.Add(this.pictureBox4);
-            this.pnl_almacen.Location = new System.Drawing.Point(9, 417);
-            this.pnl_almacen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pnl_almacen.Name = "pnl_almacen";
-            this.pnl_almacen.Size = new System.Drawing.Size(304, 43);
-            this.pnl_almacen.TabIndex = 6;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel10.Location = new System.Drawing.Point(39, 0);
-            this.panel10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(17, 43);
-            this.panel10.TabIndex = 2;
-            // 
-            // btn_almacen
-            // 
-            this.btn_almacen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_almacen.FlatAppearance.BorderSize = 0;
-            this.btn_almacen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btn_almacen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_almacen.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.btn_almacen.ForeColor = System.Drawing.Color.White;
-            this.btn_almacen.Location = new System.Drawing.Point(55, 0);
-            this.btn_almacen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_almacen.Name = "btn_almacen";
-            this.btn_almacen.Size = new System.Drawing.Size(246, 43);
-            this.btn_almacen.TabIndex = 0;
-            this.btn_almacen.Text = "ALMACEN";
-            this.btn_almacen.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btn_almacen.UseVisualStyleBackColor = true;
-            this.btn_almacen.Click += new System.EventHandler(this.btn_almacen_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(32, 43);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 1;
-            this.pictureBox4.TabStop = false;
-            // 
             // pnl_r
             // 
             this.pnl_r.Controls.Add(this.panel12);
             this.pnl_r.Controls.Add(this.btn_reportes);
             this.pnl_r.Controls.Add(this.pictureBox5);
-            this.pnl_r.Location = new System.Drawing.Point(9, 480);
+            this.pnl_r.Location = new System.Drawing.Point(9, 410);
             this.pnl_r.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnl_r.Name = "pnl_r";
             this.pnl_r.Size = new System.Drawing.Size(304, 43);
@@ -803,7 +719,7 @@
             this.pnl_seguridad.Controls.Add(this.panel14);
             this.pnl_seguridad.Controls.Add(this.btn_seguridad);
             this.pnl_seguridad.Controls.Add(this.pictureBox6);
-            this.pnl_seguridad.Location = new System.Drawing.Point(9, 657);
+            this.pnl_seguridad.Location = new System.Drawing.Point(9, 671);
             this.pnl_seguridad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnl_seguridad.Name = "pnl_seguridad";
             this.pnl_seguridad.Size = new System.Drawing.Size(304, 43);
@@ -862,13 +778,63 @@
             // 
             // pnl_reportes
             // 
+            this.pnl_reportes.Controls.Add(this.panel7);
             this.pnl_reportes.Controls.Add(this.panel18);
             this.pnl_reportes.Controls.Add(this.panel20);
-            this.pnl_reportes.Location = new System.Drawing.Point(33, 530);
+            this.pnl_reportes.Location = new System.Drawing.Point(33, 460);
             this.pnl_reportes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnl_reportes.Name = "pnl_reportes";
-            this.pnl_reportes.Size = new System.Drawing.Size(250, 112);
+            this.pnl_reportes.Size = new System.Drawing.Size(250, 189);
             this.pnl_reportes.TabIndex = 10;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.panel9);
+            this.panel7.Controls.Add(this.button3);
+            this.panel7.Controls.Add(this.pictureBox4);
+            this.panel7.Location = new System.Drawing.Point(6, 120);
+            this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(235, 47);
+            this.panel7.TabIndex = 11;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel9.Location = new System.Drawing.Point(39, -4);
+            this.panel9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(11, 47);
+            this.panel9.TabIndex = 2;
+            // 
+            // button3
+            // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(55, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(183, 43);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "REPORTE DE CLIENTES";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(32, 47);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 1;
+            this.pictureBox4.TabStop = false;
             // 
             // panel18
             // 
@@ -902,10 +868,9 @@
             this.btn_r_ventas.Location = new System.Drawing.Point(55, 4);
             this.btn_r_ventas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_r_ventas.Name = "btn_r_ventas";
-            this.btn_r_ventas.Size = new System.Drawing.Size(183, 39);
+            this.btn_r_ventas.Size = new System.Drawing.Size(183, 43);
             this.btn_r_ventas.TabIndex = 0;
             this.btn_r_ventas.Text = "REPORTE DE VENTAS";
-            this.btn_r_ventas.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btn_r_ventas.UseVisualStyleBackColor = true;
             this.btn_r_ventas.Click += new System.EventHandler(this.btn_r_ventas_Click);
             // 
@@ -927,7 +892,7 @@
             this.panel20.Controls.Add(this.panel21);
             this.panel20.Controls.Add(this.button1);
             this.panel20.Controls.Add(this.pictureBox9);
-            this.panel20.Location = new System.Drawing.Point(6, 61);
+            this.panel20.Location = new System.Drawing.Point(6, 69);
             this.panel20.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(235, 47);
@@ -954,10 +919,9 @@
             this.button1.Location = new System.Drawing.Point(55, 4);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 39);
+            this.button1.Size = new System.Drawing.Size(183, 43);
             this.button1.TabIndex = 0;
-            this.button1.Text = "REPORTE DE VENTAS";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button1.Text = "REPORTE DE COMPRAS";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // pictureBox9
@@ -972,31 +936,15 @@
             this.pictureBox9.TabIndex = 1;
             this.pictureBox9.TabStop = false;
             // 
-            // btn_regresar
-            // 
-            this.btn_regresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_regresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_regresar.Image")));
-            this.btn_regresar.Location = new System.Drawing.Point(7, 9);
-            this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(46, 36);
-            this.btn_regresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_regresar.TabIndex = 11;
-            this.btn_regresar.TabStop = false;
-            this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
-            // 
             // pnl_izq
             // 
             this.pnl_izq.BackColor = System.Drawing.Color.Black;
-            this.pnl_izq.Controls.Add(this.panel4);
-            this.pnl_izq.Controls.Add(this.btn_cliente);
-            this.pnl_izq.Controls.Add(this.btn_regresar);
+            this.pnl_izq.Controls.Add(this.panel5);
             this.pnl_izq.Controls.Add(this.pnl_reportes);
             this.pnl_izq.Controls.Add(this.panel16);
             this.pnl_izq.Controls.Add(this.pictureBox7);
             this.pnl_izq.Controls.Add(this.pnl_seguridad);
             this.pnl_izq.Controls.Add(this.pnl_r);
-            this.pnl_izq.Controls.Add(this.pnl_almacen);
             this.pnl_izq.Controls.Add(this.pnl_provedores);
             this.pnl_izq.Controls.Add(this.pnl_productos);
             this.pnl_izq.Controls.Add(this.pnl_ventas);
@@ -1008,15 +956,38 @@
             this.pnl_izq.TabIndex = 2;
             this.pnl_izq.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_izq_Paint);
             // 
-            // panel4
+            // panel5
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel4.Location = new System.Drawing.Point(48, 301);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(17, 43);
-            this.panel4.TabIndex = 5;
+            this.panel5.Controls.Add(this.panel10);
+            this.panel5.Controls.Add(this.pictureBox11);
+            this.panel5.Controls.Add(this.btn_cliente);
+            this.panel5.Location = new System.Drawing.Point(9, 303);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(304, 43);
+            this.panel5.TabIndex = 8;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel10.Location = new System.Drawing.Point(39, 0);
+            this.panel10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(17, 43);
+            this.panel10.TabIndex = 2;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(32, 43);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox11.TabIndex = 1;
+            this.pictureBox11.TabStop = false;
             // 
             // btn_cliente
             // 
@@ -1026,7 +997,7 @@
             this.btn_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cliente.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.btn_cliente.ForeColor = System.Drawing.Color.White;
-            this.btn_cliente.Location = new System.Drawing.Point(64, 301);
+            this.btn_cliente.Location = new System.Drawing.Point(56, 0);
             this.btn_cliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_cliente.Name = "btn_cliente";
             this.btn_cliente.Size = new System.Drawing.Size(246, 43);
@@ -1060,6 +1031,7 @@
             this.panel29.ResumeLayout(false);
             this.panel29.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
             this.panel26.ResumeLayout(false);
             this.panel27.ResumeLayout(false);
             this.panel27.PerformLayout();
@@ -1068,10 +1040,6 @@
             this.panel25.ResumeLayout(false);
             this.panel25.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            this.panel22.ResumeLayout(false);
-            this.panel23.ResumeLayout(false);
-            this.panel23.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.panel15.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
@@ -1086,20 +1054,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnl_provedores.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.pnl_almacen.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.pnl_r.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.pnl_seguridad.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.pnl_reportes.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel18.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel20.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
             this.pnl_izq.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1132,10 +1101,6 @@
         private Panel panel25;
         private Label label5;
         private PictureBox pictureBox12;
-        private Panel panel22;
-        private Panel panel23;
-        private Label label4;
-        private PictureBox pictureBox11;
         private Panel panel15;
         private Panel panel17;
         private Label label3;
@@ -1152,10 +1117,6 @@
         private Panel panel8;
         private Button btn_provedores;
         private PictureBox pictureBox3;
-        private Panel pnl_almacen;
-        private Panel panel10;
-        private Button btn_almacen;
-        private PictureBox pictureBox4;
         private Panel pnl_r;
         private Panel panel12;
         private Button btn_reportes;
@@ -1176,7 +1137,13 @@
         private PictureBox pictureBox9;
         private PictureBox btn_regresar;
         private Panel pnl_izq;
-        private Panel panel4;
         private Button btn_cliente;
+        private Panel panel7;
+        private Panel panel9;
+        private Button button3;
+        private PictureBox pictureBox4;
+        private Panel panel5;
+        private Panel panel10;
+        private PictureBox pictureBox11;
     }
 }
