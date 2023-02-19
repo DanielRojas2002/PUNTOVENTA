@@ -44,31 +44,35 @@
             this.btn_regresar = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView_productos = new System.Windows.Forms.DataGridView();
+            this.Col_IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Medida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_reiniciar_filtrado = new System.Windows.Forms.PictureBox();
             this.bx_medidas = new System.Windows.Forms.ComboBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btn_aplicar_filtro = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.bx_proveedores = new System.Windows.Forms.ComboBox();
             this.bx_categorias = new System.Windows.Forms.ComboBox();
             this.btn_agregar_producto = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblfiltrados = new System.Windows.Forms.Label();
-            this.Col_IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Medida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_productos)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_reiniciar_filtrado)).BeginInit();
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_agregar_producto)).BeginInit();
@@ -236,6 +240,51 @@
             this.dataGridView_productos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_productos_CellClick);
             this.dataGridView_productos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_productos_CellContentClick);
             // 
+            // Col_IdProducto
+            // 
+            this.Col_IdProducto.Frozen = true;
+            this.Col_IdProducto.HeaderText = "IdProducto";
+            this.Col_IdProducto.MinimumWidth = 6;
+            this.Col_IdProducto.Name = "Col_IdProducto";
+            this.Col_IdProducto.ReadOnly = true;
+            this.Col_IdProducto.Width = 125;
+            // 
+            // Col_Nombre
+            // 
+            this.Col_Nombre.Frozen = true;
+            this.Col_Nombre.HeaderText = "Nombre";
+            this.Col_Nombre.MinimumWidth = 6;
+            this.Col_Nombre.Name = "Col_Nombre";
+            this.Col_Nombre.ReadOnly = true;
+            this.Col_Nombre.Width = 125;
+            // 
+            // Col_Categoria
+            // 
+            this.Col_Categoria.Frozen = true;
+            this.Col_Categoria.HeaderText = "Categoria";
+            this.Col_Categoria.MinimumWidth = 6;
+            this.Col_Categoria.Name = "Col_Categoria";
+            this.Col_Categoria.ReadOnly = true;
+            this.Col_Categoria.Width = 125;
+            // 
+            // Col_Medida
+            // 
+            this.Col_Medida.Frozen = true;
+            this.Col_Medida.HeaderText = "Medida";
+            this.Col_Medida.MinimumWidth = 6;
+            this.Col_Medida.Name = "Col_Medida";
+            this.Col_Medida.ReadOnly = true;
+            this.Col_Medida.Width = 125;
+            // 
+            // Col_Stock
+            // 
+            this.Col_Stock.Frozen = true;
+            this.Col_Stock.HeaderText = "Stock";
+            this.Col_Stock.MinimumWidth = 6;
+            this.Col_Stock.Name = "Col_Stock";
+            this.Col_Stock.ReadOnly = true;
+            this.Col_Stock.Width = 125;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
@@ -256,7 +305,10 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.lblfiltrados);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.btn_reiniciar_filtrado);
             this.panel2.Controls.Add(this.bx_medidas);
             this.panel2.Controls.Add(this.panel13);
             this.panel2.Controls.Add(this.label2);
@@ -266,6 +318,19 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(304, 403);
             this.panel2.TabIndex = 76;
+            // 
+            // btn_reiniciar_filtrado
+            // 
+            this.btn_reiniciar_filtrado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_reiniciar_filtrado.Image = ((System.Drawing.Image)(resources.GetObject("btn_reiniciar_filtrado.Image")));
+            this.btn_reiniciar_filtrado.Location = new System.Drawing.Point(33, 13);
+            this.btn_reiniciar_filtrado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_reiniciar_filtrado.Name = "btn_reiniciar_filtrado";
+            this.btn_reiniciar_filtrado.Size = new System.Drawing.Size(218, 53);
+            this.btn_reiniciar_filtrado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_reiniciar_filtrado.TabIndex = 16;
+            this.btn_reiniciar_filtrado.TabStop = false;
+            this.btn_reiniciar_filtrado.Click += new System.EventHandler(this.btn_reiniciar_filtrado_Click);
             // 
             // bx_medidas
             // 
@@ -318,17 +383,6 @@
             this.btn_aplicar_filtro.Text = "APLICAR FILTROS";
             this.btn_aplicar_filtro.UseVisualStyleBackColor = false;
             this.btn_aplicar_filtro.Click += new System.EventHandler(this.btn_aplicar_filtro_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(73, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 32);
-            this.label2.TabIndex = 79;
-            this.label2.Text = "FILTROS:";
             // 
             // bx_proveedores
             // 
@@ -408,60 +462,49 @@
     "modificar o eliminar el producto seleccionado";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblfiltrados
+            // label2
             // 
-            this.lblfiltrados.AutoSize = true;
-            this.lblfiltrados.ForeColor = System.Drawing.Color.White;
-            this.lblfiltrados.Location = new System.Drawing.Point(17, 271);
-            this.lblfiltrados.Name = "lblfiltrados";
-            this.lblfiltrados.Size = new System.Drawing.Size(90, 20);
-            this.lblfiltrados.TabIndex = 84;
-            this.lblfiltrados.Text = "Filtrado por:";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(70, 73);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(153, 32);
+            this.label2.TabIndex = 79;
+            this.label2.Text = "FILTROS:";
             // 
-            // Col_IdProducto
+            // label4
             // 
-            this.Col_IdProducto.Frozen = true;
-            this.Col_IdProducto.HeaderText = "IdProducto";
-            this.Col_IdProducto.MinimumWidth = 6;
-            this.Col_IdProducto.Name = "Col_IdProducto";
-            this.Col_IdProducto.ReadOnly = true;
-            this.Col_IdProducto.Width = 125;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(6, 121);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 15);
+            this.label4.TabIndex = 84;
+            this.label4.Text = "CATEGORIA:";
             // 
-            // Col_Nombre
+            // label5
             // 
-            this.Col_Nombre.Frozen = true;
-            this.Col_Nombre.HeaderText = "Nombre";
-            this.Col_Nombre.MinimumWidth = 6;
-            this.Col_Nombre.Name = "Col_Nombre";
-            this.Col_Nombre.ReadOnly = true;
-            this.Col_Nombre.Width = 125;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(6, 210);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(98, 15);
+            this.label5.TabIndex = 85;
+            this.label5.Text = "PROVEEDOR:";
             // 
-            // Col_Categoria
+            // label6
             // 
-            this.Col_Categoria.Frozen = true;
-            this.Col_Categoria.HeaderText = "Categoria";
-            this.Col_Categoria.MinimumWidth = 6;
-            this.Col_Categoria.Name = "Col_Categoria";
-            this.Col_Categoria.ReadOnly = true;
-            this.Col_Categoria.Width = 125;
-            // 
-            // Col_Medida
-            // 
-            this.Col_Medida.Frozen = true;
-            this.Col_Medida.HeaderText = "Medida";
-            this.Col_Medida.MinimumWidth = 6;
-            this.Col_Medida.Name = "Col_Medida";
-            this.Col_Medida.ReadOnly = true;
-            this.Col_Medida.Width = 125;
-            // 
-            // Col_Stock
-            // 
-            this.Col_Stock.Frozen = true;
-            this.Col_Stock.HeaderText = "Stock";
-            this.Col_Stock.MinimumWidth = 6;
-            this.Col_Stock.Name = "Col_Stock";
-            this.Col_Stock.ReadOnly = true;
-            this.Col_Stock.Width = 125;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(144, 121);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 15);
+            this.label6.TabIndex = 86;
+            this.label6.Text = "MEDIDA:";
             // 
             // menu_producto
             // 
@@ -492,6 +535,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_productos)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_reiniciar_filtrado)).EndInit();
             this.panel13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_agregar_producto)).EndInit();
@@ -522,7 +566,6 @@
         private PictureBox pictureBox1;
         private Label label3;
         private Panel panel2;
-        private Label label2;
         private ComboBox bx_proveedores;
         private ComboBox bx_categorias;
         private Panel panel13;
@@ -532,11 +575,15 @@
         private Panel panel16;
         private ComboBox bx_medidas;
         private DataGridView dataGridView_productos;
-        private Label lblfiltrados;
         private DataGridViewTextBoxColumn Col_IdProducto;
         private DataGridViewTextBoxColumn Col_Nombre;
         private DataGridViewTextBoxColumn Col_Categoria;
         private DataGridViewTextBoxColumn Col_Medida;
         private DataGridViewTextBoxColumn Col_Stock;
+        private PictureBox btn_reiniciar_filtrado;
+        private Label label6;
+        private Label label5;
+        private Label label4;
+        private Label label2;
     }
 }

@@ -120,7 +120,7 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
             List<dgCategoria> listacategorias = c_categoria.LeerCategoria(1, parametro2_1);
 
-            if (lista.Count > 0)
+            if (listacategorias.Count > 0)
 
             {
 
@@ -296,6 +296,153 @@ namespace PUNTOVENTA.MENU.PRODUCTO
         private void btn_aplicar_filtro_Click(object sender, EventArgs e)
         {
 
+            int idCategoria=0,idMedida=0, idProveedor=0;
+
+            if (bx_categorias.Text == "" && bx_medidas.Text == "" && bx_proveedores.Text == "")
+            {
+                MessageBox.Show("Seleccione al menos un filtro para poder filtrar");
+            }
+
+          
+
+            else
+            {
+                dgCategoria parametro2_1 = new dgCategoria
+                {
+                    Descripcion = Convert.ToString(bx_categorias.Text)
+                };
+
+                List<dgCategoria> listacategorias = c_categoria.LeerCategoria(2, parametro2_1);
+
+                if (listacategorias.Count > 0)
+
+                {
+
+                    foreach (dgCategoria d in listacategorias)
+                    {
+                        idCategoria = Convert.ToInt16(d.Id_Categoria.ToString());
+                    }
+
+                }
+
+
+                dgMedida parametro2_2 = new dgMedida
+                {
+                    Descripcion = Convert.ToString(bx_medidas.Text)
+                };
+
+                List<dgMedida> listamedidas = c_medida.LeerMedida(2, parametro2_2);
+
+                if (listamedidas.Count > 0)
+
+                {
+
+                    foreach (dgMedida d in listamedidas)
+                    {
+                        idMedida = Convert.ToInt16(d.Id_Medida.ToString());
+                    }
+
+                }
+
+
+
+                dgProveedor parametro5 = new dgProveedor
+                {
+                    Nombre= Convert.ToString(bx_proveedores.Text)
+                };
+
+                List<dgProveedor> listaproveedores = c_proveedor.LeerProveedor(3, parametro5);
+
+                if (listaproveedores.Count > 0)
+
+                {
+
+                    foreach (dgProveedor d in listaproveedores)
+                    {
+                        idProveedor = Convert.ToInt16(d.Id_Proveedor.ToString());
+                    }
+
+                }
+
+
+
+                dgProducto parametrofiltrado = new dgProducto
+                {
+                    Id_Categoria=idCategoria,
+                    Id_Medida=idMedida,
+                    Id_Proveedor=idProveedor
+                };
+
+                List<dgProducto> listafiltrado = c_producto.LeerProducto(6, parametrofiltrado);
+
+                if (listafiltrado.Count > 0)
+
+                {
+                    dataGridView_productos.Rows.Clear();
+                    int idproducto, idcategoria, idmedida, stock;
+                    string nombre, categoriadescripcion, medidadescripcion;
+
+                    foreach (dgProducto d in listafiltrado)
+                    {
+                        idproducto = Convert.ToInt16(d.Id_Producto.ToString());
+                        idcategoria = Convert.ToInt16(d.Id_Categoria.ToString());
+                        idmedida = Convert.ToInt16(d.Id_Medida.ToString());
+                        stock = Convert.ToInt16(d.StockInicial.ToString());
+
+                        nombre = Convert.ToString(d.Nombre.ToString());
+
+                        dgCategoria parametro2 = new dgCategoria
+                        {
+                            Id_Categoria = Convert.ToInt16(idcategoria.ToString())
+                        };
+
+                        List<dgCategoria> listacategoria = c_categoria.LeerCategoria(3, parametro2);
+
+
+                        dgMedida parametro3 = new dgMedida
+                        {
+                            Id_Medida = Convert.ToInt16(idmedida.ToString())
+                        };
+
+                        List<dgMedida> listamedida = c_medida.LeerMedida(3, parametro3);
+
+                        if (listacategoria.Count > 0 && listamedida.Count > 0)
+
+                        {
+                            categoriadescripcion = "";
+                            medidadescripcion = "";
+                            foreach (dgCategoria dg in listacategoria)
+                            {
+                                categoriadescripcion = Convert.ToString(dg.Descripcion.ToString());
+                            }
+
+                            foreach (dgMedida dg in listamedida)
+                            {
+                                medidadescripcion = Convert.ToString(dg.Descripcion.ToString());
+                            }
+
+                            dataGridView_productos.Rows.Add(idproducto, nombre, categoriadescripcion, medidadescripcion, stock);
+                        }
+
+
+                    }
+
+
+                }
+
+                else
+                {
+                    MessageBox.Show("No se encontraron resultados");
+                }
+
+
+              
+
+            }
+            
+
+
+
         }
 
         private void bx_categorias_SelectedIndexChanged(object sender, EventArgs e)
@@ -329,6 +476,141 @@ namespace PUNTOVENTA.MENU.PRODUCTO
             forms.lbl_id.Text = lbl_id.Text;
             forms.lblidproducto.Text = idProducto;
             forms.Show();
+        }
+
+        private void btn_reiniciar_filtrado_Click(object sender, EventArgs e)
+        {
+            dataGridView_productos.Rows.Clear();
+
+            dgProducto parametro = new dgProducto();
+
+            List<dgProducto> lista = c_producto.LeerProducto(4, parametro);
+
+
+            if (lista.Count > 0)
+
+            {
+                int idproducto, idcategoria, idmedida, stock;
+                string nombre, categoriadescripcion, medidadescripcion;
+                foreach (dgProducto d in lista)
+                {
+                    idproducto = Convert.ToInt16(d.Id_Producto.ToString());
+                    idcategoria = Convert.ToInt16(d.Id_Categoria.ToString());
+                    idmedida = Convert.ToInt16(d.Id_Medida.ToString());
+                    stock = Convert.ToInt16(d.StockInicial.ToString());
+
+                    nombre = Convert.ToString(d.Nombre.ToString());
+
+                    dgCategoria parametro2 = new dgCategoria
+                    {
+                        Id_Categoria = Convert.ToInt16(idcategoria.ToString())
+                    };
+
+                    List<dgCategoria> listacategoria = c_categoria.LeerCategoria(3, parametro2);
+
+
+                    dgMedida parametro3 = new dgMedida
+                    {
+                        Id_Medida = Convert.ToInt16(idmedida.ToString())
+                    };
+
+                    List<dgMedida> listamedida = c_medida.LeerMedida(3, parametro3);
+
+                    if (listacategoria.Count > 0 && listamedida.Count > 0)
+
+                    {
+                        categoriadescripcion = "";
+                        medidadescripcion = "";
+                        foreach (dgCategoria dg in listacategoria)
+                        {
+                            categoriadescripcion = Convert.ToString(dg.Descripcion.ToString());
+                        }
+
+                        foreach (dgMedida dg in listamedida)
+                        {
+                            medidadescripcion = Convert.ToString(dg.Descripcion.ToString());
+                        }
+
+                        dataGridView_productos.Rows.Add(idproducto, nombre, categoriadescripcion, medidadescripcion, stock);
+                    }
+
+
+                }
+
+            }
+
+
+
+
+            bx_categorias.Items.Clear();
+            dgCategoria parametro2_1 = new dgCategoria
+            {
+
+            };
+
+            List<dgCategoria> listacategorias = c_categoria.LeerCategoria(1, parametro2_1);
+
+            if (listacategorias.Count > 0)
+
+            {
+
+                foreach (dgCategoria d in listacategorias)
+                {
+                    bx_categorias.Items.Add(d.Descripcion.ToString());
+                }
+
+
+
+
+
+            }
+
+
+
+            bx_medidas.Items.Clear();
+
+            dgMedida parametro4 = new dgMedida
+            {
+
+            };
+
+            List<dgMedida> listamedidas = c_medida.LeerMedida(1, parametro4);
+
+            if (listamedidas.Count > 0)
+
+            {
+
+                foreach (dgMedida d in listamedidas)
+                {
+                    bx_medidas.Items.Add(d.Descripcion.ToString());
+                }
+
+
+
+
+
+            }
+
+
+            bx_proveedores.Items.Clear();
+
+            dgProveedor parametro5 = new dgProveedor
+            {
+
+            };
+
+            List<dgProveedor> listaproveedores = c_proveedor.LeerProveedor(1, parametro5);
+
+            if (listaproveedores.Count > 0)
+
+            {
+
+                foreach (dgProveedor d in listaproveedores)
+                {
+                    bx_proveedores.Items.Add(d.Nombre.ToString());
+                }
+
+            }
         }
     }
 }
