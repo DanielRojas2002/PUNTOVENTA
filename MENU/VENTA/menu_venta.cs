@@ -20,7 +20,12 @@ namespace PUNTOVENTA.MENU.VENTA
         public menu_venta()
         {
             InitializeComponent();
+
+
         }
+
+        public int _num_venta;
+        
 
         private void flowLayoutPanel_productos_Paint(object sender, PaintEventArgs e)
         {
@@ -29,7 +34,111 @@ namespace PUNTOVENTA.MENU.VENTA
 
         private void menu_venta_Load(object sender, EventArgs e)
         {
+            _num_venta = NumeroVenta();
             CargaProductos();
+           
+        }
+
+        private void CargaSubTotal(int total)
+        {
+            lbl_total.Text = Convert.ToString(total);
+        }
+
+        private void CargaProductosOrden()
+        {
+
+
+            dgVentaDetalle parametro = new dgVentaDetalle
+            {
+                Id_Venta = _num_venta
+            };
+
+            List<dgVentaDetalle> listaorden = c_ventadetalle.LeerVentaDetalle(2, parametro);
+
+            int contadorproductos = 0;
+
+            if (listaorden.Count > 0)
+
+            {
+                flowLayoutPanel_Orden.Controls.Clear();
+                int idproducto, stock, precioventa,subtotal,total=0;
+                string nombre;
+                foreach (dgVentaDetalle d in listaorden)
+                {
+                    idproducto = Convert.ToInt16(d.Id_Producto.ToString());
+
+                    stock = Convert.ToInt16(d.CantidadAComprar.ToString());
+
+                    precioventa = Convert.ToInt16(d.PrecioVenta.ToString());
+
+
+
+
+
+
+                    UserControlOrdenCompra[] Productos = new UserControlOrdenCompra[10];
+
+
+                    contadorproductos = contadorproductos + 1;
+
+                    Productos[contadorproductos] = new UserControlOrdenCompra();
+
+                    Productos[contadorproductos].IdProducto = Convert.ToString(idproducto);
+
+
+
+                    Productos[contadorproductos].StockProductoComprar = Convert.ToString(stock);
+
+                    Productos[contadorproductos].PrecioProducto = Convert.ToString(precioventa);
+
+                    subtotal = precioventa * stock;
+
+                    total = total + subtotal;
+
+                    Productos[contadorproductos].SubTotal = Convert.ToString(subtotal);
+
+                    flowLayoutPanel_Orden.Controls.Add(Productos[contadorproductos]);
+
+
+
+                }
+
+                CargaSubTotal(total);
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+        public static int NumeroVenta()
+        {
+            dgVentaDetalle parametronumeroventa = new dgVentaDetalle();
+
+            List<dgVentaDetalle> listanumeroorden = c_ventadetalle.LeerVentaDetalle(1, parametronumeroventa);
+
+            int numeroventa = 1;
+            if (listanumeroorden.Count > 0)
+            {
+                foreach (dgVentaDetalle d in listanumeroorden)
+                {
+                    numeroventa = Convert.ToInt16(d.Id_Venta);
+                }
+
+            }
+
+            return numeroventa;
         }
 
         private void menu_venta_FormClosing(object sender, FormClosingEventArgs e)
@@ -116,6 +225,8 @@ namespace PUNTOVENTA.MENU.VENTA
                         Productos[contadorproductos].StockProducto = Convert.ToString(stock);
 
                         Productos[contadorproductos].DescripcionProducto = descripcion;
+
+                        Productos[contadorproductos].NumVenta = Convert.ToString(_num_venta);
 
                         Productos[contadorproductos].PrecioProducto = Convert.ToString(precioventa);
 
@@ -265,9 +376,11 @@ namespace PUNTOVENTA.MENU.VENTA
 
                         Productos[contadorproductos].NombreProducto = nombre;
 
+                        Productos[contadorproductos].StockProducto = Convert.ToString(stock);
+
                         Productos[contadorproductos].DescripcionProducto = descripcion;
 
-                        Productos[contadorproductos].StockProducto = Convert.ToString(stock);
+                        Productos[contadorproductos].NumVenta = Convert.ToString(_num_venta);
 
                         Productos[contadorproductos].PrecioProducto = Convert.ToString(precioventa);
 
@@ -455,6 +568,36 @@ namespace PUNTOVENTA.MENU.VENTA
             formulario.lbl_perfil.Text = Convert.ToString(retorno2);
             formulario.txt_usuario.Text = Convert.ToString(retorno);
             formulario.Show();
+        }
+
+        private void btn_reinciar_orden_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void menu_venta_Activated(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void flowLayoutPanel_Orden_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void menu_venta_MouseMove(object sender, MouseEventArgs e)
+        {
+            CargaProductosOrden();
+        }
+
+        private void flowLayoutPanel_Orden_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

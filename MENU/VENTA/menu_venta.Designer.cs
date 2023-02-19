@@ -36,6 +36,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lbl_cambio = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_paga_con = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbl_total = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.flowLayoutPanel_Orden = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -67,6 +78,7 @@
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btn_reiniciar_filtrado = new System.Windows.Forms.PictureBox();
+            this.btn_reinciar_orden = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -89,6 +101,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_reiniciar_filtrado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_reinciar_orden)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -96,7 +109,7 @@
             this.panel1.Controls.Add(this.flowLayoutPanel_productos);
             this.panel1.Location = new System.Drawing.Point(3, 263);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(833, 479);
+            this.panel1.Size = new System.Drawing.Size(739, 544);
             this.panel1.TabIndex = 0;
             // 
             // flowLayoutPanel_productos
@@ -105,7 +118,7 @@
             this.flowLayoutPanel_productos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel_productos.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel_productos.Name = "flowLayoutPanel_productos";
-            this.flowLayoutPanel_productos.Size = new System.Drawing.Size(833, 479);
+            this.flowLayoutPanel_productos.Size = new System.Drawing.Size(739, 544);
             this.flowLayoutPanel_productos.TabIndex = 0;
             this.flowLayoutPanel_productos.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel_productos_Paint);
             // 
@@ -152,14 +165,153 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(626, 126);
             this.panel2.TabIndex = 80;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.MediumBlue;
+            this.panel3.Controls.Add(this.lbl_cambio);
+            this.panel3.Controls.Add(this.label11);
+            this.panel3.Controls.Add(this.txt_paga_con);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.lbl_total);
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.comboBox2);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.comboBox1);
+            this.panel3.Controls.Add(this.flowLayoutPanel_Orden);
             this.panel3.Controls.Add(this.button1);
-            this.panel3.Location = new System.Drawing.Point(842, 263);
+            this.panel3.Location = new System.Drawing.Point(748, 263);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(367, 479);
+            this.panel3.Size = new System.Drawing.Size(461, 544);
             this.panel3.TabIndex = 81;
+            // 
+            // lbl_cambio
+            // 
+            this.lbl_cambio.AutoSize = true;
+            this.lbl_cambio.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_cambio.ForeColor = System.Drawing.Color.White;
+            this.lbl_cambio.Location = new System.Drawing.Point(361, 461);
+            this.lbl_cambio.Name = "lbl_cambio";
+            this.lbl_cambio.Size = new System.Drawing.Size(62, 15);
+            this.lbl_cambio.TabIndex = 106;
+            this.lbl_cambio.Text = "Cambio:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(344, 439);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(62, 15);
+            this.label11.TabIndex = 105;
+            this.label11.Text = "Cambio:";
+            // 
+            // txt_paga_con
+            // 
+            this.txt_paga_con.BackColor = System.Drawing.Color.White;
+            this.txt_paga_con.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_paga_con.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_paga_con.ForeColor = System.Drawing.Color.Black;
+            this.txt_paga_con.Location = new System.Drawing.Point(178, 455);
+            this.txt_paga_con.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_paga_con.Name = "txt_paga_con";
+            this.txt_paga_con.Size = new System.Drawing.Size(112, 24);
+            this.txt_paga_con.TabIndex = 104;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(152, 439);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 15);
+            this.label10.TabIndex = 103;
+            this.label10.Text = "Paga con:";
+            // 
+            // lbl_total
+            // 
+            this.lbl_total.AutoSize = true;
+            this.lbl_total.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_total.ForeColor = System.Drawing.Color.White;
+            this.lbl_total.Location = new System.Drawing.Point(41, 454);
+            this.lbl_total.Name = "lbl_total";
+            this.lbl_total.Size = new System.Drawing.Size(47, 15);
+            this.lbl_total.TabIndex = 102;
+            this.lbl_total.Text = "Total:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(25, 439);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(47, 15);
+            this.label9.TabIndex = 101;
+            this.label9.Text = "Total:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(254, 371);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(57, 15);
+            this.label8.TabIndex = 100;
+            this.label8.Text = "Cliente";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.Color.White;
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox2.ForeColor = System.Drawing.Color.Black;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(254, 390);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(179, 28);
+            this.comboBox2.TabIndex = 99;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(14, 371);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(85, 15);
+            this.label7.TabIndex = 97;
+            this.label7.Text = "Tipo Venta:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.White;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.ForeColor = System.Drawing.Color.Black;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(14, 390);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(179, 28);
+            this.comboBox1.TabIndex = 97;
+            // 
+            // flowLayoutPanel_Orden
+            // 
+            this.flowLayoutPanel_Orden.AutoScroll = true;
+            this.flowLayoutPanel_Orden.BackColor = System.Drawing.Color.Navy;
+            this.flowLayoutPanel_Orden.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel_Orden.Name = "flowLayoutPanel_Orden";
+            this.flowLayoutPanel_Orden.Size = new System.Drawing.Size(461, 365);
+            this.flowLayoutPanel_Orden.TabIndex = 98;
+            this.flowLayoutPanel_Orden.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel_Orden_Paint);
+            this.flowLayoutPanel_Orden.Enter += new System.EventHandler(this.flowLayoutPanel_Orden_Enter);
             // 
             // button1
             // 
@@ -169,10 +321,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(3, 426);
+            this.button1.Location = new System.Drawing.Point(3, 487);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(362, 53);
+            this.button1.Size = new System.Drawing.Size(458, 53);
             this.button1.TabIndex = 97;
             this.button1.Text = "APLICAR FILTROS";
             this.button1.UseVisualStyleBackColor = false;
@@ -574,12 +726,26 @@
             this.btn_reiniciar_filtrado.TabStop = false;
             this.btn_reiniciar_filtrado.Click += new System.EventHandler(this.btn_reiniciar_filtrado_Click);
             // 
+            // btn_reinciar_orden
+            // 
+            this.btn_reinciar_orden.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_reinciar_orden.Image = ((System.Drawing.Image)(resources.GetObject("btn_reinciar_orden.Image")));
+            this.btn_reinciar_orden.Location = new System.Drawing.Point(845, 210);
+            this.btn_reinciar_orden.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_reinciar_orden.Name = "btn_reinciar_orden";
+            this.btn_reinciar_orden.Size = new System.Drawing.Size(65, 53);
+            this.btn_reinciar_orden.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_reinciar_orden.TabIndex = 99;
+            this.btn_reinciar_orden.TabStop = false;
+            this.btn_reinciar_orden.Click += new System.EventHandler(this.btn_reinciar_orden_Click);
+            // 
             // menu_venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.ClientSize = new System.Drawing.Size(1221, 783);
+            this.ClientSize = new System.Drawing.Size(1221, 836);
+            this.Controls.Add(this.btn_reinciar_orden);
             this.Controls.Add(this.btn_reiniciar_filtrado);
             this.Controls.Add(this.lbl_perfil);
             this.Controls.Add(this.txt_usuario);
@@ -597,14 +763,17 @@
             this.Name = "menu_venta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "menu_venta";
+            this.Activated += new System.EventHandler(this.menu_venta_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.menu_venta_FormClosing);
             this.Load += new System.EventHandler(this.menu_venta_Load);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.menu_venta_MouseMove);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrarapp)).EndInit();
@@ -623,6 +792,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_reiniciar_filtrado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_reinciar_orden)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -668,5 +838,17 @@
         private PictureBox pictureBox12;
         private Panel panel5;
         private PictureBox btn_reiniciar_filtrado;
+        private FlowLayoutPanel flowLayoutPanel_Orden;
+        private PictureBox btn_reinciar_orden;
+        private Label lbl_cambio;
+        private Label label11;
+        private TextBox txt_paga_con;
+        private Label label10;
+        private Label lbl_total;
+        private Label label9;
+        private Label label8;
+        private ComboBox comboBox2;
+        private Label label7;
+        private ComboBox comboBox1;
     }
 }

@@ -44,6 +44,7 @@
             this.lbl_id_producto = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_stock_disponible = new System.Windows.Forms.Label();
+            this.lbl_numventa = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txt_cantidad_a_agregar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +86,7 @@
             this.btn_ordenar.TabIndex = 80;
             this.btn_ordenar.Text = "ORDENAR";
             this.btn_ordenar.UseVisualStyleBackColor = false;
+            this.btn_ordenar.Click += new System.EventHandler(this.btn_ordenar_Click);
             // 
             // txt_cantidad_a_agregar
             // 
@@ -92,6 +94,7 @@
             this.txt_cantidad_a_agregar.Name = "txt_cantidad_a_agregar";
             this.txt_cantidad_a_agregar.Size = new System.Drawing.Size(148, 27);
             this.txt_cantidad_a_agregar.TabIndex = 81;
+            this.txt_cantidad_a_agregar.ValueChanged += new System.EventHandler(this.txt_cantidad_a_agregar_ValueChanged);
             // 
             // txt_descripcion_producto
             // 
@@ -213,11 +216,25 @@
             this.lbl_stock_disponible.TabIndex = 111;
             this.lbl_stock_disponible.Text = "Stock";
             // 
+            // lbl_numventa
+            // 
+            this.lbl_numventa.AutoSize = true;
+            this.lbl_numventa.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_numventa.ForeColor = System.Drawing.Color.White;
+            this.lbl_numventa.Location = new System.Drawing.Point(90, 17);
+            this.lbl_numventa.Name = "lbl_numventa";
+            this.lbl_numventa.Size = new System.Drawing.Size(113, 23);
+            this.lbl_numventa.TabIndex = 112;
+            this.lbl_numventa.Text = "numventa";
+            this.lbl_numventa.Visible = false;
+            this.lbl_numventa.Click += new System.EventHandler(this.lbl_numventa_Click);
+            // 
             // UserControlProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
+            this.Controls.Add(this.lbl_numventa);
             this.Controls.Add(this.lbl_stock_disponible);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lbl_id_producto);
@@ -260,5 +277,6 @@
         private Label lbl_id_producto;
         private Label label5;
         private Label lbl_stock_disponible;
+        private Label lbl_numventa;
     }
 }
