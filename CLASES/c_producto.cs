@@ -290,6 +290,39 @@ namespace Punto_de_Venta.Clases
                 }
             }
 
+            else if (tipo == 7) // select para el datagridview de productos para venta
+
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",9),
+
+                };
+
+                tabla = bdContext.funcionStored("spProducto", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgProducto
+                             {
+                                 Id_Producto = Convert.ToInt16(fila["Id_Producto"].ToString()),
+                                 Descripcion = Convert.ToString(fila["Descripcion"].ToString()),
+                                 Id_Categoria = Convert.ToInt16(fila["Id_Categoria"].ToString()),
+                                 Id_Medida = Convert.ToInt16(fila["Id_Medida"].ToString()),
+                                 Nombre = Convert.ToString(fila["Nombre"].ToString()),
+                                 StockInicial = Convert.ToInt16(fila["Stock"].ToString()),
+                                 PrecioVenta = Convert.ToInt16(fila["PrecioVenta"].ToString())
+
+
+
+
+                             }
+                   ).ToList();
+                }
+            }
+
 
 
 

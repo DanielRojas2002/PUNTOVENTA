@@ -52,21 +52,21 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.btn_reiniciar_filtrado = new System.Windows.Forms.PictureBox();
             this.bx_medidas = new System.Windows.Forms.ComboBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btn_aplicar_filtro = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.bx_proveedores = new System.Windows.Forms.ComboBox();
             this.bx_categorias = new System.Windows.Forms.ComboBox();
             this.btn_agregar_producto = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             this.panel1.SuspendLayout();
@@ -319,6 +319,39 @@
             this.panel2.Size = new System.Drawing.Size(304, 403);
             this.panel2.TabIndex = 76;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(144, 121);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 15);
+            this.label6.TabIndex = 86;
+            this.label6.Text = "MEDIDA:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(6, 210);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(98, 15);
+            this.label5.TabIndex = 85;
+            this.label5.Text = "PROVEEDOR:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(6, 121);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 15);
+            this.label4.TabIndex = 84;
+            this.label4.Text = "CATEGORIA:";
+            // 
             // btn_reiniciar_filtrado
             // 
             this.btn_reiniciar_filtrado.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -350,7 +383,7 @@
             // 
             this.panel13.Controls.Add(this.pictureBox4);
             this.panel13.Controls.Add(this.btn_aplicar_filtro);
-            this.panel13.Location = new System.Drawing.Point(3, 344);
+            this.panel13.Location = new System.Drawing.Point(3, 313);
             this.panel13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(301, 61);
@@ -362,7 +395,7 @@
             this.pictureBox4.Location = new System.Drawing.Point(3, 4);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(70, 53);
+            this.pictureBox4.Size = new System.Drawing.Size(38, 53);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 15;
             this.pictureBox4.TabStop = false;
@@ -375,14 +408,25 @@
             this.btn_aplicar_filtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_aplicar_filtro.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_aplicar_filtro.ForeColor = System.Drawing.Color.White;
-            this.btn_aplicar_filtro.Location = new System.Drawing.Point(80, 4);
+            this.btn_aplicar_filtro.Location = new System.Drawing.Point(47, 4);
             this.btn_aplicar_filtro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_aplicar_filtro.Name = "btn_aplicar_filtro";
-            this.btn_aplicar_filtro.Size = new System.Drawing.Size(194, 53);
+            this.btn_aplicar_filtro.Size = new System.Drawing.Size(227, 53);
             this.btn_aplicar_filtro.TabIndex = 0;
             this.btn_aplicar_filtro.Text = "APLICAR FILTROS";
             this.btn_aplicar_filtro.UseVisualStyleBackColor = false;
             this.btn_aplicar_filtro.Click += new System.EventHandler(this.btn_aplicar_filtro_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(70, 73);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(153, 32);
+            this.label2.TabIndex = 79;
+            this.label2.Text = "FILTROS:";
             // 
             // bx_proveedores
             // 
@@ -461,50 +505,6 @@
             this.label3.Text = "Al darle Click en cualquier parte de la celda\r\nse le mostrara una ventana para\r\n " +
     "modificar o eliminar el producto seleccionado";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(70, 73);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 32);
-            this.label2.TabIndex = 79;
-            this.label2.Text = "FILTROS:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(6, 121);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 15);
-            this.label4.TabIndex = 84;
-            this.label4.Text = "CATEGORIA:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(6, 210);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 15);
-            this.label5.TabIndex = 85;
-            this.label5.Text = "PROVEEDOR:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(144, 121);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 15);
-            this.label6.TabIndex = 86;
-            this.label6.Text = "MEDIDA:";
             // 
             // menu_producto
             // 

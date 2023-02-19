@@ -2,7 +2,7 @@
 using PUNTOVENTA.ENTIDAD;
 using PUNTOVENTA.MENU.PRODUCTO;
 using PUNTOVENTA.MENU.PROVEEDOR;
-
+using PUNTOVENTA.MENU.VENTA;
 
 namespace Punto_de_Venta
 {
@@ -177,7 +177,10 @@ namespace Punto_de_Venta
 
         private void btn_venta_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            menu_venta forms = new menu_venta();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
         }
 
         private void btn_productos_Click(object sender, EventArgs e)

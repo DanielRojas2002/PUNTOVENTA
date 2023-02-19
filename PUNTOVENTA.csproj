@@ -18,12 +18,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="MENU\PROVEEDOR\eliminar_proveedor.resx~RF3e285011.TMP" />
+    <Compile Remove="MENU\ALMACEN\**" />
+    <EmbeddedResource Remove="MENU\ALMACEN\**" />
+    <None Remove="MENU\ALMACEN\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MENU\ALMACEN\" />
-    <Folder Include="MENU\VENTA\" />
+    <None Remove="MENU\PROVEEDOR\eliminar_proveedor.resx~RF3e285011.TMP" />
   </ItemGroup>
 
   <ItemGroup>
