@@ -41,7 +41,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_nombre = new System.Windows.Forms.TextBox();
+            this.txt_nombre_producto = new System.Windows.Forms.TextBox();
             this.btn_aplicar_filtro = new System.Windows.Forms.Button();
             this.bx_medidas = new System.Windows.Forms.ComboBox();
             this.bx_categorias = new System.Windows.Forms.ComboBox();
@@ -66,6 +66,7 @@
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btn_reiniciar_filtrado = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -87,6 +88,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_reiniciar_filtrado)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -118,6 +120,7 @@
             this.btn_regresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_regresar.TabIndex = 51;
             this.btn_regresar.TabStop = false;
+            this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
             // 
             // pictureBox1
             // 
@@ -179,7 +182,7 @@
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.txt_nombre);
+            this.panel4.Controls.Add(this.txt_nombre_producto);
             this.panel4.Controls.Add(this.btn_aplicar_filtro);
             this.panel4.Controls.Add(this.bx_medidas);
             this.panel4.Controls.Add(this.bx_categorias);
@@ -221,17 +224,17 @@
             this.label4.TabIndex = 95;
             this.label4.Text = "CATEGORIA:";
             // 
-            // txt_nombre
+            // txt_nombre_producto
             // 
-            this.txt_nombre.BackColor = System.Drawing.Color.White;
-            this.txt_nombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_nombre.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_nombre.ForeColor = System.Drawing.Color.Black;
-            this.txt_nombre.Location = new System.Drawing.Point(14, 24);
-            this.txt_nombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(179, 24);
-            this.txt_nombre.TabIndex = 83;
+            this.txt_nombre_producto.BackColor = System.Drawing.Color.White;
+            this.txt_nombre_producto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_nombre_producto.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_nombre_producto.ForeColor = System.Drawing.Color.Black;
+            this.txt_nombre_producto.Location = new System.Drawing.Point(14, 24);
+            this.txt_nombre_producto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_nombre_producto.Name = "txt_nombre_producto";
+            this.txt_nombre_producto.Size = new System.Drawing.Size(179, 24);
+            this.txt_nombre_producto.TabIndex = 83;
             // 
             // btn_aplicar_filtro
             // 
@@ -241,13 +244,14 @@
             this.btn_aplicar_filtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_aplicar_filtro.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_aplicar_filtro.ForeColor = System.Drawing.Color.White;
-            this.btn_aplicar_filtro.Location = new System.Drawing.Point(605, 10);
+            this.btn_aplicar_filtro.Location = new System.Drawing.Point(601, 10);
             this.btn_aplicar_filtro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_aplicar_filtro.Name = "btn_aplicar_filtro";
-            this.btn_aplicar_filtro.Size = new System.Drawing.Size(206, 53);
+            this.btn_aplicar_filtro.Size = new System.Drawing.Size(210, 53);
             this.btn_aplicar_filtro.TabIndex = 83;
             this.btn_aplicar_filtro.Text = "APLICAR FILTROS";
             this.btn_aplicar_filtro.UseVisualStyleBackColor = false;
+            this.btn_aplicar_filtro.Click += new System.EventHandler(this.btn_aplicar_filtro_Click);
             // 
             // bx_medidas
             // 
@@ -274,6 +278,7 @@
             this.bx_categorias.Name = "bx_categorias";
             this.bx_categorias.Size = new System.Drawing.Size(179, 28);
             this.bx_categorias.TabIndex = 83;
+            this.bx_categorias.SelectedIndexChanged += new System.EventHandler(this.bx_categorias_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -556,12 +561,26 @@
             this.panel5.Size = new System.Drawing.Size(1221, 39);
             this.panel5.TabIndex = 94;
             // 
+            // btn_reiniciar_filtrado
+            // 
+            this.btn_reiniciar_filtrado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_reiniciar_filtrado.Image = ((System.Drawing.Image)(resources.GetObject("btn_reiniciar_filtrado.Image")));
+            this.btn_reiniciar_filtrado.Location = new System.Drawing.Point(35, 138);
+            this.btn_reiniciar_filtrado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_reiniciar_filtrado.Name = "btn_reiniciar_filtrado";
+            this.btn_reiniciar_filtrado.Size = new System.Drawing.Size(139, 53);
+            this.btn_reiniciar_filtrado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_reiniciar_filtrado.TabIndex = 98;
+            this.btn_reiniciar_filtrado.TabStop = false;
+            this.btn_reiniciar_filtrado.Click += new System.EventHandler(this.btn_reiniciar_filtrado_Click);
+            // 
             // menu_venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(1221, 783);
+            this.Controls.Add(this.btn_reiniciar_filtrado);
             this.Controls.Add(this.lbl_perfil);
             this.Controls.Add(this.txt_usuario);
             this.Controls.Add(this.lbl_id);
@@ -603,6 +622,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btn_reiniciar_filtrado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -620,7 +640,7 @@
         private ComboBox bx_categorias;
         private ComboBox bx_medidas;
         private Button btn_aplicar_filtro;
-        private TextBox txt_nombre;
+        private TextBox txt_nombre_producto;
         private Label label2;
         private Label label3;
         private Label label4;
@@ -647,5 +667,6 @@
         private PictureBox pictureBox13;
         private PictureBox pictureBox12;
         private Panel panel5;
+        private PictureBox btn_reiniciar_filtrado;
     }
 }

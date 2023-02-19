@@ -24,6 +24,7 @@ namespace PUNTOVENTA.MENU.VENTA.PRODUCTO
         private string _descripcionproducto;
         private string _categoriaproducto;
         private string _medidaproducto;
+        private string _stockdisponible;
 
 
         public string IdProducto
@@ -47,6 +48,12 @@ namespace PUNTOVENTA.MENU.VENTA.PRODUCTO
         {
             get { return _descripcionproducto; }
             set { _descripcionproducto = value; txt_descripcion_producto.Text = value; }
+        }
+
+        public string StockProducto
+        {
+            get { return _stockdisponible; }
+            set { _stockdisponible = value; lbl_stock_disponible.Text = value; }
         }
 
         public string CategoriaProducto
