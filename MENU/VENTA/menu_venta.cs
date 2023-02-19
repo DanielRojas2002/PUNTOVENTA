@@ -572,6 +572,35 @@ namespace PUNTOVENTA.MENU.VENTA
 
         private void btn_reinciar_orden_Click(object sender, EventArgs e)
         {
+            
+
+
+            dgVentaDetalle parametroeliminartodos = new dgVentaDetalle
+            {
+                Id_Venta = _num_venta
+
+            };
+
+
+
+            string control = "";
+
+         
+
+            var confirmResult = MessageBox.Show("Esta seguro de Eliminar toda la Orden",
+                                    "Confirm Delete!!",
+                                    MessageBoxButtons.YesNo);
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                flowLayoutPanel_Orden.Controls.Clear();
+                control = c_ventadetalle.EliminarVentaDetalleTodos(parametroeliminartodos);
+
+                flowLayoutPanel_productos.Controls.Clear();
+
+                CargaProductos();
+            }
+
 
         }
 
@@ -596,6 +625,60 @@ namespace PUNTOVENTA.MENU.VENTA
         }
 
         private void flowLayoutPanel_Orden_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_paga_con_TextChanged(object sender, EventArgs e)
+        {
+           
+            try
+            {
+                lbl_cambio.Text = "";
+
+                int total = Convert.ToInt16(lbl_total.Text);
+
+                int pago = Convert.ToInt32(txt_paga_con.Text);
+
+                int cambio = pago - total;
+                lbl_cambio.Text = Convert.ToString(cambio);
+
+                if (pago < total)
+                {
+                    
+                    lbl_cambio.ForeColor = Color.Red;
+                }
+
+                else
+                {
+                    
+                    lbl_cambio.ForeColor = Color.Yellow;
+                }
+
+
+
+               
+
+              
+
+
+            }
+            catch {
+
+
+                
+               
+            }
+        }
+
+      
+
+        private void txt_paga_con_MouseCaptureChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btn_realizar_venta_Click(object sender, EventArgs e)
         {
 
         }

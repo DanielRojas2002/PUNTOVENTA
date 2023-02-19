@@ -53,6 +53,42 @@ namespace PUNTOVENTA.CLASES
 
 
       
+        public static string EliminarVentaDetalleTodos(dgVentaDetalle Parametro)
+        {
+
+
+            string control = "";
+
+            try
+            {
+
+                DataTable tabla = new DataTable();
+
+                SqlParameter[] parametros =
+                {
+                    new SqlParameter("@Accion",4),
+                    new SqlParameter("@P_IdVenta",Parametro.Id_Venta)
+                  
+
+
+                };
+
+                tabla = bdContext.funcionStored("spVentaDetalle", parametros);
+                control = tabla.Rows[0][0].ToString();
+
+
+
+            }
+
+            catch (Exception error)
+            {
+                control = error.ToString();
+            }
+            return control;
+
+        }
+
+
         public static string EliminarVentaDetalle(dgVentaDetalle Parametro)
         {
 
@@ -87,7 +123,6 @@ namespace PUNTOVENTA.CLASES
             return control;
 
         }
-
         public static List<dgVentaDetalle> LeerVentaDetalle(int tipo, dgVentaDetalle Parametro)
         {
 

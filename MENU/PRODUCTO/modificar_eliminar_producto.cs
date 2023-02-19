@@ -712,5 +712,10 @@ namespace PUNTOVENTA.MENU.PRODUCTO
             formulario.lblidproducto.Text = lblidproducto.Text;
             formulario.Show();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

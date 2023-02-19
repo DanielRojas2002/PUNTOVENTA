@@ -47,7 +47,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel_Orden = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_realizar_venta = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -181,7 +181,7 @@
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.comboBox1);
             this.panel3.Controls.Add(this.flowLayoutPanel_Orden);
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.btn_realizar_venta);
             this.panel3.Location = new System.Drawing.Point(748, 263);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(461, 544);
@@ -190,22 +190,22 @@
             // lbl_cambio
             // 
             this.lbl_cambio.AutoSize = true;
-            this.lbl_cambio.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_cambio.Font = new System.Drawing.Font("Cooper Black", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_cambio.ForeColor = System.Drawing.Color.White;
-            this.lbl_cambio.Location = new System.Drawing.Point(361, 461);
+            this.lbl_cambio.Location = new System.Drawing.Point(361, 454);
             this.lbl_cambio.Name = "lbl_cambio";
-            this.lbl_cambio.Size = new System.Drawing.Size(62, 15);
+            this.lbl_cambio.Size = new System.Drawing.Size(79, 20);
             this.lbl_cambio.TabIndex = 106;
             this.lbl_cambio.Text = "Cambio:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label11.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(344, 439);
+            this.label11.Location = new System.Drawing.Point(344, 431);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 15);
+            this.label11.Size = new System.Drawing.Size(92, 23);
             this.label11.TabIndex = 105;
             this.label11.Text = "Cambio:";
             // 
@@ -220,37 +220,39 @@
             this.txt_paga_con.Name = "txt_paga_con";
             this.txt_paga_con.Size = new System.Drawing.Size(112, 24);
             this.txt_paga_con.TabIndex = 104;
+            this.txt_paga_con.TextChanged += new System.EventHandler(this.txt_paga_con_TextChanged);
+            this.txt_paga_con.MouseCaptureChanged += new System.EventHandler(this.txt_paga_con_MouseCaptureChanged);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label10.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(152, 439);
+            this.label10.Location = new System.Drawing.Point(151, 431);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 15);
+            this.label10.Size = new System.Drawing.Size(105, 23);
             this.label10.TabIndex = 103;
             this.label10.Text = "Paga con:";
             // 
             // lbl_total
             // 
             this.lbl_total.AutoSize = true;
-            this.lbl_total.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_total.Font = new System.Drawing.Font("Cooper Black", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_total.ForeColor = System.Drawing.Color.White;
             this.lbl_total.Location = new System.Drawing.Point(41, 454);
             this.lbl_total.Name = "lbl_total";
-            this.lbl_total.Size = new System.Drawing.Size(47, 15);
+            this.lbl_total.Size = new System.Drawing.Size(60, 20);
             this.lbl_total.TabIndex = 102;
             this.lbl_total.Text = "Total:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label9.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(25, 439);
+            this.label9.Location = new System.Drawing.Point(19, 431);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(47, 15);
+            this.label9.Size = new System.Drawing.Size(69, 23);
             this.label9.TabIndex = 101;
             this.label9.Text = "Total:";
             // 
@@ -313,21 +315,22 @@
             this.flowLayoutPanel_Orden.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel_Orden_Paint);
             this.flowLayoutPanel_Orden.Enter += new System.EventHandler(this.flowLayoutPanel_Orden_Enter);
             // 
-            // button1
+            // btn_realizar_venta
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(3, 487);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(458, 53);
-            this.button1.TabIndex = 97;
-            this.button1.Text = "APLICAR FILTROS";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_realizar_venta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btn_realizar_venta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_realizar_venta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_realizar_venta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_realizar_venta.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_realizar_venta.ForeColor = System.Drawing.Color.White;
+            this.btn_realizar_venta.Location = new System.Drawing.Point(3, 487);
+            this.btn_realizar_venta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_realizar_venta.Name = "btn_realizar_venta";
+            this.btn_realizar_venta.Size = new System.Drawing.Size(458, 53);
+            this.btn_realizar_venta.TabIndex = 97;
+            this.btn_realizar_venta.Text = "REALIZAR VENTA";
+            this.btn_realizar_venta.UseVisualStyleBackColor = false;
+            this.btn_realizar_venta.Click += new System.EventHandler(this.btn_realizar_venta_Click);
             // 
             // panel4
             // 
@@ -817,7 +820,7 @@
         private Label label6;
         private Label label5;
         private FlowLayoutPanel flowLayoutPanel_productos;
-        private Button button1;
+        private Button btn_realizar_venta;
         public Label lbl_perfil;
         public Label txt_usuario;
         public Label lbl_id;
