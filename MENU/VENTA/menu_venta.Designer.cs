@@ -166,6 +166,8 @@
             this.panel2.Size = new System.Drawing.Size(626, 126);
             this.panel2.TabIndex = 80;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.panel2.MouseEnter += new System.EventHandler(this.panel2_MouseEnter);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             // 
             // panel3
             // 

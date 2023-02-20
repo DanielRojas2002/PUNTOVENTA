@@ -334,7 +334,9 @@ namespace Punto_de_Venta.Clases
                     new SqlParameter("@Accion",10),
                     new SqlParameter("@P_IdCategoria",Parametro.Id_Categoria),
                     new SqlParameter("@P_IdMedida",Parametro.Id_Medida),
-                    new SqlParameter("@P_Nombre",Parametro.Nombre)
+                    new SqlParameter("@P_Nombre",Parametro.Nombre),
+                    new SqlParameter("@P_IdVenta",Parametro.Id_Venta)
+               
 
                 };
 

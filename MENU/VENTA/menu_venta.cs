@@ -50,6 +50,9 @@ namespace PUNTOVENTA.MENU.VENTA
 
           
             flowLayoutPanel_Orden.Controls.Clear();
+           
+
+
             lbl_total.Text = "";
             dgVentaDetalle parametro = new dgVentaDetalle
             {
@@ -63,9 +66,10 @@ namespace PUNTOVENTA.MENU.VENTA
             if (listaorden.Count > 0)
 
             {
+                flowLayoutPanel_productos.Controls.Clear();
                 flowLayoutPanel_Orden.Controls.Clear();
 
-                CargaProductos(1);
+                CargaProductos(0);
 
                 int idproducto, stock, precioventa,subtotal,total=0;
                 string nombre;
@@ -114,6 +118,10 @@ namespace PUNTOVENTA.MENU.VENTA
                 CargaSubTotal(total);
 
             }
+            else
+            {
+                CargaProductos(0);
+            }
             
 
 
@@ -156,6 +164,17 @@ namespace PUNTOVENTA.MENU.VENTA
 
         private void pictureBox13_Click(object sender, EventArgs e)
         {
+
+
+            dgVentaDetalle parametroeliminartodos = new dgVentaDetalle
+            {
+                Id_Venta = _num_venta
+
+            };
+
+            string control = "";
+          
+            control = c_ventadetalle.EliminarVentaDetalleTodos(parametroeliminartodos);
             Application.Exit();
         }
 
@@ -177,12 +196,13 @@ namespace PUNTOVENTA.MENU.VENTA
             List<dgProducto> lista = c_producto.LeerProducto(7, parametro);
 
 
-            flowLayoutPanel_productos.Controls.Clear();
+            
             int contadorproductos = 0;
 
             if (lista.Count > 0)
 
             {
+                flowLayoutPanel_productos.Controls.Clear();
                 int idproducto, idcategoria, idmedida, stock,precioventa;
                 string nombre, categoriadescripcion, medidadescripcion, descripcion;
                 foreach (dgProducto d in lista)
@@ -323,9 +343,10 @@ namespace PUNTOVENTA.MENU.VENTA
         {
             dgProducto parametrofiltrado = new dgProducto
             {
-                Nombre=nombreproducto,
+                Nombre = nombreproducto,
                 Id_Categoria = idcategoria,
-                Id_Medida=idmedida
+                Id_Medida = idmedida,
+                Id_Venta=_num_venta
             };
 
             List<dgProducto> listafiltrado = c_producto.LeerProducto(8, parametrofiltrado);
@@ -494,14 +515,6 @@ namespace PUNTOVENTA.MENU.VENTA
 
 
 
-                dgProducto parametrofiltrado = new dgProducto
-                {
-                    Nombre=nombreproducto,
-                    Id_Categoria = idCategoria,
-                    Id_Medida = idMedida,
-                   
-                };
-
                 CargaProductosFiltrado(nombreproducto, idCategoria, idMedida);
 
 
@@ -666,7 +679,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
         private void menu_venta_MouseMove(object sender, MouseEventArgs e)
         {
-            CargaProductosOrden();
+           
         }
 
         private void flowLayoutPanel_Orden_Enter(object sender, EventArgs e)
@@ -726,6 +739,16 @@ namespace PUNTOVENTA.MENU.VENTA
         private void btn_realizar_venta_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel2_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            CargaProductosOrden();
         }
     }
 }
