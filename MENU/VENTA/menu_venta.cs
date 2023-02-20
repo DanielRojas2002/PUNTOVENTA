@@ -114,10 +114,7 @@ namespace PUNTOVENTA.MENU.VENTA
                 CargaSubTotal(total);
 
             }
-            else
-            {
-                CargaProductos(0);
-            }
+            
 
 
 

@@ -35,7 +35,7 @@ namespace PUNTOVENTA.MENU.CLIENTE
         {
             this.Hide();
             modificar_cliente forms = new modificar_cliente();
-            forms.lbl_id.Text = lbl_id.Text;
+         
             forms.Show();
         }
 
