@@ -297,6 +297,8 @@ namespace Punto_de_Venta.Clases
                 SqlParameter[] Parametros =
                 {
                     new SqlParameter("@Accion",9),
+                    new SqlParameter("@P_IdVenta",Parametro.Id_Venta),
+                    new SqlParameter("@P_validacion2",Parametro.Id_Validacion2)
 
                 };
 

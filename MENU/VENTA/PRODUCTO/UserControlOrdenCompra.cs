@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PUNTOVENTA.CLASES;
+using PUNTOVENTA.ENTIDAD;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,11 +27,19 @@ namespace PUNTOVENTA.MENU.VENTA.PRODUCTO
 
         private string _subtotal;
 
+        private string _idventa;
+
 
         public string IdProducto
         {
             get { return _idproducto; }
             set { _idproducto = value; lbl_id_producto.Text = value; }
+        }
+
+        public string IdVenta
+        {
+            get { return _idventa; }
+            set { _idventa = value; lbl_id_venta.Text = value; }
         }
         public string NombreProducto
         {
@@ -61,6 +71,24 @@ namespace PUNTOVENTA.MENU.VENTA.PRODUCTO
 
         private void btn_quitar_producto_Click(object sender, EventArgs e)
         {
+            dgVentaDetalle parametroeliminarproductoindividual = new dgVentaDetalle
+            {
+                Id_Producto = Convert.ToInt16(lbl_id_producto.Text),
+
+                Id_Venta=Convert.ToInt16(lbl_id_venta.Text)
+
+            };
+
+
+            string control = "";
+
+            control = c_ventadetalle.EliminarVentaDetalle(parametroeliminarproductoindividual);
+
+
+           
+
+
+
 
         }
 

@@ -7,6 +7,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Punto_de_Venta.Clases;
+using PUNTOVENTA.MENU.VENTA.PRODUCTO;
 
 namespace PUNTOVENTA.CLASES
 {
@@ -102,7 +104,7 @@ namespace PUNTOVENTA.CLASES
 
                 SqlParameter[] parametros =
                 {
-                    new SqlParameter("@Accion",4),
+                    new SqlParameter("@Accion",5),
                     new SqlParameter("@P_IdVenta",Parametro.Id_Venta),
                     new SqlParameter("@P_IdProducto",Parametro.Id_Producto),
 
@@ -192,6 +194,7 @@ namespace PUNTOVENTA.CLASES
                                      Id_Producto = Convert.ToInt16(fila["Id_Producto"].ToString()),
                                      CantidadAComprar = Convert.ToInt16(fila["Cantidad"].ToString()),
                                      PrecioVenta = Convert.ToInt16(fila["Precio"].ToString()),
+                                     Nombre = Convert.ToString(fila["Nombre"].ToString())
                                     
                                  }
                         ).ToList();
@@ -227,5 +230,8 @@ namespace PUNTOVENTA.CLASES
 
 
         }
+
+
+      
     }
 }

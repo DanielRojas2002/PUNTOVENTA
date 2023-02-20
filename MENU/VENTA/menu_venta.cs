@@ -35,7 +35,7 @@ namespace PUNTOVENTA.MENU.VENTA
         private void menu_venta_Load(object sender, EventArgs e)
         {
             _num_venta = NumeroVenta();
-            CargaProductos();
+            CargaProductos(0);
            
         }
 
@@ -48,6 +48,9 @@ namespace PUNTOVENTA.MENU.VENTA
         {
 
 
+          
+            flowLayoutPanel_Orden.Controls.Clear();
+            lbl_total.Text = "";
             dgVentaDetalle parametro = new dgVentaDetalle
             {
                 Id_Venta = _num_venta
@@ -61,6 +64,9 @@ namespace PUNTOVENTA.MENU.VENTA
 
             {
                 flowLayoutPanel_Orden.Controls.Clear();
+
+                CargaProductos(1);
+
                 int idproducto, stock, precioventa,subtotal,total=0;
                 string nombre;
                 foreach (dgVentaDetalle d in listaorden)
@@ -71,7 +77,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
                     precioventa = Convert.ToInt16(d.PrecioVenta.ToString());
 
-
+                    nombre = Convert.ToString(d.Nombre.ToString());
 
 
 
@@ -85,7 +91,9 @@ namespace PUNTOVENTA.MENU.VENTA
 
                     Productos[contadorproductos].IdProducto = Convert.ToString(idproducto);
 
+                    Productos[contadorproductos].IdVenta = Convert.ToString(_num_venta);
 
+                    Productos[contadorproductos].NombreProducto = nombre;
 
                     Productos[contadorproductos].StockProductoComprar = Convert.ToString(stock);
 
@@ -106,7 +114,10 @@ namespace PUNTOVENTA.MENU.VENTA
                 CargaSubTotal(total);
 
             }
-
+            else
+            {
+                CargaProductos(0);
+            }
 
 
 
@@ -156,14 +167,20 @@ namespace PUNTOVENTA.MENU.VENTA
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void CargaProductos()
+        private void CargaProductos(int Id_Validacion2)
         {
 
 
-            dgProducto parametro = new dgProducto();
+            dgProducto parametro = new dgProducto
+            {
+                Id_Venta = _num_venta,
+                Id_Validacion2= Id_Validacion2
+            };
 
             List<dgProducto> lista = c_producto.LeerProducto(7, parametro);
 
+
+            flowLayoutPanel_productos.Controls.Clear();
             int contadorproductos = 0;
 
             if (lista.Count > 0)
@@ -500,7 +517,7 @@ namespace PUNTOVENTA.MENU.VENTA
         {
             flowLayoutPanel_productos.Controls.Clear();
 
-            CargaProductos();
+            CargaProductos(0);
 
             
 
@@ -561,13 +578,41 @@ namespace PUNTOVENTA.MENU.VENTA
 
             }
 
+            dgVentaDetalle parametroeliminartodos = new dgVentaDetalle
+            {
+                Id_Venta = _num_venta
 
-            this.Hide();
-            Inicio formulario = new Inicio();
-            formulario.lbl_id.Text = id;
-            formulario.lbl_perfil.Text = Convert.ToString(retorno2);
-            formulario.txt_usuario.Text = Convert.ToString(retorno);
-            formulario.Show();
+            };
+
+
+
+            string control = "";
+
+
+
+            var confirmResult = MessageBox.Show("Esta seguro de Eliminar toda la Orden",
+                                    "Confirm Delete!!",
+                                    MessageBoxButtons.YesNo);
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                flowLayoutPanel_Orden.Controls.Clear();
+                control = c_ventadetalle.EliminarVentaDetalleTodos(parametroeliminartodos);
+
+                flowLayoutPanel_productos.Controls.Clear();
+
+                lbl_total.Text = "";
+                lbl_cambio.Text = "";
+
+                this.Hide();
+                Inicio formulario = new Inicio();
+                formulario.lbl_id.Text = id;
+                formulario.lbl_perfil.Text = Convert.ToString(retorno2);
+                formulario.txt_usuario.Text = Convert.ToString(retorno);
+                formulario.Show();
+            }
+
+           
         }
 
         private void btn_reinciar_orden_Click(object sender, EventArgs e)
@@ -598,7 +643,10 @@ namespace PUNTOVENTA.MENU.VENTA
 
                 flowLayoutPanel_productos.Controls.Clear();
 
-                CargaProductos();
+                CargaProductos(0);
+
+                lbl_total.Text = "";
+                lbl_cambio.Text = "";
             }
 
 

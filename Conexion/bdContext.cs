@@ -11,7 +11,7 @@ namespace PUNTOVENTA.Conexion
 {
     class bdContext
     {
-        static private readonly string servidor = "DANIELROJAS";
+        static private readonly string servidor = "DESKTOP-RIT0FMM";
        
         
        
