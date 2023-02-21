@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PUNTOVENTA.MENU.VENTA
 {
@@ -36,7 +37,9 @@ namespace PUNTOVENTA.MENU.VENTA
         {
             _num_venta = NumeroVenta();
             CargaProductos(0);
-           
+            CargaTipoVenta();
+            
+
         }
 
         private void CargaSubTotal(int total)
@@ -335,6 +338,26 @@ namespace PUNTOVENTA.MENU.VENTA
 
 
 
+
+        }
+
+        private void  CargaTipoVenta()
+        {
+            
+                dgTipoVenta parametro = new dgTipoVenta();
+
+                List<dgTipoVenta> lista = c_tipoventa.LeerTipoVenta(1, parametro);
+
+                if (lista.Count > 0)
+
+                {
+
+                    foreach (dgTipoVenta d in lista)
+                    {
+                        bx_tipoventa.Items.Add(d.Descripcion.ToString());
+                    }
+                }
+            
 
         }
 
@@ -748,7 +771,74 @@ namespace PUNTOVENTA.MENU.VENTA
 
         private void panel2_MouseMove(object sender, MouseEventArgs e)
         {
+          
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+          
+        }
+
+        private void label12_MouseMove(object sender, MouseEventArgs e)
+        {
             CargaProductosOrden();
+        }
+
+        private void panel6_MouseMove(object sender, MouseEventArgs e)
+        {
+            CargaProductosOrden();
+        }
+
+        private void bx_tipoventa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dgTipoVenta parametro = new dgTipoVenta
+            {
+                Descripcion = bx_tipoventa.Text
+            };
+
+            List<dgTipoVenta> lista = c_tipoventa.LeerTipoVenta(2, parametro);
+
+
+
+            if (lista.Count > 0)
+
+            {
+
+                foreach (dgTipoVenta d in lista)
+                {
+                    lbl_id_tipoventa.Text = d.Id_TipoVenta.ToString();
+                }
+              
+
+            }
+
+            if (lbl_id_tipoventa.Text == "1")
+            {
+                bx_cliente.Enabled  = true;
+        
+            }
+
+            else if (lbl_id_tipoventa.Text == "2")
+            {
+                bx_cliente.Enabled = true;
+
+            }
+
+            else if (lbl_id_tipoventa.Text == "3")
+            {
+                bx_cliente.Enabled = false;
+              
+            }
+        }
+
+        private void bx_cliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
