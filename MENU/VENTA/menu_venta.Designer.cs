@@ -153,11 +153,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cooper Black", 22.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Cooper Black", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(244, 43);
+            this.label1.Location = new System.Drawing.Point(219, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 35);
+            this.label1.Size = new System.Drawing.Size(210, 55);
             this.label1.TabIndex = 78;
             this.label1.Text = "VENTA";
             this.label1.Click += new System.EventHandler(this.label1_Click);
