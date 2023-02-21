@@ -224,6 +224,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(426, 450);
             this.panel3.TabIndex = 39;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // pictureBox1
             // 
@@ -248,6 +249,7 @@
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "menu_cliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "menu_cliente";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.menu_cliente_FormClosing);
             this.panel2.ResumeLayout(false);

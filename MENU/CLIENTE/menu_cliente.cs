@@ -119,5 +119,10 @@ namespace PUNTOVENTA.MENU.CLIENTE
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

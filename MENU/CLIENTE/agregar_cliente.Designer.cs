@@ -127,6 +127,7 @@
             this.btn_crear_cliente.TabIndex = 50;
             this.btn_crear_cliente.Text = "AGREGAR NUEVO CLIENTE";
             this.btn_crear_cliente.UseVisualStyleBackColor = false;
+            this.btn_crear_cliente.Click += new System.EventHandler(this.btn_crear_cliente_Click);
             // 
             // pictureBox1
             // 
@@ -302,6 +303,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(887, 607);
             this.panel3.TabIndex = 74;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // panel7
             // 
@@ -475,6 +477,7 @@
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "agregar_cliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "agregarcliente";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.agregar_cliente_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
