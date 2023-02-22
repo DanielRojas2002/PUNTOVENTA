@@ -26,6 +26,7 @@ namespace Punto_de_Venta.Clases
                     new SqlParameter("@P_IdCategoria",Parametro.Id_Categoria),
                     new SqlParameter("@P_IdMedida",Parametro.Id_Medida),
                     new SqlParameter("@P_IdProveedor",Parametro.Id_Proveedor),
+                    new SqlParameter("@P_IdEstatus",Parametro.Id_Estatus_Producto),
                     new SqlParameter("@P_Nombre",Parametro.Nombre),
                     new SqlParameter("@P_Descripcion",Parametro.Descripcion),
                     new SqlParameter("@P_PrecioCompra",Parametro.PrecioCompra),
@@ -93,7 +94,7 @@ namespace Punto_de_Venta.Clases
             return control;
 
         }
-        public static string EliminarProducto(dgProducto Parametro)
+        public static string DesactivaroActivarProducto(dgProducto Parametro)
         {
 
 
@@ -107,7 +108,8 @@ namespace Punto_de_Venta.Clases
                 SqlParameter[] parametros =
                 {
                     new SqlParameter("@Accion",4),
-                    new SqlParameter("@P_IdProducto",Parametro.Id_Producto)
+                    new SqlParameter("@P_IdProducto",Parametro.Id_Producto),
+                    new SqlParameter("@P_IdEstatus",Parametro.Id_Estatus_Producto)
 
 
                 };
@@ -209,7 +211,8 @@ namespace Punto_de_Venta.Clases
                                  Id_Categoria = Convert.ToInt16(fila["Id_Categoria"].ToString()),
                                  Id_Medida = Convert.ToInt16(fila["Id_Medida"].ToString()),
                                  Nombre = Convert.ToString(fila["Nombre"].ToString()),
-                                 StockInicial = Convert.ToInt16(fila["Stock"].ToString())
+                                 StockInicial = Convert.ToInt16(fila["Stock"].ToString()),
+                                 Id_Estatus_Producto = Convert.ToInt16(fila["Id_Estatus"].ToString())
 
 
 
@@ -238,15 +241,17 @@ namespace Punto_de_Venta.Clases
                     lista = (from DataRow fila in tabla.Rows
                              select new dgProducto
                              {
-                                 
                                  Id_Categoria = Convert.ToInt16(fila["Id_Categoria"].ToString()),
                                  Id_Medida = Convert.ToInt16(fila["Id_Medida"].ToString()),
+                               
                                  Id_Proveedor = Convert.ToInt16(fila["Id_Proveedor"].ToString()),
                                  Nombre = Convert.ToString(fila["Nombre"].ToString()),
                                  Descripcion = Convert.ToString(fila["Descripcion"].ToString()),
                                  StockInicial = Convert.ToInt16(fila["Stock"].ToString()),
                                  PrecioCompra = Convert.ToInt16(fila["PrecioCompra"].ToString()),
-                                 PrecioVenta = Convert.ToInt16(fila["PrecioVenta"].ToString())
+                                 PrecioVenta = Convert.ToInt16(fila["PrecioVenta"].ToString()),
+                                 Id_Estatus_Producto = Convert.ToInt16(fila["Id_Estatus"].ToString())
+
 
 
 
@@ -265,7 +270,8 @@ namespace Punto_de_Venta.Clases
                     new SqlParameter("@Accion",8),
                     new SqlParameter("@P_IdCategoria",Parametro.Id_Categoria),
                     new SqlParameter("@P_IdMedida",Parametro.Id_Medida),
-                    new SqlParameter("@P_IdProveedor",Parametro.Id_Proveedor)
+                    new SqlParameter("@P_IdProveedor",Parametro.Id_Proveedor),
+                    new SqlParameter("@P_Nombre",Parametro.Nombre)
 
                 };
 
@@ -282,6 +288,7 @@ namespace Punto_de_Venta.Clases
                                  Id_Medida = Convert.ToInt16(fila["Id_Medida"].ToString()),
                                  Nombre = Convert.ToString(fila["Nombre"].ToString()),
                                  StockInicial = Convert.ToInt16(fila["Stock"].ToString())
+                                
 
 
 
@@ -354,6 +361,74 @@ namespace Punto_de_Venta.Clases
                                  Nombre = Convert.ToString(fila["Nombre"].ToString()),
                                  StockInicial = Convert.ToInt16(fila["Stock"].ToString()),
                                  PrecioVenta = Convert.ToInt16(fila["PrecioVenta"].ToString())
+
+
+
+
+                             }
+                   ).ToList();
+                }
+            }
+
+            else if (tipo == 9) // FILTRADO DATAGRIDVIEW INACTIVOS
+
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",11),
+                    new SqlParameter("@P_IdCategoria",Parametro.Id_Categoria),
+                    new SqlParameter("@P_IdMedida",Parametro.Id_Medida),
+                    new SqlParameter("@P_IdProveedor",Parametro.Id_Proveedor),
+                    new SqlParameter("@P_Nombre",Parametro.Nombre)
+
+                };
+
+                tabla = bdContext.funcionStored("spProducto", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgProducto
+                             {
+
+                                 Id_Producto = Convert.ToInt16(fila["Id_Producto"].ToString()),
+                                 Id_Categoria = Convert.ToInt16(fila["Id_Categoria"].ToString()),
+                                 Id_Medida = Convert.ToInt16(fila["Id_Medida"].ToString()),
+                                 Nombre = Convert.ToString(fila["Nombre"].ToString()),
+                                 StockInicial = Convert.ToInt16(fila["Stock"].ToString())
+
+
+
+
+                             }
+                   ).ToList();
+                }
+            }
+
+            else if (tipo == 10) // select para el datagridview de productos inactivos
+
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",77),
+
+                };
+
+                tabla = bdContext.funcionStored("spProducto", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgProducto
+                             {
+                                 Id_Producto = Convert.ToInt16(fila["Id_Producto"].ToString()),
+                                 Id_Categoria = Convert.ToInt16(fila["Id_Categoria"].ToString()),
+                                 Id_Medida = Convert.ToInt16(fila["Id_Medida"].ToString()),
+                                 Nombre = Convert.ToString(fila["Nombre"].ToString()),
+                                 StockInicial = Convert.ToInt16(fila["Stock"].ToString()),
+                                 Id_Estatus_Producto = Convert.ToInt16(fila["Id_Estatus"].ToString())
 
 
 

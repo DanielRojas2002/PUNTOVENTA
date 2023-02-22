@@ -30,7 +30,9 @@ namespace PUNTOVENTA.MENU.PRODUCTO
             int idProducto;
             idProducto = Convert.ToInt16(lblidproducto.Text);
 
-            
+            lbl_id_estatus.Text = "";
+
+
 
             dgProducto parametro = new dgProducto
             {
@@ -57,10 +59,29 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                     lblidcategoria.Text=Convert.ToString(d.Id_Categoria.ToString());
                     lblidmedida.Text = Convert.ToString(d.Id_Medida.ToString());
                     lblidproveedor.Text = Convert.ToString(d.Id_Proveedor.ToString());
+                    lbl_id_estatus.Text=Convert.ToString(d.Id_Estatus_Producto.ToString());
+
+                    MessageBox.Show(lbl_id_estatus.Text);
 
                 }
 
-               
+
+
+                if (lbl_id_estatus.Text == "1")
+                {
+                    btn_eliminar_producto.Text = "DESACTIVAR";
+                    btn_eliminar_producto.ForeColor = Color.Red;
+
+                }
+
+                else if (lbl_id_estatus.Text == "2")
+                {
+                    btn_eliminar_producto.Text = "ACTIVAR";
+                    btn_eliminar_producto.ForeColor = Color.Green;
+
+                }
+
+
 
                 bx_medida.Items.Clear();
 
@@ -323,10 +344,42 @@ namespace PUNTOVENTA.MENU.PRODUCTO
         {
             try
             {
+                string msj = "";
+                string msj2 = "";
+                string msj3 = "";
+
+               
+
+                int id_estatus = 0;
+                if (lbl_id_estatus.Text == "1")
+                {
+                    
+                    msj = "Producto Desactivado";
+                    msj2 = "Esta seguro de Desactivar este Producto";
+                    msj3 = "Desactivar Producto";
+                    
+                    id_estatus = 2;
+
+                  
+
+                    
+                }
+
+                else if (lbl_id_estatus.Text == "2")
+                {
+                    
+                    msj = "Producto Activado";
+                    msj2 = "Esta seguro de Activar este Producto";
+                    msj3 = "Activar Producto";
+                    id_estatus = 1;
+
+                   
+                }
 
                 dgProducto parametro = new dgProducto
                 {
-                    Id_Producto = Convert.ToInt16(lblidproducto.Text)
+                    Id_Producto = Convert.ToInt16(lblidproducto.Text),
+                    Id_Estatus_Producto = id_estatus
                 };
 
 
@@ -384,15 +437,13 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
                 string control = "";
 
-                var confirmResult = MessageBox.Show("Esta seguro de Eliminar este Producto",
-                                     "Confirm Delete!!",
-                                     MessageBoxButtons.YesNo);
+                var confirmResult = MessageBox.Show(msj2,msj3,MessageBoxButtons.YesNo);
 
                 if (confirmResult == DialogResult.Yes)
                 {
-                    control = c_producto.EliminarProducto(parametro);
+                    control = c_producto.DesactivaroActivarProducto(parametro);
 
-                    MessageBox.Show("Producto Eliminado", "Correcto");
+                    MessageBox.Show(msj, "Correcto");
 
                     this.Hide();
                     menu_producto formulario = new menu_producto();

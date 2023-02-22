@@ -315,10 +315,12 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                             Id_Categoria = Convert.ToInt16(lbl_idcategoria.Text),
                             Id_Medida = Convert.ToInt16(lbl_idmedida.Text),
                             Id_Proveedor = Convert.ToInt16(lbl_proveedor.Text),
+                            Id_Estatus_Producto=1,
                             Nombre = txt_nombre.Text.Trim(),
                             Descripcion = txt_descripcion.Text.Trim(),
                             PrecioCompra = (float?)Convert.ToDouble(txt_preciocompra.Text.Trim()),
                             PrecioVenta = (float?)Convert.ToDouble(txt_precioventa.Text.Trim())
+
                            
 
                         };

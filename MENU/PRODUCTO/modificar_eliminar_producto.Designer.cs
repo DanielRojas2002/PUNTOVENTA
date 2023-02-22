@@ -36,7 +36,7 @@
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.btn_modificar_producto = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.foto_activooinactivo = new System.Windows.Forms.PictureBox();
             this.btn_eliminar_producto = new System.Windows.Forms.Button();
             this.lblidproveedor = new System.Windows.Forms.Label();
             this.lblidmedida = new System.Windows.Forms.Label();
@@ -83,13 +83,14 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.btn_agregar_stock = new System.Windows.Forms.Button();
+            this.lbl_id_estatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.foto_activooinactivo)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -204,7 +205,7 @@
             // 
             // panel13
             // 
-            this.panel13.Controls.Add(this.pictureBox10);
+            this.panel13.Controls.Add(this.foto_activooinactivo);
             this.panel13.Controls.Add(this.btn_eliminar_producto);
             this.panel13.Location = new System.Drawing.Point(3, 456);
             this.panel13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -213,16 +214,15 @@
             this.panel13.TabIndex = 96;
             this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel13_Paint);
             // 
-            // pictureBox10
+            // foto_activooinactivo
             // 
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(3, 4);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(38, 53);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox10.TabIndex = 15;
-            this.pictureBox10.TabStop = false;
+            this.foto_activooinactivo.Location = new System.Drawing.Point(3, 4);
+            this.foto_activooinactivo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.foto_activooinactivo.Name = "foto_activooinactivo";
+            this.foto_activooinactivo.Size = new System.Drawing.Size(38, 53);
+            this.foto_activooinactivo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.foto_activooinactivo.TabIndex = 15;
+            this.foto_activooinactivo.TabStop = false;
             // 
             // btn_eliminar_producto
             // 
@@ -788,12 +788,25 @@
             this.btn_agregar_stock.UseVisualStyleBackColor = false;
             this.btn_agregar_stock.Click += new System.EventHandler(this.btn_agregar_stock_Click);
             // 
+            // lbl_id_estatus
+            // 
+            this.lbl_id_estatus.AutoSize = true;
+            this.lbl_id_estatus.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_id_estatus.ForeColor = System.Drawing.Color.White;
+            this.lbl_id_estatus.Location = new System.Drawing.Point(566, 91);
+            this.lbl_id_estatus.Name = "lbl_id_estatus";
+            this.lbl_id_estatus.Size = new System.Drawing.Size(104, 23);
+            this.lbl_id_estatus.TabIndex = 98;
+            this.lbl_id_estatus.Text = "idestatus";
+            this.lbl_id_estatus.Visible = false;
+            // 
             // modificar_eliminar_producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(887, 661);
+            this.Controls.Add(this.lbl_id_estatus);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.lblidproducto);
             this.Controls.Add(this.label9);
@@ -818,7 +831,7 @@
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.panel13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.foto_activooinactivo)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -896,11 +909,12 @@
         private PictureBox pictureBox11;
         private Button btn_modificar_producto;
         private Panel panel13;
-        private PictureBox pictureBox10;
+        private PictureBox foto_activooinactivo;
         private Button btn_eliminar_producto;
         private Label txt_stock;
         private Panel panel8;
         private PictureBox pictureBox12;
         private Button btn_agregar_stock;
+        public Label lbl_id_estatus;
     }
 }

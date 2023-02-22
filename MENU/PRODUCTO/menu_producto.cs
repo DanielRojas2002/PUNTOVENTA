@@ -112,6 +112,66 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
 
 
+
+
+
+            dgProducto parametroinactivos = new dgProducto();
+
+            List<dgProducto> listainactivos = c_producto.LeerProducto(10, parametroinactivos);
+
+
+            if (listainactivos.Count > 0)
+
+            {
+                int idproducto, idcategoria, idmedida, stock;
+                string nombre, categoriadescripcion, medidadescripcion;
+                foreach (dgProducto d in listainactivos)
+                {
+                    idproducto = Convert.ToInt16(d.Id_Producto.ToString());
+                    idcategoria = Convert.ToInt16(d.Id_Categoria.ToString());
+                    idmedida = Convert.ToInt16(d.Id_Medida.ToString());
+                    stock = Convert.ToInt16(d.StockInicial.ToString());
+
+                    nombre = Convert.ToString(d.Nombre.ToString());
+
+                    dgCategoria parametro2 = new dgCategoria
+                    {
+                        Id_Categoria = Convert.ToInt16(idcategoria.ToString())
+                    };
+
+                    List<dgCategoria> listacategoria = c_categoria.LeerCategoria(3, parametro2);
+
+
+                    dgMedida parametro3 = new dgMedida
+                    {
+                        Id_Medida = Convert.ToInt16(idmedida.ToString())
+                    };
+
+                    List<dgMedida> listamedida = c_medida.LeerMedida(3, parametro3);
+
+                    if (listacategoria.Count > 0 && listamedida.Count > 0)
+
+                    {
+                        categoriadescripcion = "";
+                        medidadescripcion = "";
+                        foreach (dgCategoria dg in listacategoria)
+                        {
+                            categoriadescripcion = Convert.ToString(dg.Descripcion.ToString());
+                        }
+
+                        foreach (dgMedida dg in listamedida)
+                        {
+                            medidadescripcion = Convert.ToString(dg.Descripcion.ToString());
+                        }
+
+                        dataGridView_productos_inactivos.Rows.Add(idproducto, nombre, categoriadescripcion, medidadescripcion, stock);
+                    }
+
+
+                }
+
+            }
+
             bx_categorias.Items.Clear();
             dgCategoria parametro2_1 = new dgCategoria
             {
@@ -298,7 +358,7 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
             int idCategoria=0,idMedida=0, idProveedor=0;
 
-            if (bx_categorias.Text == "" && bx_medidas.Text == "" && bx_proveedores.Text == "")
+            if (bx_categorias.Text == "" && bx_medidas.Text == "" && bx_proveedores.Text == "" && txt_nombre_producto.Text=="")
             {
                 MessageBox.Show("Seleccione al menos un filtro para poder filtrar");
             }
@@ -307,6 +367,9 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
             else
             {
+                dataGridView_productos.Rows.Clear();
+                dataGridView_productos_inactivos.Rows.Clear();
+
                 dgCategoria parametro2_1 = new dgCategoria
                 {
                     Descripcion = Convert.ToString(bx_categorias.Text)
@@ -368,9 +431,11 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
                 dgProducto parametrofiltrado = new dgProducto
                 {
-                    Id_Categoria=idCategoria,
-                    Id_Medida=idMedida,
-                    Id_Proveedor=idProveedor
+                    Id_Categoria = idCategoria,
+                    Id_Medida = idMedida,
+                    Id_Proveedor = idProveedor,
+                    Nombre = txt_nombre_producto.Text.Trim()
+                    
                 };
 
                 List<dgProducto> listafiltrado = c_producto.LeerProducto(6, parametrofiltrado);
@@ -378,7 +443,9 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                 if (listafiltrado.Count > 0)
 
                 {
-                    dataGridView_productos.Rows.Clear();
+                   
+                
+
                     int idproducto, idcategoria, idmedida, stock;
                     string nombre, categoriadescripcion, medidadescripcion;
 
@@ -422,6 +489,8 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                             }
 
                             dataGridView_productos.Rows.Add(idproducto, nombre, categoriadescripcion, medidadescripcion, stock);
+
+                           
                         }
 
 
@@ -432,11 +501,89 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
                 else
                 {
-                    MessageBox.Show("No se encontraron resultados");
+                    MessageBox.Show("No se encontraron resultados Activos");
                 }
 
 
-              
+
+                dgProducto parametrofiltradoinactivos = new dgProducto
+                {
+                    Id_Categoria = idCategoria,
+                    Id_Medida = idMedida,
+                    Id_Proveedor = idProveedor,
+                    Nombre = txt_nombre_producto.Text.Trim()
+
+                };
+
+                List<dgProducto> listafiltradoinactivos = c_producto.LeerProducto(9, parametrofiltradoinactivos);
+
+                if (listafiltradoinactivos.Count > 0)
+
+                {
+                   
+
+                  
+
+                    int idproducto, idcategoria, idmedida, stock;
+                    string nombre, categoriadescripcion, medidadescripcion;
+
+                    foreach (dgProducto d in listafiltradoinactivos)
+                    {
+                        idproducto = Convert.ToInt16(d.Id_Producto.ToString());
+                        idcategoria = Convert.ToInt16(d.Id_Categoria.ToString());
+                        idmedida = Convert.ToInt16(d.Id_Medida.ToString());
+                        stock = Convert.ToInt16(d.StockInicial.ToString());
+
+                        nombre = Convert.ToString(d.Nombre.ToString());
+
+                        dgCategoria parametro2 = new dgCategoria
+                        {
+                            Id_Categoria = Convert.ToInt16(idcategoria.ToString())
+                        };
+
+                        List<dgCategoria> listacategoria = c_categoria.LeerCategoria(3, parametro2);
+
+
+                        dgMedida parametro3 = new dgMedida
+                        {
+                            Id_Medida = Convert.ToInt16(idmedida.ToString())
+                        };
+
+                        List<dgMedida> listamedida = c_medida.LeerMedida(3, parametro3);
+
+                        if (listacategoria.Count > 0 && listamedida.Count > 0)
+
+                        {
+                            categoriadescripcion = "";
+                            medidadescripcion = "";
+                            foreach (dgCategoria dg in listacategoria)
+                            {
+                                categoriadescripcion = Convert.ToString(dg.Descripcion.ToString());
+                            }
+
+                            foreach (dgMedida dg in listamedida)
+                            {
+                                medidadescripcion = Convert.ToString(dg.Descripcion.ToString());
+                            }
+
+                           dataGridView_productos_inactivos.Rows.Add(idproducto, nombre, categoriadescripcion, medidadescripcion, stock);
+
+
+                        }
+
+
+                    }
+
+
+                }
+
+                else
+                {
+                    MessageBox.Show("No se encontraron resultados Inactivos");
+                }
+
+
+
 
             }
             
@@ -481,6 +628,7 @@ namespace PUNTOVENTA.MENU.PRODUCTO
         private void btn_reiniciar_filtrado_Click(object sender, EventArgs e)
         {
             dataGridView_productos.Rows.Clear();
+            dataGridView_productos_inactivos.Rows.Clear();
 
             dgProducto parametro = new dgProducto();
 
@@ -532,6 +680,67 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                         }
 
                         dataGridView_productos.Rows.Add(idproducto, nombre, categoriadescripcion, medidadescripcion, stock);
+                    }
+
+
+                }
+
+            }
+
+
+
+
+
+            dgProducto parametroinactivo = new dgProducto();
+
+            List<dgProducto> listainactivo = c_producto.LeerProducto(10, parametroinactivo);
+
+
+            if (listainactivo.Count > 0)
+
+            {
+                int idproducto, idcategoria, idmedida, stock;
+                string nombre, categoriadescripcion, medidadescripcion;
+                foreach (dgProducto d in listainactivo)
+                {
+                    idproducto = Convert.ToInt16(d.Id_Producto.ToString());
+                    idcategoria = Convert.ToInt16(d.Id_Categoria.ToString());
+                    idmedida = Convert.ToInt16(d.Id_Medida.ToString());
+                    stock = Convert.ToInt16(d.StockInicial.ToString());
+
+                    nombre = Convert.ToString(d.Nombre.ToString());
+
+                    dgCategoria parametro2 = new dgCategoria
+                    {
+                        Id_Categoria = Convert.ToInt16(idcategoria.ToString())
+                    };
+
+                    List<dgCategoria> listacategoria = c_categoria.LeerCategoria(3, parametro2);
+
+
+                    dgMedida parametro3 = new dgMedida
+                    {
+                        Id_Medida = Convert.ToInt16(idmedida.ToString())
+                    };
+
+                    List<dgMedida> listamedida = c_medida.LeerMedida(3, parametro3);
+
+                    if (listacategoria.Count > 0 && listamedida.Count > 0)
+
+                    {
+                        categoriadescripcion = "";
+                        medidadescripcion = "";
+                        foreach (dgCategoria dg in listacategoria)
+                        {
+                            categoriadescripcion = Convert.ToString(dg.Descripcion.ToString());
+                        }
+
+                        foreach (dgMedida dg in listamedida)
+                        {
+                            medidadescripcion = Convert.ToString(dg.Descripcion.ToString());
+                        }
+
+                        dataGridView_productos_inactivos.Rows.Add(idproducto, nombre, categoriadescripcion, medidadescripcion, stock);
                     }
 
 
@@ -611,6 +820,17 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                 }
 
             }
+        }
+
+        private void dataGridView_productos_inactivos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string idProducto = dataGridView_productos_inactivos.CurrentRow.Cells["Col_IdProducto_Inactivo"].Value.ToString();
+
+            this.Hide();
+            modificar_eliminar_producto forms = new modificar_eliminar_producto();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.lblidproducto.Text = idProducto;
+            forms.Show();
         }
     }
 }
