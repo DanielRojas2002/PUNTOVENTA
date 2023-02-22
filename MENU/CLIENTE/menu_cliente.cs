@@ -41,7 +41,10 @@ namespace PUNTOVENTA.MENU.CLIENTE
 
         private void btn_eliminar_cliente_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            eliminar_cliente forms = new eliminar_cliente();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
         }
 
         private void btn_regresar_Click(object sender, EventArgs e)

@@ -88,6 +88,7 @@
             this.btn_eliminar_cliente.TabIndex = 38;
             this.btn_eliminar_cliente.Text = "ELIMINAR CLIENTE";
             this.btn_eliminar_cliente.UseVisualStyleBackColor = false;
+            this.btn_eliminar_cliente.Click += new System.EventHandler(this.btn_eliminar_cliente_Click);
             // 
             // pictureBox4
             // 
@@ -108,9 +109,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(410, 229);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(179, 30);
+            this.label3.Size = new System.Drawing.Size(196, 30);
             this.label3.TabIndex = 72;
-            this.label3.Text = "Solo se podra eliminar un cliente\r\n cuando exista crédito pendiente";
+            this.label3.Text = "Solo se podra eliminar un cliente\r\n cuando no exista crédito pendiente";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // idCliente
@@ -136,6 +137,7 @@
             this.bx_cliente.Name = "bx_cliente";
             this.bx_cliente.Size = new System.Drawing.Size(180, 23);
             this.bx_cliente.TabIndex = 66;
+            this.bx_cliente.SelectedIndexChanged += new System.EventHandler(this.bx_cliente_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -165,7 +167,7 @@
             this.lbl_id.AutoSize = true;
             this.lbl_id.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_id.ForeColor = System.Drawing.Color.White;
-            this.lbl_id.Location = new System.Drawing.Point(182, 76);
+            this.lbl_id.Location = new System.Drawing.Point(188, 48);
             this.lbl_id.Name = "lbl_id";
             this.lbl_id.Size = new System.Drawing.Size(25, 19);
             this.lbl_id.TabIndex = 67;
@@ -347,6 +349,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "eliminar_cliente";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.eliminar_cliente_FormClosing);
+            this.Load += new System.EventHandler(this.eliminar_cliente_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
