@@ -42,6 +42,12 @@ namespace PUNTOVENTA.MENU.VENTA
             bx_cliente.Visible = false;
             lbl_clienteonombre.Text = "";
             txt_nombre_transferencia.Visible = false;
+            txt_paga_con.Visible = false;
+            lbl_etiqueta_pago.Text = "";
+
+            label11.Text = "";
+            lbl_total.Text = "";
+            lbl_cambio.Text = "";
 
         }
 
@@ -718,32 +724,90 @@ namespace PUNTOVENTA.MENU.VENTA
            
             try
             {
-                lbl_cambio.Text = "";
-
-                int total = Convert.ToInt16(lbl_total.Text);
-
-                int pago = Convert.ToInt32(txt_paga_con.Text);
-
-                int cambio = pago - total;
-                lbl_cambio.Text = Convert.ToString(cambio);
-
-                if (pago < total)
+                if (lbl_id_tipoventa.Text == "1" && lbl_total.Text != "")
                 {
-                    
-                    lbl_cambio.ForeColor = Color.Red;
+                    lbl_cambio.Text = "";
+
+                    int total = Convert.ToInt16(lbl_total.Text);
+
+                    int pago = Convert.ToInt32(txt_paga_con.Text);
+
+                    int cambio = pago - total;
+                    lbl_cambio.Text = Convert.ToString(cambio);
+
+                    if (pago < total)
+                    {
+
+                        lbl_cambio.ForeColor = Color.Red;
+                    }
+
+                    else
+                    {
+
+                        lbl_cambio.ForeColor = Color.Yellow;
+                    }
+
                 }
 
-                else
+                else if (lbl_id_tipoventa.Text == "2")
                 {
-                    
-                    lbl_cambio.ForeColor = Color.Yellow;
+                    lbl_cambio.Text = "";
+
+                    int total = Convert.ToInt16(lbl_total.Text);
+
+                    int pago = Convert.ToInt32(txt_paga_con.Text);
+
+                    int cambio = pago - total;
+                    lbl_cambio.Text = Convert.ToString(cambio);
+
+                    if (pago < total)
+                    {
+
+                        lbl_cambio.ForeColor = Color.Red;
+                    }
+
+                    else
+                    {
+
+                        lbl_cambio.ForeColor = Color.Yellow;
+                    }
+
+                }
+
+                else if (lbl_id_tipoventa.Text == "3" && lbl_total.Text != "") // credito
+                {
+                   
+                    lbl_cambio.Text = "";
+
+                    int total = Convert.ToInt16(lbl_total.Text);
+
+                    int pago = Convert.ToInt32(txt_paga_con.Text);
+
+                    int cambio = pago - total;
+                   
+
+                    if (pago >= total)
+                    {
+
+                        MessageBox.Show("No puede abonar mas cantidad o igual de dinero ya que esta en el modulo de credito", "Advertencia");
+                        txt_paga_con.Text = "";
+                    }
+
+                    else
+                    {
+
+                       
+                    }
+
                 }
 
 
 
-               
 
-              
+
+
+
+
 
 
             }
@@ -764,7 +828,49 @@ namespace PUNTOVENTA.MENU.VENTA
 
         private void btn_realizar_venta_Click(object sender, EventArgs e)
         {
+            if (lbl_id_tipoventa.Text == "1" && lbl_total.Text != "" )
+            {
+                if (txt_paga_con.Text=="" && lbl_cambio.Text=="")
+                {
+                    MessageBox.Show("Debe de llenar el campo de pago");
 
+                }
+                else
+                {
+
+                    int total = Convert.ToInt16(lbl_total.Text);
+
+                    int pago = Convert.ToInt32(txt_paga_con.Text);
+
+                    int cambio = pago - total;
+                    lbl_cambio.Text = Convert.ToString(cambio);
+
+                    if (pago < total)
+                    {
+
+                        lbl_cambio.ForeColor = Color.Red;
+                        MessageBox.Show(" No se puede realizar la venta ");
+
+                    }
+
+                    else
+                    {
+
+                        lbl_cambio.ForeColor = Color.Yellow;
+
+                        MessageBox.Show("Venta Realizada");
+                    }
+                }
+               
+
+            }
+
+            else
+            {
+                MessageBox.Show("Debe Agregar Productos a la orden ");
+            }
+
+            
         }
 
         private void panel2_MouseEnter(object sender, EventArgs e)
@@ -799,7 +905,9 @@ namespace PUNTOVENTA.MENU.VENTA
 
         private void bx_tipoventa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgTipoVenta parametro = new dgTipoVenta
+           lbl_id_cliente.Text = "";
+           bx_cliente.Items.Clear();
+           dgTipoVenta parametro = new dgTipoVenta
             {
                 Descripcion = bx_tipoventa.Text
             };
@@ -822,9 +930,15 @@ namespace PUNTOVENTA.MENU.VENTA
 
             if (lbl_id_tipoventa.Text == "1")
             {
+                txt_paga_con.Text = "";
                 lbl_clienteonombre.Text = "";  
                 bx_cliente.Visible  = false;
                 txt_nombre_transferencia.Visible = false;
+                lbl_etiqueta_pago.Text = "Paga con:";
+                txt_paga_con.Visible = true;
+                label11.Text = "Cambio";
+                label9.Text = "Total";
+
 
             }
 
@@ -833,21 +947,68 @@ namespace PUNTOVENTA.MENU.VENTA
                 lbl_clienteonombre.Text = "Nombre";
                 bx_cliente.Visible = false;
                 txt_nombre_transferencia.Visible = true;
-
+                lbl_etiqueta_pago.Text = "";
+                txt_paga_con.Visible = false;
+                label11.Text = "";
+                label9.Text = "Total";
+                lbl_cambio.Text = "";
             }
 
             else if (lbl_id_tipoventa.Text == "3")
             {
+                txt_paga_con.Text = "";
                 lbl_clienteonombre.Text = "Cliente:";
                 bx_cliente.Visible = true;
                 txt_nombre_transferencia.Visible = false;
+                lbl_etiqueta_pago.Text = "Abona con:";
+                txt_paga_con.Visible = true;
+                label11.Text = "";
+                label9.Text = "Total";
+                lbl_cambio.Text = "";
+                CargaCliente();
 
             }
         }
 
-        private void bx_cliente_SelectedIndexChanged(object sender, EventArgs e)
+        private void CargaCliente()
         {
 
+            dgCliente parametro = new dgCliente();
+
+            List<dgCliente> lista = c_cliente.LeerCliente(1, parametro);
+
+            if (lista.Count > 0)
+
+            {
+
+                foreach (dgCliente d in lista)
+                {
+                    bx_cliente.Items.Add(d.Nombre.ToString());
+                }
+            }
+
+
+        }
+
+        private void bx_cliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dgCliente parametro = new dgCliente
+            {
+                Nombre = Convert.ToString(bx_cliente.Text)
+            };
+
+
+            List<dgCliente> lista = c_cliente.LeerCliente(2, parametro);
+
+            if (lista.Count > 0)
+
+            {
+
+                foreach (dgCliente d in lista)
+                {
+                    lbl_id_cliente.Text = d.Id_Cliente.ToString();
+                }
+            }
         }
 
         private void lbl_id_tipoventa_Click(object sender, EventArgs e)
