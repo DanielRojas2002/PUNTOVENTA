@@ -61,7 +61,7 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                     lblidproveedor.Text = Convert.ToString(d.Id_Proveedor.ToString());
                     lbl_id_estatus.Text=Convert.ToString(d.Id_Estatus_Producto.ToString());
 
-                    MessageBox.Show(lbl_id_estatus.Text);
+                   
 
                 }
 
