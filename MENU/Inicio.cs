@@ -155,6 +155,7 @@ namespace Punto_de_Venta
                 pnl_productos.Visible = true;
                 pnl_seguridad.Visible = true;
 
+                pnl_r.Visible = true;
                 pnl_reportes.Visible = true;
                 pnl_provedores.Visible = true;
 
@@ -166,8 +167,8 @@ namespace Punto_de_Venta
                 pnl_productos.Visible = true;
                 pnl_ventas.Visible = true;
                 pnl_seguridad.Visible = false;
-
-                pnl_reportes.Visible = true;
+                pnl_r.Visible = false;
+                pnl_reportes.Visible = false;
                 pnl_provedores.Visible = false;
             }
 
@@ -279,6 +280,11 @@ namespace Punto_de_Venta
         private void Inicio_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void pnl_r_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
