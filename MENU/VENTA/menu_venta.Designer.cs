@@ -46,7 +46,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.lbl_total = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lbl_clienteonombre = new System.Windows.Forms.Label();
             this.bx_cliente = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.bx_tipoventa = new System.Windows.Forms.ComboBox();
@@ -82,6 +82,7 @@
             this.btn_reinciar_orden = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
+            this.txt_nombre_transferencia = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -217,6 +218,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.MediumBlue;
+            this.panel3.Controls.Add(this.txt_nombre_transferencia);
             this.panel3.Controls.Add(this.lbl_id_tipoventa);
             this.panel3.Controls.Add(this.lbl_cambio);
             this.panel3.Controls.Add(this.label11);
@@ -224,7 +226,7 @@
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.lbl_total);
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.lbl_clienteonombre);
             this.panel3.Controls.Add(this.bx_cliente);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.bx_tipoventa);
@@ -247,6 +249,7 @@
             this.lbl_id_tipoventa.TabIndex = 98;
             this.lbl_id_tipoventa.Text = "id_tipoventa";
             this.lbl_id_tipoventa.Visible = false;
+            this.lbl_id_tipoventa.Click += new System.EventHandler(this.lbl_id_tipoventa_Click);
             // 
             // lbl_cambio
             // 
@@ -316,22 +319,21 @@
             this.label9.TabIndex = 101;
             this.label9.Text = "Total:";
             // 
-            // label8
+            // lbl_clienteonombre
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(222, 278);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 13);
-            this.label8.TabIndex = 100;
-            this.label8.Text = "Cliente";
+            this.lbl_clienteonombre.AutoSize = true;
+            this.lbl_clienteonombre.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_clienteonombre.ForeColor = System.Drawing.Color.White;
+            this.lbl_clienteonombre.Location = new System.Drawing.Point(222, 278);
+            this.lbl_clienteonombre.Name = "lbl_clienteonombre";
+            this.lbl_clienteonombre.Size = new System.Drawing.Size(49, 13);
+            this.lbl_clienteonombre.TabIndex = 100;
+            this.lbl_clienteonombre.Text = "Cliente";
             // 
             // bx_cliente
             // 
             this.bx_cliente.BackColor = System.Drawing.Color.White;
             this.bx_cliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.bx_cliente.Enabled = false;
             this.bx_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bx_cliente.ForeColor = System.Drawing.Color.Black;
             this.bx_cliente.FormattingEnabled = true;
@@ -770,6 +772,17 @@
             this.label12.Text = "PASE EL MOUSE AQUI PARA ACTUALIZAR";
             this.label12.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label12_MouseMove);
             // 
+            // txt_nombre_transferencia
+            // 
+            this.txt_nombre_transferencia.BackColor = System.Drawing.Color.White;
+            this.txt_nombre_transferencia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_nombre_transferencia.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_nombre_transferencia.ForeColor = System.Drawing.Color.Black;
+            this.txt_nombre_transferencia.Location = new System.Drawing.Point(222, 294);
+            this.txt_nombre_transferencia.Name = "txt_nombre_transferencia";
+            this.txt_nombre_transferencia.Size = new System.Drawing.Size(159, 19);
+            this.txt_nombre_transferencia.TabIndex = 107;
+            // 
             // menu_venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -878,12 +891,13 @@
         private Label label10;
         private Label lbl_total;
         private Label label9;
-        private Label label8;
+        private Label lbl_clienteonombre;
         private ComboBox bx_cliente;
         private Label label7;
         private ComboBox bx_tipoventa;
         private Panel panel6;
         private Label label12;
         public Label lbl_id_tipoventa;
+        private TextBox txt_nombre_transferencia;
     }
 }

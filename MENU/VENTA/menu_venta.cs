@@ -38,7 +38,10 @@ namespace PUNTOVENTA.MENU.VENTA
             _num_venta = NumeroVenta();
             CargaProductos(0);
             CargaTipoVenta();
-            
+
+            bx_cliente.Visible = false;
+            lbl_clienteonombre.Text = "";
+            txt_nombre_transferencia.Visible = false;
 
         }
 
@@ -819,24 +822,35 @@ namespace PUNTOVENTA.MENU.VENTA
 
             if (lbl_id_tipoventa.Text == "1")
             {
-                bx_cliente.Enabled  = true;
-        
+                lbl_clienteonombre.Text = "";  
+                bx_cliente.Visible  = false;
+                txt_nombre_transferencia.Visible = false;
+
             }
 
             else if (lbl_id_tipoventa.Text == "2")
             {
-                bx_cliente.Enabled = true;
+                lbl_clienteonombre.Text = "Nombre";
+                bx_cliente.Visible = false;
+                txt_nombre_transferencia.Visible = true;
 
             }
 
             else if (lbl_id_tipoventa.Text == "3")
             {
-                bx_cliente.Enabled = false;
-              
+                lbl_clienteonombre.Text = "Cliente:";
+                bx_cliente.Visible = true;
+                txt_nombre_transferencia.Visible = false;
+
             }
         }
 
         private void bx_cliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_id_tipoventa_Click(object sender, EventArgs e)
         {
 
         }
