@@ -49,6 +49,7 @@ namespace PUNTOVENTA.MENU.VENTA
             label11.Text = "";
             lbl_total.Text = "";
             lbl_cambio.Text = "";
+            txt_paga_con.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_paga_con_KeyPress);
 
         }
 
@@ -1091,18 +1092,20 @@ namespace PUNTOVENTA.MENU.VENTA
                 {
                     dgVenta parametro = new dgVenta
                     {
-                        Id_Usuario = Convert.ToInt16(lbl_id.Text),
+                        Id_Usuario=Convert.ToInt16(lbl_id.Text),
                         Id_Cliente= Convert.ToInt16(lbl_id_cliente.Text),
+                        Id_Venta = _num_venta,
 
                         FechaVenta = DateTime.Now,
-                        Id_Venta = _num_venta,
+                        
                         Total = decimal.Parse(lbl_total.Text),
-                        Cambio = Convert.ToInt16(lbl_cambio.Text)
+                        Cambio = 0
                         
 
 
                     };
 
+                    
                     string control = "";
 
                     control = c_venta.InsertarVentaCredito(parametro);
@@ -1145,7 +1148,24 @@ namespace PUNTOVENTA.MENU.VENTA
 
                         }
 
-                        MessageBox.Show("Venta Realizada");
+
+                        dgCredito parametrocredito = new dgCredito
+                        {
+
+                            Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
+                            Id_Venta = _num_venta,
+                            FechaRegistro = DateTime.Now,
+                            Id_Estatus = 2
+                           
+
+
+
+                        };
+
+                        control = "";
+
+                        control = c_credito_venta.InsertarCreditoVenta(parametrocredito);
+                        MessageBox.Show("Venta Realizada Por Credito");
 
                         RegresarVentana();
 
@@ -1315,6 +1335,27 @@ namespace PUNTOVENTA.MENU.VENTA
         private void lbl_id_tipoventa_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_paga_con_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    //el resto de teclas pulsadas se desactivan
+                    e.Handled = true;
+                }
+            }
+           
         }
     }
 }
