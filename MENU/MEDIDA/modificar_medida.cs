@@ -22,26 +22,7 @@ namespace PUNTOVENTA.MENU.MEDIDA
             InitializeComponent();
 
            
-            dgMedida parametro = new dgMedida();
-
-            parametro.Descripcion = "no";
-
-            List<dgMedida> lista = c_medida.LeerMedida(1, parametro);
-
-            if (lista.Count > 0)
-
-            {
-
-                foreach (dgMedida d in lista)
-                {
-                    bx_medida.Items.Add(d.Descripcion.ToString());
-                }
-
-
-
-
-
-            }
+          
         }
 
         private void modificar_medida_FormClosing(object sender, FormClosingEventArgs e)
@@ -111,48 +92,17 @@ namespace PUNTOVENTA.MENU.MEDIDA
 
         private void bx_medida_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int id;
-            string descripcion;
-            descripcion = bx_medida.Text;
+            string concatenacion = bx_medida.Text;
+            string[] words = concatenacion.Split(' ');
+            string idmedida,descripcion;
+            idmedida = words[0];
+
+            descripcion = words[1];
 
 
-            dgMedida parametro = new dgMedida();
+            lbl_id_medida.Text = idmedida;
 
-            parametro.Descripcion = descripcion;
-
-            List<dgMedida> lista = c_medida.LeerMedida(2, parametro);
-
-            if (lista.Count > 0)
-
-            {
-
-                foreach (dgMedida d in lista)
-                {
-                    lbl_id_medida.Text = d.Id_Medida.ToString();
-                }
-            }
-
-            else
-
-            {
-                MessageBox.Show("No tiene Medidas Agregadas", "Advertencia");
-            }
-
-            dgMedida parametro2 = new dgMedida();
-
-            parametro2.Id_Medida = Convert.ToInt16(lbl_id_medida.Text);
-
-            List<dgMedida> listadesc = c_medida.LeerMedida(3, parametro2);
-
-            if (listadesc.Count > 0)
-
-            {
-
-                foreach (dgMedida dg in listadesc)
-                {
-                    txt_descripcion.Text = dg.Descripcion.ToString();
-                }
-            }
+            txt_descripcion.Text = descripcion;
         }
 
         private void RegresarVentana()
@@ -228,6 +178,25 @@ namespace PUNTOVENTA.MENU.MEDIDA
 
         private void modificar_medida_Load(object sender, EventArgs e)
         {
+
+            dgMedida parametro = new dgMedida();
+
+            List<dgMedida> lista = c_medida.LeerMedida(1, parametro);
+
+            if (lista.Count > 0)
+
+            {
+
+                string concatenacion = "";
+                foreach (dgMedida d in lista)
+                {
+                    concatenacion = "";
+
+                    concatenacion = d.Id_Medida.ToString() + " " + d.Descripcion.ToString();
+
+                    bx_medida.Items.Add(concatenacion);
+                }
+            }
 
         }
 

@@ -150,41 +150,27 @@ namespace PUNTOVENTA.MENU.MEDIDA
 
         private void bx_medidas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int id;
-            string descripcion;
-            descripcion = bx_medidas.Text;
+            string concatenacion = bx_medidas.Text;
+            string[] words = concatenacion.Split(' ');
+            string idmedida;
+            idmedida = words[0];
 
-            dgMedida parametro = new dgMedida
-            {
-                Descripcion = descripcion
-            };
+         
 
-            List<dgMedida> lista = c_medida.LeerMedida(2, parametro);
 
-            if (lista.Count > 0)
+            lbl_id_medida.Text = idmedida;
 
-            {
-
-                foreach (dgMedida d in lista)
-                {
-                    lbl_id_medida.Text = d.Id_Medida.ToString();
-                }
-            }
-
-            else
-
-            {
-                MessageBox.Show("No tiene Medidas Agregadas", "Advertencia");
-            }
+           
         }
 
         private void eliminar_medida_Activated(object sender, EventArgs e)
         {
-            bx_medidas.Items.Clear();
-            dgMedida parametro = new dgMedida
-            {
-                Descripcion = "no"
-            };
+          
+        }
+
+        private void eliminar_medida_Load(object sender, EventArgs e)
+        {
+            dgMedida parametro = new dgMedida();
 
             List<dgMedida> lista = c_medida.LeerMedida(1, parametro);
 
@@ -192,21 +178,16 @@ namespace PUNTOVENTA.MENU.MEDIDA
 
             {
 
+                string concatenacion = "";
                 foreach (dgMedida d in lista)
                 {
-                    bx_medidas.Items.Add(d.Descripcion.ToString());
+                    concatenacion = "";
+
+                    concatenacion = d.Id_Medida.ToString() + " " + d.Descripcion.ToString();
+
+                    bx_medidas.Items.Add(concatenacion);
                 }
-
-
-
-
-
             }
-        }
-
-        private void eliminar_medida_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)
