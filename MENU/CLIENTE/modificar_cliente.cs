@@ -110,7 +110,142 @@ namespace PUNTOVENTA.MENU.CLIENTE
 
         private void btn_modificar_cliente_Click(object sender, EventArgs e)
         {
-            
+            if (txt_correo_modificarcliente.Text == "")
+            {
+
+                MessageBox.Show("Ingrese el correo del Cliente");
+            }
+            else if (txt_nombre_modificarcliente.Text == "")
+            {
+                MessageBox.Show("Ingrese el nombre del Cliente ");
+            }
+            else if (txt_apellidopaterno_modificarcliente.Text == "") 
+            {
+                MessageBox.Show("Ingrese el apellido paterno del Cliente");
+            }
+            else if (txt_apellidomaterno_modificarcliente.Text == "")
+            {
+                MessageBox.Show("Ingrese el apellido materno del Cliente");
+            }
+            else if (txt_telefono_modificarcliente.Text == "")
+            {
+                MessageBox.Show("Ingrese el telefono del Cliente ");
+            }
+            else if (txt_direccion_modificarcliente.Text == "")
+            {
+                MessageBox.Show("Ingrese la direccion del Cliente ");
+            }
+
+            else
+            {
+                dgCliente parametro = new dgCliente
+                {
+                    Id_Cliente = Convert.ToInt16(lbl_idcliente.Text),
+                    Correo = txt_correo_modificarcliente.Text.Trim(),
+                    Nombre = txt_nombre_modificarcliente.Text.Trim().ToUpper(),
+                    Apellido_Paterno = txt_apellidopaterno_modificarcliente.Text.Trim().ToUpper(),
+                    Apellido_Materno = txt_apellidomaterno_modificarcliente.Text.Trim().ToUpper(),
+                    Telefono = txt_telefono_modificarcliente.Text.Trim(),
+                    Direccion = txt_direccion_modificarcliente.Text.Trim().ToUpper(),
+
+
+                };
+
+
+
+                string control = "";
+
+                control = c_cliente.ModificarCliente(parametro);
+
+
+
+
+                MessageBox.Show("Cliente Modificado exitosamente", "Correcto");
+                RegresarVentana();
+
+
+
+            }
+        }
+
+        private void bx_cliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id;
+            string nombre;
+            nombre = bx_cliente.Text;
+
+
+            dgCliente parametro = new dgCliente
+            {
+                Nombre = nombre
+            };
+
+            List<dgCliente> lista = c_cliente.LeerCliente(6, parametro);
+
+            if (lista.Count > 0)
+
+            {
+
+                foreach (dgCliente d in lista)
+                {
+                    lbl_idcliente.Text = d.Id_Cliente.ToString();
+                }
+            }
+
+            else
+
+            {
+                MessageBox.Show("No tiene Clientes Agregados", "Advertencia");
+            }
+
+
+
+            dgCliente parametro2 = new dgCliente
+            {
+                Id_Cliente = Convert.ToInt16(lbl_idcliente.Text)
+            };
+
+            List<dgCliente> listacliente = c_cliente.LeerCliente(7, parametro2);
+
+            if (listacliente.Count > 0)
+
+            {
+
+                foreach (dgCliente dg in listacliente)
+                {
+
+                    txt_nombre_modificarcliente.Text = Convert.ToString(dg.Nombre.ToString());
+                    txt_apellidopaterno_modificarcliente.Text = Convert.ToString(dg.Apellido_Paterno.ToString());
+                    txt_apellidomaterno_modificarcliente.Text = Convert.ToString(dg.Apellido_Materno.ToString());
+                    txt_correo_modificarcliente.Text = Convert.ToString(dg.Correo.ToString());
+                    txt_telefono_modificarcliente.Text = Convert.ToString(dg.Telefono.ToString());
+                    txt_direccion_modificarcliente.Text = Convert.ToString(dg.Direccion.ToString());
+                }
+            }
+        }
+
+        private void modificar_cliente_Load(object sender, EventArgs e)
+        {
+            dgCliente parametro = new dgCliente();
+
+
+
+            List<dgCliente> lista = c_cliente.LeerCliente(1, parametro);
+
+            if (lista.Count > 0)
+
+            {
+
+                foreach (dgCliente d in lista)
+                {
+                    bx_cliente.Items.Add(d.Nombre.ToString());
+                }
+
+
+
+
+
+            }
         }
     }
 }

@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(modificar_cliente));
             this.panel6 = new System.Windows.Forms.Panel();
-            this.txtx_direccion_modificarcliente = new System.Windows.Forms.TextBox();
+            this.txt_direccion_modificarcliente = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txt_apellidopaterno_modificarcliente = new System.Windows.Forms.TextBox();
@@ -70,7 +70,7 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lbl_idcliente = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -97,23 +97,23 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.txtx_direccion_modificarcliente);
+            this.panel6.Controls.Add(this.txt_direccion_modificarcliente);
             this.panel6.Controls.Add(this.label7);
             this.panel6.Location = new System.Drawing.Point(268, 504);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(521, 59);
             this.panel6.TabIndex = 82;
             // 
-            // txtx_direccion_modificarcliente
+            // txt_direccion_modificarcliente
             // 
-            this.txtx_direccion_modificarcliente.BackColor = System.Drawing.Color.White;
-            this.txtx_direccion_modificarcliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtx_direccion_modificarcliente.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtx_direccion_modificarcliente.ForeColor = System.Drawing.Color.Black;
-            this.txtx_direccion_modificarcliente.Location = new System.Drawing.Point(22, 20);
-            this.txtx_direccion_modificarcliente.Name = "txtx_direccion_modificarcliente";
-            this.txtx_direccion_modificarcliente.Size = new System.Drawing.Size(485, 19);
-            this.txtx_direccion_modificarcliente.TabIndex = 6;
+            this.txt_direccion_modificarcliente.BackColor = System.Drawing.Color.White;
+            this.txt_direccion_modificarcliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_direccion_modificarcliente.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_direccion_modificarcliente.ForeColor = System.Drawing.Color.Black;
+            this.txt_direccion_modificarcliente.Location = new System.Drawing.Point(22, 20);
+            this.txt_direccion_modificarcliente.Name = "txt_direccion_modificarcliente";
+            this.txt_direccion_modificarcliente.Size = new System.Drawing.Size(485, 19);
+            this.txt_direccion_modificarcliente.TabIndex = 6;
             // 
             // label7
             // 
@@ -423,6 +423,7 @@
             this.bx_cliente.Name = "bx_cliente";
             this.bx_cliente.Size = new System.Drawing.Size(180, 23);
             this.bx_cliente.TabIndex = 87;
+            this.bx_cliente.SelectedIndexChanged += new System.EventHandler(this.bx_cliente_SelectedIndexChanged);
             // 
             // panel3
             // 
@@ -432,7 +433,7 @@
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.panel_modificarcliente);
             this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.lbl_idcliente);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.label14);
@@ -460,7 +461,6 @@
             this.panel7.Controls.Add(this.pictureBox3);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Controls.Add(this.pictureBox7);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(836, 32);
@@ -570,17 +570,17 @@
             this.label12.Text = "id";
             this.label12.Visible = false;
             // 
-            // label9
+            // lbl_idcliente
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(596, 117);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 19);
-            this.label9.TabIndex = 79;
-            this.label9.Text = "idcliente";
-            this.label9.Visible = false;
+            this.lbl_idcliente.AutoSize = true;
+            this.lbl_idcliente.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_idcliente.ForeColor = System.Drawing.Color.White;
+            this.lbl_idcliente.Location = new System.Drawing.Point(596, 117);
+            this.lbl_idcliente.Name = "lbl_idcliente";
+            this.lbl_idcliente.Size = new System.Drawing.Size(79, 19);
+            this.lbl_idcliente.TabIndex = 79;
+            this.lbl_idcliente.Text = "idcliente";
+            this.lbl_idcliente.Visible = false;
             // 
             // label13
             // 
@@ -633,6 +633,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "modificar_cliente";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.modificar_cliente_FormClosing);
+            this.Load += new System.EventHandler(this.modificar_cliente_Load);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -667,7 +668,7 @@
         #endregion
 
         private Panel panel6;
-        private TextBox txtx_direccion_modificarcliente;
+        private TextBox txt_direccion_modificarcliente;
         private Label label7;
         private Panel panel4;
         private TextBox txt_apellidopaterno_modificarcliente;
@@ -698,7 +699,7 @@
         private Panel panel3;
         private PictureBox pictureBox4;
         private Label label10;
-        public Label label9;
+        public Label lbl_idcliente;
         public Label label12;
         public Label label13;
         public Label label14;
