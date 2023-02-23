@@ -1074,8 +1074,97 @@ namespace PUNTOVENTA.MENU.VENTA
 
 
 
-            } 
+            }
 
+
+            else if (lbl_id_tipoventa.Text == "3" && lbl_total.Text != "")
+            {
+                if (txt_paga_con.Text == "" && lbl_cambio.Text == "")
+                {
+                    MessageBox.Show("Debe llenar el Campo de pago");
+                }
+                else if (bx_cliente.Text == "")
+                {
+                    MessageBox.Show("Seleccione el Cliente para Credito");
+                }
+                else
+                {
+                    dgVenta parametro = new dgVenta
+                    {
+                        Id_Usuario = Convert.ToInt16(lbl_id.Text),
+                        Id_Cliente= Convert.ToInt16(lbl_id_cliente.Text),
+
+                        FechaVenta = DateTime.Now,
+                        Id_Venta = _num_venta,
+                        Total = decimal.Parse(lbl_total.Text),
+                        Cambio = Convert.ToInt16(lbl_cambio.Text)
+                        
+
+
+                    };
+
+                    string control = "";
+
+                    control = c_venta.InsertarVentaCredito(parametro);
+
+
+                    dgVenta parametrorestarstock = new dgVenta
+                    {
+
+                        Id_Venta = _num_venta,
+
+                    };
+
+                    List<dgVenta> listaproductoscarrito = c_venta.LeerVenta(1, parametrorestarstock);
+
+                    if (listaproductoscarrito.Count > 0)
+
+                    {
+                        int idproducto, cantidad;
+                        foreach (dgVenta d in listaproductoscarrito)
+                        {
+                            idproducto = Convert.ToInt16(d.Id_Producto);
+
+                            cantidad = Convert.ToInt16(d.Stock);
+
+                            dgVenta parametrorestarstockrestar = new dgVenta
+                            {
+
+                                Id_Producto = idproducto,
+                                Stock = cantidad
+
+                            };
+
+                            control = "";
+
+                            control = c_venta.ReducirStockProductos(parametrorestarstockrestar);
+
+
+
+
+
+                        }
+
+                        MessageBox.Show("Venta Realizada");
+
+                        RegresarVentana();
+
+
+
+                    }
+
+
+
+                   
+                }
+
+
+
+
+
+
+
+            }
 
             else
             {

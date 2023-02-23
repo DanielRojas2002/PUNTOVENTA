@@ -31,6 +31,7 @@ namespace PUNTOVENTA.MENU.CLIENTE
 
             string id;
             id = lbl_id.Text;
+           
 
             string retorno = "", retorno2 = "";
 
@@ -79,6 +80,7 @@ namespace PUNTOVENTA.MENU.CLIENTE
 
 
             }
+
             this.Hide();
             menu_cliente formulario = new menu_cliente();
             formulario.lbl_id.Text = id;
@@ -108,7 +110,7 @@ namespace PUNTOVENTA.MENU.CLIENTE
 
         private void btn_modificar_cliente_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
