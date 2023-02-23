@@ -12,36 +12,16 @@ namespace PUNTOVENTA.MENU.CATEGORIA
             InitializeComponent();
 
 
-            dgCategoria parametro = new dgCategoria
-            {
-                Descripcion = "no"
-            };
-
-            List<dgCategoria> lista = c_categoria.LeerCategoria(1, parametro);
-
-            if (lista.Count > 0)
-
-            {
-
-                foreach (dgCategoria d in lista)
-                {
-                    bx_categorias.Items.Add(d.Descripcion.ToString());
-                }
-
-
-
-
-
-            }
+        
         }
 
         private void btn_modificar_categoria_Click(object sender, EventArgs e)
         {
             try
             {
-                string valor = bx_categorias.SelectedItem.ToString();
+                string valor = bx_categorias.Text;
 
-                if (valor == null)
+                if (valor == "")
                 {
                     MessageBox.Show("Selecione una Categoria a Modificar ");
 
@@ -102,52 +82,18 @@ namespace PUNTOVENTA.MENU.CATEGORIA
 
         private void bx_categorias_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int id;
-            string descripcion;
-            descripcion = bx_categorias.Text;
+            string concatenacion = bx_categorias.Text;
+            string[] words = concatenacion.Split(' ');
+            string descripcion,idcategoria;
+            idcategoria = words[0];
+            descripcion = words[1];
 
 
-            dgCategoria parametro = new dgCategoria
-            {
-                Descripcion = descripcion
-            };
+            txt_descripcion.Text = descripcion;
 
-            List<dgCategoria> lista = c_categoria.LeerCategoria(2, parametro);
+            lbl_id_categoria.Text = idcategoria;
 
-            if (lista.Count > 0)
 
-            {
-
-                foreach (dgCategoria d in lista)
-                {
-                    lbl_id_categoria.Text = d.Id_Categoria.ToString();
-                }
-            }
-
-            else
-
-            {
-                MessageBox.Show("No tiene Categorias Agregadas", "Advertencia");
-            }
-
-            dgCategoria parametro2 = new dgCategoria
-            {
-                Id_Categoria = Convert.ToInt16(lbl_id_categoria.Text)
-            };
-
-            List<dgCategoria> listadesc = c_categoria.LeerCategoria(3, parametro2);
-
-            if (listadesc.Count > 0)
-
-            {
-
-                foreach (dgCategoria dg in listadesc)
-                {
-                    txt_descripcion.Text = dg.Descripcion.ToString();
-                }
-            }
-
-          
         }
         private void RegresarVentana()
         {
@@ -229,7 +175,28 @@ namespace PUNTOVENTA.MENU.CATEGORIA
 
         private void modificar_categoria_Load(object sender, EventArgs e)
         {
+            dgCategoria parametro = new dgCategoria
+            {
+               
+            };
 
+            List<dgCategoria> lista = c_categoria.LeerCategoria(1, parametro);
+
+           
+            if (lista.Count > 0)
+
+            {
+
+                string concatenacion = "";
+                foreach (dgCategoria d in lista)
+                {
+                    concatenacion = "";
+
+                    concatenacion = d.Id_Categoria.ToString() + " " + d.Descripcion.ToString();
+
+                    bx_categorias.Items.Add(concatenacion);
+                }
+            }
         }
 
       

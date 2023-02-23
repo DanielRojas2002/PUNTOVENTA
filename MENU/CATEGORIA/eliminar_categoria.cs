@@ -16,32 +16,16 @@ namespace PUNTOVENTA.MENU.CATEGORIA
 
         private void bx_categorias_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int id;
-            string descripcion;
-            descripcion = bx_categorias.Text;
+            string concatenacion = bx_categorias.Text;
+            string[] words = concatenacion.Split(' ');
+            string descripcion, idcategoria;
+            idcategoria = words[0];
+            
 
-            dgCategoria parametro = new dgCategoria
-            {
-                Descripcion = descripcion
-            };
 
-            List<dgCategoria> lista = c_categoria.LeerCategoria(2, parametro);
+           
 
-            if (lista.Count > 0)
-
-            {
-
-                foreach (dgCategoria d in lista)
-                {
-                    lbl_id_categoria.Text=d.Id_Categoria.ToString();
-                }
-            }
-
-            else
-
-            {
-                MessageBox.Show("No tiene Categorias Agregadas", "Advertencia");
-            }
+            lbl_id_categoria.Text = idcategoria;
 
         }
         private void RegresarVentana()
@@ -174,35 +158,7 @@ namespace PUNTOVENTA.MENU.CATEGORIA
 
         private void eliminar_categoria_Activated(object sender, EventArgs e)
         {
-            bx_categorias.Items.Clear();
-
-
-            dgCategoria parametro = new dgCategoria
-            {
-                Descripcion = "no"
-            };
-
-            List<dgCategoria> lista = c_categoria.LeerCategoria(1,parametro);
-
-            if (lista.Count > 0)
-
-            {
-
-                foreach (dgCategoria d in lista)
-                {
-                    bx_categorias.Items.Add(d.Descripcion.ToString());
-                }
-
            
-
-
-
-            }
-
-         
-
-
-             
         }
 
         private void lbl_id_categoria_Click(object sender, EventArgs e)
@@ -212,7 +168,28 @@ namespace PUNTOVENTA.MENU.CATEGORIA
 
         private void eliminar_categoria_Load(object sender, EventArgs e)
         {
+            dgCategoria parametro = new dgCategoria
+            {
 
+            };
+
+            List<dgCategoria> lista = c_categoria.LeerCategoria(1, parametro);
+
+
+            if (lista.Count > 0)
+
+            {
+
+                string concatenacion = "";
+                foreach (dgCategoria d in lista)
+                {
+                    concatenacion = "";
+
+                    concatenacion = d.Id_Categoria.ToString() + " " + d.Descripcion.ToString();
+
+                    bx_categorias.Items.Add(concatenacion);
+                }
+            }
         }
   
 

@@ -137,7 +137,8 @@ namespace PUNTOVENTA.CLASES
                     lista = (from DataRow fila in tabla.Rows
                              select new dgCategoria
                              {
-                                 Descripcion = Convert.ToString(fila["Descripcion"].ToString())
+                                 Descripcion = Convert.ToString(fila["Descripcion"].ToString()),
+                                 Id_Categoria = Convert.ToInt16(fila["Id_Categoria"].ToString())
 
 
 
