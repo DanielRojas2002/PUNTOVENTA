@@ -1304,10 +1304,15 @@ namespace PUNTOVENTA.MENU.VENTA
             if (lista.Count > 0)
 
             {
-
+                
+                string concatenacion = "";
                 foreach (dgCliente d in lista)
                 {
-                    bx_cliente.Items.Add(d.Nombre.ToString());
+                    concatenacion = "";
+
+                    concatenacion = d.Id_Cliente.ToString()+" "+d.Nombre.ToString() +" "+ d.Apellido_Paterno.ToString() +" " + d.Apellido_Materno.ToString();
+
+                    bx_cliente.Items.Add(concatenacion);
                 }
             }
 
@@ -1316,23 +1321,15 @@ namespace PUNTOVENTA.MENU.VENTA
 
         private void bx_cliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgCliente parametro = new dgCliente
-            {
-                Nombre = Convert.ToString(bx_cliente.Text)
-            };
+            string concatenacion = bx_cliente.Text;
+            string[] words = concatenacion.Split(' ');
+            string idcliente;
+            idcliente = words[0];
 
 
-            List<dgCliente> lista = c_cliente.LeerCliente(2, parametro);
+            lbl_id_cliente.Text = idcliente;
 
-            if (lista.Count > 0)
-
-            {
-
-                foreach (dgCliente d in lista)
-                {
-                    lbl_id_cliente.Text = d.Id_Cliente.ToString();
-                }
-            }
+         
         }
 
         private void lbl_id_tipoventa_Click(object sender, EventArgs e)

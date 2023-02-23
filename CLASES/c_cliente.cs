@@ -108,41 +108,19 @@ namespace PUNTOVENTA.CLASES
                     lista = (from DataRow fila in tabla.Rows
                              select new dgCliente
                              {
-                                 Nombre = Convert.ToString(fila["Nombre"].ToString())
-
-
-
-                             }
-                   ).ToList();
-                }
-
-
-            }
-            // 6 con Id_Cliente
-            else if (tipo == 2)
-
-            {
-
-                SqlParameter[] Parametros =
-                {
-                    new SqlParameter("@Accion",3),
-                    new SqlParameter("@P_Nombre",Parametro.Nombre)
-                };
-
-                tabla = bdContext.funcionStored("spCliente", Parametros);
-
-                if (tabla.Rows.Count > 0)
-                {
-                    lista = (from DataRow fila in tabla.Rows
-                             select new dgCliente
-                             {
+                                 Nombre = Convert.ToString(fila["Nombre"].ToString()),
+                                 Apellido_Paterno = Convert.ToString(fila["Apellido_Paterno"].ToString()),
+                                 Apellido_Materno = Convert.ToString(fila["Apellido_Materno"].ToString()),
                                  Id_Cliente = Convert.ToInt16(fila["Id_Cliente"].ToString())
 
+
                              }
                    ).ToList();
                 }
-            }
 
+
+            }
+           
             else if (tipo == 3)
 
             {

@@ -170,34 +170,13 @@ namespace PUNTOVENTA.MENU.CLIENTE
 
         private void bx_cliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int id;
-            string nombre;
-            nombre = bx_cliente.Text;
+            string concatenacion = bx_cliente.Text;
+            string[] words = concatenacion.Split(' ');
+            string idcliente;
+            idcliente = words[0];
 
 
-            dgCliente parametro = new dgCliente
-            {
-                Nombre = nombre
-            };
-
-            List<dgCliente> lista = c_cliente.LeerCliente(2, parametro);
-
-            if (lista.Count > 0)
-
-            {
-
-                foreach (dgCliente d in lista)
-                {
-                    lbl_idcliente.Text = d.Id_Cliente.ToString();
-                }
-            }
-
-            else
-
-            {
-                MessageBox.Show("No tiene Clientes Agregados", "Advertencia");
-            }
-
+            lbl_idcliente.Text = idcliente;
 
 
             dgCliente parametro2 = new dgCliente
@@ -228,23 +207,21 @@ namespace PUNTOVENTA.MENU.CLIENTE
         {
             dgCliente parametro = new dgCliente();
 
-
-
             List<dgCliente> lista = c_cliente.LeerCliente(1, parametro);
 
             if (lista.Count > 0)
 
             {
 
+                string concatenacion = "";
                 foreach (dgCliente d in lista)
                 {
-                    bx_cliente.Items.Add(d.Nombre.ToString());
+                    concatenacion = "";
+
+                    concatenacion = d.Id_Cliente.ToString() + " " + d.Nombre.ToString() + " " + d.Apellido_Paterno.ToString() + " " + d.Apellido_Materno.ToString();
+
+                    bx_cliente.Items.Add(concatenacion);
                 }
-
-
-
-
-
             }
         }
     }
