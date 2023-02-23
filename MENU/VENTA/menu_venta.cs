@@ -983,7 +983,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
 
 
-                        MessageBox.Show("Venta Realizada");
+                        MessageBox.Show("Venta Realizada Por Efectivo");
 
                         RegresarVentana();
                     }
@@ -1155,8 +1155,11 @@ namespace PUNTOVENTA.MENU.VENTA
                             Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
                             Id_Venta = _num_venta,
                             FechaRegistro = DateTime.Now,
-                            Id_Estatus = 2
-                           
+                            Id_Estatus = 2,
+
+                            CantidadPagada = decimal.Parse(txt_paga_con.Text)
+
+
 
 
 

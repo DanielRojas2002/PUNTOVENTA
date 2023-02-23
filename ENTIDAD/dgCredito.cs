@@ -15,8 +15,12 @@ namespace PUNTOVENTA.ENTIDAD
 
         public int? Id_Estatus { get; set; }
 
+        public decimal CantidadPagada { get; set; }
+
 
         public DateTime? FechaRegistro { get; set; }
+
+        public DateTime? FechaUltimoPago { get; set; }
 
 
         public DateTime? FechaPago { get; set; }

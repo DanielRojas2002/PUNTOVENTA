@@ -29,7 +29,8 @@ namespace PUNTOVENTA.CLASES
                     new SqlParameter("@P_IdVenta",Parametro.Id_Venta),
                     new SqlParameter("@P_IdCliente",Parametro.Id_Cliente),
                     new SqlParameter("@P_IdEstatus",Parametro.Id_Estatus),
-                    new SqlParameter("@P_FechaRegistro",Parametro.FechaRegistro)
+                    new SqlParameter("@P_FechaRegistro",Parametro.FechaRegistro),
+                    new SqlParameter("@P_CantidadPagada",Parametro.CantidadPagada)
 
 
 
