@@ -1,4 +1,5 @@
-﻿using PUNTOVENTA.CLASES;
+﻿using Punto_de_Venta;
+using PUNTOVENTA.CLASES;
 using PUNTOVENTA.ENTIDAD;
 using System;
 using System.Collections.Generic;
@@ -24,15 +25,16 @@ namespace PUNTOVENTA.MENU.CLIENTE
             System.Windows.Forms.Application.Exit();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+
+        private void RegresarVentana()
         {
+
             string id;
             id = lbl_id.Text;
 
-
             string retorno = "", retorno2 = "";
 
-            dgUsuario parametro = new dgUsuario
+            dgUsuario parametro2 = new dgUsuario
             {
                 Id_Usuario = Convert.ToInt16(lbl_id.Text)
 
@@ -40,7 +42,7 @@ namespace PUNTOVENTA.MENU.CLIENTE
 
 
 
-            List<dgUsuario> lista = c_usuario.LeerUsuario(2, parametro);
+            List<dgUsuario> lista = c_usuario.LeerUsuario(2, parametro2);
 
             if (lista.Count > 0)
 
@@ -56,7 +58,7 @@ namespace PUNTOVENTA.MENU.CLIENTE
 
 
 
-            dgUsuario parametro2 = new dgUsuario
+            dgUsuario parametro3 = new dgUsuario
             {
                 Id_Usuario = Convert.ToInt16(lbl_id.Text)
 
@@ -64,7 +66,7 @@ namespace PUNTOVENTA.MENU.CLIENTE
 
 
 
-            List<dgUsuario> lista2 = c_usuario.LeerUsuario(3, parametro);
+            List<dgUsuario> lista2 = c_usuario.LeerUsuario(3, parametro3);
 
             if (lista.Count > 0)
 
@@ -76,18 +78,22 @@ namespace PUNTOVENTA.MENU.CLIENTE
                 }
 
 
-
-
-
             }
-
-
             this.Hide();
             menu_cliente formulario = new menu_cliente();
             formulario.lbl_id.Text = id;
             formulario.lbl_perfil.Text = Convert.ToString(retorno2);
             formulario.txt_usuario.Text = Convert.ToString(retorno);
             formulario.Show();
+
+
+
+
+
+        }
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            RegresarVentana();
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)
@@ -98,6 +104,11 @@ namespace PUNTOVENTA.MENU.CLIENTE
         private void pictureBox9_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btn_modificar_cliente_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

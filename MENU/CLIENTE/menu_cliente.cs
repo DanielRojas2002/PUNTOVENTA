@@ -47,15 +47,15 @@ namespace PUNTOVENTA.MENU.CLIENTE
             forms.Show();
         }
 
-        private void btn_regresar_Click(object sender, EventArgs e)
+        private void RegresarVentana()
         {
+
             string id;
             id = lbl_id.Text;
 
-
             string retorno = "", retorno2 = "";
 
-            dgUsuario parametro = new dgUsuario
+            dgUsuario parametro2 = new dgUsuario
             {
                 Id_Usuario = Convert.ToInt16(lbl_id.Text)
 
@@ -63,7 +63,7 @@ namespace PUNTOVENTA.MENU.CLIENTE
 
 
 
-            List<dgUsuario> lista = c_usuario.LeerUsuario(2, parametro);
+            List<dgUsuario> lista = c_usuario.LeerUsuario(2, parametro2);
 
             if (lista.Count > 0)
 
@@ -75,16 +75,11 @@ namespace PUNTOVENTA.MENU.CLIENTE
                 }
 
 
-
-
-                txt_usuario.Text = ("Bievenido usuario: " + retorno);
-
-
             }
 
 
 
-            dgUsuario parametro2 = new dgUsuario
+            dgUsuario parametro3 = new dgUsuario
             {
                 Id_Usuario = Convert.ToInt16(lbl_id.Text)
 
@@ -92,7 +87,7 @@ namespace PUNTOVENTA.MENU.CLIENTE
 
 
 
-            List<dgUsuario> lista2 = c_usuario.LeerUsuario(3, parametro);
+            List<dgUsuario> lista2 = c_usuario.LeerUsuario(3, parametro3);
 
             if (lista.Count > 0)
 
@@ -104,11 +99,7 @@ namespace PUNTOVENTA.MENU.CLIENTE
                 }
 
 
-                lbl_perfil.Text = ("Perfil: " + retorno2);
-
-
             }
-
 
             this.Hide();
             Inicio formulario = new Inicio();
@@ -116,6 +107,15 @@ namespace PUNTOVENTA.MENU.CLIENTE
             formulario.lbl_perfil.Text = Convert.ToString(retorno2);
             formulario.txt_usuario.Text = Convert.ToString(retorno);
             formulario.Show();
+
+
+
+
+
+        }
+        private void btn_regresar_Click(object sender, EventArgs e)
+        {
+            RegresarVentana();
         }
 
         private void menu_cliente_FormClosing(object sender, FormClosingEventArgs e)

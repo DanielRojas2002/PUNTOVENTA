@@ -569,6 +569,8 @@ namespace PUNTOVENTA.MENU.VENTA
 
         }
 
+
+
         private void btn_regresar_Click(object sender, EventArgs e)
         {
             string id;

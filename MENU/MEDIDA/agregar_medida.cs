@@ -2,6 +2,7 @@
 using PUNTOVENTA.CLASES;
 using PUNTOVENTA.ENTIDAD;
 using PUNTOVENTA.MENU.PRODUCTO;
+using PUNTOVENTA.MENU.PROVEEDOR;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,71 +53,7 @@ namespace PUNTOVENTA.MENU.MEDIDA
                 else
                 {
                     MessageBox.Show("Medida Dado de alta", "Correcto");
-
-                    string id;
-                    id = lbl_id.Text;
-
-                    string retorno = "", retorno2 = "";
-
-                    dgUsuario parametro2 = new dgUsuario
-                    {
-                        Id_Usuario = Convert.ToInt16(lbl_id.Text)
-
-                    };
-
-
-
-                    List<dgUsuario> lista = c_usuario.LeerUsuario(2, parametro2);
-
-                    if (lista.Count > 0)
-
-                    {
-
-                        foreach (dgUsuario d in lista)
-                        {
-                            retorno = Convert.ToString(d.Usuario.ToString());
-                        }
-
-
-
-
-                        txt_usuario.Text = ("Bievenido usuario: " + retorno);
-
-
-                    }
-
-
-
-                    dgUsuario parametro3 = new dgUsuario
-                    {
-                        Id_Usuario = Convert.ToInt16(lbl_id.Text)
-
-                    };
-
-
-
-                    List<dgUsuario> lista2 = c_usuario.LeerUsuario(3, parametro3);
-
-                    if (lista.Count > 0)
-
-                    {
-
-                        foreach (dgUsuario d in lista2)
-                        {
-                            retorno2 = Convert.ToString(d.DescripcionPerfil.ToString());
-                        }
-
-
-                        lbl_perfil.Text = ("Perfil: " + retorno2);
-
-
-                    }
-                    this.Hide();
-                    menu_producto formulario = new menu_producto();
-                    formulario.lbl_id.Text = id;
-                    formulario.lbl_perfil.Text = Convert.ToString(retorno2);
-                    formulario.txt_usuario.Text = Convert.ToString(retorno);
-                    formulario.Show();
+                    RegresarVentana();
                 }
 
             }
@@ -127,15 +64,15 @@ namespace PUNTOVENTA.MENU.MEDIDA
         {
             System.Windows.Forms.Application.Exit();
         }
-
-        private void btn_regresar_Click(object sender, EventArgs e)
+        private void RegresarVentana()
         {
+
             string id;
             id = lbl_id.Text;
 
             string retorno = "", retorno2 = "";
 
-            dgUsuario parametro = new dgUsuario
+            dgUsuario parametro2 = new dgUsuario
             {
                 Id_Usuario = Convert.ToInt16(lbl_id.Text)
 
@@ -143,7 +80,7 @@ namespace PUNTOVENTA.MENU.MEDIDA
 
 
 
-            List<dgUsuario> lista = c_usuario.LeerUsuario(2, parametro);
+            List<dgUsuario> lista = c_usuario.LeerUsuario(2, parametro2);
 
             if (lista.Count > 0)
 
@@ -155,16 +92,11 @@ namespace PUNTOVENTA.MENU.MEDIDA
                 }
 
 
-
-
-                txt_usuario.Text = ("Bievenido usuario: " + retorno);
-
-
             }
 
 
 
-            dgUsuario parametro2 = new dgUsuario
+            dgUsuario parametro3 = new dgUsuario
             {
                 Id_Usuario = Convert.ToInt16(lbl_id.Text)
 
@@ -172,7 +104,7 @@ namespace PUNTOVENTA.MENU.MEDIDA
 
 
 
-            List<dgUsuario> lista2 = c_usuario.LeerUsuario(3, parametro);
+            List<dgUsuario> lista2 = c_usuario.LeerUsuario(3, parametro3);
 
             if (lista.Count > 0)
 
@@ -184,11 +116,7 @@ namespace PUNTOVENTA.MENU.MEDIDA
                 }
 
 
-                lbl_perfil.Text = ("Perfil: " + retorno2);
-
-
             }
-
 
             this.Hide();
             menu_producto formulario = new menu_producto();
@@ -196,6 +124,15 @@ namespace PUNTOVENTA.MENU.MEDIDA
             formulario.lbl_perfil.Text = Convert.ToString(retorno2);
             formulario.txt_usuario.Text = Convert.ToString(retorno);
             formulario.Show();
+
+
+
+
+
+        }
+        private void btn_regresar_Click(object sender, EventArgs e)
+        {
+            RegresarVentana();
         }
 
         private void agregar_medida_Load(object sender, EventArgs e)
