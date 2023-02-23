@@ -473,6 +473,7 @@ namespace PUNTOVENTA.MENU.VENTA
             else
             {
                 MessageBox.Show("No se encontraron resultados");
+                flowLayoutPanel_productos.Controls.Clear();
             }
 
 
