@@ -18,33 +18,13 @@ namespace PUNTOVENTA.MENU.PROVEEDOR
 
         private void bx_proveedor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int id;
-            string nombre;
-            nombre = bx_proveedor.Text;
+            string concatenacion = bx_proveedor.Text;
+            string[] words = concatenacion.Split(' ');
+            string idproveedor;
+            idproveedor = words[0];
 
 
-            dgProveedor parametro = new dgProveedor
-            {
-                Nombre = nombre
-            };
-
-            List<dgProveedor> lista = c_proveedor.LeerProveedor(6, parametro);
-
-            if (lista.Count > 0)
-
-            {
-
-                foreach (dgProveedor d in lista)
-                {
-                    lbl_id_proveedor.Text = d.Id_Proveedor.ToString();
-                }
-            }
-
-            else
-
-            {
-                MessageBox.Show("No tiene Categorias Agregadas", "Advertencia");
-            }
+            lbl_id_proveedor.Text = idproveedor;
 
 
 
@@ -97,24 +77,23 @@ namespace PUNTOVENTA.MENU.PROVEEDOR
 
             dgProveedor parametro = new dgProveedor();
 
-          
-
             List<dgProveedor> lista = c_proveedor.LeerProveedor(1, parametro);
 
             if (lista.Count > 0)
 
             {
 
+                string concatenacion = "";
                 foreach (dgProveedor d in lista)
                 {
-                    bx_proveedor.Items.Add(d.Nombre.ToString());
+                    concatenacion = "";
+                    concatenacion = d.Id_Proveedor.ToString() + " " + d.Nombre.ToString();
+
+                    bx_proveedor.Items.Add(concatenacion);
                 }
-
-
-
-
-
             }
+
+           
         }
         private void RegresarVentana()
         {

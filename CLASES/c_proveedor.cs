@@ -139,62 +139,7 @@ namespace PUNTOVENTA.CLASES
                     lista = (from DataRow fila in tabla.Rows
                              select new dgProveedor
                              {
-                                 Nombre = Convert.ToString(fila["Nombre"].ToString())
-
-
-
-                             }
-                   ).ToList();
-                }
-
-
-            }
-
-
-            // 6 con Id_Proveedor
-            else if (tipo == 2)
-
-            {
-
-                SqlParameter[] Parametros =
-                {
-                    new SqlParameter("@Accion",2)
-                  
-                };
-
-                tabla = bdContext.funcionStored("spProveedor", Parametros);
-
-                if (tabla.Rows.Count > 0)
-                {
-                    lista = (from DataRow fila in tabla.Rows
-                             select new dgProveedor
-                             {
-                                 Nombre = Convert.ToString(fila["Nombre"].ToString())
-
-
-
-                             }
-                   ).ToList();
-                }
-            }
-
-            else if (tipo == 3)
-
-            {
-
-                SqlParameter[] Parametros =
-                {
-                    new SqlParameter("@Accion",5),
-                    new SqlParameter("@P_Nombre",Parametro.Nombre)
-                };
-
-                tabla = bdContext.funcionStored("spProveedor", Parametros);
-
-                if (tabla.Rows.Count > 0)
-                {
-                    lista = (from DataRow fila in tabla.Rows
-                             select new dgProveedor
-                             {
+                                 Nombre = Convert.ToString(fila["Nombre"].ToString()),
                                  Id_Proveedor = Convert.ToInt16(fila["Id_Proveedor"].ToString())
 
 
@@ -202,87 +147,13 @@ namespace PUNTOVENTA.CLASES
                              }
                    ).ToList();
                 }
+
+
             }
 
 
-            else if (tipo == 4)
-
-            {
-
-                SqlParameter[] Parametros =
-                {
-                    new SqlParameter("@Accion",7),
-                    new SqlParameter("@P_Nombre",Parametro.Nombre)
-                };
-
-                tabla = bdContext.funcionStored("spProveedor", Parametros);
-
-                if (tabla.Rows.Count > 0)
-                {
-                    lista = (from DataRow fila in tabla.Rows
-                             select new dgProveedor
-                             {
-                                 Id_Proveedor = Convert.ToInt16(fila["Id_Proveedor"].ToString())
 
 
-
-                             }
-                   ).ToList();
-                }
-            }
-
-
-            else if (tipo == 5)
-
-            {
-
-                SqlParameter[] Parametros =
-                {
-                    new SqlParameter("@Accion",8),
-                    new SqlParameter("@P_IdProveedor",Parametro.Id_Proveedor)
-                };
-
-                tabla = bdContext.funcionStored("spProveedor", Parametros);
-
-                if (tabla.Rows.Count > 0)
-                {
-                    lista = (from DataRow fila in tabla.Rows
-                             select new dgProveedor
-                             {
-                                 Nombre = Convert.ToString(fila["Nombre"].ToString())
-
-
-
-                             }
-                   ).ToList();
-                }
-            }
-
-            else if (tipo == 6)
-
-            {
-
-                SqlParameter[] Parametros =
-                {
-                    new SqlParameter("@Accion",7),
-                    new SqlParameter("@P_Nombre",Parametro.Nombre)
-                };
-
-                tabla = bdContext.funcionStored("spProveedor", Parametros);
-
-                if (tabla.Rows.Count > 0)
-                {
-                    lista = (from DataRow fila in tabla.Rows
-                             select new dgProveedor
-                             {
-                                 Id_Proveedor = Convert.ToInt16(fila["Id_Proveedor"].ToString())
-
-
-
-                             }
-                   ).ToList();
-                }
-            }
 
             else if (tipo == 7)
 

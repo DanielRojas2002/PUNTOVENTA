@@ -109,37 +109,30 @@ namespace PUNTOVENTA.MENU.PRODUCTO
         {
 
 
-            bx_categoria.Items.Clear();
             dgCategoria parametro = new dgCategoria
             {
-                
+
             };
 
             List<dgCategoria> lista = c_categoria.LeerCategoria(1, parametro);
+
 
             if (lista.Count > 0)
 
             {
 
+                string concatenacion = "";
                 foreach (dgCategoria d in lista)
                 {
-                    bx_categoria.Items.Add(d.Descripcion.ToString());
+                    concatenacion = "";
+
+                    concatenacion = d.Id_Categoria.ToString() + " " + d.Descripcion.ToString();
+
+                    bx_categoria.Items.Add(concatenacion);
                 }
-
-
-
-
-
             }
 
-
-
-            bx_medida.Items.Clear();
-
-            dgMedida parametro2 = new dgMedida
-            {
-               
-            };
+            dgMedida parametro2 = new dgMedida();
 
             List<dgMedida> lista2 = c_medida.LeerMedida(1, parametro2);
 
@@ -147,15 +140,15 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
             {
 
+                string concatenacion = "";
                 foreach (dgMedida d in lista2)
                 {
-                    bx_medida.Items.Add(d.Descripcion.ToString());
+                    concatenacion = "";
+
+                    concatenacion = d.Id_Medida.ToString() + " " + d.Descripcion.ToString();
+
+                    bx_medida.Items.Add(concatenacion);
                 }
-
-
-
-
-
             }
 
 

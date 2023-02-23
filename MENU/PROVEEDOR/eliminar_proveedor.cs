@@ -95,34 +95,13 @@ namespace PUNTOVENTA.MENU.PROVEEDOR
 
         private void bx_proveedor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // ver que nombre selecciono checar el id proveedor que coincida y poner el valor en 
-            // la etiquela idproveedor
+            string concatenacion = bx_proveedor.Text;
+            string[] words = concatenacion.Split(' ');
+            string idproveedor;
+            idproveedor = words[0];
 
-            string nombre = bx_proveedor.Text;
 
-            dgProveedor parametro = new dgProveedor
-            {
-                Nombre = nombre
-            };
-
-            List<dgProveedor> lista = c_proveedor.LeerProveedor(3, parametro);
-
-            if (lista.Count > 0)
-
-            {
-
-                foreach (dgProveedor d in lista)
-                {
-
-                    idProveedor.Text = Convert.ToString(d.Id_Proveedor.ToString());
-                }
-            }
-
-            else
-
-            {
-                MessageBox.Show("No tiene Proveedores Agregados", "Verifique bien");
-            }
+            idProveedor.Text = idproveedor;
         }
 
 
@@ -138,37 +117,22 @@ namespace PUNTOVENTA.MENU.PROVEEDOR
 
         private void eliminar_proveedor_Load(object sender, EventArgs e)
         {
-            // carga de combobox de proveedor
+            dgProveedor parametro = new dgProveedor();
 
-
-            // ver que nombre selecciono checar el id proveedor que coincida y poner el valor en 
-            // la etiquela idproveedor
-            int id;
-            string Nombre;
-            Nombre = bx_proveedor.Text;
-
-            dgProveedor parametro = new dgProveedor
-            {
-                Nombre = Nombre
-            };
-
-            List<dgProveedor> lista = c_proveedor.LeerProveedor(2, parametro);
+            List<dgProveedor> lista = c_proveedor.LeerProveedor(1, parametro);
 
             if (lista.Count > 0)
 
             {
 
+                string concatenacion = "";
                 foreach (dgProveedor d in lista)
                 {
-                    
-                    bx_proveedor.Items.Add(d.Nombre.ToString());
+                    concatenacion = "";
+                    concatenacion = d.Id_Proveedor.ToString() + " " + d.Nombre.ToString();
+
+                    bx_proveedor.Items.Add(concatenacion);
                 }
-            }
-
-            else
-
-            {
-                MessageBox.Show("No tiene Proveedores Agregados", "Verifique bien");
             }
         }
 
