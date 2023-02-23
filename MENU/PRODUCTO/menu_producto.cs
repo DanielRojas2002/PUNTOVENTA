@@ -172,76 +172,73 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
             }
 
-            bx_categorias.Items.Clear();
-            dgCategoria parametro2_1 = new dgCategoria
-            {
+            string concatenacion = "";
+            dgMedida parametro2_1 = new dgMedida();
 
-            };
+            List<dgMedida> lista2 = c_medida.LeerMedida(1, parametro2_1);
 
-            List<dgCategoria> listacategorias = c_categoria.LeerCategoria(1, parametro2_1);
-
-            if (listacategorias.Count > 0)
+            if (lista2.Count > 0)
 
             {
 
-                foreach (dgCategoria d in listacategorias)
+                concatenacion = "";
+                foreach (dgMedida d in lista2)
                 {
-                    bx_categorias.Items.Add(d.Descripcion.ToString());
+                    concatenacion = "";
+
+                    concatenacion = d.Id_Medida.ToString() + " " + d.Descripcion.ToString();
+
+                    bx_medidas.Items.Add(concatenacion);
                 }
 
-
-
-
+               
 
             }
 
 
-
-            bx_medidas.Items.Clear();
-
-            dgMedida parametro4 = new dgMedida
+            dgCategoria parametro3_1 = new dgCategoria
             {
 
             };
 
-            List<dgMedida> listamedidas = c_medida.LeerMedida(1, parametro4);
+            List<dgCategoria> listac = c_categoria.LeerCategoria(1, parametro3_1);
 
-            if (listamedidas.Count > 0)
+
+            if (listac.Count > 0)
 
             {
 
-                foreach (dgMedida d in listamedidas)
+                concatenacion = "";
+                foreach (dgCategoria d in listac)
                 {
-                    bx_medidas.Items.Add(d.Descripcion.ToString());
+                    concatenacion = "";
+
+                    concatenacion = d.Id_Categoria.ToString() + " " + d.Descripcion.ToString();
+                    bx_categorias.Items.Add(concatenacion);
+
                 }
-
-
-
-
-
+               
             }
 
+            dgProveedor parametro61 = new dgProveedor();
 
-            bx_proveedores.Items.Clear();
+            List<dgProveedor> listap = c_proveedor.LeerProveedor(1, parametro61);
 
-            dgProveedor parametro5 = new dgProveedor
-            {
 
-            };
-
-            List<dgProveedor> listaproveedores = c_proveedor.LeerProveedor(1, parametro5);
-
-            if (listaproveedores.Count > 0)
+            if (lista.Count > 0)
 
             {
 
-                foreach (dgProveedor d in listaproveedores)
+                concatenacion = "";
+                foreach (dgProveedor d in listap)
                 {
-                    bx_proveedores.Items.Add(d.Nombre.ToString());
+                    concatenacion = "";
+                    concatenacion = d.Id_Proveedor.ToString() + " " + d.Nombre.ToString();
+
+                    bx_proveedores.Items.Add(concatenacion);
                 }
-
+               
             }
-
 
 
         }
@@ -363,7 +360,7 @@ namespace PUNTOVENTA.MENU.PRODUCTO
         private void btn_aplicar_filtro_Click(object sender, EventArgs e)
         {
 
-            int idCategoria=0,idMedida=0, idProveedor=0;
+         
 
             if (bx_categorias.Text == "" && bx_medidas.Text == "" && bx_proveedores.Text == "" && txt_nombre_producto.Text=="")
             {
@@ -377,72 +374,61 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                 dataGridView_productos.Rows.Clear();
                 dataGridView_productos_inactivos.Rows.Clear();
 
-                dgCategoria parametro2_1 = new dgCategoria
+               
+                string idCategoria="",IdMedida="",IdProveedor="",Nombre="0";
+                int IDCategoria = 0, IDMedida = 0, IDProveedor = 0;
+
+
+                string concatenacion = bx_categorias.Text;
+                string[] words = concatenacion.Split(' ');
+                idCategoria = words[0];
+
+
+                concatenacion = bx_medidas.Text;
+                string[] words2 = concatenacion.Split(' ');
+                IdMedida = words2[0];
+
+               
+
+                concatenacion = bx_proveedores.Text;
+                string[] words3 = concatenacion.Split(' ');
+                IdProveedor = words3[0];
+
+
+                if (idCategoria!="")
                 {
-                    Descripcion = Convert.ToString(bx_categorias.Text)
-                };
+                    IDCategoria = Convert.ToInt16(idCategoria);
+                }
 
-                List<dgCategoria> listacategorias = c_categoria.LeerCategoria(2, parametro2_1);
-
-                if (listacategorias.Count > 0)
-
+                if (IdMedida != "")
                 {
+                    IDMedida = Convert.ToInt16(IdMedida);
+                }
 
-                    foreach (dgCategoria d in listacategorias)
-                    {
-                        idCategoria = Convert.ToInt16(d.Id_Categoria.ToString());
-                    }
+                if (IdProveedor != "")
+                {
+                    IDProveedor = Convert.ToInt16(IdProveedor);
+                }
 
+                if (txt_nombre_producto.Text != "")
+                {
+                    Nombre = txt_nombre_producto.Text.Trim();
                 }
 
 
-                dgMedida parametro2_2 = new dgMedida
-                {
-                    Descripcion = Convert.ToString(bx_medidas.Text)
-                };
+               
+                
 
-                List<dgMedida> listamedidas = c_medida.LeerMedida(2, parametro2_2);
-
-                if (listamedidas.Count > 0)
-
-                {
-
-                    foreach (dgMedida d in listamedidas)
-                    {
-                        idMedida = Convert.ToInt16(d.Id_Medida.ToString());
-                    }
-
-                }
-
-
-
-                dgProveedor parametro5 = new dgProveedor
-                {
-                    Nombre= Convert.ToString(bx_proveedores.Text)
-                };
-
-                List<dgProveedor> listaproveedores = c_proveedor.LeerProveedor(3, parametro5);
-
-                if (listaproveedores.Count > 0)
-
-                {
-
-                    foreach (dgProveedor d in listaproveedores)
-                    {
-                        idProveedor = Convert.ToInt16(d.Id_Proveedor.ToString());
-                    }
-
-                }
-
+               
 
 
                 dgProducto parametrofiltrado = new dgProducto
                 {
-                    Id_Categoria = idCategoria,
-                    Id_Medida = idMedida,
-                    Id_Proveedor = idProveedor,
-                    Nombre = txt_nombre_producto.Text.Trim()
-                    
+                    Id_Categoria = IDCategoria,
+                    Id_Medida = IDMedida,
+                    Id_Proveedor = IDProveedor,
+                    Nombre = Nombre
+
                 };
 
                 List<dgProducto> listafiltrado = c_producto.LeerProducto(6, parametrofiltrado);
@@ -515,10 +501,10 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
                 dgProducto parametrofiltradoinactivos = new dgProducto
                 {
-                    Id_Categoria = idCategoria,
-                    Id_Medida = idMedida,
-                    Id_Proveedor = idProveedor,
-                    Nombre = txt_nombre_producto.Text.Trim()
+                    Id_Categoria = IDCategoria,
+                    Id_Medida = IDMedida,
+                    Id_Proveedor = IDProveedor,
+                    Nombre = Nombre
 
                 };
 
@@ -634,6 +620,10 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
         private void btn_reiniciar_filtrado_Click(object sender, EventArgs e)
         {
+            bx_categorias.Items.Clear();
+            bx_medidas.Items.Clear();
+            bx_proveedores.Items.Clear();
+            txt_nombre_producto.Text = "";
             dataGridView_productos.Rows.Clear();
             dataGridView_productos_inactivos.Rows.Clear();
 
@@ -756,74 +746,71 @@ namespace PUNTOVENTA.MENU.PRODUCTO
             }
 
 
+            
+            string concatenacion = "";
+            dgMedida parametro2_1 = new dgMedida();
 
+            List<dgMedida> lista2 = c_medida.LeerMedida(1, parametro2_1);
 
-            bx_categorias.Items.Clear();
-            dgCategoria parametro2_1 = new dgCategoria
-            {
-
-            };
-
-            List<dgCategoria> listacategorias = c_categoria.LeerCategoria(1, parametro2_1);
-
-            if (listacategorias.Count > 0)
+            if (lista2.Count > 0)
 
             {
 
-                foreach (dgCategoria d in listacategorias)
+                concatenacion = "";
+                foreach (dgMedida d in lista2)
                 {
-                    bx_categorias.Items.Add(d.Descripcion.ToString());
+                    concatenacion = "";
+
+                    concatenacion = d.Id_Medida.ToString() + " " + d.Descripcion.ToString();
+
+                    bx_medidas.Items.Add(concatenacion);
                 }
-
-
 
 
 
             }
 
 
-
-            bx_medidas.Items.Clear();
-
-            dgMedida parametro4 = new dgMedida
+            dgCategoria parametro3_1 = new dgCategoria
             {
 
             };
 
-            List<dgMedida> listamedidas = c_medida.LeerMedida(1, parametro4);
+            List<dgCategoria> listac = c_categoria.LeerCategoria(1, parametro3_1);
 
-            if (listamedidas.Count > 0)
+
+            if (listac.Count > 0)
 
             {
 
-                foreach (dgMedida d in listamedidas)
+                concatenacion = "";
+                foreach (dgCategoria d in listac)
                 {
-                    bx_medidas.Items.Add(d.Descripcion.ToString());
+                    concatenacion = "";
+
+                    concatenacion = d.Id_Categoria.ToString() + " " + d.Descripcion.ToString();
+                    bx_categorias.Items.Add(concatenacion);
+
                 }
-
-
-
-
 
             }
 
+            dgProveedor parametro61 = new dgProveedor();
 
-            bx_proveedores.Items.Clear();
+            List<dgProveedor> listap = c_proveedor.LeerProveedor(1, parametro61);
 
-            dgProveedor parametro5 = new dgProveedor
-            {
 
-            };
-
-            List<dgProveedor> listaproveedores = c_proveedor.LeerProveedor(1, parametro5);
-
-            if (listaproveedores.Count > 0)
+            if (lista.Count > 0)
 
             {
 
-                foreach (dgProveedor d in listaproveedores)
+                concatenacion = "";
+                foreach (dgProveedor d in listap)
                 {
-                    bx_proveedores.Items.Add(d.Nombre.ToString());
+                    concatenacion = "";
+                    concatenacion = d.Id_Proveedor.ToString() + " " + d.Nombre.ToString();
+
+                    bx_proveedores.Items.Add(concatenacion);
                 }
 
             }

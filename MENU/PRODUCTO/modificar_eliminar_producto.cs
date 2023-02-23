@@ -82,10 +82,11 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                 }
 
 
-
                 bx_medida.Items.Clear();
 
-                string descripcionmedida = "";
+                string descripciocategoria = "";
+                string descripciomedida = "";
+
                 dgMedida parametro4 = new dgMedida
                 {
                     Id_Medida = Convert.ToInt16(lblidmedida.Text)
@@ -99,43 +100,45 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
                     foreach (dgMedida d in listamedidas)
                     {
-                        descripcionmedida = Convert.ToString(d.Descripcion.ToString());
+                        descripciomedida = Convert.ToString(d.Descripcion.ToString());
                     }
 
                 }
 
+                string concatenacion = "";
+                dgMedida parametro2 = new dgMedida();
 
+                List<dgMedida> lista2 = c_medida.LeerMedida(1, parametro2);
+
+                if (lista2.Count > 0)
+
+                {
+
+                    concatenacion = "";
+                    foreach (dgMedida d in lista2)
+                    {
+                        concatenacion = "";
+
+                        concatenacion = d.Id_Medida.ToString() + " " + d.Descripcion.ToString();
+
+                        bx_medida.Items.Add(concatenacion);
+                    }
+
+                    bx_medida.SelectedItem = lblidmedida.Text + " " + descripciomedida;
+
+                }
                
 
-                dgMedida parametro4_5 = new dgMedida
-                {
-
-                };
-
-                List<dgMedida> listamedidastodas = c_medida.LeerMedida(1, parametro4_5);
-
-                if (listamedidas.Count > 0)
-
-                {
-
-                    foreach (dgMedida d in listamedidastodas)
-                    {
-                        bx_medida.Items.Add(d.Descripcion.ToString());
-                    }
-
-                    bx_medida.SelectedItem = descripcionmedida;
 
 
 
 
-
-                }
 
                 // SEPARADOR
 
                 bx_categoria.Items.Clear();
 
-                string descripciocategoria = "";
+                
 
                 dgCategoria parametro5 = new dgCategoria
                 {
@@ -154,33 +157,35 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                     }
 
                 }
-
-
-              
-
-                dgCategoria parametro5_5 = new dgCategoria
+               
+                dgCategoria parametro3 = new dgCategoria
                 {
 
                 };
 
-                List<dgCategoria> listacategoriastodas = c_categoria.LeerCategoria(1, parametro5_5);
+                List<dgCategoria> listac = c_categoria.LeerCategoria(1, parametro3);
 
-                if (listacategoriastodas.Count > 0)
+
+                if (listac.Count > 0)
 
                 {
 
-                    foreach (dgCategoria d in listacategoriastodas)
+                    concatenacion = "";
+                    foreach (dgCategoria d in listac)
                     {
-                        bx_categoria.Items.Add(d.Descripcion.ToString());
+                        concatenacion = "";
+
+                        concatenacion = d.Id_Categoria.ToString() + " " + d.Descripcion.ToString();
+                        bx_categoria.Items.Add(concatenacion);
+
                     }
-
-                    bx_categoria.SelectedItem = descripciocategoria;
-
-
-
-
-
+                    bx_categoria.SelectedItem = lblidcategoria.Text + " " + descripciocategoria;
                 }
+
+
+
+
+
 
 
                 // SEPARADOR
@@ -194,7 +199,7 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                     Id_Proveedor = Convert.ToInt16(lblidproveedor.Text)
                 };
 
-                List<dgProveedor> descripcionproveedores = c_proveedor.LeerProveedor(5, parametro6);
+                List<dgProveedor> descripcionproveedores = c_proveedor.LeerProveedor(3, parametro6);
 
                 if (descripcionproveedores.Count > 0)
 
@@ -208,31 +213,29 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                 }
 
 
+                dgProveedor parametro61 = new dgProveedor();
 
+                List<dgProveedor> listap = c_proveedor.LeerProveedor(1, parametro61);
 
-                dgProveedor parametro6_5 = new dgProveedor
-                {
-
-                };
-
-                List<dgProveedor> listaproveedortodas = c_proveedor.LeerProveedor(1, parametro6_5);
-
-                if (listaproveedortodas.Count > 0)
+              
+                if (lista.Count > 0)
 
                 {
 
-                    foreach (dgProveedor d in listaproveedortodas)
+                    concatenacion = "";
+                    foreach (dgProveedor d in listap)
                     {
-                        bx_proveedor.Items.Add(d.Nombre.ToString());
+                        concatenacion = "";
+                        concatenacion = d.Id_Proveedor.ToString() + " " + d.Nombre.ToString();
+
+                        bx_proveedor.Items.Add(concatenacion);
                     }
-
-                    bx_proveedor.SelectedItem = descripcionproveedor;
-
-
-
-
-
+                    bx_proveedor.SelectedItem = lblidproveedor.Text + " " + descripcionproveedor;
                 }
+
+
+
+
 
             }
         }
@@ -320,33 +323,14 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
         private void bx_proveedor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            string nombre;
-            nombre = bx_proveedor.Text;
+
+            string concatenacion = bx_proveedor.Text;
+            string[] words = concatenacion.Split(' ');
+            string idproveedor;
+            idproveedor = words[0];
 
 
-            dgProveedor parametro = new dgProveedor
-            {
-                Nombre = nombre
-            };
-
-            List<dgProveedor> lista = c_proveedor.LeerProveedor(6, parametro);
-
-            if (lista.Count > 0)
-
-            {
-
-                foreach (dgProveedor d in lista)
-                {
-                    lblidproveedor.Text = d.Id_Proveedor.ToString();
-                }
-            }
-
-            else
-
-            {
-                MessageBox.Show("No tiene Categorias Agregadas", "Advertencia");
-            }
+            lblidproveedor.Text = idproveedor;
         }
 
         private void btn_eliminar_producto_Click(object sender, EventArgs e)
@@ -534,65 +518,27 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
         private void bx_categoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            string descripcion;
-            descripcion = bx_categoria.Text;
+
+            string concatenacion = bx_categoria.Text;
+            string[] words = concatenacion.Split(' ');
+            string idcategoria;
+            idcategoria = words[0];
 
 
-            dgCategoria parametro = new dgCategoria
-            {
-                Descripcion = descripcion
-            };
+            lblidcategoria.Text = idcategoria;
 
-            List<dgCategoria> lista = c_categoria.LeerCategoria(2, parametro);
 
-            if (lista.Count > 0)
-
-            {
-
-                foreach (dgCategoria d in lista)
-                {
-                    lblidcategoria.Text = d.Id_Categoria.ToString();
-                }
-            }
-
-            else
-
-            {
-                MessageBox.Show("No tiene Categorias Agregadas", "Advertencia");
-            }
-
-          
         }
 
         private void bx_medida_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string descripcion;
-            descripcion = bx_medida.Text;
+            string concatenacion = bx_medida.Text;
+            string[] words = concatenacion.Split(' ');
+            string idmedida;
+            idmedida = words[0];
 
 
-            dgMedida parametro = new dgMedida
-            {
-                Descripcion = descripcion
-            };
-
-            List<dgMedida> lista = c_medida.LeerMedida(2, parametro);
-
-            if (lista.Count > 0)
-
-            {
-
-                foreach (dgMedida d in lista)
-                {
-                    lblidmedida.Text = d.Id_Medida.ToString();
-                }
-            }
-
-            else
-
-            {
-                MessageBox.Show("No tiene Categorias Agregadas", "Advertencia");
-            }
+            lblidmedida.Text = idmedida;
         }
 
         private void panel13_Paint(object sender, PaintEventArgs e)

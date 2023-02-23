@@ -152,12 +152,7 @@ namespace PUNTOVENTA.MENU.PRODUCTO
             }
 
 
-            bx_proveedor.Items.Clear();
-
-            dgProveedor parametro3 = new dgProveedor
-            {
-               
-            };
+            dgProveedor parametro3 = new dgProveedor();
 
             List<dgProveedor> lista3 = c_proveedor.LeerProveedor(1, parametro3);
 
@@ -165,11 +160,14 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
             {
 
+                string concatenacion = "";
                 foreach (dgProveedor d in lista3)
                 {
-                    bx_proveedor.Items.Add(d.Nombre.ToString());
-                }
+                    concatenacion = "";
+                    concatenacion = d.Id_Proveedor.ToString() + " " + d.Nombre.ToString();
 
+                    bx_proveedor.Items.Add(concatenacion);
+                }
             }
 
 
@@ -180,33 +178,18 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
         private void bx_categoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            
-            string descripcion;
-            descripcion = bx_categoria.Text;
 
-            dgCategoria parametro = new dgCategoria
-            {
-                Descripcion = descripcion
-            };
+            string concatenacion = bx_categoria.Text;
+            string[] words = concatenacion.Split(' ');
+            string idcategoria;
+            idcategoria = words[0];
 
-            List<dgCategoria> lista = c_categoria.LeerCategoria(2, parametro);
 
-            if (lista.Count > 0)
+            lbl_idcategoria.Text = idcategoria;
 
-            {
+           
 
-                foreach (dgCategoria d in lista)
-                {
-                    lbl_idcategoria.Text = d.Id_Categoria.ToString();
-                }
-            }
-
-            else
-
-            {
-                MessageBox.Show("No tiene Categorias Agregadas", "Advertencia");
-            }
+           
 
 
            
@@ -217,35 +200,13 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
         private void bx_medida_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int id;
-            string descripcion;
-            descripcion = bx_medida.Text;
+            string concatenacion = bx_medida.Text;
+            string[] words = concatenacion.Split(' ');
+            string idmedida;
+            idmedida = words[0];
 
 
-           
-
-            dgMedida parametro2 = new dgMedida
-            {
-                Descripcion = descripcion
-            };
-
-            List<dgMedida> lista2 = c_medida.LeerMedida(2, parametro2);
-
-            if (lista2.Count > 0)
-
-            {
-
-                foreach (dgMedida d in lista2)
-                {
-                    lbl_idmedida.Text = d.Id_Medida.ToString();
-                }
-            }
-
-            else
-
-            {
-                MessageBox.Show("No tiene Categorias Agregadas", "Advertencia");
-            }
+            lbl_idmedida.Text = idmedida;
         }
 
         private void btn_crear_producto_Click_1(object sender, EventArgs e)
@@ -363,30 +324,13 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
         private void bx_proveedor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string nombreproveedor = bx_proveedor.Text;
+            string concatenacion = bx_proveedor.Text;
+            string[] words = concatenacion.Split(' ');
+            string idproveedor;
+            idproveedor = words[0];
 
-            dgProveedor parametro3 = new dgProveedor
-            {
-                Nombre = nombreproveedor
-            };
 
-            List<dgProveedor> lista3 = c_proveedor.LeerProveedor(4, parametro3);
-
-            if (lista3.Count > 0)
-
-            {
-
-                foreach (dgProveedor d in lista3)
-                {
-                    lbl_proveedor.Text = d.Id_Proveedor.ToString();
-                }
-            }
-
-            else
-
-            {
-                MessageBox.Show("No tiene Categorias Agregadas", "Advertencia");
-            }
+            lbl_proveedor.Text = idproveedor;
         }
 
         private void txt_nombre_TextChanged(object sender, EventArgs e)

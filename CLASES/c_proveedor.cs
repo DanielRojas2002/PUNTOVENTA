@@ -151,6 +151,32 @@ namespace PUNTOVENTA.CLASES
 
             }
 
+            else if (tipo == 3)
+
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",7),
+                    new SqlParameter("@P_IdProveedor",Parametro.Id_Proveedor)
+                };
+
+                tabla = bdContext.funcionStored("spProveedor", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgProveedor
+                             {
+                                 Nombre = Convert.ToString(fila["Nombre"].ToString())
+
+
+
+                             }
+                   ).ToList();
+                }
+            }
+
 
 
 
