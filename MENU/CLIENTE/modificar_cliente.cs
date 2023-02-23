@@ -105,7 +105,7 @@ namespace PUNTOVENTA.MENU.CLIENTE
 
         private void pictureBox9_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            Application.Exit();
         }
 
         private void btn_modificar_cliente_Click(object sender, EventArgs e)
@@ -180,7 +180,7 @@ namespace PUNTOVENTA.MENU.CLIENTE
                 Nombre = nombre
             };
 
-            List<dgCliente> lista = c_cliente.LeerCliente(6, parametro);
+            List<dgCliente> lista = c_cliente.LeerCliente(2, parametro);
 
             if (lista.Count > 0)
 
@@ -205,7 +205,7 @@ namespace PUNTOVENTA.MENU.CLIENTE
                 Id_Cliente = Convert.ToInt16(lbl_idcliente.Text)
             };
 
-            List<dgCliente> listacliente = c_cliente.LeerCliente(7, parametro2);
+            List<dgCliente> listacliente = c_cliente.LeerCliente(3, parametro2);
 
             if (listacliente.Count > 0)
 

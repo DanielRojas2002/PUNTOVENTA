@@ -44,6 +44,7 @@
             this.btn_regresar = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
@@ -61,18 +62,19 @@
             this.lbl_perfil.BackColor = System.Drawing.Color.Navy;
             this.lbl_perfil.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_perfil.ForeColor = System.Drawing.Color.White;
-            this.lbl_perfil.Location = new System.Drawing.Point(209, 25);
+            this.lbl_perfil.Location = new System.Drawing.Point(159, 90);
             this.lbl_perfil.Name = "lbl_perfil";
             this.lbl_perfil.Size = new System.Drawing.Size(61, 19);
             this.lbl_perfil.TabIndex = 37;
             this.lbl_perfil.Text = "perfil:";
             this.lbl_perfil.Visible = false;
+            this.lbl_perfil.Click += new System.EventHandler(this.lbl_perfil_Click);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.btn_eliminar_cliente);
-            this.panel2.Location = new System.Drawing.Point(77, 376);
+            this.panel2.Location = new System.Drawing.Point(74, 424);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(253, 46);
             this.panel2.TabIndex = 32;
@@ -109,18 +111,19 @@
             this.txt_usuario.BackColor = System.Drawing.Color.Navy;
             this.txt_usuario.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txt_usuario.ForeColor = System.Drawing.Color.White;
-            this.txt_usuario.Location = new System.Drawing.Point(290, 25);
+            this.txt_usuario.Location = new System.Drawing.Point(240, 90);
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(78, 19);
             this.txt_usuario.TabIndex = 36;
             this.txt_usuario.Text = "usuario:";
             this.txt_usuario.Visible = false;
+            this.txt_usuario.Click += new System.EventHandler(this.txt_usuario_Click);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.btn_modificar_cliente);
-            this.panel1.Location = new System.Drawing.Point(77, 324);
+            this.panel1.Location = new System.Drawing.Point(74, 372);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(253, 46);
             this.panel1.TabIndex = 33;
@@ -157,18 +160,19 @@
             this.lbl_id.BackColor = System.Drawing.Color.Navy;
             this.lbl_id.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_id.ForeColor = System.Drawing.Color.White;
-            this.lbl_id.Location = new System.Drawing.Point(131, 25);
+            this.lbl_id.Location = new System.Drawing.Point(81, 90);
             this.lbl_id.Name = "lbl_id";
             this.lbl_id.Size = new System.Drawing.Size(25, 19);
             this.lbl_id.TabIndex = 35;
             this.lbl_id.Text = "id";
             this.lbl_id.Visible = false;
+            this.lbl_id.Click += new System.EventHandler(this.lbl_id_Click);
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.pictureBox4);
             this.panel5.Controls.Add(this.btn_agregarCliente);
-            this.panel5.Location = new System.Drawing.Point(77, 275);
+            this.panel5.Location = new System.Drawing.Point(74, 323);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(253, 46);
             this.panel5.TabIndex = 34;
@@ -215,14 +219,18 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Navy;
+            this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Controls.Add(this.lbl_perfil);
+            this.panel3.Controls.Add(this.txt_usuario);
             this.panel3.Controls.Add(this.panel5);
+            this.panel3.Controls.Add(this.lbl_id);
             this.panel3.Controls.Add(this.panel1);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(426, 450);
+            this.panel3.Size = new System.Drawing.Size(426, 559);
             this.panel3.TabIndex = 39;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -230,22 +238,31 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(90, 64);
+            this.pictureBox1.Location = new System.Drawing.Point(87, 112);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(240, 205);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 54;
             this.pictureBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Cooper Black", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(121, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(185, 36);
+            this.label1.TabIndex = 81;
+            this.label1.Text = "CLIENTES";
+            // 
             // menu_cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 450);
+            this.ClientSize = new System.Drawing.Size(426, 559);
             this.Controls.Add(this.btn_regresar);
-            this.Controls.Add(this.lbl_perfil);
-            this.Controls.Add(this.txt_usuario);
-            this.Controls.Add(this.lbl_id);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "menu_cliente";
@@ -260,9 +277,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -283,5 +300,6 @@
         private PictureBox btn_regresar;
         private Panel panel3;
         private PictureBox pictureBox1;
+        private Label label1;
     }
 }

@@ -143,6 +143,38 @@ namespace PUNTOVENTA.CLASES
                 }
             }
 
+            else if (tipo == 3)
+
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",6),
+                    new SqlParameter("@P_IdCliente",Parametro.Id_Cliente)
+                };
+
+                tabla = bdContext.funcionStored("spCliente", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgCliente
+                             {
+                                 Nombre = Convert.ToString(fila["Nombre"].ToString()),
+                                 Apellido_Paterno = Convert.ToString(fila["Apellido_Paterno"].ToString()),
+                                 Apellido_Materno = Convert.ToString(fila["Apellido_Materno"].ToString()),
+                                 Telefono = Convert.ToString(fila["Telefono"].ToString()),
+                                 Correo= Convert.ToString(fila["Correo"].ToString()),
+                                 Direccion = Convert.ToString(fila["Direccion"].ToString())
+
+
+
+
+                             }
+                   ).ToList();
+                }
+            }
+
 
 
 
@@ -167,7 +199,7 @@ namespace PUNTOVENTA.CLASES
 
                 SqlParameter[] parametros =
                 {
-                    new SqlParameter("@Accion",3),
+                    new SqlParameter("@Accion",5),
                     new SqlParameter("@P_IdCliente",Parametro.Id_Cliente),
                     new SqlParameter("@P_Nombre",Parametro.Nombre),
                     new SqlParameter("@P_Apellido_Paterno",Parametro.Apellido_Paterno),

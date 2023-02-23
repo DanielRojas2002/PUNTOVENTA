@@ -127,5 +127,20 @@ namespace PUNTOVENTA.MENU.CLIENTE
         {
 
         }
+
+        private void txt_usuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_perfil_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_id_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
