@@ -648,12 +648,7 @@ namespace PUNTOVENTA.MENU.VENTA
                 lbl_total.Text = "";
                 lbl_cambio.Text = "";
 
-                this.Hide();
-                Inicio formulario = new Inicio();
-                formulario.lbl_id.Text = id;
-                formulario.lbl_perfil.Text = Convert.ToString(retorno2);
-                formulario.txt_usuario.Text = Convert.ToString(retorno);
-                formulario.Show();
+                RegresarVentana();
             }
 
            
@@ -821,7 +816,70 @@ namespace PUNTOVENTA.MENU.VENTA
             }
         }
 
-      
+        private void RegresarVentana()
+        {
+
+            string id;
+            id = lbl_id.Text;
+
+            string retorno = "", retorno2 = "";
+
+            dgUsuario parametro2 = new dgUsuario
+            {
+                Id_Usuario = Convert.ToInt16(lbl_id.Text)
+
+            };
+
+
+
+            List<dgUsuario> lista = c_usuario.LeerUsuario(2, parametro2);
+
+            if (lista.Count > 0)
+
+            {
+
+                foreach (dgUsuario d in lista)
+                {
+                    retorno = Convert.ToString(d.Usuario.ToString());
+                }
+
+
+            }
+
+
+
+            dgUsuario parametro3 = new dgUsuario
+            {
+                Id_Usuario = Convert.ToInt16(lbl_id.Text)
+
+            };
+
+
+
+            List<dgUsuario> lista2 = c_usuario.LeerUsuario(3, parametro3);
+
+            if (lista.Count > 0)
+
+            {
+
+                foreach (dgUsuario d in lista2)
+                {
+                    retorno2 = Convert.ToString(d.DescripcionPerfil.ToString());
+                }
+
+
+            }
+
+            this.Hide();
+            Inicio formulario = new Inicio();
+            formulario.lbl_id.Text = id;
+            formulario.lbl_perfil.Text = Convert.ToString(retorno2);
+            formulario.txt_usuario.Text = Convert.ToString(retorno);
+            formulario.Show();
+
+
+
+        }
 
         private void txt_paga_con_MouseCaptureChanged(object sender, EventArgs e)
         {
@@ -830,9 +888,9 @@ namespace PUNTOVENTA.MENU.VENTA
 
         private void btn_realizar_venta_Click(object sender, EventArgs e)
         {
-            if (lbl_id_tipoventa.Text == "1" && lbl_total.Text != "" )
+            if (lbl_id_tipoventa.Text == "1" && lbl_total.Text != "")
             {
-                if (txt_paga_con.Text=="" && lbl_cambio.Text=="")
+                if (txt_paga_con.Text == "" && lbl_cambio.Text == "")
                 {
                     MessageBox.Show("Debe de llenar el campo de pago");
 
@@ -879,7 +937,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
                         dgVenta parametrorestarstock = new dgVenta
                         {
-                            
+
                             Id_Venta = _num_venta,
 
                         };
@@ -899,8 +957,8 @@ namespace PUNTOVENTA.MENU.VENTA
                                 dgVenta parametrorestarstockrestar = new dgVenta
                                 {
 
-                                   Id_Producto=idproducto,
-                                   Stock=cantidad
+                                    Id_Producto = idproducto,
+                                    Stock = cantidad
 
                                 };
 
@@ -924,68 +982,98 @@ namespace PUNTOVENTA.MENU.VENTA
 
                         MessageBox.Show("Venta Realizada");
 
-                        string id;
-                        id = lbl_id.Text;
-
-                        string retorno = "", retorno2 = "";
-
-                        dgUsuario parametro2 = new dgUsuario
-                        {
-                            Id_Usuario = Convert.ToInt16(lbl_id.Text)
-
-                        };
-
-
-
-                        List<dgUsuario> lista = c_usuario.LeerUsuario(2, parametro2);
-
-                        if (lista.Count > 0)
-
-                        {
-
-                            foreach (dgUsuario d in lista)
-                            {
-                                retorno = Convert.ToString(d.Usuario.ToString());
-                            }
-
-
-                        }
-
-
-
-                        dgUsuario parametro3 = new dgUsuario
-                        {
-                            Id_Usuario = Convert.ToInt16(lbl_id.Text)
-
-                        };
-
-
-
-                        List<dgUsuario> lista2 = c_usuario.LeerUsuario(3, parametro3);
-
-                        if (lista.Count > 0)
-
-                        {
-
-                            foreach (dgUsuario d in lista2)
-                            {
-                                retorno2 = Convert.ToString(d.DescripcionPerfil.ToString());
-                            }
-
-
-                        }
-
-                        this.Hide();
-                        Inicio formulario = new Inicio();
-                        formulario.lbl_id.Text = id;
-                        formulario.lbl_perfil.Text = Convert.ToString(retorno2);
-                        formulario.txt_usuario.Text = Convert.ToString(retorno);
-                        formulario.Show();
+                        RegresarVentana();
                     }
                 }
-               
+
 
             }
+
+
+            else if (lbl_id_tipoventa.Text == "2" && lbl_total.Text != "")
+            {
+
+                if (txt_nombre_transferencia.Text=="")
+                {
+                    MessageBox.Show("Ingrese el nombre del cliente para guardarlo en transferencia");
+                }
+                else
+                {
+                    dgVenta parametro = new dgVenta
+                    {
+                        Id_Usuario = Convert.ToInt16(lbl_id.Text),
+                        FechaVenta = DateTime.Now,
+                        Id_Venta = _num_venta,
+                        Total = decimal.Parse(lbl_total.Text),
+                        Cambio = 0,
+                        NombreTransferencia = txt_nombre_transferencia.Text
+
+
+                    };
+
+                    string control = "";
+
+                    control = c_venta.InsertarVentaTransferencia(parametro);
+
+
+                    dgVenta parametrorestarstock = new dgVenta
+                    {
+
+                        Id_Venta = _num_venta,
+
+                    };
+
+                    List<dgVenta> listaproductoscarrito = c_venta.LeerVenta(1, parametrorestarstock);
+
+                    if (listaproductoscarrito.Count > 0)
+
+                    {
+                        int idproducto, cantidad;
+                        foreach (dgVenta d in listaproductoscarrito)
+                        {
+                            idproducto = Convert.ToInt16(d.Id_Producto);
+
+                            cantidad = Convert.ToInt16(d.Stock);
+
+                            dgVenta parametrorestarstockrestar = new dgVenta
+                            {
+
+                                Id_Producto = idproducto,
+                                Stock = cantidad
+
+                            };
+
+                            control = "";
+
+                            control = c_venta.ReducirStockProductos(parametrorestarstockrestar);
+
+
+
+
+
+                        }
+
+
+
+
+
+                    }
+
+
+
+                    MessageBox.Show("Venta Realizada por Transeferencia");
+
+                    RegresarVentana();
+                }
+
+                
+
+
+
+
+
+            } 
+
 
             else
             {

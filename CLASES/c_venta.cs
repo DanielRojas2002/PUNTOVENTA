@@ -53,6 +53,46 @@ namespace PUNTOVENTA.CLASES
 
         }
 
+        public static string InsertarVentaTransferencia(dgVenta Parametro)
+        {
+
+
+            string control = "";
+
+            try
+            {
+
+                DataTable tabla = new DataTable();
+
+                SqlParameter[] parametros =
+                {
+                    new SqlParameter("@Accion",4),
+                    new SqlParameter("@P_IdVenta",Parametro.Id_Venta),
+                    new SqlParameter("@P_IdUsuario",Parametro.Id_Usuario),
+                    new SqlParameter("@P_Total",Parametro.Total),
+                    new SqlParameter("@P_Cambio",Parametro.Cambio),
+                    new SqlParameter("@P_FechaVenta",Parametro.FechaVenta),
+                    new SqlParameter("@P_NombreTransferencia",Parametro.NombreTransferencia)
+
+
+
+                };
+
+                tabla = bdContext.funcionStored("spVenta", parametros);
+                control = tabla.Rows[0][0].ToString();
+
+
+
+            }
+
+            catch (Exception error)
+            {
+                control = error.ToString();
+            }
+            return control;
+
+        }
+
         public static string ReducirStockProductos(dgVenta Parametro)
         {
 
