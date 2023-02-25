@@ -984,7 +984,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
                         clsventas.CreaRecibo Ticket1 = new clsventas.CreaRecibo();
 
-
+                       
                         dgTicket parametroticketinfo = new dgTicket
                         {
                         };
@@ -1000,6 +1000,7 @@ namespace PUNTOVENTA.MENU.VENTA
                             foreach (dgTicket d in listaticketinfo)
                             {
                                 Ticket1.TextoCentro(d.NombreEmpresa.ToUpper().ToString());
+                                Ticket1.TextoIzquierda("Numero de Venta: " + _num_venta);
                                 Ticket1.TextoCentro("==================================");
                                 Ticket1.TextoIzquierda("Direccion: "+d.Direccion.ToUpper().ToString());
                                 Ticket1.TextoIzquierda("Celular: " + d.Telefono.ToString());
@@ -1153,6 +1154,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
                     clsventas.CreaRecibo Ticket1 = new clsventas.CreaRecibo();
 
+                    Ticket1.TextoIzquierda("Numero de Venta: " + _num_venta);
 
                     dgTicket parametroticketinfo = new dgTicket
                     {
@@ -1169,6 +1171,7 @@ namespace PUNTOVENTA.MENU.VENTA
                         foreach (dgTicket d in listaticketinfo)
                         {
                             Ticket1.TextoCentro(d.NombreEmpresa.ToUpper().ToString());
+                            Ticket1.TextoIzquierda("Numero de Venta: " + _num_venta);
                             Ticket1.TextoCentro("==================================");
                             Ticket1.TextoIzquierda("Direccion: " + d.Direccion.ToUpper().ToString());
                             Ticket1.TextoIzquierda("Celular: " + d.Telefono.ToString());
@@ -1358,6 +1361,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
                         List<dgTicket> listaticketinfo = c_ticket.Ticket(0, parametroticketinfo);
 
+                        Ticket1.TextoIzquierda("Numero de Venta: " + _num_venta);
 
                         if (listaticketinfo.Count > 0)
 
@@ -1367,6 +1371,7 @@ namespace PUNTOVENTA.MENU.VENTA
                             foreach (dgTicket d in listaticketinfo)
                             {
                                 Ticket1.TextoCentro(d.NombreEmpresa.ToUpper().ToString());
+                                Ticket1.TextoIzquierda("Numero de Venta: " + _num_venta);
                                 Ticket1.TextoCentro("==================================");
                                 Ticket1.TextoIzquierda("Direccion: " + d.Direccion.ToUpper().ToString());
                                 Ticket1.TextoIzquierda("Celular: " + d.Telefono.ToString());
