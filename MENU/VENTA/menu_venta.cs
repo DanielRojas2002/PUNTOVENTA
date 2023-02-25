@@ -982,7 +982,95 @@ namespace PUNTOVENTA.MENU.VENTA
                         }
 
 
+                        clsventas.CreaRecibo Ticket1 = new clsventas.CreaRecibo();
 
+
+                        dgTicket parametroticketinfo = new dgTicket
+                        {
+                        };
+
+                        List<dgTicket> listaticketinfo = c_ticket.Ticket(0, parametroticketinfo);
+
+
+                        if (listaticketinfo.Count > 0)
+
+                        {
+
+                           
+                            foreach (dgTicket d in listaticketinfo)
+                            {
+                                Ticket1.TextoCentro(d.NombreEmpresa.ToUpper().ToString());
+                                Ticket1.TextoCentro("==================================");
+                                Ticket1.TextoIzquierda("Direccion: "+d.Direccion.ToUpper().ToString());
+                                Ticket1.TextoIzquierda("Celular: " + d.Telefono.ToString());
+                                Ticket1.TextoIzquierda("");
+                            }
+
+            
+                            Ticket1.TextoCentro("Recibo de venta realizada por Efectivo");
+                            Ticket1.TextoIzquierda("Nombre del cliente: Cliente Efectivo");
+
+                            Ticket1.TextoIzquierda(" -> Fecha de venta: " + DateTime.Now.ToShortDateString() + "  ->Hora: " + DateTime.Now.ToShortTimeString());
+                            Ticket1.TextoIzquierda("");
+                        }
+
+                     
+                        clsventas.CreaRecibo.LineasGuion();
+
+                        clsventas.CreaRecibo.EncabezadoVenta();
+
+
+                        dgTicket parametroticket = new dgTicket
+                        {
+                            Id_Venta=_num_venta
+                        };
+
+                        List<dgTicket> listaProductosVenta = c_ticket.Ticket(1, parametroticket);
+
+
+                        if (listaProductosVenta.Count > 0)
+
+                        {
+
+                            string concatenacion = "";
+                            foreach (dgTicket d in listaProductosVenta)
+                            {
+                                concatenacion ="("+ d.Id_Producto.ToString()+")"+ " " + d.NombreProducto.ToString();
+                                Ticket1.AgregaArticulo(concatenacion, Convert.ToInt16( d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), float.Parse(d.SubTotal.ToString()));
+                                clsventas.CreaRecibo.LineasGuion();
+                            }
+                        }
+
+                        Ticket1.TextoIzquierda(" ");
+                        Ticket1.AgregaTotales("Total", double.Parse(lbl_total.Text));
+                        Ticket1.TextoIzquierda(" ");
+                        Ticket1.AgregaTotales("Pagado con :", double.Parse(txt_paga_con.Text));
+                        Ticket1.AgregaTotales("Cambio a dar:", double.Parse(lbl_cambio.Text));
+
+                        if (listaticketinfo.Count > 0)
+
+                        {
+                            Ticket1.TextoIzquierda(" ");
+                            Ticket1.TextoCentro("=================================================");
+
+                            foreach (dgTicket d in listaticketinfo)
+                            {
+                               
+                                Ticket1.TextoCentro(d.Mensaje.ToUpper().ToString());
+
+                               
+
+                            }
+                            Ticket1.TextoCentro("===================================================");
+                            Ticket1.TextoIzquierda(" ");
+
+
+                        }
+                       
+                       
+                      
+                        string impresora = "Microsoft XPS Document Writer";
+                        Ticket1.ImprimirTiket(impresora);
                         MessageBox.Show("Venta Realizada Por Efectivo");
 
                         RegresarVentana();
@@ -1194,7 +1282,11 @@ namespace PUNTOVENTA.MENU.VENTA
                 MessageBox.Show("Debe Agregar Productos a la orden ");
             }
 
+
+
             
+
+
         }
 
         private void panel2_MouseEnter(object sender, EventArgs e)

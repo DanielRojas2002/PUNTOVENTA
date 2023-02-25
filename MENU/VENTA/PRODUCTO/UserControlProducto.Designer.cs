@@ -52,11 +52,11 @@
             // lbl_nombreproducto
             // 
             this.lbl_nombreproducto.AutoSize = true;
-            this.lbl_nombreproducto.Font = new System.Drawing.Font("Cooper Black", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_nombreproducto.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_nombreproducto.ForeColor = System.Drawing.Color.White;
-            this.lbl_nombreproducto.Location = new System.Drawing.Point(348, 28);
+            this.lbl_nombreproducto.Location = new System.Drawing.Point(283, 28);
             this.lbl_nombreproducto.Name = "lbl_nombreproducto";
-            this.lbl_nombreproducto.Size = new System.Drawing.Size(164, 35);
+            this.lbl_nombreproducto.Size = new System.Drawing.Size(125, 26);
             this.lbl_nombreproducto.TabIndex = 77;
             this.lbl_nombreproducto.Text = "NOMBRE ";
             // 
