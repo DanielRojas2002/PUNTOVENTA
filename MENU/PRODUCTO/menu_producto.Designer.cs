@@ -44,6 +44,11 @@
             this.btn_regresar = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView_productos_inactivos = new System.Windows.Forms.DataGridView();
+            this.Col_IdProducto_Inactivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView_productos = new System.Windows.Forms.DataGridView();
@@ -55,6 +60,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txt_codigoproducto = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_nombre_producto = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -72,11 +79,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.Col_IdProducto_Inactivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             this.panel1.SuspendLayout();
@@ -253,6 +255,51 @@
             this.dataGridView_productos_inactivos.TabIndex = 83;
             this.dataGridView_productos_inactivos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_productos_inactivos_CellContentClick);
             // 
+            // Col_IdProducto_Inactivo
+            // 
+            this.Col_IdProducto_Inactivo.Frozen = true;
+            this.Col_IdProducto_Inactivo.HeaderText = "IdProducto";
+            this.Col_IdProducto_Inactivo.MinimumWidth = 6;
+            this.Col_IdProducto_Inactivo.Name = "Col_IdProducto_Inactivo";
+            this.Col_IdProducto_Inactivo.ReadOnly = true;
+            this.Col_IdProducto_Inactivo.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.Frozen = true;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.Frozen = true;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Categoria";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.Frozen = true;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Medida";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.Frozen = true;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Stock";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 125;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -361,6 +408,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.txt_codigoproducto);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.txt_nombre_producto);
             this.panel2.Controls.Add(this.label6);
@@ -376,13 +425,37 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(304, 494);
             this.panel2.TabIndex = 76;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(9, 118);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(146, 15);
+            this.label10.TabIndex = 90;
+            this.label10.Text = "CODIGO PRODUCTO:";
+            // 
+            // txt_codigoproducto
+            // 
+            this.txt_codigoproducto.BackColor = System.Drawing.Color.White;
+            this.txt_codigoproducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_codigoproducto.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_codigoproducto.ForeColor = System.Drawing.Color.Black;
+            this.txt_codigoproducto.Location = new System.Drawing.Point(6, 137);
+            this.txt_codigoproducto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_codigoproducto.Name = "txt_codigoproducto";
+            this.txt_codigoproducto.Size = new System.Drawing.Size(155, 24);
+            this.txt_codigoproducto.TabIndex = 89;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(9, 127);
+            this.label9.Location = new System.Drawing.Point(9, 184);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(152, 15);
             this.label9.TabIndex = 88;
@@ -394,10 +467,10 @@
             this.txt_nombre_producto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_nombre_producto.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_nombre_producto.ForeColor = System.Drawing.Color.Black;
-            this.txt_nombre_producto.Location = new System.Drawing.Point(6, 146);
+            this.txt_nombre_producto.Location = new System.Drawing.Point(6, 203);
             this.txt_nombre_producto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_nombre_producto.Name = "txt_nombre_producto";
-            this.txt_nombre_producto.Size = new System.Drawing.Size(271, 24);
+            this.txt_nombre_producto.Size = new System.Drawing.Size(195, 24);
             this.txt_nombre_producto.TabIndex = 87;
             // 
             // label6
@@ -405,7 +478,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(144, 200);
+            this.label6.Location = new System.Drawing.Point(144, 257);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 15);
             this.label6.TabIndex = 86;
@@ -416,7 +489,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(6, 300);
+            this.label5.Location = new System.Drawing.Point(9, 331);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(98, 15);
             this.label5.TabIndex = 85;
@@ -427,7 +500,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(6, 200);
+            this.label4.Location = new System.Drawing.Point(9, 257);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 15);
             this.label4.TabIndex = 84;
@@ -453,10 +526,10 @@
             this.bx_medidas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bx_medidas.ForeColor = System.Drawing.Color.Black;
             this.bx_medidas.FormattingEnabled = true;
-            this.bx_medidas.Location = new System.Drawing.Point(144, 219);
+            this.bx_medidas.Location = new System.Drawing.Point(144, 276);
             this.bx_medidas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bx_medidas.Name = "bx_medidas";
-            this.bx_medidas.Size = new System.Drawing.Size(133, 28);
+            this.bx_medidas.Size = new System.Drawing.Size(123, 28);
             this.bx_medidas.TabIndex = 83;
             this.bx_medidas.SelectedIndexChanged += new System.EventHandler(this.bx_medidas_SelectedIndexChanged);
             // 
@@ -516,10 +589,10 @@
             this.bx_proveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bx_proveedores.ForeColor = System.Drawing.Color.Black;
             this.bx_proveedores.FormattingEnabled = true;
-            this.bx_proveedores.Location = new System.Drawing.Point(0, 319);
+            this.bx_proveedores.Location = new System.Drawing.Point(6, 350);
             this.bx_proveedores.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bx_proveedores.Name = "bx_proveedores";
-            this.bx_proveedores.Size = new System.Drawing.Size(277, 28);
+            this.bx_proveedores.Size = new System.Drawing.Size(261, 28);
             this.bx_proveedores.TabIndex = 81;
             this.bx_proveedores.SelectedIndexChanged += new System.EventHandler(this.bx_proveedores_SelectedIndexChanged);
             // 
@@ -530,7 +603,7 @@
             this.bx_categorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bx_categorias.ForeColor = System.Drawing.Color.Black;
             this.bx_categorias.FormattingEnabled = true;
-            this.bx_categorias.Location = new System.Drawing.Point(0, 219);
+            this.bx_categorias.Location = new System.Drawing.Point(6, 276);
             this.bx_categorias.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bx_categorias.Name = "bx_categorias";
             this.bx_categorias.Size = new System.Drawing.Size(133, 28);
@@ -586,51 +659,6 @@
             this.label3.Text = "Al darle Click en cualquier parte de la celda\r\nse le mostrara una ventana para\r\n " +
     "modificar o eliminar el producto seleccionado";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Col_IdProducto_Inactivo
-            // 
-            this.Col_IdProducto_Inactivo.Frozen = true;
-            this.Col_IdProducto_Inactivo.HeaderText = "IdProducto";
-            this.Col_IdProducto_Inactivo.MinimumWidth = 6;
-            this.Col_IdProducto_Inactivo.Name = "Col_IdProducto_Inactivo";
-            this.Col_IdProducto_Inactivo.ReadOnly = true;
-            this.Col_IdProducto_Inactivo.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.Frozen = true;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.Frozen = true;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Categoria";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.Frozen = true;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Medida";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.Frozen = true;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Stock";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 125;
             // 
             // menu_producto
             // 
@@ -723,5 +751,7 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private Label label10;
+        private TextBox txt_codigoproducto;
     }
 }

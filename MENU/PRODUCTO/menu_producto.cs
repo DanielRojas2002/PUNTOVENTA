@@ -362,7 +362,7 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
          
 
-            if (bx_categorias.Text == "" && bx_medidas.Text == "" && bx_proveedores.Text == "" && txt_nombre_producto.Text=="")
+            if (txt_codigoproducto.Text=="" && bx_categorias.Text == "" && bx_medidas.Text == "" && bx_proveedores.Text == "" && txt_nombre_producto.Text=="")
             {
                 MessageBox.Show("Seleccione al menos un filtro para poder filtrar");
             }
@@ -375,7 +375,7 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                 dataGridView_productos_inactivos.Rows.Clear();
 
                
-                string idCategoria="",IdMedida="",IdProveedor="",Nombre="0";
+                string idCategoria="",IdMedida="",IdProveedor="",Nombre="0", codigoproducto="0";
                 int IDCategoria = 0, IDMedida = 0, IDProveedor = 0;
 
 
@@ -415,7 +415,10 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                     Nombre = txt_nombre_producto.Text.Trim();
                 }
 
-
+                if (codigoproducto!="")
+                {
+                    codigoproducto = txt_codigoproducto.Text;
+                }
                
                 
 
@@ -427,7 +430,9 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                     Id_Categoria = IDCategoria,
                     Id_Medida = IDMedida,
                     Id_Proveedor = IDProveedor,
-                    Nombre = Nombre
+                    Nombre = Nombre,
+                    Id_Producto=codigoproducto
+
 
                 };
 
@@ -504,7 +509,8 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                     Id_Categoria = IDCategoria,
                     Id_Medida = IDMedida,
                     Id_Proveedor = IDProveedor,
-                    Nombre = Nombre
+                    Nombre = Nombre,
+                    Id_Producto = codigoproducto
 
                 };
 
@@ -624,6 +630,7 @@ namespace PUNTOVENTA.MENU.PRODUCTO
             bx_medidas.Items.Clear();
             bx_proveedores.Items.Clear();
             txt_nombre_producto.Text = "";
+            txt_codigoproducto.Text = "";
             dataGridView_productos.Rows.Clear();
             dataGridView_productos_inactivos.Rows.Clear();
 
@@ -825,6 +832,11 @@ namespace PUNTOVENTA.MENU.PRODUCTO
             forms.lbl_id.Text = lbl_id.Text;
             forms.lblidproducto.Text = idProducto;
             forms.Show();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

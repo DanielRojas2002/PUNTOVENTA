@@ -10,6 +10,7 @@ namespace PUNTOVENTA.ENTIDAD
     {
         public string? Id_Producto { get; set; }
 
+
         public int? Id_Venta { get; set; }
 
         public int? Id_Estatus_Producto{ get; set; }
