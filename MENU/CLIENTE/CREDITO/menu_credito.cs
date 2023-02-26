@@ -16,5 +16,15 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
         {
             InitializeComponent();
         }
+
+        private void menu_credito_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void menu_credito_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
