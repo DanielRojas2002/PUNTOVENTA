@@ -261,6 +261,7 @@
             this.txt_nombre_transferencia.Name = "txt_nombre_transferencia";
             this.txt_nombre_transferencia.Size = new System.Drawing.Size(182, 24);
             this.txt_nombre_transferencia.TabIndex = 107;
+            this.txt_nombre_transferencia.TextChanged += new System.EventHandler(this.txt_nombre_transferencia_TextChanged);
             // 
             // lbl_id_tipoventa
             // 
