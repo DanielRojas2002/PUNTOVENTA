@@ -32,9 +32,13 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.btn_regresar = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.btn_modificar_producto = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.txt_codigo = new System.Windows.Forms.TextBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.foto_activooinactivo = new System.Windows.Forms.PictureBox();
             this.btn_eliminar_producto = new System.Windows.Forms.Button();
@@ -44,7 +48,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txt_precioventa = new System.Windows.Forms.TextBox();
@@ -89,6 +92,7 @@
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            this.panel9.SuspendLayout();
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foto_activooinactivo)).BeginInit();
             this.panel6.SuspendLayout();
@@ -138,7 +142,10 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.panel7);
+            this.panel2.Controls.Add(this.panel9);
             this.panel2.Controls.Add(this.panel13);
             this.panel2.Controls.Add(this.lblidproveedor);
             this.panel2.Controls.Add(this.lblidmedida);
@@ -146,7 +153,6 @@
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.label5);
@@ -159,17 +165,39 @@
             this.panel2.Controls.Add(this.panel12);
             this.panel2.Controls.Add(this.bx_proveedor);
             this.panel2.Controls.Add(this.bx_categoria);
-            this.panel2.Location = new System.Drawing.Point(318, 111);
+            this.panel2.Location = new System.Drawing.Point(318, 117);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(549, 517);
+            this.panel2.Size = new System.Drawing.Size(549, 595);
             this.panel2.TabIndex = 83;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.label3.Location = new System.Drawing.Point(25, 97);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 28);
+            this.label3.TabIndex = 84;
+            this.label3.Text = "Descripcion";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.label10.Location = new System.Drawing.Point(23, -4);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(81, 28);
+            this.label10.TabIndex = 98;
+            this.label10.Text = "Codigo:";
             // 
             // panel7
             // 
             this.panel7.Controls.Add(this.pictureBox11);
             this.panel7.Controls.Add(this.btn_modificar_producto);
-            this.panel7.Location = new System.Drawing.Point(312, 452);
+            this.panel7.Location = new System.Drawing.Point(312, 510);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(234, 61);
@@ -203,11 +231,34 @@
             this.btn_modificar_producto.UseVisualStyleBackColor = false;
             this.btn_modificar_producto.Click += new System.EventHandler(this.btn_modificar_producto_Click);
             // 
+            // panel9
+            // 
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel9.Controls.Add(this.txt_codigo);
+            this.panel9.Location = new System.Drawing.Point(9, 12);
+            this.panel9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(213, 81);
+            this.panel9.TabIndex = 99;
+            // 
+            // txt_codigo
+            // 
+            this.txt_codigo.BackColor = System.Drawing.Color.White;
+            this.txt_codigo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_codigo.Enabled = false;
+            this.txt_codigo.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_codigo.ForeColor = System.Drawing.Color.Black;
+            this.txt_codigo.Location = new System.Drawing.Point(25, 27);
+            this.txt_codigo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_codigo.Name = "txt_codigo";
+            this.txt_codigo.Size = new System.Drawing.Size(124, 24);
+            this.txt_codigo.TabIndex = 1;
+            // 
             // panel13
             // 
             this.panel13.Controls.Add(this.foto_activooinactivo);
             this.panel13.Controls.Add(this.btn_eliminar_producto);
-            this.panel13.Location = new System.Drawing.Point(3, 456);
+            this.panel13.Location = new System.Drawing.Point(3, 514);
             this.panel13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(234, 61);
@@ -246,7 +297,7 @@
             this.lblidproveedor.AutoSize = true;
             this.lblidproveedor.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lblidproveedor.ForeColor = System.Drawing.Color.White;
-            this.lblidproveedor.Location = new System.Drawing.Point(354, 369);
+            this.lblidproveedor.Location = new System.Drawing.Point(354, 427);
             this.lblidproveedor.Name = "lblidproveedor";
             this.lblidproveedor.Size = new System.Drawing.Size(137, 23);
             this.lblidproveedor.TabIndex = 95;
@@ -258,7 +309,7 @@
             this.lblidmedida.AutoSize = true;
             this.lblidmedida.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lblidmedida.ForeColor = System.Drawing.Color.White;
-            this.lblidmedida.Location = new System.Drawing.Point(416, 281);
+            this.lblidmedida.Location = new System.Drawing.Point(416, 339);
             this.lblidmedida.Name = "lblidmedida";
             this.lblidmedida.Size = new System.Drawing.Size(104, 23);
             this.lblidmedida.TabIndex = 94;
@@ -270,7 +321,7 @@
             this.lblidcategoria.AutoSize = true;
             this.lblidcategoria.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lblidcategoria.ForeColor = System.Drawing.Color.White;
-            this.lblidcategoria.Location = new System.Drawing.Point(174, 279);
+            this.lblidcategoria.Location = new System.Drawing.Point(174, 337);
             this.lblidcategoria.Name = "lblidcategoria";
             this.lblidcategoria.Size = new System.Drawing.Size(125, 23);
             this.lblidcategoria.TabIndex = 90;
@@ -282,7 +333,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label8.Location = new System.Drawing.Point(85, 367);
+            this.label8.Location = new System.Drawing.Point(85, 425);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(103, 28);
             this.label8.TabIndex = 93;
@@ -293,7 +344,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label7.Location = new System.Drawing.Point(330, 279);
+            this.label7.Location = new System.Drawing.Point(330, 337);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 28);
             this.label7.TabIndex = 92;
@@ -304,29 +355,18 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label6.Location = new System.Drawing.Point(35, 279);
+            this.label6.Location = new System.Drawing.Point(35, 337);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 28);
             this.label6.TabIndex = 91;
             this.label6.Text = "Categoria";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label3.Location = new System.Drawing.Point(269, 27);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 28);
-            this.label3.TabIndex = 84;
-            this.label3.Text = "Descripcion";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label1.Location = new System.Drawing.Point(221, 149);
+            this.label1.Location = new System.Drawing.Point(221, 207);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 28);
             this.label1.TabIndex = 90;
@@ -336,7 +376,7 @@
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel6.Controls.Add(this.txt_precioventa);
-            this.panel6.Location = new System.Drawing.Point(221, 171);
+            this.panel6.Location = new System.Drawing.Point(221, 229);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(173, 81);
@@ -353,13 +393,14 @@
             this.txt_precioventa.Name = "txt_precioventa";
             this.txt_precioventa.Size = new System.Drawing.Size(128, 24);
             this.txt_precioventa.TabIndex = 6;
+            this.txt_precioventa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_precioventa_KeyPress);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label5.Location = new System.Drawing.Point(9, 149);
+            this.label5.Location = new System.Drawing.Point(9, 207);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(141, 28);
             this.label5.TabIndex = 88;
@@ -369,7 +410,7 @@
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel5.Controls.Add(this.txt_preciocompra);
-            this.panel5.Location = new System.Drawing.Point(9, 171);
+            this.panel5.Location = new System.Drawing.Point(9, 229);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(197, 81);
@@ -386,13 +427,14 @@
             this.txt_preciocompra.Name = "txt_preciocompra";
             this.txt_preciocompra.Size = new System.Drawing.Size(128, 24);
             this.txt_preciocompra.TabIndex = 6;
+            this.txt_preciocompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_preciocompra_KeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label4.Location = new System.Drawing.Point(425, 149);
+            this.label4.Location = new System.Drawing.Point(425, 207);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 28);
             this.label4.TabIndex = 87;
@@ -402,7 +444,7 @@
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.txt_stock);
-            this.panel4.Location = new System.Drawing.Point(419, 171);
+            this.panel4.Location = new System.Drawing.Point(419, 229);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(100, 81);
@@ -423,17 +465,17 @@
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.txt_descripcion);
-            this.panel3.Location = new System.Drawing.Point(253, 43);
+            this.panel3.Location = new System.Drawing.Point(9, 122);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(277, 81);
+            this.panel3.Size = new System.Drawing.Size(511, 81);
             this.panel3.TabIndex = 85;
             // 
             // txt_descripcion
             // 
             this.txt_descripcion.Location = new System.Drawing.Point(14, 13);
             this.txt_descripcion.Name = "txt_descripcion";
-            this.txt_descripcion.Size = new System.Drawing.Size(242, 51);
+            this.txt_descripcion.Size = new System.Drawing.Size(485, 51);
             this.txt_descripcion.TabIndex = 0;
             this.txt_descripcion.Text = "";
             // 
@@ -442,7 +484,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label2.Location = new System.Drawing.Point(30, 27);
+            this.label2.Location = new System.Drawing.Point(316, -4);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 28);
             this.label2.TabIndex = 78;
@@ -455,7 +497,7 @@
             this.bx_medida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bx_medida.ForeColor = System.Drawing.Color.Black;
             this.bx_medida.FormattingEnabled = true;
-            this.bx_medida.Location = new System.Drawing.Point(327, 313);
+            this.bx_medida.Location = new System.Drawing.Point(327, 371);
             this.bx_medida.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bx_medida.Name = "bx_medida";
             this.bx_medida.Size = new System.Drawing.Size(183, 28);
@@ -466,10 +508,10 @@
             // 
             this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel12.Controls.Add(this.txt_nombre);
-            this.panel12.Location = new System.Drawing.Point(3, 43);
+            this.panel12.Location = new System.Drawing.Point(289, 12);
             this.panel12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(222, 81);
+            this.panel12.Size = new System.Drawing.Size(230, 81);
             this.panel12.TabIndex = 79;
             // 
             // txt_nombre
@@ -491,7 +533,7 @@
             this.bx_proveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bx_proveedor.ForeColor = System.Drawing.Color.Black;
             this.bx_proveedor.FormattingEnabled = true;
-            this.bx_proveedor.Location = new System.Drawing.Point(85, 399);
+            this.bx_proveedor.Location = new System.Drawing.Point(85, 457);
             this.bx_proveedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bx_proveedor.Name = "bx_proveedor";
             this.bx_proveedor.Size = new System.Drawing.Size(385, 28);
@@ -505,7 +547,7 @@
             this.bx_categoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bx_categoria.ForeColor = System.Drawing.Color.Black;
             this.bx_categoria.FormattingEnabled = true;
-            this.bx_categoria.Location = new System.Drawing.Point(30, 313);
+            this.bx_categoria.Location = new System.Drawing.Point(30, 371);
             this.bx_categoria.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bx_categoria.Name = "bx_categoria";
             this.bx_categoria.Size = new System.Drawing.Size(183, 28);
@@ -805,7 +847,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.ClientSize = new System.Drawing.Size(887, 661);
+            this.ClientSize = new System.Drawing.Size(887, 724);
             this.Controls.Add(this.lbl_id_estatus);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.lblidproducto);
@@ -830,6 +872,8 @@
             this.panel2.PerformLayout();
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.panel13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.foto_activooinactivo)).EndInit();
             this.panel6.ResumeLayout(false);
@@ -916,5 +960,8 @@
         private PictureBox pictureBox12;
         private Button btn_agregar_stock;
         public Label lbl_id_estatus;
+        private Label label10;
+        private Panel panel9;
+        private TextBox txt_codigo;
     }
 }

@@ -102,10 +102,10 @@ namespace PUNTOVENTA.MENU.VENTA.PRODUCTO
             dgVentaDetalle parametroinsertar = new dgVentaDetalle
             {
                 Id_Venta = numeroventa,
-                Id_Producto = Convert.ToInt16(lbl_id_producto.Text),
+                Id_Producto = Convert.ToString(lbl_id_producto.Text),
 
 
-                PrecioVenta = Convert.ToInt16(lbl_precio_producto.Text),
+                PrecioVenta = float.Parse(lbl_precio_producto.Text),
 
                 CantidadAComprar = Convert.ToInt16(txt_cantidad_a_agregar.Value.ToString()),
 

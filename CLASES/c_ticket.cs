@@ -72,7 +72,7 @@ namespace PUNTOVENTA.CLASES
                              select new dgTicket
                              {
                                  Id_Venta = Convert.ToInt16(fila["Id_Venta"].ToString()),
-                                 Id_Producto = Convert.ToInt16(fila["IdProducto"].ToString()),
+                                 Id_Producto = Convert.ToString(fila["IdProducto"].ToString()),
                                  Usuario = Convert.ToString(fila["UsuarioVenta"].ToString()),
 
 

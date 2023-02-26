@@ -33,6 +33,9 @@
             this.txt_usuario = new System.Windows.Forms.Label();
             this.lbl_id = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.txt_codigo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.bx_proveedor = new System.Windows.Forms.ComboBox();
@@ -73,6 +76,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -99,7 +103,7 @@
             this.lbl_perfil.AutoSize = true;
             this.lbl_perfil.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_perfil.ForeColor = System.Drawing.Color.White;
-            this.lbl_perfil.Location = new System.Drawing.Point(312, 13);
+            this.lbl_perfil.Location = new System.Drawing.Point(120, 49);
             this.lbl_perfil.Name = "lbl_perfil";
             this.lbl_perfil.Size = new System.Drawing.Size(73, 23);
             this.lbl_perfil.TabIndex = 52;
@@ -111,7 +115,7 @@
             this.txt_usuario.AutoSize = true;
             this.txt_usuario.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txt_usuario.ForeColor = System.Drawing.Color.White;
-            this.txt_usuario.Location = new System.Drawing.Point(435, 13);
+            this.txt_usuario.Location = new System.Drawing.Point(243, 49);
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(95, 23);
             this.txt_usuario.TabIndex = 51;
@@ -123,7 +127,7 @@
             this.lbl_id.AutoSize = true;
             this.lbl_id.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_id.ForeColor = System.Drawing.Color.White;
-            this.lbl_id.Location = new System.Drawing.Point(247, 13);
+            this.lbl_id.Location = new System.Drawing.Point(55, 49);
             this.lbl_id.Name = "lbl_id";
             this.lbl_id.Size = new System.Drawing.Size(30, 23);
             this.lbl_id.TabIndex = 50;
@@ -132,6 +136,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.panel9);
             this.panel2.Controls.Add(this.label7);
@@ -139,10 +145,7 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.panel7);
             this.panel2.Controls.Add(this.btn_crear_producto);
-            this.panel2.Controls.Add(this.lbl_perfil);
-            this.panel2.Controls.Add(this.txt_usuario);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.lbl_id);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.label5);
@@ -156,6 +159,40 @@
             this.panel2.Size = new System.Drawing.Size(549, 651);
             this.panel2.TabIndex = 76;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.label4.Location = new System.Drawing.Point(35, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 28);
+            this.label4.TabIndex = 80;
+            this.label4.Text = "Codigo:";
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.txt_codigo);
+            this.panel4.Location = new System.Drawing.Point(21, 40);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(213, 81);
+            this.panel4.TabIndex = 81;
+            // 
+            // txt_codigo
+            // 
+            this.txt_codigo.BackColor = System.Drawing.Color.White;
+            this.txt_codigo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_codigo.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_codigo.ForeColor = System.Drawing.Color.Black;
+            this.txt_codigo.Location = new System.Drawing.Point(25, 27);
+            this.txt_codigo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_codigo.Name = "txt_codigo";
+            this.txt_codigo.Size = new System.Drawing.Size(124, 24);
+            this.txt_codigo.TabIndex = 1;
+            this.txt_codigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_codigo_KeyPress);
             // 
             // label8
             // 
@@ -323,6 +360,7 @@
             this.txt_precioventa.Size = new System.Drawing.Size(171, 24);
             this.txt_precioventa.TabIndex = 4;
             this.txt_precioventa.TextChanged += new System.EventHandler(this.txt_precioventa_TextChanged);
+            this.txt_precioventa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_precioventa_KeyPress);
             // 
             // label5
             // 
@@ -357,6 +395,7 @@
             this.txt_preciocompra.Size = new System.Drawing.Size(171, 24);
             this.txt_preciocompra.TabIndex = 3;
             this.txt_preciocompra.TextChanged += new System.EventHandler(this.txt_preciocompra_TextChanged);
+            this.txt_preciocompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_preciocompra_KeyPress);
             // 
             // panel3
             // 
@@ -381,7 +420,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label2.Location = new System.Drawing.Point(42, 27);
+            this.label2.Location = new System.Drawing.Point(282, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 28);
             this.label2.TabIndex = 78;
@@ -391,7 +430,7 @@
             // 
             this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel12.Controls.Add(this.txt_nombre);
-            this.panel12.Location = new System.Drawing.Point(21, 43);
+            this.panel12.Location = new System.Drawing.Point(261, 40);
             this.panel12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(264, 81);
@@ -646,7 +685,10 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lbl_idcategoria);
             this.Controls.Add(this.lbl_proveedor);
+            this.Controls.Add(this.lbl_perfil);
             this.Controls.Add(this.lbl_idmedida);
+            this.Controls.Add(this.txt_usuario);
+            this.Controls.Add(this.lbl_id);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "agregar_producto";
@@ -656,6 +698,8 @@
             this.Load += new System.EventHandler(this.agregar_producto_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
@@ -728,5 +772,8 @@
         private Panel panel8;
         private Panel panel7;
         private Panel panel9;
+        private Label label4;
+        private Panel panel4;
+        private TextBox txt_codigo;
     }
 }

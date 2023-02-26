@@ -73,7 +73,7 @@ namespace PUNTOVENTA.MENU.VENTA.PRODUCTO
         {
             dgVentaDetalle parametroeliminarproductoindividual = new dgVentaDetalle
             {
-                Id_Producto = Convert.ToInt16(lbl_id_producto.Text),
+                Id_Producto = Convert.ToString(lbl_id_producto.Text),
 
                 Id_Venta=Convert.ToInt16(lbl_id_venta.Text)
 

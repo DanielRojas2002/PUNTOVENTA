@@ -107,7 +107,7 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                 {
                     dgEntrada parametro = new dgEntrada
                     {
-                        IdProducto = Convert.ToInt16(lblidproducto.Text),
+                        IdProducto = Convert.ToString(lblidproducto.Text),
                         Id_Usuario = Convert.ToInt16(lbl_id.Text),
                         Stock = Convert.ToInt16(txt_stock_a_agregar.Text),
                         FechaEntrada = DateTime.Now
@@ -148,7 +148,7 @@ namespace PUNTOVENTA.MENU.PRODUCTO
         {
             dgProducto parametro = new dgProducto
             {
-                Id_Producto = Convert.ToInt16(lblidproducto.Text)
+                Id_Producto = Convert.ToString(lblidproducto.Text)
             };
 
 

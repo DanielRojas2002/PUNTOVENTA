@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using TextBox = System.Windows.Forms.TextBox;
 
 namespace PUNTOVENTA.MENU.VENTA
 {
@@ -53,7 +54,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
         }
 
-        private void CargaSubTotal(int total)
+        private void CargaSubTotal(float total)
         {
             lbl_total.Text = Convert.ToString(total);
         }
@@ -85,15 +86,16 @@ namespace PUNTOVENTA.MENU.VENTA
 
                 CargaProductos(0);
 
-                int idproducto, stock, precioventa,subtotal,total=0;
-                string nombre;
+                int  stock;
+                string nombre, idproducto;
+                float precioventa, subtotal, total=0;
                 foreach (dgVentaDetalle d in listaorden)
                 {
-                    idproducto = Convert.ToInt16(d.Id_Producto.ToString());
+                    idproducto = Convert.ToString(d.Id_Producto.ToString());
 
                     stock = Convert.ToInt16(d.CantidadAComprar.ToString());
 
-                    precioventa = Convert.ToInt16(d.PrecioVenta.ToString());
+                    precioventa = float.Parse(d.PrecioVenta.ToString());
 
                     nombre = Convert.ToString(d.Nombre.ToString());
 
@@ -117,7 +119,8 @@ namespace PUNTOVENTA.MENU.VENTA
 
                     Productos[contadorproductos].PrecioProducto = Convert.ToString(precioventa);
 
-                    subtotal = precioventa * stock;
+                    subtotal = (float)Math.Round(precioventa * stock,2);
+                   
 
                     total = total + subtotal;
 
@@ -217,16 +220,17 @@ namespace PUNTOVENTA.MENU.VENTA
 
             {
                 flowLayoutPanel_productos.Controls.Clear();
-                int idproducto, idcategoria, idmedida, stock,precioventa;
-                string nombre, categoriadescripcion, medidadescripcion, descripcion;
+                int  idcategoria, idmedida, stock;
+                float precioventa;
+                string nombre, categoriadescripcion, medidadescripcion, descripcion, idproducto;
                 foreach (dgProducto d in lista)
                 {
-                    idproducto = Convert.ToInt16(d.Id_Producto.ToString());
+                    idproducto = Convert.ToString(d.Id_Producto.ToString());
                     idcategoria = Convert.ToInt16(d.Id_Categoria.ToString());
                     idmedida = Convert.ToInt16(d.Id_Medida.ToString());
                     stock = Convert.ToInt16(d.StockInicial.ToString());
                     descripcion = Convert.ToString(d.Descripcion.ToString());
-                    precioventa = Convert.ToInt16(d.PrecioVenta.ToString());
+                    precioventa = float.Parse(d.PrecioVenta.ToString());
                     nombre = Convert.ToString(d.Nombre.ToString());
 
                     dgCategoria parametro2 = new dgCategoria
@@ -728,11 +732,12 @@ namespace PUNTOVENTA.MENU.VENTA
                 {
                     lbl_cambio.Text = "";
 
-                    int total = Convert.ToInt16(lbl_total.Text);
+                    float total = float.Parse(lbl_total.Text);
 
-                    int pago = Convert.ToInt32(txt_paga_con.Text);
+                    float pago = float.Parse(txt_paga_con.Text);
 
-                    int cambio = pago - total;
+                    float cambio = pago - total;
+                    cambio = (float)Math.Round(cambio,2);
                     lbl_cambio.Text = Convert.ToString(cambio);
 
                     if (pago < total)
@@ -753,11 +758,12 @@ namespace PUNTOVENTA.MENU.VENTA
                 {
                     lbl_cambio.Text = "";
 
-                    int total = Convert.ToInt16(lbl_total.Text);
+                    float total = float.Parse(lbl_total.Text);
 
-                    int pago = Convert.ToInt32(txt_paga_con.Text);
+                    float pago = float.Parse(txt_paga_con.Text);
 
-                    int cambio = pago - total;
+                    float cambio = pago - total;
+                    cambio = (float)Math.Round(cambio, 2);
                     lbl_cambio.Text = Convert.ToString(cambio);
 
                     if (pago < total)
@@ -779,12 +785,12 @@ namespace PUNTOVENTA.MENU.VENTA
                    
                     lbl_cambio.Text = "";
 
-                    int total = Convert.ToInt16(lbl_total.Text);
+                    float total = float.Parse(lbl_total.Text);
 
-                    int pago = Convert.ToInt32(txt_paga_con.Text);
+                    float pago = float.Parse(txt_paga_con.Text);
 
-                    int cambio = pago - total;
-                   
+                  
+
 
                     if (pago >= total)
                     {
@@ -901,11 +907,11 @@ namespace PUNTOVENTA.MENU.VENTA
                 else
                 {
 
-                    int total = Convert.ToInt16(lbl_total.Text);
+                    float total = float.Parse(lbl_total.Text);
 
-                    int pago = Convert.ToInt32(txt_paga_con.Text);
+                    float pago = float.Parse(txt_paga_con.Text);
 
-                    int cambio = pago - total;
+                    float cambio = pago - total;
                     lbl_cambio.Text = Convert.ToString(cambio);
 
                     if (pago < total)
@@ -950,10 +956,11 @@ namespace PUNTOVENTA.MENU.VENTA
                         if (listaproductoscarrito.Count > 0)
 
                         {
-                            int idproducto, cantidad;
+                            int cantidad;
+                            string idproducto;
                             foreach (dgVenta d in listaproductoscarrito)
                             {
-                                idproducto = Convert.ToInt16(d.Id_Producto);
+                                idproducto = Convert.ToString(d.Id_Producto);
 
                                 cantidad = Convert.ToInt16(d.Stock);
 
@@ -1033,11 +1040,19 @@ namespace PUNTOVENTA.MENU.VENTA
 
                         {
 
+                          
+
                             string concatenacion = "";
+                            double subtotal, sub;
                             foreach (dgTicket d in listaProductosVenta)
                             {
+                                sub = double.Parse(d.SubTotal.ToString());
+
+                                subtotal = (double)Math.Round(sub, 2);
+                               
+
                                 concatenacion ="("+ d.Id_Producto.ToString()+")"+ " " + d.NombreProducto.ToString();
-                                Ticket1.AgregaArticulo(concatenacion, Convert.ToInt16( d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), float.Parse(d.SubTotal.ToString()));
+                                Ticket1.AgregaArticulo(concatenacion, double.Parse( d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
                                 clsventas.CreaRecibo.LineasGuion();
                             }
                         }
@@ -1120,10 +1135,11 @@ namespace PUNTOVENTA.MENU.VENTA
                     if (listaproductoscarrito.Count > 0)
 
                     {
-                        int idproducto, cantidad;
+                        int  cantidad;
+                        string idproducto;
                         foreach (dgVenta d in listaproductoscarrito)
                         {
-                            idproducto = Convert.ToInt16(d.Id_Producto);
+                            idproducto = Convert.ToString(d.Id_Producto);
 
                             cantidad = Convert.ToInt16(d.Stock);
 
@@ -1154,7 +1170,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
                     clsventas.CreaRecibo Ticket1 = new clsventas.CreaRecibo();
 
-                    Ticket1.TextoIzquierda("Numero de Venta: " + _num_venta);
+                 
 
                     dgTicket parametroticketinfo = new dgTicket
                     {
@@ -1205,10 +1221,16 @@ namespace PUNTOVENTA.MENU.VENTA
                     {
 
                         string concatenacion = "";
+                        double subtotal, sub;
                         foreach (dgTicket d in listaProductosVenta)
                         {
+                            sub = double.Parse(d.SubTotal.ToString());
+
+                            subtotal = (double)Math.Round(sub, 2);
+                            
+
                             concatenacion = "(" + d.Id_Producto.ToString() + ")" + " " + d.NombreProducto.ToString();
-                            Ticket1.AgregaArticulo(concatenacion, Convert.ToInt16(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), float.Parse(d.SubTotal.ToString()));
+                            Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
                             clsventas.CreaRecibo.LineasGuion();
                         }
                     }
@@ -1304,10 +1326,11 @@ namespace PUNTOVENTA.MENU.VENTA
                     if (listaproductoscarrito.Count > 0)
 
                     {
-                        int idproducto, cantidad;
+                        int  cantidad;
+                        string idproducto;
                         foreach (dgVenta d in listaproductoscarrito)
                         {
-                            idproducto = Convert.ToInt16(d.Id_Producto);
+                            idproducto = Convert.ToString(d.Id_Producto);
 
                             cantidad = Convert.ToInt16(d.Stock);
 
@@ -1361,7 +1384,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
                         List<dgTicket> listaticketinfo = c_ticket.Ticket(0, parametroticketinfo);
 
-                        Ticket1.TextoIzquierda("Numero de Venta: " + _num_venta);
+                      
 
                         if (listaticketinfo.Count > 0)
 
@@ -1405,10 +1428,16 @@ namespace PUNTOVENTA.MENU.VENTA
                         {
 
                             string concatenacion = "";
+                            double subtotal, sub;
                             foreach (dgTicket d in listaProductosVenta)
                             {
+                                sub = double.Parse(d.SubTotal.ToString());
+
+                                subtotal = (double)Math.Round(sub, 2);
+                               
+
                                 concatenacion = "(" + d.Id_Producto.ToString() + ")" + " " + d.NombreProducto.ToString();
-                                Ticket1.AgregaArticulo(concatenacion, Convert.ToInt16(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), float.Parse(d.SubTotal.ToString()));
+                                Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
                                 clsventas.CreaRecibo.LineasGuion();
                             }
                         }
@@ -1422,7 +1451,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
                         Ticket1.TextoIzquierda(" ");
 
-                        int debe=Convert.ToInt16(lbl_total.Text) - Convert.ToInt16(txt_paga_con.Text);
+                        float debe=float.Parse(lbl_total.Text) - float.Parse(txt_paga_con.Text);
                         Ticket1.AgregaTotales("Cantidad que falta por pagar: ", debe);
 
 
@@ -1627,23 +1656,22 @@ namespace PUNTOVENTA.MENU.VENTA
 
         private void txt_paga_con_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
-                e.Handled = false;
+                e.Handled = true;
             }
-            else
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
-                if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
-                {
-                    e.Handled = false;
-                }
-                else
-                {
-                    //el resto de teclas pulsadas se desactivan
-                    e.Handled = true;
-                }
+                e.Handled = true;
             }
-           
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

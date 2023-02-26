@@ -18,7 +18,7 @@ namespace PUNTOVENTA.ENTIDAD
 
         public int? Stock { get; set; }
 
-        public int? Id_Producto { get; set; }
+        public string? Id_Producto { get; set; }
 
 
         public int? Id_Cliente { get; set; }

@@ -211,7 +211,14 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
         private void btn_crear_producto_Click_1(object sender, EventArgs e)
         {
-            if (txt_nombre.Text == "")
+
+            if (txt_codigo.Text == "")
+            {
+
+                MessageBox.Show("Ingrese el Codigo del Producto ");
+            }
+
+            else if (txt_nombre.Text == "")
             {
 
                 MessageBox.Show("Ingrese el Nombre del Producto ");
@@ -258,10 +265,10 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
             else
             {
-                try
-                {
-                    int preciocompra = Convert.ToInt16(txt_preciocompra.Text.Trim());
-                    int precioventa = Convert.ToInt16(txt_precioventa.Text.Trim());
+                //try
+                //{
+                    float preciocompra = float.Parse(txt_preciocompra.Text.Trim());
+                    float precioventa = float.Parse(txt_precioventa.Text.Trim());
 
 
                     if (preciocompra > precioventa)
@@ -274,14 +281,15 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                     {
                         dgProducto parametro = new dgProducto
                         {
+                            Id_Producto = Convert.ToString(txt_codigo.Text.Trim()),
                             Id_Categoria = Convert.ToInt16(lbl_idcategoria.Text),
                             Id_Medida = Convert.ToInt16(lbl_idmedida.Text),
                             Id_Proveedor = Convert.ToInt16(lbl_proveedor.Text),
                             Id_Estatus_Producto=1,
                             Nombre = txt_nombre.Text.Trim(),
                             Descripcion = txt_descripcion.Text.Trim(),
-                            PrecioCompra = (float?)Convert.ToDouble(txt_preciocompra.Text.Trim()),
-                            PrecioVenta = (float?)Convert.ToDouble(txt_precioventa.Text.Trim())
+                            PrecioCompra = float.Parse(txt_preciocompra.Text.Trim()),
+                            PrecioVenta = float.Parse(txt_precioventa.Text.Trim())
 
                            
 
@@ -296,7 +304,13 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                         if (control == "1")
                         {
 
-                            MessageBox.Show("Ya Existe una Producto Similar", "Error");
+                            MessageBox.Show("Ya Existe una Producto con este Codigo", "Error");
+                        }
+
+                        else if (control == "2")
+                        {
+
+                            MessageBox.Show("Ya Existe una Producto con este nombre", "Error");
                         }
 
                         else
@@ -311,13 +325,13 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                     }
 
                     
-                }
+                //}
 
 
-                catch 
-                {
-                    MessageBox.Show("Respete el valor de los Campos", "Error");
-                }
+                //catch 
+                //{
+                //    MessageBox.Show("Respete el valor de los Campos", "Error");
+                //}
 
             }
         }
@@ -357,6 +371,54 @@ namespace PUNTOVENTA.MENU.PRODUCTO
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txt_codigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    //el resto de teclas pulsadas se desactivan
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void txt_preciocompra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_precioventa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

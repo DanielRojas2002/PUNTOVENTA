@@ -8,7 +8,7 @@ namespace PUNTOVENTA.ENTIDAD
 {
     public class dgProducto
     {
-        public int? Id_Producto { get; set; }
+        public string? Id_Producto { get; set; }
 
         public int? Id_Venta { get; set; }
 

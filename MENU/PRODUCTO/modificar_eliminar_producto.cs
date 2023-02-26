@@ -27,16 +27,16 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
         private void modificar_eliminar_producto_Load(object sender, EventArgs e)
         {
-            int idProducto;
-            idProducto = Convert.ToInt16(lblidproducto.Text);
+            string idProducto;
+            idProducto = Convert.ToString(lblidproducto.Text);
 
             lbl_id_estatus.Text = "";
 
 
-
+            txt_codigo.Text = Convert.ToString(idProducto);
             dgProducto parametro = new dgProducto
             {
-                Id_Producto = idProducto
+                Id_Producto = Convert.ToString(idProducto)
 
             };
 
@@ -50,6 +50,7 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
                 foreach (dgProducto d in lista)
                 {
+                   
                     txt_nombre.Text = Convert.ToString(d.Nombre.ToString());
                     txt_descripcion.Text = Convert.ToString(d.Descripcion.ToString());
                     txt_preciocompra.Text = Convert.ToString(d.PrecioCompra.ToString());
@@ -371,7 +372,7 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
                 dgProducto parametro = new dgProducto
                 {
-                    Id_Producto = Convert.ToInt16(lblidproducto.Text),
+                    Id_Producto = Convert.ToString(lblidproducto.Text),
                     Id_Estatus_Producto = id_estatus
                 };
 
@@ -452,8 +453,8 @@ namespace PUNTOVENTA.MENU.PRODUCTO
             {
                 try
                 {
-                    int preciocompra = Convert.ToInt16(txt_preciocompra.Text.Trim());
-                    int precioventa = Convert.ToInt16(txt_precioventa.Text.Trim());
+                    float preciocompra = float.Parse(txt_preciocompra.Text.Trim());
+                    float precioventa = float.Parse(txt_precioventa.Text.Trim());
 
 
                     if (preciocompra > precioventa)
@@ -467,14 +468,14 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
                         dgProducto parametro = new dgProducto
                         {
-                            Id_Producto = Convert.ToInt16(lblidproducto.Text),
+                            Id_Producto = Convert.ToString(lblidproducto.Text),
                             Id_Categoria = Convert.ToInt16(lblidcategoria.Text),
                             Id_Medida = Convert.ToInt16(lblidmedida.Text),
                             Id_Proveedor = Convert.ToInt16(lblidproveedor.Text),
                             Nombre = Convert.ToString(txt_nombre.Text),
                             Descripcion = Convert.ToString(txt_descripcion.Text),
-                            PrecioCompra = Convert.ToInt16(txt_preciocompra.Text),
-                            PrecioVenta = Convert.ToInt16(txt_precioventa.Text),
+                            PrecioCompra = float.Parse(txt_preciocompra.Text),
+                            PrecioVenta = float.Parse(txt_precioventa.Text),
                         };
 
                        
@@ -612,6 +613,34 @@ namespace PUNTOVENTA.MENU.PRODUCTO
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txt_preciocompra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_precioventa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

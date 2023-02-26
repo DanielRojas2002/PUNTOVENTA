@@ -191,9 +191,9 @@ namespace PUNTOVENTA.CLASES
                                  select new dgVentaDetalle
                                  {
                                      Id_Venta = Convert.ToInt16(fila["Id_Venta"].ToString()),
-                                     Id_Producto = Convert.ToInt16(fila["Id_Producto"].ToString()),
+                                     Id_Producto = Convert.ToString(fila["Id_Producto"].ToString()),
                                      CantidadAComprar = Convert.ToInt16(fila["Cantidad"].ToString()),
-                                     PrecioVenta = Convert.ToInt16(fila["Precio"].ToString()),
+                                     PrecioVenta = float.Parse(fila["Precio"].ToString()),
                                      Nombre = Convert.ToString(fila["Nombre"].ToString())
                                     
                                  }
@@ -206,9 +206,9 @@ namespace PUNTOVENTA.CLASES
                                  select new dgVentaDetalle
                                  {
                                      Id_Venta = Convert.ToInt16(fila["Id_Venta"].ToString()),
-                                     Id_Producto = Convert.ToInt16(fila["Id_Producto"].ToString()),
+                                     Id_Producto = Convert.ToString(fila["Id_Producto"].ToString()),
                                      CantidadAComprar = Convert.ToInt16(fila["Cantidad"].ToString()),
-                                     PrecioVenta = Convert.ToInt16(fila["Precio"].ToString()),
+                                     PrecioVenta = float.Parse(fila["Precio"].ToString()),
                                      
 
 

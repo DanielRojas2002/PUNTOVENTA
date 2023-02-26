@@ -198,7 +198,7 @@ namespace PUNTOVENTA.CLASES
                     lista = (from DataRow fila in tabla.Rows
                              select new dgVenta
                              {
-                                 Id_Producto = Convert.ToInt16(fila["Id_Producto"].ToString()),
+                                 Id_Producto = Convert.ToString(fila["Id_Producto"].ToString()),
                                  Stock = Convert.ToInt16(fila["Cantidad"].ToString())
 
 

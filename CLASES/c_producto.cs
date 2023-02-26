@@ -23,6 +23,7 @@ namespace Punto_de_Venta.Clases
                 SqlParameter[] parametros =
                 {
                     new SqlParameter("@Accion",1),
+                     new SqlParameter("@P_IdProducto",Parametro.Id_Producto),
                     new SqlParameter("@P_IdCategoria",Parametro.Id_Categoria),
                     new SqlParameter("@P_IdMedida",Parametro.Id_Medida),
                     new SqlParameter("@P_IdProveedor",Parametro.Id_Proveedor),
@@ -207,7 +208,7 @@ namespace Punto_de_Venta.Clases
                     lista = (from DataRow fila in tabla.Rows
                              select new dgProducto
                              {
-                                 Id_Producto = Convert.ToInt16(fila["Id_Producto"].ToString()),
+                                 Id_Producto = Convert.ToString(fila["Id_Producto"].ToString()),
                                  Id_Categoria = Convert.ToInt16(fila["Id_Categoria"].ToString()),
                                  Id_Medida = Convert.ToInt16(fila["Id_Medida"].ToString()),
                                  Nombre = Convert.ToString(fila["Nombre"].ToString()),
@@ -248,8 +249,8 @@ namespace Punto_de_Venta.Clases
                                  Nombre = Convert.ToString(fila["Nombre"].ToString()),
                                  Descripcion = Convert.ToString(fila["Descripcion"].ToString()),
                                  StockInicial = Convert.ToInt16(fila["Stock"].ToString()),
-                                 PrecioCompra = Convert.ToInt16(fila["PrecioCompra"].ToString()),
-                                 PrecioVenta = Convert.ToInt16(fila["PrecioVenta"].ToString()),
+                                 PrecioCompra = float.Parse(fila["PrecioCompra"].ToString()),
+                                 PrecioVenta = float.Parse(fila["PrecioVenta"].ToString()),
                                  Id_Estatus_Producto = Convert.ToInt16(fila["Id_Estatus"].ToString())
 
 
@@ -283,7 +284,7 @@ namespace Punto_de_Venta.Clases
                              select new dgProducto
                              {
 
-                                 Id_Producto = Convert.ToInt16(fila["Id_Producto"].ToString()),
+                                 Id_Producto = Convert.ToString(fila["Id_Producto"].ToString()),
                                  Id_Categoria = Convert.ToInt16(fila["Id_Categoria"].ToString()),
                                  Id_Medida = Convert.ToInt16(fila["Id_Medida"].ToString()),
                                  Nombre = Convert.ToString(fila["Nombre"].ToString()),
@@ -316,13 +317,13 @@ namespace Punto_de_Venta.Clases
                     lista = (from DataRow fila in tabla.Rows
                              select new dgProducto
                              {
-                                 Id_Producto = Convert.ToInt16(fila["Id_Producto"].ToString()),
+                                 Id_Producto = Convert.ToString(fila["Id_Producto"].ToString()),
                                  Descripcion = Convert.ToString(fila["Descripcion"].ToString()),
                                  Id_Categoria = Convert.ToInt16(fila["Id_Categoria"].ToString()),
                                  Id_Medida = Convert.ToInt16(fila["Id_Medida"].ToString()),
                                  Nombre = Convert.ToString(fila["Nombre"].ToString()),
                                  StockInicial = Convert.ToInt16(fila["Stock"].ToString()),
-                                 PrecioVenta = Convert.ToInt16(fila["PrecioVenta"].ToString())
+                                 PrecioVenta = float.Parse(fila["PrecioVenta"].ToString())
 
 
 
@@ -354,13 +355,13 @@ namespace Punto_de_Venta.Clases
                     lista = (from DataRow fila in tabla.Rows
                              select new dgProducto
                              {
-                                 Id_Producto = Convert.ToInt16(fila["Id_Producto"].ToString()),
+                                 Id_Producto = Convert.ToString(fila["Id_Producto"].ToString()),
                                  Descripcion = Convert.ToString(fila["Descripcion"].ToString()),
                                  Id_Categoria = Convert.ToInt16(fila["Id_Categoria"].ToString()),
                                  Id_Medida = Convert.ToInt16(fila["Id_Medida"].ToString()),
                                  Nombre = Convert.ToString(fila["Nombre"].ToString()),
                                  StockInicial = Convert.ToInt16(fila["Stock"].ToString()),
-                                 PrecioVenta = Convert.ToInt16(fila["PrecioVenta"].ToString())
+                                 PrecioVenta = float.Parse(fila["PrecioVenta"].ToString())
 
 
 
@@ -392,7 +393,7 @@ namespace Punto_de_Venta.Clases
                              select new dgProducto
                              {
 
-                                 Id_Producto = Convert.ToInt16(fila["Id_Producto"].ToString()),
+                                 Id_Producto = Convert.ToString(fila["Id_Producto"].ToString()),
                                  Id_Categoria = Convert.ToInt16(fila["Id_Categoria"].ToString()),
                                  Id_Medida = Convert.ToInt16(fila["Id_Medida"].ToString()),
                                  Nombre = Convert.ToString(fila["Nombre"].ToString()),
@@ -423,7 +424,7 @@ namespace Punto_de_Venta.Clases
                     lista = (from DataRow fila in tabla.Rows
                              select new dgProducto
                              {
-                                 Id_Producto = Convert.ToInt16(fila["Id_Producto"].ToString()),
+                                 Id_Producto = Convert.ToString(fila["Id_Producto"].ToString()),
                                  Id_Categoria = Convert.ToInt16(fila["Id_Categoria"].ToString()),
                                  Id_Medida = Convert.ToInt16(fila["Id_Medida"].ToString()),
                                  Nombre = Convert.ToString(fila["Nombre"].ToString()),
