@@ -437,6 +437,7 @@
             this.label10.Size = new System.Drawing.Size(146, 15);
             this.label10.TabIndex = 90;
             this.label10.Text = "CODIGO PRODUCTO:";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // txt_codigoproducto
             // 
@@ -449,6 +450,7 @@
             this.txt_codigoproducto.Name = "txt_codigoproducto";
             this.txt_codigoproducto.Size = new System.Drawing.Size(155, 24);
             this.txt_codigoproducto.TabIndex = 89;
+            this.txt_codigoproducto.TextChanged += new System.EventHandler(this.txt_codigoproducto_TextChanged);
             // 
             // label9
             // 

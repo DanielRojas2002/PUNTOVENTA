@@ -378,10 +378,11 @@ namespace PUNTOVENTA.MENU.VENTA
         }
 
 
-        private void CargaProductosFiltrado(string? nombreproducto,int? idcategoria,int? idmedida)
+        private void CargaProductosFiltrado(string? idproducto2,string? nombreproducto,int? idcategoria,int? idmedida)
         {
             dgProducto parametrofiltrado = new dgProducto
             {
+                Id_Producto = idproducto2,
                 Nombre = nombreproducto,
                 Id_Categoria = idcategoria,
                 Id_Medida = idmedida,
@@ -397,16 +398,17 @@ namespace PUNTOVENTA.MENU.VENTA
 
             {
                 flowLayoutPanel_productos.Controls.Clear();
-                int idproducto, idcategoriaa, idmedidaa, stock, precioventa;
-                string nombre, categoriadescripcion, medidadescripcion, descripcion;
+                int idcategoriaa, idmedidaa, stock;
+                float precioventa;
+                string nombre, categoriadescripcion, medidadescripcion, descripcion, idproducto;
                 foreach (dgProducto d in listafiltrado)
                 {
-                    idproducto = Convert.ToInt16(d.Id_Producto.ToString());
+                    idproducto = Convert.ToString(d.Id_Producto.ToString());
                     idcategoriaa = Convert.ToInt16(d.Id_Categoria.ToString());
                     idmedidaa = Convert.ToInt16(d.Id_Medida.ToString());
                     stock = Convert.ToInt16(d.StockInicial.ToString());
                     descripcion = Convert.ToString(d.Descripcion.ToString());
-                    precioventa = Convert.ToInt16(d.PrecioVenta.ToString());
+                    precioventa = float.Parse(d.PrecioVenta.ToString());
                     nombre = Convert.ToString(d.Nombre.ToString());
 
                     dgCategoria parametro2 = new dgCategoria
@@ -500,9 +502,9 @@ namespace PUNTOVENTA.MENU.VENTA
         private void btn_aplicar_filtro_Click(object sender, EventArgs e)
         {
             int idCategoria = 0, idMedida = 0;
-            string nombreproducto="0";
+            string nombreproducto="0", idproducto="0";
 
-            if (bx_categorias.Text == "" && bx_medidas.Text == "" && txt_nombre_producto.Text == "")
+            if (txt_codigoproducto.Text == "" && bx_categorias.Text == "" && bx_medidas.Text == "" && txt_nombre_producto.Text == "")
             {
                 MessageBox.Show("Seleccione al menos un filtro para poder filtrar");
             }
@@ -512,6 +514,9 @@ namespace PUNTOVENTA.MENU.VENTA
             else
             {
                 nombreproducto = txt_nombre_producto.Text;
+                idproducto = txt_codigoproducto.Text;
+
+
                 dgCategoria parametro2_1 = new dgCategoria
                 {
                     Descripcion = Convert.ToString(bx_categorias.Text)
@@ -549,13 +554,13 @@ namespace PUNTOVENTA.MENU.VENTA
 
                 }
 
-
-
+                MessageBox.Show(Convert.ToString(idCategoria));
+                MessageBox.Show(Convert.ToString(idMedida));
                 
 
 
 
-                CargaProductosFiltrado(nombreproducto, idCategoria, idMedida);
+                CargaProductosFiltrado(idproducto,nombreproducto, idCategoria, idMedida);
 
 
 
@@ -572,6 +577,7 @@ namespace PUNTOVENTA.MENU.VENTA
             
 
             txt_nombre_producto.Text = "";
+            txt_codigoproducto.Text = "";
 
         }
 
@@ -1730,6 +1736,11 @@ namespace PUNTOVENTA.MENU.VENTA
         }
 
         private void txt_nombre_transferencia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bx_medidas_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

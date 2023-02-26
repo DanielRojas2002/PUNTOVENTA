@@ -146,7 +146,33 @@ namespace PUNTOVENTA.CLASES
 
             }
             // 6 con Id_Categoria
-           
+
+
+            else if (tipo == 2)
+
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",6),
+                    new SqlParameter("@P_Descripcion",Parametro.Descripcion)
+                };
+
+                tabla = bdContext.funcionStored("spMedida", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgMedida
+                             {
+                                 Id_Medida = Convert.ToInt16(fila["Id_Medida"].ToString())
+
+
+
+                             }
+                   ).ToList();
+                }
+            }
 
             else if (tipo == 3)
 
