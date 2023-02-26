@@ -45,6 +45,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_stock_disponible = new System.Windows.Forms.Label();
             this.lbl_numventa = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.txt_cantidad_a_agregar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +56,7 @@
             this.lbl_nombreproducto.AutoSize = true;
             this.lbl_nombreproducto.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_nombreproducto.ForeColor = System.Drawing.Color.White;
-            this.lbl_nombreproducto.Location = new System.Drawing.Point(283, 28);
+            this.lbl_nombreproducto.Location = new System.Drawing.Point(287, 28);
             this.lbl_nombreproducto.Name = "lbl_nombreproducto";
             this.lbl_nombreproducto.Size = new System.Drawing.Size(125, 26);
             this.lbl_nombreproducto.TabIndex = 77;
@@ -65,7 +67,7 @@
             this.lbl_precio_producto.AutoSize = true;
             this.lbl_precio_producto.Font = new System.Drawing.Font("Cooper Black", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_precio_producto.ForeColor = System.Drawing.Color.White;
-            this.lbl_precio_producto.Location = new System.Drawing.Point(295, 230);
+            this.lbl_precio_producto.Location = new System.Drawing.Point(334, 241);
             this.lbl_precio_producto.Name = "lbl_precio_producto";
             this.lbl_precio_producto.Size = new System.Drawing.Size(64, 20);
             this.lbl_precio_producto.TabIndex = 79;
@@ -82,7 +84,7 @@
             this.btn_ordenar.Location = new System.Drawing.Point(269, 278);
             this.btn_ordenar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_ordenar.Name = "btn_ordenar";
-            this.btn_ordenar.Size = new System.Drawing.Size(330, 53);
+            this.btn_ordenar.Size = new System.Drawing.Size(406, 53);
             this.btn_ordenar.TabIndex = 80;
             this.btn_ordenar.Text = "ORDENAR";
             this.btn_ordenar.UseVisualStyleBackColor = false;
@@ -90,7 +92,7 @@
             // 
             // txt_cantidad_a_agregar
             // 
-            this.txt_cantidad_a_agregar.Location = new System.Drawing.Point(431, 230);
+            this.txt_cantidad_a_agregar.Location = new System.Drawing.Point(508, 241);
             this.txt_cantidad_a_agregar.Name = "txt_cantidad_a_agregar";
             this.txt_cantidad_a_agregar.Size = new System.Drawing.Size(148, 27);
             this.txt_cantidad_a_agregar.TabIndex = 81;
@@ -98,7 +100,7 @@
             // 
             // txt_descripcion_producto
             // 
-            this.txt_descripcion_producto.Location = new System.Drawing.Point(279, 66);
+            this.txt_descripcion_producto.Location = new System.Drawing.Point(287, 66);
             this.txt_descripcion_producto.Name = "txt_descripcion_producto";
             this.txt_descripcion_producto.Size = new System.Drawing.Size(320, 51);
             this.txt_descripcion_producto.TabIndex = 82;
@@ -119,11 +121,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Cooper Black", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(408, 204);
+            this.label1.Location = new System.Drawing.Point(485, 215);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(214, 23);
+            this.label1.Size = new System.Drawing.Size(183, 20);
             this.label1.TabIndex = 103;
             this.label1.Text = "Cantidad a Ordenar:";
             // 
@@ -132,7 +134,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(279, 204);
+            this.label2.Location = new System.Drawing.Point(287, 215);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 23);
             this.label2.TabIndex = 104;
@@ -143,7 +145,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(279, 120);
+            this.label3.Location = new System.Drawing.Point(287, 126);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 23);
             this.label3.TabIndex = 105;
@@ -154,7 +156,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(465, 120);
+            this.label4.Location = new System.Drawing.Point(485, 126);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 23);
             this.label4.TabIndex = 106;
@@ -165,7 +167,7 @@
             this.lbl_categoria_producto.AutoSize = true;
             this.lbl_categoria_producto.Font = new System.Drawing.Font("Cooper Black", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_categoria_producto.ForeColor = System.Drawing.Color.White;
-            this.lbl_categoria_producto.Location = new System.Drawing.Point(295, 143);
+            this.lbl_categoria_producto.Location = new System.Drawing.Point(303, 149);
             this.lbl_categoria_producto.Name = "lbl_categoria_producto";
             this.lbl_categoria_producto.Size = new System.Drawing.Size(98, 20);
             this.lbl_categoria_producto.TabIndex = 107;
@@ -176,7 +178,7 @@
             this.lbl_medida_producto.AutoSize = true;
             this.lbl_medida_producto.Font = new System.Drawing.Font("Cooper Black", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_medida_producto.ForeColor = System.Drawing.Color.White;
-            this.lbl_medida_producto.Location = new System.Drawing.Point(478, 143);
+            this.lbl_medida_producto.Location = new System.Drawing.Point(502, 149);
             this.lbl_medida_producto.Name = "lbl_medida_producto";
             this.lbl_medida_producto.Size = new System.Drawing.Size(76, 20);
             this.lbl_medida_producto.TabIndex = 108;
@@ -187,19 +189,18 @@
             this.lbl_id_producto.AutoSize = true;
             this.lbl_id_producto.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_id_producto.ForeColor = System.Drawing.Color.White;
-            this.lbl_id_producto.Location = new System.Drawing.Point(90, 40);
+            this.lbl_id_producto.Location = new System.Drawing.Point(90, 43);
             this.lbl_id_producto.Name = "lbl_id_producto";
             this.lbl_id_producto.Size = new System.Drawing.Size(127, 23);
             this.lbl_id_producto.TabIndex = 109;
             this.lbl_id_producto.Text = "IdProducto";
-            this.lbl_id_producto.Visible = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(283, 170);
+            this.label5.Location = new System.Drawing.Point(287, 176);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(190, 23);
             this.label5.TabIndex = 110;
@@ -210,7 +211,7 @@
             this.lbl_stock_disponible.AutoSize = true;
             this.lbl_stock_disponible.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_stock_disponible.ForeColor = System.Drawing.Color.White;
-            this.lbl_stock_disponible.Location = new System.Drawing.Point(469, 171);
+            this.lbl_stock_disponible.Location = new System.Drawing.Point(508, 177);
             this.lbl_stock_disponible.Name = "lbl_stock_disponible";
             this.lbl_stock_disponible.Size = new System.Drawing.Size(70, 23);
             this.lbl_stock_disponible.TabIndex = 111;
@@ -229,11 +230,32 @@
             this.lbl_numventa.Visible = false;
             this.lbl_numventa.Click += new System.EventHandler(this.lbl_numventa_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Cooper Black", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(11, 43);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 20);
+            this.label6.TabIndex = 113;
+            this.label6.Text = "Codigo:";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel1.Location = new System.Drawing.Point(18, 349);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(657, 25);
+            this.panel1.TabIndex = 132;
+            // 
             // UserControlProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.lbl_numventa);
             this.Controls.Add(this.lbl_stock_disponible);
             this.Controls.Add(this.label5);
@@ -251,7 +273,7 @@
             this.Controls.Add(this.lbl_precio_producto);
             this.Controls.Add(this.lbl_nombreproducto);
             this.Name = "UserControlProducto";
-            this.Size = new System.Drawing.Size(640, 353);
+            this.Size = new System.Drawing.Size(700, 397);
             this.Load += new System.EventHandler(this.UserControlProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_cantidad_a_agregar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
@@ -278,5 +300,7 @@
         private Label label5;
         private Label lbl_stock_disponible;
         private Label lbl_numventa;
+        private Label label6;
+        private Panel panel1;
     }
 }

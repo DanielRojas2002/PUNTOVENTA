@@ -224,7 +224,7 @@ namespace PUNTOVENTA.CLASES
                     lista = (from DataRow fila in tabla.Rows
                              select new dgUsuario
                              {
-                                
+                                 Id_Usuario = Convert.ToInt16(fila["Id_Usuario"].ToString()),
                                  Usuario = Convert.ToString(fila["Usuario"].ToString())
 
 

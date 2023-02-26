@@ -850,6 +850,7 @@
             this.label12.Size = new System.Drawing.Size(464, 23);
             this.label12.TabIndex = 98;
             this.label12.Text = "PASE EL MOUSE AQUI PARA ACTUALIZAR";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             this.label12.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label12_MouseMove);
             // 
             // menu_venta

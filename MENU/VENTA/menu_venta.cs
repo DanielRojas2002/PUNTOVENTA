@@ -66,7 +66,9 @@ namespace PUNTOVENTA.MENU.VENTA
 
           
             flowLayoutPanel_Orden.Controls.Clear();
-           
+
+            txt_codigoproducto.Text = "";
+            txt_nombre_producto.Text = "";
 
 
             lbl_total.Text = "";
@@ -554,9 +556,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
                 }
 
-                MessageBox.Show(Convert.ToString(idCategoria));
-                MessageBox.Show(Convert.ToString(idMedida));
-                
+              
 
 
 
@@ -1741,6 +1741,11 @@ namespace PUNTOVENTA.MENU.VENTA
         }
 
         private void bx_medidas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
         {
 
         }

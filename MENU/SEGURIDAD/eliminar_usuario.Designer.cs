@@ -327,6 +327,7 @@
             this.Text = "eliminar_usuario";
             this.Activated += new System.EventHandler(this.eliminar_usuario_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.eliminar_usuario_FormClosing);
+            this.Load += new System.EventHandler(this.eliminar_usuario_Load);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();

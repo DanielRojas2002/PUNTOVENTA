@@ -43,6 +43,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_quitar_producto = new System.Windows.Forms.PictureBox();
             this.lbl_id_venta = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_quitar_producto)).BeginInit();
             this.SuspendLayout();
@@ -74,12 +75,11 @@
             this.lbl_id_producto.AutoSize = true;
             this.lbl_id_producto.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_id_producto.ForeColor = System.Drawing.Color.White;
-            this.lbl_id_producto.Location = new System.Drawing.Point(89, 13);
+            this.lbl_id_producto.Location = new System.Drawing.Point(169, 24);
             this.lbl_id_producto.Name = "lbl_id_producto";
             this.lbl_id_producto.Size = new System.Drawing.Size(127, 23);
             this.lbl_id_producto.TabIndex = 124;
             this.lbl_id_producto.Text = "IdProducto";
-            this.lbl_id_producto.Visible = false;
             // 
             // label2
             // 
@@ -197,18 +197,30 @@
             this.lbl_id_venta.AutoSize = true;
             this.lbl_id_venta.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_id_venta.ForeColor = System.Drawing.Color.White;
-            this.lbl_id_venta.Location = new System.Drawing.Point(227, 19);
+            this.lbl_id_venta.Location = new System.Drawing.Point(327, 69);
             this.lbl_id_venta.Name = "lbl_id_venta";
             this.lbl_id_venta.Size = new System.Drawing.Size(91, 23);
             this.lbl_id_venta.TabIndex = 133;
             this.lbl_id_venta.Text = "IdVenta";
             this.lbl_id_venta.Visible = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(75, 24);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(86, 23);
+            this.label6.TabIndex = 134;
+            this.label6.Text = "Codigo:";
+            // 
             // UserControlOrdenCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.lbl_id_venta);
             this.Controls.Add(this.btn_quitar_producto);
             this.Controls.Add(this.panel1);
@@ -249,5 +261,6 @@
         private Panel panel1;
         private PictureBox btn_quitar_producto;
         private Label lbl_id_venta;
+        private Label label6;
     }
 }

@@ -87,7 +87,27 @@ namespace Punto_de_Venta
 
         private void modificar_usuario_Load(object sender, EventArgs e)
         {
+            dgUsuario parametro = new dgUsuario
+            {
+                Id_Usuario = Convert.ToInt16(lbl_id.Text)
+            };
 
+            List<dgUsuario> lista = c_usuario.LeerUsuario(4, parametro);
+
+            if (lista.Count > 0)
+
+            {
+
+                string concatenacion = "";
+                foreach (dgUsuario d in lista)
+                {
+                    concatenacion = "";
+
+                    concatenacion = d.Id_Usuario.ToString() + " " + d.Usuario.ToString();
+
+                    bx_usuario.Items.Add(concatenacion);
+                }
+            }
         }
 
         private void btn_modificar_Click(object sender, EventArgs e)
@@ -171,82 +191,22 @@ namespace Punto_de_Venta
         {
      
             
-            int id;
-            string descripcion;
-            descripcion = bx_usuario.Text;
-
-            dgUsuario parametro = new dgUsuario
-            {
-                Id_Usuario = Convert.ToInt16(lbl_id.Text)
-
-
-            };
-
-            List<dgUsuario> lista = c_usuario.LeerUsuario(4, parametro);
-
-            if (lista.Count > 0)
-
-            {
-
-                foreach (dgUsuario d in lista)
-                {
-
-                    bx_usuario.Items.Add(d.Usuario);
-
-
-
-                }
-            }
-
-            else
-
-            {
-
-            }
+           
         }
 
         private void bx_usuario_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int id;
-            string descripcion;
-            descripcion = bx_usuario.Text;
-
-
-
-            // acceder al valor del combobox 
-
-
-
-
-            descripcioncb.Text = bx_usuario.Text;
-
-
-            dgUsuario parametro2 = new dgUsuario
-            {
-                Usuario = Convert.ToString(descripcioncb.Text)
-            };
-
-            List<dgUsuario> lista2 = c_usuario.LeerUsuario(5, parametro2);
-
-            if (lista2.Count > 0)
-
-            {
-
-                foreach (dgUsuario d in lista2)
-                {
-                    bl_id_combobox.Text = d.Id_Usuario.ToString();
-                }
-            }
-
-            else
-
-            {
-                MessageBox.Show("No tiene Usuarios Agregadas", "Advertencia");
-            }
+            string concatenacion = bx_usuario.Text;
+            string[] words = concatenacion.Split(' ');
+            string idusuario,usuario;
+            idusuario = words[0];
+            usuario = words[1];
 
 
 
 
+
+            bl_id_combobox.Text = idusuario;
 
 
             dgUsuario parametro3 = new dgUsuario
@@ -269,17 +229,16 @@ namespace Punto_de_Venta
             else
 
             {
-                MessageBox.Show("No tiene Usuarios Agregadas", "Advertencia");
+                MessageBox.Show("No tiene Medidas Agregadas", "Advertencia");
             }
 
-            int idusuario = Convert.ToInt16(bl_id_combobox.Text);
 
 
 
 
             dgUsuario parametro4 = new dgUsuario
             {
-                Id_Usuario = idusuario
+                Id_Usuario = Convert.ToInt16(idusuario)
             };
 
             List<dgUsuario> lista4 = c_usuario.LeerUsuario(2, parametro4);
