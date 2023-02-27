@@ -29,7 +29,8 @@ namespace PUNTOVENTA.MENU.VENTA
         }
 
         public int _num_venta;
-        
+        public int _cantidad_productos;
+
 
         private void flowLayoutPanel_productos_Paint(object sender, PaintEventArgs e)
         {
@@ -39,8 +40,10 @@ namespace PUNTOVENTA.MENU.VENTA
         private void menu_venta_Load(object sender, EventArgs e)
         {
             _num_venta = NumeroVenta();
+            CargaCantidadProductos(_num_venta);
             CargaProductos(0);
             CargaTipoVenta();
+       
 
             bx_cliente.Visible = false;
             lbl_clienteonombre.Text = "";
@@ -53,6 +56,29 @@ namespace PUNTOVENTA.MENU.VENTA
             lbl_cambio.Text = "";
             txt_paga_con.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_paga_con_KeyPress);
 
+        }
+
+        private void CargaCantidadProductos(int idventa)
+        {
+            dgProducto parametro = new dgProducto
+            {
+                Id_Venta = _num_venta
+            };
+
+            List<dgProducto> cantidadproductos = c_producto.LeerProducto(12, parametro);
+
+           
+            if (cantidadproductos.Count > 0)
+
+            {
+              
+                foreach (dgProducto d in cantidadproductos)
+                {
+
+                    _cantidad_productos =Convert.ToInt16( d.CantidadProductos.ToString())+1;
+                }
+            }
+           
         }
 
         private void CargaSubTotal(float total)
@@ -105,7 +131,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
 
 
-                    UserControlOrdenCompra[] Productos = new UserControlOrdenCompra[10];
+                    UserControlOrdenCompra[] Productos = new UserControlOrdenCompra[_cantidad_productos];
 
 
                     contadorproductos = contadorproductos + 1;
@@ -266,8 +292,8 @@ namespace PUNTOVENTA.MENU.VENTA
                             medidadescripcion = Convert.ToString(dg.Descripcion.ToString());
                         }
 
-                        UserControlProducto[] Productos = new UserControlProducto[10];
-
+                        UserControlProducto[] Productos = new UserControlProducto[_cantidad_productos];
+                        MessageBox.Show(Convert.ToString(_cantidad_productos));
 
                         contadorproductos = contadorproductos + 1;
 
@@ -443,7 +469,7 @@ namespace PUNTOVENTA.MENU.VENTA
                             medidadescripcion = Convert.ToString(dg.Descripcion.ToString());
                         }
 
-                        UserControlProducto[] Productos = new UserControlProducto[10];
+                        UserControlProducto[] Productos = new UserControlProducto[_cantidad_productos];
 
 
                         contadorproductos = contadorproductos + 1;

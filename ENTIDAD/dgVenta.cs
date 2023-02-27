@@ -23,6 +23,8 @@ namespace PUNTOVENTA.ENTIDAD
 
         public int? Id_Cliente { get; set; }
 
+      
+
         public string? NombreTransferencia { get; set; }
         public decimal? Total { get; set; }
 

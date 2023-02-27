@@ -441,6 +441,37 @@ namespace Punto_de_Venta.Clases
                 }
             }
 
+            else if (tipo == 12)
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",12),
+                    new SqlParameter("@P_IdVenta",Parametro.Id_Venta)
+
+                };
+
+                tabla = bdContext.funcionStored("spProducto", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgProducto
+                             {
+
+                                 CantidadProductos = Convert.ToInt16(fila["CantidadProductos"].ToString())
+                             }
+                    ).ToList();
+
+
+
+
+                }
+
+
+            }
+
 
 
 

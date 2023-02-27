@@ -21,6 +21,7 @@ namespace PUNTOVENTA.ENTIDAD
 
         public int? Id_Medida { get; set; }
 
+        public int? CantidadProductos { get; set; }
         public int? Id_Proveedor { get; set; }
 
         public string? Nombre { get; set; }
