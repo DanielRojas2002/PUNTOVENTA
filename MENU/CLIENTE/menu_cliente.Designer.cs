@@ -43,8 +43,11 @@
             this.btn_agregarCliente = new System.Windows.Forms.Button();
             this.btn_regresar = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.btn_creditos = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
@@ -54,6 +57,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_perfil
@@ -219,6 +224,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Navy;
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.lbl_perfil);
@@ -234,17 +240,6 @@
             this.panel3.TabIndex = 39;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(87, 112);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(240, 205);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 54;
-            this.pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -256,6 +251,52 @@
             this.label1.Size = new System.Drawing.Size(185, 36);
             this.label1.TabIndex = 81;
             this.label1.Text = "CLIENTES";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(87, 112);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(240, 205);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 54;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.pictureBox5);
+            this.panel4.Controls.Add(this.btn_creditos);
+            this.panel4.Location = new System.Drawing.Point(74, 476);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(253, 46);
+            this.panel4.TabIndex = 33;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(51, 40);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 17;
+            this.pictureBox5.TabStop = false;
+            // 
+            // btn_creditos
+            // 
+            this.btn_creditos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btn_creditos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_creditos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_creditos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_creditos.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_creditos.ForeColor = System.Drawing.Color.White;
+            this.btn_creditos.Location = new System.Drawing.Point(60, 3);
+            this.btn_creditos.Name = "btn_creditos";
+            this.btn_creditos.Size = new System.Drawing.Size(193, 40);
+            this.btn_creditos.TabIndex = 0;
+            this.btn_creditos.Text = "PAGAR CREDITOS";
+            this.btn_creditos.UseVisualStyleBackColor = false;
+            this.btn_creditos.Click += new System.EventHandler(this.btn_creditos_Click);
             // 
             // menu_cliente
             // 
@@ -279,6 +320,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -301,5 +344,8 @@
         private Panel panel3;
         private PictureBox pictureBox1;
         private Label label1;
+        private Panel panel4;
+        private PictureBox pictureBox5;
+        private Button btn_creditos;
     }
 }

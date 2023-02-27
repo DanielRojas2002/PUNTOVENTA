@@ -1,6 +1,7 @@
 ﻿using Punto_de_Venta;
 using PUNTOVENTA.CLASES;
 using PUNTOVENTA.ENTIDAD;
+using PUNTOVENTA.MENU.CLIENTE.CREDITO;
 using PUNTOVENTA.MENU.PROVEEDOR;
 using System;
 using System.Collections.Generic;
@@ -141,6 +142,14 @@ namespace PUNTOVENTA.MENU.CLIENTE
         private void lbl_id_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_creditos_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            menu_credito forms = new menu_credito();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
         }
     }
 }
