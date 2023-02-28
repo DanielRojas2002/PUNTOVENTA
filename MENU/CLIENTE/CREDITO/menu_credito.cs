@@ -24,12 +24,12 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
             InitializeComponent();
         }
 
-        private void menu_credito_FormClosing(object sender, FormClosingEventArgs e)
+        public void menu_credito_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
         }
 
-        private void CargaClientesCredito()
+        public void CargaClientesCredito()
         {
 
             flowLayoutPanel_clientes.Controls.Clear();
@@ -92,6 +92,8 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
 
 
+
+
                     flowLayoutPanel_clientes.Controls.Add(Clientes[contadorclientes]);
 
                
@@ -114,7 +116,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
         }
 
-        private void CargaClienteCreditoBox()
+        public void CargaClienteCreditoBox()
         {
 
             dgCliente parametro = new dgCliente();
@@ -140,12 +142,12 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
         }
 
 
-        private void menu_credito_Load(object sender, EventArgs e)
+        public void menu_credito_Load(object sender, EventArgs e)
         {
             CargaClientesCredito();
             CargaClienteCreditoBox();
         }
-        private void RegresarVentana()
+        public void RegresarVentana()
         {
 
             string id;
@@ -211,22 +213,22 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
 
         }
-        private void btn_regresar_Click(object sender, EventArgs e)
+        public void btn_regresar_Click(object sender, EventArgs e)
         {
             RegresarVentana();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        public void pictureBox2_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        public void pictureBox1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void bx_cliente_credito_SelectedIndexChanged(object sender, EventArgs e)
+        public void bx_cliente_credito_SelectedIndexChanged(object sender, EventArgs e)
         {
             string concatenacion = bx_cliente_credito.Text;
             string[] words = concatenacion.Split(' ');
@@ -237,7 +239,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
             lbl_id_cliente.Text = idcliente;
         }
 
-        private void btn_aplicar_filtro_Click(object sender, EventArgs e)
+        public void btn_aplicar_filtro_Click(object sender, EventArgs e)
         {
             if (bx_cliente_credito.Text == "" && lbl_id_cliente.Text == "")
             {
@@ -253,7 +255,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
             }
         }
 
-        private void CargaClientesFiltrado(int? idcliente)
+        public void CargaClientesFiltrado(int? idcliente)
         {
             dgClienteCredito parametrofiltrado = new dgClienteCredito
             {
@@ -333,12 +335,22 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
         }
 
-        private void btn_reiniciar_filtrado_Click(object sender, EventArgs e)
+        public void btn_reiniciar_filtrado_Click(object sender, EventArgs e)
         {
             CargaClientesCredito();
 
             bx_cliente_credito.Items.Clear();
             CargaClienteCreditoBox();
+        }
+
+        public void flowLayoutPanel_clientes_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

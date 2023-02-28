@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="MENU\CLIENTE\CREDITO\UserControls\UserControlCredito.resx~RF438eaab1.TMP" />
     <None Remove="MENU\PROVEEDOR\eliminar_proveedor.resx~RF3e285011.TMP" />
   </ItemGroup>
 

@@ -58,9 +58,9 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(262, 49);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 19);
+            this.label6.Size = new System.Drawing.Size(94, 19);
             this.label6.TabIndex = 149;
-            this.label6.Text = "IdCliente:";
+            this.label6.Text = "No Cliente";
             // 
             // lbl_nombre
             // 
@@ -129,6 +129,7 @@
             this.btn_creditos_cliente.TabIndex = 150;
             this.btn_creditos_cliente.Text = "CREDITOS";
             this.btn_creditos_cliente.UseVisualStyleBackColor = false;
+            this.btn_creditos_cliente.Click += new System.EventHandler(this.btn_creditos_cliente_Click);
             // 
             // label1
             // 

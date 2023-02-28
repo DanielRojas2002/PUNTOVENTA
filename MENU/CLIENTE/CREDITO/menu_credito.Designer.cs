@@ -95,6 +95,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(721, 50);
             this.panel4.TabIndex = 105;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // lbl_id_cliente
             // 
@@ -205,6 +206,7 @@
             this.flowLayoutPanel_clientes.Name = "flowLayoutPanel_clientes";
             this.flowLayoutPanel_clientes.Size = new System.Drawing.Size(728, 325);
             this.flowLayoutPanel_clientes.TabIndex = 0;
+            this.flowLayoutPanel_clientes.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel_clientes_Paint);
             // 
             // panel1
             // 

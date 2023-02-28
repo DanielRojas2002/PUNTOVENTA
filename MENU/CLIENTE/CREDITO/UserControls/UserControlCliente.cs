@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PUNTOVENTA.CLASES;
+using PUNTOVENTA.ENTIDAD;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,13 +20,13 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
         }
 
 
-        private string _idcliente;
-        private string _nombrecliente;
-        private string _a_paterno_cliente;
-        private string _a_materno_cliente;
-        private string _direccion_cliente;
-        private string _tel_cliente;
-        private string _correo_cliente;
+        public string _idcliente;
+        public string _nombrecliente;
+        public string _a_paterno_cliente;
+        public string _a_materno_cliente;
+        public string _direccion_cliente;
+        public string _tel_cliente;
+        public string _correo_cliente;
 
        
 
@@ -73,9 +75,26 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
 
        
 
-        private void UserControlCliente_Load(object sender, EventArgs e)
+        public void UserControlCliente_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public void btn_creditos_cliente_Click(object sender, EventArgs e)
+        {
+            dgClienteCredito parametro = new dgClienteCredito
+            {
+                Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text)
+            };
+
+            string control = "";
+
+            control = c_cliente_credito.InsertarClienteSeleccionado(parametro);
+
+
+            this.Hide();
+            cliente_credito forms =   new cliente_credito();
+            forms.Show();
         }
     }
 }

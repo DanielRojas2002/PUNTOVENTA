@@ -12,6 +12,42 @@ namespace PUNTOVENTA.CLASES
 {
     public class c_cliente_credito
     {
+
+        public static string InsertarClienteSeleccionado(dgClienteCredito Parametro)
+        {
+
+
+            string control = "";
+
+            try
+            {
+
+                DataTable tabla = new DataTable();
+
+                SqlParameter[] parametros =
+                {
+                    new SqlParameter("@Accion",4),
+                    new SqlParameter("@P_IdCliente",Parametro.Id_Cliente)
+                   
+
+
+                };
+
+                tabla = bdContext.funcionStored("spCredito", parametros);
+                control = tabla.Rows[0][0].ToString();
+
+
+
+            }
+
+            catch (Exception error)
+            {
+                control = error.ToString();
+            }
+            return control;
+
+        }
+
         public static List<dgClienteCredito> LeerClienteCredito(int tipo, dgClienteCredito Parametro)
         {
 
@@ -76,6 +112,33 @@ namespace PUNTOVENTA.CLASES
                                  Telefono = Convert.ToString(fila["Telefono"].ToString()),
                                  Correo = Convert.ToString(fila["Correo"].ToString()),
                                  Direccion = Convert.ToString(fila["Direccion"].ToString())
+
+
+
+                             }
+                   ).ToList();
+                }
+            }
+
+            else if (tipo == 4)
+
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",5),
+                   
+                };
+
+                tabla = bdContext.funcionStored("spCredito", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgClienteCredito
+                             {
+                                 Id_Cliente = Convert.ToInt16(fila["Id_Cliente"].ToString()),
+                                 
 
 
 
