@@ -46,4 +46,8 @@ namespace PUNTOVENTA.CLASES
                 }
 
             }
+
+            return lista;
         }
+    }
+}
