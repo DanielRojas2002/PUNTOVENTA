@@ -40,5 +40,7 @@ namespace PUNTOVENTA.ENTIDAD
         public int? CantidadClientes { get; set; }
 
         public int? CantidadCreditos { get; set; }
+
+        public int? Validacion { get; set; }
     }
 }

@@ -81,7 +81,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
               
 
-                MessageBox.Show(Convert.ToString(_cantidad_creditos));
+               
                 foreach (dgClienteCredito d in lista2)
                 {
 
@@ -214,6 +214,28 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
         private void lbl_id_cliente_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void flowLayoutPanel_creditos_MouseMove(object sender, MouseEventArgs e)
+        {
+            dgClienteCredito parametro = new dgClienteCredito();
+
+
+            List<dgClienteCredito> lista = c_cliente_credito.LeerClienteCredito(4, parametro);
+
+            if (lista.Count > 0)
+
+            {
+
+                foreach (dgClienteCredito d in lista)
+                {
+                    lbl_id_cliente.Text = d.Id_Cliente.ToString();
+                }
+
+
+            }
+            CargaCantidadCreditos();
+            CargaClientesCredito(_cantidad_creditos);
         }
     }
 }

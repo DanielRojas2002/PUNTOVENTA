@@ -244,5 +244,57 @@ namespace PUNTOVENTA.CLASES
 
 
         }
+
+
+        public static string ActualizarCreditoPago(int tipo, dgClienteCredito Parametro)
+        {
+
+            string control = "";
+
+            if (tipo == 0) // 0 = ´PAGADO PARCIAL EFECTIVO
+            {
+
+                try
+                {
+
+                    DataTable tabla = new DataTable();
+
+                    SqlParameter[] parametros =
+                    {
+                        new SqlParameter("@Accion",9),
+                        new SqlParameter("@P_IdVenta",Parametro.Id_Venta),
+                        new SqlParameter("@P_FechaPago",Parametro.FechaUltimoPago),
+                        new SqlParameter("@P_CantidadPagada",Parametro.CantidadPagada),
+                        new SqlParameter("@P_Validacion",Parametro.Validacion)
+
+
+
+
+                    };
+
+
+                    tabla = bdContext.funcionStored("spCredito", parametros);
+                    control = tabla.Rows[0][0].ToString();
+
+
+
+                }
+
+                catch (Exception error)
+                {
+                    control = error.ToString();
+                }
+
+            }
+
+
+
+            return control;
+
+
+
+
+
+        }
     }
 }
