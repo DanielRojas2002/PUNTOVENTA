@@ -11,10 +11,11 @@ namespace PUNTOVENTA.ENTIDAD
         public int? Id_Venta { get; set; }
         public int? IdProducto { get; set; }
         public string? NombreProducto { get; set; }
+        public int? CantidadProducto { get; set; }
         public float? PrecioProducto { get; set; }
         public float? SubTotalProducto { get; set; }
         public DateTime? FechaVentaProducto { get; set; }
         public DateTime? FechaInicio { get; set; }
-        public DateTime? FechaFin { get; set; }
+        public DateTime? FechaFinal { get; set; }
     }
 }

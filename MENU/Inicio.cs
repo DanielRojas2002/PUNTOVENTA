@@ -3,6 +3,7 @@ using PUNTOVENTA.ENTIDAD;
 using PUNTOVENTA.MENU.CLIENTE;
 using PUNTOVENTA.MENU.PRODUCTO;
 using PUNTOVENTA.MENU.PROVEEDOR;
+using PUNTOVENTA.MENU.REPORTES;
 using PUNTOVENTA.MENU.VENTA;
 
 namespace Punto_de_Venta
@@ -208,7 +209,10 @@ namespace Punto_de_Venta
 
         private void btn_r_ventas_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            reporte_venta forms = new reporte_venta();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
         }
 
         private void btn_seguridad_Click(object sender, EventArgs e)

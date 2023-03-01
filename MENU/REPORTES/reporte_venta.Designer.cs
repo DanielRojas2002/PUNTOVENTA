@@ -32,8 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.FechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.fechafinal = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,6 +46,8 @@
             this.Col_SubTotalProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_FechaVentaProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtFechai = new System.Windows.Forms.Label();
+            this.lbl_id = new System.Windows.Forms.Label();
             this.btn_regresar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -56,7 +58,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.lbl_id = new System.Windows.Forms.Label();
+            this.txtFechaf = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
@@ -102,20 +104,22 @@
             this.label3.Size = new System.Drawing.Size(99, 21);
             this.label3.TabIndex = 5;
             this.label3.Text = "Fecha Final:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // dateTimePicker1
+            // FechaInicio
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(25, 267);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 6;
+            this.FechaInicio.Location = new System.Drawing.Point(25, 267);
+            this.FechaInicio.Name = "FechaInicio";
+            this.FechaInicio.Size = new System.Drawing.Size(200, 23);
+            this.FechaInicio.TabIndex = 6;
+            this.FechaInicio.ValueChanged += new System.EventHandler(this.FechaInicio_ValueChanged);
             // 
-            // dateTimePicker2
+            // fechafinal
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(549, 267);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker2.TabIndex = 7;
+            this.fechafinal.Location = new System.Drawing.Point(549, 267);
+            this.fechafinal.Name = "fechafinal";
+            this.fechafinal.Size = new System.Drawing.Size(200, 23);
+            this.fechafinal.TabIndex = 7;
             // 
             // button1
             // 
@@ -215,15 +219,17 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.Controls.Add(this.txtFechaf);
+            this.panel1.Controls.Add(this.txtFechai);
             this.panel1.Controls.Add(this.lbl_id);
             this.panel1.Controls.Add(this.btn_regresar);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.FechaInicio);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Controls.Add(this.fechafinal);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -233,6 +239,30 @@
             this.panel1.Size = new System.Drawing.Size(777, 625);
             this.panel1.TabIndex = 11;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // txtFechai
+            // 
+            this.txtFechai.AutoSize = true;
+            this.txtFechai.Font = new System.Drawing.Font("Franklin Gothic Heavy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtFechai.ForeColor = System.Drawing.Color.White;
+            this.txtFechai.Location = new System.Drawing.Point(144, 195);
+            this.txtFechai.Name = "txtFechai";
+            this.txtFechai.Size = new System.Drawing.Size(104, 21);
+            this.txtFechai.TabIndex = 68;
+            this.txtFechai.Text = "Fecha Inicio:";
+            this.txtFechai.Visible = false;
+            // 
+            // lbl_id
+            // 
+            this.lbl_id.AutoSize = true;
+            this.lbl_id.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_id.ForeColor = System.Drawing.Color.White;
+            this.lbl_id.Location = new System.Drawing.Point(81, 123);
+            this.lbl_id.Name = "lbl_id";
+            this.lbl_id.Size = new System.Drawing.Size(25, 19);
+            this.lbl_id.TabIndex = 67;
+            this.lbl_id.Text = "id";
+            this.lbl_id.Visible = false;
             // 
             // btn_regresar
             // 
@@ -354,17 +384,18 @@
             this.pictureBox3.TabIndex = 65;
             this.pictureBox3.TabStop = false;
             // 
-            // lbl_id
+            // txtFechaf
             // 
-            this.lbl_id.AutoSize = true;
-            this.lbl_id.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lbl_id.ForeColor = System.Drawing.Color.White;
-            this.lbl_id.Location = new System.Drawing.Point(81, 123);
-            this.lbl_id.Name = "lbl_id";
-            this.lbl_id.Size = new System.Drawing.Size(25, 19);
-            this.lbl_id.TabIndex = 67;
-            this.lbl_id.Text = "id";
-            this.lbl_id.Visible = false;
+            this.txtFechaf.AutoSize = true;
+            this.txtFechaf.Font = new System.Drawing.Font("Franklin Gothic Heavy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtFechaf.ForeColor = System.Drawing.Color.White;
+            this.txtFechaf.Location = new System.Drawing.Point(549, 181);
+            this.txtFechaf.Name = "txtFechaf";
+            this.txtFechaf.Size = new System.Drawing.Size(99, 21);
+            this.txtFechaf.TabIndex = 69;
+            this.txtFechaf.Text = "Fecha Final:";
+            this.txtFechaf.Visible = false;
+            this.txtFechaf.Click += new System.EventHandler(this.label5_Click);
             // 
             // reporte_venta
             // 
@@ -375,7 +406,9 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "reporte_venta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "reporte_venta";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.reporte_venta_FormClosing);
             this.Load += new System.EventHandler(this.reporte_venta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -397,8 +430,8 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker FechaInicio;
+        private DateTimePicker fechafinal;
         private Button button1;
         private Button button2;
         private Label label4;
@@ -422,5 +455,7 @@
         private PictureBox pictureBox7;
         private PictureBox btn_regresar;
         public Label lbl_id;
+        private Label txtFechai;
+        private Label txtFechaf;
     }
 }

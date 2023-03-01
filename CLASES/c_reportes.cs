@@ -24,9 +24,9 @@ namespace PUNTOVENTA.CLASES
 
                 SqlParameter[] Parametros =
                 {
-                new SqlParameter("@Accion",5),
+                new SqlParameter("@Accion",1),
                 new SqlParameter("@P_FechaInicio",Parametro.FechaInicio),
-                new SqlParameter("@P_FechaFin",Parametro.FechaFin)
+                new SqlParameter("@P_FechaFinal",Parametro.FechaFinal)
                 };
 
                 tabla = bdContext.funcionStored("spReportes", Parametros);
@@ -38,7 +38,11 @@ namespace PUNTOVENTA.CLASES
                              {
                                  Id_Venta = Convert.ToInt16(fila["Id_Venta"].ToString()),
                                  IdProducto = Convert.ToInt16(fila["IdProducto"].ToString()),
-                                 NombreProducto = Convert.ToString(fila["NombreProducto"])
+                                 NombreProducto = Convert.ToString(fila["NombreProducto"].ToString()),
+                                 CantidadProducto = Convert.ToInt16(fila["CantidadProducto"].ToString()),
+                                 PrecioProducto = Convert.ToInt16(fila["PrecioProducto"].ToString()),
+                                 SubTotalProducto = Convert.ToInt16(fila["SubTotalProducto"].ToString()),
+                                 FechaVentaProducto = Convert.ToDateTime(fila["FechaVentaProducto"].ToString())
 
 
                              }

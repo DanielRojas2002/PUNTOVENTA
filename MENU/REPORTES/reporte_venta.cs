@@ -1,4 +1,5 @@
 ﻿using Punto_de_Venta;
+using Punto_de_Venta.Clases;
 using PUNTOVENTA.CLASES;
 using PUNTOVENTA.ENTIDAD;
 using PUNTOVENTA.MENU.PROVEEDOR;
@@ -28,6 +29,46 @@ namespace PUNTOVENTA.MENU.REPORTES
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            dataGridView1.Rows.Clear();
+            txtFechai.Text = FechaInicio.Value.ToString("dd/MM/yyyy");
+            txtFechaf.Text = fechafinal.Value.ToString("dd/MM/yyyy");
+
+            dgReportes parametro = new dgReportes
+            {
+                FechaInicio = Convert.ToDateTime(txtFechai.Text),
+                FechaFinal = Convert.ToDateTime(txtFechaf.Text)
+            };
+
+
+
+
+            List <dgReportes> lista = c_reportes.LeerReporte(1, parametro);
+
+
+            if (lista.Count > 0)
+
+            {
+               
+                foreach (dgReportes d in lista)
+                {
+
+
+                    dataGridView1.Rows.Add(d.Id_Venta.ToString(),d.IdProducto.ToString(),d.NombreProducto.ToString(),
+                        d.CantidadProducto.ToString(),d.PrecioProducto.ToString(),d.SubTotalProducto.ToString(),d.FechaVentaProducto.ToString());
+                    
+
+
+                }
+
+            }
+
+            else
+            {
+
+                MessageBox.Show("No se encontró reporte de venta este día seleccionado");
+
+            }
 
         }
         private void RegresarVentana()
@@ -112,6 +153,26 @@ namespace PUNTOVENTA.MENU.REPORTES
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void reporte_venta_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void FechaInicio_ValueChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }
