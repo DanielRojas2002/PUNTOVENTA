@@ -92,9 +92,12 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
             control = c_cliente_credito.InsertarClienteSeleccionado(parametro);
 
 
-            this.Hide();
+            
+
             cliente_credito forms =   new cliente_credito();
             forms.Show();
+
+           
         }
     }
 }

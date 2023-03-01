@@ -139,6 +139,49 @@ namespace PUNTOVENTA.CLASES
                     lista = (from DataRow fila in tabla.Rows
                              select new dgClienteCredito
                              {
+                                 Id_Cliente=Convert.ToInt16(fila["IdCliente"].ToString()),
+                                 
+
+                                 Id_Venta = Convert.ToInt16(fila["IdVenta"].ToString()),
+                                 CantidadPagada = float.Parse(fila["CantidadPagada"].ToString()),
+                                 Total = float.Parse(fila["Total"].ToString())
+
+
+
+
+                             }
+                   ).ToList();
+                }
+            }
+
+            else if (tipo == 333)
+
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",333),
+                    new SqlParameter("@P_IdCliente",Parametro.Id_Cliente),
+                    new SqlParameter("@P_IdVenta",Parametro.Id_Venta)
+
+                };
+
+                tabla = bdContext.funcionStored("spCredito", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgClienteCredito
+                             {
+                                 Id_Cliente = Convert.ToInt16(fila["IdCliente"].ToString()),
+                                 Nombre = Convert.ToString(fila["Nombre"].ToString()),
+                                 Apellido_Paterno = Convert.ToString(fila["Apellido_Paterno"].ToString()),
+
+                                 Apellido_Materno = Convert.ToString(fila["Apellido_Materno"].ToString()),
+                                 Direccion = Convert.ToString(fila["Direccion"].ToString()),
+                                 Correo = Convert.ToString(fila["Correo"].ToString()),
+                                 Telefono = Convert.ToString(fila["Telefono"].ToString()),
+
                                  Id_Venta = Convert.ToInt16(fila["IdVenta"].ToString()),
                                  CantidadPagada = float.Parse(fila["CantidadPagada"].ToString()),
                                  Total = float.Parse(fila["Total"].ToString())
@@ -266,6 +309,45 @@ namespace PUNTOVENTA.CLASES
                         new SqlParameter("@P_FechaPago",Parametro.FechaUltimoPago),
                         new SqlParameter("@P_CantidadPagada",Parametro.CantidadPagada),
                         new SqlParameter("@P_Validacion",Parametro.Validacion)
+
+
+
+
+                    };
+
+
+                    tabla = bdContext.funcionStored("spCredito", parametros);
+                    control = tabla.Rows[0][0].ToString();
+
+
+
+                }
+
+                catch (Exception error)
+                {
+                    control = error.ToString();
+                }
+
+            }
+
+
+
+            else if (tipo == 1) // 1= PAGADO COMPLETO EFECTIVO
+            {
+
+                try
+                {
+
+                    DataTable tabla = new DataTable();
+
+                    SqlParameter[] parametros =
+                    {
+                        new SqlParameter("@Accion",9),
+                        new SqlParameter("@P_IdVenta",Parametro.Id_Venta),
+                        new SqlParameter("@P_FechaPago",Parametro.FechaPago),
+                        new SqlParameter("@P_CantidadPagada",Parametro.CantidadPagada),
+                        new SqlParameter("@P_Validacion",Parametro.Validacion),
+                        new SqlParameter("@P_Cambio",Parametro.Cambio)
 
 
 

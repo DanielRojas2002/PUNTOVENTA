@@ -76,7 +76,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
             {
 
-                int idventa;
+                int idventa,idcliente;
                 float cantidadpagada, total,cantidadfaltante;
 
               
@@ -85,6 +85,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                 foreach (dgClienteCredito d in lista2)
                 {
 
+                    idcliente = Convert.ToInt16(d.Id_Cliente.ToString());
                     idventa = Convert.ToInt16(d.Id_Venta.ToString());
                     cantidadpagada = float.Parse(d.CantidadPagada.ToString());
                     total = float.Parse(d.Total.ToString());
@@ -93,7 +94,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                     cantidadfaltante = total - cantidadpagada;
 
 
-
+                    cantidadfaltante = (float)Math.Round(cantidadfaltante, 2);
 
                     UserControlCredito[] Creditos = new UserControlCredito[cantidacreditos];
 
@@ -101,6 +102,9 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                     contadorcreditos = contadorcreditos + 1;
 
                     Creditos[contadorcreditos] = new UserControlCredito();
+
+
+                    Creditos[contadorcreditos].IdCliente = Convert.ToString(idcliente);
 
                     Creditos[contadorcreditos].IdVenta = Convert.ToString(idventa);
 
@@ -218,24 +222,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
         private void flowLayoutPanel_creditos_MouseMove(object sender, MouseEventArgs e)
         {
-            dgClienteCredito parametro = new dgClienteCredito();
-
-
-            List<dgClienteCredito> lista = c_cliente_credito.LeerClienteCredito(4, parametro);
-
-            if (lista.Count > 0)
-
-            {
-
-                foreach (dgClienteCredito d in lista)
-                {
-                    lbl_id_cliente.Text = d.Id_Cliente.ToString();
-                }
-
-
-            }
-            CargaCantidadCreditos();
-            CargaClientesCredito(_cantidad_creditos);
+           
         }
     }
 }

@@ -270,18 +270,27 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
         public void btn_aplicar_filtro_Click(object sender, EventArgs e)
         {
-            if (bx_cliente_credito.Text == "" && lbl_id_cliente.Text == "")
+            try
             {
+                if (bx_cliente_credito.Text == "" && lbl_id_cliente.Text == "")
+                {
 
+                    MessageBox.Show("Seleccione el Cliente a Buscar ");
+                }
+
+                else
+                {
+                    int idcliente = Convert.ToInt16(lbl_id_cliente.Text);
+                    CargaClientesFiltrado(idcliente);
+
+                }
+            }
+
+            catch
+            {
                 MessageBox.Show("Seleccione el Cliente a Buscar ");
             }
-
-            else
-            {
-                int idcliente =Convert.ToInt16( lbl_id_cliente.Text);
-                CargaClientesFiltrado(idcliente);
-
-            }
+          
         }
 
         public void CargaClientesFiltrado(int? idcliente)
