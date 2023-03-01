@@ -88,6 +88,40 @@ namespace PUNTOVENTA.CLASES
 
             }
 
+            else if (tipo == 33)
+
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",33),
+                    new SqlParameter("@P_IdCliente",Parametro.Id_Cliente)
+                };
+
+                tabla = bdContext.funcionStored("spCredito", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgClienteCredito
+                             {
+                                 Id_Cliente = Convert.ToInt16(fila["Id_Cliente"].ToString()),
+                                 Nombre = Convert.ToString(fila["Nombre"].ToString()),
+                                 Apellido_Paterno = Convert.ToString(fila["Apellido_Paterno"].ToString()),
+
+                                 Apellido_Materno = Convert.ToString(fila["Apellido_Materno"].ToString()),
+                                 Direccion = Convert.ToString(fila["Direccion"].ToString()),
+                                 Correo = Convert.ToString(fila["Correo"].ToString()),
+                                 Telefono = Convert.ToString(fila["Telefono"].ToString()),
+                                 
+
+
+
+                             }
+                   ).ToList();
+                }
+            }
+
             else if (tipo == 3)
 
             {
@@ -105,13 +139,10 @@ namespace PUNTOVENTA.CLASES
                     lista = (from DataRow fila in tabla.Rows
                              select new dgClienteCredito
                              {
-                                 Id_Cliente = Convert.ToInt16(fila["Id_Cliente"].ToString()),
-                                 Nombre = Convert.ToString(fila["Nombre"].ToString()),
-                                 Apellido_Paterno = Convert.ToString(fila["Apellido_Paterno"].ToString()),
-                                 Apellido_Materno = Convert.ToString(fila["Apellido_Materno"].ToString()),
-                                 Telefono = Convert.ToString(fila["Telefono"].ToString()),
-                                 Correo = Convert.ToString(fila["Correo"].ToString()),
-                                 Direccion = Convert.ToString(fila["Direccion"].ToString())
+                                 Id_Venta = Convert.ToInt16(fila["IdVenta"].ToString()),
+                                 CantidadPagada = float.Parse(fila["CantidadPagada"].ToString()),
+                                 Total = float.Parse(fila["Total"].ToString())
+
 
 
 
@@ -139,6 +170,62 @@ namespace PUNTOVENTA.CLASES
                              {
                                  Id_Cliente = Convert.ToInt16(fila["Id_Cliente"].ToString()),
                                  
+
+
+
+                             }
+                   ).ToList();
+                }
+            }
+
+            else if (tipo == 7)
+
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",7),
+                    new SqlParameter("@P_IdCliente",Parametro.Id_Cliente)
+
+
+                };
+
+                tabla = bdContext.funcionStored("spCredito", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgClienteCredito
+                             {
+                                 CantidadCreditos = Convert.ToInt16(fila["CantidadCreditos"].ToString()),
+
+
+
+
+                             }
+                   ).ToList();
+                }
+            }
+
+            else if (tipo == 8)
+
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",8),
+
+                };
+
+                tabla = bdContext.funcionStored("spCredito", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgClienteCredito
+                             {
+                                 CantidadClientes = Convert.ToInt16(fila["CantidadClientes"].ToString()),
+
 
 
 

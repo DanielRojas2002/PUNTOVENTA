@@ -24,6 +24,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
             InitializeComponent();
         }
 
+        public int _cantidad_clientes=0;
         public void menu_credito_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
@@ -69,7 +70,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                   
                         
 
-                    UserControlCliente[] Clientes = new UserControlCliente[10];
+                    UserControlCliente[] Clientes = new UserControlCliente[_cantidad_clientes];
 
 
                     contadorclientes = contadorclientes + 1;
@@ -141,12 +142,40 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
         }
 
+        private void CargaCantidadClientes()
+        {
+            dgClienteCredito parametro = new dgClienteCredito
+            {
+               
+            };
+
+            List<dgClienteCredito> cantidadclientes = c_cliente_credito.LeerClienteCredito(8, parametro);
+
+
+            if (cantidadclientes.Count > 0)
+
+            {
+
+                foreach (dgClienteCredito d in cantidadclientes)
+                {
+
+                    _cantidad_clientes = Convert.ToInt16(d.CantidadClientes.ToString()) + 1;
+                   
+                }
+            }
+
+        }
+
 
         public void menu_credito_Load(object sender, EventArgs e)
         {
+            CargaCantidadClientes();
             CargaClientesCredito();
             CargaClienteCreditoBox();
+          
+
         }
+        
         public void RegresarVentana()
         {
 
@@ -262,7 +291,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                Id_Cliente=Convert.ToInt16(idcliente)
             };
 
-            List<dgClienteCredito> listafiltrado = c_cliente_credito.LeerClienteCredito(3, parametrofiltrado);
+            List<dgClienteCredito> listafiltrado = c_cliente_credito.LeerClienteCredito(33, parametrofiltrado);
 
 
           

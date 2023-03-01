@@ -293,7 +293,7 @@ namespace PUNTOVENTA.MENU.VENTA
                         }
 
                         UserControlProducto[] Productos = new UserControlProducto[_cantidad_productos];
-                        MessageBox.Show(Convert.ToString(_cantidad_productos));
+                       
 
                         contadorproductos = contadorproductos + 1;
 

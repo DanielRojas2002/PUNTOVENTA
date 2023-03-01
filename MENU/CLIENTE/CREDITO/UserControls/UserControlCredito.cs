@@ -18,27 +18,46 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
         }
 
 
-        public string _idcliente;
-        public string _nombrecliente;
-        public string _a_paterno_cliente;
-        public string _a_materno_cliente;
-        public string _direccion_cliente;
-        public string _tel_cliente;
-        public string _correo_cliente;
+        public string _idventa;
+        public string _totalventa;
+        public string _totalpagado;
+        public string _faltaporpagar;
+     
 
 
 
 
 
- 
-        //public string NombreCliente
-        //{
-        //    get { return _nombrecliente; }
-        //    set { _nombrecliente = value; lbl_nombre.Text = value; }
-        //}
 
-  
-       
+        public string IdVenta
+        {
+            get { return _idventa; }
+            set { _idventa = value; lbl_id_venta.Text = value; }
+        }
+
+        public string TotalVenta
+        {
+            get { return _totalventa; }
+            set { _totalventa = value; lbl_total_venta.Text = value; }
+        }
+
+        public string TotalPagado
+        {
+            get { return _totalpagado; }
+            set { _totalpagado = value; lbl_cantidad_pagada.Text = value; }
+        }
+
+        public string FaltaPagar
+        {
+            get { return _faltaporpagar; }
+            set { _faltaporpagar = value; lbl_total_faltante.Text = value; }
+        }
+
+
+      
+
+
+
         private void UserControlCredito_Load(object sender, EventArgs e)
         {
 

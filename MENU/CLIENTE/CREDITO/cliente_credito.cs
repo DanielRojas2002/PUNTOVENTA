@@ -21,16 +21,18 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
             InitializeComponent();
         }
 
-        public void CargaClientesCredito()
+        public int _cantidad_creditos;
+
+        public void CargaClientesCredito(int cantidacreditos)
         {
 
-
+         
             dgClienteCredito parametro = new dgClienteCredito
             {
                 Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text)
             };
 
-            List<dgClienteCredito> lista = c_cliente_credito.LeerClienteCredito(3, parametro);
+            List<dgClienteCredito> lista = c_cliente_credito.LeerClienteCredito(33, parametro);
 
 
             if (lista.Count > 0)
@@ -74,35 +76,41 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
             {
 
-                int idcliente;
+                int idventa;
+                float cantidadpagada, total,cantidadfaltante;
 
-                string nombre, ap, am, domicilio, tel, correo;
+              
+
+                MessageBox.Show(Convert.ToString(_cantidad_creditos));
                 foreach (dgClienteCredito d in lista2)
                 {
 
-                    idcliente = Convert.ToInt16(d.Id_Cliente.ToString());
-                    nombre = Convert.ToString(d.Nombre.ToString());
-                    ap = Convert.ToString(d.Apellido_Paterno.ToString());
-                    am = Convert.ToString(d.Apellido_Materno.ToString());
-                    domicilio = Convert.ToString(d.Direccion.ToString());
-                    tel = Convert.ToString(d.Telefono.ToString());
-                    correo = Convert.ToString(d.Correo.ToString());
+                    idventa = Convert.ToInt16(d.Id_Venta.ToString());
+                    cantidadpagada = float.Parse(d.CantidadPagada.ToString());
+                    total = float.Parse(d.Total.ToString());
+
+
+                    cantidadfaltante = total - cantidadpagada;
 
 
 
 
-
-
-                    UserControlCredito[] Creditos = new UserControlCredito[10];
+                    UserControlCredito[] Creditos = new UserControlCredito[cantidacreditos];
 
 
                     contadorcreditos = contadorcreditos + 1;
 
                     Creditos[contadorcreditos] = new UserControlCredito();
 
-                    //Creditos[contadorcreditos].IdCliente = Convert.ToString(idcliente);
+                    Creditos[contadorcreditos].IdVenta = Convert.ToString(idventa);
 
-                  
+                    Creditos[contadorcreditos].TotalPagado = Convert.ToString(cantidadpagada);
+
+                    Creditos[contadorcreditos].TotalVenta = Convert.ToString(total);
+
+                    Creditos[contadorcreditos].FaltaPagar = Convert.ToString(cantidadfaltante);
+
+
 
 
 
@@ -121,13 +129,39 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
         }
 
-        private void cliente_credito_Load(object sender, EventArgs e)
+
+        private void CargaCantidadCreditos()
         {
-            dgClienteCredito parametro = new dgClienteCredito();
+            
+            dgClienteCredito parametro = new dgClienteCredito
+            {
+                Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text)
+            };
+
+            List<dgClienteCredito> cantidadcreditos = c_cliente_credito.LeerClienteCredito(7, parametro);
 
 
+            if (cantidadcreditos.Count > 0)
+
+            {
+
+                foreach (dgClienteCredito d in cantidadcreditos)
+                {
+
+                    _cantidad_creditos = Convert.ToInt16(d.CantidadCreditos.ToString()) + 1;
+
+                }
+            }
            
 
+        }
+
+        private void cliente_credito_Load(object sender, EventArgs e)
+        {
+           
+
+
+            dgClienteCredito parametro = new dgClienteCredito();
 
 
             List<dgClienteCredito> lista = c_cliente_credito.LeerClienteCredito(4, parametro);
@@ -143,8 +177,12 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
 
             }
+            CargaCantidadCreditos();
+            CargaClientesCredito(_cantidad_creditos);
 
-            CargaClientesCredito();
+
+
+
         }
          
         private void btn_regresar_Click(object sender, EventArgs e)
@@ -169,6 +207,11 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_id_cliente_Click(object sender, EventArgs e)
         {
 
         }
