@@ -369,7 +369,7 @@
             // Col_Id_Venta
             // 
             this.Col_Id_Venta.Frozen = true;
-            this.Col_Id_Venta.HeaderText = "IdVenta";
+            this.Col_Id_Venta.HeaderText = "No. Venta";
             this.Col_Id_Venta.MinimumWidth = 6;
             this.Col_Id_Venta.Name = "Col_Id_Venta";
             this.Col_Id_Venta.Width = 65;
@@ -377,7 +377,7 @@
             // Col_IdProducto
             // 
             this.Col_IdProducto.Frozen = true;
-            this.Col_IdProducto.HeaderText = "IdProducto";
+            this.Col_IdProducto.HeaderText = "Producto";
             this.Col_IdProducto.MinimumWidth = 6;
             this.Col_IdProducto.Name = "Col_IdProducto";
             this.Col_IdProducto.Width = 85;
@@ -385,7 +385,7 @@
             // Col_NombreProducto
             // 
             this.Col_NombreProducto.Frozen = true;
-            this.Col_NombreProducto.HeaderText = "NombreProducto";
+            this.Col_NombreProducto.HeaderText = "Nombre";
             this.Col_NombreProducto.MinimumWidth = 6;
             this.Col_NombreProducto.Name = "Col_NombreProducto";
             this.Col_NombreProducto.Width = 125;
@@ -393,7 +393,7 @@
             // Col_CantidadProducto
             // 
             this.Col_CantidadProducto.Frozen = true;
-            this.Col_CantidadProducto.HeaderText = "CantidadProducto";
+            this.Col_CantidadProducto.HeaderText = "Cantidad";
             this.Col_CantidadProducto.MinimumWidth = 6;
             this.Col_CantidadProducto.Name = "Col_CantidadProducto";
             this.Col_CantidadProducto.Width = 130;
@@ -401,7 +401,7 @@
             // Col_PrecioProducto
             // 
             this.Col_PrecioProducto.Frozen = true;
-            this.Col_PrecioProducto.HeaderText = "PrecioProducto";
+            this.Col_PrecioProducto.HeaderText = "Precio";
             this.Col_PrecioProducto.MinimumWidth = 6;
             this.Col_PrecioProducto.Name = "Col_PrecioProducto";
             this.Col_PrecioProducto.Width = 115;
@@ -409,7 +409,7 @@
             // Col_SubTotalProducto
             // 
             this.Col_SubTotalProducto.Frozen = true;
-            this.Col_SubTotalProducto.HeaderText = "SubTotalProducto";
+            this.Col_SubTotalProducto.HeaderText = "SubTotal";
             this.Col_SubTotalProducto.MinimumWidth = 6;
             this.Col_SubTotalProducto.Name = "Col_SubTotalProducto";
             this.Col_SubTotalProducto.Width = 130;
@@ -417,7 +417,7 @@
             // Col_FechaVentaProducto
             // 
             this.Col_FechaVentaProducto.Frozen = true;
-            this.Col_FechaVentaProducto.HeaderText = "FechaVentaProducto";
+            this.Col_FechaVentaProducto.HeaderText = "Fecha Venta";
             this.Col_FechaVentaProducto.MinimumWidth = 6;
             this.Col_FechaVentaProducto.Name = "Col_FechaVentaProducto";
             this.Col_FechaVentaProducto.Width = 145;
