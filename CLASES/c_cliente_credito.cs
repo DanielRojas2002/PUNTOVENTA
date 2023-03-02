@@ -306,7 +306,7 @@ namespace PUNTOVENTA.CLASES
                     {
                         new SqlParameter("@Accion",9),
                         new SqlParameter("@P_IdVenta",Parametro.Id_Venta),
-                        new SqlParameter("@P_FechaPago",Parametro.FechaUltimoPago),
+                        new SqlParameter("@P_FechaPago",Parametro.FechaPago),
                         new SqlParameter("@P_CantidadPagada",Parametro.CantidadPagada),
                         new SqlParameter("@P_Validacion",Parametro.Validacion)
 
