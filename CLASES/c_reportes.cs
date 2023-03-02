@@ -40,8 +40,8 @@ namespace PUNTOVENTA.CLASES
                                  IdProducto = Convert.ToInt16(fila["IdProducto"].ToString()),
                                  NombreProducto = Convert.ToString(fila["NombreProducto"].ToString()),
                                  CantidadProducto = Convert.ToInt16(fila["CantidadProducto"].ToString()),
-                                 PrecioProducto = Convert.ToInt16(fila["PrecioProducto"].ToString()),
-                                 SubTotalProducto = Convert.ToInt16(fila["SubTotalProducto"].ToString()),
+                                 PrecioProducto = float.Parse(fila["PrecioProducto"].ToString()),
+                                 SubTotalProducto = float.Parse(fila["SubTotalProducto"].ToString()),
                                  FechaVentaProducto = Convert.ToDateTime(fila["FechaVentaProducto"].ToString())
 
 

@@ -49,13 +49,13 @@ namespace PUNTOVENTA.MENU.REPORTES
             if (lista.Count > 0)
 
             {
-               
+                string fechaventa;
                 foreach (dgReportes d in lista)
                 {
 
-
+                    fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
                     dataGridView1.Rows.Add(d.Id_Venta.ToString(),d.IdProducto.ToString(),d.NombreProducto.ToString(),
-                        d.CantidadProducto.ToString(),d.PrecioProducto.ToString(),d.SubTotalProducto.ToString(),d.FechaVentaProducto.ToString());
+                        d.CantidadProducto.ToString(),d.PrecioProducto.ToString(),d.SubTotalProducto.ToString(), fechaventa);
                     
 
 
