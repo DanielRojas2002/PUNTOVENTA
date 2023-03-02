@@ -55,7 +55,7 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                     fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
                     dataGridView1.Rows.Add(d.Id_Venta.ToString(),d.IdProducto.ToString(),d.NombreProducto.ToString(),
-                        d.CantidadProducto.ToString(),d.PrecioProducto.ToString(),d.SubTotalProducto.ToString(), fechaventa);
+                        d.CantidadProducto.ToString(),d.PrecioProducto.ToString(),d.SubTotalProducto.ToString(), fechaventa,d.Usuario.ToString());
                     
 
 
