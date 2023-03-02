@@ -77,7 +77,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(439, 356);
+            this.label1.Location = new System.Drawing.Point(374, 356);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(22, 24);
             this.label1.TabIndex = 3;
@@ -99,7 +99,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Franklin Gothic Heavy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(688, 307);
+            this.label3.Location = new System.Drawing.Point(585, 307);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 25);
             this.label3.TabIndex = 5;
@@ -111,16 +111,16 @@
             this.FechaInicio.Location = new System.Drawing.Point(29, 356);
             this.FechaInicio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FechaInicio.Name = "FechaInicio";
-            this.FechaInicio.Size = new System.Drawing.Size(228, 27);
+            this.FechaInicio.Size = new System.Drawing.Size(188, 27);
             this.FechaInicio.TabIndex = 6;
             this.FechaInicio.ValueChanged += new System.EventHandler(this.FechaInicio_ValueChanged);
             // 
             // fechafinal
             // 
-            this.fechafinal.Location = new System.Drawing.Point(627, 356);
+            this.fechafinal.Location = new System.Drawing.Point(549, 356);
             this.fechafinal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fechafinal.Name = "fechafinal";
-            this.fechafinal.Size = new System.Drawing.Size(228, 27);
+            this.fechafinal.Size = new System.Drawing.Size(205, 27);
             this.fechafinal.TabIndex = 7;
             // 
             // button1
@@ -128,7 +128,7 @@
             this.button1.Location = new System.Drawing.Point(29, 417);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(847, 31);
+            this.button1.Size = new System.Drawing.Size(728, 31);
             this.button1.TabIndex = 8;
             this.button1.Text = "Generar Reporte";
             this.button1.UseVisualStyleBackColor = true;
@@ -136,7 +136,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(638, 745);
+            this.button2.Location = new System.Drawing.Point(539, 757);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(218, 31);
@@ -149,7 +149,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cooper Black", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(185, 55);
+            this.label4.Location = new System.Drawing.Point(116, 66);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(557, 50);
             this.label4.TabIndex = 10;
@@ -171,7 +171,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(847, 293);
+            this.dataGridView1.Size = new System.Drawing.Size(728, 293);
             this.dataGridView1.TabIndex = 1;
             // 
             // panel1
@@ -195,7 +195,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(888, 833);
+            this.panel1.Size = new System.Drawing.Size(793, 833);
             this.panel1.TabIndex = 11;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -204,7 +204,7 @@
             this.txtFechaf.AutoSize = true;
             this.txtFechaf.Font = new System.Drawing.Font("Franklin Gothic Heavy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtFechaf.ForeColor = System.Drawing.Color.White;
-            this.txtFechaf.Location = new System.Drawing.Point(627, 241);
+            this.txtFechaf.Location = new System.Drawing.Point(585, 241);
             this.txtFechaf.Name = "txtFechaf";
             this.txtFechaf.Size = new System.Drawing.Size(127, 25);
             this.txtFechaf.TabIndex = 69;
@@ -217,7 +217,7 @@
             this.txtFechai.AutoSize = true;
             this.txtFechai.Font = new System.Drawing.Font("Franklin Gothic Heavy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtFechai.ForeColor = System.Drawing.Color.White;
-            this.txtFechai.Location = new System.Drawing.Point(165, 260);
+            this.txtFechai.Location = new System.Drawing.Point(85, 241);
             this.txtFechai.Name = "txtFechai";
             this.txtFechai.Size = new System.Drawing.Size(132, 25);
             this.txtFechai.TabIndex = 68;
@@ -253,7 +253,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(309, 139);
+            this.pictureBox1.Location = new System.Drawing.Point(255, 135);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(274, 248);
@@ -275,7 +275,7 @@
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(888, 43);
+            this.panel7.Size = new System.Drawing.Size(793, 43);
             this.panel7.TabIndex = 75;
             // 
             // pictureBox7
@@ -283,7 +283,7 @@
             this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(850, 4);
+            this.pictureBox7.Location = new System.Drawing.Point(755, 4);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(29, 31);
@@ -297,7 +297,7 @@
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(807, 5);
+            this.pictureBox4.Location = new System.Drawing.Point(712, 5);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(39, 31);
@@ -311,7 +311,7 @@
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(1595, 4);
+            this.pictureBox5.Location = new System.Drawing.Point(1500, 4);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(39, 31);
@@ -324,7 +324,7 @@
             this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(1641, 4);
+            this.pictureBox6.Location = new System.Drawing.Point(1546, 4);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(29, 31);
@@ -337,7 +337,7 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(2021, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(1926, 4);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(39, 31);
@@ -358,7 +358,7 @@
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(2065, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(1970, 4);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(29, 31);
@@ -368,65 +368,72 @@
             // 
             // Col_Id_Venta
             // 
+            this.Col_Id_Venta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Col_Id_Venta.Frozen = true;
             this.Col_Id_Venta.HeaderText = "No. Venta";
             this.Col_Id_Venta.MinimumWidth = 6;
             this.Col_Id_Venta.Name = "Col_Id_Venta";
-            this.Col_Id_Venta.Width = 65;
+            this.Col_Id_Venta.Width = 102;
             // 
             // Col_IdProducto
             // 
+            this.Col_IdProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Col_IdProducto.Frozen = true;
             this.Col_IdProducto.HeaderText = "Producto";
             this.Col_IdProducto.MinimumWidth = 6;
             this.Col_IdProducto.Name = "Col_IdProducto";
-            this.Col_IdProducto.Width = 85;
+            this.Col_IdProducto.Width = 98;
             // 
             // Col_NombreProducto
             // 
+            this.Col_NombreProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Col_NombreProducto.Frozen = true;
             this.Col_NombreProducto.HeaderText = "Nombre";
             this.Col_NombreProducto.MinimumWidth = 6;
             this.Col_NombreProducto.Name = "Col_NombreProducto";
-            this.Col_NombreProducto.Width = 125;
+            this.Col_NombreProducto.Width = 93;
             // 
             // Col_CantidadProducto
             // 
+            this.Col_CantidadProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Col_CantidadProducto.Frozen = true;
             this.Col_CantidadProducto.HeaderText = "Cantidad";
             this.Col_CantidadProducto.MinimumWidth = 6;
             this.Col_CantidadProducto.Name = "Col_CantidadProducto";
-            this.Col_CantidadProducto.Width = 130;
+            this.Col_CantidadProducto.Width = 98;
             // 
             // Col_PrecioProducto
             // 
+            this.Col_PrecioProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Col_PrecioProducto.Frozen = true;
             this.Col_PrecioProducto.HeaderText = "Precio";
             this.Col_PrecioProducto.MinimumWidth = 6;
             this.Col_PrecioProducto.Name = "Col_PrecioProducto";
-            this.Col_PrecioProducto.Width = 115;
+            this.Col_PrecioProducto.Width = 79;
             // 
             // Col_SubTotalProducto
             // 
+            this.Col_SubTotalProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Col_SubTotalProducto.Frozen = true;
             this.Col_SubTotalProducto.HeaderText = "SubTotal";
             this.Col_SubTotalProducto.MinimumWidth = 6;
             this.Col_SubTotalProducto.Name = "Col_SubTotalProducto";
-            this.Col_SubTotalProducto.Width = 130;
+            this.Col_SubTotalProducto.Width = 96;
             // 
             // Col_FechaVentaProducto
             // 
+            this.Col_FechaVentaProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Col_FechaVentaProducto.Frozen = true;
             this.Col_FechaVentaProducto.HeaderText = "Fecha Venta";
             this.Col_FechaVentaProducto.MinimumWidth = 6;
             this.Col_FechaVentaProducto.Name = "Col_FechaVentaProducto";
-            this.Col_FechaVentaProducto.Width = 145;
+            this.Col_FechaVentaProducto.Width = 117;
             // 
             // reporte_venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 833);
+            this.ClientSize = new System.Drawing.Size(793, 833);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
