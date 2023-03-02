@@ -38,6 +38,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Col_Id_Venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_CantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_PrecioProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_SubTotalProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_FechaVentaProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtFechaf = new System.Windows.Forms.Label();
             this.txtFechai = new System.Windows.Forms.Label();
@@ -52,13 +59,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.Col_Id_Venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_PrecioProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_SubTotalProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_FechaVentaProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
@@ -174,6 +174,69 @@
             this.dataGridView1.Size = new System.Drawing.Size(728, 293);
             this.dataGridView1.TabIndex = 1;
             // 
+            // Col_Id_Venta
+            // 
+            this.Col_Id_Venta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Col_Id_Venta.Frozen = true;
+            this.Col_Id_Venta.HeaderText = "No. Venta";
+            this.Col_Id_Venta.MinimumWidth = 6;
+            this.Col_Id_Venta.Name = "Col_Id_Venta";
+            this.Col_Id_Venta.Width = 102;
+            // 
+            // Col_IdProducto
+            // 
+            this.Col_IdProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Col_IdProducto.Frozen = true;
+            this.Col_IdProducto.HeaderText = "Producto";
+            this.Col_IdProducto.MinimumWidth = 6;
+            this.Col_IdProducto.Name = "Col_IdProducto";
+            this.Col_IdProducto.Width = 98;
+            // 
+            // Col_NombreProducto
+            // 
+            this.Col_NombreProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Col_NombreProducto.Frozen = true;
+            this.Col_NombreProducto.HeaderText = "Nombre";
+            this.Col_NombreProducto.MinimumWidth = 6;
+            this.Col_NombreProducto.Name = "Col_NombreProducto";
+            this.Col_NombreProducto.Width = 93;
+            // 
+            // Col_CantidadProducto
+            // 
+            this.Col_CantidadProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Col_CantidadProducto.Frozen = true;
+            this.Col_CantidadProducto.HeaderText = "Cantidad";
+            this.Col_CantidadProducto.MinimumWidth = 6;
+            this.Col_CantidadProducto.Name = "Col_CantidadProducto";
+            this.Col_CantidadProducto.Width = 98;
+            // 
+            // Col_PrecioProducto
+            // 
+            this.Col_PrecioProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Col_PrecioProducto.Frozen = true;
+            this.Col_PrecioProducto.HeaderText = "Precio";
+            this.Col_PrecioProducto.MinimumWidth = 6;
+            this.Col_PrecioProducto.Name = "Col_PrecioProducto";
+            this.Col_PrecioProducto.Width = 79;
+            // 
+            // Col_SubTotalProducto
+            // 
+            this.Col_SubTotalProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Col_SubTotalProducto.Frozen = true;
+            this.Col_SubTotalProducto.HeaderText = "SubTotal";
+            this.Col_SubTotalProducto.MinimumWidth = 6;
+            this.Col_SubTotalProducto.Name = "Col_SubTotalProducto";
+            this.Col_SubTotalProducto.Width = 96;
+            // 
+            // Col_FechaVentaProducto
+            // 
+            this.Col_FechaVentaProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Col_FechaVentaProducto.Frozen = true;
+            this.Col_FechaVentaProducto.HeaderText = "Fecha Venta";
+            this.Col_FechaVentaProducto.MinimumWidth = 6;
+            this.Col_FechaVentaProducto.Name = "Col_FechaVentaProducto";
+            this.Col_FechaVentaProducto.Width = 117;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Navy;
@@ -271,7 +334,6 @@
             this.panel7.Controls.Add(this.pictureBox2);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Controls.Add(this.pictureBox3);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel7.Name = "panel7";
@@ -365,69 +427,6 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 65;
             this.pictureBox3.TabStop = false;
-            // 
-            // Col_Id_Venta
-            // 
-            this.Col_Id_Venta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Col_Id_Venta.Frozen = true;
-            this.Col_Id_Venta.HeaderText = "No. Venta";
-            this.Col_Id_Venta.MinimumWidth = 6;
-            this.Col_Id_Venta.Name = "Col_Id_Venta";
-            this.Col_Id_Venta.Width = 102;
-            // 
-            // Col_IdProducto
-            // 
-            this.Col_IdProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Col_IdProducto.Frozen = true;
-            this.Col_IdProducto.HeaderText = "Producto";
-            this.Col_IdProducto.MinimumWidth = 6;
-            this.Col_IdProducto.Name = "Col_IdProducto";
-            this.Col_IdProducto.Width = 98;
-            // 
-            // Col_NombreProducto
-            // 
-            this.Col_NombreProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Col_NombreProducto.Frozen = true;
-            this.Col_NombreProducto.HeaderText = "Nombre";
-            this.Col_NombreProducto.MinimumWidth = 6;
-            this.Col_NombreProducto.Name = "Col_NombreProducto";
-            this.Col_NombreProducto.Width = 93;
-            // 
-            // Col_CantidadProducto
-            // 
-            this.Col_CantidadProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Col_CantidadProducto.Frozen = true;
-            this.Col_CantidadProducto.HeaderText = "Cantidad";
-            this.Col_CantidadProducto.MinimumWidth = 6;
-            this.Col_CantidadProducto.Name = "Col_CantidadProducto";
-            this.Col_CantidadProducto.Width = 98;
-            // 
-            // Col_PrecioProducto
-            // 
-            this.Col_PrecioProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Col_PrecioProducto.Frozen = true;
-            this.Col_PrecioProducto.HeaderText = "Precio";
-            this.Col_PrecioProducto.MinimumWidth = 6;
-            this.Col_PrecioProducto.Name = "Col_PrecioProducto";
-            this.Col_PrecioProducto.Width = 79;
-            // 
-            // Col_SubTotalProducto
-            // 
-            this.Col_SubTotalProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Col_SubTotalProducto.Frozen = true;
-            this.Col_SubTotalProducto.HeaderText = "SubTotal";
-            this.Col_SubTotalProducto.MinimumWidth = 6;
-            this.Col_SubTotalProducto.Name = "Col_SubTotalProducto";
-            this.Col_SubTotalProducto.Width = 96;
-            // 
-            // Col_FechaVentaProducto
-            // 
-            this.Col_FechaVentaProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Col_FechaVentaProducto.Frozen = true;
-            this.Col_FechaVentaProducto.HeaderText = "Fecha Venta";
-            this.Col_FechaVentaProducto.MinimumWidth = 6;
-            this.Col_FechaVentaProducto.Name = "Col_FechaVentaProducto";
-            this.Col_FechaVentaProducto.Width = 117;
             // 
             // reporte_venta
             // 
