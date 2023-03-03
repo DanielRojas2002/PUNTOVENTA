@@ -58,34 +58,35 @@ namespace PUNTOVENTA.CLASES
             else if (tipo == 2)
             {
 
-                //SqlParameter[] Parametros =
-                //{
-                //new SqlParameter("@Accion",2),
-                //new SqlParameter("@P_FechaInicio",Parametro.FechaInicio),
-                //new SqlParameter("@P_FechaFinal",Parametro.FechaFinal)
-                //};
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",2),
+                    new SqlParameter("@P_FechaInicio",Parametro.FechaInicio),
+                    new SqlParameter("@P_FechaFinal",Parametro.FechaFinal),
+                    new SqlParameter("@P_Id_Categoria",Parametro.IdCategoria),
+                    new SqlParameter("@P_Id_Producto",Parametro.IdProducto)
+                };
 
-                //tabla = bdContext.funcionStored("spReportes", Parametros);
+                tabla = bdContext.funcionStored("spReportes", Parametros);
 
-                //if (tabla.Rows.Count > 0)
-                //{
-                //    lista = (from DataRow fila in tabla.Rows
-                //             select new dgReportes
-                //             {
-                //                 Id_Compra = Convert.ToInt16(fila["Id_Compra"].ToString()),
-                //                 IdProducto = Convert.ToInt16(fila["IdProducto"].ToString()),
-                //                 NombreProducto = Convert.ToString(fila["NombreProducto"].ToString()),
-                //                 CantidadProducto = Convert.ToInt16(fila["CantidadProducto"].ToString()),
-                //                 PrecioCompra = float.Parse(fila["PrecioVentaProducto"].ToString()),
-                //                 PrecioVenta = float.Parse(fila["PrecioVentaProducto"].ToString()),
-                //                 SubTotalProducto = float.Parse(fila["SubTotalProducto"].ToString()),
-                //                 FechaCompraProducto = Convert.ToDateTime(fila["FechaCompraProducto"].ToString()),
-                //                 Usuario = Convert.ToString(fila["Usuario"].ToString())
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgReportes
+                             {
+                                 IdEntrada = Convert.ToInt16(fila["Id_Entrada"].ToString()),
+                                 IdProducto = Convert.ToInt16(fila["Id_Producto"].ToString()),
+                                 NombreProducto = Convert.ToString(fila["Nombre"].ToString()),
+                                 CantidadProducto = Convert.ToInt16(fila["Cantidad"].ToString()),
+                                 FechaEntrada = Convert.ToDateTime(fila["FechaEntrada"].ToString()),
+                                 Categoria = Convert.ToString(fila["Categoria"].ToString()),
+                                 Usuario = Convert.ToString(fila["Usuario"].ToString())
 
 
-                //             }
-                //   ).ToList();
-                //}
+
+                             }
+                   ).ToList();
+                }
 
             }
 

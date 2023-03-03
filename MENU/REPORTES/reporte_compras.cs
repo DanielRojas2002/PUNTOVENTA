@@ -1,4 +1,5 @@
 ﻿using Punto_de_Venta;
+using Punto_de_Venta.Clases;
 using PUNTOVENTA.CLASES;
 using PUNTOVENTA.ENTIDAD;
 using System;
@@ -86,9 +87,35 @@ namespace PUNTOVENTA.MENU.REPORTES
 
 
         }
+
+        private void CargaCategoria()
+        {
+            dgCategoria parametro = new dgCategoria
+            {
+
+            };
+
+            List<dgCategoria> lista = c_categoria.LeerCategoria(1, parametro);
+
+
+            if (lista.Count > 0)
+
+            {
+
+                string concatenacion = "";
+                foreach (dgCategoria d in lista)
+                {
+                    concatenacion = "";
+
+                    concatenacion = d.Id_Categoria.ToString() + " " + d.Descripcion.ToString();
+
+                    bx_categoria.Items.Add(concatenacion);
+                }
+            }
+        }
         private void reporte_compras_Load(object sender, EventArgs e)
         {
-
+            CargaCategoria();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -122,28 +149,64 @@ namespace PUNTOVENTA.MENU.REPORTES
             txtFechai.Text = FechaInicio.Value.ToString("dd/MM/yyyy");
             txtFechaf.Text = fechafinal.Value.ToString("dd/MM/yyyy");
 
-            dgReportes parametro = new dgReportes
+            dgReportes parametro = new dgReportes();
+
+            if (bx_categoria.Text!=""  && bx_productos.Text!="")
             {
-                FechaInicio = Convert.ToDateTime(txtFechai.Text),
-                FechaFinal = Convert.ToDateTime(txtFechaf.Text)
-            };
+
+                parametro.FechaInicio = Convert.ToDateTime(txtFechai.Text);
+                parametro.FechaFinal = Convert.ToDateTime(txtFechaf.Text);
+
+                parametro.IdCategoria = Convert.ToInt16(lbl_id_categoria.Text);
+                parametro.IdProducto = Convert.ToInt16(lbl_id_producto.Text);
+
+               
+            }
+
+            else if (bx_categoria.Text != "" && bx_productos.Text == "")
+            {
+
+                parametro.FechaInicio = Convert.ToDateTime(txtFechai.Text);
+                parametro.FechaFinal = Convert.ToDateTime(txtFechaf.Text);
+
+                parametro.IdCategoria = Convert.ToInt16(lbl_id_categoria.Text);
+                parametro.IdProducto = 0;
+
+               
+
+            }
+
+            else
+            {
+
+                parametro.FechaInicio = Convert.ToDateTime(txtFechai.Text);
+                parametro.FechaFinal = Convert.ToDateTime(txtFechaf.Text);
+
+                parametro.IdCategoria = 0;
+                parametro.IdProducto = 0;
+
+              
+            }
+
+
+           
 
 
 
 
-            List<dgReportes> lista = c_reportes.LeerReporte(1, parametro);
+            List<dgReportes> lista = c_reportes.LeerReporte(2, parametro);
 
 
             if (lista.Count > 0)
 
             {
-                string fechaventa;
+                string fechaentrada;
                 foreach (dgReportes d in lista)
                 {
 
-                    fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
-                    dataGridView1.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
-                        d.CantidadProducto.ToString(), d.PrecioProducto.ToString(), d.SubTotalProducto.ToString(), d.Usuario.ToString());
+                    fechaentrada = d.FechaEntrada.Value.ToString("dd/MM/yyyy");
+                    dataGridView1.Rows.Add(d.IdEntrada.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
+                       d.Categoria.ToString(), d.CantidadProducto.ToString(), fechaentrada, d.Usuario.ToString());
 
 
 
@@ -154,11 +217,36 @@ namespace PUNTOVENTA.MENU.REPORTES
             else
             {
 
-                MessageBox.Show("No se encontró reporte de compra este día seleccionado");
+                MessageBox.Show("No se encontró reporte de compras con los filtros seleccionado");
 
             }
         }
+        private void CargaProductos(string idcategoria)
+        {
+            bx_productos.Items.Clear();
+            dgProducto parametro = new dgProducto
+            {
+                Id_Categoria=Convert.ToInt16(idcategoria)
+            };
 
+            List<dgProducto> lista = c_producto.LeerProducto(13, parametro);
+
+
+            if (lista.Count > 0)
+
+            {
+
+                string concatenacion = "";
+                foreach (dgProducto d in lista)
+                {
+                    concatenacion = "";
+
+                    concatenacion = d.Id_Producto.ToString() + " " + d.Nombre.ToString();
+
+                    bx_productos.Items.Add(concatenacion);
+                }
+            }
+        }
         private void bx_categoria_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -170,6 +258,21 @@ namespace PUNTOVENTA.MENU.REPORTES
 
             lbl_id_categoria.Text = idcategoria;
 
+            CargaProductos(idcategoria);
+
+        }
+
+        private void bx_productos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string concatenacion = bx_productos.Text;
+            string[] words = concatenacion.Split(' ');
+            string descripcion, idproducto;
+            idproducto = words[0];
+            descripcion = words[1];
+
+            lbl_id_producto.Text = idproducto;
+
+      
         }
     }
 }

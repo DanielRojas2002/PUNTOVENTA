@@ -38,11 +38,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Col_IdEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bx_productos = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.bx_categoria = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_id_producto = new System.Windows.Forms.Label();
             this.lbl_id_categoria = new System.Windows.Forms.Label();
             this.txtFechaf = new System.Windows.Forms.Label();
             this.txtFechai = new System.Windows.Forms.Label();
@@ -60,11 +68,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaCompraProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
@@ -161,25 +164,90 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Col_IdEntrada,
             this.Id_Producto,
             this.NombreProducto,
+            this.Col_Categoria,
             this.CantidadProducto,
-            this.FechaCompraProducto,
+            this.FechaEntrada,
             this.Usuario});
-            this.dataGridView1.Location = new System.Drawing.Point(51, 360);
+            this.dataGridView1.Location = new System.Drawing.Point(29, 360);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(661, 220);
+            this.dataGridView1.Size = new System.Drawing.Size(683, 220);
             this.dataGridView1.TabIndex = 11;
             // 
-            // comboBox1
+            // Col_IdEntrada
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(491, 302);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 20;
+            this.Col_IdEntrada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Col_IdEntrada.Frozen = true;
+            this.Col_IdEntrada.HeaderText = "No.Entrada";
+            this.Col_IdEntrada.Name = "Col_IdEntrada";
+            this.Col_IdEntrada.ReadOnly = true;
+            this.Col_IdEntrada.Width = 91;
+            // 
+            // Id_Producto
+            // 
+            this.Id_Producto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Id_Producto.Frozen = true;
+            this.Id_Producto.HeaderText = "No. Producto";
+            this.Id_Producto.MinimumWidth = 6;
+            this.Id_Producto.Name = "Id_Producto";
+            this.Id_Producto.ReadOnly = true;
+            this.Id_Producto.Width = 103;
+            // 
+            // NombreProducto
+            // 
+            this.NombreProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.NombreProducto.Frozen = true;
+            this.NombreProducto.HeaderText = "Nombre";
+            this.NombreProducto.MinimumWidth = 6;
+            this.NombreProducto.Name = "NombreProducto";
+            this.NombreProducto.ReadOnly = true;
+            this.NombreProducto.Width = 76;
+            // 
+            // Col_Categoria
+            // 
+            this.Col_Categoria.HeaderText = "Categoria";
+            this.Col_Categoria.Name = "Col_Categoria";
+            this.Col_Categoria.ReadOnly = true;
+            // 
+            // CantidadProducto
+            // 
+            this.CantidadProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.CantidadProducto.HeaderText = "Cantidad";
+            this.CantidadProducto.MinimumWidth = 6;
+            this.CantidadProducto.Name = "CantidadProducto";
+            this.CantidadProducto.ReadOnly = true;
+            this.CantidadProducto.Width = 80;
+            // 
+            // FechaEntrada
+            // 
+            this.FechaEntrada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.FechaEntrada.HeaderText = "Fecha Entrada";
+            this.FechaEntrada.MinimumWidth = 6;
+            this.FechaEntrada.Name = "FechaEntrada";
+            this.FechaEntrada.ReadOnly = true;
+            this.FechaEntrada.Width = 106;
+            // 
+            // Usuario
+            // 
+            this.Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Usuario.HeaderText = "Usuario";
+            this.Usuario.MinimumWidth = 6;
+            this.Usuario.Name = "Usuario";
+            this.Usuario.ReadOnly = true;
+            this.Usuario.Width = 72;
+            // 
+            // bx_productos
+            // 
+            this.bx_productos.FormattingEnabled = true;
+            this.bx_productos.Location = new System.Drawing.Point(491, 302);
+            this.bx_productos.Name = "bx_productos";
+            this.bx_productos.Size = new System.Drawing.Size(121, 23);
+            this.bx_productos.TabIndex = 20;
+            this.bx_productos.SelectedIndexChanged += new System.EventHandler(this.bx_productos_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -215,6 +283,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.Controls.Add(this.lbl_id_producto);
             this.panel1.Controls.Add(this.lbl_id_categoria);
             this.panel1.Controls.Add(this.txtFechaf);
             this.panel1.Controls.Add(this.txtFechai);
@@ -225,7 +294,7 @@
             this.panel1.Controls.Add(this.bx_categoria);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.bx_productos);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label1);
@@ -238,9 +307,21 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(753, 636);
+            this.panel1.Size = new System.Drawing.Size(760, 636);
             this.panel1.TabIndex = 24;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lbl_id_producto
+            // 
+            this.lbl_id_producto.AutoSize = true;
+            this.lbl_id_producto.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_id_producto.ForeColor = System.Drawing.Color.White;
+            this.lbl_id_producto.Location = new System.Drawing.Point(564, 256);
+            this.lbl_id_producto.Name = "lbl_id_producto";
+            this.lbl_id_producto.Size = new System.Drawing.Size(101, 19);
+            this.lbl_id_producto.TabIndex = 86;
+            this.lbl_id_producto.Text = "idproducto";
+            this.lbl_id_producto.Visible = false;
             // 
             // lbl_id_categoria
             // 
@@ -317,7 +398,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(753, 32);
+            this.panel7.Size = new System.Drawing.Size(760, 32);
             this.panel7.TabIndex = 76;
             // 
             // pictureBox9
@@ -325,7 +406,7 @@
             this.pictureBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(718, 3);
+            this.pictureBox9.Location = new System.Drawing.Point(729, 5);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(25, 23);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -338,7 +419,7 @@
             this.pictureBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(678, 3);
+            this.pictureBox8.Location = new System.Drawing.Point(689, 5);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(34, 23);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -351,7 +432,7 @@
             this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(1322, 3);
+            this.pictureBox7.Location = new System.Drawing.Point(1287, 3);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(25, 23);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -363,7 +444,7 @@
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(1284, 4);
+            this.pictureBox4.Location = new System.Drawing.Point(1249, 4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(34, 23);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -375,7 +456,7 @@
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(1974, 3);
+            this.pictureBox5.Location = new System.Drawing.Point(1939, 3);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(34, 23);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -387,7 +468,7 @@
             this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(2014, 3);
+            this.pictureBox6.Location = new System.Drawing.Point(1979, 3);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(25, 23);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -399,7 +480,7 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(2347, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(2312, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(34, 23);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -418,7 +499,7 @@
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(2385, 3);
+            this.pictureBox3.Location = new System.Drawing.Point(2350, 3);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(25, 23);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -429,7 +510,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(294, 128);
+            this.pictureBox1.Location = new System.Drawing.Point(285, 128);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(170, 193);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -445,57 +526,11 @@
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 125;
             // 
-            // Id_Producto
-            // 
-            this.Id_Producto.Frozen = true;
-            this.Id_Producto.HeaderText = "No. Producto";
-            this.Id_Producto.MinimumWidth = 6;
-            this.Id_Producto.Name = "Id_Producto";
-            this.Id_Producto.ReadOnly = true;
-            this.Id_Producto.Width = 80;
-            // 
-            // NombreProducto
-            // 
-            this.NombreProducto.Frozen = true;
-            this.NombreProducto.HeaderText = "Nombre";
-            this.NombreProducto.MinimumWidth = 6;
-            this.NombreProducto.Name = "NombreProducto";
-            this.NombreProducto.ReadOnly = true;
-            this.NombreProducto.Width = 75;
-            // 
-            // CantidadProducto
-            // 
-            this.CantidadProducto.Frozen = true;
-            this.CantidadProducto.HeaderText = "Cantidad";
-            this.CantidadProducto.MinimumWidth = 6;
-            this.CantidadProducto.Name = "CantidadProducto";
-            this.CantidadProducto.ReadOnly = true;
-            this.CantidadProducto.Width = 80;
-            // 
-            // FechaCompraProducto
-            // 
-            this.FechaCompraProducto.Frozen = true;
-            this.FechaCompraProducto.HeaderText = "Fecha Compra";
-            this.FechaCompraProducto.MinimumWidth = 6;
-            this.FechaCompraProducto.Name = "FechaCompraProducto";
-            this.FechaCompraProducto.ReadOnly = true;
-            this.FechaCompraProducto.Width = 75;
-            // 
-            // Usuario
-            // 
-            this.Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Usuario.Frozen = true;
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.MinimumWidth = 6;
-            this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
-            this.Usuario.Width = 72;
-            // 
             // reporte_compras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 636);
+            this.ClientSize = new System.Drawing.Size(760, 636);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "reporte_compras";
@@ -532,7 +567,7 @@
         private Label label2;
         private Label label1;
         private DataGridView dataGridView1;
-        private ComboBox comboBox1;
+        private ComboBox bx_productos;
         private Label label5;
         private Label label6;
         private ComboBox bx_categoria;
@@ -554,10 +589,13 @@
         private Label txtFechaf;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         public Label lbl_id_categoria;
+        public Label lbl_id_producto;
+        private DataGridViewTextBoxColumn Col_IdEntrada;
         private DataGridViewTextBoxColumn Id_Producto;
         private DataGridViewTextBoxColumn NombreProducto;
+        private DataGridViewTextBoxColumn Col_Categoria;
         private DataGridViewTextBoxColumn CantidadProducto;
-        private DataGridViewTextBoxColumn FechaCompraProducto;
+        private DataGridViewTextBoxColumn FechaEntrada;
         private DataGridViewTextBoxColumn Usuario;
     }
 }

@@ -295,5 +295,13 @@ namespace Punto_de_Venta
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            reporte_compras forms = new reporte_compras();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
+        }
     }
 }
