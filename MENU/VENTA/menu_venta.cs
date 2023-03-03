@@ -86,7 +86,7 @@ namespace PUNTOVENTA.MENU.VENTA
             lbl_total.Text = Convert.ToString(total);
         }
 
-        private void CargaProductosOrden()
+        public void CargaProductosOrden()
         {
 
 
@@ -921,6 +921,10 @@ namespace PUNTOVENTA.MENU.VENTA
             formulario.txt_usuario.Text = Convert.ToString(retorno);
             formulario.Show();
 
+            
+
+
+
 
 
         }
@@ -1622,10 +1626,10 @@ namespace PUNTOVENTA.MENU.VENTA
 
         private void label12_MouseMove(object sender, MouseEventArgs e)
         {
-            CargaProductosOrden();
+           // CargaProductosOrden();
         }
 
-        private void panel6_MouseMove(object sender, MouseEventArgs e)
+        public void panel6_MouseMove(object sender, MouseEventArgs e)
         {
             CargaProductosOrden();
         }

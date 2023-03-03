@@ -1,4 +1,6 @@
-﻿using PUNTOVENTA.CLASES;
+﻿using Microsoft.VisualBasic;
+using Punto_de_Venta;
+using PUNTOVENTA.CLASES;
 using PUNTOVENTA.ENTIDAD;
 using System;
 using System.Collections.Generic;
@@ -9,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PUNTOVENTA.MENU.VENTA.PRODUCTO
 {
@@ -69,7 +72,7 @@ namespace PUNTOVENTA.MENU.VENTA.PRODUCTO
 
 
 
-        private void btn_quitar_producto_Click(object sender, EventArgs e)
+        private async void btn_quitar_producto_Click(object sender, EventArgs e)
         {
             dgVentaDetalle parametroeliminarproductoindividual = new dgVentaDetalle
             {
@@ -85,10 +88,10 @@ namespace PUNTOVENTA.MENU.VENTA.PRODUCTO
             control = c_ventadetalle.EliminarVentaDetalle(parametroeliminarproductoindividual);
 
 
-           
 
+            menu_venta frm = (menu_venta)Application.OpenForms["menu_venta"];
 
-
+            frm.CargaProductosOrden();
 
         }
 

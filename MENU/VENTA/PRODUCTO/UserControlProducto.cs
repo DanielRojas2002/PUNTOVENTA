@@ -12,6 +12,7 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PUNTOVENTA.MENU.VENTA.PRODUCTO
 {
@@ -123,13 +124,13 @@ namespace PUNTOVENTA.MENU.VENTA.PRODUCTO
         }
 
        
-        private void btn_ordenar_Click(object sender, EventArgs e)
+        private async void btn_ordenar_Click(object sender, EventArgs e)
         {
             int cantidadaordenar = 0,stock=0;
 
-            string idproducto = "";
+            //string idproducto = "";
 
-            idproducto = lbl_id_producto.Text;
+            //idproducto = lbl_id_producto.Text;
 
             cantidadaordenar = Convert.ToInt16(txt_cantidad_a_agregar.Value);
 
@@ -152,16 +153,27 @@ namespace PUNTOVENTA.MENU.VENTA.PRODUCTO
                     numventa = Convert.ToInt16(_numventa);
                     InsertarProductos(numventa);
 
+                    menu_venta frm = (menu_venta)Application.OpenForms["menu_venta"];
+
+
+
+                    frm.CargaProductosOrden();
+
+                   
+
 
                 }
             }
             
+
 
            
 
             
           
         }
+
+
 
         private void lbl_numventa_Click(object sender, EventArgs e)
         {
