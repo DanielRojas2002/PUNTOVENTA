@@ -115,5 +115,61 @@ namespace PUNTOVENTA.MENU.REPORTES
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            txtFechai.Text = FechaInicio.Value.ToString("dd/MM/yyyy");
+            txtFechaf.Text = fechafinal.Value.ToString("dd/MM/yyyy");
+
+            dgReportes parametro = new dgReportes
+            {
+                FechaInicio = Convert.ToDateTime(txtFechai.Text),
+                FechaFinal = Convert.ToDateTime(txtFechaf.Text)
+            };
+
+
+
+
+            List<dgReportes> lista = c_reportes.LeerReporte(1, parametro);
+
+
+            if (lista.Count > 0)
+
+            {
+                string fechaventa;
+                foreach (dgReportes d in lista)
+                {
+
+                    fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
+                    dataGridView1.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
+                        d.CantidadProducto.ToString(), d.PrecioProducto.ToString(), d.SubTotalProducto.ToString(), d.Usuario.ToString());
+
+
+
+                }
+
+            }
+
+            else
+            {
+
+                MessageBox.Show("No se encontró reporte de compra este día seleccionado");
+
+            }
+        }
+
+        private void bx_categoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            string concatenacion = bx_categoria.Text;
+            string[] words = concatenacion.Split(' ');
+            string descripcion, idcategoria;
+            idcategoria = words[0];
+            descripcion = words[1];
+
+            lbl_id_categoria.Text = idcategoria;
+
+        }
     }
 }

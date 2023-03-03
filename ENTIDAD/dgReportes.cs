@@ -19,5 +19,10 @@ namespace PUNTOVENTA.ENTIDAD
         public DateTime? FechaVentaProducto { get; set; }
         public DateTime? FechaInicio { get; set; }
         public DateTime? FechaFinal { get; set; }
+        public int? Id_Compra { get; set; }
+        public float? PrecioCompra { get; set; }
+        public float? PrecioVenta { get; set; }
+        public DateTime? FechaCompraProducto { get; set; }
+
     }
 }

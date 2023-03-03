@@ -32,17 +32,30 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.fechafinal = new System.Windows.Forms.DateTimePicker();
+            this.FechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Id_Compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioCompraProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioVentaProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotalProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaCompraProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.bx_categoria = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtFechaf = new System.Windows.Forms.Label();
+            this.txtFechai = new System.Windows.Forms.Label();
+            this.lbl_id = new System.Windows.Forms.Label();
+            this.btn_regresar = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -54,12 +67,11 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_regresar = new System.Windows.Forms.PictureBox();
-            this.lbl_id = new System.Windows.Forms.Label();
-            this.txtFechai = new System.Windows.Forms.Label();
-            this.txtFechaf = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl_id_categoria = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -70,7 +82,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -103,22 +114,23 @@
             this.button1.TabIndex = 17;
             this.button1.Text = "Generar Reporte";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dateTimePicker2
+            // fechafinal
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(561, 198);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(228, 27);
-            this.dateTimePicker2.TabIndex = 16;
+            this.fechafinal.Location = new System.Drawing.Point(561, 198);
+            this.fechafinal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.fechafinal.Name = "fechafinal";
+            this.fechafinal.Size = new System.Drawing.Size(228, 27);
+            this.fechafinal.TabIndex = 16;
             // 
-            // dateTimePicker1
+            // FechaInicio
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(77, 198);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(228, 27);
-            this.dateTimePicker1.TabIndex = 15;
+            this.FechaInicio.Location = new System.Drawing.Point(77, 198);
+            this.FechaInicio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.FechaInicio.Name = "FechaInicio";
+            this.FechaInicio.Size = new System.Drawing.Size(228, 27);
+            this.FechaInicio.TabIndex = 15;
             // 
             // label3
             // 
@@ -156,13 +168,105 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id_Compra,
+            this.Id_Producto,
+            this.NombreProducto,
+            this.CantidadProducto,
+            this.PrecioCompraProducto,
+            this.PrecioVentaProducto,
+            this.SubTotalProducto,
+            this.FechaCompraProducto,
+            this.Usuario});
             this.dataGridView1.Location = new System.Drawing.Point(58, 480);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(754, 293);
+            this.dataGridView1.Size = new System.Drawing.Size(756, 293);
             this.dataGridView1.TabIndex = 11;
+            // 
+            // Id_Compra
+            // 
+            this.Id_Compra.Frozen = true;
+            this.Id_Compra.HeaderText = "No. Compra";
+            this.Id_Compra.MinimumWidth = 6;
+            this.Id_Compra.Name = "Id_Compra";
+            this.Id_Compra.ReadOnly = true;
+            this.Id_Compra.Width = 80;
+            // 
+            // Id_Producto
+            // 
+            this.Id_Producto.Frozen = true;
+            this.Id_Producto.HeaderText = "No. Producto";
+            this.Id_Producto.MinimumWidth = 6;
+            this.Id_Producto.Name = "Id_Producto";
+            this.Id_Producto.ReadOnly = true;
+            this.Id_Producto.Width = 80;
+            // 
+            // NombreProducto
+            // 
+            this.NombreProducto.Frozen = true;
+            this.NombreProducto.HeaderText = "Nombre";
+            this.NombreProducto.MinimumWidth = 6;
+            this.NombreProducto.Name = "NombreProducto";
+            this.NombreProducto.ReadOnly = true;
+            this.NombreProducto.Width = 75;
+            // 
+            // CantidadProducto
+            // 
+            this.CantidadProducto.Frozen = true;
+            this.CantidadProducto.HeaderText = "Cantidad";
+            this.CantidadProducto.MinimumWidth = 6;
+            this.CantidadProducto.Name = "CantidadProducto";
+            this.CantidadProducto.ReadOnly = true;
+            this.CantidadProducto.Width = 80;
+            // 
+            // PrecioCompraProducto
+            // 
+            this.PrecioCompraProducto.Frozen = true;
+            this.PrecioCompraProducto.HeaderText = "Precio Compra";
+            this.PrecioCompraProducto.MinimumWidth = 6;
+            this.PrecioCompraProducto.Name = "PrecioCompraProducto";
+            this.PrecioCompraProducto.ReadOnly = true;
+            this.PrecioCompraProducto.Width = 80;
+            // 
+            // PrecioVentaProducto
+            // 
+            this.PrecioVentaProducto.Frozen = true;
+            this.PrecioVentaProducto.HeaderText = "Precio Venta";
+            this.PrecioVentaProducto.MinimumWidth = 6;
+            this.PrecioVentaProducto.Name = "PrecioVentaProducto";
+            this.PrecioVentaProducto.ReadOnly = true;
+            this.PrecioVentaProducto.Width = 70;
+            // 
+            // SubTotalProducto
+            // 
+            this.SubTotalProducto.Frozen = true;
+            this.SubTotalProducto.HeaderText = "SubTotal";
+            this.SubTotalProducto.MinimumWidth = 6;
+            this.SubTotalProducto.Name = "SubTotalProducto";
+            this.SubTotalProducto.ReadOnly = true;
+            this.SubTotalProducto.Width = 75;
+            // 
+            // FechaCompraProducto
+            // 
+            this.FechaCompraProducto.Frozen = true;
+            this.FechaCompraProducto.HeaderText = "Fecha Compra";
+            this.FechaCompraProducto.MinimumWidth = 6;
+            this.FechaCompraProducto.Name = "FechaCompraProducto";
+            this.FechaCompraProducto.ReadOnly = true;
+            this.FechaCompraProducto.Width = 75;
+            // 
+            // Usuario
+            // 
+            this.Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Usuario.Frozen = true;
+            this.Usuario.HeaderText = "Usuario";
+            this.Usuario.MinimumWidth = 6;
+            this.Usuario.Name = "Usuario";
+            this.Usuario.ReadOnly = true;
+            this.Usuario.Width = 88;
             // 
             // comboBox1
             // 
@@ -195,34 +299,36 @@
             this.label6.TabIndex = 23;
             this.label6.Text = "Categoria:";
             // 
-            // comboBox2
+            // bx_categoria
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(167, 397);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(138, 28);
-            this.comboBox2.TabIndex = 22;
+            this.bx_categoria.FormattingEnabled = true;
+            this.bx_categoria.Location = new System.Drawing.Point(167, 397);
+            this.bx_categoria.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bx_categoria.Name = "bx_categoria";
+            this.bx_categoria.Size = new System.Drawing.Size(138, 28);
+            this.bx_categoria.TabIndex = 22;
+            this.bx_categoria.SelectedIndexChanged += new System.EventHandler(this.bx_categoria_SelectedIndexChanged);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.Controls.Add(this.lbl_id_categoria);
             this.panel1.Controls.Add(this.txtFechaf);
             this.panel1.Controls.Add(this.txtFechai);
             this.panel1.Controls.Add(this.lbl_id);
             this.panel1.Controls.Add(this.btn_regresar);
             this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.bx_categoria);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Controls.Add(this.fechafinal);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.FechaInicio);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -233,6 +339,55 @@
             this.panel1.Size = new System.Drawing.Size(861, 848);
             this.panel1.TabIndex = 24;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // txtFechaf
+            // 
+            this.txtFechaf.AutoSize = true;
+            this.txtFechaf.Font = new System.Drawing.Font("Franklin Gothic Heavy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtFechaf.ForeColor = System.Drawing.Color.White;
+            this.txtFechaf.Location = new System.Drawing.Point(722, 139);
+            this.txtFechaf.Name = "txtFechaf";
+            this.txtFechaf.Size = new System.Drawing.Size(127, 25);
+            this.txtFechaf.TabIndex = 84;
+            this.txtFechaf.Text = "Fecha Final:";
+            this.txtFechaf.Visible = false;
+            // 
+            // txtFechai
+            // 
+            this.txtFechai.AutoSize = true;
+            this.txtFechai.Font = new System.Drawing.Font("Franklin Gothic Heavy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtFechai.ForeColor = System.Drawing.Color.White;
+            this.txtFechai.Location = new System.Drawing.Point(193, 139);
+            this.txtFechai.Name = "txtFechai";
+            this.txtFechai.Size = new System.Drawing.Size(132, 25);
+            this.txtFechai.TabIndex = 83;
+            this.txtFechai.Text = "Fecha Inicio:";
+            this.txtFechai.Visible = false;
+            // 
+            // lbl_id
+            // 
+            this.lbl_id.AutoSize = true;
+            this.lbl_id.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_id.ForeColor = System.Drawing.Color.White;
+            this.lbl_id.Location = new System.Drawing.Point(77, 98);
+            this.lbl_id.Name = "lbl_id";
+            this.lbl_id.Size = new System.Drawing.Size(30, 23);
+            this.lbl_id.TabIndex = 82;
+            this.lbl_id.Text = "id";
+            this.lbl_id.Visible = false;
+            // 
+            // btn_regresar
+            // 
+            this.btn_regresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_regresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_regresar.Image")));
+            this.btn_regresar.Location = new System.Drawing.Point(12, 61);
+            this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_regresar.Name = "btn_regresar";
+            this.btn_regresar.Size = new System.Drawing.Size(49, 35);
+            this.btn_regresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_regresar.TabIndex = 81;
+            this.btn_regresar.TabStop = false;
+            this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
             // 
             // panel7
             // 
@@ -379,54 +534,26 @@
             this.pictureBox1.TabIndex = 54;
             this.pictureBox1.TabStop = false;
             // 
-            // btn_regresar
+            // dataGridViewTextBoxColumn1
             // 
-            this.btn_regresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_regresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_regresar.Image")));
-            this.btn_regresar.Location = new System.Drawing.Point(12, 61);
-            this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(49, 35);
-            this.btn_regresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_regresar.TabIndex = 81;
-            this.btn_regresar.TabStop = false;
-            this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
+            this.dataGridViewTextBoxColumn1.Frozen = true;
+            this.dataGridViewTextBoxColumn1.HeaderText = "No. Compra";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 125;
             // 
-            // lbl_id
+            // lbl_id_categoria
             // 
-            this.lbl_id.AutoSize = true;
-            this.lbl_id.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lbl_id.ForeColor = System.Drawing.Color.White;
-            this.lbl_id.Location = new System.Drawing.Point(77, 98);
-            this.lbl_id.Name = "lbl_id";
-            this.lbl_id.Size = new System.Drawing.Size(30, 23);
-            this.lbl_id.TabIndex = 82;
-            this.lbl_id.Text = "id";
-            this.lbl_id.Visible = false;
-            // 
-            // txtFechai
-            // 
-            this.txtFechai.AutoSize = true;
-            this.txtFechai.Font = new System.Drawing.Font("Franklin Gothic Heavy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtFechai.ForeColor = System.Drawing.Color.White;
-            this.txtFechai.Location = new System.Drawing.Point(193, 139);
-            this.txtFechai.Name = "txtFechai";
-            this.txtFechai.Size = new System.Drawing.Size(132, 25);
-            this.txtFechai.TabIndex = 83;
-            this.txtFechai.Text = "Fecha Inicio:";
-            this.txtFechai.Visible = false;
-            // 
-            // txtFechaf
-            // 
-            this.txtFechaf.AutoSize = true;
-            this.txtFechaf.Font = new System.Drawing.Font("Franklin Gothic Heavy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtFechaf.ForeColor = System.Drawing.Color.White;
-            this.txtFechaf.Location = new System.Drawing.Point(722, 139);
-            this.txtFechaf.Name = "txtFechaf";
-            this.txtFechaf.Size = new System.Drawing.Size(127, 25);
-            this.txtFechaf.TabIndex = 84;
-            this.txtFechaf.Text = "Fecha Final:";
-            this.txtFechaf.Visible = false;
+            this.lbl_id_categoria.AutoSize = true;
+            this.lbl_id_categoria.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_id_categoria.ForeColor = System.Drawing.Color.White;
+            this.lbl_id_categoria.Location = new System.Drawing.Point(167, 342);
+            this.lbl_id_categoria.Name = "lbl_id_categoria";
+            this.lbl_id_categoria.Size = new System.Drawing.Size(125, 23);
+            this.lbl_id_categoria.TabIndex = 85;
+            this.lbl_id_categoria.Text = "idcategoria";
+            this.lbl_id_categoria.Visible = false;
             // 
             // reporte_compras
             // 
@@ -437,12 +564,14 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "reporte_compras";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "reporte_compras";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.reporte_compras_FormClosing);
             this.Load += new System.EventHandler(this.reporte_compras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
@@ -453,7 +582,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -463,8 +591,8 @@
         private Label label4;
         private Button button2;
         private Button button1;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker fechafinal;
+        private DateTimePicker FechaInicio;
         private Label label3;
         private Label label2;
         private Label label1;
@@ -472,7 +600,7 @@
         private ComboBox comboBox1;
         private Label label5;
         private Label label6;
-        private ComboBox comboBox2;
+        private ComboBox bx_categoria;
         private Panel panel1;
         private PictureBox pictureBox1;
         private Panel panel7;
@@ -489,5 +617,16 @@
         public Label lbl_id;
         private Label txtFechai;
         private Label txtFechaf;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn Id_Compra;
+        private DataGridViewTextBoxColumn Id_Producto;
+        private DataGridViewTextBoxColumn NombreProducto;
+        private DataGridViewTextBoxColumn CantidadProducto;
+        private DataGridViewTextBoxColumn PrecioCompraProducto;
+        private DataGridViewTextBoxColumn PrecioVentaProducto;
+        private DataGridViewTextBoxColumn SubTotalProducto;
+        private DataGridViewTextBoxColumn FechaCompraProducto;
+        private DataGridViewTextBoxColumn Usuario;
+        public Label lbl_id_categoria;
     }
 }
