@@ -290,5 +290,10 @@ namespace Punto_de_Venta
         {
 
         }
+
+        private void btn_caja_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

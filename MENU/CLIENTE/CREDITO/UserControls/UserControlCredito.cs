@@ -512,10 +512,10 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
                         {
                             debemsj = float.Parse(lbl_total_venta.Text) - float.Parse(d.CantidadPagada.ToString());
 
-                            titulomsj = "PAGAR TOTAL DEL CREDITO " + "\n";
+                            titulomsj = "PAGAR ABONO DEL CREDITO " + "\n";
                             concatanacionnombre = "Nombre Completo: " + d.Nombre.ToString() + " " + d.Apellido_Paterno.ToString() + " " + d.Apellido_Materno.ToString() + "\n";
                             concatenacionotrosdatos = "Domicilio: " + d.Direccion.ToString() + "\n" + "Telefono: " + d.Telefono.ToString() + "\n" + "Correo: " + d.Correo.ToString() + "\n";
-                            concatenaciondatosventa = "Total del Credito: " + lbl_total_venta.Text + "\n";
+                            concatenaciondatosventa = "Total del Credito: " + lbl_total_venta.Text + "\n" +"Credito faltante:"+lbl_total_faltante.Text+"\n"+ "Abono: "+txt_paga_con.Text.ToString();
 
                             concatenacionfinal = titulomsj + carateres + "\n" + concatanacionnombre + concatenacionotrosdatos + carateres + "\n" + concatenaciondatosventa;
                         }
@@ -787,7 +787,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
                         titulomsj = "PAGAR TOTAL DEL CREDITO " + "\n";
                         concatanacionnombre = " Transferencia por:Nombre Completo: " + d.Nombre.ToString() + " " + d.Apellido_Paterno.ToString() + " " + d.Apellido_Materno.ToString() + "\n";
                         concatenacionotrosdatos = "Domicilio: " + d.Direccion.ToString() + "\n" + "Telefono: " + d.Telefono.ToString() + "\n" + "Correo: " + d.Correo.ToString() + "\n";
-                        concatenaciondatosventa = "Total del Credito: " + lbl_total_venta.Text + "\n";
+                        concatenaciondatosventa = "Total del Credito: " + lbl_total_venta.Text + "\n" + "Credito Faltante: " + lbl_total_faltante.Text + "\n"+ "Abono:" + lbl_total_faltante.Text;
 
                         concatenacionfinal = titulomsj + carateres + "\n" + concatanacionnombre + concatenacionotrosdatos + carateres + "\n" + concatenaciondatosventa;
                     }

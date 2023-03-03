@@ -95,6 +95,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pnl_izq = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.btn_caja = new System.Windows.Forms.Button();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
@@ -138,6 +142,8 @@
             this.panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.pnl_izq.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.SuspendLayout();
@@ -512,7 +518,7 @@
             this.pnl_ventas.Controls.Add(this.panel2);
             this.pnl_ventas.Controls.Add(this.btn_venta);
             this.pnl_ventas.Controls.Add(this.pictureBox1);
-            this.pnl_ventas.Location = new System.Drawing.Point(9, 192);
+            this.pnl_ventas.Location = new System.Drawing.Point(9, 147);
             this.pnl_ventas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnl_ventas.Name = "pnl_ventas";
             this.pnl_ventas.Size = new System.Drawing.Size(304, 43);
@@ -564,7 +570,7 @@
             this.pnl_productos.Controls.Add(this.panel6);
             this.pnl_productos.Controls.Add(this.btn_productos);
             this.pnl_productos.Controls.Add(this.pictureBox2);
-            this.pnl_productos.Location = new System.Drawing.Point(9, 247);
+            this.pnl_productos.Location = new System.Drawing.Point(9, 202);
             this.pnl_productos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnl_productos.Name = "pnl_productos";
             this.pnl_productos.Size = new System.Drawing.Size(304, 43);
@@ -615,7 +621,7 @@
             this.pnl_provedores.Controls.Add(this.panel8);
             this.pnl_provedores.Controls.Add(this.btn_provedores);
             this.pnl_provedores.Controls.Add(this.pictureBox3);
-            this.pnl_provedores.Location = new System.Drawing.Point(9, 355);
+            this.pnl_provedores.Location = new System.Drawing.Point(9, 310);
             this.pnl_provedores.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnl_provedores.Name = "pnl_provedores";
             this.pnl_provedores.Size = new System.Drawing.Size(304, 43);
@@ -668,7 +674,7 @@
             this.pnl_r.Controls.Add(this.panel12);
             this.pnl_r.Controls.Add(this.btn_reportes);
             this.pnl_r.Controls.Add(this.pictureBox5);
-            this.pnl_r.Location = new System.Drawing.Point(9, 411);
+            this.pnl_r.Location = new System.Drawing.Point(9, 366);
             this.pnl_r.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnl_r.Name = "pnl_r";
             this.pnl_r.Size = new System.Drawing.Size(304, 43);
@@ -720,7 +726,7 @@
             this.pnl_seguridad.Controls.Add(this.panel14);
             this.pnl_seguridad.Controls.Add(this.btn_seguridad);
             this.pnl_seguridad.Controls.Add(this.pictureBox6);
-            this.pnl_seguridad.Location = new System.Drawing.Point(9, 671);
+            this.pnl_seguridad.Location = new System.Drawing.Point(9, 663);
             this.pnl_seguridad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnl_seguridad.Name = "pnl_seguridad";
             this.pnl_seguridad.Size = new System.Drawing.Size(304, 43);
@@ -772,7 +778,7 @@
             this.pictureBox7.Location = new System.Drawing.Point(0, 8);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(283, 165);
+            this.pictureBox7.Size = new System.Drawing.Size(314, 131);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 3;
             this.pictureBox7.TabStop = false;
@@ -782,7 +788,7 @@
             this.pnl_reportes.Controls.Add(this.panel7);
             this.pnl_reportes.Controls.Add(this.panel18);
             this.pnl_reportes.Controls.Add(this.panel20);
-            this.pnl_reportes.Location = new System.Drawing.Point(33, 460);
+            this.pnl_reportes.Location = new System.Drawing.Point(33, 415);
             this.pnl_reportes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnl_reportes.Name = "pnl_reportes";
             this.pnl_reportes.Size = new System.Drawing.Size(250, 189);
@@ -940,6 +946,7 @@
             // pnl_izq
             // 
             this.pnl_izq.BackColor = System.Drawing.Color.Black;
+            this.pnl_izq.Controls.Add(this.panel4);
             this.pnl_izq.Controls.Add(this.panel5);
             this.pnl_izq.Controls.Add(this.pnl_reportes);
             this.pnl_izq.Controls.Add(this.panel16);
@@ -957,12 +964,63 @@
             this.pnl_izq.TabIndex = 2;
             this.pnl_izq.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_izq_Paint);
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.panel11);
+            this.panel4.Controls.Add(this.btn_caja);
+            this.panel4.Controls.Add(this.pictureBox15);
+            this.panel4.Location = new System.Drawing.Point(9, 612);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(304, 43);
+            this.panel4.TabIndex = 9;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel11.Location = new System.Drawing.Point(39, 0);
+            this.panel11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(17, 43);
+            this.panel11.TabIndex = 2;
+            // 
+            // btn_caja
+            // 
+            this.btn_caja.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_caja.FlatAppearance.BorderSize = 0;
+            this.btn_caja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btn_caja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_caja.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btn_caja.ForeColor = System.Drawing.Color.White;
+            this.btn_caja.Location = new System.Drawing.Point(55, 0);
+            this.btn_caja.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_caja.Name = "btn_caja";
+            this.btn_caja.Size = new System.Drawing.Size(246, 43);
+            this.btn_caja.TabIndex = 0;
+            this.btn_caja.Text = "CAJA";
+            this.btn_caja.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btn_caja.UseVisualStyleBackColor = true;
+            this.btn_caja.Click += new System.EventHandler(this.btn_caja_Click);
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
+            this.pictureBox15.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(32, 43);
+            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox15.TabIndex = 1;
+            this.pictureBox15.TabStop = false;
+            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.panel10);
             this.panel5.Controls.Add(this.pictureBox11);
             this.panel5.Controls.Add(this.btn_cliente);
-            this.panel5.Location = new System.Drawing.Point(9, 303);
+            this.panel5.Location = new System.Drawing.Point(9, 258);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(304, 43);
@@ -1068,6 +1126,8 @@
             this.panel20.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.pnl_izq.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.ResumeLayout(false);
@@ -1146,5 +1206,9 @@
         private Panel panel5;
         private Panel panel10;
         private PictureBox pictureBox11;
+        private Panel panel4;
+        private Panel panel11;
+        private Button btn_caja;
+        private PictureBox pictureBox15;
     }
 }
