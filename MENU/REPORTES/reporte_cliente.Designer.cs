@@ -69,6 +69,7 @@
             this.button1.TabIndex = 17;
             this.button1.Text = "Generar Reporte";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -133,6 +134,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "reporte_cliente";
             this.Text = "reporte_cliente";
+            this.Load += new System.EventHandler(this.reporte_cliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);

@@ -16,5 +16,15 @@ namespace PUNTOVENTA.MENU.REPORTES
         {
             InitializeComponent();
         }
+
+        private void reporte_cliente_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
