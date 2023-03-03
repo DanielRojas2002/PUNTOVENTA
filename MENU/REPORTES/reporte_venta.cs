@@ -53,9 +53,9 @@ namespace PUNTOVENTA.MENU.REPORTES
                 foreach (dgReportes d in lista)
                 {
 
-                    fechaventa = d.FechaCompraProducto.Value.ToString("dd/MM/yyyy");
-                    dataGridView1.Rows.Add(d.Id_Compra.ToString(),d.IdProducto.ToString(),d.NombreProducto.ToString(),
-                        d.CantidadProducto.ToString(),d.PrecioCompra.ToString(),d.PrecioVenta.ToString(),d.SubTotalProducto.ToString(), fechaventa,d.Usuario.ToString());
+                    fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
+                    dataGridView1.Rows.Add(d.Id_Venta.ToString(),d.IdProducto.ToString(),d.NombreProducto.ToString(),
+                        d.CantidadProducto.ToString(),d.PrecioProducto.ToString(),d.SubTotalProducto.ToString(), fechaventa,d.Usuario.ToString());
                     
 
 
