@@ -326,7 +326,8 @@ namespace Punto_de_Venta.Clases
                                  Id_Medida = Convert.ToInt16(fila["Id_Medida"].ToString()),
                                  Nombre = Convert.ToString(fila["Nombre"].ToString()),
                                  StockInicial = Convert.ToInt16(fila["Stock"].ToString()),
-                                 PrecioVenta = float.Parse(fila["PrecioVenta"].ToString())
+                                 PrecioVenta = float.Parse(fila["PrecioVenta"].ToString()),
+                                 Iva = float.Parse(fila["Iva"].ToString())
 
 
 
@@ -365,8 +366,8 @@ namespace Punto_de_Venta.Clases
                                  Id_Medida = Convert.ToInt16(fila["Id_Medida"].ToString()),
                                  Nombre = Convert.ToString(fila["Nombre"].ToString()),
                                  StockInicial = Convert.ToInt16(fila["Stock"].ToString()),
-                                 PrecioVenta = float.Parse(fila["PrecioVenta"].ToString())
-
+                                 PrecioVenta = float.Parse(fila["PrecioVenta"].ToString()),
+                                 Iva = float.Parse(fila["Iva"].ToString())
 
 
 

@@ -250,7 +250,7 @@ namespace PUNTOVENTA.MENU.VENTA
             {
                 flowLayoutPanel_productos.Controls.Clear();
                 int  idcategoria, idmedida, stock;
-                float precioventa;
+                float precioventa,iva,precioventamasiva;
                 string nombre, categoriadescripcion, medidadescripcion, descripcion, idproducto;
                 foreach (dgProducto d in lista)
                 {
@@ -261,6 +261,8 @@ namespace PUNTOVENTA.MENU.VENTA
                     descripcion = Convert.ToString(d.Descripcion.ToString());
                     precioventa = float.Parse(d.PrecioVenta.ToString());
                     nombre = Convert.ToString(d.Nombre.ToString());
+                    iva = float.Parse(d.Iva.ToString());
+
 
                     dgCategoria parametro2 = new dgCategoria
                     {
@@ -309,7 +311,8 @@ namespace PUNTOVENTA.MENU.VENTA
 
                         Productos[contadorproductos].NumVenta = Convert.ToString(_num_venta);
 
-                        Productos[contadorproductos].PrecioProducto = Convert.ToString(precioventa);
+                        precioventamasiva = iva + precioventa;
+                        Productos[contadorproductos].PrecioProducto = Convert.ToString(precioventamasiva);
 
                         Productos[contadorproductos].CategoriaProducto = categoriadescripcion;
 
@@ -427,7 +430,7 @@ namespace PUNTOVENTA.MENU.VENTA
             {
                 flowLayoutPanel_productos.Controls.Clear();
                 int idcategoriaa, idmedidaa, stock;
-                float precioventa;
+                float precioventa,iva,preciomasiva;
                 string nombre, categoriadescripcion, medidadescripcion, descripcion, idproducto;
                 foreach (dgProducto d in listafiltrado)
                 {
@@ -438,6 +441,7 @@ namespace PUNTOVENTA.MENU.VENTA
                     descripcion = Convert.ToString(d.Descripcion.ToString());
                     precioventa = float.Parse(d.PrecioVenta.ToString());
                     nombre = Convert.ToString(d.Nombre.ToString());
+                    iva = float.Parse(d.Iva.ToString());
 
                     dgCategoria parametro2 = new dgCategoria
                     {
@@ -486,7 +490,8 @@ namespace PUNTOVENTA.MENU.VENTA
 
                         Productos[contadorproductos].NumVenta = Convert.ToString(_num_venta);
 
-                        Productos[contadorproductos].PrecioProducto = Convert.ToString(precioventa);
+                        preciomasiva = precioventa + iva;
+                        Productos[contadorproductos].PrecioProducto = Convert.ToString(preciomasiva);
 
                         Productos[contadorproductos].CategoriaProducto = categoriadescripcion;
 
@@ -1055,6 +1060,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
             
                             Ticket1.TextoCentro("Recibo de venta realizada por Efectivo");
+                            Ticket1.TextoCentro("Los Precios ya contienen IVA");
                             Ticket1.TextoIzquierda("Nombre del cliente: Cliente Efectivo");
 
                             Ticket1.TextoIzquierda(" -> Fecha de venta: " + DateTime.Now.ToShortDateString() + "  ->Hora: " + DateTime.Now.ToShortTimeString());
@@ -1235,6 +1241,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
 
                         Ticket1.TextoCentro("Recibo de venta realizada por Transferencia");
+                        Ticket1.TextoCentro("Los Precios ya contienen IVA");
                         Ticket1.TextoIzquierda("Nombre del cliente: " + txt_nombre_transferencia.Text);
 
                         Ticket1.TextoIzquierda(" -> Fecha de venta: " + DateTime.Now.ToShortDateString() + "  ->Hora: " + DateTime.Now.ToShortTimeString());
@@ -1479,6 +1486,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
 
                                 Ticket1.TextoCentro("Recibo de venta realizada por Credito");
+                                Ticket1.TextoCentro("Los Precios ya contienen IVA");
                                 Ticket1.TextoIzquierda("Nombre del cliente: " + bx_cliente.Text);
 
                                 Ticket1.TextoIzquierda(" -> Fecha de venta: " + DateTime.Now.ToShortDateString() + "  ->Hora: " + DateTime.Now.ToShortTimeString());

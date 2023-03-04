@@ -261,7 +261,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
                             titulomsj = "PAGAR TOTAL DEL CREDITO " + "\n";
                             concatanacionnombre = "Nombre Completo: " + d.Nombre.ToString() + " " + d.Apellido_Paterno.ToString() + " " + d.Apellido_Materno.ToString() + "\n";
                             concatenacionotrosdatos = "Domicilio: " + d.Direccion.ToString() + "\n" + "Telefono: " + d.Telefono.ToString() + "\n" + "Correo: " + d.Correo.ToString() + "\n";
-                            concatenaciondatosventa = "Total del Credito: " + lbl_total_venta.Text + "\n";
+                            concatenaciondatosventa = "Total del Credito: " + lbl_total_venta.Text + "\n" + "Cantidad Faltante:" + lbl_total_faltante.Text + "\n"+ "Cantidad a Abonar:"+ txt_paga_con.Text+ "\n"+ "Cambio: " + lbl_cambio.Text;
 
                             concatenacionfinal = titulomsj + carateres + "\n" + concatanacionnombre + concatenacionotrosdatos + carateres + "\n" + concatenaciondatosventa;
                         }
@@ -344,7 +344,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
 
 
                                 Ticket1.TextoCentro("Recibo de venta (Credito) (Liquidado)");
-
+                                Ticket1.TextoCentro("Los Precios ya contienen IVA");
 
                                 Ticket1.TextoIzquierda(" -> Fecha de Pago: " + DateTime.Now.ToShortDateString() + "  ->Hora: " + DateTime.Now.ToShortTimeString());
                                 Ticket1.TextoIzquierda("");
