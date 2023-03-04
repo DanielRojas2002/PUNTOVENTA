@@ -87,6 +87,7 @@
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.btn_agregar_stock = new System.Windows.Forms.Button();
             this.lbl_id_estatus = new System.Windows.Forms.Label();
+            this.lbl_iva = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             this.panel2.SuspendLayout();
@@ -375,6 +376,7 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel6.Controls.Add(this.lbl_iva);
             this.panel6.Controls.Add(this.txt_precioventa);
             this.panel6.Location = new System.Drawing.Point(221, 229);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -393,6 +395,7 @@
             this.txt_precioventa.Name = "txt_precioventa";
             this.txt_precioventa.Size = new System.Drawing.Size(128, 24);
             this.txt_precioventa.TabIndex = 6;
+            this.txt_precioventa.TextChanged += new System.EventHandler(this.txt_precioventa_TextChanged);
             this.txt_precioventa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_precioventa_KeyPress);
             // 
             // label5
@@ -842,6 +845,17 @@
             this.lbl_id_estatus.Text = "idestatus";
             this.lbl_id_estatus.Visible = false;
             // 
+            // lbl_iva
+            // 
+            this.lbl_iva.AutoSize = true;
+            this.lbl_iva.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_iva.ForeColor = System.Drawing.Color.White;
+            this.lbl_iva.Location = new System.Drawing.Point(78, 4);
+            this.lbl_iva.Name = "lbl_iva";
+            this.lbl_iva.Size = new System.Drawing.Size(41, 23);
+            this.lbl_iva.TabIndex = 100;
+            this.lbl_iva.Text = "iva";
+            // 
             // modificar_eliminar_producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -963,5 +977,6 @@
         private Label label10;
         private Panel panel9;
         private TextBox txt_codigo;
+        public Label lbl_iva;
     }
 }

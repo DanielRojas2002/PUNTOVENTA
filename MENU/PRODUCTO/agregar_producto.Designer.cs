@@ -33,6 +33,7 @@
             this.txt_usuario = new System.Windows.Forms.Label();
             this.lbl_id = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_iva = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txt_codigo = new System.Windows.Forms.TextBox();
@@ -136,6 +137,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lbl_iva);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.label8);
@@ -159,6 +161,17 @@
             this.panel2.Size = new System.Drawing.Size(549, 651);
             this.panel2.TabIndex = 76;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // lbl_iva
+            // 
+            this.lbl_iva.AutoSize = true;
+            this.lbl_iva.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_iva.ForeColor = System.Drawing.Color.White;
+            this.lbl_iva.Location = new System.Drawing.Point(456, 235);
+            this.lbl_iva.Name = "lbl_iva";
+            this.lbl_iva.Size = new System.Drawing.Size(41, 23);
+            this.lbl_iva.TabIndex = 96;
+            this.lbl_iva.Text = "iva";
             // 
             // label4
             // 
@@ -775,5 +788,6 @@
         private Label label4;
         private Panel panel4;
         private TextBox txt_codigo;
+        public Label lbl_iva;
     }
 }

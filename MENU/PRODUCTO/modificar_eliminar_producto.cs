@@ -476,6 +476,7 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                             Descripcion = Convert.ToString(txt_descripcion.Text),
                             PrecioCompra = float.Parse(txt_preciocompra.Text),
                             PrecioVenta = float.Parse(txt_precioventa.Text),
+                            Iva= float.Parse(lbl_iva.Text)
                         };
 
                        
@@ -640,6 +641,43 @@ namespace PUNTOVENTA.MENU.PRODUCTO
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void txt_precioventa_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                lbl_iva.Text = "";
+                float precioventa = float.Parse(txt_precioventa.Text);
+
+                dgIva parametroiva = new dgIva();
+
+                float porcentaje = 0;
+                float totalporcentaje = 0;
+                List<dgIva> listaiva = c_iva.LeerIva(1, parametroiva);
+
+                if (listaiva.Count > 0)
+
+                {
+
+                    foreach (dgIva d in listaiva)
+                    {
+                        porcentaje = float.Parse(d.Porcentaje.ToString());
+                    }
+
+
+                }
+                totalporcentaje = precioventa * porcentaje;
+
+                totalporcentaje = (float)Math.Round(totalporcentaje, 2);
+
+                lbl_iva.Text = Convert.ToString(totalporcentaje);
+            }
+
+            catch
+            {
+
             }
         }
     }

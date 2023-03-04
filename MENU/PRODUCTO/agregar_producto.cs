@@ -3,6 +3,7 @@ using Punto_de_Venta.Clases;
 using PUNTOVENTA.CLASES;
 using PUNTOVENTA.ENTIDAD;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -279,6 +280,27 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
                     else
                     {
+                        dgIva parametroiva = new dgIva();
+
+                        float porcentaje=0;
+                        List<dgIva> listaiva = c_iva.LeerIva(1, parametroiva);
+
+                        if (listaiva.Count > 0)
+
+                        {
+
+                            foreach (dgIva d in listaiva)
+                            {
+                                porcentaje = float.Parse(d.Porcentaje.ToString());
+                            }
+
+                            
+                        }
+
+                        float precioventaa = float.Parse(txt_precioventa.Text);
+
+                      
+
                         dgProducto parametro = new dgProducto
                         {
                             Id_Producto = Convert.ToString(txt_codigo.Text.Trim()),
@@ -289,9 +311,10 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                             Nombre = txt_nombre.Text.Trim(),
                             Descripcion = txt_descripcion.Text.Trim(),
                             PrecioCompra = float.Parse(txt_preciocompra.Text.Trim()),
-                            PrecioVenta = float.Parse(txt_precioventa.Text.Trim())
+                            PrecioVenta = float.Parse(txt_precioventa.Text.Trim()),
+                            Iva= float.Parse(lbl_iva.Text)
 
-                           
+
 
                         };
 
@@ -365,7 +388,42 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
         private void txt_precioventa_TextChanged(object sender, EventArgs e)
         {
-           
+
+            try
+            {
+                lbl_iva.Text = "";
+                float precioventa = float.Parse(txt_precioventa.Text);
+
+                dgIva parametroiva = new dgIva();
+
+                float porcentaje = 0;
+                float totalporcentaje = 0;
+                List<dgIva> listaiva = c_iva.LeerIva(1, parametroiva);
+
+                if (listaiva.Count > 0)
+
+                {
+
+                    foreach (dgIva d in listaiva)
+                    {
+                        porcentaje = float.Parse(d.Porcentaje.ToString());
+                    }
+
+
+                }
+                totalporcentaje = precioventa * porcentaje;
+
+                totalporcentaje=(float)Math.Round(totalporcentaje, 2);
+
+                lbl_iva.Text = Convert.ToString(totalporcentaje);
+            }
+
+            catch
+            {
+
+            }
+            
+
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
