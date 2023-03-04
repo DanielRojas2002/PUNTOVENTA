@@ -1,5 +1,6 @@
 ﻿using PUNTOVENTA.CLASES;
 using PUNTOVENTA.ENTIDAD;
+using PUNTOVENTA.MENU.CAJA;
 using PUNTOVENTA.MENU.CLIENTE;
 using PUNTOVENTA.MENU.PRODUCTO;
 using PUNTOVENTA.MENU.PROVEEDOR;
@@ -293,7 +294,10 @@ namespace Punto_de_Venta
 
         private void btn_caja_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            menu_caja forms = new menu_caja();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)

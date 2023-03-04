@@ -50,12 +50,17 @@ namespace PUNTOVENTA.MENU.REPORTES
 
             {
                 string fechaventa;
+                float subtotal;
                 foreach (dgReportes d in lista)
                 {
 
+                    subtotal = float.Parse(d.SubTotalProducto.ToString());
+
+                    subtotal = (float)Math.Round(subtotal, 2);
+
                     fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
                     dataGridView1.Rows.Add(d.Id_Venta.ToString(),d.IdProducto.ToString(),d.NombreProducto.ToString(),
-                        d.CantidadProducto.ToString(),d.PrecioProducto.ToString(),d.SubTotalProducto.ToString(), fechaventa,d.Usuario.ToString());
+                        d.CantidadProducto.ToString(),d.PrecioProducto.ToString(),Convert.ToString(subtotal), fechaventa,d.Usuario.ToString());
                     
 
 
