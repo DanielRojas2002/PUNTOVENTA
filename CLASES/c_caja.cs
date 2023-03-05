@@ -13,6 +13,117 @@ namespace PUNTOVENTA.CLASES
     public class c_caja
     {
 
+
+        public static string InsertarCaja(dgCaja Parametro)
+        {
+
+
+            string control = "";
+
+            try
+            {
+
+                DataTable tabla = new DataTable();
+
+                SqlParameter[] parametros =
+                {
+                    new SqlParameter("@Accion",2),
+                    new SqlParameter("@P_CantidadAbonada",Parametro.CantidadAbonada),
+                    new SqlParameter("@P_CantidadVenta",Parametro.CantidadVenta),
+                    new SqlParameter("@P_CantidadRetirada",Parametro.CantidadRetirada),
+                    new SqlParameter("@P_FechaCaja",Parametro.FechaCaja)
+
+
+
+                };
+
+                tabla = bdContext.funcionStored("spCaja", parametros);
+                control = tabla.Rows[0][0].ToString();
+
+
+
+            }
+
+            catch (Exception error)
+            {
+                control = error.ToString();
+            }
+            return control;
+
+        }
+
+
+        public static string AbonarCaja(dgCaja Parametro)
+        {
+
+
+            string control = "";
+
+            try
+            {
+
+                DataTable tabla = new DataTable();
+
+                SqlParameter[] parametros =
+                {
+                    new SqlParameter("@Accion",3),
+                    new SqlParameter("@P_CantidadAbonada",Parametro.CantidadAbonada),
+                    new SqlParameter("@P_FechaCaja",Parametro.FechaCaja)
+
+
+                };
+
+                tabla = bdContext.funcionStored("spCaja", parametros);
+                control = tabla.Rows[0][0].ToString();
+
+
+
+            }
+
+            catch (Exception error)
+            {
+                control = error.ToString();
+            }
+            return control;
+
+        }
+
+
+        public static string RetirarCaja(dgCaja Parametro)
+        {
+
+
+            string control = "";
+
+            try
+            {
+
+                DataTable tabla = new DataTable();
+
+                SqlParameter[] parametros =
+                {
+                    new SqlParameter("@Accion",4),
+                    new SqlParameter("@P_CantidadRetirada",Parametro.CantidadRetirada),
+                    new SqlParameter("@P_FechaCaja",Parametro.FechaCaja)
+
+
+                };
+
+                tabla = bdContext.funcionStored("spCaja", parametros);
+                control = tabla.Rows[0][0].ToString();
+
+
+
+            }
+
+            catch (Exception error)
+            {
+                control = error.ToString();
+            }
+            return control;
+
+        }
+
         public static List<dgCaja> LeerCaja(int tipo, dgCaja Parametro)
         {
 
@@ -27,7 +138,7 @@ namespace PUNTOVENTA.CLASES
                 {
                     new SqlParameter("@Accion",1),
                     new SqlParameter("@P_FechaInicio",Parametro.FechaInicio),
-               
+
                 };
 
                 tabla = bdContext.funcionStored("spCaja", Parametros);
@@ -46,7 +157,86 @@ namespace PUNTOVENTA.CLASES
                                  FechaVentaProducto = Convert.ToDateTime(fila["FechaVentaProducto"].ToString()),
                                  Usuario = Convert.ToString(fila["Usuario"].ToString()),
                                  DescripcionTipoVenta = Convert.ToString(fila["DescripcionTipoVenta"].ToString())
-                                 
+
+
+                             }
+                   ).ToList();
+                }
+
+            }
+
+            else if (tipo == 2)
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",5),
+                    new SqlParameter("@P_FechaCaja",Parametro.FechaCaja),
+
+                };
+
+                tabla = bdContext.funcionStored("spCaja", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgCaja
+                             {
+
+                                 CantidadAbonada = float.Parse(fila["CantidadAbonada"].ToString()),
+
+                             }
+                   ).ToList();
+                }
+
+            }
+
+
+            else if (tipo == 3)
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",6),
+                    new SqlParameter("@P_FechaCaja",Parametro.FechaCaja),
+
+                };
+
+                tabla = bdContext.funcionStored("spCaja", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgCaja
+                             {
+
+                                 CantidadVA = float.Parse(fila["CantidadVA"].ToString()),
+
+                             }
+                   ).ToList();
+                }
+
+            }
+
+            else if (tipo == 4)
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",7),
+                    new SqlParameter("@P_FechaCaja",Parametro.FechaCaja),
+
+                };
+
+                tabla = bdContext.funcionStored("spCaja", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgCaja
+                             {
+
+                                 CantidadRetirada = float.Parse(fila["CantidadRetirada"].ToString()),
 
                              }
                    ).ToList();
@@ -56,9 +246,11 @@ namespace PUNTOVENTA.CLASES
 
 
 
-           
 
             return lista;
         }
+
+
+
     }
 }

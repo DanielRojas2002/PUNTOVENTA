@@ -281,6 +281,7 @@
             this.btn_retirar.TabIndex = 0;
             this.btn_retirar.Text = "RETIRAR DE CAJA";
             this.btn_retirar.UseVisualStyleBackColor = false;
+            this.btn_retirar.Click += new System.EventHandler(this.btn_retirar_Click);
             // 
             // dataGridView_ventas
             // 

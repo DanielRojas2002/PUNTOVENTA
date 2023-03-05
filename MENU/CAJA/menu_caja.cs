@@ -20,26 +20,23 @@ namespace PUNTOVENTA.MENU.CAJA
             InitializeComponent();
         }
 
-        public float _dineroventas=0;
+        public float _dineroventas = 0;
 
         private void menu_caja_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
         }
-        
-        private void CargaTotalVentas()
-        {
 
-        }
+       
 
         private void CargarVentas()
         {
-            
+
 
             dgCaja parametro = new dgCaja
             {
                 FechaInicio = DateTime.Now
-               
+
             };
 
 
@@ -57,20 +54,20 @@ namespace PUNTOVENTA.MENU.CAJA
                 {
                     subtotal = float.Parse(d.SubTotalProducto.ToString());
 
-                    subtotal= (float)Math.Round(subtotal, 2);
+                    subtotal = (float)Math.Round(subtotal, 2);
 
                     fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
                     dataGridView_ventas.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
-                         d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), fechaventa, d.DescripcionTipoVenta.ToString(),d.Usuario.ToString());
+                         d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), fechaventa, d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
 
 
-                    _dineroventas = _dineroventas + float.Parse( d.SubTotalProducto.ToString());
+                    _dineroventas = _dineroventas + float.Parse(d.SubTotalProducto.ToString());
                 }
-                _dineroventas = (float)Math.Round(_dineroventas,2);
+                _dineroventas = (float)Math.Round(_dineroventas, 2);
 
                 lbl_cantidad_vendida.Text = Convert.ToString(_dineroventas);
 
-               
+
             }
 
             else
@@ -80,9 +77,232 @@ namespace PUNTOVENTA.MENU.CAJA
 
             }
         }
+
+        private void CargaAbono()
+        {
+
+
+            dgCaja parametro = new dgCaja
+            {
+                FechaCaja = DateTime.Now
+
+            };
+
+
+
+
+            List<dgCaja> lista = c_caja.LeerCaja(2, parametro);
+
+
+            if (lista.Count > 0)
+
+            {
+                
+                foreach (dgCaja d in lista)
+                {
+                    
+
+                    lbl_abonado_total.Text = Convert.ToString(d.CantidadAbonada.ToString());
+                }
+                
+
+
+            }
+
+            else
+            {
+
+                MessageBox.Show("No a abonado en Caja");
+
+            }
+        }
+
+
+        private void CargaRetiro()
+        {
+
+
+            dgCaja parametro = new dgCaja
+            {
+                FechaCaja = DateTime.Now
+
+            };
+
+
+
+
+            List<dgCaja> lista = c_caja.LeerCaja(4, parametro);
+
+
+            if (lista.Count > 0)
+
+            {
+
+                foreach (dgCaja d in lista)
+                {
+
+
+                    lbl_retirado.Text = Convert.ToString(d.CantidadRetirada.ToString());
+                }
+
+
+
+            }
+
+            else
+            {
+
+                MessageBox.Show("No a Retirado Nada");
+
+            }
+        }
+
+        private void CargaVentaAbonos()
+        {
+
+
+            dgCaja parametro = new dgCaja
+            {
+                FechaCaja = DateTime.Now
+
+            };
+
+
+
+
+            List<dgCaja> lista = c_caja.LeerCaja(3, parametro);
+
+
+            if (lista.Count > 0)
+
+            {
+                float suma;
+                float cantidadva ;
+                foreach (dgCaja d in lista)
+                {
+                    cantidadva = float.Parse(d.CantidadVA.ToString());
+                    suma = (float)Math.Round(cantidadva, 2);
+
+                    lbl_caja.Text = Convert.ToString(suma);
+                }
+
+
+
+            }
+
+            else
+            {
+
+                MessageBox.Show("No a abonado en Caja");
+
+            }
+        }
+        private void InsertCaja()
+        {
+
+
+            dgCaja parametro = new dgCaja
+            {
+                CantidadAbonada = 0,
+                CantidadRetirada = 0,
+                CantidadVenta = float.Parse(lbl_cantidad_vendida.Text),
+                FechaCaja = DateTime.Now
+
+            };
+
+            string control = ""; 
+
+            control=c_caja.InsertarCaja(parametro);
+
+           
+
+        }
+
+        private void AbonarCaja()
+        {
+
+
+            dgCaja parametro = new dgCaja
+            {
+                CantidadAbonada = float.Parse(txt_abonar.Text),
+                FechaCaja = DateTime.Now
+
+            };
+
+            string control = "";
+
+            control = c_caja.AbonarCaja(parametro);
+
+            MessageBox.Show("Cantidad Abonada Satiscatoriamente");
+
+            txt_abonar.Text = "";
+
+          
+            CargaVentaAbonos();
+            CargaRetiro();
+            CargaAbono();
+
+        }
+
+        private void RetirarCaja()
+        {
+            float totalcaja = float.Parse(lbl_caja.Text);
+            float retirar = float.Parse(txt_retirar.Text);
+
+            if (txt_retirar.Text!="")
+            {
+                if (retirar < totalcaja)
+                {
+                    dgCaja parametro = new dgCaja
+                    {
+                        CantidadRetirada = float.Parse(txt_retirar.Text),
+                        FechaCaja = DateTime.Now
+
+                    };
+
+                    string control = "";
+
+                    control = c_caja.RetirarCaja(parametro);
+
+                    MessageBox.Show("Cantidad Retirada Satiscatoriamente");
+
+                    txt_retirar.Text = "";
+
+                    CargaAbono();
+                    CargaVentaAbonos();
+                }
+
+                else
+                {
+                    MessageBox.Show("No se puede retirar tal fondo");
+                    txt_retirar.Text = "";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ingrese la Cantidad a Retirar");
+            }
+            
+
+
+
+        }
         private void menu_caja_Load(object sender, EventArgs e)
         {
-            CargarVentas();
+            try
+            {
+                CargarVentas();
+                InsertCaja();
+
+                CargaAbono();
+                CargaVentaAbonos();
+                CargaRetiro();
+            }
+            catch
+            {
+
+            }
+           
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -137,7 +357,15 @@ namespace PUNTOVENTA.MENU.CAJA
 
         private void btn_abonar_Click(object sender, EventArgs e)
         {
-
+            if (txt_abonar.Text!="")
+            {
+                AbonarCaja();
+               
+            }
+            else
+            {
+                MessageBox.Show("Ingrese la Cantidad a Abonar");
+            }
         }
 
         private void btn_regresar_Click(object sender, EventArgs e)
@@ -208,6 +436,23 @@ namespace PUNTOVENTA.MENU.CAJA
 
 
 
+        }
+
+        private void btn_retirar_Click(object sender, EventArgs e)
+        {
+
+            if (txt_retirar.Text != "")
+            {
+                RetirarCaja();
+                CargaAbono();
+                CargaVentaAbonos();
+                CargaRetiro();
+            }
+
+            else
+            {
+                MessageBox.Show("Ingrese la Cantidad a Retirar");
+            }
         }
     }
 }
