@@ -306,7 +306,39 @@ namespace PUNTOVENTA.CLASES
 
             }
 
+            else if (tipo == 6)
+            {
 
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",11),
+                    new SqlParameter("@P_FechaInicio",Parametro.FechaInicio),
+
+                };
+
+                tabla = bdContext.funcionStored("spCaja", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgCaja
+                             {
+                                 Id_Venta = Convert.ToInt16(fila["Id_Venta"].ToString()),
+                                 IdProducto = Convert.ToInt16(fila["IdProducto"].ToString()),
+                                 NombreProducto = Convert.ToString(fila["NombreProducto"].ToString()),
+                                 CantidadProducto = Convert.ToInt16(fila["CantidadProducto"].ToString()),
+                                 PrecioProducto = float.Parse(fila["PrecioProducto"].ToString()),
+                                 SubTotalProducto = float.Parse(fila["SubTotalProducto"].ToString()),
+                                 FechaVentaProducto = Convert.ToDateTime(fila["FechaVentaProducto"].ToString()),
+                                 Usuario = Convert.ToString(fila["Usuario"].ToString()),
+                                 DescripcionTipoVenta = Convert.ToString(fila["DescripcionTipoVenta"].ToString()),
+                                 CantidadPagada=float.Parse(fila["CantidadPagada"].ToString())
+
+                             }
+                   ).ToList();
+                }
+
+            }
 
 
             return lista;

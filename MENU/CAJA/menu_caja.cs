@@ -63,9 +63,51 @@ namespace PUNTOVENTA.MENU.CAJA
 
                     _dineroventas = _dineroventas + float.Parse(d.SubTotalProducto.ToString());
                 }
-                _dineroventas = (float)Math.Round(_dineroventas, 2);
+                
 
-                lbl_cantidad_vendida.Text = Convert.ToString(_dineroventas);
+            }
+
+            else
+            {
+
+                MessageBox.Show("No se encontró reporte de compra este día seleccionado");
+
+            }
+
+            dgCaja parametro2 = new dgCaja
+            {
+                FechaInicio = DateTime.Now
+
+            };
+
+
+
+
+            List<dgCaja> lista2 = c_caja.LeerCaja(6, parametro2);
+
+
+            if (lista2.Count > 0)
+
+            {
+                string fechaventa;
+                float subtotal,cantidadpagada;
+                foreach (dgCaja d in lista2)
+                {
+                    subtotal = float.Parse(d.SubTotalProducto.ToString());
+
+                    subtotal = (float)Math.Round(subtotal, 2);
+
+                    cantidadpagada= float.Parse(d.CantidadPagada.ToString());
+                    cantidadpagada = (float)Math.Round(cantidadpagada, 2);
+
+                    fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
+                    dataGridView_p_credito.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
+                         d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), Convert.ToString(cantidadpagada), fechaventa, d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
+
+
+                    _dineroventas = _dineroventas + float.Parse(d.CantidadPagada.ToString());
+                }
+               
 
 
             }
@@ -76,6 +118,10 @@ namespace PUNTOVENTA.MENU.CAJA
                 MessageBox.Show("No se encontró reporte de compra este día seleccionado");
 
             }
+
+            _dineroventas = (float)Math.Round(_dineroventas, 2);
+
+            lbl_cantidad_vendida.Text = Convert.ToString(_dineroventas);
         }
 
         private void CargaAbono()
