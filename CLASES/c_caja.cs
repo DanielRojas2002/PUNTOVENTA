@@ -66,6 +66,7 @@ namespace PUNTOVENTA.CLASES
                 SqlParameter[] parametros =
                 {
                     new SqlParameter("@Accion",44),
+                     new SqlParameter("@P_CantidadVenta",Parametro.CantidadVenta),
                     new SqlParameter("@P_CantidadTotal",Parametro.CantidadTotal),
                     
                     new SqlParameter("@P_FechaCaja",Parametro.FechaCaja)

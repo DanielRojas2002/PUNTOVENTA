@@ -358,22 +358,26 @@ namespace PUNTOVENTA.MENU.CAJA
         private void ActualizarCaja()
         {
 
-            float caja;
+            float cantidad_vendida;
             float abonado;
             float retirado;
             float cajatotal;
 
-            caja = float.Parse(lbl_caja.Text);
+            cantidad_vendida = float.Parse(lbl_cantidad_vendida.Text);
             abonado = float.Parse(lbl_abonado_total.Text);
             retirado = float.Parse(lbl_retirado.Text);
 
-            cajatotal = caja + abonado - retirado;
+            cajatotal = cantidad_vendida + abonado - retirado;
+
+         
 
             dgCaja parametro = new dgCaja
             {
 
                 CantidadTotal = cajatotal,
-              
+                CantidadVenta= cantidad_vendida,
+
+
                 FechaCaja = DateTime.Now
 
             };
