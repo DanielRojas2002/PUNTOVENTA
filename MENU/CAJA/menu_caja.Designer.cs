@@ -73,6 +73,7 @@
             this.lbl_caja = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btn_regresar = new System.Windows.Forms.PictureBox();
+            this.lbl_id_caja = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimzar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrarapp)).BeginInit();
@@ -620,12 +621,25 @@
             this.btn_regresar.TabStop = false;
             this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
             // 
+            // lbl_id_caja
+            // 
+            this.lbl_id_caja.AutoSize = true;
+            this.lbl_id_caja.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_id_caja.ForeColor = System.Drawing.Color.White;
+            this.lbl_id_caja.Location = new System.Drawing.Point(825, 51);
+            this.lbl_id_caja.Name = "lbl_id_caja";
+            this.lbl_id_caja.Size = new System.Drawing.Size(80, 23);
+            this.lbl_id_caja.TabIndex = 108;
+            this.lbl_id_caja.Text = "id_caja";
+            this.lbl_id_caja.Visible = false;
+            // 
             // menu_caja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(1033, 793);
+            this.Controls.Add(this.lbl_id_caja);
             this.Controls.Add(this.btn_regresar);
             this.Controls.Add(this.lbl_caja);
             this.Controls.Add(this.label9);
@@ -714,5 +728,6 @@
         private Label lbl_caja;
         private Label label9;
         private PictureBox btn_regresar;
+        public Label lbl_id_caja;
     }
 }

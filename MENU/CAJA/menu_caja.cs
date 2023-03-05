@@ -197,6 +197,97 @@ namespace PUNTOVENTA.MENU.CAJA
 
             }
         }
+
+        private void Caja(int estatuscaja)
+        {
+            if (estatuscaja==1)
+            {
+                dgCaja parametro = new dgCaja
+                {
+                    FechaCaja = DateTime.Now,
+                    IdCajaEstatus=1
+
+                };
+
+                string control = "";
+
+                control = c_caja.CajaEstatus(parametro);
+
+                MessageBox.Show("Caja Abierta");
+
+
+            }
+
+            else if (estatuscaja == 2)
+            {
+
+                dgCaja parametro = new dgCaja
+                {
+                    FechaCaja = DateTime.Now,
+                    IdCajaEstatus = 2
+
+                };
+
+                string control = "";
+
+                control = c_caja.CajaEstatus(parametro);
+
+                MessageBox.Show("Caja Cerrada");
+            }
+            CargaEstatusCaja();
+        }
+        private void CargaEstatusCaja()
+        {
+
+
+            dgCaja parametro = new dgCaja
+            {
+                FechaCaja = DateTime.Now
+
+            };
+
+
+
+
+            List<dgCaja> lista = c_caja.LeerCaja(5, parametro);
+
+
+            if (lista.Count > 0)
+
+            {
+
+                foreach (dgCaja d in lista)
+                {
+                    lbl_id_caja.Text = d.Id_CajaEstatus.ToString();
+                }
+
+
+                if (lbl_id_caja.Text == "1")
+                {
+                    btn_caja.Text = "CERRAR";
+                    btn_caja.ForeColor = Color.Red;
+
+                   
+
+                }
+
+                else if (lbl_id_caja.Text == "2")
+                {
+                    btn_caja.Text = "ABRIR";
+                    btn_caja.ForeColor = Color.Green;
+                  
+
+                }
+
+            }
+
+            else
+            {
+
+                MessageBox.Show("No a abonado en Caja");
+
+            }
+        }
         private void InsertCaja()
         {
 
@@ -297,6 +388,9 @@ namespace PUNTOVENTA.MENU.CAJA
                 CargaAbono();
                 CargaVentaAbonos();
                 CargaRetiro();
+                CargaEstatusCaja();
+
+               
             }
             catch
             {
@@ -348,6 +442,20 @@ namespace PUNTOVENTA.MENU.CAJA
         private void btn_caja_Click(object sender, EventArgs e)
         {
 
+            if (lbl_id_caja.Text == "1")
+            {
+               
+
+                Caja(2);
+
+            }
+
+            else if (lbl_id_caja.Text == "2")
+            {
+               
+                Caja(1);
+
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -357,10 +465,20 @@ namespace PUNTOVENTA.MENU.CAJA
 
         private void btn_abonar_Click(object sender, EventArgs e)
         {
-            if (txt_abonar.Text!="")
+
+            if (txt_abonar.Text != "")
             {
-                AbonarCaja();
-               
+
+                if (lbl_id_caja.Text == "2")
+                {
+                    MessageBox.Show("Caja Cerrada");
+                    txt_abonar.Text = "";
+                }
+
+                else
+                {
+                    AbonarCaja();
+                }
             }
             else
             {
@@ -441,18 +559,32 @@ namespace PUNTOVENTA.MENU.CAJA
         private void btn_retirar_Click(object sender, EventArgs e)
         {
 
-            if (txt_retirar.Text != "")
+            if (txt_retirar.Text != "" )
             {
-                RetirarCaja();
-                CargaAbono();
-                CargaVentaAbonos();
-                CargaRetiro();
-            }
+
+                if (lbl_id_caja.Text == "2")
+                {
+                    MessageBox.Show("Caja Cerrada");
+                    txt_retirar.Text = "";
+                }
+
+                else
+                {
+                    RetirarCaja();
+                    CargaAbono();
+                    CargaVentaAbonos();
+                    CargaRetiro();
+                }
+               
+            } 
+
 
             else
             {
                 MessageBox.Show("Ingrese la Cantidad a Retirar");
             }
+
+           
         }
     }
 }

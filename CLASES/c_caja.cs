@@ -88,6 +88,42 @@ namespace PUNTOVENTA.CLASES
 
         }
 
+        public static string CajaEstatus(dgCaja Parametro)
+        {
+
+
+            string control = "";
+
+            try
+            {
+
+                DataTable tabla = new DataTable();
+
+                SqlParameter[] parametros =
+                {
+                    new SqlParameter("@Accion",9),
+                    new SqlParameter("@P_IdCajaEstatus",Parametro.IdCajaEstatus),
+                    new SqlParameter("@P_FechaCaja",Parametro.FechaCaja)
+
+
+                };
+
+                tabla = bdContext.funcionStored("spCaja", parametros);
+                control = tabla.Rows[0][0].ToString();
+
+
+
+            }
+
+            catch (Exception error)
+            {
+                control = error.ToString();
+            }
+            return control;
+
+        }
+
+
 
         public static string RetirarCaja(dgCaja Parametro)
         {
@@ -237,6 +273,32 @@ namespace PUNTOVENTA.CLASES
                              {
 
                                  CantidadRetirada = float.Parse(fila["CantidadRetirada"].ToString()),
+
+                             }
+                   ).ToList();
+                }
+
+            }
+
+            else if (tipo == 5)
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",8),
+                    new SqlParameter("@P_FechaCaja",Parametro.FechaCaja),
+
+                };
+
+                tabla = bdContext.funcionStored("spCaja", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgCaja
+                             {
+
+                                 Id_CajaEstatus = Convert.ToInt16(fila["Id_CajaEstatus"].ToString())
 
                              }
                    ).ToList();
