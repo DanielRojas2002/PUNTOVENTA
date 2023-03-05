@@ -52,6 +52,43 @@ namespace PUNTOVENTA.CLASES
 
         }
 
+        public static string ActualizarCaja(dgCaja Parametro)
+        {
+
+
+            string control = "";
+
+            try
+            {
+
+                DataTable tabla = new DataTable();
+
+                SqlParameter[] parametros =
+                {
+                    new SqlParameter("@Accion",44),
+                    new SqlParameter("@P_CantidadTotal",Parametro.CantidadTotal),
+                    
+                    new SqlParameter("@P_FechaCaja",Parametro.FechaCaja)
+
+
+
+                };
+
+                tabla = bdContext.funcionStored("spCaja", parametros);
+                control = tabla.Rows[0][0].ToString();
+
+
+
+            }
+
+            catch (Exception error)
+            {
+                control = error.ToString();
+            }
+            return control;
+
+        }
+
 
         public static string AbonarCaja(dgCaja Parametro)
         {

@@ -355,6 +355,37 @@ namespace PUNTOVENTA.MENU.CAJA
 
         }
 
+        private void ActualizarCaja()
+        {
+
+            float caja;
+            float abonado;
+            float retirado;
+            float cajatotal;
+
+            caja = float.Parse(lbl_caja.Text);
+            abonado = float.Parse(lbl_abonado_total.Text);
+            retirado = float.Parse(lbl_retirado.Text);
+
+            cajatotal = caja + abonado - retirado;
+
+            dgCaja parametro = new dgCaja
+            {
+
+                CantidadTotal = cajatotal,
+              
+                FechaCaja = DateTime.Now
+
+            };
+
+            string control = "";
+
+            control = c_caja.ActualizarCaja(parametro);
+
+
+
+        }
+
         private void AbonarCaja()
         {
 
@@ -436,7 +467,10 @@ namespace PUNTOVENTA.MENU.CAJA
                 CargaRetiro();
                 CargaEstatusCaja();
 
-               
+                ActualizarCaja();
+
+
+
             }
             catch
             {

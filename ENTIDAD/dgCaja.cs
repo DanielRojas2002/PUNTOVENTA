@@ -26,6 +26,8 @@ namespace PUNTOVENTA.ENTIDAD
         public float? PrecioProducto { get; set; }
         public float? SubTotalProducto { get; set; }
 
+        public float? CantidadTotal { get; set; }
+
         public float? CantidadPagada { get; set; }
         public DateTime? FechaVentaProducto { get; set; }
         public DateTime? FechaInicio { get; set; }
