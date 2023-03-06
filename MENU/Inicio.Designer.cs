@@ -98,12 +98,19 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pnl_der = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.pnl_caja = new System.Windows.Forms.Panel();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.pnl_producto = new System.Windows.Forms.Panel();
+            this.pnl_proveedor = new System.Windows.Forms.Panel();
+            this.pnl_clientes = new System.Windows.Forms.Panel();
+            this.pnl_reporte = new System.Windows.Forms.Panel();
+            this.pnl_segurida = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimzar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrarapp)).BeginInit();
@@ -142,10 +149,17 @@
             this.panel28.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.pnl_der.SuspendLayout();
-            this.panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             this.panel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            this.pnl_caja.SuspendLayout();
+            this.panel22.SuspendLayout();
+            this.pnl_producto.SuspendLayout();
+            this.pnl_proveedor.SuspendLayout();
+            this.pnl_clientes.SuspendLayout();
+            this.pnl_reporte.SuspendLayout();
+            this.pnl_segurida.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -770,7 +784,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.btn_alimg);
-            this.panel3.Location = new System.Drawing.Point(7, 132);
+            this.panel3.Location = new System.Drawing.Point(7, 19);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(108, 55);
             this.panel3.TabIndex = 4;
@@ -790,7 +804,7 @@
             // panel15
             // 
             this.panel15.Controls.Add(this.pictureBox10);
-            this.panel15.Location = new System.Drawing.Point(7, 210);
+            this.panel15.Location = new System.Drawing.Point(12, 12);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(108, 55);
             this.panel15.TabIndex = 6;
@@ -809,7 +823,7 @@
             // panel24
             // 
             this.panel24.Controls.Add(this.pictureBox12);
-            this.panel24.Location = new System.Drawing.Point(7, 408);
+            this.panel24.Location = new System.Drawing.Point(3, 9);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(108, 55);
             this.panel24.TabIndex = 6;
@@ -829,7 +843,7 @@
             // 
             this.label5.BackColor = System.Drawing.Color.Black;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(117, 412);
+            this.label5.Location = new System.Drawing.Point(113, 13);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(186, 45);
             this.label5.TabIndex = 0;
@@ -840,7 +854,7 @@
             // panel26
             // 
             this.panel26.Controls.Add(this.pictureBox13);
-            this.panel26.Location = new System.Drawing.Point(331, 132);
+            this.panel26.Location = new System.Drawing.Point(8, 7);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(104, 52);
             this.panel26.TabIndex = 7;
@@ -871,7 +885,7 @@
             // panel28
             // 
             this.panel28.Controls.Add(this.pictureBox14);
-            this.panel28.Location = new System.Drawing.Point(7, 478);
+            this.panel28.Location = new System.Drawing.Point(3, 11);
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(108, 55);
             this.panel28.TabIndex = 7;
@@ -891,7 +905,7 @@
             // 
             this.label3.BackColor = System.Drawing.Color.Black;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(117, 210);
+            this.label3.Location = new System.Drawing.Point(122, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(492, 108);
             this.label3.TabIndex = 0;
@@ -905,7 +919,7 @@
             // 
             this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(117, 132);
+            this.label2.Location = new System.Drawing.Point(117, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(200, 75);
             this.label2.TabIndex = 0;
@@ -918,7 +932,7 @@
             // 
             this.label7.BackColor = System.Drawing.Color.Black;
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(117, 478);
+            this.label7.Location = new System.Drawing.Point(113, 11);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(193, 45);
             this.label7.TabIndex = 0;
@@ -929,7 +943,7 @@
             // 
             this.label6.BackColor = System.Drawing.Color.Black;
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(442, 132);
+            this.label6.Location = new System.Drawing.Point(119, 7);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(200, 75);
             this.label6.TabIndex = 0;
@@ -940,21 +954,14 @@
             // pnl_der
             // 
             this.pnl_der.BackColor = System.Drawing.Color.Black;
-            this.pnl_der.Controls.Add(this.label5);
-            this.pnl_der.Controls.Add(this.label8);
-            this.pnl_der.Controls.Add(this.panel17);
-            this.pnl_der.Controls.Add(this.label4);
-            this.pnl_der.Controls.Add(this.label6);
-            this.pnl_der.Controls.Add(this.panel13);
-            this.pnl_der.Controls.Add(this.label7);
-            this.pnl_der.Controls.Add(this.label2);
-            this.pnl_der.Controls.Add(this.label3);
-            this.pnl_der.Controls.Add(this.panel28);
+            this.pnl_der.Controls.Add(this.pnl_segurida);
+            this.pnl_der.Controls.Add(this.pnl_reporte);
+            this.pnl_der.Controls.Add(this.pnl_clientes);
+            this.pnl_der.Controls.Add(this.pnl_proveedor);
+            this.pnl_der.Controls.Add(this.pnl_producto);
+            this.pnl_der.Controls.Add(this.panel22);
+            this.pnl_der.Controls.Add(this.pnl_caja);
             this.pnl_der.Controls.Add(this.btn_regresar);
-            this.pnl_der.Controls.Add(this.panel26);
-            this.pnl_der.Controls.Add(this.panel24);
-            this.pnl_der.Controls.Add(this.panel15);
-            this.pnl_der.Controls.Add(this.panel3);
             this.pnl_der.Controls.Add(this.lbl_perfil);
             this.pnl_der.Controls.Add(this.lbl_id);
             this.pnl_der.Controls.Add(this.txt_usuario);
@@ -966,11 +973,42 @@
             this.pnl_der.TabIndex = 3;
             this.pnl_der.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_der_Paint);
             // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.Black;
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(-14, 85);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(283, 97);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "El Modulo de Caja nos ayuda a poder:\r\n* Ver todos los producto vendidos del dia \r" +
+    "\n* Abonar un saldo Inicial en Caja\r\n* Retirar dinero\r\n* Abrir y Cerrar Caja";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.pictureBox17);
+            this.panel17.Location = new System.Drawing.Point(74, 11);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(108, 55);
+            this.panel17.TabIndex = 13;
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
+            this.pictureBox17.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(108, 50);
+            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox17.TabIndex = 0;
+            this.pictureBox17.TabStop = false;
+            // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Black;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(117, 333);
+            this.label4.Location = new System.Drawing.Point(117, 7);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(286, 45);
             this.label4.TabIndex = 8;
@@ -981,7 +1019,7 @@
             // panel13
             // 
             this.panel13.Controls.Add(this.pictureBox16);
-            this.panel13.Location = new System.Drawing.Point(7, 333);
+            this.panel13.Location = new System.Drawing.Point(7, 7);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(108, 55);
             this.panel13.TabIndex = 9;
@@ -997,36 +1035,68 @@
             this.pictureBox16.TabIndex = 0;
             this.pictureBox16.TabStop = false;
             // 
-            // label8
+            // pnl_caja
             // 
-            this.label8.BackColor = System.Drawing.Color.Black;
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(397, 401);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(283, 97);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "El Modulo de Caja nos ayuda a poder:\r\n* Ver todos los producto vendidos del dia \r" +
-    "\n* Abonar un saldo Inicial en Caja\r\n* Retirar dinero\r\n* Abrir y Cerrar Caja";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.pnl_caja.Controls.Add(this.panel17);
+            this.pnl_caja.Controls.Add(this.label8);
+            this.pnl_caja.Location = new System.Drawing.Point(409, 328);
+            this.pnl_caja.Name = "pnl_caja";
+            this.pnl_caja.Size = new System.Drawing.Size(248, 201);
+            this.pnl_caja.TabIndex = 14;
             // 
-            // panel17
+            // panel22
             // 
-            this.panel17.Controls.Add(this.pictureBox17);
-            this.panel17.Location = new System.Drawing.Point(485, 327);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(108, 55);
-            this.panel17.TabIndex = 13;
+            this.panel22.Controls.Add(this.panel3);
+            this.panel22.Controls.Add(this.label2);
+            this.panel22.Location = new System.Drawing.Point(6, 112);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(337, 85);
+            this.panel22.TabIndex = 15;
             // 
-            // pictureBox17
+            // pnl_producto
             // 
-            this.pictureBox17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
-            this.pictureBox17.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(108, 50);
-            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox17.TabIndex = 0;
-            this.pictureBox17.TabStop = false;
+            this.pnl_producto.Controls.Add(this.panel15);
+            this.pnl_producto.Controls.Add(this.label3);
+            this.pnl_producto.Location = new System.Drawing.Point(7, 203);
+            this.pnl_producto.Name = "pnl_producto";
+            this.pnl_producto.Size = new System.Drawing.Size(590, 119);
+            this.pnl_producto.TabIndex = 16;
+            // 
+            // pnl_proveedor
+            // 
+            this.pnl_proveedor.Controls.Add(this.panel26);
+            this.pnl_proveedor.Controls.Add(this.label6);
+            this.pnl_proveedor.Location = new System.Drawing.Point(350, 118);
+            this.pnl_proveedor.Name = "pnl_proveedor";
+            this.pnl_proveedor.Size = new System.Drawing.Size(328, 79);
+            this.pnl_proveedor.TabIndex = 17;
+            // 
+            // pnl_clientes
+            // 
+            this.pnl_clientes.Controls.Add(this.panel13);
+            this.pnl_clientes.Controls.Add(this.label4);
+            this.pnl_clientes.Location = new System.Drawing.Point(11, 326);
+            this.pnl_clientes.Name = "pnl_clientes";
+            this.pnl_clientes.Size = new System.Drawing.Size(392, 70);
+            this.pnl_clientes.TabIndex = 17;
+            // 
+            // pnl_reporte
+            // 
+            this.pnl_reporte.Controls.Add(this.panel24);
+            this.pnl_reporte.Controls.Add(this.label5);
+            this.pnl_reporte.Location = new System.Drawing.Point(11, 394);
+            this.pnl_reporte.Name = "pnl_reporte";
+            this.pnl_reporte.Size = new System.Drawing.Size(392, 70);
+            this.pnl_reporte.TabIndex = 18;
+            // 
+            // pnl_segurida
+            // 
+            this.pnl_segurida.Controls.Add(this.panel28);
+            this.pnl_segurida.Controls.Add(this.label7);
+            this.pnl_segurida.Location = new System.Drawing.Point(11, 475);
+            this.pnl_segurida.Name = "pnl_segurida";
+            this.pnl_segurida.Size = new System.Drawing.Size(392, 70);
+            this.pnl_segurida.TabIndex = 19;
             // 
             // Inicio
             // 
@@ -1081,10 +1151,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.pnl_der.ResumeLayout(false);
             this.pnl_der.PerformLayout();
-            this.panel13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             this.panel17.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            this.panel13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            this.pnl_caja.ResumeLayout(false);
+            this.panel22.ResumeLayout(false);
+            this.pnl_producto.ResumeLayout(false);
+            this.pnl_proveedor.ResumeLayout(false);
+            this.pnl_clientes.ResumeLayout(false);
+            this.pnl_reporte.ResumeLayout(false);
+            this.pnl_segurida.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1166,5 +1243,12 @@
         private Label label4;
         private Panel panel13;
         private PictureBox pictureBox16;
+        private Panel pnl_caja;
+        private Panel pnl_proveedor;
+        private Panel pnl_producto;
+        private Panel panel22;
+        private Panel pnl_segurida;
+        private Panel pnl_reporte;
+        private Panel pnl_clientes;
     }
 }

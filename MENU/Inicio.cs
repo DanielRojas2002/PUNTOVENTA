@@ -163,6 +163,8 @@ namespace Punto_de_Venta
                 pnl_provedores.Visible = true;
 
 
+
+
             }
             else if (retorno2 == "Vendedor")
             {
@@ -173,6 +175,14 @@ namespace Punto_de_Venta
                 pnl_r.Visible = false;
                 pnl_reportes.Visible = false;
                 pnl_provedores.Visible = false;
+
+                pnl_caja.Visible = true;
+                pnl_clientes.Visible = true;
+                pnl_provedores.Visible = true;
+                pnl_producto.Visible = true;
+                pnl_segurida.Visible = false;
+                pnl_reporte.Visible = false;
+                pnl_ventas.Visible = true;
             }
 
 
