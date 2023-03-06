@@ -6,6 +6,7 @@ using PUNTOVENTA.MENU.PRODUCTO;
 using PUNTOVENTA.MENU.PROVEEDOR;
 using PUNTOVENTA.MENU.REPORTES;
 using PUNTOVENTA.MENU.VENTA;
+using System.Windows.Forms;
 
 namespace Punto_de_Venta
 {
@@ -181,10 +182,49 @@ namespace Punto_de_Venta
 
         private void btn_venta_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            menu_venta forms = new menu_venta();
-            forms.lbl_id.Text = lbl_id.Text;
-            forms.Show();
+
+            dgCaja parametro = new dgCaja
+            {
+               FechaCaja=DateTime.Now
+
+
+            };
+
+
+            List<dgCaja> lista = c_caja.LeerCaja(7, parametro);
+
+            string estatuscaja="";
+            if (lista.Count > 0)
+
+            {
+               
+                foreach (dgCaja d in lista)
+                {
+                    estatuscaja = Convert.ToString(d.Id_CajaEstatus.ToString());
+
+
+
+                };
+
+            }
+
+            if (estatuscaja == "1")
+            {
+
+                this.Hide();
+                menu_venta forms = new menu_venta();
+                forms.lbl_id.Text = lbl_id.Text;
+                forms.Show();
+            }
+
+            else if (estatuscaja == "2")
+            {
+                MessageBox.Show("No puede Acceder al apartado de ventas ya que la caja esta cerrada", "Advertencia");
+            }
+
+            
+
+           
         }
 
         private void btn_productos_Click(object sender, EventArgs e)

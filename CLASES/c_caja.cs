@@ -378,6 +378,33 @@ namespace PUNTOVENTA.CLASES
 
             }
 
+            else if (tipo == 7)
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",10),
+                    new SqlParameter("P_FechaCaja",Parametro.FechaCaja)
+
+                };
+
+                tabla = bdContext.funcionStored("spCaja", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgCaja
+                             {
+                                 Id_CajaEstatus = Convert.ToInt16(fila["Id_CajaEstatus"].ToString())
+                                 
+                               
+
+                             }
+                   ).ToList();
+                }
+
+            }
+
 
             return lista;
         }

@@ -34,32 +34,6 @@
             this.cerrarapp = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_usuario = new System.Windows.Forms.Label();
-            this.lbl_id = new System.Windows.Forms.Label();
-            this.pnl_der = new System.Windows.Forms.Panel();
-            this.panel28 = new System.Windows.Forms.Panel();
-            this.panel29 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.btn_regresar = new System.Windows.Forms.PictureBox();
-            this.panel26 = new System.Windows.Forms.Panel();
-            this.panel27 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.panel24 = new System.Windows.Forms.Panel();
-            this.panel25 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pnl_infoal = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btn_alimg = new System.Windows.Forms.PictureBox();
-            this.lbl_perfil = new System.Windows.Forms.Label();
             this.pnl_ventas = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_venta = new System.Windows.Forms.Button();
@@ -103,26 +77,36 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.btn_cliente = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_usuario = new System.Windows.Forms.Label();
+            this.lbl_id = new System.Windows.Forms.Label();
+            this.lbl_perfil = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_alimg = new System.Windows.Forms.PictureBox();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel26 = new System.Windows.Forms.Panel();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.btn_regresar = new System.Windows.Forms.PictureBox();
+            this.panel28 = new System.Windows.Forms.Panel();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pnl_der = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimzar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrarapp)).BeginInit();
-            this.pnl_der.SuspendLayout();
-            this.panel28.SuspendLayout();
-            this.panel29.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
-            this.panel26.SuspendLayout();
-            this.panel27.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            this.panel24.SuspendLayout();
-            this.panel25.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            this.panel15.SuspendLayout();
-            this.panel17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            this.panel3.SuspendLayout();
-            this.pnl_infoal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_alimg)).BeginInit();
             this.pnl_ventas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnl_productos.SuspendLayout();
@@ -146,6 +130,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_alimg)).BeginInit();
+            this.panel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            this.panel24.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            this.panel26.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
+            this.panel28.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            this.pnl_der.SuspendLayout();
+            this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            this.panel17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -207,289 +207,6 @@
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(14, 547);
             this.panel16.TabIndex = 9;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cooper Black", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(147, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(356, 40);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "PUNTO DE VENTA";
-            // 
-            // txt_usuario
-            // 
-            this.txt_usuario.AutoSize = true;
-            this.txt_usuario.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.txt_usuario.ForeColor = System.Drawing.Color.White;
-            this.txt_usuario.Location = new System.Drawing.Point(7, 90);
-            this.txt_usuario.Name = "txt_usuario";
-            this.txt_usuario.Size = new System.Drawing.Size(78, 19);
-            this.txt_usuario.TabIndex = 1;
-            this.txt_usuario.Text = "usuario:";
-            this.txt_usuario.Click += new System.EventHandler(this.txt_usuario_Click);
-            // 
-            // lbl_id
-            // 
-            this.lbl_id.AutoSize = true;
-            this.lbl_id.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lbl_id.ForeColor = System.Drawing.Color.White;
-            this.lbl_id.Location = new System.Drawing.Point(243, 58);
-            this.lbl_id.Name = "lbl_id";
-            this.lbl_id.Size = new System.Drawing.Size(25, 19);
-            this.lbl_id.TabIndex = 2;
-            this.lbl_id.Text = "id";
-            this.lbl_id.Visible = false;
-            this.lbl_id.Click += new System.EventHandler(this.lbl_id_Click);
-            // 
-            // pnl_der
-            // 
-            this.pnl_der.BackColor = System.Drawing.Color.Black;
-            this.pnl_der.Controls.Add(this.panel28);
-            this.pnl_der.Controls.Add(this.btn_regresar);
-            this.pnl_der.Controls.Add(this.panel26);
-            this.pnl_der.Controls.Add(this.panel24);
-            this.pnl_der.Controls.Add(this.panel15);
-            this.pnl_der.Controls.Add(this.panel3);
-            this.pnl_der.Controls.Add(this.lbl_perfil);
-            this.pnl_der.Controls.Add(this.lbl_id);
-            this.pnl_der.Controls.Add(this.txt_usuario);
-            this.pnl_der.Controls.Add(this.label1);
-            this.pnl_der.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_der.Location = new System.Drawing.Point(297, 29);
-            this.pnl_der.Name = "pnl_der";
-            this.pnl_der.Size = new System.Drawing.Size(680, 548);
-            this.pnl_der.TabIndex = 3;
-            this.pnl_der.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_der_Paint);
-            // 
-            // panel28
-            // 
-            this.panel28.Controls.Add(this.panel29);
-            this.panel28.Controls.Add(this.pictureBox14);
-            this.panel28.Location = new System.Drawing.Point(450, 307);
-            this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(200, 128);
-            this.panel28.TabIndex = 7;
-            // 
-            // panel29
-            // 
-            this.panel29.Controls.Add(this.label7);
-            this.panel29.Location = new System.Drawing.Point(3, 64);
-            this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(194, 61);
-            this.panel29.TabIndex = 5;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Black;
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(0, 15);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(193, 45);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "El Modulo de Seguridad nos ayuda \r\na poder dar permisos y poder \r\ncrear usuarios";
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(200, 50);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox14.TabIndex = 0;
-            this.pictureBox14.TabStop = false;
-            // 
-            // btn_regresar
-            // 
-            this.btn_regresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_regresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_regresar.Image")));
-            this.btn_regresar.Location = new System.Drawing.Point(7, 8);
-            this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(83, 50);
-            this.btn_regresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_regresar.TabIndex = 11;
-            this.btn_regresar.TabStop = false;
-            this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
-            // 
-            // panel26
-            // 
-            this.panel26.Controls.Add(this.panel27);
-            this.panel26.Controls.Add(this.pictureBox13);
-            this.panel26.Location = new System.Drawing.Point(447, 154);
-            this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(200, 128);
-            this.panel26.TabIndex = 7;
-            // 
-            // panel27
-            // 
-            this.panel27.Controls.Add(this.label6);
-            this.panel27.Location = new System.Drawing.Point(3, 64);
-            this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(194, 61);
-            this.panel27.TabIndex = 5;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Black;
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(0, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(170, 60);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "El Modulo de Proveedores nos \r\nayuda a poder registrar los \r\nproveedorespara tene" +
-    "r un \r\ncontrol de lo comprado.";
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(200, 50);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox13.TabIndex = 0;
-            this.pictureBox13.TabStop = false;
-            // 
-            // panel24
-            // 
-            this.panel24.Controls.Add(this.panel25);
-            this.panel24.Controls.Add(this.pictureBox12);
-            this.panel24.Location = new System.Drawing.Point(233, 307);
-            this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(200, 128);
-            this.panel24.TabIndex = 6;
-            // 
-            // panel25
-            // 
-            this.panel25.Controls.Add(this.label5);
-            this.panel25.Location = new System.Drawing.Point(3, 64);
-            this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(194, 61);
-            this.panel25.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Black;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(0, 15);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(186, 45);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "El Modulo de Reportes nos ayuda \r\na poder realizar diferentes tipos \r\nde reportes" +
-    ".";
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(200, 50);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox12.TabIndex = 0;
-            this.pictureBox12.TabStop = false;
-            // 
-            // panel15
-            // 
-            this.panel15.Controls.Add(this.panel17);
-            this.panel15.Controls.Add(this.pictureBox10);
-            this.panel15.Location = new System.Drawing.Point(230, 154);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(200, 128);
-            this.panel15.TabIndex = 6;
-            // 
-            // panel17
-            // 
-            this.panel17.Controls.Add(this.label3);
-            this.panel17.Location = new System.Drawing.Point(3, 64);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(194, 61);
-            this.panel17.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Black;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(0, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(198, 45);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "El Modulo de Productos nos ayuda \r\na poder registrar nuestros productos\r\npara su " +
-    "posterior seleccion.";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(200, 50);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox10.TabIndex = 0;
-            this.pictureBox10.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.pnl_infoal);
-            this.panel3.Controls.Add(this.btn_alimg);
-            this.panel3.Location = new System.Drawing.Point(15, 154);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 128);
-            this.panel3.TabIndex = 4;
-            // 
-            // pnl_infoal
-            // 
-            this.pnl_infoal.Controls.Add(this.label2);
-            this.pnl_infoal.Location = new System.Drawing.Point(3, 64);
-            this.pnl_infoal.Name = "pnl_infoal";
-            this.pnl_infoal.Size = new System.Drawing.Size(194, 61);
-            this.pnl_infoal.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Black;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(0, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 45);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "El Modulo de Ventas nos ayuda \r\na poder realizar  las ventas de\r\nnuestro producto" +
-    " al cliente.";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // btn_alimg
-            // 
-            this.btn_alimg.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_alimg.Image = ((System.Drawing.Image)(resources.GetObject("btn_alimg.Image")));
-            this.btn_alimg.Location = new System.Drawing.Point(0, 0);
-            this.btn_alimg.Name = "btn_alimg";
-            this.btn_alimg.Size = new System.Drawing.Size(200, 50);
-            this.btn_alimg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_alimg.TabIndex = 0;
-            this.btn_alimg.TabStop = false;
-            this.btn_alimg.Click += new System.EventHandler(this.btn_alimg_Click);
-            // 
-            // lbl_perfil
-            // 
-            this.lbl_perfil.AutoSize = true;
-            this.lbl_perfil.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lbl_perfil.ForeColor = System.Drawing.Color.White;
-            this.lbl_perfil.Location = new System.Drawing.Point(375, 90);
-            this.lbl_perfil.Name = "lbl_perfil";
-            this.lbl_perfil.Size = new System.Drawing.Size(61, 19);
-            this.lbl_perfil.TabIndex = 3;
-            this.lbl_perfil.Text = "perfil:";
-            this.lbl_perfil.Click += new System.EventHandler(this.lbl_perfil_Click);
             // 
             // pnl_ventas
             // 
@@ -1002,6 +719,315 @@
             this.btn_cliente.UseVisualStyleBackColor = true;
             this.btn_cliente.Click += new System.EventHandler(this.btn_cliente_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cooper Black", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(147, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(356, 40);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "PUNTO DE VENTA";
+            // 
+            // txt_usuario
+            // 
+            this.txt_usuario.AutoSize = true;
+            this.txt_usuario.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.txt_usuario.ForeColor = System.Drawing.Color.White;
+            this.txt_usuario.Location = new System.Drawing.Point(7, 90);
+            this.txt_usuario.Name = "txt_usuario";
+            this.txt_usuario.Size = new System.Drawing.Size(78, 19);
+            this.txt_usuario.TabIndex = 1;
+            this.txt_usuario.Text = "usuario:";
+            this.txt_usuario.Click += new System.EventHandler(this.txt_usuario_Click);
+            // 
+            // lbl_id
+            // 
+            this.lbl_id.AutoSize = true;
+            this.lbl_id.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_id.ForeColor = System.Drawing.Color.White;
+            this.lbl_id.Location = new System.Drawing.Point(243, 58);
+            this.lbl_id.Name = "lbl_id";
+            this.lbl_id.Size = new System.Drawing.Size(25, 19);
+            this.lbl_id.TabIndex = 2;
+            this.lbl_id.Text = "id";
+            this.lbl_id.Visible = false;
+            this.lbl_id.Click += new System.EventHandler(this.lbl_id_Click);
+            // 
+            // lbl_perfil
+            // 
+            this.lbl_perfil.AutoSize = true;
+            this.lbl_perfil.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_perfil.ForeColor = System.Drawing.Color.White;
+            this.lbl_perfil.Location = new System.Drawing.Point(375, 90);
+            this.lbl_perfil.Name = "lbl_perfil";
+            this.lbl_perfil.Size = new System.Drawing.Size(61, 19);
+            this.lbl_perfil.TabIndex = 3;
+            this.lbl_perfil.Text = "perfil:";
+            this.lbl_perfil.Click += new System.EventHandler(this.lbl_perfil_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btn_alimg);
+            this.panel3.Location = new System.Drawing.Point(7, 132);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(108, 55);
+            this.panel3.TabIndex = 4;
+            // 
+            // btn_alimg
+            // 
+            this.btn_alimg.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_alimg.Image = ((System.Drawing.Image)(resources.GetObject("btn_alimg.Image")));
+            this.btn_alimg.Location = new System.Drawing.Point(0, 0);
+            this.btn_alimg.Name = "btn_alimg";
+            this.btn_alimg.Size = new System.Drawing.Size(108, 50);
+            this.btn_alimg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_alimg.TabIndex = 0;
+            this.btn_alimg.TabStop = false;
+            this.btn_alimg.Click += new System.EventHandler(this.btn_alimg_Click);
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.pictureBox10);
+            this.panel15.Location = new System.Drawing.Point(7, 210);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(108, 55);
+            this.panel15.TabIndex = 6;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
+            this.pictureBox10.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(108, 50);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox10.TabIndex = 0;
+            this.pictureBox10.TabStop = false;
+            // 
+            // panel24
+            // 
+            this.panel24.Controls.Add(this.pictureBox12);
+            this.panel24.Location = new System.Drawing.Point(7, 408);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(108, 55);
+            this.panel24.TabIndex = 6;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
+            this.pictureBox12.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(108, 50);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox12.TabIndex = 0;
+            this.pictureBox12.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.Black;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(117, 412);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(186, 45);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "El Modulo de Reportes nos ayuda \r\na poder realizar diferentes tipos \r\nde reportes" +
+    ".";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // panel26
+            // 
+            this.panel26.Controls.Add(this.pictureBox13);
+            this.panel26.Location = new System.Drawing.Point(331, 132);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(104, 52);
+            this.panel26.TabIndex = 7;
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
+            this.pictureBox13.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(104, 50);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox13.TabIndex = 0;
+            this.pictureBox13.TabStop = false;
+            // 
+            // btn_regresar
+            // 
+            this.btn_regresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_regresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_regresar.Image")));
+            this.btn_regresar.Location = new System.Drawing.Point(7, 8);
+            this.btn_regresar.Name = "btn_regresar";
+            this.btn_regresar.Size = new System.Drawing.Size(83, 50);
+            this.btn_regresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_regresar.TabIndex = 11;
+            this.btn_regresar.TabStop = false;
+            this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
+            // 
+            // panel28
+            // 
+            this.panel28.Controls.Add(this.pictureBox14);
+            this.panel28.Location = new System.Drawing.Point(7, 478);
+            this.panel28.Name = "panel28";
+            this.panel28.Size = new System.Drawing.Size(108, 55);
+            this.panel28.TabIndex = 7;
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
+            this.pictureBox14.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(108, 50);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox14.TabIndex = 0;
+            this.pictureBox14.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Black;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(117, 210);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(492, 108);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "El Modulo de Productos nos ayuda  a poder registrar nuestros productos\r\n* Crear M" +
+    "odificar y Eliminar:\r\n   +Categorias\r\n   + Medidas\r\n* Agregar Entradas (Stock)\r\n" +
+    "* Modificar / Desactivar Producto";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(117, 132);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(200, 75);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "El Modulo de Ventas nos ayuda \r\na poder realizar  las ventas de\r\nnuestro producto" +
+    " al cliente.";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.Black;
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(117, 478);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(193, 45);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "El Modulo de Seguridad nos ayuda \r\na poder dar permisos y poder \r\ncrear usuarios";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.Black;
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(442, 132);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(200, 75);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "El Modulo de Proveedores nos \r\nayuda a poder registrar los \r\nproveedorespara tene" +
+    "r un \r\ncontrol de lo comprado.";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pnl_der
+            // 
+            this.pnl_der.BackColor = System.Drawing.Color.Black;
+            this.pnl_der.Controls.Add(this.label5);
+            this.pnl_der.Controls.Add(this.label8);
+            this.pnl_der.Controls.Add(this.panel17);
+            this.pnl_der.Controls.Add(this.label4);
+            this.pnl_der.Controls.Add(this.label6);
+            this.pnl_der.Controls.Add(this.panel13);
+            this.pnl_der.Controls.Add(this.label7);
+            this.pnl_der.Controls.Add(this.label2);
+            this.pnl_der.Controls.Add(this.label3);
+            this.pnl_der.Controls.Add(this.panel28);
+            this.pnl_der.Controls.Add(this.btn_regresar);
+            this.pnl_der.Controls.Add(this.panel26);
+            this.pnl_der.Controls.Add(this.panel24);
+            this.pnl_der.Controls.Add(this.panel15);
+            this.pnl_der.Controls.Add(this.panel3);
+            this.pnl_der.Controls.Add(this.lbl_perfil);
+            this.pnl_der.Controls.Add(this.lbl_id);
+            this.pnl_der.Controls.Add(this.txt_usuario);
+            this.pnl_der.Controls.Add(this.label1);
+            this.pnl_der.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_der.Location = new System.Drawing.Point(297, 29);
+            this.pnl_der.Name = "pnl_der";
+            this.pnl_der.Size = new System.Drawing.Size(680, 548);
+            this.pnl_der.TabIndex = 3;
+            this.pnl_der.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_der_Paint);
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Black;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(117, 333);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(286, 45);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "El Modulo de Clientes nos ayuda a poder:\r\n * Registrar los clientes que vayan a t" +
+    "ener credito\r\n* Pagar Creditos pendientes de los Clientes";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.pictureBox16);
+            this.panel13.Location = new System.Drawing.Point(7, 333);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(108, 55);
+            this.panel13.TabIndex = 9;
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
+            this.pictureBox16.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(108, 50);
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox16.TabIndex = 0;
+            this.pictureBox16.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.Black;
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(397, 401);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(283, 97);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "El Modulo de Caja nos ayuda a poder:\r\n* Ver todos los producto vendidos del dia \r" +
+    "\n* Abonar un saldo Inicial en Caja\r\n* Retirar dinero\r\n* Abrir y Cerrar Caja";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.pictureBox17);
+            this.panel17.Location = new System.Drawing.Point(485, 327);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(108, 55);
+            this.panel17.TabIndex = 13;
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
+            this.pictureBox17.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(108, 50);
+            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox17.TabIndex = 0;
+            this.pictureBox17.TabStop = false;
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1019,29 +1045,6 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimzar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrarapp)).EndInit();
-            this.pnl_der.ResumeLayout(false);
-            this.pnl_der.PerformLayout();
-            this.panel28.ResumeLayout(false);
-            this.panel29.ResumeLayout(false);
-            this.panel29.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
-            this.panel26.ResumeLayout(false);
-            this.panel27.ResumeLayout(false);
-            this.panel27.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            this.panel24.ResumeLayout(false);
-            this.panel25.ResumeLayout(false);
-            this.panel25.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            this.panel15.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
-            this.panel17.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.pnl_infoal.ResumeLayout(false);
-            this.pnl_infoal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_alimg)).EndInit();
             this.pnl_ventas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnl_productos.ResumeLayout(false);
@@ -1065,6 +1068,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btn_alimg)).EndInit();
+            this.panel15.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            this.panel24.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            this.panel26.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
+            this.panel28.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            this.pnl_der.ResumeLayout(false);
+            this.pnl_der.PerformLayout();
+            this.panel13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            this.panel17.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1076,31 +1096,6 @@
         private PictureBox cerrarapp;
         private PictureBox btn_minimzar;
         private Panel panel16;
-        private Label label1;
-        public Label txt_usuario;
-        public Label lbl_id;
-        private Panel pnl_der;
-        public Label lbl_perfil;
-        private Panel panel3;
-        private Panel pnl_infoal;
-        private Label label2;
-        private PictureBox btn_alimg;
-        private Panel panel28;
-        private Panel panel29;
-        private Label label7;
-        private PictureBox pictureBox14;
-        private Panel panel26;
-        private Panel panel27;
-        private Label label6;
-        private PictureBox pictureBox13;
-        private Panel panel24;
-        private Panel panel25;
-        private Label label5;
-        private PictureBox pictureBox12;
-        private Panel panel15;
-        private Panel panel17;
-        private Label label3;
-        private PictureBox pictureBox10;
         private Panel pnl_ventas;
         private Panel panel2;
         private Button btn_venta;
@@ -1131,7 +1126,6 @@
         private Panel panel21;
         private Button button1;
         private PictureBox pictureBox9;
-        private PictureBox btn_regresar;
         private Panel pnl_izq;
         private Button btn_cliente;
         private Panel panel7;
@@ -1145,5 +1139,32 @@
         private Panel panel11;
         private Button btn_caja;
         private PictureBox pictureBox15;
+        private Label label1;
+        public Label txt_usuario;
+        public Label lbl_id;
+        public Label lbl_perfil;
+        private Panel panel3;
+        private PictureBox btn_alimg;
+        private Panel panel15;
+        private PictureBox pictureBox10;
+        private Panel panel24;
+        private PictureBox pictureBox12;
+        private Label label5;
+        private Panel panel26;
+        private PictureBox pictureBox13;
+        private PictureBox btn_regresar;
+        private Panel panel28;
+        private PictureBox pictureBox14;
+        private Label label3;
+        private Label label2;
+        private Label label7;
+        private Label label6;
+        private Panel pnl_der;
+        private Label label8;
+        private Panel panel17;
+        private PictureBox pictureBox17;
+        private Label label4;
+        private Panel panel13;
+        private PictureBox pictureBox16;
     }
 }
