@@ -32,12 +32,15 @@ namespace PUNTOVENTA.MENU.CAJA
         private void CargarVentas()
         {
 
+          dataGridView_ventas.Rows.Clear();
+          dataGridView_p_credito.Rows.Clear();
+          _dineroventas = 0;
 
-            dgCaja parametro = new dgCaja
-            {
-                FechaInicio = DateTime.Now
+          dgCaja parametro = new dgCaja
+          {
+            FechaInicio = DateTime.Now
 
-            };
+          };
 
 
 
@@ -472,6 +475,7 @@ namespace PUNTOVENTA.MENU.CAJA
                 CargaEstatusCaja();
 
                 ActualizarCaja();
+                CargaVentaAbonos();
 
 
 
