@@ -357,5 +357,14 @@ namespace Punto_de_Venta
             forms.lbl_id.Text = lbl_id.Text;
             forms.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            reporte_cliente forms = new reporte_cliente();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
+            
+        }
     }
 }
