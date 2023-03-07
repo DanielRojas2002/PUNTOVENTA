@@ -71,7 +71,7 @@ namespace PUNTOVENTA.MENU.REPORTES
                         subtotal = (float)Math.Round(subtotal, 2);
 
                         fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
-                        dataGridView1.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
+                        dataGridViewClientes.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
                             d.CantidadProducto.ToString(), d.PrecioProducto.ToString(), Convert.ToString(subtotal), fechaventa, d.Usuario.ToString());
 
 

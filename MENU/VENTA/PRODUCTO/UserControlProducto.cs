@@ -124,7 +124,7 @@ namespace PUNTOVENTA.MENU.VENTA.PRODUCTO
         }
 
        
-        private async void btn_ordenar_Click(object sender, EventArgs e)
+        private  void btn_ordenar_Click(object sender, EventArgs e)
         {
             int cantidadaordenar = 0,stock=0;
 

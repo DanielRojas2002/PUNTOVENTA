@@ -72,7 +72,7 @@ namespace PUNTOVENTA.MENU.VENTA.PRODUCTO
 
 
 
-        private async void btn_quitar_producto_Click(object sender, EventArgs e)
+        private  void btn_quitar_producto_Click(object sender, EventArgs e)
         {
             dgVentaDetalle parametroeliminarproductoindividual = new dgVentaDetalle
             {
