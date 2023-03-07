@@ -164,6 +164,12 @@ namespace PUNTOVENTA.CLASES
                              {
                                  Id_Venta = Convert.ToInt16(fila["Id_Venta"].ToString()),
                                
+                                 Nombre= Convert.ToString(fila["Nombre"].ToString()),
+
+                                 Apellido_Materno = Convert.ToString(fila["Apellido_Materno"].ToString()),
+
+
+                                 Apellido_Paterno = Convert.ToString(fila["Apellido_Paterno"].ToString()),
 
                                  CantidadComprada = Convert.ToInt16(fila["CantidadPagada"].ToString()),
 

@@ -683,7 +683,7 @@ namespace PUNTOVENTA.MENU.CAJA
 
                     concatenacion = "(" + d.Id_Producto.ToString() + ")" + " " + d.NombreProducto.ToString();
                     Ticket1.TextoIzquierda(" ");
-                    Ticket1.TextoIzquierda(d.Id_Venta.ToString() +" "+d.DescripcionTipoVenta.ToString() + " " + d.Usuario.ToString());
+                    Ticket1.TextoIzquierda("Num Venta: "+d.Id_Venta.ToString() +" "+d.DescripcionTipoVenta.ToString() + " " + d.Usuario.ToString());
                     Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
                     clsventas.CreaRecibo.LineasGuion();
                 }
@@ -716,7 +716,8 @@ namespace PUNTOVENTA.MENU.CAJA
 
                     
                     Ticket1.TextoIzquierda(" ");
-                    Ticket1.TextoIzquierda(d.Id_Venta.ToString() + " " + d.DescripcionTipoVenta.ToString() + " " + d.Usuario.ToString());
+                    Ticket1.TextoIzquierda("Num Venta: "+d.Id_Venta.ToString() + " " + d.DescripcionTipoVenta.ToString() + " " + d.Usuario.ToString());
+                    Ticket1.TextoIzquierda("Cliente: " + " " + d.Nombre.ToString() + " " + d.Apellido_Paterno.ToString() + " " + d.Apellido_Materno.ToString());
                     Ticket1.AgregaArticulo("", 0, 0, double.Parse(subtotal.ToString()));
                     clsventas.CreaRecibo.LineasGuion();
                 }

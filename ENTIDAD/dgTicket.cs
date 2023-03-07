@@ -32,6 +32,14 @@ namespace PUNTOVENTA.ENTIDAD
 
         public string? NombreEmpresa { get; set; }
 
+        public string? Nombre { get; set; }
+
+        public string? Apellido_Paterno { get; set; }
+
+        public string? Apellido_Materno { get; set; }
+
+       
+
         public string? Direccion { get; set; }
 
         public string? Telefono { get; set; }
