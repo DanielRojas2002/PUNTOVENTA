@@ -23,7 +23,7 @@ namespace PUNTOVENTA.ENTIDAD
 
         public float? Cambio { get; set; }
 
-
+        public string? DescripcionTipoVenta { get; set; }
         public string? NombreProducto { get; set; }
 
         public string? Usuario { get; set; }

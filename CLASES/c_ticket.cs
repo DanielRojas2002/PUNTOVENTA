@@ -107,8 +107,8 @@ namespace PUNTOVENTA.CLASES
 
                 SqlParameter[] Parametros =
                 {
-                    new SqlParameter("@Accion",1),
-                     new SqlParameter("@P_IdVenta",Parametro.Id_Venta)
+                    new SqlParameter("@Accion",3),
+                     new SqlParameter("@P_FechaVenta",Parametro.FechaVenta)
                 };
 
                 tabla = bdContext.funcionStored("spTicket", Parametros);
@@ -128,12 +128,52 @@ namespace PUNTOVENTA.CLASES
                                  PrecioComprado = float.Parse(fila["PrecioProducto"].ToString()),
 
                                  SubTotal = float.Parse(fila["SubTotalProducto"].ToString()),
+                                 Usuario = Convert.ToString(fila["Usuario"].ToString()),
 
-                                 Total = float.Parse(fila["TotalVenta"].ToString()),
+                                 DescripcionTipoVenta = Convert.ToString(fila["DescripcionTipoVenta"].ToString()),
 
-                                 Cambio = float.Parse(fila["CambioVenta"].ToString()),
 
-                                 FechaVenta = Convert.ToDateTime(fila["FechaVentaProducto"].ToString())
+
+
+
+
+
+                             }
+                   ).ToList();
+                }
+
+
+            }
+
+
+            else if (tipo == 4) // Ticket Caja creditos
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",4),
+                     new SqlParameter("@P_FechaVenta",Parametro.FechaVenta)
+                };
+
+                tabla = bdContext.funcionStored("spTicket", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgTicket
+                             {
+                                 Id_Venta = Convert.ToInt16(fila["Id_Venta"].ToString()),
+                               
+
+                                 CantidadComprada = Convert.ToInt16(fila["CantidadPagada"].ToString()),
+
+                              
+                                 Usuario = Convert.ToString(fila["Usuario"].ToString()),
+
+                                 DescripcionTipoVenta = Convert.ToString(fila["DescripcionTipoVenta"].ToString()),
+
+
+
 
 
 

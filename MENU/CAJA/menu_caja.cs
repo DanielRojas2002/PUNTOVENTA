@@ -682,37 +682,66 @@ namespace PUNTOVENTA.MENU.CAJA
 
 
                     concatenacion = "(" + d.Id_Producto.ToString() + ")" + " " + d.NombreProducto.ToString();
+                    Ticket1.TextoIzquierda(" ");
+                    Ticket1.TextoIzquierda(d.Id_Venta.ToString() +" "+d.DescripcionTipoVenta.ToString() + " " + d.Usuario.ToString());
                     Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
                     clsventas.CreaRecibo.LineasGuion();
                 }
             }
 
-            Ticket1.TextoIzquierda(" ");
-            Ticket1.AgregaTotales("Total", double.Parse(lbl_caja.Text));
-            Ticket1.TextoIzquierda(" ");
-            Ticket1.AgregaTotales("Abonado con :", double.Parse(lbl_abonado_total.Text));
-           
 
-            if (listaticketinfo.Count > 0)
+
+            dgTicket parametroticket2 = new dgTicket
+            {
+                FechaVenta = DateTime.Now
+            };
+
+            List<dgTicket> listaProductosVenta2 = c_ticket.Ticket(4, parametroticket);
+
+
+            if (listaProductosVenta2.Count > 0)
 
             {
-                Ticket1.TextoIzquierda(" ");
-                Ticket1.TextoCentro("=================================================");
 
-                foreach (dgTicket d in listaticketinfo)
+
+
+                
+                double subtotal, sub;
+                foreach (dgTicket d in listaProductosVenta2)
                 {
+                    sub = double.Parse(d.CantidadComprada.ToString());
 
-                    Ticket1.TextoCentro(d.Mensaje.ToUpper().ToString());
+                    subtotal = (double)Math.Round(sub, 2);
 
 
-
+                    
+                    Ticket1.TextoIzquierda(" ");
+                    Ticket1.TextoIzquierda(d.Id_Venta.ToString() + " " + d.DescripcionTipoVenta.ToString() + " " + d.Usuario.ToString());
+                    Ticket1.AgregaArticulo("", 0, 0, double.Parse(subtotal.ToString()));
+                    clsventas.CreaRecibo.LineasGuion();
                 }
-                Ticket1.TextoCentro("===================================================");
-                Ticket1.TextoIzquierda(" ");
-
-
             }
 
+            Ticket1.TextoIzquierda(" "); 
+            Ticket1.AgregaTotales("Total Venta", double.Parse(lbl_cantidad_vendida.Text));
+            Ticket1.TextoIzquierda(" ");
+            Ticket1.AgregaTotales("Abonado con :", double.Parse(lbl_abonado_total.Text));
+
+            Ticket1.TextoIzquierda(" ");
+            Ticket1.AgregaTotales("Retirado Caja", double.Parse(lbl_retirado.Text));
+
+            Ticket1.TextoIzquierda(" ");
+            Ticket1.AgregaTotales("Total Caja ", double.Parse(lbl_caja.Text));
+
+
+
+
+            Ticket1.TextoIzquierda(" ");
+            Ticket1.TextoCentro("=================================================");
+            Ticket1.TextoCentro("TICKET DE CAJA ");
+            Ticket1.TextoCentro("===================================================");
+            Ticket1.TextoIzquierda(" ");
+           
 
 
             string impresora = "Microsoft XPS Document Writer";
