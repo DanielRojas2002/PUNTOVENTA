@@ -171,7 +171,7 @@ namespace PUNTOVENTA.CLASES
 
                                  Apellido_Paterno = Convert.ToString(fila["Apellido_Paterno"].ToString()),
 
-                                 CantidadComprada = Convert.ToInt16(fila["CantidadPagada"].ToString()),
+                                 SubTotal = float.Parse(fila["CantidadPagada"].ToString()),
 
                               
                                  Usuario = Convert.ToString(fila["Usuario"].ToString()),

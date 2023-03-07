@@ -709,7 +709,7 @@ namespace PUNTOVENTA.MENU.CAJA
                 double subtotal, sub;
                 foreach (dgTicket d in listaProductosVenta2)
                 {
-                    sub = double.Parse(d.CantidadComprada.ToString());
+                    sub = double.Parse(d.SubTotal.ToString());
 
                     subtotal = (double)Math.Round(sub, 2);
 
