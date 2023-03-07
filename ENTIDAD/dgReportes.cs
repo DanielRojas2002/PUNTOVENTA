@@ -22,10 +22,14 @@ namespace PUNTOVENTA.ENTIDAD
 
         public string? Nombre { get; set; }
 
+        public string? DescripcionTipoVenta { get; set; }
+
         public string? Categoria { get; set; }
         public int? CantidadProducto { get; set; }
         public float? PrecioProducto { get; set; }
         public float? SubTotalProducto { get; set; }
+
+        public float? CantidadPagada { get; set; }
         public DateTime? FechaVentaProducto { get; set; }
         public DateTime? FechaInicio { get; set; }
 

@@ -27,53 +27,13 @@ namespace PUNTOVENTA.MENU.REPORTES
 
         }
 
+        public float _dineroventas { get; set; }
         private void button1_Click(object sender, EventArgs e)
         {
 
-            dataGridView1.Rows.Clear();
-            txtFechai.Text = FechaInicio.Value.ToString("dd/MM/yyyy");
-            txtFechaf.Text = fechafinal.Value.ToString("dd/MM/yyyy");
-
-            dgReportes parametro = new dgReportes
-            {
-                FechaInicio = Convert.ToDateTime(txtFechai.Text),
-                FechaFinal = Convert.ToDateTime(txtFechaf.Text)
-            };
-
-
-
-
-            List <dgReportes> lista = c_reportes.LeerReporte(1, parametro);
-
-
-            if (lista.Count > 0)
-
-            {
-                string fechaventa;
-                float subtotal;
-                foreach (dgReportes d in lista)
-                {
-
-                    subtotal = float.Parse(d.SubTotalProducto.ToString());
-
-                    subtotal = (float)Math.Round(subtotal, 2);
-
-                    fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
-                    dataGridView1.Rows.Add(d.Id_Venta.ToString(),d.IdProducto.ToString(),d.NombreProducto.ToString(),
-                        d.CantidadProducto.ToString(),d.PrecioProducto.ToString(),Convert.ToString(subtotal), fechaventa,d.Usuario.ToString());
-                    
-
-
-                }
-
-            }
-
-            else
-            {
-
-                MessageBox.Show("No se encontró reporte de compra este día seleccionado");
-
-            }
+            dataGridView_ventas.Rows.Clear();
+            dataGridView_p_credito.Rows.Clear();
+            CargarVentas();
 
         }
         private void RegresarVentana()
@@ -162,6 +122,154 @@ namespace PUNTOVENTA.MENU.REPORTES
 
         }
 
+        private void CargarVentas()
+        {
+
+            dataGridView_ventas.Rows.Clear();
+            dataGridView_p_credito.Rows.Clear();
+            _dineroventas = 0;
+
+
+            txtFechai.Text = FechaInicio.Value.ToString("dd/MM/yyyy");
+            txtFechaf.Text = fechafinal.Value.ToString("dd/MM/yyyy");
+
+            dgReportes parametro = new dgReportes
+            {
+                FechaInicio = Convert.ToDateTime(txtFechai.Text),
+                FechaFinal = Convert.ToDateTime(txtFechaf.Text)
+            };
+
+
+
+
+            List<dgReportes> lista = c_reportes.LeerReporte(1, parametro);
+
+
+            if (lista.Count > 0)
+
+            {
+                string fechaventa;
+                float subtotal;
+                foreach (dgReportes d in lista)
+                {
+                    subtotal = float.Parse(d.SubTotalProducto.ToString());
+
+                    subtotal = (float)Math.Round(subtotal, 2);
+
+                    fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
+                    dataGridView_ventas.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
+                         d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), fechaventa, d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
+
+
+                    _dineroventas = _dineroventas + float.Parse(d.SubTotalProducto.ToString());
+                }
+
+
+            }
+
+            else
+            {
+
+
+
+            }
+
+            dgReportes parametro2 = new dgReportes
+            {
+                FechaInicio = Convert.ToDateTime(txtFechai.Text),
+                FechaFinal = Convert.ToDateTime(txtFechaf.Text)
+            };
+
+
+
+
+            List<dgReportes> lista2 = c_reportes.LeerReporte(6, parametro2);
+
+
+            if (lista2.Count > 0)
+
+            {
+                string fechaventa;
+                float subtotal, cantidadpagada;
+
+                foreach (dgReportes d in lista2)
+                {
+
+
+
+                    subtotal = float.Parse(d.SubTotalProducto.ToString());
+
+                    subtotal = (float)Math.Round(subtotal, 2);
+
+                    cantidadpagada = float.Parse(d.CantidadPagada.ToString());
+                    cantidadpagada = (float)Math.Round(cantidadpagada, 2);
+
+                    fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
+                    dataGridView_p_credito.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
+                         d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), Convert.ToString("-"), fechaventa, d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
+
+
+
+                }
+
+
+
+            }
+
+            else
+            {
+
+
+
+            }
+
+
+            dgReportes parametro3 = new dgReportes
+            {
+                FechaInicio = Convert.ToDateTime(txtFechai.Text),
+                FechaFinal = Convert.ToDateTime(txtFechaf.Text)
+
+            };
+
+
+
+
+            List<dgReportes> lista3 = c_reportes.LeerReporte(8, parametro3);
+
+
+            if (lista3.Count > 0)
+
+            {
+                string fechaventa;
+                float subtotal, cantidadpagada;
+
+                foreach (dgReportes d in lista3)
+                {
+
+
+                    fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
+                    dataGridView_p_credito.Rows.Add(d.Id_Venta.ToString(), "-", "-",
+                       "-", "-", "-", Convert.ToString(d.CantidadPagada.ToString()), fechaventa, d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
+
+                    _dineroventas = _dineroventas + float.Parse(d.CantidadPagada.ToString());
+
+                }
+
+
+
+            }
+
+            else
+            {
+
+
+
+            }
+
+            _dineroventas = (float)Math.Round(_dineroventas, 2);
+
+            lbl_cantidad_vendida.Text = Convert.ToString(_dineroventas);
+        }
         private void reporte_venta_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
@@ -178,6 +286,11 @@ namespace PUNTOVENTA.MENU.REPORTES
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView_p_credito_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
