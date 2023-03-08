@@ -274,5 +274,85 @@ namespace PUNTOVENTA.MENU.REPORTES
 
       
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            List<List<string>> ListadeListas = new List<List<string>>();
+            List<string> ListaDatos = new List<string>();
+
+
+            string v1 = "";
+            string v2 = "";
+            string v3 = "";
+            string v4 = "";
+            string v5 = "";
+            string v6 = "";
+            string v7 = "";
+
+            string rows = dataGridView1.Rows.ToString();
+
+      
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                v1 = "";
+                v2 = "";
+                v3 = "";
+                v4 = "";
+                v5 = "";
+                v6 = "";
+                v7 = "";
+                try
+                {
+                    v1 = row.Cells[0].Value.ToString();
+                    v2 = row.Cells[1].Value.ToString();
+                    v3 = row.Cells[2].Value.ToString();
+                    v4 = row.Cells[3].Value.ToString();
+                    v5 = row.Cells[4].Value.ToString();
+                    v6 = row.Cells[5].Value.ToString();
+                    v7 = row.Cells[6].Value.ToString();
+
+                    ListaDatos.Add(v1);
+                    ListaDatos.Add(v2);
+                    ListaDatos.Add(v3);
+                    ListaDatos.Add(v4);
+                    ListaDatos.Add(v5);
+                    ListaDatos.Add(v6);
+                    ListaDatos.Add(v7);
+
+
+
+                    ListadeListas.Add(ListaDatos);
+
+                    ListaDatos.Clear();
+                }
+                catch
+                {
+
+                }
+
+
+
+            }
+
+
+
+            string fechainicio, fechafinal2;
+
+          
+
+            fechainicio = FechaInicio.Value.ToString("dd_MM_yyyy");
+            fechafinal2 = fechafinal.Value.ToString("dd_MM_yyyy");
+
+
+            string control = "";
+            string ls_archivo_excel = "C:\\C#\\R_Compras"+fechainicio+"_"+fechafinal2 + ".xlsx";
+            control = c_excel.ReporteCompras(ls_archivo_excel,fechainicio,fechafinal2, ListadeListas);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
