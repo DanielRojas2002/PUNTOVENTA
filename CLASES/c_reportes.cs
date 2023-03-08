@@ -110,13 +110,17 @@ namespace PUNTOVENTA.CLASES
                              select new dgReportes
                              {
                                  IdCliente = Convert.ToInt16(fila["Id_Cliente"].ToString()),
-                                 PrecioCompra = Convert.ToInt16(fila["IdProducto"].ToString()),
-                                 NombreProducto = Convert.ToString(fila["NombreProducto"].ToString()),
-                                 CantidadProducto = Convert.ToInt16(fila["CantidadProducto"].ToString()),
-                                 
-                                 PrecioVenta = float.Parse(fila["PrecioVentaProducto"].ToString()),
-                                 SubTotalProducto = float.Parse(fila["SubTotalProducto"].ToString()),
-                                 FechaCompraProducto = Convert.ToDateTime(fila["FechaCompraProducto"].ToString()),
+
+                                 Nombre = Convert.ToString(fila["Nombre"].ToString()),
+                                 Apellido_Paterno = Convert.ToString(fila["Apellido_Paterno"].ToString()),
+                                 Apellido_Materno = Convert.ToString(fila["Apellido_Materno"].ToString()),
+                                
+                                 Id_Venta = Convert.ToInt16(fila["Id_Venta"].ToString()),
+                                 CantidadPagada = float.Parse(fila["CantidadPagada"].ToString()),
+                                 Total = float.Parse(fila["Total"].ToString()),
+
+                                 DescripcionEstatus= Convert.ToString(fila["Descripcion"].ToString()),
+
                                  Usuario = Convert.ToString(fila["Usuario"].ToString())
 
 

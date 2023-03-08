@@ -22,6 +22,13 @@ namespace PUNTOVENTA.ENTIDAD
 
         public string? Nombre { get; set; }
 
+        public string? Apellido_Paterno { get; set; }
+
+        public string? Apellido_Materno { get; set; }
+
+        public float? Total { get; set; }
+
+        public string? DescripcionEstatus { get; set; }
         public string? DescripcionTipoVenta { get; set; }
 
         public string? Categoria { get; set; }

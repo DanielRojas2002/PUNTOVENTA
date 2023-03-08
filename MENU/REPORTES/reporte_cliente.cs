@@ -44,6 +44,7 @@ namespace PUNTOVENTA.MENU.REPORTES
 
         private void button1_Click(object sender, EventArgs e)
         {
+            dataGridViewClientes.Rows.Clear();
             if (bx_cliente.Text != "")
             {
                 dgReportes parametro = new dgReportes
@@ -62,17 +63,23 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                 {
                     string fechaventa;
-                    float subtotal;
+                    float cantidadpagada,total;
                     foreach (dgReportes d in lista)
                     {
 
-                        subtotal = float.Parse(d.SubTotalProducto.ToString());
+                        cantidadpagada = float.Parse(d.CantidadPagada.ToString());
 
-                        subtotal = (float)Math.Round(subtotal, 2);
+                        cantidadpagada = (float)Math.Round(cantidadpagada, 2);
 
-                        fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
-                        dataGridViewClientes.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
-                            d.CantidadProducto.ToString(), d.PrecioProducto.ToString(), Convert.ToString(subtotal), fechaventa, d.Usuario.ToString());
+                        total = float.Parse(d.Total.ToString());
+
+                        total = (float)Math.Round(total, 2);
+
+
+
+                       
+                        dataGridViewClientes.Rows.Add(d.IdCliente.ToString(), d.Nombre.ToString(), d.Apellido_Paterno.ToString(),
+                            d.Apellido_Materno.ToString(), d.Id_Venta.ToString(), Convert.ToString(cantidadpagada), Convert.ToString(total), d.DescripcionEstatus.ToString(), d.Usuario.ToString());
 
 
 
