@@ -207,5 +207,10 @@ namespace PUNTOVENTA.MENU.REPORTES
         {
 
         }
+
+        private void dataGridViewClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

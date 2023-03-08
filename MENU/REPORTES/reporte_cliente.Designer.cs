@@ -40,16 +40,6 @@
             this.idCliente = new System.Windows.Forms.Label();
             this.btn_regresar = new System.Windows.Forms.PictureBox();
             this.lbl_id = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.dataGridViewClientes = new System.Windows.Forms.DataGridView();
             this.Id_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,9 +50,20 @@
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.panel7 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -72,7 +73,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -80,7 +80,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cooper Black", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(345, 83);
+            this.label4.Location = new System.Drawing.Point(337, 59);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(594, 50);
             this.label4.TabIndex = 19;
@@ -88,10 +88,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(328, 611);
+            this.button2.Location = new System.Drawing.Point(635, 610);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(660, 31);
+            this.button2.Size = new System.Drawing.Size(384, 31);
             this.button2.TabIndex = 18;
             this.button2.Text = "Exportar a Excel";
             this.button2.UseVisualStyleBackColor = true;
@@ -99,10 +99,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(42, 519);
+            this.button1.Location = new System.Drawing.Point(713, 131);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(259, 31);
+            this.button1.Size = new System.Drawing.Size(184, 31);
             this.button1.TabIndex = 17;
             this.button1.Text = "Generar Reporte";
             this.button1.UseVisualStyleBackColor = true;
@@ -112,17 +112,18 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Navy;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(42, 458);
+            this.label5.Location = new System.Drawing.Point(377, 127);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 20);
+            this.label5.Size = new System.Drawing.Size(95, 31);
             this.label5.TabIndex = 23;
             this.label5.Text = "Cliente:";
             // 
             // bx_cliente
             // 
             this.bx_cliente.FormattingEnabled = true;
-            this.bx_cliente.Location = new System.Drawing.Point(120, 455);
+            this.bx_cliente.Location = new System.Drawing.Point(491, 130);
             this.bx_cliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bx_cliente.Name = "bx_cliente";
             this.bx_cliente.Size = new System.Drawing.Size(181, 28);
@@ -133,10 +134,10 @@
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(42, 155);
+            this.pictureBox7.Location = new System.Drawing.Point(115, 51);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(250, 272);
+            this.pictureBox7.Size = new System.Drawing.Size(256, 184);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 80;
             this.pictureBox7.TabStop = false;
@@ -146,7 +147,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Cooper Black", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(480, 167);
+            this.label6.Location = new System.Drawing.Point(466, 176);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(364, 50);
             this.label6.TabIndex = 81;
@@ -155,6 +156,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.bx_cliente);
             this.panel1.Controls.Add(this.idCliente);
             this.panel1.Controls.Add(this.btn_regresar);
             this.panel1.Controls.Add(this.lbl_id);
@@ -163,13 +166,12 @@
             this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.pictureBox7);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.dataGridViewClientes);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1034, 695);
+            this.panel1.Size = new System.Drawing.Size(1052, 695);
             this.panel1.TabIndex = 82;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -178,7 +180,7 @@
             this.idCliente.AutoSize = true;
             this.idCliente.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.idCliente.ForeColor = System.Drawing.Color.White;
-            this.idCliente.Location = new System.Drawing.Point(42, 428);
+            this.idCliente.Location = new System.Drawing.Point(43, 124);
             this.idCliente.Name = "idCliente";
             this.idCliente.Size = new System.Drawing.Size(102, 23);
             this.idCliente.TabIndex = 83;
@@ -189,7 +191,7 @@
             // 
             this.btn_regresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_regresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_regresar.Image")));
-            this.btn_regresar.Location = new System.Drawing.Point(12, 55);
+            this.btn_regresar.Location = new System.Drawing.Point(36, 51);
             this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_regresar.Name = "btn_regresar";
             this.btn_regresar.Size = new System.Drawing.Size(49, 35);
@@ -203,19 +205,131 @@
             this.lbl_id.AutoSize = true;
             this.lbl_id.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_id.ForeColor = System.Drawing.Color.White;
-            this.lbl_id.Location = new System.Drawing.Point(345, 167);
+            this.lbl_id.Location = new System.Drawing.Point(115, 59);
             this.lbl_id.Name = "lbl_id";
             this.lbl_id.Size = new System.Drawing.Size(30, 23);
             this.lbl_id.TabIndex = 85;
             this.lbl_id.Text = "id";
             this.lbl_id.Visible = false;
             // 
+            // dataGridViewClientes
+            // 
+            this.dataGridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id_Cliente,
+            this.Nombre,
+            this.Apellido_Paterno,
+            this.Apellido_Materno,
+            this.Id_Venta,
+            this.CantidadPagada,
+            this.Total,
+            this.Descripcion,
+            this.Usuario});
+            this.dataGridViewClientes.Location = new System.Drawing.Point(115, 234);
+            this.dataGridViewClientes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridViewClientes.Name = "dataGridViewClientes";
+            this.dataGridViewClientes.RowHeadersWidth = 51;
+            this.dataGridViewClientes.RowTemplate.Height = 25;
+            this.dataGridViewClientes.Size = new System.Drawing.Size(904, 368);
+            this.dataGridViewClientes.TabIndex = 11;
+            this.dataGridViewClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewClientes_CellContentClick);
+            // 
+            // Id_Cliente
+            // 
+            this.Id_Cliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Id_Cliente.Frozen = true;
+            this.Id_Cliente.HeaderText = "No. Cliente";
+            this.Id_Cliente.MinimumWidth = 6;
+            this.Id_Cliente.Name = "Id_Cliente";
+            this.Id_Cliente.ReadOnly = true;
+            this.Id_Cliente.Width = 111;
+            // 
+            // Nombre
+            // 
+            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Nombre.Frozen = true;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 93;
+            // 
+            // Apellido_Paterno
+            // 
+            this.Apellido_Paterno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Apellido_Paterno.Frozen = true;
+            this.Apellido_Paterno.HeaderText = "Paterno";
+            this.Apellido_Paterno.MinimumWidth = 6;
+            this.Apellido_Paterno.Name = "Apellido_Paterno";
+            this.Apellido_Paterno.ReadOnly = true;
+            this.Apellido_Paterno.Width = 88;
+            // 
+            // Apellido_Materno
+            // 
+            this.Apellido_Materno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Apellido_Materno.Frozen = true;
+            this.Apellido_Materno.HeaderText = "Materno";
+            this.Apellido_Materno.MinimumWidth = 6;
+            this.Apellido_Materno.Name = "Apellido_Materno";
+            this.Apellido_Materno.ReadOnly = true;
+            this.Apellido_Materno.Width = 94;
+            // 
+            // Id_Venta
+            // 
+            this.Id_Venta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Id_Venta.Frozen = true;
+            this.Id_Venta.HeaderText = "No. Venta";
+            this.Id_Venta.MinimumWidth = 6;
+            this.Id_Venta.Name = "Id_Venta";
+            this.Id_Venta.ReadOnly = true;
+            this.Id_Venta.Width = 102;
+            // 
+            // CantidadPagada
+            // 
+            this.CantidadPagada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.CantidadPagada.Frozen = true;
+            this.CantidadPagada.HeaderText = "Cant Pagada";
+            this.CantidadPagada.MinimumWidth = 6;
+            this.CantidadPagada.Name = "CantidadPagada";
+            this.CantidadPagada.ReadOnly = true;
+            this.CantidadPagada.Width = 121;
+            // 
+            // Total
+            // 
+            this.Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Total.Frozen = true;
+            this.Total.HeaderText = "Total";
+            this.Total.MinimumWidth = 6;
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            this.Total.Width = 71;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Descripcion.Frozen = true;
+            this.Descripcion.HeaderText = "Estatus";
+            this.Descripcion.MinimumWidth = 6;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 84;
+            // 
+            // Usuario
+            // 
+            this.Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Usuario.Frozen = true;
+            this.Usuario.HeaderText = "Registró";
+            this.Usuario.MinimumWidth = 6;
+            this.Usuario.Name = "Usuario";
+            this.Usuario.ReadOnly = true;
+            this.Usuario.Width = 93;
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(2804, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(2827, 4);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(29, 31);
@@ -236,7 +350,7 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(2760, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(2783, 4);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(39, 31);
@@ -249,7 +363,7 @@
             this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(2380, 4);
+            this.pictureBox6.Location = new System.Drawing.Point(2403, 4);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(29, 31);
@@ -262,7 +376,7 @@
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(2333, 4);
+            this.pictureBox5.Location = new System.Drawing.Point(2356, 4);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(39, 31);
@@ -275,7 +389,7 @@
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(1640, 9);
+            this.pictureBox4.Location = new System.Drawing.Point(1663, 9);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(39, 31);
@@ -288,7 +402,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1683, 8);
+            this.pictureBox1.Location = new System.Drawing.Point(1706, 8);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(29, 31);
@@ -301,7 +415,7 @@
             this.pictureBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(952, 9);
+            this.pictureBox8.Location = new System.Drawing.Point(975, 9);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(39, 31);
@@ -315,7 +429,7 @@
             this.pictureBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(993, 8);
+            this.pictureBox9.Location = new System.Drawing.Point(1016, 8);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(29, 31);
@@ -339,121 +453,19 @@
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1034, 47);
+            this.panel7.Size = new System.Drawing.Size(1057, 47);
             this.panel7.TabIndex = 82;
-            // 
-            // dataGridViewClientes
-            // 
-            this.dataGridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id_Cliente,
-            this.Nombre,
-            this.Apellido_Paterno,
-            this.Apellido_Materno,
-            this.Id_Venta,
-            this.CantidadPagada,
-            this.Total,
-            this.Descripcion,
-            this.Usuario});
-            this.dataGridViewClientes.Location = new System.Drawing.Point(328, 235);
-            this.dataGridViewClientes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dataGridViewClientes.Name = "dataGridViewClientes";
-            this.dataGridViewClientes.RowHeadersWidth = 51;
-            this.dataGridViewClientes.RowTemplate.Height = 25;
-            this.dataGridViewClientes.Size = new System.Drawing.Size(660, 368);
-            this.dataGridViewClientes.TabIndex = 11;
-            // 
-            // Id_Cliente
-            // 
-            this.Id_Cliente.Frozen = true;
-            this.Id_Cliente.HeaderText = "No. Cliente";
-            this.Id_Cliente.MinimumWidth = 6;
-            this.Id_Cliente.Name = "Id_Cliente";
-            this.Id_Cliente.ReadOnly = true;
-            this.Id_Cliente.Width = 70;
-            // 
-            // Nombre
-            // 
-            this.Nombre.Frozen = true;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 70;
-            // 
-            // Apellido_Paterno
-            // 
-            this.Apellido_Paterno.Frozen = true;
-            this.Apellido_Paterno.HeaderText = "Paterno";
-            this.Apellido_Paterno.MinimumWidth = 6;
-            this.Apellido_Paterno.Name = "Apellido_Paterno";
-            this.Apellido_Paterno.ReadOnly = true;
-            this.Apellido_Paterno.Width = 70;
-            // 
-            // Apellido_Materno
-            // 
-            this.Apellido_Materno.Frozen = true;
-            this.Apellido_Materno.HeaderText = "Materno";
-            this.Apellido_Materno.MinimumWidth = 6;
-            this.Apellido_Materno.Name = "Apellido_Materno";
-            this.Apellido_Materno.ReadOnly = true;
-            this.Apellido_Materno.Width = 70;
-            // 
-            // Id_Venta
-            // 
-            this.Id_Venta.Frozen = true;
-            this.Id_Venta.HeaderText = "No. Venta";
-            this.Id_Venta.MinimumWidth = 6;
-            this.Id_Venta.Name = "Id_Venta";
-            this.Id_Venta.ReadOnly = true;
-            this.Id_Venta.Width = 70;
-            // 
-            // CantidadPagada
-            // 
-            this.CantidadPagada.Frozen = true;
-            this.CantidadPagada.HeaderText = "Cant Pagada";
-            this.CantidadPagada.MinimumWidth = 6;
-            this.CantidadPagada.Name = "CantidadPagada";
-            this.CantidadPagada.ReadOnly = true;
-            this.CantidadPagada.Width = 70;
-            // 
-            // Total
-            // 
-            this.Total.Frozen = true;
-            this.Total.HeaderText = "Total";
-            this.Total.MinimumWidth = 6;
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            this.Total.Width = 60;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.Frozen = true;
-            this.Descripcion.HeaderText = "Estatus";
-            this.Descripcion.MinimumWidth = 6;
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 60;
-            // 
-            // Usuario
-            // 
-            this.Usuario.Frozen = true;
-            this.Usuario.HeaderText = "Registró";
-            this.Usuario.MinimumWidth = 6;
-            this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
-            this.Usuario.Width = 70;
             // 
             // reporte_cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1034, 695);
-            this.Controls.Add(this.bx_cliente);
+            this.ClientSize = new System.Drawing.Size(1052, 695);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "reporte_cliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "reporte_cliente";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.reporte_cliente_FormClosing);
             this.Load += new System.EventHandler(this.reporte_cliente_Load);
@@ -461,6 +473,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -470,7 +483,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -488,16 +500,6 @@
         public Label lbl_id;
         private PictureBox btn_regresar;
         public Label idCliente;
-        private Panel panel7;
-        private PictureBox pictureBox9;
-        private PictureBox pictureBox8;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox6;
-        private PictureBox pictureBox2;
-        private Panel panel8;
-        private PictureBox pictureBox3;
         private DataGridView dataGridViewClientes;
         private DataGridViewTextBoxColumn Id_Cliente;
         private DataGridViewTextBoxColumn Nombre;
@@ -508,5 +510,15 @@
         private DataGridViewTextBoxColumn Total;
         private DataGridViewTextBoxColumn Descripcion;
         private DataGridViewTextBoxColumn Usuario;
+        private Panel panel7;
+        private PictureBox pictureBox9;
+        private PictureBox pictureBox8;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox6;
+        private PictureBox pictureBox2;
+        private Panel panel8;
+        private PictureBox pictureBox3;
     }
 }
