@@ -278,6 +278,8 @@ namespace PUNTOVENTA.MENU.REPORTES
         private void button2_Click(object sender, EventArgs e)
         {
             List<List<string>> ListadeListas = new List<List<string>>();
+           
+
             List<string> ListaDatos = new List<string>();
 
 
@@ -289,52 +291,27 @@ namespace PUNTOVENTA.MENU.REPORTES
             string v6 = "";
             string v7 = "";
 
-            string rows = dataGridView1.Rows.ToString();
 
-      
 
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+
+
+            for (int fila = 0; fila < dataGridView1.Rows.Count - 1; fila++)
             {
-                v1 = "";
-                v2 = "";
-                v3 = "";
-                v4 = "";
-                v5 = "";
-                v6 = "";
-                v7 = "";
-                try
+                for (int col = 0; col < dataGridView1.Rows[fila].Cells.Count; col++)
                 {
-                    v1 = row.Cells[0].Value.ToString();
-                    v2 = row.Cells[1].Value.ToString();
-                    v3 = row.Cells[2].Value.ToString();
-                    v4 = row.Cells[3].Value.ToString();
-                    v5 = row.Cells[4].Value.ToString();
-                    v6 = row.Cells[5].Value.ToString();
-                    v7 = row.Cells[6].Value.ToString();
-
-                    ListaDatos.Add(v1);
-                    ListaDatos.Add(v2);
-                    ListaDatos.Add(v3);
-                    ListaDatos.Add(v4);
-                    ListaDatos.Add(v5);
-                    ListaDatos.Add(v6);
-                    ListaDatos.Add(v7);
+                    string valor = dataGridView1.Rows[fila].Cells[col].Value.ToString();
+                   
 
 
+                    ListaDatos.Add(valor);
+                  
 
-                    ListadeListas.Add(ListaDatos);
-
-                    ListaDatos.Clear();
+                   
                 }
-                catch
-                {
-
-                }
-
-
-
+                ListadeListas.Add(ListaDatos);
+                ListaDatos.Clear();
             }
-
+           
 
 
             string fechainicio, fechafinal2;
@@ -344,6 +321,15 @@ namespace PUNTOVENTA.MENU.REPORTES
             fechainicio = FechaInicio.Value.ToString("dd_MM_yyyy");
             fechafinal2 = fechafinal.Value.ToString("dd_MM_yyyy");
 
+
+
+            //foreach (string list in ListadeListas)
+            //{
+            //    MessageBox.Show(list);
+                
+              
+
+            //}
 
             string control = "";
             string ls_archivo_excel = "C:\\C#\\R_Compras"+fechainicio+"_"+fechafinal2 + ".xlsx";

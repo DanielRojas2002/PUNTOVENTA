@@ -23,7 +23,7 @@ namespace PUNTOVENTA.CLASES
 
 
             //Ruta del fichero Excel
-            int contadorregistros = 0;
+            int contadorregistros = 7;
 
             var wb = new Excel.XLWorkbook();
 
@@ -60,13 +60,19 @@ namespace PUNTOVENTA.CLASES
             ws.Cell("G6").Value = "Usuario";
 
 
-          
+            int contadorcolumnas = 1;
             foreach ( var item in listadelistas)
             {
+               
                 foreach (var list in item)
                 {
+                    MessageBox.Show(list.ToString());
+                    ws.Cell(contadorcolumnas, contadorregistros).Value=list;
 
+                    contadorcolumnas = contadorcolumnas + 1;
+                   
                 }
+                contadorregistros = contadorregistros + 1;
             }
             
 
