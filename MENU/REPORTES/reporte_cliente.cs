@@ -90,7 +90,7 @@ namespace PUNTOVENTA.MENU.REPORTES
                 else
                 {
 
-                    MessageBox.Show("No se encontró reporte de compra este día seleccionado");
+                    MessageBox.Show("No se encontró reporte del Cliente Seleccionado");
 
                 }
             }
