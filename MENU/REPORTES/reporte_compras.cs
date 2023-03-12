@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml.Office2010.ExcelAc;
+﻿using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Office2010.ExcelAc;
 using Punto_de_Venta;
 using Punto_de_Venta.Clases;
 using PUNTOVENTA.CLASES;
@@ -366,6 +367,7 @@ namespace PUNTOVENTA.MENU.REPORTES
                 ws.Cell("B2").Value = fechainicio;
                 ws.Cell("A3").Value = "FECHA FINAL:";
                 ws.Cell("B3").Value = fechafinal2;
+
 
                 ws.Cell("D2").Value = "CATEGORIA:";
                 ws.Cell("D3").Value = "PRODUCTO:";
