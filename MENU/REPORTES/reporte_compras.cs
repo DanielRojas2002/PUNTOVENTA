@@ -324,17 +324,17 @@ namespace PUNTOVENTA.MENU.REPORTES
             }
 
 
-
-
             string fechainicio, fechafinal2;
 
-          
+
 
             fechainicio = FechaInicio.Value.ToString("dd/MM/yyyy");
             fechafinal2 = fechafinal.Value.ToString("dd/MM/yyyy");
 
             string fechainicio3 = FechaInicio.Value.ToString("dd_MM_yyyy");
             string fechafinal3 = fechafinal.Value.ToString("dd_MM_yyyy");
+
+
 
             List<dgReportes> lista = c_reportes.LeerReporte(2, parametro);
 
