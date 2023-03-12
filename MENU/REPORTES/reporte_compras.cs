@@ -426,13 +426,15 @@ namespace PUNTOVENTA.MENU.REPORTES
                 }
 
                 wb.SaveAs(ls_archivo_excel);
+                MessageBox.Show("Excel Reportado Satisfactoriamente en : "+ ls_archivo_excel);
+
 
             }
 
             else
             {
 
-                MessageBox.Show("No se encontró reporte de compras con los filtros seleccionado");
+                MessageBox.Show("Genere antes el Reporte antes de Exportarlo al Excel");
 
             }
 
