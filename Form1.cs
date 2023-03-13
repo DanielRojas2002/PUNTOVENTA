@@ -160,5 +160,11 @@ namespace Punto_de_Venta
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void txt_usuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter) | (e.KeyChar == Convert.ToChar(Keys.Tab)))
+                txt_contraseña.Focus();
+        }
     }
 }

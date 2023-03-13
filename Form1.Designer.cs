@@ -44,7 +44,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_iniciar_sesion = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.barra_panel = new System.Windows.Forms.Panel();
@@ -117,6 +117,7 @@
             this.txt_usuario.Size = new System.Drawing.Size(232, 24);
             this.txt_usuario.TabIndex = 6;
             this.txt_usuario.TextChanged += new System.EventHandler(this.txt_usuario_TextChanged);
+            this.txt_usuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_usuario_KeyPress);
             // 
             // panel1
             // 
@@ -208,7 +209,7 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.pictureBox4);
-            this.panel5.Controls.Add(this.button1);
+            this.panel5.Controls.Add(this.btn_iniciar_sesion);
             this.panel5.Location = new System.Drawing.Point(443, 473);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel5.Name = "panel5";
@@ -226,22 +227,22 @@
             this.pictureBox4.TabIndex = 15;
             this.pictureBox4.TabStop = false;
             // 
-            // button1
+            // btn_iniciar_sesion
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(80, 4);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(206, 53);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "INICIAR SESION";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_iniciar_sesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(74)))));
+            this.btn_iniciar_sesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_iniciar_sesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_iniciar_sesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_iniciar_sesion.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_iniciar_sesion.ForeColor = System.Drawing.Color.White;
+            this.btn_iniciar_sesion.Location = new System.Drawing.Point(80, 4);
+            this.btn_iniciar_sesion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_iniciar_sesion.Name = "btn_iniciar_sesion";
+            this.btn_iniciar_sesion.Size = new System.Drawing.Size(206, 53);
+            this.btn_iniciar_sesion.TabIndex = 0;
+            this.btn_iniciar_sesion.Text = "INICIAR SESION";
+            this.btn_iniciar_sesion.UseVisualStyleBackColor = false;
+            this.btn_iniciar_sesion.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -339,7 +340,7 @@
         private Panel panel4;
         private Panel panel5;
         private PictureBox pictureBox4;
-        private Button button1;
+        private Button btn_iniciar_sesion;
         private Label label4;
         private PictureBox pictureBox5;
         private Panel barra_panel;

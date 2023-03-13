@@ -1,4 +1,5 @@
-﻿using PUNTOVENTA.CLASES;
+﻿using DocumentFormat.OpenXml.Bibliography;
+using PUNTOVENTA.CLASES;
 using PUNTOVENTA.ENTIDAD;
 using PUNTOVENTA.MENU.CAJA;
 using PUNTOVENTA.MENU.CLIENTE;
@@ -63,7 +64,7 @@ namespace Punto_de_Venta
 
 
         }
-
+       
         private void pnl_izq_Paint(object sender, PaintEventArgs e)
         {
             pnl_reportes.Visible = false;
@@ -247,6 +248,7 @@ namespace Punto_de_Venta
 
 
             };
+       
 
 
             List<dgCaja> lista = c_caja.LeerCaja(7, parametro);
@@ -281,6 +283,8 @@ namespace Punto_de_Venta
             }
         }
 
+
+      
         private void btn_productos_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -291,13 +295,22 @@ namespace Punto_de_Venta
 
         private void btn_productof2()
         {
-             this.Hide();
+            this.Hide();
             menu_producto forms = new menu_producto();
             forms.lbl_id.Text = lbl_id.Text;
             forms.Show();
         }
         private void btn_provedores_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            menu_proveedor forms = new menu_proveedor();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
+        }
+
+        private void btn_proveedoresf4()
+        {
+
             this.Hide();
             menu_proveedor forms = new menu_proveedor();
             forms.lbl_id.Text = lbl_id.Text;
@@ -324,6 +337,14 @@ namespace Punto_de_Venta
             forms.lbl_id.Text = lbl_id.Text;
             forms.Show();
 
+        }
+        private void btn_seguridadf6()
+        {
+
+            this.Hide();
+            menu_seguridad forms = new menu_seguridad();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
         }
 
         private void btn_regresar_Click(object sender, EventArgs e)
@@ -380,8 +401,15 @@ namespace Punto_de_Venta
             forms.lbl_id.Text = lbl_id.Text;
             forms.Show();
         }
+        private void btn_clientef3()
+        {
 
-    
+            this.Hide();
+            menu_cliente forms = new menu_cliente();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
+        }
+
 
         private void Inicio_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -400,7 +428,14 @@ namespace Punto_de_Venta
             forms.lbl_id.Text = lbl_id.Text;
             forms.Show();
         }
+        private void btn_cajaf5()
+        {
 
+            this.Hide();
+            menu_caja forms = new menu_caja();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -420,38 +455,35 @@ namespace Punto_de_Venta
 
         private void Inicio_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == Convert.ToChar(Keys.F1))
+            if (e.KeyChar == Convert.ToChar(Keys.NumPad1))
             {
                 
                 btn_ventaf1();
                
             }
 
-            else if (e.KeyChar == Convert.ToChar(Keys.F2))
+            else if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 btn_productof2();
             }
 
-            else if (e.KeyChar == Convert.ToChar(Keys.F2))
+            else if (e.KeyChar == Convert.ToChar(Keys.F3))
             {
-                btn_productof2();
+                btn_clientef3();
             }
-            else if (e.KeyChar == Convert.ToChar(Keys.F2))
+            else if (e.KeyChar == Convert.ToChar(Keys.F4))
             {
-                btn_productof2();
+                btn_proveedoresf4();
             }
-            else if (e.KeyChar == Convert.ToChar(Keys.F2))
-            {
-                btn_productof2();
-            }
+         
 
-            else if (e.KeyChar == Convert.ToChar(Keys.F2))
+            else if (e.KeyChar == Convert.ToChar(Keys.F5))
             {
-                btn_productof2();
+                btn_cajaf5();
             }
-            else if (e.KeyChar == Convert.ToChar(Keys.F2))
+            else if (e.KeyChar == Convert.ToChar(Keys.F6))
             {
-                btn_productof2();
+                btn_seguridadf6();
             }
 
         }
