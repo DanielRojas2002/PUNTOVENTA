@@ -183,5 +183,41 @@ namespace PUNTOVENTA.MENU.CLIENTE
 
             }
         }
+
+        private void KeyPress_AgregarNombreCliente(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_apellidopaterno_agregarcliente.Focus();
+        }
+
+        private void KeyPress_APaterno(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_apellidomaterno_agregarcliente.Focus();
+        }
+
+        private void KeyPress_AMaterno(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_telefono_agregarcliente.Focus();
+        }
+
+        private void KeyPress_telefono(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_correo_agregarcliente.Focus();
+        }
+
+        private void KeyPress_Correo(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txtx_direccion_agregarcliente.Focus();
+        }
+
+        private void txtx_direccion_agregarcliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                btn_crear_cliente.Focus();
+        }
     }
 }
