@@ -120,7 +120,8 @@ namespace Punto_de_Venta
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-
+            if (e.KeyChar == Convert.ToChar(Keys.Enter) | (e.KeyChar == Convert.ToChar(Keys.Tab)))
+                btn_iniciar_sesion.Focus();
 
         }
 
@@ -165,6 +166,11 @@ namespace Punto_de_Venta
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter) | (e.KeyChar == Convert.ToChar(Keys.Tab)))
                 txt_contraseña.Focus();
+        }
+
+        private void btn_iniciar_sesion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
         }
     }
 }

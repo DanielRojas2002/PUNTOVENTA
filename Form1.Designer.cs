@@ -243,6 +243,7 @@
             this.btn_iniciar_sesion.Text = "INICIAR SESION";
             this.btn_iniciar_sesion.UseVisualStyleBackColor = false;
             this.btn_iniciar_sesion.Click += new System.EventHandler(this.button1_Click);
+            this.btn_iniciar_sesion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btn_iniciar_sesion_KeyPress);
             // 
             // label4
             // 
