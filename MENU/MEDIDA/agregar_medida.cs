@@ -149,5 +149,11 @@ namespace PUNTOVENTA.MENU.MEDIDA
         {
             Application.Exit();
         }
+
+        private void txt_descripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                btn_crear_medida.Focus();
+        }
     }
 }

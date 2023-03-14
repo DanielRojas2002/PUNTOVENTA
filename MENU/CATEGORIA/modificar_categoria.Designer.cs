@@ -115,6 +115,7 @@
             this.bx_categorias.Size = new System.Drawing.Size(205, 28);
             this.bx_categorias.TabIndex = 57;
             this.bx_categorias.SelectedIndexChanged += new System.EventHandler(this.bx_categorias_SelectedIndexChanged);
+            this.bx_categorias.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bx_categorias_KeyPress);
             // 
             // panel5
             // 
@@ -235,6 +236,7 @@
             this.txt_descripcion.Size = new System.Drawing.Size(178, 24);
             this.txt_descripcion.TabIndex = 6;
             this.txt_descripcion.TextChanged += new System.EventHandler(this.txt_descripcion_TextChanged);
+            this.txt_descripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_descripcion_KeyPress);
             // 
             // label3
             // 

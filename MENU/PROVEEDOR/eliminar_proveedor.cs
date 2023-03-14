@@ -209,6 +209,12 @@ namespace PUNTOVENTA.MENU.PROVEEDOR
         {
             Application.Exit();
         }
+
+        private void bx_proveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                panel_eliminar_proveedor.Focus();
+        }
     }
 
        

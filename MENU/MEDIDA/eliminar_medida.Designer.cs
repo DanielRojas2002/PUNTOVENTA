@@ -37,7 +37,7 @@
             this.lbl_perfil = new System.Windows.Forms.Label();
             this.txt_usuario = new System.Windows.Forms.Label();
             this.lbl_id = new System.Windows.Forms.Label();
-            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel_eliminarmedida = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btn_eliminar_medida = new System.Windows.Forms.Button();
             this.bx_medidas = new System.Windows.Forms.ComboBox();
@@ -54,7 +54,7 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
-            this.panel13.SuspendLayout();
+            this.panel_eliminarmedida.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrarapp)).BeginInit();
@@ -165,15 +165,15 @@
             this.lbl_id.Text = "id";
             this.lbl_id.Visible = false;
             // 
-            // panel13
+            // panel_eliminarmedida
             // 
-            this.panel13.Controls.Add(this.pictureBox4);
-            this.panel13.Controls.Add(this.btn_eliminar_medida);
-            this.panel13.Location = new System.Drawing.Point(213, 308);
-            this.panel13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(333, 61);
-            this.panel13.TabIndex = 54;
+            this.panel_eliminarmedida.Controls.Add(this.pictureBox4);
+            this.panel_eliminarmedida.Controls.Add(this.btn_eliminar_medida);
+            this.panel_eliminarmedida.Location = new System.Drawing.Point(213, 308);
+            this.panel_eliminarmedida.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel_eliminarmedida.Name = "panel_eliminarmedida";
+            this.panel_eliminarmedida.Size = new System.Drawing.Size(333, 61);
+            this.panel_eliminarmedida.TabIndex = 54;
             // 
             // pictureBox4
             // 
@@ -216,6 +216,7 @@
             this.bx_medidas.Size = new System.Drawing.Size(205, 28);
             this.bx_medidas.TabIndex = 53;
             this.bx_medidas.SelectedIndexChanged += new System.EventHandler(this.bx_medidas_SelectedIndexChanged);
+            this.bx_medidas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bx_medidas_KeyPress);
             // 
             // label1
             // 
@@ -392,7 +393,7 @@
             this.Controls.Add(this.lbl_perfil);
             this.Controls.Add(this.txt_usuario);
             this.Controls.Add(this.lbl_id);
-            this.Controls.Add(this.panel13);
+            this.Controls.Add(this.panel_eliminarmedida);
             this.Controls.Add(this.bx_medidas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
@@ -405,7 +406,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.eliminar_medida_FormClosing);
             this.Load += new System.EventHandler(this.eliminar_medida_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
-            this.panel13.ResumeLayout(false);
+            this.panel_eliminarmedida.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrarapp)).EndInit();
@@ -432,7 +433,7 @@
         public Label lbl_perfil;
         public Label txt_usuario;
         public Label lbl_id;
-        private Panel panel13;
+        private Panel panel_eliminarmedida;
         private PictureBox pictureBox4;
         private Button btn_eliminar_medida;
         private ComboBox bx_medidas;

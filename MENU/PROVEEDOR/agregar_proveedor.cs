@@ -164,5 +164,23 @@ namespace PUNTOVENTA.MENU.PROVEEDOR
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void txt_nombre_agregarproveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_correo_agregarproveedor.Focus();
+        }
+
+        private void txt_correo_agregarproveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_telefono_agregarproveedor.Focus();
+        }
+
+        private void txt_telefono_agregarproveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                panel_agregarproveedor.Focus();
+        }
     }
 }

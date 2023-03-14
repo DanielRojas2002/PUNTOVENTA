@@ -224,5 +224,47 @@ namespace PUNTOVENTA.MENU.CLIENTE
                 }
             }
         }
+
+        private void bx_cliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_nombre_modificarcliente.Focus();
+        }
+
+        private void txt_nombre_modificarcliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_apellidopaterno_modificarcliente.Focus();
+        }
+
+        private void txt_apellidopaterno_modificarcliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_apellidomaterno_modificarcliente.Focus();
+        }
+
+        private void txt_apellidomaterno_modificarcliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_telefono_modificarcliente.Focus();
+        }
+
+        private void txt_telefono_modificarcliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_correo_modificarcliente.Focus();
+        }
+
+        private void txt_correo_modificarcliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_direccion_modificarcliente.Focus();
+        }
+
+        private void txt_direccion_modificarcliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                btn_modificar_cliente.Focus();
+        }
     }
 }

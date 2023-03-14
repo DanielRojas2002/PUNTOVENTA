@@ -34,7 +34,7 @@
             this.lbl_id = new System.Windows.Forms.Label();
             this.txt_usuario = new System.Windows.Forms.Label();
             this.lbl_perfil = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel_modificarusuario = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btn_modificar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -66,7 +66,7 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
-            this.panel5.SuspendLayout();
+            this.panel_modificarusuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
@@ -147,15 +147,15 @@
             this.lbl_perfil.Visible = false;
             this.lbl_perfil.Click += new System.EventHandler(this.lbl_perfil_Click);
             // 
-            // panel5
+            // panel_modificarusuario
             // 
-            this.panel5.Controls.Add(this.pictureBox4);
-            this.panel5.Controls.Add(this.btn_modificar);
-            this.panel5.Location = new System.Drawing.Point(352, 545);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(289, 61);
-            this.panel5.TabIndex = 25;
+            this.panel_modificarusuario.Controls.Add(this.pictureBox4);
+            this.panel_modificarusuario.Controls.Add(this.btn_modificar);
+            this.panel_modificarusuario.Location = new System.Drawing.Point(352, 545);
+            this.panel_modificarusuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel_modificarusuario.Name = "panel_modificarusuario";
+            this.panel_modificarusuario.Size = new System.Drawing.Size(289, 61);
+            this.panel_modificarusuario.TabIndex = 25;
             // 
             // pictureBox4
             // 
@@ -209,6 +209,7 @@
             this.bx_usuario.Size = new System.Drawing.Size(205, 28);
             this.bx_usuario.TabIndex = 37;
             this.bx_usuario.SelectedIndexChanged += new System.EventHandler(this.bx_usuario_SelectedIndexChanged);
+            this.bx_usuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bx_usuario_KeyPress);
             // 
             // panel3
             // 
@@ -250,6 +251,7 @@
             this.txt_usuarioo.Name = "txt_usuarioo";
             this.txt_usuarioo.Size = new System.Drawing.Size(146, 24);
             this.txt_usuarioo.TabIndex = 6;
+            this.txt_usuarioo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_usuarioo_KeyPress);
             // 
             // label3
             // 
@@ -363,6 +365,7 @@
             this.txt_contraseña.Size = new System.Drawing.Size(149, 24);
             this.txt_contraseña.TabIndex = 6;
             this.txt_contraseña.UseSystemPasswordChar = true;
+            this.txt_contraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_contraseña_KeyPress);
             // 
             // label5
             // 
@@ -533,7 +536,7 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bx_usuario);
-            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel_modificarusuario);
             this.Controls.Add(this.lbl_perfil);
             this.Controls.Add(this.txt_usuario);
             this.Controls.Add(this.lbl_id);
@@ -549,7 +552,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.modificar_usuario_FormClosing);
             this.Load += new System.EventHandler(this.modificar_usuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
-            this.panel5.ResumeLayout(false);
+            this.panel_modificarusuario.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -582,7 +585,7 @@
         public Label lbl_id;
         public Label txt_usuario;
         public Label lbl_perfil;
-        private Panel panel5;
+        private Panel panel_modificarusuario;
         private PictureBox pictureBox4;
         private Button btn_modificar;
         private Label label2;

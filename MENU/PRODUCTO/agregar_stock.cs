@@ -166,5 +166,11 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
             }
         }
+
+        private void txt_stock_a_agregar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                panel_agregarstock.Focus();
+        }
     }
 }

@@ -848,5 +848,35 @@ namespace PUNTOVENTA.MENU.PRODUCTO
         {
 
         }
+
+        private void txt_codigoproducto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_nombre_producto.Focus();
+        }
+
+        private void txt_nombre_producto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                bx_categorias.Focus();
+        }
+
+        private void bx_categorias_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                bx_medidas.Focus();
+        }
+
+        private void bx_medidas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                bx_proveedores.Focus();
+        }
+
+        private void bx_proveedores_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                panel_aplicarfiltros.Focus();
+        }
     }
 }

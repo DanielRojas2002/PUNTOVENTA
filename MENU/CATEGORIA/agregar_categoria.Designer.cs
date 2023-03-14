@@ -92,11 +92,12 @@
             this.txt_descripcion.Name = "txt_descripcion";
             this.txt_descripcion.Size = new System.Drawing.Size(232, 24);
             this.txt_descripcion.TabIndex = 6;
+            this.txt_descripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_descripcion_KeyPress);
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(274, 311);
+            this.pictureBox4.Location = new System.Drawing.Point(287, 311);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(70, 53);
@@ -125,7 +126,7 @@
             this.btn_crear_categoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_crear_categoria.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_crear_categoria.ForeColor = System.Drawing.Color.White;
-            this.btn_crear_categoria.Location = new System.Drawing.Point(351, 311);
+            this.btn_crear_categoria.Location = new System.Drawing.Point(352, 311);
             this.btn_crear_categoria.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_crear_categoria.Name = "btn_crear_categoria";
             this.btn_crear_categoria.Size = new System.Drawing.Size(206, 53);
@@ -284,10 +285,10 @@
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(582, 399);
             this.Controls.Add(this.btn_regresar);
+            this.Controls.Add(this.btn_crear_categoria);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.lbl_id);
-            this.Controls.Add(this.btn_crear_categoria);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_perfil);
             this.Controls.Add(this.txt_usuario);

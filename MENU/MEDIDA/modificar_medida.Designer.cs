@@ -37,7 +37,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.bx_medida = new System.Windows.Forms.ComboBox();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel_modificarmedida = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btn_modificar_medida = new System.Windows.Forms.Button();
             this.lbl_perfil = new System.Windows.Forms.Label();
@@ -59,7 +59,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel5.SuspendLayout();
+            this.panel_modificarmedida.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrarapp)).BeginInit();
@@ -118,6 +118,7 @@
             this.txt_descripcion.Name = "txt_descripcion";
             this.txt_descripcion.Size = new System.Drawing.Size(178, 24);
             this.txt_descripcion.TabIndex = 6;
+            this.txt_descripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_descripcion_KeyPress);
             // 
             // lblperfil
             // 
@@ -163,16 +164,17 @@
             this.bx_medida.Size = new System.Drawing.Size(205, 28);
             this.bx_medida.TabIndex = 72;
             this.bx_medida.SelectedIndexChanged += new System.EventHandler(this.bx_medida_SelectedIndexChanged);
+            this.bx_medida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bx_medida_KeyPress);
             // 
-            // panel5
+            // panel_modificarmedida
             // 
-            this.panel5.Controls.Add(this.pictureBox4);
-            this.panel5.Controls.Add(this.btn_modificar_medida);
-            this.panel5.Location = new System.Drawing.Point(272, 341);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(299, 61);
-            this.panel5.TabIndex = 71;
+            this.panel_modificarmedida.Controls.Add(this.pictureBox4);
+            this.panel_modificarmedida.Controls.Add(this.btn_modificar_medida);
+            this.panel_modificarmedida.Location = new System.Drawing.Point(272, 341);
+            this.panel_modificarmedida.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel_modificarmedida.Name = "panel_modificarmedida";
+            this.panel_modificarmedida.Size = new System.Drawing.Size(299, 61);
+            this.panel_modificarmedida.TabIndex = 71;
             // 
             // pictureBox4
             // 
@@ -443,7 +445,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bx_medida);
-            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel_modificarmedida);
             this.Controls.Add(this.lbl_perfil);
             this.Controls.Add(this.txt_usuario);
             this.Controls.Add(this.lbl_id);
@@ -459,7 +461,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel5.ResumeLayout(false);
+            this.panel_modificarmedida.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrarapp)).EndInit();
@@ -488,7 +490,7 @@
         private PictureBox pictureBox1;
         private Label label2;
         private ComboBox bx_medida;
-        private Panel panel5;
+        private Panel panel_modificarmedida;
         private PictureBox pictureBox4;
         private Button btn_modificar_medida;
         public Label lbl_perfil;

@@ -184,6 +184,7 @@
             this.bx_categorias.Size = new System.Drawing.Size(205, 28);
             this.bx_categorias.TabIndex = 41;
             this.bx_categorias.SelectedIndexChanged += new System.EventHandler(this.bx_categorias_SelectedIndexChanged);
+            this.bx_categorias.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bx_categorias_KeyPress);
             // 
             // label1
             // 

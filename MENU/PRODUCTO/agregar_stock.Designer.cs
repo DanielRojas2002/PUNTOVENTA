@@ -40,7 +40,7 @@
             this.txt_stock_a_agregar = new System.Windows.Forms.NumericUpDown();
             this.lbl_stock_actual = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel_agregarstock = new System.Windows.Forms.Panel();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.btn_agregar_stock = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -61,7 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_stock_a_agregar)).BeginInit();
-            this.panel13.SuspendLayout();
+            this.panel_agregarstock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrarapp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimzar)).BeginInit();
@@ -134,7 +134,7 @@
             this.btn_regresar.Location = new System.Drawing.Point(22, 48);
             this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(462, 39);
+            this.btn_regresar.Size = new System.Drawing.Size(85, 39);
             this.btn_regresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_regresar.TabIndex = 94;
             this.btn_regresar.TabStop = false;
@@ -143,11 +143,11 @@
             // lbl_p
             // 
             this.lbl_p.AutoSize = true;
-            this.lbl_p.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_p.Font = new System.Drawing.Font("Cooper Black", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_p.ForeColor = System.Drawing.Color.White;
-            this.lbl_p.Location = new System.Drawing.Point(116, 113);
+            this.lbl_p.Location = new System.Drawing.Point(100, 82);
             this.lbl_p.Name = "lbl_p";
-            this.lbl_p.Size = new System.Drawing.Size(277, 32);
+            this.lbl_p.Size = new System.Drawing.Size(335, 39);
             this.lbl_p.TabIndex = 95;
             this.lbl_p.Text = "AGREGAR STOCK";
             // 
@@ -178,6 +178,7 @@
             this.txt_stock_a_agregar.Name = "txt_stock_a_agregar";
             this.txt_stock_a_agregar.Size = new System.Drawing.Size(148, 27);
             this.txt_stock_a_agregar.TabIndex = 5;
+            this.txt_stock_a_agregar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_stock_a_agregar_KeyPress);
             // 
             // lbl_stock_actual
             // 
@@ -201,15 +202,15 @@
             this.label1.TabIndex = 99;
             this.label1.Text = "Stock Actual:";
             // 
-            // panel13
+            // panel_agregarstock
             // 
-            this.panel13.Controls.Add(this.pictureBox11);
-            this.panel13.Controls.Add(this.btn_agregar_stock);
-            this.panel13.Location = new System.Drawing.Point(116, 474);
-            this.panel13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(277, 61);
-            this.panel13.TabIndex = 100;
+            this.panel_agregarstock.Controls.Add(this.pictureBox11);
+            this.panel_agregarstock.Controls.Add(this.btn_agregar_stock);
+            this.panel_agregarstock.Location = new System.Drawing.Point(116, 474);
+            this.panel_agregarstock.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel_agregarstock.Name = "panel_agregarstock";
+            this.panel_agregarstock.Size = new System.Drawing.Size(277, 61);
+            this.panel_agregarstock.TabIndex = 100;
             // 
             // pictureBox11
             // 
@@ -453,7 +454,7 @@
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(518, 561);
             this.Controls.Add(this.pictureBox12);
-            this.Controls.Add(this.panel13);
+            this.Controls.Add(this.panel_agregarstock);
             this.Controls.Add(this.lbl_stock_actual);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
@@ -473,7 +474,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txt_stock_a_agregar)).EndInit();
-            this.panel13.ResumeLayout(false);
+            this.panel_agregarstock.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrarapp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimzar)).EndInit();
@@ -507,7 +508,7 @@
         private NumericUpDown txt_stock_a_agregar;
         private Label lbl_stock_actual;
         private Label label1;
-        private Panel panel13;
+        private Panel panel_agregarstock;
         private PictureBox pictureBox11;
         private Button btn_agregar_stock;
         private TableLayoutPanel tableLayoutPanel1;

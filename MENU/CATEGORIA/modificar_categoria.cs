@@ -215,5 +215,17 @@ namespace PUNTOVENTA.MENU.CATEGORIA
         {
             Application.Exit();
         }
+
+        private void bx_categorias_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_descripcion.Focus();
+        }
+
+        private void txt_descripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                panel5.Focus();
+        }
     }
 }

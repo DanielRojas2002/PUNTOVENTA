@@ -36,7 +36,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bx_usuario = new System.Windows.Forms.ComboBox();
-            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel_eliminarusuario = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btn_eliminar_usuario = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,7 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel13.SuspendLayout();
+            this.panel_eliminarusuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             this.panel2.SuspendLayout();
@@ -143,17 +143,18 @@
             this.bx_usuario.Size = new System.Drawing.Size(205, 28);
             this.bx_usuario.TabIndex = 30;
             this.bx_usuario.SelectedIndexChanged += new System.EventHandler(this.bx_usuario_SelectedIndexChanged);
+            this.bx_usuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bx_usuario_KeyPress);
             // 
-            // panel13
+            // panel_eliminarusuario
             // 
-            this.panel13.Controls.Add(this.pictureBox4);
-            this.panel13.Controls.Add(this.btn_eliminar_usuario);
-            this.panel13.Location = new System.Drawing.Point(203, 413);
-            this.panel13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(333, 61);
-            this.panel13.TabIndex = 31;
-            this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel13_Paint);
+            this.panel_eliminarusuario.Controls.Add(this.pictureBox4);
+            this.panel_eliminarusuario.Controls.Add(this.btn_eliminar_usuario);
+            this.panel_eliminarusuario.Location = new System.Drawing.Point(203, 413);
+            this.panel_eliminarusuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel_eliminarusuario.Name = "panel_eliminarusuario";
+            this.panel_eliminarusuario.Size = new System.Drawing.Size(333, 61);
+            this.panel_eliminarusuario.TabIndex = 31;
+            this.panel_eliminarusuario.Paint += new System.Windows.Forms.PaintEventHandler(this.panel13_Paint);
             // 
             // pictureBox4
             // 
@@ -275,7 +276,7 @@
             this.panel2.Controls.Add(this.txt_usuario);
             this.panel2.Controls.Add(this.lbl_id);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.panel13);
+            this.panel2.Controls.Add(this.panel_eliminarusuario);
             this.panel2.Controls.Add(this.bx_usuario);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox2);
@@ -332,7 +333,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel13.ResumeLayout(false);
+            this.panel_eliminarusuario.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -347,7 +348,7 @@
         private PictureBox pictureBox2;
         private Label label1;
         private ComboBox bx_usuario;
-        private Panel panel13;
+        private Panel panel_eliminarusuario;
         private PictureBox pictureBox4;
         private Button btn_eliminar_usuario;
         private Label label5;

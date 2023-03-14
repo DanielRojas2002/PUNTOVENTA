@@ -69,7 +69,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btn_reiniciar_filtrado = new System.Windows.Forms.PictureBox();
             this.bx_medidas = new System.Windows.Forms.ComboBox();
-            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel_aplicarfiltros = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btn_aplicar_filtro = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -86,7 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_productos)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_reiniciar_filtrado)).BeginInit();
-            this.panel13.SuspendLayout();
+            this.panel_aplicarfiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_agregar_producto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -417,7 +417,7 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.btn_reiniciar_filtrado);
             this.panel2.Controls.Add(this.bx_medidas);
-            this.panel2.Controls.Add(this.panel13);
+            this.panel2.Controls.Add(this.panel_aplicarfiltros);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.bx_proveedores);
             this.panel2.Controls.Add(this.bx_categorias);
@@ -451,6 +451,7 @@
             this.txt_codigoproducto.Size = new System.Drawing.Size(155, 24);
             this.txt_codigoproducto.TabIndex = 89;
             this.txt_codigoproducto.TextChanged += new System.EventHandler(this.txt_codigoproducto_TextChanged);
+            this.txt_codigoproducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_codigoproducto_KeyPress);
             // 
             // label9
             // 
@@ -474,6 +475,7 @@
             this.txt_nombre_producto.Name = "txt_nombre_producto";
             this.txt_nombre_producto.Size = new System.Drawing.Size(195, 24);
             this.txt_nombre_producto.TabIndex = 87;
+            this.txt_nombre_producto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_producto_KeyPress);
             // 
             // label6
             // 
@@ -534,16 +536,17 @@
             this.bx_medidas.Size = new System.Drawing.Size(123, 28);
             this.bx_medidas.TabIndex = 83;
             this.bx_medidas.SelectedIndexChanged += new System.EventHandler(this.bx_medidas_SelectedIndexChanged);
+            this.bx_medidas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bx_medidas_KeyPress);
             // 
-            // panel13
+            // panel_aplicarfiltros
             // 
-            this.panel13.Controls.Add(this.pictureBox4);
-            this.panel13.Controls.Add(this.btn_aplicar_filtro);
-            this.panel13.Location = new System.Drawing.Point(3, 427);
-            this.panel13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(301, 61);
-            this.panel13.TabIndex = 82;
+            this.panel_aplicarfiltros.Controls.Add(this.pictureBox4);
+            this.panel_aplicarfiltros.Controls.Add(this.btn_aplicar_filtro);
+            this.panel_aplicarfiltros.Location = new System.Drawing.Point(3, 427);
+            this.panel_aplicarfiltros.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel_aplicarfiltros.Name = "panel_aplicarfiltros";
+            this.panel_aplicarfiltros.Size = new System.Drawing.Size(301, 61);
+            this.panel_aplicarfiltros.TabIndex = 82;
             // 
             // pictureBox4
             // 
@@ -597,6 +600,7 @@
             this.bx_proveedores.Size = new System.Drawing.Size(261, 28);
             this.bx_proveedores.TabIndex = 81;
             this.bx_proveedores.SelectedIndexChanged += new System.EventHandler(this.bx_proveedores_SelectedIndexChanged);
+            this.bx_proveedores.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bx_proveedores_KeyPress);
             // 
             // bx_categorias
             // 
@@ -611,6 +615,7 @@
             this.bx_categorias.Size = new System.Drawing.Size(133, 28);
             this.bx_categorias.TabIndex = 79;
             this.bx_categorias.SelectedIndexChanged += new System.EventHandler(this.bx_categorias_SelectedIndexChanged);
+            this.bx_categorias.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bx_categorias_KeyPress);
             // 
             // btn_agregar_producto
             // 
@@ -694,7 +699,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_reiniciar_filtrado)).EndInit();
-            this.panel13.ResumeLayout(false);
+            this.panel_aplicarfiltros.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_agregar_producto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -726,7 +731,7 @@
         private Panel panel2;
         private ComboBox bx_proveedores;
         private ComboBox bx_categorias;
-        private Panel panel13;
+        private Panel panel_aplicarfiltros;
         private PictureBox pictureBox4;
         private Button btn_aplicar_filtro;
         private Panel panel3;

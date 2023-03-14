@@ -204,5 +204,11 @@ namespace PUNTOVENTA.MENU.MEDIDA
         {
 
         }
+
+        private void bx_medidas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                panel_eliminarmedida.Focus();
+        }
     }
 }

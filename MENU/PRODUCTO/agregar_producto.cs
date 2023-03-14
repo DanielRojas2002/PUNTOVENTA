@@ -448,7 +448,10 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                     //el resto de teclas pulsadas se desactivan
                     e.Handled = true;
                 }
+             
             }
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_nombre.Focus();
         }
 
         private void txt_preciocompra_KeyPress(object sender, KeyPressEventArgs e)
@@ -463,6 +466,8 @@ namespace PUNTOVENTA.MENU.PRODUCTO
             {
                 e.Handled = true;
             }
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_precioventa.Focus();
         }
 
         private void txt_precioventa_KeyPress(object sender, KeyPressEventArgs e)
@@ -477,6 +482,32 @@ namespace PUNTOVENTA.MENU.PRODUCTO
             {
                 e.Handled = true;
             }
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                bx_categoria.Focus();
+        }
+
+        private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_descripcion.Focus();
+        }
+
+        private void txt_descripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_preciocompra.Focus();
+        }
+
+        private void bx_medida_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                bx_proveedor.Focus();
+        }
+
+        private void bx_proveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                btn_crear_producto.Focus();
         }
     }
 }

@@ -50,6 +50,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.lbl_iva = new System.Windows.Forms.Label();
             this.txt_precioventa = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -87,7 +88,6 @@
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.btn_agregar_stock = new System.Windows.Forms.Button();
             this.lbl_id_estatus = new System.Windows.Forms.Label();
-            this.lbl_iva = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             this.panel2.SuspendLayout();
@@ -254,6 +254,7 @@
             this.txt_codigo.Name = "txt_codigo";
             this.txt_codigo.Size = new System.Drawing.Size(124, 24);
             this.txt_codigo.TabIndex = 1;
+            this.txt_codigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_codigo_KeyPress);
             // 
             // panel13
             // 
@@ -268,6 +269,7 @@
             // 
             // foto_activooinactivo
             // 
+            this.foto_activooinactivo.Image = ((System.Drawing.Image)(resources.GetObject("foto_activooinactivo.Image")));
             this.foto_activooinactivo.Location = new System.Drawing.Point(3, 4);
             this.foto_activooinactivo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.foto_activooinactivo.Name = "foto_activooinactivo";
@@ -384,6 +386,17 @@
             this.panel6.Size = new System.Drawing.Size(173, 81);
             this.panel6.TabIndex = 89;
             // 
+            // lbl_iva
+            // 
+            this.lbl_iva.AutoSize = true;
+            this.lbl_iva.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_iva.ForeColor = System.Drawing.Color.White;
+            this.lbl_iva.Location = new System.Drawing.Point(78, 4);
+            this.lbl_iva.Name = "lbl_iva";
+            this.lbl_iva.Size = new System.Drawing.Size(41, 23);
+            this.lbl_iva.TabIndex = 100;
+            this.lbl_iva.Text = "iva";
+            // 
             // txt_precioventa
             // 
             this.txt_precioventa.BackColor = System.Drawing.Color.White;
@@ -481,6 +494,7 @@
             this.txt_descripcion.Size = new System.Drawing.Size(485, 51);
             this.txt_descripcion.TabIndex = 0;
             this.txt_descripcion.Text = "";
+            this.txt_descripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_descripcion_KeyPress);
             // 
             // label2
             // 
@@ -506,6 +520,7 @@
             this.bx_medida.Size = new System.Drawing.Size(183, 28);
             this.bx_medida.TabIndex = 83;
             this.bx_medida.SelectedIndexChanged += new System.EventHandler(this.bx_medida_SelectedIndexChanged);
+            this.bx_medida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bx_medida_KeyPress);
             // 
             // panel12
             // 
@@ -528,6 +543,7 @@
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(171, 24);
             this.txt_nombre.TabIndex = 6;
+            this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
             // 
             // bx_proveedor
             // 
@@ -556,6 +572,7 @@
             this.bx_categoria.Size = new System.Drawing.Size(183, 28);
             this.bx_categoria.TabIndex = 80;
             this.bx_categoria.SelectedIndexChanged += new System.EventHandler(this.bx_categoria_SelectedIndexChanged);
+            this.bx_categoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bx_categoria_KeyPress);
             // 
             // lbl_perfil
             // 
@@ -844,17 +861,6 @@
             this.lbl_id_estatus.TabIndex = 98;
             this.lbl_id_estatus.Text = "idestatus";
             this.lbl_id_estatus.Visible = false;
-            // 
-            // lbl_iva
-            // 
-            this.lbl_iva.AutoSize = true;
-            this.lbl_iva.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lbl_iva.ForeColor = System.Drawing.Color.White;
-            this.lbl_iva.Location = new System.Drawing.Point(78, 4);
-            this.lbl_iva.Name = "lbl_iva";
-            this.lbl_iva.Size = new System.Drawing.Size(41, 23);
-            this.lbl_iva.TabIndex = 100;
-            this.lbl_iva.Text = "iva";
             // 
             // modificar_eliminar_producto
             // 

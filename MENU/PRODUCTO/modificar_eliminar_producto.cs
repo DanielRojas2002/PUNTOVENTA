@@ -628,6 +628,9 @@ namespace PUNTOVENTA.MENU.PRODUCTO
             {
                 e.Handled = true;
             }
+            //Cambia de campo para escribir
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_precioventa.Focus();
         }
 
         private void txt_precioventa_KeyPress(object sender, KeyPressEventArgs e)
@@ -642,6 +645,9 @@ namespace PUNTOVENTA.MENU.PRODUCTO
             {
                 e.Handled = true;
             }
+            //Cambia de campo para escribir
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                bx_categoria.Focus();
         }
 
         private void txt_precioventa_TextChanged(object sender, EventArgs e)
@@ -679,6 +685,36 @@ namespace PUNTOVENTA.MENU.PRODUCTO
             {
 
             }
+        }
+
+        private void txt_codigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_nombre.Focus();
+        }
+
+        private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_descripcion.Focus();
+        }
+
+        private void txt_descripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_preciocompra.Focus();
+        }
+
+        private void bx_categoria_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                bx_medida.Focus();
+        }
+
+        private void bx_medida_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                bx_proveedor.Focus();
         }
     }
 }

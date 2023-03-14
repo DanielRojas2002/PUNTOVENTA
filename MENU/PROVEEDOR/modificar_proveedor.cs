@@ -240,5 +240,29 @@ namespace PUNTOVENTA.MENU.PROVEEDOR
         {
             Application.Exit();
         }
+
+        private void bx_proveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_nombre_proveedor.Focus();
+        }
+
+        private void txt_nombre_proveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_correo_proveedor.Focus();
+        }
+
+        private void txt_correo_proveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_telefono_proveedor.Focus();
+        }
+
+        private void txt_telefono_proveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                panel_modificar_proveedor.Focus();
+        }
     }
 }

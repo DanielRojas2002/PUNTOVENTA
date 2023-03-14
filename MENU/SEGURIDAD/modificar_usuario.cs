@@ -286,5 +286,23 @@ namespace Punto_de_Venta
         {
             Application.Exit();
         }
+
+        private void bx_usuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_usuarioo.Focus();
+        }
+
+        private void txt_usuarioo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_contraseña.Focus();
+        }
+
+        private void txt_contraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                panel_modificarusuario.Focus();
+        }
     }
 }

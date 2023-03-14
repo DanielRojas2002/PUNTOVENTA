@@ -207,5 +207,11 @@ namespace PUNTOVENTA.MENU.CATEGORIA
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void bx_categorias_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                panel13.Focus();
+        }
     }
 }

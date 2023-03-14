@@ -250,5 +250,11 @@ namespace Punto_de_Venta
 
            
         }
+
+        private void bx_usuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                panel_eliminarusuario.Focus();
+        }
     }
 }

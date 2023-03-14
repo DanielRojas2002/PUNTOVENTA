@@ -121,6 +121,7 @@
             this.txt_usuarioo.Name = "txt_usuarioo";
             this.txt_usuarioo.Size = new System.Drawing.Size(232, 24);
             this.txt_usuarioo.TabIndex = 6;
+            this.txt_usuarioo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_usuarioo_KeyPress);
             // 
             // panel11
             // 
@@ -157,6 +158,7 @@
             this.txt_contraseña.Size = new System.Drawing.Size(186, 24);
             this.txt_contraseña.TabIndex = 6;
             this.txt_contraseña.UseSystemPasswordChar = true;
+            this.txt_contraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_contraseña_KeyPress);
             // 
             // pictureBox2
             // 
@@ -217,7 +219,7 @@
             this.btn_crear_usuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_crear_usuario.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_crear_usuario.ForeColor = System.Drawing.Color.White;
-            this.btn_crear_usuario.Location = new System.Drawing.Point(506, 575);
+            this.btn_crear_usuario.Location = new System.Drawing.Point(500, 575);
             this.btn_crear_usuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_crear_usuario.Name = "btn_crear_usuario";
             this.btn_crear_usuario.Size = new System.Drawing.Size(206, 53);
@@ -286,6 +288,7 @@
             this.bx_permisos.Size = new System.Drawing.Size(162, 28);
             this.bx_permisos.TabIndex = 29;
             this.bx_permisos.SelectedIndexChanged += new System.EventHandler(this.bx_permisos_SelectedIndexChanged);
+            this.bx_permisos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bx_permisos_KeyPress);
             // 
             // label1
             // 
@@ -293,7 +296,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Cooper Black", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(400, 77);
+            this.label1.Location = new System.Drawing.Point(357, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(386, 46);
             this.label1.TabIndex = 33;

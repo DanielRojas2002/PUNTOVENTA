@@ -241,6 +241,7 @@
             this.bx_proveedor.Size = new System.Drawing.Size(275, 28);
             this.bx_proveedor.TabIndex = 8;
             this.bx_proveedor.SelectedIndexChanged += new System.EventHandler(this.bx_proveedor_SelectedIndexChanged);
+            this.bx_proveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bx_proveedor_KeyPress);
             // 
             // label7
             // 
@@ -276,6 +277,7 @@
             this.bx_medida.Size = new System.Drawing.Size(171, 28);
             this.bx_medida.TabIndex = 7;
             this.bx_medida.SelectedIndexChanged += new System.EventHandler(this.bx_medida_SelectedIndexChanged);
+            this.bx_medida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bx_medida_KeyPress);
             // 
             // label6
             // 
@@ -320,7 +322,7 @@
             this.btn_crear_producto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_crear_producto.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_crear_producto.ForeColor = System.Drawing.Color.White;
-            this.btn_crear_producto.Location = new System.Drawing.Point(76, 569);
+            this.btn_crear_producto.Location = new System.Drawing.Point(70, 569);
             this.btn_crear_producto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_crear_producto.Name = "btn_crear_producto";
             this.btn_crear_producto.Size = new System.Drawing.Size(434, 53);
@@ -427,6 +429,7 @@
             this.txt_descripcion.Size = new System.Drawing.Size(473, 51);
             this.txt_descripcion.TabIndex = 2;
             this.txt_descripcion.Text = "";
+            this.txt_descripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_descripcion_KeyPress);
             // 
             // label2
             // 
@@ -461,6 +464,7 @@
             this.txt_nombre.Size = new System.Drawing.Size(209, 24);
             this.txt_nombre.TabIndex = 1;
             this.txt_nombre.TextChanged += new System.EventHandler(this.txt_nombre_TextChanged);
+            this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
             // 
             // img_2
             // 

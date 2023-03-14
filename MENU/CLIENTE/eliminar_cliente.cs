@@ -200,5 +200,11 @@ namespace PUNTOVENTA.MENU.CLIENTE
 
 
         }
+
+        private void bx_cliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                btn_eliminarcliente.Focus();
+        }
     }
 }
