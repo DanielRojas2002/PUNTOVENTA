@@ -1765,7 +1765,9 @@ namespace PUNTOVENTA.MENU.VENTA
             {
                 e.Handled = true;
             }
-
+            // Cambia de campo para escribir
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                btn_realizar_venta.Focus();
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
