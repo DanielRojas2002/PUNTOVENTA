@@ -31,5 +31,7 @@ namespace PUNTOVENTA.ENTIDAD
         public decimal? Cambio { get; set; }
 
         public DateTime? FechaVenta { get; set; }
+
+        public DateTime? FechaUltimoPago { get; set; }
     }
 }

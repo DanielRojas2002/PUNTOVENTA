@@ -92,7 +92,7 @@ namespace PUNTOVENTA.MENU.CAJA
             if (lista2.Count > 0)
 
             {
-                string fechaventa;
+                string fechaventa,fechaultimopago;
                 float subtotal,cantidadpagada;
               
                 foreach (dgCaja d in lista2)
@@ -108,8 +108,10 @@ namespace PUNTOVENTA.MENU.CAJA
                     cantidadpagada = (float)Math.Round(cantidadpagada, 2);
 
                     fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
+                    fechaultimopago = d.FechaUltimoPago.Value.ToString("dd/MM/yyyy");
+
                     dataGridView_p_credito.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
-                         d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), Convert.ToString("-"), fechaventa, d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
+                         d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), Convert.ToString("-"), fechaventa,fechaultimopago, d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
 
 
                    
@@ -142,16 +144,18 @@ namespace PUNTOVENTA.MENU.CAJA
             if (lista3.Count > 0)
 
             {
-                string fechaventa;
+                string fechaventa, fechaultimopago;
                 float subtotal, cantidadpagada;
               
                 foreach (dgCaja d in lista3)
                 {
-                   
+
 
                     fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
+                    fechaultimopago = d.FechaUltimoPago.Value.ToString("dd/MM/yyyy");
+
                     dataGridView_p_credito.Rows.Add(d.Id_Venta.ToString(),"-","-",
-                       "-","-", "-", Convert.ToString(d.CantidadPagada.ToString()), fechaventa, d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
+                       "-","-", "-", Convert.ToString(d.CantidadPagada.ToString()), fechaventa, fechaultimopago, d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
 
                     _dineroventas = _dineroventas + float.Parse(d.CantidadPagada.ToString());
 

@@ -77,7 +77,9 @@ namespace PUNTOVENTA.CLASES
                                  Apellido_Materno = Convert.ToString(fila["Apellido_Materno"].ToString()),
                                  Telefono = Convert.ToString(fila["Telefono"].ToString()),
                                  Correo = Convert.ToString(fila["Correo"].ToString()),
-                                 Direccion = Convert.ToString(fila["Direccion"].ToString())
+                                 Direccion = Convert.ToString(fila["Direccion"].ToString()),
+
+                                 FechaUltimoPago = Convert.ToDateTime(fila["FechaUltimoPago"].ToString())
 
 
 
@@ -114,7 +116,7 @@ namespace PUNTOVENTA.CLASES
                                  Correo = Convert.ToString(fila["Correo"].ToString()),
                                  Telefono = Convert.ToString(fila["Telefono"].ToString()),
                                  
-
+                                 FechaUltimoPago= Convert.ToDateTime(fila["FechaUltimoPago"].ToString()),
 
 
                              }
@@ -306,8 +308,9 @@ namespace PUNTOVENTA.CLASES
                     {
                         new SqlParameter("@Accion",9),
                         new SqlParameter("@P_IdVenta",Parametro.Id_Venta),
-                        new SqlParameter("@P_FechaPago",Parametro.FechaPago),
+                        new SqlParameter("@P_FechaUltimoPago",Parametro.FechaUltimoPago),
                         new SqlParameter("@P_CantidadPagada",Parametro.CantidadPagada),
+                        new SqlParameter("@P_CantidadPagadaUltima",Parametro.CantidadPagadaUltima),
                         new SqlParameter("@P_Validacion",Parametro.Validacion)
 
 
@@ -346,6 +349,7 @@ namespace PUNTOVENTA.CLASES
                         new SqlParameter("@P_IdVenta",Parametro.Id_Venta),
                         new SqlParameter("@P_FechaPago",Parametro.FechaPago),
                         new SqlParameter("@P_CantidadPagada",Parametro.CantidadPagada),
+                        new SqlParameter("@P_CantidadPagadaUltima",Parametro.CantidadPagadaUltima),
                         new SqlParameter("@P_Validacion",Parametro.Validacion),
                         new SqlParameter("@P_Cambio",Parametro.Cambio)
 

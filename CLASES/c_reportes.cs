@@ -121,7 +121,9 @@ namespace PUNTOVENTA.CLASES
 
                                  DescripcionEstatus= Convert.ToString(fila["Descripcion"].ToString()),
 
-                                 Usuario = Convert.ToString(fila["Usuario"].ToString())
+                                 Usuario = Convert.ToString(fila["Usuario"].ToString()),
+
+                                 FechaVentaProducto = Convert.ToDateTime(fila["FechaVenta"].ToString())
 
 
                              }

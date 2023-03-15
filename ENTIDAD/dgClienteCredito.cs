@@ -27,6 +27,8 @@ namespace PUNTOVENTA.ENTIDAD
 
         public float CantidadPagada { get; set; }
 
+        public float CantidadPagadaUltima { get; set; }
+
         public float Total { get; set; }
 
 

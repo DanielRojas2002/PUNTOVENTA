@@ -281,6 +281,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
                         {
                             Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
                             CantidadPagada = float.Parse(lbl_total_faltante.Text),
+                            CantidadPagadaUltima = float.Parse(lbl_total_faltante.Text),
                             FechaPago = DateTime.Now,
                             Validacion = 1,
                             Cambio = float.Parse(lbl_cambio.Text)
@@ -537,6 +538,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
                         {
                             Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
                             CantidadPagada = float.Parse(txt_paga_con.Text.Trim()),
+                            CantidadPagadaUltima = float.Parse(txt_paga_con.Text.Trim()),
                             FechaUltimoPago = DateTime.Now,
                             Validacion = 0
                         };

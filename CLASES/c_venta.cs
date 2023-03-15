@@ -114,6 +114,7 @@ namespace PUNTOVENTA.CLASES
                     new SqlParameter("@P_Total",Parametro.Total),
                     new SqlParameter("@P_Cambio",Parametro.Cambio),
                     new SqlParameter("@P_FechaVenta",Parametro.FechaVenta)
+                   
 
 
 

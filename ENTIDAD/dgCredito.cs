@@ -17,6 +17,8 @@ namespace PUNTOVENTA.ENTIDAD
 
         public decimal CantidadPagada { get; set; }
 
+        public decimal CantidadPagadaUltima { get; set; }
+
 
         public DateTime? FechaRegistro { get; set; }
 

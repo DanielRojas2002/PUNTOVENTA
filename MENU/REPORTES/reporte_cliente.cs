@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = ClosedXML.Excel;
 
 namespace PUNTOVENTA.MENU.REPORTES
 {
@@ -205,7 +206,137 @@ namespace PUNTOVENTA.MENU.REPORTES
 
         private void button2_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+
+                dgReportes parametro = new dgReportes
+                {
+                    IdCliente = Convert.ToInt16(idCliente.Text),
+                };
+
+
+                List<dgReportes> lista = c_reportes.LeerReporte(3, parametro);
+
+                string ls_archivo_excel = "C:\\C#\\R_Clientes" + bx_cliente.Text  + ".xlsx";
+                string fechaentrada;
+
+
+
+
+                var wb = new Excel.XLWorkbook();
+
+                //create 'worksheet' object
+                var ws = wb.Worksheets.Add("R_Clientes" + bx_cliente.Text );
+
+                //read cells
+              
+
+
+
+                //write cells
+                ws.Cell("A1").Value = "FILTROS";
+                ws.Cell("G4").Value = "REPORTE DE CLIENTE";
+                ws.Cell("A2").Value = "CLIENTE::";
+                ws.Cell("B2").Value = bx_cliente.Text;
+              
+
+
+                ws.Range("A5:G5").Value = "----------------------------------------";
+
+
+                ws.Cell("A6").Value = "No.Cliente";
+                ws.Cell("B6").Value = "Nombre";
+
+                ws.Cell("C6").Value = "A Paterno";
+
+                ws.Cell("D6").Value = "A Materno";
+
+                ws.Cell("E6").Value = "No.Venta";
+
+                ws.Cell("F6").Value = "Cantidad Pagada";
+
+                ws.Cell("G6").Value = "Total";
+
+
+                ws.Cell("H6").Value = "Estatus";
+
+                ws.Cell("I6").Value = "Registro";
+
+                ws.Cell("J6").Value = "Fecha Venta";
+
+
+
+
+
+                int contadorcolumnas = 1;
+                int contadorregistros = 7;
+                if (lista.Count > 0)
+
+                {
+                    string fechaventa;
+                    float cantidadpagada,total;
+                    foreach (dgReportes d in lista)
+                    {
+
+
+
+                        cantidadpagada = float.Parse(d.CantidadPagada.ToString());
+
+                        cantidadpagada = (float)Math.Round(cantidadpagada, 2);
+
+                        total = float.Parse(d.Total.ToString());
+
+                        total = (float)Math.Round(total, 2);
+
+                        contadorcolumnas = 1;
+
+                        fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
+
+
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.IdCliente.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.Nombre.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.Apellido_Paterno.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.Apellido_Materno.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.Id_Venta.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = cantidadpagada;
+                        contadorcolumnas = contadorcolumnas + 1;
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = total;
+                        contadorcolumnas = contadorcolumnas + 1;
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.DescripcionEstatus.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.Usuario.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = fechaventa;
+
+
+
+
+                        contadorregistros = contadorregistros + 1;
+
+                    }
+
+
+                }
+
+
+
+               
+
+                wb.SaveAs(ls_archivo_excel);
+                MessageBox.Show("Excel Reportado Satisfactoriamente en : " + ls_archivo_excel);
+            }
+
+            catch
+            {
+                MessageBox.Show("Genere antes el Reporte antes de Exportarlo al Excel");
+            }
         }
 
         private void dataGridViewClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)

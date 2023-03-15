@@ -195,45 +195,53 @@ namespace Punto_de_Venta
 
         public void btn_venta_Click(object sender, EventArgs e)
         {
-
-            dgCaja parametro = new dgCaja
+            try
             {
-               FechaCaja=DateTime.Now
-
-
-            };
-
-
-            List<dgCaja> lista = c_caja.LeerCaja(7, parametro);
-
-            string estatuscaja="";
-            if (lista.Count > 0)
-
-            {
-               
-                foreach (dgCaja d in lista)
+                dgCaja parametro = new dgCaja
                 {
-                    estatuscaja = Convert.ToString(d.Id_CajaEstatus.ToString());
-
+                    FechaCaja = DateTime.Now
 
 
                 };
 
+
+                List<dgCaja> lista = c_caja.LeerCaja(7, parametro);
+
+                string estatuscaja = "";
+                if (lista.Count > 0)
+
+                {
+
+                    foreach (dgCaja d in lista)
+                    {
+                        estatuscaja = Convert.ToString(d.Id_CajaEstatus.ToString());
+
+
+
+                    };
+
+                }
+
+                if (estatuscaja == "1")
+                {
+
+                    this.Hide();
+                    menu_venta forms = new menu_venta();
+                    forms.lbl_id.Text = lbl_id.Text;
+                    forms.Show();
+                }
+
+                else if (estatuscaja == "2")
+                {
+                    MessageBox.Show("No puede Acceder al apartado de ventas ya que la caja esta cerrada", "Advertencia");
+                }
             }
 
-            if (estatuscaja == "1")
+            catch
             {
-
-                this.Hide();
-                menu_venta forms = new menu_venta();
-                forms.lbl_id.Text = lbl_id.Text;
-                forms.Show();
+                MessageBox.Show("Debe de Ingresar a Caja Antes ", "Advertencia");
             }
-
-            else if (estatuscaja == "2")
-            {
-                MessageBox.Show("No puede Acceder al apartado de ventas ya que la caja esta cerrada", "Advertencia");
-            }
+           
 
             
 

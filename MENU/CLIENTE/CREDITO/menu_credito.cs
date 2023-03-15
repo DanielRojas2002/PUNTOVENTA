@@ -52,50 +52,59 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
             {
                 
                 int idcliente;
-  
+                string fechaultimopago ,dia ;
                 string nombre, ap, am, domicilio , tel, correo;
+
+                dia = DateTime.Now.ToString("dd/MM/yyyy");
+
                 foreach (dgClienteCredito d in lista)
                 {
+                    fechaultimopago = d.FechaUltimoPago.Value.ToString("dd/MM/yyyy");
 
-                    idcliente = Convert.ToInt16(d.Id_Cliente.ToString());
-                    nombre = Convert.ToString(d.Nombre.ToString());
-                    ap = Convert.ToString(d.Apellido_Paterno.ToString());
-                    am = Convert.ToString(d.Apellido_Materno.ToString());
-                    domicilio = Convert.ToString(d.Direccion.ToString());
-                    tel = Convert.ToString(d.Telefono.ToString());
-                    correo = Convert.ToString(d.Correo.ToString());
-
-                  
-
-                  
-                        
-
-                    UserControlCliente[] Clientes = new UserControlCliente[_cantidad_clientes];
-
-
-                    contadorclientes = contadorclientes + 1;
-
-                    Clientes[contadorclientes] = new UserControlCliente();
-
-                    Clientes[contadorclientes].IdCliente = Convert.ToString(idcliente);
-
-                    Clientes[contadorclientes].NombreCliente = nombre;
-
-                    Clientes[contadorclientes].ApellidoPaterno = ap;
-
-                    Clientes[contadorclientes].ApellidoMaterno = am;
-
-                    Clientes[contadorclientes].Direccion = domicilio;
-
-                    Clientes[contadorclientes].Telefono = tel;
-
-                    Clientes[contadorclientes].Correo = correo;
+                    
+                    if (fechaultimopago!=dia)
+                    {
+                        idcliente = Convert.ToInt16(d.Id_Cliente.ToString());
+                        nombre = Convert.ToString(d.Nombre.ToString());
+                        ap = Convert.ToString(d.Apellido_Paterno.ToString());
+                        am = Convert.ToString(d.Apellido_Materno.ToString());
+                        domicilio = Convert.ToString(d.Direccion.ToString());
+                        tel = Convert.ToString(d.Telefono.ToString());
+                        correo = Convert.ToString(d.Correo.ToString());
 
 
 
 
 
-                    flowLayoutPanel_clientes.Controls.Add(Clientes[contadorclientes]);
+
+                        UserControlCliente[] Clientes = new UserControlCliente[_cantidad_clientes];
+
+
+                        contadorclientes = contadorclientes + 1;
+
+                        Clientes[contadorclientes] = new UserControlCliente();
+
+                        Clientes[contadorclientes].IdCliente = Convert.ToString(idcliente);
+
+                        Clientes[contadorclientes].NombreCliente = nombre;
+
+                        Clientes[contadorclientes].ApellidoPaterno = ap;
+
+                        Clientes[contadorclientes].ApellidoMaterno = am;
+
+                        Clientes[contadorclientes].Direccion = domicilio;
+
+                        Clientes[contadorclientes].Telefono = tel;
+
+                        Clientes[contadorclientes].Correo = correo;
+
+
+
+
+
+                        flowLayoutPanel_clientes.Controls.Add(Clientes[contadorclientes]);
+                    }
+                    
 
                
 
@@ -311,47 +320,61 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                 flowLayoutPanel_clientes.Controls.Clear();
                 int idcliente2;
 
-                string nombre, ap, am, domicilio, tel, correo;
+
+
+                string nombre, ap, am, domicilio, tel, correo,dia, fechaultimopago;
+
+                dia = DateTime.Now.ToString("dd/MM/yyyy");
                 foreach (dgClienteCredito d in listafiltrado)
                 {
-
-                    idcliente2 = Convert.ToInt16(d.Id_Cliente.ToString());
-                    nombre = Convert.ToString(d.Nombre.ToString());
-                    ap = Convert.ToString(d.Apellido_Paterno.ToString());
-                    am = Convert.ToString(d.Apellido_Materno.ToString());
-                    domicilio = Convert.ToString(d.Direccion.ToString());
-                    tel = Convert.ToString(d.Telefono.ToString());
-                    correo = Convert.ToString(d.Correo.ToString());
+                    fechaultimopago = d.FechaUltimoPago.Value.ToString("dd/MM/yyyy");
 
 
-
-
-
-
-                    UserControlCliente[] Clientes = new UserControlCliente[10];
-
-
-                    contadorclientes = contadorclientes + 1;
-
-                    Clientes[contadorclientes] = new UserControlCliente();
-
-                    Clientes[contadorclientes].IdCliente = Convert.ToString(idcliente2);
-
-                    Clientes[contadorclientes].NombreCliente = nombre;
-
-                    Clientes[contadorclientes].ApellidoPaterno = ap;
-
-                    Clientes[contadorclientes].ApellidoMaterno = am;
-
-                    Clientes[contadorclientes].Direccion = domicilio;
-
-                    Clientes[contadorclientes].Telefono = tel;
-
-                    Clientes[contadorclientes].Correo = correo;
+                    if (dia!= fechaultimopago)
+                    {
+                        idcliente2 = Convert.ToInt16(d.Id_Cliente.ToString());
+                        nombre = Convert.ToString(d.Nombre.ToString());
+                        ap = Convert.ToString(d.Apellido_Paterno.ToString());
+                        am = Convert.ToString(d.Apellido_Materno.ToString());
+                        domicilio = Convert.ToString(d.Direccion.ToString());
+                        tel = Convert.ToString(d.Telefono.ToString());
+                        correo = Convert.ToString(d.Correo.ToString());
 
 
 
-                    flowLayoutPanel_clientes.Controls.Add(Clientes[contadorclientes]);
+
+
+
+                        UserControlCliente[] Clientes = new UserControlCliente[10];
+
+
+                        contadorclientes = contadorclientes + 1;
+
+                        Clientes[contadorclientes] = new UserControlCliente();
+
+                        Clientes[contadorclientes].IdCliente = Convert.ToString(idcliente2);
+
+                        Clientes[contadorclientes].NombreCliente = nombre;
+
+                        Clientes[contadorclientes].ApellidoPaterno = ap;
+
+                        Clientes[contadorclientes].ApellidoMaterno = am;
+
+                        Clientes[contadorclientes].Direccion = domicilio;
+
+                        Clientes[contadorclientes].Telefono = tel;
+
+                        Clientes[contadorclientes].Correo = correo;
+
+
+
+                        flowLayoutPanel_clientes.Controls.Add(Clientes[contadorclientes]);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Solo se puede pagar credito 1 vez por dia", "Advertencia");
+                    }
+                    
 
 
 

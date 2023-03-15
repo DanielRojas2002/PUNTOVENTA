@@ -83,6 +83,7 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_CantidadPagada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UltimoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
@@ -319,7 +320,7 @@
             this.dataGridView_ventas.ReadOnly = true;
             this.dataGridView_ventas.RowHeadersWidth = 51;
             this.dataGridView_ventas.RowTemplate.Height = 25;
-            this.dataGridView_ventas.Size = new System.Drawing.Size(954, 222);
+            this.dataGridView_ventas.Size = new System.Drawing.Size(965, 222);
             this.dataGridView_ventas.TabIndex = 97;
             this.dataGridView_ventas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_ventas_CellContentClick);
             // 
@@ -484,7 +485,7 @@
             this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(1351, 8);
+            this.pictureBox6.Location = new System.Drawing.Point(1342, 8);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(29, 31);
@@ -505,7 +506,7 @@
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(1305, 8);
+            this.pictureBox5.Location = new System.Drawing.Point(1296, 8);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(39, 31);
@@ -518,7 +519,7 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(998, 8);
+            this.pictureBox2.Location = new System.Drawing.Point(989, 8);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(29, 31);
@@ -532,7 +533,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(952, 8);
+            this.pictureBox1.Location = new System.Drawing.Point(943, 8);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(39, 31);
@@ -553,7 +554,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1033, 43);
+            this.panel4.Size = new System.Drawing.Size(1024, 43);
             this.panel4.TabIndex = 84;
             // 
             // panel6
@@ -661,6 +662,7 @@
             this.dataGridViewTextBoxColumn6,
             this.Col_CantidadPagada,
             this.dataGridViewTextBoxColumn7,
+            this.UltimoPago,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
             this.dataGridView_p_credito.Location = new System.Drawing.Point(37, 534);
@@ -669,7 +671,7 @@
             this.dataGridView_p_credito.ReadOnly = true;
             this.dataGridView_p_credito.RowHeadersWidth = 51;
             this.dataGridView_p_credito.RowTemplate.Height = 25;
-            this.dataGridView_p_credito.Size = new System.Drawing.Size(954, 102);
+            this.dataGridView_p_credito.Size = new System.Drawing.Size(961, 102);
             this.dataGridView_p_credito.TabIndex = 109;
             // 
             // dataGridViewTextBoxColumn1
@@ -745,6 +747,15 @@
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Width = 117;
             // 
+            // UltimoPago
+            // 
+            this.UltimoPago.Frozen = true;
+            this.UltimoPago.HeaderText = "UltimoPago";
+            this.UltimoPago.MinimumWidth = 6;
+            this.UltimoPago.Name = "UltimoPago";
+            this.UltimoPago.ReadOnly = true;
+            this.UltimoPago.Width = 125;
+            // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.Frozen = true;
@@ -779,7 +790,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.ClientSize = new System.Drawing.Size(1033, 977);
+            this.ClientSize = new System.Drawing.Size(1024, 977);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dataGridView_p_credito);
             this.Controls.Add(this.lbl_id_caja);
@@ -883,6 +894,7 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private DataGridViewTextBoxColumn Col_CantidadPagada;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn UltimoPago;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
     }
