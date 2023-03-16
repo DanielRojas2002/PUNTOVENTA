@@ -168,13 +168,15 @@ namespace PUNTOVENTA.MENU.VENTA
             {
                 CargaProductos(0);
             }
-            
 
 
 
 
 
 
+            Cursor.Position = new Point(700, 145);
+
+       
 
 
 
@@ -1643,6 +1645,9 @@ namespace PUNTOVENTA.MENU.VENTA
         public void panel6_MouseMove(object sender, MouseEventArgs e)
         {
             CargaProductosOrden();
+            Cursor.Position = new Point(500, 500);
+
+       
         }
 
         private void bx_tipoventa_SelectedIndexChanged(object sender, EventArgs e)
@@ -1791,6 +1796,16 @@ namespace PUNTOVENTA.MENU.VENTA
         private void label12_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void menu_venta_MouseClick(object sender, MouseEventArgs e)
+        {
+           
+        }
+
+        private void menu_venta_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
