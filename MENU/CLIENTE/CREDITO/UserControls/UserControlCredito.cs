@@ -289,19 +289,6 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
                         controlc = c_cliente_credito.SeleccionarClienteSeleccionado(parametroc);
 
 
-                        dgClienteCredito parametro = new dgClienteCredito
-                        {
-                            Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
-                            CantidadPagada = float.Parse(lbl_total_faltante.Text),
-                            Id_Cliente = Convert.ToInt16(controlc),
-                            FechaPago = DateTime.Now,
-                            Validacion = 1,
-                            Cambio = float.Parse(lbl_cambio.Text)
-                        };
-
-                        string control = "";
-
-                        control = c_cliente_credito.ActualizarCreditoPago(1, parametro); // YA SE CARGO LO ABONADO EL TOTAL
 
 
                         dgClienteCredito parametro3 = new dgClienteCredito
@@ -430,7 +417,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
                             List<dgClienteCredito> lista4 = c_cliente_credito.LeerClienteCredito(333, parametro4);
 
 
-
+                            float cantidadabonadatotal=0;
                             if (lista4.Count > 0)
 
                             {
@@ -438,12 +425,68 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
                                 {
 
                                     Ticket1.TextoIzquierda(" ");
-                                    Ticket1.AgregaTotales("Abonado con :", double.Parse(d.CantidadPagada.ToString()));
+                                    Ticket1.AgregaTotales("Abonado Anterior :", double.Parse(d.CantidadPagada.ToString()));
+
+                                    cantidadabonadatotal = cantidadabonadatotal + float.Parse(d.CantidadPagada.ToString());
 
                                     Ticket1.TextoIzquierda(" ");
+                                    Ticket1.AgregaTotales("Abonado con :", double.Parse(txt_paga_con.Text));
 
-                                    float debe = float.Parse(lbl_total_venta.Text) - float.Parse(d.CantidadPagada.ToString());
-                                    Ticket1.AgregaTotales("Cantidad que falta por pagar: ", debe);
+                                    cantidadabonadatotal = cantidadabonadatotal + float.Parse(txt_paga_con.Text);
+
+
+
+                                }
+
+                            }
+
+
+                            dgClienteCredito parametro = new dgClienteCredito
+                            {
+                                Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
+                                CantidadPagada = float.Parse(lbl_total_faltante.Text),
+                                Id_Cliente = Convert.ToInt16(controlc),
+                                FechaPago = DateTime.Now,
+                                Validacion = 1,
+                                Cambio = float.Parse(lbl_cambio.Text)
+                            };
+
+                            string control = "";
+
+                            control = c_cliente_credito.ActualizarCreditoPago(1, parametro); // YA SE CARGO LO ABONADO EL TOTAL
+
+
+                            dgClienteCredito parametro44 = new dgClienteCredito
+                            {
+                                Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
+                                Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
+                            };
+
+                            List<dgClienteCredito> lista44 = c_cliente_credito.LeerClienteCredito(333, parametro44);
+
+
+                            if (lista44.Count > 0)
+
+                            {
+                               
+
+                                foreach (dgClienteCredito d in lista44)
+                                {
+
+
+                                    cantidadabonadatotal = float.Parse(d.Total.ToString()) - cantidadabonadatotal;
+
+                                    float debe =cantidadabonadatotal;
+
+                                    if (cantidadabonadatotal<= float.Parse(d.Total.ToString()))
+                                    {
+                                        Ticket1.AgregaTotales("Cantidad que falta por pagar: ", 0);
+                                    }
+                                    else
+                                    {
+                                        Ticket1.AgregaTotales("Cantidad que falta por pagar: ", debe);
+                                    }
+                                   
 
 
 
@@ -456,7 +499,6 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
                                 }
 
                             }
-
 
 
 
@@ -551,24 +593,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
 
                         lbl_cambio.Text = "0";
 
-                        dgClienteCredito parametro = new dgClienteCredito
-                        {
-                            Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
-                            Id_Cliente= Convert.ToInt16(controlc),
-                            CantidadPagada = float.Parse(txt_paga_con.Text.Trim()),
-
-                            FechaPago = DateTime.Now,
-                            Validacion = 0
-                        };
-
-                     
-                            
-
-
-
-                        string control = "";
-
-                        control = c_cliente_credito.ActualizarCreditoPago(0, parametro); //ABONO 
+                      
 
 
 
@@ -689,6 +714,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
 
 
 
+
                             dgClienteCredito parametro4 = new dgClienteCredito
                             {
                                 Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
@@ -698,7 +724,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
                             List<dgClienteCredito> lista4 = c_cliente_credito.LeerClienteCredito(333, parametro4);
 
 
-
+                            float cantidadabonadatotal = 0;
                             if (lista4.Count > 0)
 
                             {
@@ -706,16 +732,83 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
                                 {
 
                                     Ticket1.TextoIzquierda(" ");
-                                    Ticket1.AgregaTotales("Total Abono :", double.Parse(d.CantidadPagada.ToString()));
+                                    Ticket1.AgregaTotales("Abonado Anterior :", double.Parse(d.CantidadPagada.ToString()));
+
+                                    cantidadabonadatotal = cantidadabonadatotal + float.Parse(d.CantidadPagada.ToString());
+
+                                    Ticket1.TextoIzquierda(" ");
+                                    Ticket1.AgregaTotales("Abonado con :", double.Parse(txt_paga_con.Text));
+
+                                    cantidadabonadatotal = cantidadabonadatotal + float.Parse(txt_paga_con.Text);
+
+
+
+                                }
+
+                            }
+
+                            dgClienteCredito parametro = new dgClienteCredito
+                            {
+                                Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
+                                Id_Cliente = Convert.ToInt16(controlc),
+                                CantidadPagada = float.Parse(txt_paga_con.Text.Trim()),
+
+                                FechaPago = DateTime.Now,
+                                Validacion = 0
+                            };
+
+
+
+
+
+
+                            string control = "";
+
+                            control = c_cliente_credito.ActualizarCreditoPago(0, parametro); //ABONO 
+
+
+
+                            dgClienteCredito parametro44 = new dgClienteCredito
+                            {
+                                Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
+                                Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
+                            };
+
+                            List<dgClienteCredito> lista44 = c_cliente_credito.LeerClienteCredito(333, parametro44);
+
+
+                            if (lista44.Count > 0)
+
+                            {
+
+
+                                foreach (dgClienteCredito d in lista44)
+                                {
+
+
+                                    cantidadabonadatotal = float.Parse(d.Total.ToString()) - cantidadabonadatotal;
+
+                                    float debe = cantidadabonadatotal;
+
+                                    if (cantidadabonadatotal >= float.Parse(d.Total.ToString()))
+                                    {
+                                        Ticket1.AgregaTotales("Cantidad que falta por pagar: ", 0);
+                                    }
+                                    else
+                                    {
+                                        Ticket1.AgregaTotales("Cantidad que falta por pagar: ", debe);
+                                    }
+
+
+
 
                                     Ticket1.TextoIzquierda(" ");
 
-                                    float debe = float.Parse(lbl_total_venta.Text) - float.Parse(d.CantidadPagada.ToString());
-                                    Ticket1.AgregaTotales("Cantidad que falta por pagar: ", debe);
                                     Ticket1.TextoCentro("****** ABONADO   ******");
                                 }
 
                             }
+
 
 
 
@@ -838,21 +931,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
                     controlc = c_cliente_credito.SeleccionarClienteSeleccionado(parametroc);
 
 
-                    dgClienteCredito parametro = new dgClienteCredito
-                    {
-                        Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
-                        CantidadPagada = float.Parse(lbl_total_faltante.Text),
-                        Id_Cliente = Convert.ToInt16(controlc),
-                        FechaPago = DateTime.Now,
-                        Validacion = 2
-                       
-                    };
-
-
-
-                    string control = "";
-
-                    control = c_cliente_credito.ActualizarCreditoPago(0, parametro); // YA SE CARGO LO ABONADO EL TOTAL
+                   
 
 
                     dgClienteCredito parametro3 = new dgClienteCredito
@@ -972,6 +1051,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
 
 
 
+
                         dgClienteCredito parametro4 = new dgClienteCredito
                         {
                             Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
@@ -981,7 +1061,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
                         List<dgClienteCredito> lista4 = c_cliente_credito.LeerClienteCredito(333, parametro4);
 
 
-
+                        float cantidadabonadatotal = 0;
                         if (lista4.Count > 0)
 
                         {
@@ -989,12 +1069,69 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
                             {
 
                                 Ticket1.TextoIzquierda(" ");
-                                Ticket1.AgregaTotales("Abonado con :", double.Parse(d.CantidadPagada.ToString()));
+                                Ticket1.AgregaTotales("Abonado Anterior :", double.Parse(d.CantidadPagada.ToString()));
+
+                                cantidadabonadatotal = cantidadabonadatotal + float.Parse(d.CantidadPagada.ToString());
 
                                 Ticket1.TextoIzquierda(" ");
+                                Ticket1.AgregaTotales("Abonado con :", double.Parse(lbl_total_faltante.Text));
 
-                                float debe = float.Parse(lbl_total_venta.Text) - float.Parse(d.CantidadPagada.ToString());
-                                Ticket1.AgregaTotales("Cantidad que falta por pagar: ", debe);
+                                cantidadabonadatotal = cantidadabonadatotal + float.Parse(lbl_total_faltante.Text);
+
+
+
+                            }
+
+                        }
+
+                        dgClienteCredito parametro = new dgClienteCredito
+                        {
+                            Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
+                            CantidadPagada = float.Parse(lbl_total_faltante.Text),
+                            Id_Cliente = Convert.ToInt16(controlc),
+                            FechaPago = DateTime.Now,
+                            Validacion = 2
+
+                        };
+
+
+
+                        string control = "";
+
+                        control = c_cliente_credito.ActualizarCreditoPago(0, parametro); // YA SE CARGO LO ABONADO EL TOTAL
+
+
+
+                        dgClienteCredito parametro44 = new dgClienteCredito
+                        {
+                            Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
+                            Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
+                        };
+
+                        List<dgClienteCredito> lista44 = c_cliente_credito.LeerClienteCredito(333, parametro44);
+
+
+                        if (lista44.Count > 0)
+
+                        {
+
+
+                            foreach (dgClienteCredito d in lista44)
+                            {
+
+
+                                cantidadabonadatotal = float.Parse(d.Total.ToString()) - cantidadabonadatotal;
+
+                                float debe = cantidadabonadatotal;
+
+                                if (cantidadabonadatotal >= float.Parse(d.Total.ToString()))
+                                {
+                                    Ticket1.AgregaTotales("Cantidad que falta por pagar: ", 0);
+                                }
+                                else
+                                {
+                                    Ticket1.AgregaTotales("Cantidad que falta por pagar: ", debe);
+                                }
 
 
 
@@ -1005,6 +1142,8 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
                             }
 
                         }
+
+
 
 
 
