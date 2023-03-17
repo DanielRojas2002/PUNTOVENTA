@@ -31,10 +31,10 @@ namespace PUNTOVENTA.CLASES
                     new SqlParameter("@P_IdCliente",Parametro.Id_Cliente),
                     new SqlParameter("@P_IdEstatus",Parametro.Id_Estatus),
                     new SqlParameter("@P_FechaRegistro",Parametro.FechaRegistro),
-                    new SqlParameter("@P_FechaUltimoPago",Parametro.FechaUltimoPago),
+                  
 
                     new SqlParameter("@P_CantidadPagada",Parametro.CantidadPagada),
-                    new SqlParameter("@P_CantidadPagadaUltima",Parametro.CantidadPagadaUltima)
+                   
 
 
 

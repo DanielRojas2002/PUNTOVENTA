@@ -1450,8 +1450,8 @@ namespace PUNTOVENTA.MENU.VENTA
                                 FechaUltimoPago = DateTime.Now,
                                 Id_Estatus = 2,
 
-                                CantidadPagada = decimal.Parse(txt_paga_con.Text),
-                                CantidadPagadaUltima = decimal.Parse(txt_paga_con.Text)
+                                CantidadPagada = decimal.Parse(txt_paga_con.Text)
+                               
 
 
 

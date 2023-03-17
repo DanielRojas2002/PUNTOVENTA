@@ -48,6 +48,41 @@ namespace PUNTOVENTA.CLASES
 
         }
 
+        public static string SeleccionarClienteSeleccionado(dgClienteCredito Parametro)
+        {
+
+
+            string control = "";
+
+            try
+            {
+
+                DataTable tabla = new DataTable();
+
+                SqlParameter[] parametros =
+                {
+                    new SqlParameter("@Accion",44),
+                    
+
+
+
+                };
+
+                tabla = bdContext.funcionStored("spCredito", parametros);
+                control = tabla.Rows[0][0].ToString();
+
+
+
+            }
+
+            catch (Exception error)
+            {
+                control = error.ToString();
+            }
+            return control;
+
+        }
+
         public static List<dgClienteCredito> LeerClienteCredito(int tipo, dgClienteCredito Parametro)
         {
 
@@ -77,9 +112,9 @@ namespace PUNTOVENTA.CLASES
                                  Apellido_Materno = Convert.ToString(fila["Apellido_Materno"].ToString()),
                                  Telefono = Convert.ToString(fila["Telefono"].ToString()),
                                  Correo = Convert.ToString(fila["Correo"].ToString()),
-                                 Direccion = Convert.ToString(fila["Direccion"].ToString()),
+                                 Direccion = Convert.ToString(fila["Direccion"].ToString())
 
-                                 FechaUltimoPago = Convert.ToDateTime(fila["FechaUltimoPago"].ToString())
+                                 
 
 
 
@@ -114,9 +149,9 @@ namespace PUNTOVENTA.CLASES
                                  Apellido_Materno = Convert.ToString(fila["Apellido_Materno"].ToString()),
                                  Direccion = Convert.ToString(fila["Direccion"].ToString()),
                                  Correo = Convert.ToString(fila["Correo"].ToString()),
-                                 Telefono = Convert.ToString(fila["Telefono"].ToString()),
+                                 Telefono = Convert.ToString(fila["Telefono"].ToString())
                                  
-                                 FechaUltimoPago= Convert.ToDateTime(fila["FechaUltimoPago"].ToString()),
+                                 
 
 
                              }
@@ -308,9 +343,10 @@ namespace PUNTOVENTA.CLASES
                     {
                         new SqlParameter("@Accion",9),
                         new SqlParameter("@P_IdVenta",Parametro.Id_Venta),
-                        new SqlParameter("@P_FechaUltimoPago",Parametro.FechaUltimoPago),
+                        new SqlParameter("@P_IdCliente",Parametro.Id_Cliente),
+                        new SqlParameter("@P_FechaPago",Parametro.FechaPago),
                         new SqlParameter("@P_CantidadPagada",Parametro.CantidadPagada),
-                        new SqlParameter("@P_CantidadPagadaUltima",Parametro.CantidadPagadaUltima),
+                      
                         new SqlParameter("@P_Validacion",Parametro.Validacion)
 
 
@@ -347,9 +383,10 @@ namespace PUNTOVENTA.CLASES
                     {
                         new SqlParameter("@Accion",9),
                         new SqlParameter("@P_IdVenta",Parametro.Id_Venta),
+                        new SqlParameter("@P_IdCliente",Parametro.Id_Cliente),
                         new SqlParameter("@P_FechaPago",Parametro.FechaPago),
                         new SqlParameter("@P_CantidadPagada",Parametro.CantidadPagada),
-                        new SqlParameter("@P_CantidadPagadaUltima",Parametro.CantidadPagadaUltima),
+                     
                         new SqlParameter("@P_Validacion",Parametro.Validacion),
                         new SqlParameter("@P_Cambio",Parametro.Cambio)
 

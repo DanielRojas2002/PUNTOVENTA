@@ -158,6 +158,7 @@ namespace PUNTOVENTA.CLASES
                                  PrecioProducto = float.Parse(fila["PrecioProducto"].ToString()),
                                  SubTotalProducto = float.Parse(fila["SubTotalProducto"].ToString()),
                                  FechaVentaProducto = Convert.ToDateTime(fila["FechaVentaProducto"].ToString()),
+                                 FechaUltimoPago= Convert.ToDateTime(fila["FechaUltimoPago"].ToString()),
                                  Usuario = Convert.ToString(fila["Usuario"].ToString()),
                                  DescripcionTipoVenta = Convert.ToString(fila["DescripcionTipoVenta"].ToString()),
                                  CantidadPagada = float.Parse(fila["CantidadPagada"].ToString())
@@ -189,6 +190,9 @@ namespace PUNTOVENTA.CLASES
                                  Id_Venta = Convert.ToInt16(fila["Id_Venta"].ToString()),
 
                                  FechaVentaProducto = Convert.ToDateTime(fila["FechaVentaProducto"].ToString()),
+
+                                 FechaUltimoPago = Convert.ToDateTime(fila["FechaUltimoPago"].ToString()),
+
                                  Usuario = Convert.ToString(fila["Usuario"].ToString()),
                                  DescripcionTipoVenta = Convert.ToString(fila["DescripcionTipoVenta"].ToString()),
                                  CantidadPagada = float.Parse(fila["CantidadPagada"].ToString())

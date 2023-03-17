@@ -52,58 +52,57 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
             {
                 
                 int idcliente;
-                string fechaultimopago ,dia ;
+              
                 string nombre, ap, am, domicilio , tel, correo;
 
-                dia = DateTime.Now.ToString("dd/MM/yyyy");
+               
 
                 foreach (dgClienteCredito d in lista)
                 {
-                    fechaultimopago = d.FechaUltimoPago.Value.ToString("dd/MM/yyyy");
+                    
 
                     
-                    if (fechaultimopago!=dia)
-                    {
-                        idcliente = Convert.ToInt16(d.Id_Cliente.ToString());
-                        nombre = Convert.ToString(d.Nombre.ToString());
-                        ap = Convert.ToString(d.Apellido_Paterno.ToString());
-                        am = Convert.ToString(d.Apellido_Materno.ToString());
-                        domicilio = Convert.ToString(d.Direccion.ToString());
-                        tel = Convert.ToString(d.Telefono.ToString());
-                        correo = Convert.ToString(d.Correo.ToString());
+                   
+                    idcliente = Convert.ToInt16(d.Id_Cliente.ToString());
+                    nombre = Convert.ToString(d.Nombre.ToString());
+                    ap = Convert.ToString(d.Apellido_Paterno.ToString());
+                    am = Convert.ToString(d.Apellido_Materno.ToString());
+                    domicilio = Convert.ToString(d.Direccion.ToString());
+                    tel = Convert.ToString(d.Telefono.ToString());
+                    correo = Convert.ToString(d.Correo.ToString());
 
 
 
 
 
 
-                        UserControlCliente[] Clientes = new UserControlCliente[_cantidad_clientes];
+                    UserControlCliente[] Clientes = new UserControlCliente[_cantidad_clientes];
 
 
-                        contadorclientes = contadorclientes + 1;
+                    contadorclientes = contadorclientes + 1;
 
-                        Clientes[contadorclientes] = new UserControlCliente();
+                    Clientes[contadorclientes] = new UserControlCliente();
 
-                        Clientes[contadorclientes].IdCliente = Convert.ToString(idcliente);
+                    Clientes[contadorclientes].IdCliente = Convert.ToString(idcliente);
 
-                        Clientes[contadorclientes].NombreCliente = nombre;
+                    Clientes[contadorclientes].NombreCliente = nombre;
 
-                        Clientes[contadorclientes].ApellidoPaterno = ap;
+                    Clientes[contadorclientes].ApellidoPaterno = ap;
 
-                        Clientes[contadorclientes].ApellidoMaterno = am;
+                    Clientes[contadorclientes].ApellidoMaterno = am;
 
-                        Clientes[contadorclientes].Direccion = domicilio;
+                    Clientes[contadorclientes].Direccion = domicilio;
 
-                        Clientes[contadorclientes].Telefono = tel;
+                    Clientes[contadorclientes].Telefono = tel;
 
-                        Clientes[contadorclientes].Correo = correo;
-
-
+                    Clientes[contadorclientes].Correo = correo;
 
 
 
-                        flowLayoutPanel_clientes.Controls.Add(Clientes[contadorclientes]);
-                    }
+
+
+                    flowLayoutPanel_clientes.Controls.Add(Clientes[contadorclientes]);
+                    
                     
 
                

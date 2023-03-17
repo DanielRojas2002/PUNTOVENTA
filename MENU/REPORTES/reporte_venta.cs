@@ -190,7 +190,7 @@ namespace PUNTOVENTA.MENU.REPORTES
             if (lista2.Count > 0)
 
             {
-                string fechaventa;
+                string fechaventa,fechaultimopago;
                 float subtotal, cantidadpagada;
 
                 foreach (dgReportes d in lista2)
@@ -206,8 +206,11 @@ namespace PUNTOVENTA.MENU.REPORTES
                     cantidadpagada = (float)Math.Round(cantidadpagada, 2);
 
                     fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
+
+                    fechaultimopago = d.FechaUltimoPago.Value.ToString("dd/MM/yyyy");
+
                     dataGridView_p_credito.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
-                         d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), Convert.ToString("-"), fechaventa, d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
+                         d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), Convert.ToString("-"), fechaventa, fechaultimopago, d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
 
 
 
@@ -250,7 +253,7 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                     fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
                     dataGridView_p_credito.Rows.Add(d.Id_Venta.ToString(), "-", "-",
-                       "-", "-", "-", Convert.ToString(d.CantidadPagada.ToString()), fechaventa, d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
+                       "-", "-", "-", Convert.ToString(d.CantidadPagada.ToString()), fechaventa,"-" ,d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
 
                     _dineroventas = _dineroventas + float.Parse(d.CantidadPagada.ToString());
 
@@ -363,9 +366,11 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                 ws.Cell("H6").Value = "FechaVenta";
 
-                ws.Cell("I6").Value = "Tipo Venta";
+                ws.Cell("I6").Value = "FechaUltimoPago";
 
-                ws.Cell("J6").Value = "Usuario";
+                ws.Cell("J6").Value = "Tipo Venta";
+
+                ws.Cell("K6").Value = "Usuario";
 
                 ws.Cell("G2").Value = "TOTAL VENTA :";
 
@@ -387,7 +392,7 @@ namespace PUNTOVENTA.MENU.REPORTES
                         fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
 
 
-
+                        
 
                         contadorcolumnas = 1;
                         fechaentrada = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
@@ -410,6 +415,8 @@ namespace PUNTOVENTA.MENU.REPORTES
                         ws.Cell(contadorregistros, contadorcolumnas).Value = "";
                         contadorcolumnas = contadorcolumnas + 1;
                         ws.Cell(contadorregistros, contadorcolumnas).Value = fechaventa;
+                        contadorcolumnas = contadorcolumnas + 1;
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = "-";
                         contadorcolumnas = contadorcolumnas + 1;
                         ws.Cell(contadorregistros, contadorcolumnas).Value = d.DescripcionTipoVenta.ToString();
                         contadorcolumnas = contadorcolumnas + 1;
@@ -442,7 +449,7 @@ namespace PUNTOVENTA.MENU.REPORTES
                 if (lista2.Count > 0)
 
                 {
-                    string fechaventa;
+                    string fechavent, fechaultimopago;
                     float subtotal, cantidadpagada;
 
                     foreach (dgReportes d in lista2)
@@ -462,6 +469,7 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                         fechaentrada = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
 
+                        fechaultimopago = d.FechaUltimoPago.Value.ToString("dd/MM/yyyy");
 
                         contadorcolumnas = 1;
 
@@ -480,6 +488,8 @@ namespace PUNTOVENTA.MENU.REPORTES
                         ws.Cell(contadorregistros, contadorcolumnas).Value = "";
                         contadorcolumnas = contadorcolumnas + 1;
                         ws.Cell(contadorregistros, contadorcolumnas).Value = fechaentrada;
+                        contadorcolumnas = contadorcolumnas + 1;
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = fechaultimopago;
                         contadorcolumnas = contadorcolumnas + 1;
                         ws.Cell(contadorregistros, contadorcolumnas).Value = d.DescripcionTipoVenta.ToString();
                         contadorcolumnas = contadorcolumnas + 1;
@@ -514,7 +524,7 @@ namespace PUNTOVENTA.MENU.REPORTES
                 if (lista3.Count > 0)
 
                 {
-                    string fechaventa;
+                    string fechaventa, fechaultimopago;
                     float subtotal, cantidadpagada;
 
                     foreach (dgReportes d in lista3)
@@ -524,7 +534,7 @@ namespace PUNTOVENTA.MENU.REPORTES
                         fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
 
 
-
+                        fechaultimopago = d.FechaUltimoPago.Value.ToString("dd/MM/yyyy");
 
                         contadorcolumnas = 1;
 
@@ -538,6 +548,10 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                         contadorcolumnas = contadorcolumnas + 1;
                         ws.Cell(contadorregistros, contadorcolumnas).Value = fechaventa;
+
+                        contadorcolumnas = contadorcolumnas + 1;
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = fechaultimopago;
+
 
                         contadorcolumnas = contadorcolumnas + 1;
                         ws.Cell(contadorregistros, contadorcolumnas).Value = d.DescripcionTipoVenta.ToString();

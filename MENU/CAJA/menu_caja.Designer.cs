@@ -671,7 +671,7 @@
             this.dataGridView_p_credito.ReadOnly = true;
             this.dataGridView_p_credito.RowHeadersWidth = 51;
             this.dataGridView_p_credito.RowTemplate.Height = 25;
-            this.dataGridView_p_credito.Size = new System.Drawing.Size(961, 102);
+            this.dataGridView_p_credito.Size = new System.Drawing.Size(961, 130);
             this.dataGridView_p_credito.TabIndex = 109;
             // 
             // dataGridViewTextBoxColumn1

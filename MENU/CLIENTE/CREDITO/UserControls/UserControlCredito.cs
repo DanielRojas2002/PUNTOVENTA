@@ -277,17 +277,27 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
                     {
 
 
+                        
+
+                        dgClienteCredito parametroc = new dgClienteCredito
+                        {
+                            
+                        };
+
+                        string controlc = "";
+
+                        controlc = c_cliente_credito.SeleccionarClienteSeleccionado(parametroc);
+
+
                         dgClienteCredito parametro = new dgClienteCredito
                         {
                             Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
                             CantidadPagada = float.Parse(lbl_total_faltante.Text),
-                            CantidadPagadaUltima = float.Parse(lbl_total_faltante.Text),
+                            Id_Cliente = Convert.ToInt16(controlc),
                             FechaPago = DateTime.Now,
                             Validacion = 1,
                             Cambio = float.Parse(lbl_cambio.Text)
                         };
-
-
 
                         string control = "";
 
@@ -530,18 +540,29 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
 
                     if (confirmResult == DialogResult.Yes)
                     {
+                        dgClienteCredito parametroc = new dgClienteCredito
+                        {
 
+                        };
+
+                        string controlc = "";
+
+                        controlc = c_cliente_credito.SeleccionarClienteSeleccionado(parametroc);
 
                         lbl_cambio.Text = "0";
 
                         dgClienteCredito parametro = new dgClienteCredito
                         {
                             Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
+                            Id_Cliente= Convert.ToInt16(controlc),
                             CantidadPagada = float.Parse(txt_paga_con.Text.Trim()),
-                            CantidadPagadaUltima = float.Parse(txt_paga_con.Text.Trim()),
-                            FechaUltimoPago = DateTime.Now,
+
+                            FechaPago = DateTime.Now,
                             Validacion = 0
                         };
+
+                     
+                            
 
 
 
@@ -805,13 +826,26 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
                 {
 
 
+                  
+
+                    dgClienteCredito parametroc = new dgClienteCredito
+                    {
+
+                    };
+
+                    string controlc = "";
+
+                    controlc = c_cliente_credito.SeleccionarClienteSeleccionado(parametroc);
+
+
                     dgClienteCredito parametro = new dgClienteCredito
                     {
                         Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
                         CantidadPagada = float.Parse(lbl_total_faltante.Text),
+                        Id_Cliente = Convert.ToInt16(controlc),
                         FechaPago = DateTime.Now,
-                        Validacion = 2,
-
+                        Validacion = 2
+                       
                     };
 
 
