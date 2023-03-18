@@ -40,7 +40,7 @@ namespace PUNTOVENTA.ENTIDAD
         public DateTime? FechaVentaProducto { get; set; }
         public DateTime? FechaInicio { get; set; }
 
-        public DateTime? FechaUltimoPago { get; set; }
+        
 
         public DateTime? FechaEntrada { get; set; }
         public DateTime? FechaFinal { get; set; }
