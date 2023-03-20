@@ -94,29 +94,28 @@ namespace PUNTOVENTA.MENU.CAJA
             {
                 string fechaventa,fechaultimopago;
                 float subtotal,cantidadpagada;
-              
+
                 foreach (dgCaja d in lista2)
                 {
-                   
+
 
 
                     subtotal = float.Parse(d.SubTotalProducto.ToString());
 
                     subtotal = (float)Math.Round(subtotal, 2);
 
-                    cantidadpagada= float.Parse(d.CantidadPagada.ToString());
-                    cantidadpagada = (float)Math.Round(cantidadpagada, 2);
+
 
                     fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
-                    fechaultimopago = d.FechaUltimoPago.Value.ToString("dd/MM/yyyy");
+
 
                     dataGridView_p_credito.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
-                         d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), Convert.ToString("-"), fechaventa,fechaultimopago, d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
+                         d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), Convert.ToString("-"), fechaventa, "", d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
 
 
-                   
+
                 }
-               
+
 
 
             }
@@ -146,16 +145,14 @@ namespace PUNTOVENTA.MENU.CAJA
             {
                 string fechaventa, fechaultimopago;
                 float subtotal, cantidadpagada;
-              
+
                 foreach (dgCaja d in lista3)
                 {
 
 
                     fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
-                    fechaultimopago = d.FechaUltimoPago.Value.ToString("dd/MM/yyyy");
-
-                    dataGridView_p_credito.Rows.Add(d.Id_Venta.ToString(),"-","-",
-                       "-","-", "-", Convert.ToString(d.CantidadPagada.ToString()), fechaventa, fechaultimopago, d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
+                    dataGridView_p_credito.Rows.Add(d.Id_Venta.ToString(), "-", "-",
+                       "-", "-", "-", Convert.ToString(d.CantidadPagada.ToString()), fechaventa, "-", "", "");
 
                     _dineroventas = _dineroventas + float.Parse(d.CantidadPagada.ToString());
 

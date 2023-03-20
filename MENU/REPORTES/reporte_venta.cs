@@ -191,8 +191,7 @@ namespace PUNTOVENTA.MENU.REPORTES
 
             {
                 string fechaventa;
-                float subtotal
-                    ;
+                float subtotal ;
 
                 foreach (dgReportes d in lista2)
                 {
