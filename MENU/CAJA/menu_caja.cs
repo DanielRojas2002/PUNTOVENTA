@@ -632,6 +632,28 @@ namespace PUNTOVENTA.MENU.CAJA
         private void TicketCaja()
         {
 
+            string impresora = "";
+            dgImpresora parametroimpresora = new dgImpresora
+            {
+
+
+
+            };
+
+            List<dgImpresora> listaimpresora = c_impresora.LeerImpresora(1, parametroimpresora);
+
+            if (listaimpresora.Count > 0)
+
+            {
+
+
+                foreach (dgImpresora d in listaimpresora)
+                {
+
+                    impresora = d.NombreImpresora.ToString();
+
+                }
+            }
 
             clsventas.CreaRecibo Ticket1 = new clsventas.CreaRecibo();
 
@@ -760,7 +782,7 @@ namespace PUNTOVENTA.MENU.CAJA
            
 
 
-            string impresora = "Microsoft XPS Document Writer";
+            
             Ticket1.ImprimirTiket(impresora);
             MessageBox.Show("Ticket Genrado Satisfactoriamente");
 

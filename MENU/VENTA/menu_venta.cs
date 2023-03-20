@@ -943,6 +943,30 @@ namespace PUNTOVENTA.MENU.VENTA
 
         private void btn_realizar_venta_Click(object sender, EventArgs e)
         {
+
+            string impresora = "";
+            dgImpresora parametroimpresora = new dgImpresora
+            {
+
+
+
+            };
+
+            List<dgImpresora> listaimpresora = c_impresora.LeerImpresora(1, parametroimpresora);
+
+            if (listaimpresora.Count > 0)
+
+            {
+
+
+                foreach (dgImpresora d in listaimpresora)
+                {
+
+                    impresora = d.NombreImpresora.ToString();
+
+                }
+            }
+
             if (lbl_id_tipoventa.Text == "1" && lbl_total.Text != "")
             {
                 if (txt_paga_con.Text == "" && lbl_cambio.Text == "")
@@ -1037,7 +1061,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
                         clsventas.CreaRecibo Ticket1 = new clsventas.CreaRecibo();
 
-                       
+
                         dgTicket parametroticketinfo = new dgTicket
                         {
                         };
@@ -1049,18 +1073,18 @@ namespace PUNTOVENTA.MENU.VENTA
 
                         {
 
-                           
+
                             foreach (dgTicket d in listaticketinfo)
                             {
                                 Ticket1.TextoCentro(d.NombreEmpresa.ToUpper().ToString());
                                 Ticket1.TextoIzquierda("Numero de Venta: " + _num_venta);
                                 Ticket1.TextoCentro("==================================");
-                                Ticket1.TextoIzquierda("Direccion: "+d.Direccion.ToUpper().ToString());
+                                Ticket1.TextoIzquierda("Direccion: " + d.Direccion.ToUpper().ToString());
                                 Ticket1.TextoIzquierda("Celular: " + d.Telefono.ToString());
                                 Ticket1.TextoIzquierda("");
                             }
 
-            
+
                             Ticket1.TextoCentro("Recibo de venta realizada por Efectivo");
                             Ticket1.TextoCentro("Los Precios ya contienen IVA");
                             Ticket1.TextoIzquierda("Nombre del cliente: Cliente Efectivo");
@@ -1069,7 +1093,7 @@ namespace PUNTOVENTA.MENU.VENTA
                             Ticket1.TextoIzquierda("");
                         }
 
-                     
+
                         clsventas.CreaRecibo.LineasGuion();
 
                         clsventas.CreaRecibo.EncabezadoVenta();
@@ -1077,7 +1101,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
                         dgTicket parametroticket = new dgTicket
                         {
-                            Id_Venta=_num_venta
+                            Id_Venta = _num_venta
                         };
 
                         List<dgTicket> listaProductosVenta = c_ticket.Ticket(1, parametroticket);
@@ -1087,7 +1111,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
                         {
 
-                          
+
 
                             string concatenacion = "";
                             double subtotal, sub;
@@ -1096,10 +1120,10 @@ namespace PUNTOVENTA.MENU.VENTA
                                 sub = double.Parse(d.SubTotal.ToString());
 
                                 subtotal = (double)Math.Round(sub, 2);
-                               
 
-                                concatenacion ="("+ d.Id_Producto.ToString()+")"+ " " + d.NombreProducto.ToString();
-                                Ticket1.AgregaArticulo(concatenacion, double.Parse( d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
+
+                                concatenacion = "(" + d.Id_Producto.ToString() + ")" + " " + d.NombreProducto.ToString();
+                                Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
                                 clsventas.CreaRecibo.LineasGuion();
                             }
                         }
@@ -1118,10 +1142,10 @@ namespace PUNTOVENTA.MENU.VENTA
 
                             foreach (dgTicket d in listaticketinfo)
                             {
-                               
+
                                 Ticket1.TextoCentro(d.Mensaje.ToUpper().ToString());
 
-                               
+
 
                             }
                             Ticket1.TextoCentro("===================================================");
@@ -1129,10 +1153,10 @@ namespace PUNTOVENTA.MENU.VENTA
 
 
                         }
+
+
+
                        
-                       
-                      
-                        string impresora = "Microsoft XPS Document Writer";
                         Ticket1.ImprimirTiket(impresora);
                         MessageBox.Show("Venta Realizada Por Efectivo");
 
@@ -1147,7 +1171,7 @@ namespace PUNTOVENTA.MENU.VENTA
             else if (lbl_id_tipoventa.Text == "2" && lbl_total.Text != "")
             {
 
-                if (txt_nombre_transferencia.Text=="")
+                if (txt_nombre_transferencia.Text == "")
                 {
                     MessageBox.Show("Ingrese el nombre del cliente para guardarlo en transferencia");
                 }
@@ -1182,7 +1206,7 @@ namespace PUNTOVENTA.MENU.VENTA
                     if (listaproductoscarrito.Count > 0)
 
                     {
-                        int  cantidad;
+                        int cantidad;
                         string idproducto;
                         foreach (dgVenta d in listaproductoscarrito)
                         {
@@ -1217,7 +1241,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
                     clsventas.CreaRecibo Ticket1 = new clsventas.CreaRecibo();
 
-                 
+
 
                     dgTicket parametroticketinfo = new dgTicket
                     {
@@ -1275,7 +1299,7 @@ namespace PUNTOVENTA.MENU.VENTA
                             sub = double.Parse(d.SubTotal.ToString());
 
                             subtotal = (double)Math.Round(sub, 2);
-                            
+
 
                             concatenacion = "(" + d.Id_Producto.ToString() + ")" + " " + d.NombreProducto.ToString();
                             Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
@@ -1286,7 +1310,7 @@ namespace PUNTOVENTA.MENU.VENTA
                     Ticket1.TextoIzquierda(" ");
                     Ticket1.AgregaTotales("Total", double.Parse(lbl_total.Text));
                     Ticket1.TextoIzquierda(" ");
-                    Ticket1.TextoCentro("Pagado Por Transferencia a Nombre de :"+txt_nombre_transferencia.Text);
+                    Ticket1.TextoCentro("Pagado Por Transferencia a Nombre de :" + txt_nombre_transferencia.Text);
 
 
                     if (listaticketinfo.Count > 0)
@@ -1311,7 +1335,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
 
 
-                    string impresora = "Microsoft XPS Document Writer";
+                  
                     Ticket1.ImprimirTiket(impresora);
 
 
@@ -1320,7 +1344,7 @@ namespace PUNTOVENTA.MENU.VENTA
                     RegresarVentana();
                 }
 
-                
+
 
 
 
@@ -1331,6 +1355,11 @@ namespace PUNTOVENTA.MENU.VENTA
 
             else if (lbl_id_tipoventa.Text == "3" && lbl_total.Text != "")
             {
+                
+                
+                
+
+
                 if (txt_paga_con.Text == "" && lbl_cambio.Text == "")
                 {
                     MessageBox.Show("Debe llenar el Campo de pago");
@@ -1566,7 +1595,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
 
 
-                            string impresora = "Microsoft XPS Document Writer";
+                            
                             Ticket1.ImprimirTiket(impresora);
 
 

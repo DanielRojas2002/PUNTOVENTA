@@ -212,6 +212,31 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
         {
             try
             {
+                string impresora = "";
+                dgImpresora parametroimpresora = new dgImpresora
+                {
+
+
+
+                };
+
+                List<dgImpresora> listaimpresora = c_impresora.LeerImpresora(1, parametroimpresora);
+
+                if (listaimpresora.Count > 0)
+
+                {
+
+
+                    foreach (dgImpresora d in listaimpresora)
+                    {
+
+                        impresora = d.NombreImpresora.ToString();
+
+                    }
+                }
+
+
+
                 string opcion = "";
                 string concatanacionnombre = "", concatenacionotrosdatos = "", titulomsj = "", carateres = "--------------------------------------";
 
@@ -530,7 +555,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
 
 
 
-                                    string impresora = "Microsoft XPS Document Writer";
+                                   
                                     Ticket1.ImprimirTiket(impresora);
 
 
@@ -841,7 +866,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
 
 
 
-                                    string impresora = "Microsoft XPS Document Writer";
+                                    
                                     Ticket1.ImprimirTiket(impresora);
 
 
@@ -1176,7 +1201,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
 
 
 
-                                string impresora = "Microsoft XPS Document Writer";
+                                
                                 Ticket1.ImprimirTiket(impresora);
 
 
