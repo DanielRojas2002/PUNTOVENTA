@@ -96,6 +96,11 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
                     cantidadfaltante = (float)Math.Round(cantidadfaltante, 2);
 
+                  
+
+
+                    total = (float)Math.Round(total, 2);
+
                     UserControlCredito[] Creditos = new UserControlCredito[cantidacreditos];
 
 
