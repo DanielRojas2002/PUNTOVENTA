@@ -210,938 +210,649 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
 
         private void btn_realizar_venta_Click(object sender, EventArgs e)
         {
-
-            string opcion = "";
-            string concatanacionnombre = "", concatenacionotrosdatos = "", titulomsj = "", carateres = "--------------------------------------";
-
-            string concatenacionfinal = "", concatenaciondatosventa = "";
-
-            float restante, pagar, cambio;
-
-            opcion = bx_tipoventa.Text;
-
-
-
-
-            if (opcion == "Efectivo")
+            try
             {
-                restante = float.Parse(lbl_total_faltante.Text);
+                string opcion = "";
+                string concatanacionnombre = "", concatenacionotrosdatos = "", titulomsj = "", carateres = "--------------------------------------";
 
-                pagar = float.Parse(txt_paga_con.Text);
+                string concatenacionfinal = "", concatenaciondatosventa = "";
 
-                cambio = pagar - restante;
+                float restante, pagar, cambio;
 
-                cambio = (float)Math.Round(cambio, 2);
+                opcion = bx_tipoventa.Text;
 
-                lbl_cambio.Text = Convert.ToString(cambio);
 
-                
-
-                if (restante < pagar)
+                if (bx_tipoventa.Text == "")
                 {
-
-                    dgClienteCredito parametro2 = new dgClienteCredito
-                    {
-                        Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
-                        Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
-                    };
-
-                    List<dgClienteCredito> lista2 = c_cliente_credito.LeerClienteCredito(333, parametro2);
-
-
-
-                    if (lista2.Count > 0)
-                    {
-                        float debemsj;
-
-                        foreach (dgClienteCredito d in lista2)
-                        {
-                            debemsj = float.Parse(lbl_total_venta.Text) - float.Parse(d.CantidadPagada.ToString());
-
-                            titulomsj = "PAGAR TOTAL DEL CREDITO " + "\n";
-                            concatanacionnombre = "Nombre Completo: " + d.Nombre.ToString() + " " + d.Apellido_Paterno.ToString() + " " + d.Apellido_Materno.ToString() + "\n";
-                            concatenacionotrosdatos = "Domicilio: " + d.Direccion.ToString() + "\n" + "Telefono: " + d.Telefono.ToString() + "\n" + "Correo: " + d.Correo.ToString() + "\n";
-                            concatenaciondatosventa = "Total del Credito: " + lbl_total_venta.Text + "\n" + "Cantidad Faltante:" + lbl_total_faltante.Text + "\n"+ "Cantidad a Abonar:"+ txt_paga_con.Text+ "\n"+ "Cambio: " + lbl_cambio.Text;
-
-                            concatenacionfinal = titulomsj + carateres + "\n" + concatanacionnombre + concatenacionotrosdatos + carateres + "\n" + concatenaciondatosventa;
-                        }
-                    }
-
-
-
-                    var confirmResult = MessageBox.Show(concatenacionfinal,
-                        "Confirmar Venta Por Efectivo(Credito)!!",
-                        MessageBoxButtons.YesNo);
-
-                    if (confirmResult == DialogResult.Yes)
-                    {
-
-
-                        
-
-                        dgClienteCredito parametroc = new dgClienteCredito
-                        {
-                            
-                        };
-
-                        string controlc = "";
-
-                        controlc = c_cliente_credito.SeleccionarClienteSeleccionado(parametroc);
-
-
-
-
-                        dgClienteCredito parametro3 = new dgClienteCredito
-                        {
-                            Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
-                            Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
-                        };
-
-                        List<dgClienteCredito> lista3 = c_cliente_credito.LeerClienteCredito(333, parametro3);
-
-
-
-                        int contadorcreditos = 0;
-
-
-
-                        if (lista3.Count > 0)
-                        {
-                            clsventas.CreaRecibo Ticket1 = new clsventas.CreaRecibo();
-
-
-                            dgTicket parametroticketinfo = new dgTicket
-                            {
-                            };
-
-                            List<dgTicket> listaticketinfo = c_ticket.Ticket(0, parametroticketinfo);
-
-
-
-
-
-                            if (listaticketinfo.Count > 0)
-
-                            {
-
-
-                                foreach (dgTicket d in listaticketinfo)
-                                {
-                                    Ticket1.TextoCentro(d.NombreEmpresa.ToUpper().ToString());
-
-
-                                    Ticket1.TextoIzquierda("Direccion: " + d.Direccion.ToUpper().ToString());
-                                    Ticket1.TextoIzquierda("Celular: " + d.Telefono.ToString());
-                                    Ticket1.TextoCentro("==================================");
-                                    Ticket1.TextoIzquierda("");
-                                    Ticket1.TextoIzquierda("Numero de Venta: " + lbl_id_venta.Text);
-                                    Ticket1.TextoIzquierda("");
-                                    Ticket1.TextoCentro("==================================");
-
-                                }
-
-
-                                Ticket1.TextoCentro("Recibo de venta (Credito) (Liquidado)");
-                                Ticket1.TextoCentro("Los Precios ya contienen IVA");
-
-                                Ticket1.TextoIzquierda(" -> Fecha de Pago: " + DateTime.Now.ToShortDateString() + "  ->Hora: " + DateTime.Now.ToShortTimeString());
-                                Ticket1.TextoIzquierda("");
-                            }
-
-
-                            dgClienteCredito parametro5 = new dgClienteCredito
-                            {
-                                Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
-                                Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
-                            };
-
-                            List<dgClienteCredito> lista5 = c_cliente_credito.LeerClienteCredito(333, parametro5);
-
-
-
-                            if (lista5.Count > 0)
-
-                            {
-                                foreach (dgClienteCredito d in lista5)
-                                {
-
-                                    Ticket1.TextoIzquierda("Nombre del Cliente: " + d.Nombre.ToString() + " " + d.Apellido_Paterno.ToString() + " " + d.Apellido_Materno.ToString());
-                                    Ticket1.TextoCentro("==================================");
-                                }
-                            }
-
-
-                            clsventas.CreaRecibo.LineasGuion();
-
-                            clsventas.CreaRecibo.EncabezadoVenta();
-
-
-                            dgTicket parametroticket = new dgTicket
-                            {
-                                Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
-                            };
-
-                            List<dgTicket> listaProductosVenta = c_ticket.Ticket(1, parametroticket);
-
-
-                            if (listaProductosVenta.Count > 0)
-
-                            {
-
-                                string concatenacion = "";
-                                double subtotal, sub;
-                                foreach (dgTicket d in listaProductosVenta)
-                                {
-                                    sub = double.Parse(d.SubTotal.ToString());
-
-                                    subtotal = (double)Math.Round(sub, 2);
-
-
-                                    concatenacion = "(" + d.Id_Producto.ToString() + ")" + " " + d.NombreProducto.ToString();
-                                    Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
-                                    clsventas.CreaRecibo.LineasGuion();
-                                }
-                            }
-
-                            Ticket1.TextoIzquierda(" ");
-                            Ticket1.AgregaTotales("Total", double.Parse(lbl_total_venta.Text));
-
-
-
-                            dgClienteCredito parametro4 = new dgClienteCredito
-                            {
-                                Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
-                                Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
-                            };
-
-                            List<dgClienteCredito> lista4 = c_cliente_credito.LeerClienteCredito(333, parametro4);
-
-
-                            float cantidadabonadatotal=0;
-                            if (lista4.Count > 0)
-
-                            {
-                                foreach (dgClienteCredito d in lista4)
-                                {
-
-                                    Ticket1.TextoIzquierda(" ");
-                                    Ticket1.AgregaTotales("Abonado Anterior :", double.Parse(d.CantidadPagada.ToString()));
-
-                                    cantidadabonadatotal = cantidadabonadatotal + float.Parse(d.CantidadPagada.ToString());
-
-                                    Ticket1.TextoIzquierda(" ");
-                                    Ticket1.AgregaTotales("Abonado con :", double.Parse(txt_paga_con.Text));
-
-                                    cantidadabonadatotal = cantidadabonadatotal + float.Parse(txt_paga_con.Text);
-
-
-
-                                }
-
-                            }
-
-
-                            dgClienteCredito parametro = new dgClienteCredito
-                            {
-                                Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
-                                CantidadPagada = float.Parse(lbl_total_faltante.Text),
-                                Id_Cliente = Convert.ToInt16(controlc),
-                                FechaPago = DateTime.Now,
-                                Validacion = 1,
-                                Cambio = float.Parse(lbl_cambio.Text)
-                            };
-
-                            string control = "";
-
-                            control = c_cliente_credito.ActualizarCreditoPago(1, parametro); // YA SE CARGO LO ABONADO EL TOTAL
-
-
-                            dgClienteCredito parametro44 = new dgClienteCredito
-                            {
-                                Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
-                                Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
-                            };
-
-                            List<dgClienteCredito> lista44 = c_cliente_credito.LeerClienteCredito(333, parametro44);
-
-
-                            if (lista44.Count > 0)
-
-                            {
-                               
-
-                                foreach (dgClienteCredito d in lista44)
-                                {
-
-
-                                    cantidadabonadatotal = float.Parse(d.Total.ToString()) - cantidadabonadatotal;
-
-                                    float debe =cantidadabonadatotal;
-
-                                    if (cantidadabonadatotal<= float.Parse(d.Total.ToString()))
-                                    {
-                                        Ticket1.AgregaTotales("Cantidad que falta por pagar: ", 0);
-                                    }
-                                    else
-                                    {
-                                        Ticket1.AgregaTotales("Cantidad que falta por pagar: ", debe);
-                                    }
-                                   
-
-
-
-                                    Ticket1.TextoIzquierda(" ");
-                                    Ticket1.AgregaTotales("Cambio :", double.Parse(lbl_cambio.Text));
-
-                                    Ticket1.TextoIzquierda(" ");
-
-                                    Ticket1.TextoCentro("****** LIQUIDADO   ******");
-                                }
-
-                            }
-
-
-
-
-                            if (listaticketinfo.Count > 0)
-
-                            {
-                                Ticket1.TextoIzquierda(" ");
-                                Ticket1.TextoCentro("=================================================");
-
-                                foreach (dgTicket d in listaticketinfo)
-                                {
-
-                                    Ticket1.TextoCentro(d.Mensaje.ToUpper().ToString());
-
-
-
-                                }
-                                Ticket1.TextoCentro("===================================================");
-                                Ticket1.TextoIzquierda(" ");
-
-
-                            }
-
-
-
-                            string impresora = "Microsoft XPS Document Writer";
-                            Ticket1.ImprimirTiket(impresora);
-
-
-                            MessageBox.Show("Abono Realizada Por Efectivo Liquidado");
-                        }
-
-
-
-
-                    }
-
-
-
+                    MessageBox.Show("Seleccione un Metodo de Pago", "Advertencia");
                 }
-
                 else
                 {
-
-
-
-
-                    dgClienteCredito parametro2 = new dgClienteCredito
+                    if (opcion == "Efectivo")
                     {
-                        Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
-                        Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
-                    };
+                        restante = float.Parse(lbl_total_faltante.Text);
 
-                    List<dgClienteCredito> lista2 = c_cliente_credito.LeerClienteCredito(333, parametro2);
+                        pagar = float.Parse(txt_paga_con.Text);
 
+                        cambio = pagar - restante;
 
+                        cambio = (float)Math.Round(cambio, 2);
 
-                    if (lista2.Count > 0)
-                    {
-                        float debemsj;
-
-                        foreach (dgClienteCredito d in lista2)
-                        {
-                            debemsj = float.Parse(lbl_total_venta.Text) - float.Parse(d.CantidadPagada.ToString());
-
-                            titulomsj = "PAGAR ABONO DEL CREDITO " + "\n";
-                            concatanacionnombre = "Nombre Completo: " + d.Nombre.ToString() + " " + d.Apellido_Paterno.ToString() + " " + d.Apellido_Materno.ToString() + "\n";
-                            concatenacionotrosdatos = "Domicilio: " + d.Direccion.ToString() + "\n" + "Telefono: " + d.Telefono.ToString() + "\n" + "Correo: " + d.Correo.ToString() + "\n";
-                            concatenaciondatosventa = "Total del Credito: " + lbl_total_venta.Text + "\n" +"Credito faltante:"+lbl_total_faltante.Text+"\n"+ "Abono: "+txt_paga_con.Text.ToString();
-
-                            concatenacionfinal = titulomsj + carateres + "\n" + concatanacionnombre + concatenacionotrosdatos + carateres + "\n" + concatenaciondatosventa;
-                        }
-                    }
+                        lbl_cambio.Text = Convert.ToString(cambio);
 
 
 
-                    var confirmResult = MessageBox.Show(concatenacionfinal,
-                        "Confirmar Venta Por Efectivo(Credito)!!",
-                        MessageBoxButtons.YesNo);
-
-                    if (confirmResult == DialogResult.Yes)
-                    {
-                        dgClienteCredito parametroc = new dgClienteCredito
+                        if (restante < pagar)
                         {
 
-                        };
-
-                        string controlc = "";
-
-                        controlc = c_cliente_credito.SeleccionarClienteSeleccionado(parametroc);
-
-                        lbl_cambio.Text = "0";
-
-                      
-
-
-
-                        dgClienteCredito parametro3 = new dgClienteCredito
-                        {
-                            Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
-                            Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
-                        };
-
-                        List<dgClienteCredito> lista3 = c_cliente_credito.LeerClienteCredito(333, parametro3);
-
-
-
-                        int contadorcreditos = 0;
-
-
-
-                        if (lista3.Count > 0)
-                        {
-                            clsventas.CreaRecibo Ticket1 = new clsventas.CreaRecibo();
-
-
-                            dgTicket parametroticketinfo = new dgTicket
-                            {
-                            };
-
-                            List<dgTicket> listaticketinfo = c_ticket.Ticket(0, parametroticketinfo);
-
-
-
-
-
-                            if (listaticketinfo.Count > 0)
-
-                            {
-
-
-                                foreach (dgTicket d in listaticketinfo)
-                                {
-                                    Ticket1.TextoCentro(d.NombreEmpresa.ToUpper().ToString());
-
-
-                                    Ticket1.TextoIzquierda("Direccion: " + d.Direccion.ToUpper().ToString());
-                                    Ticket1.TextoIzquierda("Celular: " + d.Telefono.ToString());
-                                    Ticket1.TextoCentro("==================================");
-                                    Ticket1.TextoIzquierda("");
-                                    Ticket1.TextoIzquierda("Numero de Venta: " + lbl_id_venta.Text);
-                                    Ticket1.TextoIzquierda("");
-                                    Ticket1.TextoCentro("==================================");
-
-                                }
-
-
-                                Ticket1.TextoCentro("Recibo de venta (Credito) (Abono)");
-
-
-                                Ticket1.TextoIzquierda(" -> Fecha de Abono: " + DateTime.Now.ToShortDateString() + "  ->Hora: " + DateTime.Now.ToShortTimeString());
-                                Ticket1.TextoIzquierda("");
-                            }
-
-
-                            dgClienteCredito parametro5 = new dgClienteCredito
+                            dgClienteCredito parametro2 = new dgClienteCredito
                             {
                                 Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
                                 Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
                             };
 
-                            List<dgClienteCredito> lista5 = c_cliente_credito.LeerClienteCredito(333, parametro5);
+                            List<dgClienteCredito> lista2 = c_cliente_credito.LeerClienteCredito(333, parametro2);
 
 
 
-                            if (lista5.Count > 0)
-
+                            if (lista2.Count > 0)
                             {
-                                foreach (dgClienteCredito d in lista5)
-                                {
+                                float debemsj;
 
-                                    Ticket1.TextoIzquierda("Nombre del Cliente: " + d.Nombre.ToString() + " " + d.Apellido_Paterno.ToString() + " " + d.Apellido_Materno.ToString());
-                                    Ticket1.TextoCentro("==================================");
+                                foreach (dgClienteCredito d in lista2)
+                                {
+                                    debemsj = float.Parse(lbl_total_venta.Text) - float.Parse(d.CantidadPagada.ToString());
+
+                                    titulomsj = "PAGAR TOTAL DEL CREDITO " + "\n";
+                                    concatanacionnombre = "Nombre Completo: " + d.Nombre.ToString() + " " + d.Apellido_Paterno.ToString() + " " + d.Apellido_Materno.ToString() + "\n";
+                                    concatenacionotrosdatos = "Domicilio: " + d.Direccion.ToString() + "\n" + "Telefono: " + d.Telefono.ToString() + "\n" + "Correo: " + d.Correo.ToString() + "\n";
+                                    concatenaciondatosventa = "Total del Credito: " + lbl_total_venta.Text + "\n" + "Cantidad Faltante:" + lbl_total_faltante.Text + "\n" + "Cantidad a Abonar:" + txt_paga_con.Text + "\n" + "Cambio: " + lbl_cambio.Text;
+
+                                    concatenacionfinal = titulomsj + carateres + "\n" + concatanacionnombre + concatenacionotrosdatos + carateres + "\n" + concatenaciondatosventa;
                                 }
                             }
 
 
-                            clsventas.CreaRecibo.LineasGuion();
 
-                            clsventas.CreaRecibo.EncabezadoVenta();
+                            var confirmResult = MessageBox.Show(concatenacionfinal,
+                                "Confirmar Venta Por Efectivo(Credito)!!",
+                                MessageBoxButtons.YesNo);
 
-
-                            dgTicket parametroticket = new dgTicket
-                            {
-                                Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
-                            };
-
-                            List<dgTicket> listaProductosVenta = c_ticket.Ticket(1, parametroticket);
-
-
-                            if (listaProductosVenta.Count > 0)
-
+                            if (confirmResult == DialogResult.Yes)
                             {
 
-                                string concatenacion = "";
-                                double subtotal, sub;
-                                foreach (dgTicket d in listaProductosVenta)
+
+
+
+                                dgClienteCredito parametroc = new dgClienteCredito
                                 {
-                                    sub = double.Parse(d.SubTotal.ToString());
 
-                                    subtotal = (double)Math.Round(sub, 2);
+                                };
+
+                                string controlc = "";
+
+                                controlc = c_cliente_credito.SeleccionarClienteSeleccionado(parametroc);
 
 
-                                    concatenacion = "(" + d.Id_Producto.ToString() + ")" + " " + d.NombreProducto.ToString();
-                                    Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
+
+
+                                dgClienteCredito parametro3 = new dgClienteCredito
+                                {
+                                    Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
+                                    Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
+                                };
+
+                                List<dgClienteCredito> lista3 = c_cliente_credito.LeerClienteCredito(333, parametro3);
+
+
+
+                                int contadorcreditos = 0;
+
+
+
+                                if (lista3.Count > 0)
+                                {
+                                    clsventas.CreaRecibo Ticket1 = new clsventas.CreaRecibo();
+
+
+                                    dgTicket parametroticketinfo = new dgTicket
+                                    {
+                                    };
+
+                                    List<dgTicket> listaticketinfo = c_ticket.Ticket(0, parametroticketinfo);
+
+
+
+
+
+                                    if (listaticketinfo.Count > 0)
+
+                                    {
+
+
+                                        foreach (dgTicket d in listaticketinfo)
+                                        {
+                                            Ticket1.TextoCentro(d.NombreEmpresa.ToUpper().ToString());
+
+
+                                            Ticket1.TextoIzquierda("Direccion: " + d.Direccion.ToUpper().ToString());
+                                            Ticket1.TextoIzquierda("Celular: " + d.Telefono.ToString());
+                                            Ticket1.TextoCentro("==================================");
+                                            Ticket1.TextoIzquierda("");
+                                            Ticket1.TextoIzquierda("Numero de Venta: " + lbl_id_venta.Text);
+                                            Ticket1.TextoIzquierda("");
+                                            Ticket1.TextoCentro("==================================");
+
+                                        }
+
+
+                                        Ticket1.TextoCentro("Recibo de venta (Credito) (Liquidado)");
+                                        Ticket1.TextoCentro("Los Precios ya contienen IVA");
+
+                                        Ticket1.TextoIzquierda(" -> Fecha de Pago: " + DateTime.Now.ToShortDateString() + "  ->Hora: " + DateTime.Now.ToShortTimeString());
+                                        Ticket1.TextoIzquierda("");
+                                    }
+
+
+                                    dgClienteCredito parametro5 = new dgClienteCredito
+                                    {
+                                        Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
+                                        Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
+                                    };
+
+                                    List<dgClienteCredito> lista5 = c_cliente_credito.LeerClienteCredito(333, parametro5);
+
+
+
+                                    if (lista5.Count > 0)
+
+                                    {
+                                        foreach (dgClienteCredito d in lista5)
+                                        {
+
+                                            Ticket1.TextoIzquierda("Nombre del Cliente: " + d.Nombre.ToString() + " " + d.Apellido_Paterno.ToString() + " " + d.Apellido_Materno.ToString());
+                                            Ticket1.TextoCentro("==================================");
+                                        }
+                                    }
+
+
                                     clsventas.CreaRecibo.LineasGuion();
+
+                                    clsventas.CreaRecibo.EncabezadoVenta();
+
+
+                                    dgTicket parametroticket = new dgTicket
+                                    {
+                                        Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
+                                    };
+
+                                    List<dgTicket> listaProductosVenta = c_ticket.Ticket(1, parametroticket);
+
+
+                                    if (listaProductosVenta.Count > 0)
+
+                                    {
+
+                                        string concatenacion = "";
+                                        double subtotal, sub;
+                                        foreach (dgTicket d in listaProductosVenta)
+                                        {
+                                            sub = double.Parse(d.SubTotal.ToString());
+
+                                            subtotal = (double)Math.Round(sub, 2);
+
+
+                                            concatenacion = "(" + d.Id_Producto.ToString() + ")" + " " + d.NombreProducto.ToString();
+                                            Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
+                                            clsventas.CreaRecibo.LineasGuion();
+                                        }
+                                    }
+
+                                    Ticket1.TextoIzquierda(" ");
+                                    Ticket1.AgregaTotales("Total", double.Parse(lbl_total_venta.Text));
+
+
+
+                                    dgClienteCredito parametro4 = new dgClienteCredito
+                                    {
+                                        Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
+                                        Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
+                                    };
+
+                                    List<dgClienteCredito> lista4 = c_cliente_credito.LeerClienteCredito(333, parametro4);
+
+
+                                    float cantidadabonadatotal = 0;
+                                    if (lista4.Count > 0)
+
+                                    {
+                                        foreach (dgClienteCredito d in lista4)
+                                        {
+
+                                            Ticket1.TextoIzquierda(" ");
+                                            Ticket1.AgregaTotales("Abonado Anterior :", double.Parse(d.CantidadPagada.ToString()));
+
+                                            cantidadabonadatotal = cantidadabonadatotal + float.Parse(d.CantidadPagada.ToString());
+
+                                            Ticket1.TextoIzquierda(" ");
+                                            Ticket1.AgregaTotales("Abonado con :", double.Parse(txt_paga_con.Text));
+
+                                            cantidadabonadatotal = cantidadabonadatotal + float.Parse(txt_paga_con.Text);
+
+
+
+                                        }
+
+                                    }
+
+
+                                    dgClienteCredito parametro = new dgClienteCredito
+                                    {
+                                        Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
+                                        CantidadPagada = float.Parse(lbl_total_faltante.Text),
+                                        Id_Cliente = Convert.ToInt16(controlc),
+                                        FechaPago = DateTime.Now,
+                                        Validacion = 1,
+                                        Cambio = float.Parse(lbl_cambio.Text)
+                                    };
+
+                                    string control = "";
+
+                                    control = c_cliente_credito.ActualizarCreditoPago(1, parametro); // YA SE CARGO LO ABONADO EL TOTAL
+
+
+                                    dgClienteCredito parametro44 = new dgClienteCredito
+                                    {
+                                        Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
+                                        Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
+                                    };
+
+                                    List<dgClienteCredito> lista44 = c_cliente_credito.LeerClienteCredito(333, parametro44);
+
+
+                                    if (lista44.Count > 0)
+
+                                    {
+
+
+                                        foreach (dgClienteCredito d in lista44)
+                                        {
+
+
+                                            cantidadabonadatotal = float.Parse(d.Total.ToString()) - cantidadabonadatotal;
+
+                                            float debe = cantidadabonadatotal;
+
+                                            if (cantidadabonadatotal <= float.Parse(d.Total.ToString()))
+                                            {
+                                                Ticket1.AgregaTotales("Cantidad que falta por pagar: ", 0);
+                                            }
+                                            else
+                                            {
+                                                Ticket1.AgregaTotales("Cantidad que falta por pagar: ", debe);
+                                            }
+
+
+
+
+                                            Ticket1.TextoIzquierda(" ");
+                                            Ticket1.AgregaTotales("Cambio :", double.Parse(lbl_cambio.Text));
+
+                                            Ticket1.TextoIzquierda(" ");
+
+                                            Ticket1.TextoCentro("****** LIQUIDADO   ******");
+                                        }
+
+                                    }
+
+
+
+
+                                    if (listaticketinfo.Count > 0)
+
+                                    {
+                                        Ticket1.TextoIzquierda(" ");
+                                        Ticket1.TextoCentro("=================================================");
+
+                                        foreach (dgTicket d in listaticketinfo)
+                                        {
+
+                                            Ticket1.TextoCentro(d.Mensaje.ToUpper().ToString());
+
+
+
+                                        }
+                                        Ticket1.TextoCentro("===================================================");
+                                        Ticket1.TextoIzquierda(" ");
+
+
+                                    }
+
+
+
+                                    string impresora = "Microsoft XPS Document Writer";
+                                    Ticket1.ImprimirTiket(impresora);
+
+
+                                    MessageBox.Show("Abono Realizada Por Efectivo Liquidado");
                                 }
+
+
+
+
                             }
 
-                            Ticket1.TextoIzquierda(" ");
-                            Ticket1.AgregaTotales("Total", double.Parse(lbl_total_venta.Text));
+
+
+                        }
+
+                        else
+                        {
 
 
 
 
-                            dgClienteCredito parametro4 = new dgClienteCredito
+                            dgClienteCredito parametro2 = new dgClienteCredito
                             {
                                 Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
                                 Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
                             };
 
-                            List<dgClienteCredito> lista4 = c_cliente_credito.LeerClienteCredito(333, parametro4);
+                            List<dgClienteCredito> lista2 = c_cliente_credito.LeerClienteCredito(333, parametro2);
 
 
-                            float cantidadabonadatotal = 0;
-                            if (lista4.Count > 0)
 
+                            if (lista2.Count > 0)
                             {
-                                foreach (dgClienteCredito d in lista4)
+                                float debemsj;
+
+                                foreach (dgClienteCredito d in lista2)
                                 {
+                                    debemsj = float.Parse(lbl_total_venta.Text) - float.Parse(d.CantidadPagada.ToString());
 
-                                    Ticket1.TextoIzquierda(" ");
-                                    Ticket1.AgregaTotales("Abonado Anterior :", double.Parse(d.CantidadPagada.ToString()));
+                                    titulomsj = "PAGAR ABONO DEL CREDITO " + "\n";
+                                    concatanacionnombre = "Nombre Completo: " + d.Nombre.ToString() + " " + d.Apellido_Paterno.ToString() + " " + d.Apellido_Materno.ToString() + "\n";
+                                    concatenacionotrosdatos = "Domicilio: " + d.Direccion.ToString() + "\n" + "Telefono: " + d.Telefono.ToString() + "\n" + "Correo: " + d.Correo.ToString() + "\n";
+                                    concatenaciondatosventa = "Total del Credito: " + lbl_total_venta.Text + "\n" + "Credito faltante:" + lbl_total_faltante.Text + "\n" + "Abono: " + txt_paga_con.Text.ToString();
 
-                                    cantidadabonadatotal = cantidadabonadatotal + float.Parse(d.CantidadPagada.ToString());
-
-                                    Ticket1.TextoIzquierda(" ");
-                                    Ticket1.AgregaTotales("Abonado con :", double.Parse(txt_paga_con.Text));
-
-                                    cantidadabonadatotal = cantidadabonadatotal + float.Parse(txt_paga_con.Text);
-
-
-
+                                    concatenacionfinal = titulomsj + carateres + "\n" + concatanacionnombre + concatenacionotrosdatos + carateres + "\n" + concatenaciondatosventa;
                                 }
-
                             }
 
-                            dgClienteCredito parametro = new dgClienteCredito
+
+
+                            var confirmResult = MessageBox.Show(concatenacionfinal,
+                                "Confirmar Venta Por Efectivo(Credito)!!",
+                                MessageBoxButtons.YesNo);
+
+                            if (confirmResult == DialogResult.Yes)
                             {
-                                Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
-                                Id_Cliente = Convert.ToInt16(controlc),
-                                CantidadPagada = float.Parse(txt_paga_con.Text.Trim()),
-
-                                FechaPago = DateTime.Now,
-                                Validacion = 0
-                            };
-
-
-
-
-
-
-                            string control = "";
-
-                            control = c_cliente_credito.ActualizarCreditoPago(0, parametro); //ABONO 
-
-
-
-                            dgClienteCredito parametro44 = new dgClienteCredito
-                            {
-                                Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
-                                Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
-                            };
-
-                            List<dgClienteCredito> lista44 = c_cliente_credito.LeerClienteCredito(333, parametro44);
-
-
-                            if (lista44.Count > 0)
-
-                            {
-
-
-                                foreach (dgClienteCredito d in lista44)
+                                dgClienteCredito parametroc = new dgClienteCredito
                                 {
 
+                                };
 
-                                    cantidadabonadatotal = float.Parse(d.Total.ToString()) - cantidadabonadatotal;
+                                string controlc = "";
 
-                                    float debe = cantidadabonadatotal;
+                                controlc = c_cliente_credito.SeleccionarClienteSeleccionado(parametroc);
 
-                                    if (cantidadabonadatotal >= float.Parse(d.Total.ToString()))
+                                lbl_cambio.Text = "0";
+
+
+
+
+
+                                dgClienteCredito parametro3 = new dgClienteCredito
+                                {
+                                    Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
+                                    Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
+                                };
+
+                                List<dgClienteCredito> lista3 = c_cliente_credito.LeerClienteCredito(333, parametro3);
+
+
+
+                                int contadorcreditos = 0;
+
+
+
+                                if (lista3.Count > 0)
+                                {
+                                    clsventas.CreaRecibo Ticket1 = new clsventas.CreaRecibo();
+
+
+                                    dgTicket parametroticketinfo = new dgTicket
                                     {
-                                        Ticket1.AgregaTotales("Cantidad que falta por pagar: ", 0);
-                                    }
-                                    else
+                                    };
+
+                                    List<dgTicket> listaticketinfo = c_ticket.Ticket(0, parametroticketinfo);
+
+
+
+
+
+                                    if (listaticketinfo.Count > 0)
+
                                     {
-                                        Ticket1.AgregaTotales("Cantidad que falta por pagar: ", debe);
+
+
+                                        foreach (dgTicket d in listaticketinfo)
+                                        {
+                                            Ticket1.TextoCentro(d.NombreEmpresa.ToUpper().ToString());
+
+
+                                            Ticket1.TextoIzquierda("Direccion: " + d.Direccion.ToUpper().ToString());
+                                            Ticket1.TextoIzquierda("Celular: " + d.Telefono.ToString());
+                                            Ticket1.TextoCentro("==================================");
+                                            Ticket1.TextoIzquierda("");
+                                            Ticket1.TextoIzquierda("Numero de Venta: " + lbl_id_venta.Text);
+                                            Ticket1.TextoIzquierda("");
+                                            Ticket1.TextoCentro("==================================");
+
+                                        }
+
+
+                                        Ticket1.TextoCentro("Recibo de venta (Credito) (Abono)");
+
+
+                                        Ticket1.TextoIzquierda(" -> Fecha de Abono: " + DateTime.Now.ToShortDateString() + "  ->Hora: " + DateTime.Now.ToShortTimeString());
+                                        Ticket1.TextoIzquierda("");
                                     }
 
 
+                                    dgClienteCredito parametro5 = new dgClienteCredito
+                                    {
+                                        Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
+                                        Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
+                                    };
 
+                                    List<dgClienteCredito> lista5 = c_cliente_credito.LeerClienteCredito(333, parametro5);
+
+
+
+                                    if (lista5.Count > 0)
+
+                                    {
+                                        foreach (dgClienteCredito d in lista5)
+                                        {
+
+                                            Ticket1.TextoIzquierda("Nombre del Cliente: " + d.Nombre.ToString() + " " + d.Apellido_Paterno.ToString() + " " + d.Apellido_Materno.ToString());
+                                            Ticket1.TextoCentro("==================================");
+                                        }
+                                    }
+
+
+                                    clsventas.CreaRecibo.LineasGuion();
+
+                                    clsventas.CreaRecibo.EncabezadoVenta();
+
+
+                                    dgTicket parametroticket = new dgTicket
+                                    {
+                                        Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
+                                    };
+
+                                    List<dgTicket> listaProductosVenta = c_ticket.Ticket(1, parametroticket);
+
+
+                                    if (listaProductosVenta.Count > 0)
+
+                                    {
+
+                                        string concatenacion = "";
+                                        double subtotal, sub;
+                                        foreach (dgTicket d in listaProductosVenta)
+                                        {
+                                            sub = double.Parse(d.SubTotal.ToString());
+
+                                            subtotal = (double)Math.Round(sub, 2);
+
+
+                                            concatenacion = "(" + d.Id_Producto.ToString() + ")" + " " + d.NombreProducto.ToString();
+                                            Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
+                                            clsventas.CreaRecibo.LineasGuion();
+                                        }
+                                    }
 
                                     Ticket1.TextoIzquierda(" ");
+                                    Ticket1.AgregaTotales("Total", double.Parse(lbl_total_venta.Text));
 
-                                    Ticket1.TextoCentro("****** ABONADO   ******");
-                                }
 
-                            }
 
 
+                                    dgClienteCredito parametro4 = new dgClienteCredito
+                                    {
+                                        Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
+                                        Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
+                                    };
 
+                                    List<dgClienteCredito> lista4 = c_cliente_credito.LeerClienteCredito(333, parametro4);
 
 
+                                    float cantidadabonadatotal = 0;
+                                    if (lista4.Count > 0)
 
-                            if (listaticketinfo.Count > 0)
+                                    {
+                                        foreach (dgClienteCredito d in lista4)
+                                        {
 
-                            {
-                                Ticket1.TextoIzquierda(" ");
-                                Ticket1.TextoCentro("=================================================");
+                                            Ticket1.TextoIzquierda(" ");
+                                            Ticket1.AgregaTotales("Abonado Anterior :", double.Parse(d.CantidadPagada.ToString()));
 
-                                foreach (dgTicket d in listaticketinfo)
-                                {
+                                            cantidadabonadatotal = cantidadabonadatotal + float.Parse(d.CantidadPagada.ToString());
 
-                                    Ticket1.TextoCentro(d.Mensaje.ToUpper().ToString());
+                                            Ticket1.TextoIzquierda(" ");
+                                            Ticket1.AgregaTotales("Abonado con :", double.Parse(txt_paga_con.Text));
 
+                                            cantidadabonadatotal = cantidadabonadatotal + float.Parse(txt_paga_con.Text);
 
 
-                                }
-                                Ticket1.TextoCentro("===================================================");
-                                Ticket1.TextoIzquierda(" ");
 
+                                        }
 
-                            }
+                                    }
 
+                                    dgClienteCredito parametro = new dgClienteCredito
+                                    {
+                                        Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
+                                        Id_Cliente = Convert.ToInt16(controlc),
+                                        CantidadPagada = float.Parse(txt_paga_con.Text.Trim()),
 
+                                        FechaPago = DateTime.Now,
+                                        Validacion = 0
+                                    };
 
-                            string impresora = "Microsoft XPS Document Writer";
-                            Ticket1.ImprimirTiket(impresora);
 
 
-                            MessageBox.Show("Abono Realizada Por Efectivo Abonado");
-                        }
 
 
 
+                                    string control = "";
 
-                    }
+                                    control = c_cliente_credito.ActualizarCreditoPago(0, parametro); //ABONO 
 
 
 
+                                    dgClienteCredito parametro44 = new dgClienteCredito
+                                    {
+                                        Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
+                                        Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
+                                    };
 
+                                    List<dgClienteCredito> lista44 = c_cliente_credito.LeerClienteCredito(333, parametro44);
 
 
+                                    if (lista44.Count > 0)
 
+                                    {
 
 
+                                        foreach (dgClienteCredito d in lista44)
+                                        {
 
 
+                                            cantidadabonadatotal = float.Parse(d.Total.ToString()) - cantidadabonadatotal;
 
+                                            float debe = cantidadabonadatotal;
 
+                                            if (cantidadabonadatotal >= float.Parse(d.Total.ToString()))
+                                            {
+                                                Ticket1.AgregaTotales("Cantidad que falta por pagar: ", 0);
+                                            }
+                                            else
+                                            {
+                                                Ticket1.AgregaTotales("Cantidad que falta por pagar: ", debe);
+                                            }
 
 
 
 
+                                            Ticket1.TextoIzquierda(" ");
 
+                                            Ticket1.TextoCentro("****** ABONADO   ******");
+                                        }
 
+                                    }
 
 
-                }
 
-                ((Form)this.TopLevelControl).Close();
 
 
-               
-            }
 
-            else if (opcion == "Transferencia")
-            {
+                                    if (listaticketinfo.Count > 0)
 
+                                    {
+                                        Ticket1.TextoIzquierda(" ");
+                                        Ticket1.TextoCentro("=================================================");
 
+                                        foreach (dgTicket d in listaticketinfo)
+                                        {
 
+                                            Ticket1.TextoCentro(d.Mensaje.ToUpper().ToString());
 
-                dgClienteCredito parametro2 = new dgClienteCredito
-                {
-                    Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
-                    Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
-                };
 
-                List<dgClienteCredito> lista2 = c_cliente_credito.LeerClienteCredito(333, parametro2);
 
+                                        }
+                                        Ticket1.TextoCentro("===================================================");
+                                        Ticket1.TextoIzquierda(" ");
 
 
-                if (lista2.Count > 0)
-                {
-                    float debemsj;
+                                    }
 
-                    foreach (dgClienteCredito d in lista2)
-                    {
-                        debemsj = float.Parse(lbl_total_venta.Text) - float.Parse(d.CantidadPagada.ToString());
 
-                        titulomsj = "PAGAR TOTAL DEL CREDITO " + "\n";
-                        concatanacionnombre = " Transferencia por:Nombre Completo: " + d.Nombre.ToString() + " " + d.Apellido_Paterno.ToString() + " " + d.Apellido_Materno.ToString() + "\n";
-                        concatenacionotrosdatos = "Domicilio: " + d.Direccion.ToString() + "\n" + "Telefono: " + d.Telefono.ToString() + "\n" + "Correo: " + d.Correo.ToString() + "\n";
-                        concatenaciondatosventa = "Total del Credito: " + lbl_total_venta.Text + "\n" + "Credito Faltante: " + lbl_total_faltante.Text + "\n"+ "Abono:" + lbl_total_faltante.Text;
 
-                        concatenacionfinal = titulomsj + carateres + "\n" + concatanacionnombre + concatenacionotrosdatos + carateres + "\n" + concatenaciondatosventa;
-                    }
-                }
+                                    string impresora = "Microsoft XPS Document Writer";
+                                    Ticket1.ImprimirTiket(impresora);
 
 
-
-                var confirmResult = MessageBox.Show(concatenacionfinal,
-                    "Confirmar Venta Por Transferencia(Credito)!!",
-                    MessageBoxButtons.YesNo);
-
-                if (confirmResult == DialogResult.Yes)
-                {
-
-
-                  
-
-                    dgClienteCredito parametroc = new dgClienteCredito
-                    {
-
-                    };
-
-                    string controlc = "";
-
-                    controlc = c_cliente_credito.SeleccionarClienteSeleccionado(parametroc);
-
-
-                   
-
-
-                    dgClienteCredito parametro3 = new dgClienteCredito
-                    {
-                        Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
-                        Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
-                    };
-
-                    List<dgClienteCredito> lista3 = c_cliente_credito.LeerClienteCredito(333, parametro3);
-
-
-
-                    int contadorcreditos = 0;
-
-
-
-                    if (lista3.Count > 0)
-                    {
-                        clsventas.CreaRecibo Ticket1 = new clsventas.CreaRecibo();
-
-
-                        dgTicket parametroticketinfo = new dgTicket
-                        {
-                        };
-
-                        List<dgTicket> listaticketinfo = c_ticket.Ticket(0, parametroticketinfo);
-
-
-
-
-
-                        if (listaticketinfo.Count > 0)
-
-                        {
-
-
-                            foreach (dgTicket d in listaticketinfo)
-                            {
-                                Ticket1.TextoCentro(d.NombreEmpresa.ToUpper().ToString());
-
-
-                                Ticket1.TextoIzquierda("Direccion: " + d.Direccion.ToUpper().ToString());
-                                Ticket1.TextoIzquierda("Celular: " + d.Telefono.ToString());
-                                Ticket1.TextoCentro("==================================");
-                                Ticket1.TextoIzquierda("");
-                                Ticket1.TextoIzquierda("Numero de Venta: " + lbl_id_venta.Text);
-                                Ticket1.TextoIzquierda("");
-                                Ticket1.TextoCentro("==================================");
-
-                            }
-
-
-                            Ticket1.TextoCentro("Recibo de Transferencia (Credito) (Liquidado)");
-
-
-                            Ticket1.TextoIzquierda(" -> Fecha de Transferencia: " + DateTime.Now.ToShortDateString() + "  ->Hora: " + DateTime.Now.ToShortTimeString());
-                            Ticket1.TextoIzquierda("");
-                        }
-
-
-                        dgClienteCredito parametro5 = new dgClienteCredito
-                        {
-                            Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
-                            Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
-                        };
-
-                        List<dgClienteCredito> lista5 = c_cliente_credito.LeerClienteCredito(333, parametro5);
-
-
-
-                        if (lista5.Count > 0)
-
-                        {
-                            foreach (dgClienteCredito d in lista5)
-                            {
-
-                                Ticket1.TextoIzquierda("Nombre del Cliente: " + d.Nombre.ToString() + " " + d.Apellido_Paterno.ToString() + " " + d.Apellido_Materno.ToString());
-                                Ticket1.TextoCentro("==================================");
-                            }
-                        }
-
-
-                        clsventas.CreaRecibo.LineasGuion();
-
-                        clsventas.CreaRecibo.EncabezadoVenta();
-
-
-                        dgTicket parametroticket = new dgTicket
-                        {
-                            Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
-                        };
-
-                        List<dgTicket> listaProductosVenta = c_ticket.Ticket(1, parametroticket);
-
-
-                        if (listaProductosVenta.Count > 0)
-
-                        {
-
-                            string concatenacion = "";
-                            double subtotal, sub;
-                            foreach (dgTicket d in listaProductosVenta)
-                            {
-                                sub = double.Parse(d.SubTotal.ToString());
-
-                                subtotal = (double)Math.Round(sub, 2);
-
-
-                                concatenacion = "(" + d.Id_Producto.ToString() + ")" + " " + d.NombreProducto.ToString();
-                                Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
-                                clsventas.CreaRecibo.LineasGuion();
-                            }
-                        }
-
-                        Ticket1.TextoIzquierda(" ");
-                        Ticket1.AgregaTotales("Total", double.Parse(lbl_total_venta.Text));
-
-
-
-
-                        dgClienteCredito parametro4 = new dgClienteCredito
-                        {
-                            Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
-                            Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
-                        };
-
-                        List<dgClienteCredito> lista4 = c_cliente_credito.LeerClienteCredito(333, parametro4);
-
-
-                        float cantidadabonadatotal = 0;
-                        if (lista4.Count > 0)
-
-                        {
-                            foreach (dgClienteCredito d in lista4)
-                            {
-
-                                Ticket1.TextoIzquierda(" ");
-                                Ticket1.AgregaTotales("Abonado Anterior :", double.Parse(d.CantidadPagada.ToString()));
-
-                                cantidadabonadatotal = cantidadabonadatotal + float.Parse(d.CantidadPagada.ToString());
-
-                                Ticket1.TextoIzquierda(" ");
-                                Ticket1.AgregaTotales("Abonado con :", double.Parse(lbl_total_faltante.Text));
-
-                                cantidadabonadatotal = cantidadabonadatotal + float.Parse(lbl_total_faltante.Text);
-
-
-
-                            }
-
-                        }
-
-                        dgClienteCredito parametro = new dgClienteCredito
-                        {
-                            Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
-                            CantidadPagada = float.Parse(lbl_total_faltante.Text),
-                            Id_Cliente = Convert.ToInt16(controlc),
-                            FechaPago = DateTime.Now,
-                            Validacion = 2
-
-                        };
-
-
-
-                        string control = "";
-
-                        control = c_cliente_credito.ActualizarCreditoPago(0, parametro); // YA SE CARGO LO ABONADO EL TOTAL
-
-
-
-                        dgClienteCredito parametro44 = new dgClienteCredito
-                        {
-                            Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
-                            Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
-                        };
-
-                        List<dgClienteCredito> lista44 = c_cliente_credito.LeerClienteCredito(333, parametro44);
-
-
-                        if (lista44.Count > 0)
-
-                        {
-
-
-                            foreach (dgClienteCredito d in lista44)
-                            {
-
-
-                                cantidadabonadatotal = float.Parse(d.Total.ToString()) - cantidadabonadatotal;
-
-                                float debe = cantidadabonadatotal;
-
-                                if (cantidadabonadatotal >= float.Parse(d.Total.ToString()))
-                                {
-                                    Ticket1.AgregaTotales("Cantidad que falta por pagar: ", 0);
-                                }
-                                else
-                                {
-                                    Ticket1.AgregaTotales("Cantidad que falta por pagar: ", debe);
+                                    MessageBox.Show("Abono Realizada Por Efectivo Abonado");
                                 }
 
 
 
 
-                                Ticket1.TextoIzquierda(" ");
-                                Ticket1.TextoCentro("****** TRANSFERENCIA    ******");
-                                Ticket1.TextoCentro("****** LIQUIDADO    ******");
                             }
 
-                        }
 
 
 
@@ -1149,48 +860,347 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
 
 
 
-                        if (listaticketinfo.Count > 0)
-
-                        {
-                            Ticket1.TextoIzquierda(" ");
-                            Ticket1.TextoCentro("=================================================");
-
-                            foreach (dgTicket d in listaticketinfo)
-                            {
-
-                                Ticket1.TextoCentro(d.Mensaje.ToUpper().ToString());
 
 
 
-                            }
-                            Ticket1.TextoCentro("===================================================");
-                            Ticket1.TextoIzquierda(" ");
+
+
+
+
+
+
+
+
 
 
                         }
 
-
-
-                        string impresora = "Microsoft XPS Document Writer";
-                        Ticket1.ImprimirTiket(impresora);
-
-
-                        MessageBox.Show("Abono Realizada Por Tranferencia Liquidado");
                         ((Form)this.TopLevelControl).Close();
+
+
+
                     }
 
+                    else if (opcion == "Transferencia")
+                    {
 
 
 
+
+                        dgClienteCredito parametro2 = new dgClienteCredito
+                        {
+                            Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
+                            Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
+                        };
+
+                        List<dgClienteCredito> lista2 = c_cliente_credito.LeerClienteCredito(333, parametro2);
+
+
+
+                        if (lista2.Count > 0)
+                        {
+                            float debemsj;
+
+                            foreach (dgClienteCredito d in lista2)
+                            {
+                                debemsj = float.Parse(lbl_total_venta.Text) - float.Parse(d.CantidadPagada.ToString());
+
+                                titulomsj = "PAGAR TOTAL DEL CREDITO " + "\n";
+                                concatanacionnombre = " Transferencia por:Nombre Completo: " + d.Nombre.ToString() + " " + d.Apellido_Paterno.ToString() + " " + d.Apellido_Materno.ToString() + "\n";
+                                concatenacionotrosdatos = "Domicilio: " + d.Direccion.ToString() + "\n" + "Telefono: " + d.Telefono.ToString() + "\n" + "Correo: " + d.Correo.ToString() + "\n";
+                                concatenaciondatosventa = "Total del Credito: " + lbl_total_venta.Text + "\n" + "Credito Faltante: " + lbl_total_faltante.Text + "\n" + "Abono:" + lbl_total_faltante.Text;
+
+                                concatenacionfinal = titulomsj + carateres + "\n" + concatanacionnombre + concatenacionotrosdatos + carateres + "\n" + concatenaciondatosventa;
+                            }
+                        }
+
+
+
+                        var confirmResult = MessageBox.Show(concatenacionfinal,
+                            "Confirmar Venta Por Transferencia(Credito)!!",
+                            MessageBoxButtons.YesNo);
+
+                        if (confirmResult == DialogResult.Yes)
+                        {
+
+
+
+
+                            dgClienteCredito parametroc = new dgClienteCredito
+                            {
+
+                            };
+
+                            string controlc = "";
+
+                            controlc = c_cliente_credito.SeleccionarClienteSeleccionado(parametroc);
+
+
+
+
+
+                            dgClienteCredito parametro3 = new dgClienteCredito
+                            {
+                                Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
+                                Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
+                            };
+
+                            List<dgClienteCredito> lista3 = c_cliente_credito.LeerClienteCredito(333, parametro3);
+
+
+
+                            int contadorcreditos = 0;
+
+
+
+                            if (lista3.Count > 0)
+                            {
+                                clsventas.CreaRecibo Ticket1 = new clsventas.CreaRecibo();
+
+
+                                dgTicket parametroticketinfo = new dgTicket
+                                {
+                                };
+
+                                List<dgTicket> listaticketinfo = c_ticket.Ticket(0, parametroticketinfo);
+
+
+
+
+
+                                if (listaticketinfo.Count > 0)
+
+                                {
+
+
+                                    foreach (dgTicket d in listaticketinfo)
+                                    {
+                                        Ticket1.TextoCentro(d.NombreEmpresa.ToUpper().ToString());
+
+
+                                        Ticket1.TextoIzquierda("Direccion: " + d.Direccion.ToUpper().ToString());
+                                        Ticket1.TextoIzquierda("Celular: " + d.Telefono.ToString());
+                                        Ticket1.TextoCentro("==================================");
+                                        Ticket1.TextoIzquierda("");
+                                        Ticket1.TextoIzquierda("Numero de Venta: " + lbl_id_venta.Text);
+                                        Ticket1.TextoIzquierda("");
+                                        Ticket1.TextoCentro("==================================");
+
+                                    }
+
+
+                                    Ticket1.TextoCentro("Recibo de Transferencia (Credito) (Liquidado)");
+
+
+                                    Ticket1.TextoIzquierda(" -> Fecha de Transferencia: " + DateTime.Now.ToShortDateString() + "  ->Hora: " + DateTime.Now.ToShortTimeString());
+                                    Ticket1.TextoIzquierda("");
+                                }
+
+
+                                dgClienteCredito parametro5 = new dgClienteCredito
+                                {
+                                    Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
+                                    Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
+                                };
+
+                                List<dgClienteCredito> lista5 = c_cliente_credito.LeerClienteCredito(333, parametro5);
+
+
+
+                                if (lista5.Count > 0)
+
+                                {
+                                    foreach (dgClienteCredito d in lista5)
+                                    {
+
+                                        Ticket1.TextoIzquierda("Nombre del Cliente: " + d.Nombre.ToString() + " " + d.Apellido_Paterno.ToString() + " " + d.Apellido_Materno.ToString());
+                                        Ticket1.TextoCentro("==================================");
+                                    }
+                                }
+
+
+                                clsventas.CreaRecibo.LineasGuion();
+
+                                clsventas.CreaRecibo.EncabezadoVenta();
+
+
+                                dgTicket parametroticket = new dgTicket
+                                {
+                                    Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
+                                };
+
+                                List<dgTicket> listaProductosVenta = c_ticket.Ticket(1, parametroticket);
+
+
+                                if (listaProductosVenta.Count > 0)
+
+                                {
+
+                                    string concatenacion = "";
+                                    double subtotal, sub;
+                                    foreach (dgTicket d in listaProductosVenta)
+                                    {
+                                        sub = double.Parse(d.SubTotal.ToString());
+
+                                        subtotal = (double)Math.Round(sub, 2);
+
+
+                                        concatenacion = "(" + d.Id_Producto.ToString() + ")" + " " + d.NombreProducto.ToString();
+                                        Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
+                                        clsventas.CreaRecibo.LineasGuion();
+                                    }
+                                }
+
+                                Ticket1.TextoIzquierda(" ");
+                                Ticket1.AgregaTotales("Total", double.Parse(lbl_total_venta.Text));
+
+
+
+
+                                dgClienteCredito parametro4 = new dgClienteCredito
+                                {
+                                    Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
+                                    Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
+                                };
+
+                                List<dgClienteCredito> lista4 = c_cliente_credito.LeerClienteCredito(333, parametro4);
+
+
+                                float cantidadabonadatotal = 0;
+                                if (lista4.Count > 0)
+
+                                {
+                                    foreach (dgClienteCredito d in lista4)
+                                    {
+
+                                        Ticket1.TextoIzquierda(" ");
+                                        Ticket1.AgregaTotales("Abonado Anterior :", double.Parse(d.CantidadPagada.ToString()));
+
+                                        cantidadabonadatotal = cantidadabonadatotal + float.Parse(d.CantidadPagada.ToString());
+
+                                        Ticket1.TextoIzquierda(" ");
+                                        Ticket1.AgregaTotales("Abonado con :", double.Parse(lbl_total_faltante.Text));
+
+                                        cantidadabonadatotal = cantidadabonadatotal + float.Parse(lbl_total_faltante.Text);
+
+
+
+                                    }
+
+                                }
+
+                                dgClienteCredito parametro = new dgClienteCredito
+                                {
+                                    Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
+                                    CantidadPagada = float.Parse(lbl_total_faltante.Text),
+                                    Id_Cliente = Convert.ToInt16(controlc),
+                                    FechaPago = DateTime.Now,
+                                    Validacion = 2
+
+                                };
+
+
+
+                                string control = "";
+
+                                control = c_cliente_credito.ActualizarCreditoPago(0, parametro); // YA SE CARGO LO ABONADO EL TOTAL
+
+
+
+                                dgClienteCredito parametro44 = new dgClienteCredito
+                                {
+                                    Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
+                                    Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
+                                };
+
+                                List<dgClienteCredito> lista44 = c_cliente_credito.LeerClienteCredito(333, parametro44);
+
+
+                                if (lista44.Count > 0)
+
+                                {
+
+
+                                    foreach (dgClienteCredito d in lista44)
+                                    {
+
+
+                                        cantidadabonadatotal = float.Parse(d.Total.ToString()) - cantidadabonadatotal;
+
+                                        float debe = cantidadabonadatotal;
+
+                                        if (cantidadabonadatotal >= float.Parse(d.Total.ToString()))
+                                        {
+                                            Ticket1.AgregaTotales("Cantidad que falta por pagar: ", 0);
+                                        }
+                                        else
+                                        {
+                                            Ticket1.AgregaTotales("Cantidad que falta por pagar: ", debe);
+                                        }
+
+
+
+
+                                        Ticket1.TextoIzquierda(" ");
+                                        Ticket1.TextoCentro("****** TRANSFERENCIA    ******");
+                                        Ticket1.TextoCentro("****** LIQUIDADO    ******");
+                                    }
+
+                                }
+
+
+
+
+
+
+
+                                if (listaticketinfo.Count > 0)
+
+                                {
+                                    Ticket1.TextoIzquierda(" ");
+                                    Ticket1.TextoCentro("=================================================");
+
+                                    foreach (dgTicket d in listaticketinfo)
+                                    {
+
+                                        Ticket1.TextoCentro(d.Mensaje.ToUpper().ToString());
+
+
+
+                                    }
+                                    Ticket1.TextoCentro("===================================================");
+                                    Ticket1.TextoIzquierda(" ");
+
+
+                                }
+
+
+
+                                string impresora = "Microsoft XPS Document Writer";
+                                Ticket1.ImprimirTiket(impresora);
+
+
+                                MessageBox.Show("Abono Realizada Por Tranferencia Liquidado");
+                                ((Form)this.TopLevelControl).Close();
+                            }
+
+
+
+
+                        }
+                    }
                 }
             }
+
+            catch
+            {
+                MessageBox.Show("LLene el campo de pago ");
+            }
+
+          
 
            
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("LLene el campo de pago ");
-            //}
+          
         }
 
         private void lbl_total_faltante_Click(object sender, EventArgs e)
