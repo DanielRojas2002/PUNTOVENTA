@@ -443,10 +443,16 @@ namespace PUNTOVENTA.MENU.CAJA
         private void AbonarCaja()
         {
 
+            float cantidadabonada;
+
+            cantidadabonada = float.Parse(txt_abonar.Text);
+
+            cantidadabonada = (float)Math.Round(cantidadabonada, 2);
+
 
             dgCaja parametro = new dgCaja
             {
-                CantidadAbonada = float.Parse(txt_abonar.Text),
+                CantidadAbonada = cantidadabonada,
                 FechaCaja = DateTime.Now
 
             };
@@ -459,10 +465,18 @@ namespace PUNTOVENTA.MENU.CAJA
 
             txt_abonar.Text = "";
 
-          
+            CargarVentas();
+            InsertCaja();
+
+            CargaAbono();
             CargaVentaAbonos();
             CargaRetiro();
-            CargaAbono();
+            CargaEstatusCaja();
+
+            ActualizarCaja();
+            CargaVentaAbonos();
+
+
 
         }
 
@@ -880,6 +894,58 @@ namespace PUNTOVENTA.MENU.CAJA
             }
 
            
+        }
+
+        private void RetirarCajaTodo()
+        {
+           
+            dgCaja parametro = new dgCaja
+            {
+                FechaCaja = DateTime.Now
+
+            };
+
+            string control = "";
+
+            control = c_caja.RetirarCajaTodo(parametro);
+
+            txt_retirar.Text = "";
+
+            
+            RegresarVentana();
+
+
+
+
+
+
+        }
+
+        private void btn_retirar_todo_caja_Click(object sender, EventArgs e)
+        {
+            if (lbl_id_caja.Text == "2")
+            {
+                MessageBox.Show("Caja Cerrada");
+                txt_retirar.Text = "";
+            }
+
+            else
+            {
+
+                var confirmResult = MessageBox.Show("Desea retirar todos low fondos de la Caja?",
+                    "Retirar Fondos !",
+                    MessageBoxButtons.YesNo);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    RetirarCajaTodo();
+                    ActualizarCaja();
+                }
+
+
+                  
+               
+            }
         }
     }
 }

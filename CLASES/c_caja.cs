@@ -66,7 +66,7 @@ namespace PUNTOVENTA.CLASES
                 SqlParameter[] parametros =
                 {
                     new SqlParameter("@Accion",44),
-                     new SqlParameter("@P_CantidadVenta",Parametro.CantidadVenta),
+                    new SqlParameter("@P_CantidadVenta",Parametro.CantidadVenta),
                     new SqlParameter("@P_CantidadTotal",Parametro.CantidadTotal),
                     
                     new SqlParameter("@P_FechaCaja",Parametro.FechaCaja)
@@ -178,6 +178,40 @@ namespace PUNTOVENTA.CLASES
                 {
                     new SqlParameter("@Accion",4),
                     new SqlParameter("@P_CantidadRetirada",Parametro.CantidadRetirada),
+                    new SqlParameter("@P_FechaCaja",Parametro.FechaCaja)
+
+
+                };
+
+                tabla = bdContext.funcionStored("spCaja", parametros);
+                control = tabla.Rows[0][0].ToString();
+
+
+
+            }
+
+            catch (Exception error)
+            {
+                control = error.ToString();
+            }
+            return control;
+
+        }
+
+        public static string RetirarCajaTodo(dgCaja Parametro)
+        {
+
+
+            string control = "";
+
+            try
+            {
+
+                DataTable tabla = new DataTable();
+
+                SqlParameter[] parametros =
+                {
+                    new SqlParameter("@Accion",11),
                     new SqlParameter("@P_FechaCaja",Parametro.FechaCaja)
 
 
