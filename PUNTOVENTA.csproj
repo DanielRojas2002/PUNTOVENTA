@@ -6,6 +6,13 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>img\punto-de-venta.ico</ApplicationIcon>
+    <NoWin32Manifest>true</NoWin32Manifest>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Company>Daniel Eduardo Rojas Garza</Company>
+    <Product>PUNTO DE VENTA </Product>
+    <Description>PUNTO DE VENTA CON 8 MODULOS</Description>
+    <PackageReleaseNotes>Version1</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -27,6 +34,10 @@
     <None Remove="MENU\CLIENTE\CREDITO\UserControls\UserControlCredito.resx~RF438eaab1.TMP" />
     <None Remove="MENU\PROVEEDOR\eliminar_proveedor.resx~RF3e285011.TMP" />
     <None Remove="MENU\REPORTES\reporte_compras.cs~RF52dfd58a.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="img\punto-de-venta.ico" />
   </ItemGroup>
 
   <ItemGroup>
