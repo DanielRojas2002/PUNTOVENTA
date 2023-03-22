@@ -954,7 +954,7 @@ namespace PUNTOVENTA.MENU.CAJA
             else
             {
 
-                var confirmResult = MessageBox.Show("Desea retirar todos low fondos de la Caja?",
+                var confirmResult = MessageBox.Show("Desea retirar todos los fondos de la Caja?",
                     "Retirar Fondos !",
                     MessageBoxButtons.YesNo);
 
