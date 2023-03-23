@@ -22,6 +22,7 @@ CLIENTES
 ![image](https://user-images.githubusercontent.com/60913160/227384264-896cc926-fd62-4bdc-9cf7-d7fa2a0fb445.png)
 
 "MODULO SEGURIDAD"
+
 ![image](https://user-images.githubusercontent.com/60913160/227384316-1e2a99b7-3af0-42a3-83d8-042f41806fed.png)
 
 "MODULO SEGURIDAD CREAR USUARIO"
