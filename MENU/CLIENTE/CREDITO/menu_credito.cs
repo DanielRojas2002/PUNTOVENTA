@@ -297,7 +297,9 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
             catch
             {
                 MessageBox.Show("Seleccione el Cliente a Buscar ");
+
             }
+           
           
         }
 
@@ -323,57 +325,51 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
                 string nombre, ap, am, domicilio, tel, correo,dia, fechaultimopago;
 
-                dia = DateTime.Now.ToString("dd/MM/yyyy");
+             
                 foreach (dgClienteCredito d in listafiltrado)
                 {
-                    fechaultimopago = d.FechaUltimoPago.Value.ToString("dd/MM/yyyy");
-
-
-                    if (dia!= fechaultimopago)
-                    {
-                        idcliente2 = Convert.ToInt16(d.Id_Cliente.ToString());
-                        nombre = Convert.ToString(d.Nombre.ToString());
-                        ap = Convert.ToString(d.Apellido_Paterno.ToString());
-                        am = Convert.ToString(d.Apellido_Materno.ToString());
-                        domicilio = Convert.ToString(d.Direccion.ToString());
-                        tel = Convert.ToString(d.Telefono.ToString());
-                        correo = Convert.ToString(d.Correo.ToString());
-
-
-
-
-
-
-                        UserControlCliente[] Clientes = new UserControlCliente[10];
-
-
-                        contadorclientes = contadorclientes + 1;
-
-                        Clientes[contadorclientes] = new UserControlCliente();
-
-                        Clientes[contadorclientes].IdCliente = Convert.ToString(idcliente2);
-
-                        Clientes[contadorclientes].NombreCliente = nombre;
-
-                        Clientes[contadorclientes].ApellidoPaterno = ap;
-
-                        Clientes[contadorclientes].ApellidoMaterno = am;
-
-                        Clientes[contadorclientes].Direccion = domicilio;
-
-                        Clientes[contadorclientes].Telefono = tel;
-
-                        Clientes[contadorclientes].Correo = correo;
-
-
-
-                        flowLayoutPanel_clientes.Controls.Add(Clientes[contadorclientes]);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Solo se puede pagar credito 1 vez por dia", "Advertencia");
-                    }
                     
+
+
+                    
+                    idcliente2 = Convert.ToInt16(d.Id_Cliente.ToString());
+                    nombre = Convert.ToString(d.Nombre.ToString());
+                    ap = Convert.ToString(d.Apellido_Paterno.ToString());
+                    am = Convert.ToString(d.Apellido_Materno.ToString());
+                    domicilio = Convert.ToString(d.Direccion.ToString());
+                    tel = Convert.ToString(d.Telefono.ToString());
+                    correo = Convert.ToString(d.Correo.ToString());
+
+
+
+
+
+
+                    UserControlCliente[] Clientes = new UserControlCliente[10];
+
+
+                    contadorclientes = contadorclientes + 1;
+
+                    Clientes[contadorclientes] = new UserControlCliente();
+
+                    Clientes[contadorclientes].IdCliente = Convert.ToString(idcliente2);
+
+                    Clientes[contadorclientes].NombreCliente = nombre;
+
+                    Clientes[contadorclientes].ApellidoPaterno = ap;
+
+                    Clientes[contadorclientes].ApellidoMaterno = am;
+
+                    Clientes[contadorclientes].Direccion = domicilio;
+
+                    Clientes[contadorclientes].Telefono = tel;
+
+                    Clientes[contadorclientes].Correo = correo;
+
+
+
+                    flowLayoutPanel_clientes.Controls.Add(Clientes[contadorclientes]);
+                   
 
 
 
