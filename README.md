@@ -54,7 +54,56 @@ Cuenta con los siguientes Modulos:
 ![image](https://user-images.githubusercontent.com/60913160/227384500-3c727c7f-cd34-4535-ad86-9291981df836.png)
 
 ----------------------------------------------------------------------------------------------------------------------
+"3"
+"MODULO PROVEEDORES"
 
+![image](https://user-images.githubusercontent.com/60913160/227385517-28c2b989-3e39-476e-9ca6-f210308aec88.png)
+
+"MODULO PROVEEDORES CREAR PROVEEDOR"
+![image](https://user-images.githubusercontent.com/60913160/227385621-2a30fe0a-e4e3-49a9-9856-1c11bfb6e898.png)
+
+
+"MODULO PROVEEDORES MODIFICAR PROVEEDOR"
+![image](https://user-images.githubusercontent.com/60913160/227385674-778d8aa0-f642-41d0-8eac-84b9f2192fe4.png)
+
+"MODULO PROVEEDORES ELIMINAR PROVEEDOR"
+![image](https://user-images.githubusercontent.com/60913160/227385716-c0339a2d-57f4-4227-ab00-3313b62d3200.png)
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------
+"4"
+"MODULO CLIENTES CREDITO"
+
+![image](https://user-images.githubusercontent.com/60913160/227385912-3225a1f6-8ddd-4acc-bdbc-a0677db76c39.png)
+
+
+"MODULO CLIENTES CREAR CLIENTE"
+![image](https://user-images.githubusercontent.com/60913160/227385976-9de53d7d-b98e-47ad-a09c-a57c2e38cd7f.png)
+
+
+
+"MODULO CLIENTES MODIFICAR CLIENTE"
+![image](https://user-images.githubusercontent.com/60913160/227386025-443b7ae2-0f2e-4f32-bfb1-7d8b49676e17.png)
+
+
+"MODULO CLIENTES ELIMINAR CLIENTE"
+![image](https://user-images.githubusercontent.com/60913160/227386061-4710b882-aa45-4f85-81fa-0a51043a5328.png)
+
+"MODULO CLIENTES CREDITOS"
+![image](https://user-images.githubusercontent.com/60913160/227386146-4d9de831-9bf4-4820-9bd4-1bb8189313a9.png)
+
+"MODULO CLIENTE CREDITOS"
+![image](https://user-images.githubusercontent.com/60913160/227386208-918185fa-b64c-4632-b7ba-e12021df1665.png)
+
+"ticket" IMPRESORA DE TICKETS
+![image](https://user-images.githubusercontent.com/60913160/227386307-ad3f9e82-8595-4cc7-9b66-b15932a32700.png)
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------
 
 
 
