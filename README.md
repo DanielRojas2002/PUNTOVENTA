@@ -111,15 +111,19 @@ Cuenta con los siguientes Modulos:
 "MODULO CATEGORIAS"
 
 "MENU PRODUCTOS "
+
 ![image](https://user-images.githubusercontent.com/60913160/227386511-fcf82957-f22e-4343-8e62-93d8a51159f2.png)
 
 "AGREGAR CATEGORIA"
+
 ![image](https://user-images.githubusercontent.com/60913160/227386599-38875d33-36d7-498f-a38c-37a8a366afb7.png)
 
 "MODIFICAR CATEGORIA"
+
 ![image](https://user-images.githubusercontent.com/60913160/227386640-0a190c75-93e6-408b-889d-d2585a5a32f8.png)
 
 "ELIMINAR CATEGORIA"
+
 ![image](https://user-images.githubusercontent.com/60913160/227386696-700cb015-7343-4cba-896d-20f85ceaa1da.png)
 
 ----------------------------------------------------------------------------------------------------------------------
@@ -132,14 +136,17 @@ Cuenta con los siguientes Modulos:
 ![image](https://user-images.githubusercontent.com/60913160/227386511-fcf82957-f22e-4343-8e62-93d8a51159f2.png)
 
 "AGREGAR MEDIDAS"
+
 ![image](https://user-images.githubusercontent.com/60913160/227386796-1c932f84-414b-4995-86f2-d1304b706fad.png)
 
 
 "MODIFICAR MEDIDAS"
+
 ![image](https://user-images.githubusercontent.com/60913160/227386829-db9a844f-b712-4354-9cfd-a0fd39d5b3a6.png)
 
 
 "ELIMINAR MEDIDAS"
+
 ![image](https://user-images.githubusercontent.com/60913160/227386855-d965f528-4830-400f-a0d8-cbd6f61a55f4.png)
 
 
