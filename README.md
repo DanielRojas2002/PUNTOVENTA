@@ -4,14 +4,23 @@ Cuenta con los siguientes Modulos:
 
 1-INCIO DE SESION 
   1.1- INICIO 
+  
 2-SEGURIDAD
+
 3-PROVEEDORES
+
 4-CLIENTES
+
 5-CATEGORIAS
+
 6-MEDIDAS
+
 7-PRODUCTOS
+
 8-STOCK
+
 9-VENTA
+
 10-REPORTES
 
 
