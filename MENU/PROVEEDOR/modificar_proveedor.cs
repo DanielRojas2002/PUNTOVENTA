@@ -168,47 +168,55 @@ namespace PUNTOVENTA.MENU.PROVEEDOR
 
         private void btn_modificar_Click(object sender, EventArgs e)
         {
-            if (txt_correo_proveedor.Text == "")
+            if (bx_proveedor.Text!="")
             {
+                if (txt_correo_proveedor.Text == "")
+                {
 
-                MessageBox.Show("Ingrese el correo del proveedor");
-            }
-            else if (txt_nombre_proveedor.Text == "")
-            {
-                MessageBox.Show("Ingrese el nombre del proveedor ");
-            }
-            else if (txt_telefono_proveedor.Text == "")
-            {
-                MessageBox.Show("Ingrese el telefono del proveedor ");
-            }
+                    MessageBox.Show("Ingrese el correo del proveedor");
+                }
+                else if (txt_nombre_proveedor.Text == "")
+                {
+                    MessageBox.Show("Ingrese el nombre del proveedor ");
+                }
+                else if (txt_telefono_proveedor.Text == "")
+                {
+                    MessageBox.Show("Ingrese el telefono del proveedor ");
+                }
 
+                else
+                {
+                    dgProveedor parametro = new dgProveedor
+                    {
+                        Id_Proveedor = Convert.ToInt16(lbl_id_proveedor.Text),
+                        Correo = txt_correo_proveedor.Text.Trim(),
+                        Nombre = txt_nombre_proveedor.Text.Trim().ToUpper(),
+                        Telefono = txt_telefono_proveedor.Text.Trim(),
+                        FechaModificacion = DateTime.Now
+
+                    };
+
+
+
+                    string control = "";
+
+                    control = c_proveedor.ModificarProveedor(parametro);
+
+
+
+
+                    MessageBox.Show("Proveedor Modificado exitosamente", "Correcto");
+                    RegresarVentana();
+
+
+
+                }
+            }
             else
             {
-                dgProveedor parametro = new dgProveedor
-                {
-                    Id_Proveedor = Convert.ToInt16(lbl_id_proveedor.Text),
-                    Correo = txt_correo_proveedor.Text.Trim(),
-                    Nombre = txt_nombre_proveedor.Text.Trim().ToUpper(),
-                    Telefono = txt_telefono_proveedor.Text.Trim(),
-                    FechaModificacion = DateTime.Now
-
-                };
-
-
-
-                string control = "";
-
-                control = c_proveedor.ModificarProveedor(parametro);
-
-               
-
-               
-                MessageBox.Show("Proveedor Modificado exitosamente", "Correcto");
-                RegresarVentana();
-
-                
-
+                MessageBox.Show("Seleccione el proveedor a Modificar");
             }
+            
         }
 
         private void txt_nombre_proveedor_TextChanged(object sender, EventArgs e)

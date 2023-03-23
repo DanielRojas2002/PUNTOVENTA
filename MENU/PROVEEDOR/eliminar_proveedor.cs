@@ -188,7 +188,7 @@ namespace PUNTOVENTA.MENU.PROVEEDOR
 
             catch
             {
-
+                MessageBox.Show("Seleccione el Proveedor a eliminar ");
             }
             
     
