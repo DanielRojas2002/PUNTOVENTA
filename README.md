@@ -1,12 +1,12 @@
 # PUNTOVENTA
 
-Cuenta con:
+Cuenta con los siguientes Modulos:
 
 VENTA
 PRODUCTO
-ALMACEN
 PROVEEDORES
 REPORTES
 SEGURIDAD
 CLIENTES
-a
+
+
