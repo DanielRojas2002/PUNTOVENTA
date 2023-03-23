@@ -110,61 +110,76 @@ namespace PUNTOVENTA.MENU.CLIENTE
 
         private void btn_modificar_cliente_Click(object sender, EventArgs e)
         {
-            if (txt_correo_modificarcliente.Text == "")
+            try
             {
-
-                MessageBox.Show("Ingrese el correo del Cliente");
-            }
-            else if (txt_nombre_modificarcliente.Text == "")
-            {
-                MessageBox.Show("Ingrese el nombre del Cliente ");
-            }
-            else if (txt_apellidopaterno_modificarcliente.Text == "") 
-            {
-                MessageBox.Show("Ingrese el apellido paterno del Cliente");
-            }
-            else if (txt_apellidomaterno_modificarcliente.Text == "")
-            {
-                MessageBox.Show("Ingrese el apellido materno del Cliente");
-            }
-            else if (txt_telefono_modificarcliente.Text == "")
-            {
-                MessageBox.Show("Ingrese el telefono del Cliente ");
-            }
-            else if (txt_direccion_modificarcliente.Text == "")
-            {
-                MessageBox.Show("Ingrese la direccion del Cliente ");
-            }
-
-            else
-            {
-                dgCliente parametro = new dgCliente
+                if (bx_cliente.Text!="")
                 {
-                    Id_Cliente = Convert.ToInt16(lbl_idcliente.Text),
-                    Correo = txt_correo_modificarcliente.Text.Trim(),
-                    Nombre = txt_nombre_modificarcliente.Text.Trim().ToUpper(),
-                    Apellido_Paterno = txt_apellidopaterno_modificarcliente.Text.Trim().ToUpper(),
-                    Apellido_Materno = txt_apellidomaterno_modificarcliente.Text.Trim().ToUpper(),
-                    Telefono = txt_telefono_modificarcliente.Text.Trim(),
-                    Direccion = txt_direccion_modificarcliente.Text.Trim().ToUpper(),
+                    if (txt_correo_modificarcliente.Text == "")
+                    {
+
+                        MessageBox.Show("Ingrese el correo del Cliente");
+                    }
+                    else if (txt_nombre_modificarcliente.Text == "")
+                    {
+                        MessageBox.Show("Ingrese el nombre del Cliente ");
+                    }
+                    else if (txt_apellidopaterno_modificarcliente.Text == "")
+                    {
+                        MessageBox.Show("Ingrese el apellido paterno del Cliente");
+                    }
+                    else if (txt_apellidomaterno_modificarcliente.Text == "")
+                    {
+                        MessageBox.Show("Ingrese el apellido materno del Cliente");
+                    }
+                    else if (txt_telefono_modificarcliente.Text == "")
+                    {
+                        MessageBox.Show("Ingrese el telefono del Cliente ");
+                    }
+                    else if (txt_direccion_modificarcliente.Text == "")
+                    {
+                        MessageBox.Show("Ingrese la direccion del Cliente ");
+                    }
+
+                    else
+                    {
+                        dgCliente parametro = new dgCliente
+                        {
+                            Id_Cliente = Convert.ToInt16(lbl_idcliente.Text),
+                            Correo = txt_correo_modificarcliente.Text.Trim(),
+                            Nombre = txt_nombre_modificarcliente.Text.Trim().ToUpper(),
+                            Apellido_Paterno = txt_apellidopaterno_modificarcliente.Text.Trim().ToUpper(),
+                            Apellido_Materno = txt_apellidomaterno_modificarcliente.Text.Trim().ToUpper(),
+                            Telefono = txt_telefono_modificarcliente.Text.Trim(),
+                            Direccion = txt_direccion_modificarcliente.Text.Trim().ToUpper(),
 
 
-                };
+                        };
 
 
 
-                string control = "";
+                        string control = "";
 
-                control = c_cliente.ModificarCliente(parametro);
-
-
-
-
-                MessageBox.Show("Cliente Modificado exitosamente", "Correcto");
-                RegresarVentana();
+                        control = c_cliente.ModificarCliente(parametro);
 
 
 
+
+                        MessageBox.Show("Cliente Modificado exitosamente", "Correcto");
+                        RegresarVentana();
+
+
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione el Cliente a Modificar", "Advertencia");
+                }
+                
+            }
+            catch
+            {
+                MessageBox.Show("Seleccione el Cliente a Modificar", "Advertencia");
             }
         }
 

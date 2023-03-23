@@ -139,39 +139,45 @@ namespace PUNTOVENTA.MENU.CLIENTE
 
         private void btn_eliminar_cliente_Click(object sender, EventArgs e)
         {
-
-            if (bx_cliente.Text == "" && idCliente.Text == "")
+            try
             {
-
-                MessageBox.Show("Seleccione el Cliente a eliminar ");
-            }
-
-            else 
-            {
-                int idcliente = Convert.ToInt16(idCliente.Text);
-
-                dgCliente parametro = new dgCliente
-                {
-                    Id_Cliente = idcliente
-                };
-
-                string control = "";
-
-                control = c_cliente.EliminarCliente(parametro);
-
-                if (control == "1")
+                if (bx_cliente.Text == "" && idCliente.Text == "")
                 {
 
-                    MessageBox.Show("No se puede eliminar este Cliente ya que cuenta con Credito sin liquidar", "Error");
+                    MessageBox.Show("Seleccione el Cliente a eliminar ");
                 }
 
                 else
                 {
-                    MessageBox.Show("Cliente Eliminado", "Correcto");
+                    int idcliente = Convert.ToInt16(idCliente.Text);
 
-                    RegresarVentana();
+                    dgCliente parametro = new dgCliente
+                    {
+                        Id_Cliente = idcliente
+                    };
+
+                    string control = "";
+
+                    control = c_cliente.EliminarCliente(parametro);
+
+                    if (control == "1")
+                    {
+
+                        MessageBox.Show("No se puede eliminar este Cliente ya que cuenta con Credito sin liquidar", "Error");
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Cliente Eliminado", "Correcto");
+
+                        RegresarVentana();
+                    }
                 }
-            } 
+            }
+            catch
+            {
+                MessageBox.Show("Seleccione el Cliente a eliminar ");
+            }
             
 
 
