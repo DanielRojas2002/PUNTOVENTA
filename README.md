@@ -208,6 +208,24 @@ Cuenta con los siguientes Modulos:
 ![image](https://user-images.githubusercontent.com/60913160/227394411-30d843b4-29cc-4533-b5fd-1eec8b2d8b6a.png)
 
 
+----------------------------------------------------------------------------------------------------------------------
+"9"
+"MODULO REPORTES"
+
+" REPORTE VENTAS"
+
+![image](https://user-images.githubusercontent.com/60913160/227395117-9f4da8ff-fe4b-46ff-85e3-ac121cc9f10b.png)
+
+" REPORTE COMPRAS"
+![image](https://user-images.githubusercontent.com/60913160/227395283-7a9afe0a-d631-41d8-b267-8fe8a2202932.png)
+
+" REPORTE CLIENTES"
+
+![image](https://user-images.githubusercontent.com/60913160/227395402-f5238da4-3e89-4195-b7ec-890cfc199f92.png)
+
+
+
+
 
 
 
