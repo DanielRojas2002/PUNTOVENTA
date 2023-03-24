@@ -151,6 +151,29 @@ Cuenta con los siguientes Modulos:
 
 
 ----------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------
+"7"
+"MODULO PRODUCTOS"
+
+"MENU PRODUCTOS"
+
+![image](https://user-images.githubusercontent.com/60913160/227393306-351445d0-1c19-4332-9174-e50438c36db7.png)
+
+
+"AGREGAR PRODUCTOS"
+
+![image](https://user-images.githubusercontent.com/60913160/227393366-86269f49-b803-4ab7-868b-4785822943c7.png)
+
+"MENU SELECCION PRODUCTO"
+
+![image](https://user-images.githubusercontent.com/60913160/227393442-a83d6418-b0fb-4708-a4d1-e61241a5238d.png)
+
+"AGREGAR STOCK PRODUCTO"
+
+![image](https://user-images.githubusercontent.com/60913160/227393502-4f9637f2-a3be-4f68-94c5-972b508b82ce.png)
+
+----------------------------------------------------------------------------------------------------------------------
+
 
 
 
