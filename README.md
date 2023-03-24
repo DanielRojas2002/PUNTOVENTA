@@ -1,5 +1,7 @@
 # PUNTOVENTA
+Si Deseas obtnener este punto de venta contactanos en : danielerojas2002@gmail.com
 
+Base de Datos SQLSERVER
 Cuenta con los siguientes Modulos:
 
 1-INCIO DE SESION 
