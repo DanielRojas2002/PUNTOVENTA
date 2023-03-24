@@ -30,7 +30,7 @@ Cuenta con los siguientes Modulos:
 "1.1"
 "INICIO LOGIN" | ADMINISTRADOR
 
-![image](https://user-images.githubusercontent.com/60913160/227384197-8bc606f4-7a4d-4afb-a133-2f100c2abd83.png)
+![image](https://user-images.githubusercontent.com/60913160/227395582-12770fe2-c3ba-4305-994c-af55d07b6cd7.png)
 
 
 "INICIO LOGIN " | VENDEDOR
