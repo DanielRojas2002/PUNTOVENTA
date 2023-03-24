@@ -17,11 +17,9 @@ Cuenta con los siguientes Modulos:
 
 7-PRODUCTOS
 
-8-STOCK
+8-VENTA
 
-9-VENTA
-
-10-REPORTES
+9-REPORTES
 
 
 "1"
@@ -173,6 +171,43 @@ Cuenta con los siguientes Modulos:
 ![image](https://user-images.githubusercontent.com/60913160/227393502-4f9637f2-a3be-4f68-94c5-972b508b82ce.png)
 
 ----------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------
+"8"
+"MODULO VENTAS"
+
+"MENU VENTAS CARRITO VACIO"
+
+![image](https://user-images.githubusercontent.com/60913160/227393767-79cf0ce2-fd82-4bd1-a7ee-9f528e960357.png)
+
+"MENU VENTAS CARRITO "
+
+![image](https://user-images.githubusercontent.com/60913160/227393925-5d006807-a76f-4b83-aa35-11b2c21160a2.png)
+
+"MENU VENTAS EFECTIVO "
+![image](https://user-images.githubusercontent.com/60913160/227393980-caaaaa26-e4fd-40db-8ac9-111ff16f4400.png)
+
+"MENU VENTAS EFECTIVO TICKET"
+
+![image](https://user-images.githubusercontent.com/60913160/227394071-8b4a0d7b-2416-4321-851e-87e85ad55191.png)
+
+"MENU VENTAS TRANSFERENCIA "
+
+![image](https://user-images.githubusercontent.com/60913160/227394133-0b3dab75-3767-462f-a82b-28730fd844ed.png)
+
+"MENU VENTAS TRANSFERENCIA TICKET"
+
+![image](https://user-images.githubusercontent.com/60913160/227394262-a326442d-ab77-402f-b93b-2e3e25b8e971.png)
+
+"MENU VENTAS CREDITO "
+
+![image](https://user-images.githubusercontent.com/60913160/227394329-4f51f6b8-4370-489d-ba25-49f2ff4e901e.png)
+
+"MENU VENTAS CREDITO TICKET"
+
+![image](https://user-images.githubusercontent.com/60913160/227394411-30d843b4-29cc-4533-b5fd-1eec8b2d8b6a.png)
+
+
 
 
 
