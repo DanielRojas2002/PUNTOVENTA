@@ -107,6 +107,9 @@
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.pnl_der = new System.Windows.Forms.Panel();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.pnl_proveedores = new System.Windows.Forms.Panel();
             this.panel27 = new System.Windows.Forms.Panel();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
@@ -161,6 +164,8 @@
             this.panel28.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.pnl_der.SuspendLayout();
+            this.panel17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             this.pnl_proveedores.SuspendLayout();
             this.panel27.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
@@ -1074,7 +1079,7 @@
             // 
             this.pnl_segurida.Controls.Add(this.panel28);
             this.pnl_segurida.Controls.Add(this.label7);
-            this.pnl_segurida.Location = new System.Drawing.Point(243, 601);
+            this.pnl_segurida.Location = new System.Drawing.Point(22, 610);
             this.pnl_segurida.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnl_segurida.Name = "pnl_segurida";
             this.pnl_segurida.Size = new System.Drawing.Size(410, 116);
@@ -1116,6 +1121,8 @@
             // pnl_der
             // 
             this.pnl_der.BackColor = System.Drawing.Color.Black;
+            this.pnl_der.Controls.Add(this.panel17);
+            this.pnl_der.Controls.Add(this.label10);
             this.pnl_der.Controls.Add(this.pnl_proveedores);
             this.pnl_der.Controls.Add(this.pnl_caja);
             this.pnl_der.Controls.Add(this.pnl_segurida);
@@ -1135,6 +1142,38 @@
             this.pnl_der.Size = new System.Drawing.Size(935, 730);
             this.pnl_der.TabIndex = 3;
             this.pnl_der.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_der_Paint);
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.pictureBox19);
+            this.panel17.Location = new System.Drawing.Point(476, 601);
+            this.panel17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(123, 118);
+            this.panel17.TabIndex = 7;
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox19.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox19.Image")));
+            this.pictureBox19.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox19.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(123, 118);
+            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox19.TabIndex = 0;
+            this.pictureBox19.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.Black;
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(621, 597);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(279, 129);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Desarrolladores: \r\n* Daniel Eduardo Rojas Garza \r\n* Alan Damian Faz Rosales \r\nCon" +
+    "tacto Soporte: \r\nTelefono : 8110816713 \r\nCorreo : danielerojas2002@gmail.com";
             // 
             // pnl_proveedores
             // 
@@ -1286,6 +1325,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.pnl_der.ResumeLayout(false);
             this.pnl_der.PerformLayout();
+            this.panel17.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             this.pnl_proveedores.ResumeLayout(false);
             this.panel27.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
@@ -1384,5 +1425,8 @@
         private Label label8;
         private Panel panel23;
         private PictureBox pictureBox17;
+        private Panel panel17;
+        private PictureBox pictureBox19;
+        private Label label10;
     }
 }
