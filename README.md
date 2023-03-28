@@ -1,6 +1,8 @@
 # PUNTOVENTA
 Si Deseas obtnener este punto de venta contactanos en : danielerojas2002@gmail.com
 
+LINK EXPLICATIVO VIDEO:https://drive.google.com/file/d/1FjPAoul22q6wd5GlvpAyBF6vg5hi8p3e/view?usp=sharing
+
 Base de Datos SQLSERVER
 Cuenta con los siguientes Modulos:
 
