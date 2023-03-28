@@ -799,7 +799,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cooper Black", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(168, 28);
+            this.label1.Location = new System.Drawing.Point(275, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(446, 50);
             this.label1.TabIndex = 0;
@@ -810,7 +810,7 @@
             this.txt_usuario.AutoSize = true;
             this.txt_usuario.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txt_usuario.ForeColor = System.Drawing.Color.White;
-            this.txt_usuario.Location = new System.Drawing.Point(111, 89);
+            this.txt_usuario.Location = new System.Drawing.Point(209, 89);
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(95, 23);
             this.txt_usuario.TabIndex = 1;
@@ -835,7 +835,7 @@
             this.lbl_perfil.AutoSize = true;
             this.lbl_perfil.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_perfil.ForeColor = System.Drawing.Color.White;
-            this.lbl_perfil.Location = new System.Drawing.Point(476, 89);
+            this.lbl_perfil.Location = new System.Drawing.Point(561, 89);
             this.lbl_perfil.Name = "lbl_perfil";
             this.lbl_perfil.Size = new System.Drawing.Size(73, 23);
             this.lbl_perfil.TabIndex = 3;
@@ -1082,7 +1082,7 @@
             this.pnl_segurida.Location = new System.Drawing.Point(22, 610);
             this.pnl_segurida.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnl_segurida.Name = "pnl_segurida";
-            this.pnl_segurida.Size = new System.Drawing.Size(410, 116);
+            this.pnl_segurida.Size = new System.Drawing.Size(396, 116);
             this.pnl_segurida.TabIndex = 19;
             // 
             // panel28
@@ -1146,7 +1146,7 @@
             // panel17
             // 
             this.panel17.Controls.Add(this.pictureBox19);
-            this.panel17.Location = new System.Drawing.Point(476, 601);
+            this.panel17.Location = new System.Drawing.Point(433, 601);
             this.panel17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(123, 118);
