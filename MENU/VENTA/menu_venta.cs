@@ -17,6 +17,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using TextBox = System.Windows.Forms.TextBox;
 
+
 namespace PUNTOVENTA.MENU.VENTA
 {
     public partial class menu_venta : Form
@@ -174,14 +175,21 @@ namespace PUNTOVENTA.MENU.VENTA
 
 
 
-            Cursor.Position = new Point(600, 120);
-
-            
-
-       
 
 
 
+            //var pointX = SystemInformation.VirtualScreen.Width * 100 / 100;
+            //var pointY = SystemInformation.VirtualScreen.Height * 19 / 100;
+
+            //System.Windows.Forms.Cursor.Position = new Point(
+            //   pointX,
+            //   pointY
+            //);
+
+
+
+
+            Cursor.Position = new Point(600, 145);
 
 
 
@@ -1677,14 +1685,12 @@ namespace PUNTOVENTA.MENU.VENTA
         {
             CargaProductosOrden();
 
-            string p = "";
-            p = this.PointToClient(Cursor.Position).ToString();
+            Cursor.Position = new Point(600, 345);
 
-            MessageBox.Show(p);
 
-            Cursor.Position = new Point(500, 500);
 
-       
+
+
         }
 
         private void bx_tipoventa_SelectedIndexChanged(object sender, EventArgs e)
