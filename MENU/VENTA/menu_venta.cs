@@ -174,7 +174,9 @@ namespace PUNTOVENTA.MENU.VENTA
 
 
 
-            Cursor.Position = new Point(700, 145);
+            Cursor.Position = new Point(600, 120);
+
+            
 
        
 
@@ -1663,7 +1665,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
         private void panel6_Paint(object sender, PaintEventArgs e)
         {
-          
+           
         }
 
         private void label12_MouseMove(object sender, MouseEventArgs e)
@@ -1674,6 +1676,12 @@ namespace PUNTOVENTA.MENU.VENTA
         public void panel6_MouseMove(object sender, MouseEventArgs e)
         {
             CargaProductosOrden();
+
+            string p = "";
+            p = this.PointToClient(Cursor.Position).ToString();
+
+            MessageBox.Show(p);
+
             Cursor.Position = new Point(500, 500);
 
        
