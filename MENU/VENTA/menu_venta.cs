@@ -189,7 +189,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
 
 
-            Cursor.Position = new Point(600, 145);
+            Cursor.Position = new Point(400, 220);
 
 
 
@@ -1086,20 +1086,27 @@ namespace PUNTOVENTA.MENU.VENTA
 
                             foreach (dgTicket d in listaticketinfo)
                             {
-                                Ticket1.TextoCentro(d.NombreEmpresa.ToUpper().ToString());
-                                Ticket1.TextoIzquierda("Numero de Venta: " + _num_venta);
-                                Ticket1.TextoCentro("==================================");
-                                Ticket1.TextoIzquierda("Direccion: " + d.Direccion.ToUpper().ToString());
-                                Ticket1.TextoIzquierda("Celular: " + d.Telefono.ToString());
+                                Ticket1.TextoIzquierda(d.NombreEmpresa.ToUpper().ToString());
+                               
+                                
+                                Ticket1.TextoIzquierda( d.Direccion.ToUpper().ToString());
+                                Ticket1.TextoIzquierda("Tel: " + d.Telefono.ToString());
                                 Ticket1.TextoIzquierda("");
                             }
 
+                            foreach (dgTicket d in listaticketinfo)
+                            {
+                              
+                                Ticket1.TextoIzquierda("Recibo: " + _num_venta);
+                              
+                            }
 
-                            Ticket1.TextoCentro("Recibo de venta realizada por Efectivo");
-                            Ticket1.TextoCentro("Los Precios ya contienen IVA");
+
+                            Ticket1.TextoIzquierda("Recibo de venta realizada por Efectivo");
+                            Ticket1.TextoIzquierda("Los Precios ya contienen IVA");
                             Ticket1.TextoIzquierda("Nombre del cliente: Cliente Efectivo");
 
-                            Ticket1.TextoIzquierda(" -> Fecha de venta: " + DateTime.Now.ToShortDateString() + "  ->Hora: " + DateTime.Now.ToShortTimeString());
+                            Ticket1.TextoIzquierda("Fecha : " + DateTime.Now.ToShortDateString() +" " + DateTime.Now.ToShortTimeString());
                             Ticket1.TextoIzquierda("");
                         }
 
@@ -1140,15 +1147,15 @@ namespace PUNTOVENTA.MENU.VENTA
 
                         Ticket1.TextoIzquierda(" ");
                         Ticket1.AgregaTotales("Total", double.Parse(lbl_total.Text));
-                        Ticket1.TextoIzquierda(" ");
                         Ticket1.AgregaTotales("Pagado con :", double.Parse(txt_paga_con.Text));
+                        Ticket1.TextoIzquierda(" ");
                         Ticket1.AgregaTotales("Cambio a dar:", double.Parse(lbl_cambio.Text));
 
                         if (listaticketinfo.Count > 0)
 
                         {
                             Ticket1.TextoIzquierda(" ");
-                            Ticket1.TextoCentro("=================================================");
+                           
 
                             foreach (dgTicket d in listaticketinfo)
                             {
@@ -1158,7 +1165,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
 
                             }
-                            Ticket1.TextoCentro("===================================================");
+                            
                             Ticket1.TextoIzquierda(" ");
 
 
@@ -1268,19 +1275,26 @@ namespace PUNTOVENTA.MENU.VENTA
                         foreach (dgTicket d in listaticketinfo)
                         {
                             Ticket1.TextoCentro(d.NombreEmpresa.ToUpper().ToString());
-                            Ticket1.TextoIzquierda("Numero de Venta: " + _num_venta);
-                            Ticket1.TextoCentro("==================================");
-                            Ticket1.TextoIzquierda("Direccion: " + d.Direccion.ToUpper().ToString());
-                            Ticket1.TextoIzquierda("Celular: " + d.Telefono.ToString());
+                            
+                           
+                            Ticket1.TextoIzquierda(d.Direccion.ToUpper().ToString());
+                            Ticket1.TextoIzquierda("Tel: " + d.Telefono.ToString());
                             Ticket1.TextoIzquierda("");
                         }
 
+                        foreach (dgTicket d in listaticketinfo)
+                        {
+                           
+                            Ticket1.TextoIzquierda("Recibo: " + _num_venta);
+                           
+                        }
 
-                        Ticket1.TextoCentro("Recibo de venta realizada por Transferencia");
-                        Ticket1.TextoCentro("Los Precios ya contienen IVA");
-                        Ticket1.TextoIzquierda("Nombre del cliente: " + txt_nombre_transferencia.Text);
 
-                        Ticket1.TextoIzquierda(" -> Fecha de venta: " + DateTime.Now.ToShortDateString() + "  ->Hora: " + DateTime.Now.ToShortTimeString());
+                        Ticket1.TextoIzquierda("Recibo de venta realizada por Transferencia");
+                        Ticket1.TextoIzquierda("Los Precios ya contienen IVA");
+                        Ticket1.TextoIzquierda("Cliente: " + txt_nombre_transferencia.Text);
+
+                        Ticket1.TextoIzquierda("Fecha" + DateTime.Now.ToShortDateString() + " "+ DateTime.Now.ToShortTimeString());
                         Ticket1.TextoIzquierda("");
                     }
 
@@ -1320,14 +1334,14 @@ namespace PUNTOVENTA.MENU.VENTA
                     Ticket1.TextoIzquierda(" ");
                     Ticket1.AgregaTotales("Total", double.Parse(lbl_total.Text));
                     Ticket1.TextoIzquierda(" ");
-                    Ticket1.TextoCentro("Pagado Por Transferencia a Nombre de :" + txt_nombre_transferencia.Text);
+                    Ticket1.TextoCentro("Nombre Transferencia: " + txt_nombre_transferencia.Text);
 
 
                     if (listaticketinfo.Count > 0)
 
                     {
                         Ticket1.TextoIzquierda(" ");
-                        Ticket1.TextoCentro("=================================================");
+                      
 
                         foreach (dgTicket d in listaticketinfo)
                         {
@@ -1337,7 +1351,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
 
                         }
-                        Ticket1.TextoCentro("===================================================");
+                        
                         Ticket1.TextoIzquierda(" ");
 
 
@@ -1520,20 +1534,27 @@ namespace PUNTOVENTA.MENU.VENTA
 
                                 foreach (dgTicket d in listaticketinfo)
                                 {
-                                    Ticket1.TextoCentro(d.NombreEmpresa.ToUpper().ToString());
-                                    Ticket1.TextoIzquierda("Numero de Venta: " + _num_venta);
-                                    Ticket1.TextoCentro("==================================");
-                                    Ticket1.TextoIzquierda("Direccion: " + d.Direccion.ToUpper().ToString());
-                                    Ticket1.TextoIzquierda("Celular: " + d.Telefono.ToString());
+                                    Ticket1.TextoIzquierda(d.NombreEmpresa.ToUpper().ToString());
+                                    
+                                   
+                                    Ticket1.TextoIzquierda( d.Direccion.ToUpper().ToString());
+                                    Ticket1.TextoIzquierda("Tel: " + d.Telefono.ToString());
                                     Ticket1.TextoIzquierda("");
                                 }
 
+                                foreach (dgTicket d in listaticketinfo)
+                                {
+                                   
+                                    Ticket1.TextoIzquierda("Recibo: " + _num_venta);
+                                  
+                                }
 
-                                Ticket1.TextoCentro("Recibo de venta realizada por Credito");
-                                Ticket1.TextoCentro("Los Precios ya contienen IVA");
+
+                                Ticket1.TextoIzquierda("Recibo de venta realizada por Credito");
+                                Ticket1.TextoIzquierda("Los Precios ya contienen IVA");
                                 Ticket1.TextoIzquierda("Nombre del cliente: " + bx_cliente.Text);
 
-                                Ticket1.TextoIzquierda(" -> Fecha de venta: " + DateTime.Now.ToShortDateString() + "  ->Hora: " + DateTime.Now.ToShortTimeString());
+                                Ticket1.TextoIzquierda("Fecha: " + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString());
                                 Ticket1.TextoIzquierda("");
                             }
 
@@ -1587,7 +1608,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
                             {
                                 Ticket1.TextoIzquierda(" ");
-                                Ticket1.TextoCentro("=================================================");
+                                Ticket1.TextoCentro("------------");
 
                                 foreach (dgTicket d in listaticketinfo)
                                 {
@@ -1597,7 +1618,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
 
                                 }
-                                Ticket1.TextoCentro("===================================================");
+                                Ticket1.TextoCentro("------------");
                                 Ticket1.TextoIzquierda(" ");
 
 

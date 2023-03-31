@@ -19,7 +19,7 @@ namespace PUNTOVENTA.CLASES
             int cort;
             public static string LineasGuion()
             {
-                string LineaGuion = "********************************************************"; 
+                string LineaGuion = "----------------------------------------";
 
                 return line.AppendLine(LineaGuion).ToString();
             }
@@ -27,7 +27,7 @@ namespace PUNTOVENTA.CLASES
 
             public static void EncabezadoVenta()
             {
-                string LineEncavesado = "Producto      Cantidad    Precio      SubTotal";
+                string LineEncavesado = "Producto   Cantidad    Precio  SubTotal";
                 line.AppendLine(LineEncavesado);
             }
             public void TextoIzquierda(string par1)                        
@@ -154,7 +154,7 @@ namespace PUNTOVENTA.CLASES
                         elementos += espacios + precio.ToString();
 
                         
-                        nroEspacios = (12 - subtotal.ToString().Length);
+                        nroEspacios = (11 - subtotal.ToString().Length);
                         espacios = "";
 
                         for (int i = 0; i < nroEspacios; i++)
