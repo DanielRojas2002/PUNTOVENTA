@@ -40,6 +40,10 @@
             this.lbl_perfil = new System.Windows.Forms.Label();
             this.bx_cliente = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txt_municipio = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_estado = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -106,7 +110,7 @@
             this.panel_modificarcliente.BackColor = System.Drawing.Color.Navy;
             this.panel_modificarcliente.Controls.Add(this.pictureBox4);
             this.panel_modificarcliente.Controls.Add(this.btn_modificar_cliente);
-            this.panel_modificarcliente.Location = new System.Drawing.Point(553, 718);
+            this.panel_modificarcliente.Location = new System.Drawing.Point(553, 796);
             this.panel_modificarcliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel_modificarcliente.Name = "panel_modificarcliente";
             this.panel_modificarcliente.Size = new System.Drawing.Size(373, 57);
@@ -170,7 +174,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Cooper Black", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(206, 96);
+            this.label1.Location = new System.Drawing.Point(384, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(469, 46);
             this.label1.TabIndex = 80;
@@ -222,7 +226,7 @@
             this.bx_cliente.Location = new System.Drawing.Point(461, 175);
             this.bx_cliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bx_cliente.Name = "bx_cliente";
-            this.bx_cliente.Size = new System.Drawing.Size(205, 28);
+            this.bx_cliente.Size = new System.Drawing.Size(297, 28);
             this.bx_cliente.TabIndex = 87;
             this.bx_cliente.SelectedIndexChanged += new System.EventHandler(this.bx_cliente_SelectedIndexChanged);
             this.bx_cliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bx_cliente_KeyPress);
@@ -230,6 +234,10 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Navy;
+            this.panel3.Controls.Add(this.txt_municipio);
+            this.panel3.Controls.Add(this.label11);
+            this.panel3.Controls.Add(this.txt_estado);
+            this.panel3.Controls.Add(this.label15);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Controls.Add(this.label8);
@@ -259,12 +267,60 @@
             this.panel3.Size = new System.Drawing.Size(955, 887);
             this.panel3.TabIndex = 88;
             // 
+            // txt_municipio
+            // 
+            this.txt_municipio.BackColor = System.Drawing.Color.White;
+            this.txt_municipio.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_municipio.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_municipio.ForeColor = System.Drawing.Color.Black;
+            this.txt_municipio.Location = new System.Drawing.Point(641, 562);
+            this.txt_municipio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_municipio.Name = "txt_municipio";
+            this.txt_municipio.Size = new System.Drawing.Size(272, 24);
+            this.txt_municipio.TabIndex = 101;
+            this.txt_municipio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_municipio_KeyPress);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.label11.Location = new System.Drawing.Point(619, 530);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(104, 28);
+            this.label11.TabIndex = 103;
+            this.label11.Text = "Municipio:";
+            // 
+            // txt_estado
+            // 
+            this.txt_estado.BackColor = System.Drawing.Color.White;
+            this.txt_estado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_estado.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_estado.ForeColor = System.Drawing.Color.Black;
+            this.txt_estado.Location = new System.Drawing.Point(336, 562);
+            this.txt_estado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_estado.Name = "txt_estado";
+            this.txt_estado.Size = new System.Drawing.Size(236, 24);
+            this.txt_estado.TabIndex = 100;
+            this.txt_estado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_estado_KeyPress);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label15.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.label15.Location = new System.Drawing.Point(329, 530);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(75, 28);
+            this.label15.TabIndex = 102;
+            this.label15.Text = "Estado:";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label9.Location = new System.Drawing.Point(329, 693);
+            this.label9.Location = new System.Drawing.Point(329, 771);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(104, 28);
             this.label9.TabIndex = 94;
@@ -275,7 +331,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label8.Location = new System.Drawing.Point(329, 601);
+            this.label8.Location = new System.Drawing.Point(329, 679);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 28);
             this.label8.TabIndex = 95;
@@ -284,7 +340,7 @@
             // panel10
             // 
             this.panel10.Controls.Add(this.txt_numcasa);
-            this.panel10.Location = new System.Drawing.Point(325, 718);
+            this.panel10.Location = new System.Drawing.Point(325, 796);
             this.panel10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(195, 55);
@@ -296,7 +352,7 @@
             this.txt_numcasa.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_numcasa.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_numcasa.ForeColor = System.Drawing.Color.Black;
-            this.txt_numcasa.Location = new System.Drawing.Point(14, 9);
+            this.txt_numcasa.Location = new System.Drawing.Point(11, 7);
             this.txt_numcasa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_numcasa.Name = "txt_numcasa";
             this.txt_numcasa.Size = new System.Drawing.Size(130, 24);
@@ -317,7 +373,7 @@
             // panel9
             // 
             this.panel9.Controls.Add(this.txt_calle);
-            this.panel9.Location = new System.Drawing.Point(325, 626);
+            this.panel9.Location = new System.Drawing.Point(325, 704);
             this.panel9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(595, 55);
@@ -329,10 +385,10 @@
             this.txt_calle.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_calle.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_calle.ForeColor = System.Drawing.Color.Black;
-            this.txt_calle.Location = new System.Drawing.Point(19, 17);
+            this.txt_calle.Location = new System.Drawing.Point(11, 23);
             this.txt_calle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_calle.Name = "txt_calle";
-            this.txt_calle.Size = new System.Drawing.Size(550, 24);
+            this.txt_calle.Size = new System.Drawing.Size(582, 24);
             this.txt_calle.TabIndex = 90;
             this.txt_calle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_calle_KeyPress_1);
             // 
@@ -341,7 +397,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label7.Location = new System.Drawing.Point(329, 517);
+            this.label7.Location = new System.Drawing.Point(329, 595);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 28);
             this.label7.TabIndex = 89;
@@ -352,7 +408,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(14, 115);
+            this.label12.Location = new System.Drawing.Point(852, 119);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(30, 23);
             this.label12.TabIndex = 58;
@@ -362,7 +418,7 @@
             // panel6
             // 
             this.panel6.Controls.Add(this.txt_colonia);
-            this.panel6.Location = new System.Drawing.Point(325, 542);
+            this.panel6.Location = new System.Drawing.Point(325, 620);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(595, 55);
@@ -374,7 +430,7 @@
             this.txt_colonia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_colonia.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_colonia.ForeColor = System.Drawing.Color.Black;
-            this.txt_colonia.Location = new System.Drawing.Point(19, 15);
+            this.txt_colonia.Location = new System.Drawing.Point(11, 17);
             this.txt_colonia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_colonia.Name = "txt_colonia";
             this.txt_colonia.Size = new System.Drawing.Size(582, 24);
@@ -386,7 +442,7 @@
             this.lbl_idcliente.AutoSize = true;
             this.lbl_idcliente.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_idcliente.ForeColor = System.Drawing.Color.White;
-            this.lbl_idcliente.Location = new System.Drawing.Point(743, 96);
+            this.lbl_idcliente.Location = new System.Drawing.Point(596, 73);
             this.lbl_idcliente.Name = "lbl_idcliente";
             this.lbl_idcliente.Size = new System.Drawing.Size(99, 23);
             this.lbl_idcliente.TabIndex = 79;
@@ -409,7 +465,7 @@
             this.txt_apellidopaterno.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_apellidopaterno.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_apellidopaterno.ForeColor = System.Drawing.Color.Black;
-            this.txt_apellidopaterno.Location = new System.Drawing.Point(19, 32);
+            this.txt_apellidopaterno.Location = new System.Drawing.Point(14, 32);
             this.txt_apellidopaterno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_apellidopaterno.Name = "txt_apellidopaterno";
             this.txt_apellidopaterno.Size = new System.Drawing.Size(233, 24);
@@ -432,7 +488,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(15, 156);
+            this.label13.Location = new System.Drawing.Point(853, 160);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(73, 23);
             this.label13.TabIndex = 60;
@@ -489,7 +545,7 @@
             this.txt_correo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_correo.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_correo.ForeColor = System.Drawing.Color.Black;
-            this.txt_correo.Location = new System.Drawing.Point(22, 27);
+            this.txt_correo.Location = new System.Drawing.Point(25, 27);
             this.txt_correo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_correo.Name = "txt_correo";
             this.txt_correo.Size = new System.Drawing.Size(276, 24);
@@ -512,7 +568,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(15, 207);
+            this.label14.Location = new System.Drawing.Point(853, 211);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(88, 23);
             this.label14.TabIndex = 59;
@@ -535,7 +591,7 @@
             this.txt_telefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_telefono.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_telefono.ForeColor = System.Drawing.Color.Black;
-            this.txt_telefono.Location = new System.Drawing.Point(19, 27);
+            this.txt_telefono.Location = new System.Drawing.Point(11, 27);
             this.txt_telefono.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(236, 24);
@@ -557,10 +613,10 @@
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(14, 67);
+            this.pictureBox2.Location = new System.Drawing.Point(15, 96);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(46, 44);
+            this.pictureBox2.Size = new System.Drawing.Size(286, 44);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 56;
             this.pictureBox2.TabStop = false;
@@ -798,6 +854,10 @@
         private TextBox txt_numcasa;
         private TextBox txt_calle;
         private TextBox txt_colonia;
+        private TextBox txt_municipio;
+        private Label label11;
+        private TextBox txt_estado;
+        private Label label15;
         private Panel panel7;
         private PictureBox pictureBox9;
         private PictureBox pictureBox8;

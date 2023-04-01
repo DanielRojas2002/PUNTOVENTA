@@ -225,7 +225,7 @@
             this.btn_regresar.Location = new System.Drawing.Point(14, 16);
             this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(46, 44);
+            this.btn_regresar.Size = new System.Drawing.Size(461, 44);
             this.btn_regresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_regresar.TabIndex = 38;
             this.btn_regresar.TabStop = false;

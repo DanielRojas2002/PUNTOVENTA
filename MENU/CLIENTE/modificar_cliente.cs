@@ -135,6 +135,19 @@ namespace PUNTOVENTA.MENU.CLIENTE
                     {
                         MessageBox.Show("Ingrese el Correo del Cliente ");
                     }
+
+                    else if (txt_estado.Text == "")
+                    {
+
+                        MessageBox.Show("Ingrese el Estado del cliente  ");
+                    }
+
+                    else if (txt_municipio.Text == "")
+                    {
+
+                        MessageBox.Show("Ingrese el Municipio del cliente  ");
+                    }
+
                     else if (txt_colonia.Text == "")
                     {
                         MessageBox.Show("Ingrese la Colonia del Cliente ");
@@ -161,7 +174,8 @@ namespace PUNTOVENTA.MENU.CLIENTE
                             Apellido_Materno = txt_apellidomaterno.Text.Trim().ToUpper(),
                             Telefono = txt_telefono.Text.Trim(),
                             Correo = txt_correo.Text.Trim(),
-                           
+                            Estado = txt_estado.Text.Trim().ToUpper(),
+                            Municipio = txt_municipio.Text.Trim().ToUpper(),
                             Colonia = txt_colonia.Text.Trim().ToUpper(),
                             Calle = txt_calle.Text.Trim().ToUpper(),
                             NumCasa = txt_numcasa.Text.Trim().ToUpper(),
@@ -227,6 +241,8 @@ namespace PUNTOVENTA.MENU.CLIENTE
                     txt_apellidomaterno.Text = Convert.ToString(dg.Apellido_Materno.ToString());
                     txt_telefono.Text = Convert.ToString(dg.Telefono.ToString());
                     txt_correo.Text = Convert.ToString(dg.Correo.ToString());
+                    txt_estado.Text = Convert.ToString(dg.Estado.ToString());
+                    txt_municipio.Text = Convert.ToString(dg.Municipio.ToString());
                     txt_colonia.Text = Convert.ToString(dg.Colonia.ToString());
                     txt_calle.Text = Convert.ToString(dg.Calle.ToString());
                     txt_numcasa.Text = Convert.ToString(dg.NumCasa.ToString());
@@ -331,13 +347,25 @@ namespace PUNTOVENTA.MENU.CLIENTE
         private void txt_correo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_estado.Focus();
+
+            txt_estado.Text = "NUEVO LEON";
+        }
+
+
+
+        private void txt_estado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_municipio.Focus();
+        }
+
+        private void txt_municipio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
                 txt_colonia.Focus();
         }
 
-      
-       
-
-      
 
         private void txt_colonia_KeyPress_1(object sender, KeyPressEventArgs e)
         {
@@ -367,5 +395,7 @@ namespace PUNTOVENTA.MENU.CLIENTE
                 e.Handled = true;
             }
         }
+
+      
     }
 }

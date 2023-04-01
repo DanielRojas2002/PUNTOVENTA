@@ -31,6 +31,8 @@ namespace PUNTOVENTA.CLASES
                     new SqlParameter("@P_Apellido_Materno",Parametro.Apellido_Materno),
                     new SqlParameter("@P_Correo",Parametro.Correo),
                     new SqlParameter("@P_Telefono",Parametro.Telefono),
+                    new SqlParameter("@P_Estado",Parametro.Estado),
+                    new SqlParameter("@P_Municipio",Parametro.Municipio),
                     new SqlParameter("@P_Colonia",Parametro.Colonia),
                     new SqlParameter("@P_Calle",Parametro.Calle),
                     new SqlParameter("@P_NumCasa",Parametro.NumCasa)
@@ -145,6 +147,8 @@ namespace PUNTOVENTA.CLASES
                                  Apellido_Materno = Convert.ToString(fila["Apellido_Materno"].ToString()),
                                  Telefono = Convert.ToString(fila["Telefono"].ToString()),
                                  Correo= Convert.ToString(fila["Correo"].ToString()),
+                                 Estado = Convert.ToString(fila["Estado"].ToString()),
+                                 Municipio = Convert.ToString(fila["Municipio"].ToString()),
                                  Colonia = Convert.ToString(fila["Colonia"].ToString()),
                                  Calle = Convert.ToString(fila["Calle"].ToString()),
                                  NumCasa = Convert.ToString(fila["NumCasa"].ToString())
@@ -214,6 +218,8 @@ namespace PUNTOVENTA.CLASES
                     new SqlParameter("@P_Apellido_Materno",Parametro.Apellido_Materno),
                     new SqlParameter("@P_Correo",Parametro.Correo),
                     new SqlParameter("@P_Telefono",Parametro.Telefono),
+                    new SqlParameter("@P_Estado",Parametro.Estado),
+                    new SqlParameter("@P_Municipio",Parametro.Municipio),
                     new SqlParameter("@P_Colonia",Parametro.Colonia),
                     new SqlParameter("@P_Calle",Parametro.Calle),
                     new SqlParameter("@P_NumCasa",Parametro.NumCasa)

@@ -136,10 +136,10 @@
             this.bx_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bx_cliente.ForeColor = System.Drawing.Color.White;
             this.bx_cliente.FormattingEnabled = true;
-            this.bx_cliente.Location = new System.Drawing.Point(467, 236);
+            this.bx_cliente.Location = new System.Drawing.Point(425, 235);
             this.bx_cliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bx_cliente.Name = "bx_cliente";
-            this.bx_cliente.Size = new System.Drawing.Size(205, 28);
+            this.bx_cliente.Size = new System.Drawing.Size(296, 28);
             this.bx_cliente.TabIndex = 66;
             this.bx_cliente.SelectedIndexChanged += new System.EventHandler(this.bx_cliente_SelectedIndexChanged);
             this.bx_cliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bx_cliente_KeyPress);
@@ -162,7 +162,7 @@
             this.btn_regresar.Location = new System.Drawing.Point(34, 64);
             this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(42, 39);
+            this.btn_regresar.Size = new System.Drawing.Size(163, 39);
             this.btn_regresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_regresar.TabIndex = 64;
             this.btn_regresar.TabStop = false;

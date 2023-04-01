@@ -19,6 +19,11 @@ namespace PUNTOVENTA.MENU.CLIENTE
         public agregar_cliente()
         {
             InitializeComponent();
+
+            
+
+
+           
         }
         private void RegresarVentana()
         {
@@ -141,6 +146,19 @@ namespace PUNTOVENTA.MENU.CLIENTE
 
                 MessageBox.Show("Ingrese el correo del cliente  ");
             }
+
+            else if (txt_estado.Text == "")
+            {
+
+                MessageBox.Show("Ingrese el Estado del cliente  ");
+            }
+
+            else if (txt_municipio.Text == "")
+            {
+
+                MessageBox.Show("Ingrese el Municipio del cliente  ");
+            }
+
             else if (txt_colonia.Text == "")
             {
 
@@ -168,6 +186,11 @@ namespace PUNTOVENTA.MENU.CLIENTE
                     Apellido_Materno = txt_apellidomaterno_agregarcliente.Text.Trim().ToUpper(),
                     Telefono = txt_telefono_agregarcliente.Text.Trim().ToUpper(),
                     Correo = txt_correo_agregarcliente.Text.Trim(),
+
+                    Estado = txt_estado.Text.Trim().ToUpper(),
+
+                    Municipio = txt_municipio.Text.Trim().ToUpper(),
+
                     Colonia = txt_colonia.Text.Trim().ToUpper(),
                     Calle = txt_calle.Text.Trim().ToUpper(),
                     NumCasa = txt_numcasa.Text.Trim().ToUpper()
@@ -236,19 +259,25 @@ namespace PUNTOVENTA.MENU.CLIENTE
         private void KeyPress_Correo(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_estado.Focus();
+
+            txt_estado.Text = "NUEVO LEON";
+        }
+
+        private void txt_estado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_municipio.Focus();
+        }
+
+        private void txt_municipio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
                 txt_colonia.Focus();
         }
 
-        private void txtx_direccion_agregarcliente_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-                btn_crear_cliente.Focus();
-        }
 
-       
 
-      
-       
 
         private void txt_colonia_KeyPress_1(object sender, KeyPressEventArgs e)
         {
@@ -277,6 +306,14 @@ namespace PUNTOVENTA.MENU.CLIENTE
             {
                 e.Handled = true;
             }
+        }
+
+        private void agregar_cliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_nombre_agregarcliente.Focus();
+           
         }
     }
 }
