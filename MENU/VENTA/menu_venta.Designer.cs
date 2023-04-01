@@ -35,6 +35,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_idcliente = new System.Windows.Forms.Label();
             this.txt_usuario = new System.Windows.Forms.Label();
             this.lbl_perfil = new System.Windows.Forms.Label();
             this.lbl_id = new System.Windows.Forms.Label();
@@ -168,6 +169,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lbl_idcliente);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.txt_usuario);
@@ -180,6 +182,18 @@
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             this.panel2.MouseEnter += new System.EventHandler(this.panel2_MouseEnter);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            // 
+            // lbl_idcliente
+            // 
+            this.lbl_idcliente.AutoSize = true;
+            this.lbl_idcliente.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_idcliente.ForeColor = System.Drawing.Color.White;
+            this.lbl_idcliente.Location = new System.Drawing.Point(153, 66);
+            this.lbl_idcliente.Name = "lbl_idcliente";
+            this.lbl_idcliente.Size = new System.Drawing.Size(95, 23);
+            this.lbl_idcliente.TabIndex = 98;
+            this.lbl_idcliente.Text = "usuario:";
+            this.lbl_idcliente.Visible = false;
             // 
             // txt_usuario
             // 
@@ -973,5 +987,6 @@
         public Label lbl_id_cliente;
         private Label label10;
         private TextBox txt_codigoproducto;
+        public Label lbl_idcliente;
     }
 }

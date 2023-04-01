@@ -14,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 {
@@ -53,7 +54,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                 
                 int idcliente;
               
-                string nombre, ap, am, domicilio , tel, correo;
+                string nombre, ap, am, estado,municipio,colonia,calle,numcasa , tel, correo;
 
                
 
@@ -67,9 +68,13 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                     nombre = Convert.ToString(d.Nombre.ToString());
                     ap = Convert.ToString(d.Apellido_Paterno.ToString());
                     am = Convert.ToString(d.Apellido_Materno.ToString());
-                    domicilio = Convert.ToString(d.Direccion.ToString());
-                    tel = Convert.ToString(d.Telefono.ToString());
+                    estado = Convert.ToString(d.Estado.ToString());
+                    municipio = Convert.ToString(d.Municipio.ToString());
+                    colonia = Convert.ToString(d.Colonia.ToString());
+                    calle = Convert.ToString(d.Calle.ToString());
+                    numcasa = Convert.ToString(d.NumCasa.ToString());
                     correo = Convert.ToString(d.Correo.ToString());
+                    tel=Convert.ToString(d.Telefono.ToString());
 
 
 
@@ -87,11 +92,13 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
                     Clientes[contadorclientes].NombreCliente = nombre;
 
-                    Clientes[contadorclientes].ApellidoPaterno = ap;
+                    Clientes[contadorclientes].Apellidos = ap+" "+am;
 
-                    Clientes[contadorclientes].ApellidoMaterno = am;
+                    Clientes[contadorclientes].Estado = estado;
 
-                    Clientes[contadorclientes].Direccion = domicilio;
+                    Clientes[contadorclientes].Municipio = municipio;
+
+                    Clientes[contadorclientes].Direccion = colonia+" "+calle+" "+numcasa;
 
                     Clientes[contadorclientes].Telefono = tel;
 
@@ -278,8 +285,8 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
         public void btn_aplicar_filtro_Click(object sender, EventArgs e)
         {
-            try
-            {
+            try {
+
                 if (bx_cliente_credito.Text == "" && lbl_id_cliente.Text == "")
                 {
 
@@ -296,9 +303,10 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
             catch
             {
-                MessageBox.Show("Seleccione el Cliente a Buscar ");
-
+                MessageBox.Show("Seleccione el Cliente");
             }
+               
+          
            
           
         }
@@ -323,20 +331,24 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
 
 
-                string nombre, ap, am, domicilio, tel, correo,dia, fechaultimopago;
+                string nombre, ap, am,estado,municipio, colonia,calle,numcasa,domicilio, tel, correo,dia, fechaultimopago;
 
              
                 foreach (dgClienteCredito d in listafiltrado)
                 {
-                    
 
+                    colonia = d.Colonia;
+                    calle = d.Calle;
+                    numcasa = d.NumCasa;
 
                     
                     idcliente2 = Convert.ToInt16(d.Id_Cliente.ToString());
                     nombre = Convert.ToString(d.Nombre.ToString());
                     ap = Convert.ToString(d.Apellido_Paterno.ToString());
                     am = Convert.ToString(d.Apellido_Materno.ToString());
-                    domicilio = Convert.ToString(d.Direccion.ToString());
+                    estado = Convert.ToString(d.Estado.ToString());
+                    municipio = Convert.ToString(d.Municipio.ToString());
+                    domicilio = colonia + " " + calle + " " + numcasa;
                     tel = Convert.ToString(d.Telefono.ToString());
                     correo = Convert.ToString(d.Correo.ToString());
 
@@ -356,9 +368,9 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
                     Clientes[contadorclientes].NombreCliente = nombre;
 
-                    Clientes[contadorclientes].ApellidoPaterno = ap;
+                    Clientes[contadorclientes].Apellidos = ap+" "+am;
 
-                    Clientes[contadorclientes].ApellidoMaterno = am;
+                   
 
                     Clientes[contadorclientes].Direccion = domicilio;
 

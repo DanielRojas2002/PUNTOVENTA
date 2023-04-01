@@ -124,7 +124,7 @@
             this.lbl_telefono.AutoSize = true;
             this.lbl_telefono.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_telefono.ForeColor = System.Drawing.Color.White;
-            this.lbl_telefono.Location = new System.Drawing.Point(247, 564);
+            this.lbl_telefono.Location = new System.Drawing.Point(247, 552);
             this.lbl_telefono.Name = "lbl_telefono";
             this.lbl_telefono.Size = new System.Drawing.Size(59, 15);
             this.lbl_telefono.TabIndex = 174;
@@ -135,7 +135,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(22, 564);
+            this.label11.Location = new System.Drawing.Point(22, 552);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(104, 23);
             this.label11.TabIndex = 173;
@@ -146,7 +146,7 @@
             this.lbl_correo.AutoSize = true;
             this.lbl_correo.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_correo.ForeColor = System.Drawing.Color.White;
-            this.lbl_correo.Location = new System.Drawing.Point(247, 524);
+            this.lbl_correo.Location = new System.Drawing.Point(247, 512);
             this.lbl_correo.Name = "lbl_correo";
             this.lbl_correo.Size = new System.Drawing.Size(59, 15);
             this.lbl_correo.TabIndex = 172;
@@ -157,7 +157,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(22, 524);
+            this.label9.Location = new System.Drawing.Point(22, 512);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(87, 23);
             this.label9.TabIndex = 171;
@@ -167,7 +167,7 @@
             // 
             this.lbl_domicilio.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_domicilio.ForeColor = System.Drawing.Color.White;
-            this.lbl_domicilio.Location = new System.Drawing.Point(225, 476);
+            this.lbl_domicilio.Location = new System.Drawing.Point(247, 471);
             this.lbl_domicilio.Name = "lbl_domicilio";
             this.lbl_domicilio.Size = new System.Drawing.Size(254, 41);
             this.lbl_domicilio.TabIndex = 170;
@@ -178,7 +178,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(22, 483);
+            this.label7.Location = new System.Drawing.Point(22, 476);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(114, 23);
             this.label7.TabIndex = 169;

@@ -37,15 +37,17 @@
             this.lbl_nombreproducto = new System.Windows.Forms.Label();
             this.btn_creditos_cliente = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbl_ap = new System.Windows.Forms.Label();
-            this.lbl_am = new System.Windows.Forms.Label();
+            this.lbl_apellidos = new System.Windows.Forms.Label();
             this.lbl_domicilio = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lbl_correo = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lbl_telefono = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.lbl_estado = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lalbl_municipio = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +76,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.panel1.Location = new System.Drawing.Point(14, 409);
+            this.panel1.Location = new System.Drawing.Point(14, 402);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(769, 13);
             this.panel1.TabIndex = 146;
@@ -121,7 +123,7 @@
             this.btn_creditos_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_creditos_cliente.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_creditos_cliente.ForeColor = System.Drawing.Color.White;
-            this.btn_creditos_cliente.Location = new System.Drawing.Point(299, 332);
+            this.btn_creditos_cliente.Location = new System.Drawing.Point(299, 342);
             this.btn_creditos_cliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_creditos_cliente.Name = "btn_creditos_cliente";
             this.btn_creditos_cliente.Size = new System.Drawing.Size(410, 53);
@@ -137,59 +139,38 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(299, 137);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(189, 23);
+            this.label1.Size = new System.Drawing.Size(113, 23);
             this.label1.TabIndex = 151;
-            this.label1.Text = "Apellido Paterno:";
+            this.label1.Text = "Apellidos:";
             // 
-            // label2
+            // lbl_apellidos
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(299, 169);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(193, 23);
-            this.label2.TabIndex = 152;
-            this.label2.Text = "Apellido Materno:";
-            // 
-            // lbl_ap
-            // 
-            this.lbl_ap.AutoSize = true;
-            this.lbl_ap.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lbl_ap.ForeColor = System.Drawing.Color.White;
-            this.lbl_ap.Location = new System.Drawing.Point(517, 137);
-            this.lbl_ap.Name = "lbl_ap";
-            this.lbl_ap.Size = new System.Drawing.Size(91, 23);
-            this.lbl_ap.TabIndex = 153;
-            this.lbl_ap.Text = "IdVenta";
-            // 
-            // lbl_am
-            // 
-            this.lbl_am.AutoSize = true;
-            this.lbl_am.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lbl_am.ForeColor = System.Drawing.Color.White;
-            this.lbl_am.Location = new System.Drawing.Point(517, 169);
-            this.lbl_am.Name = "lbl_am";
-            this.lbl_am.Size = new System.Drawing.Size(91, 23);
-            this.lbl_am.TabIndex = 154;
-            this.lbl_am.Text = "IdVenta";
+            this.lbl_apellidos.AutoSize = true;
+            this.lbl_apellidos.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_apellidos.ForeColor = System.Drawing.Color.White;
+            this.lbl_apellidos.Location = new System.Drawing.Point(517, 137);
+            this.lbl_apellidos.Name = "lbl_apellidos";
+            this.lbl_apellidos.Size = new System.Drawing.Size(91, 23);
+            this.lbl_apellidos.TabIndex = 153;
+            this.lbl_apellidos.Text = "IdVenta";
             // 
             // lbl_domicilio
             // 
             this.lbl_domicilio.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_domicilio.ForeColor = System.Drawing.Color.White;
-            this.lbl_domicilio.Location = new System.Drawing.Point(517, 216);
+            this.lbl_domicilio.Location = new System.Drawing.Point(517, 228);
             this.lbl_domicilio.Name = "lbl_domicilio";
             this.lbl_domicilio.Size = new System.Drawing.Size(266, 36);
             this.lbl_domicilio.TabIndex = 156;
             this.lbl_domicilio.Text = "IdVenta";
+            this.lbl_domicilio.Click += new System.EventHandler(this.lbl_domicilio_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(299, 216);
+            this.label7.Location = new System.Drawing.Point(299, 228);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(114, 23);
             this.label7.TabIndex = 155;
@@ -199,18 +180,19 @@
             // 
             this.lbl_correo.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_correo.ForeColor = System.Drawing.Color.White;
-            this.lbl_correo.Location = new System.Drawing.Point(517, 252);
+            this.lbl_correo.Location = new System.Drawing.Point(517, 264);
             this.lbl_correo.Name = "lbl_correo";
             this.lbl_correo.Size = new System.Drawing.Size(250, 33);
             this.lbl_correo.TabIndex = 158;
             this.lbl_correo.Text = "IdVenta";
+            this.lbl_correo.Click += new System.EventHandler(this.lbl_correo_Click);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(299, 252);
+            this.label9.Location = new System.Drawing.Point(299, 264);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(87, 23);
             this.label9.TabIndex = 157;
@@ -221,7 +203,7 @@
             this.lbl_telefono.AutoSize = true;
             this.lbl_telefono.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_telefono.ForeColor = System.Drawing.Color.White;
-            this.lbl_telefono.Location = new System.Drawing.Point(517, 293);
+            this.lbl_telefono.Location = new System.Drawing.Point(517, 305);
             this.lbl_telefono.Name = "lbl_telefono";
             this.lbl_telefono.Size = new System.Drawing.Size(91, 23);
             this.lbl_telefono.TabIndex = 160;
@@ -232,26 +214,72 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(299, 293);
+            this.label11.Location = new System.Drawing.Point(299, 305);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(104, 23);
             this.label11.TabIndex = 159;
             this.label11.Text = "Telefono:";
+            // 
+            // lbl_estado
+            // 
+            this.lbl_estado.AutoSize = true;
+            this.lbl_estado.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_estado.ForeColor = System.Drawing.Color.White;
+            this.lbl_estado.Location = new System.Drawing.Point(517, 167);
+            this.lbl_estado.Name = "lbl_estado";
+            this.lbl_estado.Size = new System.Drawing.Size(91, 23);
+            this.lbl_estado.TabIndex = 162;
+            this.lbl_estado.Text = "IdVenta";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(299, 167);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(85, 23);
+            this.label4.TabIndex = 161;
+            this.label4.Text = "Estado:";
+            // 
+            // lalbl_municipio
+            // 
+            this.lalbl_municipio.AutoSize = true;
+            this.lalbl_municipio.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lalbl_municipio.ForeColor = System.Drawing.Color.White;
+            this.lalbl_municipio.Location = new System.Drawing.Point(517, 197);
+            this.lalbl_municipio.Name = "lalbl_municipio";
+            this.lalbl_municipio.Size = new System.Drawing.Size(91, 23);
+            this.lalbl_municipio.TabIndex = 164;
+            this.lalbl_municipio.Text = "IdVenta";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(299, 197);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(118, 23);
+            this.label8.TabIndex = 163;
+            this.label8.Text = "Municipio:";
             // 
             // UserControlCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
+            this.Controls.Add(this.lalbl_municipio);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lbl_estado);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lbl_telefono);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.lbl_correo);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.lbl_domicilio);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.lbl_am);
-            this.Controls.Add(this.lbl_ap);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_apellidos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_creditos_cliente);
             this.Controls.Add(this.label6);
@@ -261,7 +289,7 @@
             this.Controls.Add(this.pictureBox12);
             this.Controls.Add(this.lbl_nombreproducto);
             this.Name = "UserControlCliente";
-            this.Size = new System.Drawing.Size(802, 455);
+            this.Size = new System.Drawing.Size(802, 443);
             this.Load += new System.EventHandler(this.UserControlCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.ResumeLayout(false);
@@ -279,14 +307,16 @@
         private Label lbl_nombreproducto;
         private Button btn_creditos_cliente;
         private Label label1;
-        private Label label2;
-        private Label lbl_ap;
-        private Label lbl_am;
+        private Label lbl_apellidos;
         private Label lbl_domicilio;
         private Label label7;
         private Label lbl_correo;
         private Label label9;
         private Label lbl_telefono;
         private Label label11;
+        private Label lbl_estado;
+        private Label label4;
+        private Label lalbl_municipio;
+        private Label label8;
     }
 }

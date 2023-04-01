@@ -22,13 +22,17 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
 
         public string _idcliente;
         public string _nombrecliente;
-        public string _a_paterno_cliente;
-        public string _a_materno_cliente;
+        public string _a_apellidos;
+  
         public string _direccion_cliente;
         public string _tel_cliente;
         public string _correo_cliente;
 
-       
+        public string _estado_cliente;
+
+        public string _municipio_cliente;
+
+
 
 
 
@@ -43,18 +47,13 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
             set { _nombrecliente = value; lbl_nombre.Text = value; }
         }
 
-        public string ApellidoPaterno
+        public string Apellidos
         {
-            get { return _a_paterno_cliente; }
-            set { _a_paterno_cliente = value; lbl_ap.Text = value; }
+            get { return _a_apellidos; }
+            set { _a_apellidos = value; lbl_apellidos.Text = value; }
         }
 
-        public string ApellidoMaterno
-        {
-            get { return _a_materno_cliente; }
-            set { _a_materno_cliente = value; lbl_am.Text = value; }
-        }
-
+     
         public string Direccion
         {
             get { return _direccion_cliente; }
@@ -73,7 +72,19 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
             set { _correo_cliente = value; lbl_correo.Text = value; }
         }
 
-       
+        public string Estado
+        {
+            get { return _estado_cliente; }
+            set { _estado_cliente = value; lbl_estado.Text = value; }
+        }
+
+        public string Municipio
+        {
+            get { return _municipio_cliente; }
+            set { _municipio_cliente = value; lalbl_municipio.Text = value; }
+        }
+
+
 
         public void UserControlCliente_Load(object sender, EventArgs e)
         {
@@ -98,6 +109,16 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
             forms.Show();
 
            
+        }
+
+        private void lbl_correo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_domicilio_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -38,18 +38,22 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
             if (lista.Count > 0)
 
             {
-
+                string colonia,calle,numcasa;
                
                 foreach (dgClienteCredito d in lista)
                 {
 
-                 
+                    colonia = d.Colonia;
+                    calle = d.Calle;
+                    numcasa = d.NumCasa;
                     lbl_nombre.Text = Convert.ToString(d.Nombre.ToString());
                     lbl_ap.Text = Convert.ToString(d.Apellido_Paterno.ToString());
                     lbl_am.Text = Convert.ToString(d.Apellido_Materno.ToString());
-                    lbl_domicilio.Text = Convert.ToString(d.Direccion.ToString());
+                    lbl_domicilio.Text = colonia + " " + calle + " " + numcasa;
                     lbl_telefono.Text = Convert.ToString(d.Telefono.ToString());
                     lbl_correo.Text = Convert.ToString(d.Correo.ToString());
+
+                
 
 
                 }

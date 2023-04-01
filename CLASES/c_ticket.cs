@@ -39,7 +39,8 @@ namespace PUNTOVENTA.CLASES
 
 
                                  NombreEmpresa = Convert.ToString(fila["NombreEmpresa"].ToString()),
-                                 Direccion = Convert.ToString(fila["Direccion"].ToString()),
+                                 Colonia = Convert.ToString(fila["Colonia"].ToString()),
+                                 Calle = Convert.ToString(fila["Calle"].ToString()),
                                  Telefono = Convert.ToString(fila["Telefono"].ToString()),
                                  Mensaje = Convert.ToString(fila["Mensaje"].ToString())
 
@@ -190,6 +191,8 @@ namespace PUNTOVENTA.CLASES
 
 
             }
+
+           
 
 
 

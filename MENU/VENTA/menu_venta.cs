@@ -1087,9 +1087,10 @@ namespace PUNTOVENTA.MENU.VENTA
                             foreach (dgTicket d in listaticketinfo)
                             {
                                 Ticket1.TextoIzquierda(d.NombreEmpresa.ToUpper().ToString());
-                               
-                                
-                                Ticket1.TextoIzquierda( d.Direccion.ToUpper().ToString());
+
+
+                                Ticket1.TextoIzquierda(d.Colonia.ToUpper().ToString());
+                                Ticket1.TextoIzquierda(d.Calle.ToUpper().ToString());
                                 Ticket1.TextoIzquierda("Tel: " + d.Telefono.ToString());
                                 Ticket1.TextoIzquierda("");
                             }
@@ -1275,9 +1276,10 @@ namespace PUNTOVENTA.MENU.VENTA
                         foreach (dgTicket d in listaticketinfo)
                         {
                             Ticket1.TextoCentro(d.NombreEmpresa.ToUpper().ToString());
-                            
-                           
-                            Ticket1.TextoIzquierda(d.Direccion.ToUpper().ToString());
+
+
+                            Ticket1.TextoIzquierda(d.Colonia.ToUpper().ToString());
+                            Ticket1.TextoIzquierda(d.Calle.ToUpper().ToString());
                             Ticket1.TextoIzquierda("Tel: " + d.Telefono.ToString());
                             Ticket1.TextoIzquierda("");
                         }
@@ -1537,7 +1539,9 @@ namespace PUNTOVENTA.MENU.VENTA
                                     Ticket1.TextoIzquierda(d.NombreEmpresa.ToUpper().ToString());
                                     
                                    
-                                    Ticket1.TextoIzquierda( d.Direccion.ToUpper().ToString());
+                                    Ticket1.TextoIzquierda( d.Colonia.ToUpper().ToString());
+                                    Ticket1.TextoIzquierda(d.Calle.ToUpper().ToString());
+
                                     Ticket1.TextoIzquierda("Tel: " + d.Telefono.ToString());
                                     Ticket1.TextoIzquierda("");
                                 }
@@ -1552,11 +1556,51 @@ namespace PUNTOVENTA.MENU.VENTA
 
                                 Ticket1.TextoIzquierda("Recibo de venta realizada por Credito");
                                 Ticket1.TextoIzquierda("Los Precios ya contienen IVA");
-                                Ticket1.TextoIzquierda("Nombre del cliente: " + bx_cliente.Text);
+                               
 
                                 Ticket1.TextoIzquierda("Fecha: " + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString());
                                 Ticket1.TextoIzquierda("");
                             }
+
+
+                            string concatenacion2 = bx_cliente.Text;
+                            string[] words = concatenacion2.Split(' ');
+                            string idcliente;
+                            idcliente = words[0];
+
+
+                            lbl_idcliente.Text = idcliente;
+
+
+                            dgCliente parametrodatosclientee = new dgCliente
+                            {
+                                Id_Cliente=Convert.ToInt32(idcliente)
+                            };
+
+                            List<dgCliente> listaticketinfocliente = c_cliente.LeerCliente(3, parametrodatosclientee);
+
+
+
+                            if (listaticketinfocliente.Count > 0)
+
+                            {
+
+
+                                foreach (dgCliente d in listaticketinfocliente)
+                                {
+                                    Ticket1.TextoIzquierda("");
+                                    Ticket1.TextoIzquierda("Nombre:" + d.Nombre.ToUpper().ToString());
+                                    Ticket1.TextoIzquierda("Apellido 1:" + d.Apellido_Paterno.ToUpper().ToString());
+                                    Ticket1.TextoIzquierda("Apellido 2:" + d.Apellido_Materno.ToUpper().ToString());
+                                    Ticket1.TextoIzquierda("Estado:" + d.Estado.ToUpper().ToString());
+                                    Ticket1.TextoIzquierda("Municipio:" + d.Municipio.ToUpper().ToString());
+                                    Ticket1.TextoIzquierda("Colonia:" + d.Colonia.ToUpper().ToString());
+                                    Ticket1.TextoIzquierda("Calle:" + d.Calle.ToUpper().ToString());
+                                    Ticket1.TextoIzquierda("NumCasa:" + d.NumCasa.ToUpper().ToString());
+
+                                }
+                            }
+
 
 
                             clsventas.CreaRecibo.LineasGuion();

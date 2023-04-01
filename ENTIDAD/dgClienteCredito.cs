@@ -18,6 +18,15 @@ namespace PUNTOVENTA.ENTIDAD
         public string? Correo { get; set; }
         public string? Direccion { get; set; }
 
+        public string? Estado { get; set; }
+
+        public string? Municipio { get; set; }
+        public string? Colonia { get; set; }
+
+        public string? Calle { get; set; }
+
+        public string? NumCasa { get; set; }
+
         public int? Id_Credito { get; set; }
 
      
