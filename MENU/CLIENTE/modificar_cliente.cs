@@ -114,30 +114,41 @@ namespace PUNTOVENTA.MENU.CLIENTE
             {
                 if (bx_cliente.Text!="")
                 {
-                    if (txt_correo_modificarcliente.Text == "")
+                    if (txt_nombre.Text == "")
                     {
 
-                        MessageBox.Show("Ingrese el correo del Cliente");
+                        MessageBox.Show("Ingrese el Nombre del Cliente");
                     }
-                    else if (txt_nombre_modificarcliente.Text == "")
+                    else if (txt_apellidopaterno.Text == "")
                     {
-                        MessageBox.Show("Ingrese el nombre del Cliente ");
+                        MessageBox.Show("Ingrese el Apellido Paterno del Cliente ");
                     }
-                    else if (txt_apellidopaterno_modificarcliente.Text == "")
+                    else if (txt_apellidomaterno.Text == "")
                     {
-                        MessageBox.Show("Ingrese el apellido paterno del Cliente");
+                        MessageBox.Show("Ingrese el Apellido Materno del Cliente");
                     }
-                    else if (txt_apellidomaterno_modificarcliente.Text == "")
+                    else if (txt_telefono.Text == "")
                     {
-                        MessageBox.Show("Ingrese el apellido materno del Cliente");
+                        MessageBox.Show("Ingrese el Telefono  del Cliente");
                     }
-                    else if (txt_telefono_modificarcliente.Text == "")
+                    else if (txt_correo.Text == "")
                     {
-                        MessageBox.Show("Ingrese el telefono del Cliente ");
+                        MessageBox.Show("Ingrese el Correo del Cliente ");
                     }
-                    else if (txt_direccion_modificarcliente.Text == "")
+                    else if (txt_colonia.Text == "")
                     {
-                        MessageBox.Show("Ingrese la direccion del Cliente ");
+                        MessageBox.Show("Ingrese la Colonia del Cliente ");
+                    }
+
+                    else if (txt_calle.Text == "")
+                    {
+                        MessageBox.Show("Ingrese la Calle del Cliente ");
+                    }
+
+
+                    else if (txt_numcasa.Text == "")
+                    {
+                        MessageBox.Show("Ingrese el Numero de Casa del Cliente ");
                     }
 
                     else
@@ -145,12 +156,15 @@ namespace PUNTOVENTA.MENU.CLIENTE
                         dgCliente parametro = new dgCliente
                         {
                             Id_Cliente = Convert.ToInt16(lbl_idcliente.Text),
-                            Correo = txt_correo_modificarcliente.Text.Trim(),
-                            Nombre = txt_nombre_modificarcliente.Text.Trim().ToUpper(),
-                            Apellido_Paterno = txt_apellidopaterno_modificarcliente.Text.Trim().ToUpper(),
-                            Apellido_Materno = txt_apellidomaterno_modificarcliente.Text.Trim().ToUpper(),
-                            Telefono = txt_telefono_modificarcliente.Text.Trim(),
-                            Direccion = txt_direccion_modificarcliente.Text.Trim().ToUpper(),
+                            Nombre = txt_nombre.Text.Trim().ToUpper(),
+                            Apellido_Paterno = txt_apellidopaterno.Text.Trim().ToUpper(),
+                            Apellido_Materno = txt_apellidomaterno.Text.Trim().ToUpper(),
+                            Telefono = txt_telefono.Text.Trim(),
+                            Correo = txt_correo.Text.Trim(),
+                           
+                            Colonia = txt_colonia.Text.Trim().ToUpper(),
+                            Calle = txt_calle.Text.Trim().ToUpper(),
+                            NumCasa = txt_numcasa.Text.Trim().ToUpper(),
 
 
                         };
@@ -208,12 +222,14 @@ namespace PUNTOVENTA.MENU.CLIENTE
                 foreach (dgCliente dg in listacliente)
                 {
 
-                    txt_nombre_modificarcliente.Text = Convert.ToString(dg.Nombre.ToString());
-                    txt_apellidopaterno_modificarcliente.Text = Convert.ToString(dg.Apellido_Paterno.ToString());
-                    txt_apellidomaterno_modificarcliente.Text = Convert.ToString(dg.Apellido_Materno.ToString());
-                    txt_correo_modificarcliente.Text = Convert.ToString(dg.Correo.ToString());
-                    txt_telefono_modificarcliente.Text = Convert.ToString(dg.Telefono.ToString());
-                    txt_direccion_modificarcliente.Text = Convert.ToString(dg.Direccion.ToString());
+                    txt_nombre.Text = Convert.ToString(dg.Nombre.ToString());
+                    txt_apellidopaterno.Text = Convert.ToString(dg.Apellido_Paterno.ToString());
+                    txt_apellidomaterno.Text = Convert.ToString(dg.Apellido_Materno.ToString());
+                    txt_telefono.Text = Convert.ToString(dg.Telefono.ToString());
+                    txt_correo.Text = Convert.ToString(dg.Correo.ToString());
+                    txt_colonia.Text = Convert.ToString(dg.Colonia.ToString());
+                    txt_calle.Text = Convert.ToString(dg.Calle.ToString());
+                    txt_numcasa.Text = Convert.ToString(dg.NumCasa.ToString());
                 }
             }
         }
@@ -243,43 +259,113 @@ namespace PUNTOVENTA.MENU.CLIENTE
         private void bx_cliente_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
-                txt_nombre_modificarcliente.Focus();
+                txt_nombre.Focus();
         }
 
-        private void txt_nombre_modificarcliente_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-                txt_apellidopaterno_modificarcliente.Focus();
-        }
+       
 
-        private void txt_apellidopaterno_modificarcliente_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-                txt_apellidomaterno_modificarcliente.Focus();
-        }
+       
 
-        private void txt_apellidomaterno_modificarcliente_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-                txt_telefono_modificarcliente.Focus();
-        }
 
         private void txt_telefono_modificarcliente_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
-                txt_correo_modificarcliente.Focus();
+                txt_correo.Focus();
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
 
-        private void txt_correo_modificarcliente_KeyPress(object sender, KeyPressEventArgs e)
+       
+
+       
+
+        private void txt_numcasa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
-                txt_direccion_modificarcliente.Focus();
+                txt_apellidopaterno.Focus();
         }
 
-        private void txt_direccion_modificarcliente_KeyPress(object sender, KeyPressEventArgs e)
+        private void txt_apellidopaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_apellidomaterno.Focus();
+        }
+
+        private void txt_apellidomaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_telefono.Focus();
+        }
+
+        private void txt_telefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_correo.Focus();
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_correo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_colonia.Focus();
+        }
+
+      
+       
+
+      
+
+        private void txt_colonia_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_calle.Focus();
+        }
+
+        private void txt_calle_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                txt_numcasa.Focus();
+        }
+
+        private void txt_numcasa_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
                 btn_modificar_cliente.Focus();
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

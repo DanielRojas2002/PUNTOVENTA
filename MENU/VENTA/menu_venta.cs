@@ -1419,7 +1419,7 @@ namespace PUNTOVENTA.MENU.VENTA
                         {
                             titulomsj = "SOLICTUD DE CREDITO " + "\n";
                             concatanacionnombre = "Nombre Completo: " + d.Nombre.ToString() + " " + d.Apellido_Paterno.ToString() + " " + d.Apellido_Materno.ToString()+ "\n";
-                            concatenacionotrosdatos = "Domicilio: " + d.Direccion.ToString() +"\n"+ "Telefono: "  + d.Telefono.ToString() + "\n" +"Correo: "+ d.Correo.ToString() + "\n";
+                            concatenacionotrosdatos = "Colonia: " + d.Colonia.ToString() +"\n" + "Calle: " + d.Calle.ToString() + "\n" + "NumCasa: " + d.NumCasa.ToString() + "\n" + "Telefono: "  + d.Telefono.ToString() + "\n" +"Correo: "+ d.Correo.ToString() + "\n";
                             concatenaciondatosventa = "Total del Credito: " + lbl_total.Text +"\n" + "Total Abonado: "+ txt_paga_con.Text + "\n" + "Falta por pagar: " + Convert.ToString(debemsj) ;
                         }
                         concatenacionfinal = titulomsj +carateres+"\n"+ concatanacionnombre + concatenacionotrosdatos+ carateres+"\n"+concatenaciondatosventa;

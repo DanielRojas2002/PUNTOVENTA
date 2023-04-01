@@ -29,15 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(modificar_cliente));
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.txt_direccion_modificarcliente = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.txt_apellidopaterno_modificarcliente = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.txt_apellidomaterno_modificarcliente = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel_modificarcliente = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btn_modificar_cliente = new System.Windows.Forms.Button();
@@ -47,25 +38,38 @@
             this.txt_usuario = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_perfil = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txt_correo_modificarcliente = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txt_telefono_modificarcliente = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.lbl_id_proveedor = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txt_nombre_modificarcliente = new System.Windows.Forms.TextBox();
             this.bx_cliente = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.txt_numcasa = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.txt_calle = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txt_colonia = new System.Windows.Forms.TextBox();
             this.lbl_idcliente = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.txt_apellidopaterno = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.txt_apellidomaterno = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_correo = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txt_telefono = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_nombre = new System.Windows.Forms.TextBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -74,18 +78,20 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.panel6.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel_modificarcliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -95,117 +101,15 @@
             this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.txt_direccion_modificarcliente);
-            this.panel6.Controls.Add(this.label7);
-            this.panel6.Location = new System.Drawing.Point(306, 672);
-            this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(595, 79);
-            this.panel6.TabIndex = 82;
-            // 
-            // txt_direccion_modificarcliente
-            // 
-            this.txt_direccion_modificarcliente.BackColor = System.Drawing.Color.White;
-            this.txt_direccion_modificarcliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_direccion_modificarcliente.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_direccion_modificarcliente.ForeColor = System.Drawing.Color.Black;
-            this.txt_direccion_modificarcliente.Location = new System.Drawing.Point(25, 27);
-            this.txt_direccion_modificarcliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_direccion_modificarcliente.Name = "txt_direccion_modificarcliente";
-            this.txt_direccion_modificarcliente.Size = new System.Drawing.Size(554, 24);
-            this.txt_direccion_modificarcliente.TabIndex = 6;
-            this.txt_direccion_modificarcliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_direccion_modificarcliente_KeyPress);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label7.Location = new System.Drawing.Point(3, -5);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 28);
-            this.label7.TabIndex = 59;
-            this.label7.Text = "Dirección:";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.txt_apellidopaterno_modificarcliente);
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(306, 400);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(270, 81);
-            this.panel4.TabIndex = 84;
-            // 
-            // txt_apellidopaterno_modificarcliente
-            // 
-            this.txt_apellidopaterno_modificarcliente.BackColor = System.Drawing.Color.White;
-            this.txt_apellidopaterno_modificarcliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_apellidopaterno_modificarcliente.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_apellidopaterno_modificarcliente.ForeColor = System.Drawing.Color.Black;
-            this.txt_apellidopaterno_modificarcliente.Location = new System.Drawing.Point(19, 32);
-            this.txt_apellidopaterno_modificarcliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_apellidopaterno_modificarcliente.Name = "txt_apellidopaterno_modificarcliente";
-            this.txt_apellidopaterno_modificarcliente.Size = new System.Drawing.Size(232, 24);
-            this.txt_apellidopaterno_modificarcliente.TabIndex = 6;
-            this.txt_apellidopaterno_modificarcliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellidopaterno_modificarcliente_KeyPress);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label5.Location = new System.Drawing.Point(3, -5);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(163, 28);
-            this.label5.TabIndex = 61;
-            this.label5.Text = "Apellido Paterno:";
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.txt_apellidomaterno_modificarcliente);
-            this.panel5.Controls.Add(this.label6);
-            this.panel5.Location = new System.Drawing.Point(635, 400);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(270, 81);
-            this.panel5.TabIndex = 85;
-            // 
-            // txt_apellidomaterno_modificarcliente
-            // 
-            this.txt_apellidomaterno_modificarcliente.BackColor = System.Drawing.Color.White;
-            this.txt_apellidomaterno_modificarcliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_apellidomaterno_modificarcliente.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_apellidomaterno_modificarcliente.ForeColor = System.Drawing.Color.Black;
-            this.txt_apellidomaterno_modificarcliente.Location = new System.Drawing.Point(25, 27);
-            this.txt_apellidomaterno_modificarcliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_apellidomaterno_modificarcliente.Name = "txt_apellidomaterno_modificarcliente";
-            this.txt_apellidomaterno_modificarcliente.Size = new System.Drawing.Size(232, 24);
-            this.txt_apellidomaterno_modificarcliente.TabIndex = 6;
-            this.txt_apellidomaterno_modificarcliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellidomaterno_modificarcliente_KeyPress);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label6.Location = new System.Drawing.Point(3, -5);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(170, 28);
-            this.label6.TabIndex = 61;
-            this.label6.Text = "Apellido Materno:";
-            // 
             // panel_modificarcliente
             // 
             this.panel_modificarcliente.BackColor = System.Drawing.Color.Navy;
             this.panel_modificarcliente.Controls.Add(this.pictureBox4);
             this.panel_modificarcliente.Controls.Add(this.btn_modificar_cliente);
-            this.panel_modificarcliente.Location = new System.Drawing.Point(467, 789);
+            this.panel_modificarcliente.Location = new System.Drawing.Point(553, 718);
             this.panel_modificarcliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel_modificarcliente.Name = "panel_modificarcliente";
-            this.panel_modificarcliente.Size = new System.Drawing.Size(358, 57);
+            this.panel_modificarcliente.Size = new System.Drawing.Size(373, 57);
             this.panel_modificarcliente.TabIndex = 86;
             // 
             // pictureBox4
@@ -230,7 +134,7 @@
             this.btn_modificar_cliente.Location = new System.Drawing.Point(86, 4);
             this.btn_modificar_cliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_modificar_cliente.Name = "btn_modificar_cliente";
-            this.btn_modificar_cliente.Size = new System.Drawing.Size(206, 53);
+            this.btn_modificar_cliente.Size = new System.Drawing.Size(281, 53);
             this.btn_modificar_cliente.TabIndex = 50;
             this.btn_modificar_cliente.Text = "MODIFICAR CLIENTE";
             this.btn_modificar_cliente.UseVisualStyleBackColor = false;
@@ -266,7 +170,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Cooper Black", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(366, 96);
+            this.label1.Location = new System.Drawing.Point(206, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(469, 46);
             this.label1.TabIndex = 80;
@@ -308,133 +212,6 @@
             this.lbl_perfil.Text = "perfil:";
             this.lbl_perfil.Visible = false;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.txt_correo_modificarcliente);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(639, 544);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(270, 81);
-            this.panel1.TabIndex = 81;
-            // 
-            // txt_correo_modificarcliente
-            // 
-            this.txt_correo_modificarcliente.BackColor = System.Drawing.Color.White;
-            this.txt_correo_modificarcliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_correo_modificarcliente.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_correo_modificarcliente.ForeColor = System.Drawing.Color.Black;
-            this.txt_correo_modificarcliente.Location = new System.Drawing.Point(25, 27);
-            this.txt_correo_modificarcliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_correo_modificarcliente.Name = "txt_correo_modificarcliente";
-            this.txt_correo_modificarcliente.Size = new System.Drawing.Size(232, 24);
-            this.txt_correo_modificarcliente.TabIndex = 6;
-            this.txt_correo_modificarcliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_correo_modificarcliente_KeyPress);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label3.Location = new System.Drawing.Point(3, -5);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 28);
-            this.label3.TabIndex = 59;
-            this.label3.Text = "Correo:";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.txt_telefono_modificarcliente);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(313, 544);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(270, 81);
-            this.panel2.TabIndex = 83;
-            // 
-            // txt_telefono_modificarcliente
-            // 
-            this.txt_telefono_modificarcliente.BackColor = System.Drawing.Color.White;
-            this.txt_telefono_modificarcliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_telefono_modificarcliente.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_telefono_modificarcliente.ForeColor = System.Drawing.Color.Black;
-            this.txt_telefono_modificarcliente.Location = new System.Drawing.Point(25, 27);
-            this.txt_telefono_modificarcliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_telefono_modificarcliente.Name = "txt_telefono_modificarcliente";
-            this.txt_telefono_modificarcliente.Size = new System.Drawing.Size(232, 24);
-            this.txt_telefono_modificarcliente.TabIndex = 6;
-            this.txt_telefono_modificarcliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefono_modificarcliente_KeyPress);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label4.Location = new System.Drawing.Point(3, -5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 28);
-            this.label4.TabIndex = 61;
-            this.label4.Text = "Telefono:";
-            // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.lbl_id_proveedor);
-            this.panel12.Controls.Add(this.label2);
-            this.panel12.Controls.Add(this.label8);
-            this.panel12.Controls.Add(this.txt_nombre_modificarcliente);
-            this.panel12.Location = new System.Drawing.Point(306, 271);
-            this.panel12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(626, 81);
-            this.panel12.TabIndex = 76;
-            // 
-            // lbl_id_proveedor
-            // 
-            this.lbl_id_proveedor.AutoSize = true;
-            this.lbl_id_proveedor.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lbl_id_proveedor.ForeColor = System.Drawing.Color.White;
-            this.lbl_id_proveedor.Location = new System.Drawing.Point(354, -59);
-            this.lbl_id_proveedor.Name = "lbl_id_proveedor";
-            this.lbl_id_proveedor.Size = new System.Drawing.Size(137, 23);
-            this.lbl_id_proveedor.TabIndex = 89;
-            this.lbl_id_proveedor.Text = "idproveedor";
-            this.lbl_id_proveedor.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label2.Location = new System.Drawing.Point(5, -5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 28);
-            this.label2.TabIndex = 65;
-            this.label2.Text = "Nombre:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label8.Location = new System.Drawing.Point(143, -59);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(103, 28);
-            this.label8.TabIndex = 88;
-            this.label8.Text = "Proveedor";
-            // 
-            // txt_nombre_modificarcliente
-            // 
-            this.txt_nombre_modificarcliente.BackColor = System.Drawing.Color.White;
-            this.txt_nombre_modificarcliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_nombre_modificarcliente.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_nombre_modificarcliente.ForeColor = System.Drawing.Color.Black;
-            this.txt_nombre_modificarcliente.Location = new System.Drawing.Point(25, 27);
-            this.txt_nombre_modificarcliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_nombre_modificarcliente.Name = "txt_nombre_modificarcliente";
-            this.txt_nombre_modificarcliente.Size = new System.Drawing.Size(578, 24);
-            this.txt_nombre_modificarcliente.TabIndex = 6;
-            this.txt_nombre_modificarcliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_modificarcliente_KeyPress);
-            // 
             // bx_cliente
             // 
             this.bx_cliente.BackColor = System.Drawing.Color.Navy;
@@ -442,7 +219,7 @@
             this.bx_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bx_cliente.ForeColor = System.Drawing.Color.White;
             this.bx_cliente.FormattingEnabled = true;
-            this.bx_cliente.Location = new System.Drawing.Point(506, 207);
+            this.bx_cliente.Location = new System.Drawing.Point(461, 175);
             this.bx_cliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bx_cliente.Name = "bx_cliente";
             this.bx_cliente.Size = new System.Drawing.Size(205, 28);
@@ -453,23 +230,28 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Navy;
+            this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.panel7);
+            this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.bx_cliente);
+            this.panel3.Controls.Add(this.panel10);
             this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.panel9);
             this.panel3.Controls.Add(this.panel_modificarcliente);
+            this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.lbl_idcliente);
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.panel6);
-            this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Controls.Add(this.lbl_idcliente);
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Controls.Add(this.panel12);
-            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Controls.Add(this.label13);
+            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.panel1);
+            this.panel3.Controls.Add(this.label14);
+            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Controls.Add(this.panel12);
+            this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -477,16 +259,93 @@
             this.panel3.Size = new System.Drawing.Size(955, 887);
             this.panel3.TabIndex = 88;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.label9.Location = new System.Drawing.Point(329, 693);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(104, 28);
+            this.label9.TabIndex = 94;
+            this.label9.Text = "Num Casa:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.label8.Location = new System.Drawing.Point(329, 601);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 28);
+            this.label8.TabIndex = 95;
+            this.label8.Text = "Calle:";
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.txt_numcasa);
+            this.panel10.Location = new System.Drawing.Point(325, 718);
+            this.panel10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(195, 55);
+            this.panel10.TabIndex = 98;
+            // 
+            // txt_numcasa
+            // 
+            this.txt_numcasa.BackColor = System.Drawing.Color.White;
+            this.txt_numcasa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_numcasa.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_numcasa.ForeColor = System.Drawing.Color.Black;
+            this.txt_numcasa.Location = new System.Drawing.Point(14, 9);
+            this.txt_numcasa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_numcasa.Name = "txt_numcasa";
+            this.txt_numcasa.Size = new System.Drawing.Size(130, 24);
+            this.txt_numcasa.TabIndex = 91;
+            this.txt_numcasa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_numcasa_KeyPress_1);
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label10.Location = new System.Drawing.Point(435, 156);
+            this.label10.Location = new System.Drawing.Point(339, 175);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(72, 28);
             this.label10.TabIndex = 78;
             this.label10.Text = "Cliente";
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.txt_calle);
+            this.panel9.Location = new System.Drawing.Point(325, 626);
+            this.panel9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(595, 55);
+            this.panel9.TabIndex = 99;
+            // 
+            // txt_calle
+            // 
+            this.txt_calle.BackColor = System.Drawing.Color.White;
+            this.txt_calle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_calle.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_calle.ForeColor = System.Drawing.Color.Black;
+            this.txt_calle.Location = new System.Drawing.Point(19, 17);
+            this.txt_calle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_calle.Name = "txt_calle";
+            this.txt_calle.Size = new System.Drawing.Size(550, 24);
+            this.txt_calle.TabIndex = 90;
+            this.txt_calle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_calle_KeyPress_1);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.label7.Location = new System.Drawing.Point(329, 517);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(83, 28);
+            this.label7.TabIndex = 89;
+            this.label7.Text = "Colonia:";
             // 
             // label12
             // 
@@ -500,17 +359,73 @@
             this.label12.Text = "id";
             this.label12.Visible = false;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.txt_colonia);
+            this.panel6.Location = new System.Drawing.Point(325, 542);
+            this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(595, 55);
+            this.panel6.TabIndex = 92;
+            // 
+            // txt_colonia
+            // 
+            this.txt_colonia.BackColor = System.Drawing.Color.White;
+            this.txt_colonia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_colonia.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_colonia.ForeColor = System.Drawing.Color.Black;
+            this.txt_colonia.Location = new System.Drawing.Point(19, 15);
+            this.txt_colonia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_colonia.Name = "txt_colonia";
+            this.txt_colonia.Size = new System.Drawing.Size(582, 24);
+            this.txt_colonia.TabIndex = 89;
+            this.txt_colonia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_colonia_KeyPress_1);
+            // 
             // lbl_idcliente
             // 
             this.lbl_idcliente.AutoSize = true;
             this.lbl_idcliente.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_idcliente.ForeColor = System.Drawing.Color.White;
-            this.lbl_idcliente.Location = new System.Drawing.Point(681, 156);
+            this.lbl_idcliente.Location = new System.Drawing.Point(743, 96);
             this.lbl_idcliente.Name = "lbl_idcliente";
             this.lbl_idcliente.Size = new System.Drawing.Size(99, 23);
             this.lbl_idcliente.TabIndex = 79;
             this.lbl_idcliente.Text = "idcliente";
             this.lbl_idcliente.Visible = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.txt_apellidopaterno);
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Location = new System.Drawing.Point(322, 350);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(268, 81);
+            this.panel4.TabIndex = 96;
+            // 
+            // txt_apellidopaterno
+            // 
+            this.txt_apellidopaterno.BackColor = System.Drawing.Color.White;
+            this.txt_apellidopaterno.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_apellidopaterno.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_apellidopaterno.ForeColor = System.Drawing.Color.Black;
+            this.txt_apellidopaterno.Location = new System.Drawing.Point(19, 32);
+            this.txt_apellidopaterno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_apellidopaterno.Name = "txt_apellidopaterno";
+            this.txt_apellidopaterno.Size = new System.Drawing.Size(233, 24);
+            this.txt_apellidopaterno.TabIndex = 6;
+            this.txt_apellidopaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellidopaterno_KeyPress);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.label5.Location = new System.Drawing.Point(3, -5);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(163, 28);
+            this.label5.TabIndex = 61;
+            this.label5.Text = "Apellido Paterno:";
             // 
             // label13
             // 
@@ -524,6 +439,74 @@
             this.label13.Text = "perfil:";
             this.label13.Visible = false;
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.txt_apellidomaterno);
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Location = new System.Drawing.Point(616, 350);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(301, 81);
+            this.panel5.TabIndex = 97;
+            // 
+            // txt_apellidomaterno
+            // 
+            this.txt_apellidomaterno.BackColor = System.Drawing.Color.White;
+            this.txt_apellidomaterno.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_apellidomaterno.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_apellidomaterno.ForeColor = System.Drawing.Color.Black;
+            this.txt_apellidomaterno.Location = new System.Drawing.Point(25, 32);
+            this.txt_apellidomaterno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_apellidomaterno.Name = "txt_apellidomaterno";
+            this.txt_apellidomaterno.Size = new System.Drawing.Size(273, 24);
+            this.txt_apellidomaterno.TabIndex = 6;
+            this.txt_apellidomaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellidomaterno_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.label6.Location = new System.Drawing.Point(0, -5);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(170, 28);
+            this.label6.TabIndex = 61;
+            this.label6.Text = "Apellido Materno:";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txt_correo);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Location = new System.Drawing.Point(616, 445);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(304, 81);
+            this.panel1.TabIndex = 91;
+            // 
+            // txt_correo
+            // 
+            this.txt_correo.BackColor = System.Drawing.Color.White;
+            this.txt_correo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_correo.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_correo.ForeColor = System.Drawing.Color.Black;
+            this.txt_correo.Location = new System.Drawing.Point(22, 27);
+            this.txt_correo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_correo.Name = "txt_correo";
+            this.txt_correo.Size = new System.Drawing.Size(276, 24);
+            this.txt_correo.TabIndex = 6;
+            this.txt_correo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_correo_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.label3.Location = new System.Drawing.Point(3, -5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 28);
+            this.label3.TabIndex = 59;
+            this.label3.Text = "Correo:";
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -535,6 +518,40 @@
             this.label14.TabIndex = 59;
             this.label14.Text = "Cliente:";
             this.label14.Visible = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.txt_telefono);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Location = new System.Drawing.Point(325, 445);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(268, 81);
+            this.panel2.TabIndex = 93;
+            // 
+            // txt_telefono
+            // 
+            this.txt_telefono.BackColor = System.Drawing.Color.White;
+            this.txt_telefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_telefono.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_telefono.ForeColor = System.Drawing.Color.Black;
+            this.txt_telefono.Location = new System.Drawing.Point(19, 27);
+            this.txt_telefono.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_telefono.Name = "txt_telefono";
+            this.txt_telefono.Size = new System.Drawing.Size(236, 24);
+            this.txt_telefono.TabIndex = 6;
+            this.txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefono_KeyPress);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.label4.Location = new System.Drawing.Point(3, -5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(92, 28);
+            this.label4.TabIndex = 61;
+            this.label4.Text = "Telefono:";
             // 
             // pictureBox2
             // 
@@ -548,6 +565,40 @@
             this.pictureBox2.TabIndex = 56;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.label2);
+            this.panel12.Controls.Add(this.txt_nombre);
+            this.panel12.Location = new System.Drawing.Point(317, 255);
+            this.panel12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(626, 81);
+            this.panel12.TabIndex = 90;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.label2.Location = new System.Drawing.Point(5, -5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 28);
+            this.label2.TabIndex = 65;
+            this.label2.Text = "Nombre:";
+            // 
+            // txt_nombre
+            // 
+            this.txt_nombre.BackColor = System.Drawing.Color.White;
+            this.txt_nombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_nombre.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_nombre.ForeColor = System.Drawing.Color.Black;
+            this.txt_nombre.Location = new System.Drawing.Point(19, 27);
+            this.txt_nombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Size = new System.Drawing.Size(578, 24);
+            this.txt_nombre.TabIndex = 6;
+            this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
             // 
             // pictureBox7
             // 
@@ -670,25 +721,29 @@
             this.Text = "modificar_cliente";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.modificar_cliente_FormClosing);
             this.Load += new System.EventHandler(this.modificar_cliente_Load);
+            this.panel_modificarcliente.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel_modificarcliente.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -702,16 +757,6 @@
         }
 
         #endregion
-
-        private Panel panel6;
-        private TextBox txt_direccion_modificarcliente;
-        private Label label7;
-        private Panel panel4;
-        private TextBox txt_apellidopaterno_modificarcliente;
-        private Label label5;
-        private Panel panel5;
-        private TextBox txt_apellidomaterno_modificarcliente;
-        private Label label6;
         private Panel panel_modificarcliente;
         private Button btn_modificar_cliente;
         private PictureBox btn_regresar;
@@ -720,17 +765,6 @@
         public Label txt_usuario;
         private PictureBox pictureBox1;
         public Label lbl_perfil;
-        private Panel panel1;
-        private TextBox txt_correo_modificarcliente;
-        private Label label3;
-        private Panel panel2;
-        private TextBox txt_telefono_modificarcliente;
-        private Label label4;
-        private Panel panel12;
-        private Label label2;
-        private TextBox txt_nombre_modificarcliente;
-        public Label lbl_id_proveedor;
-        private Label label8;
         private ComboBox bx_cliente;
         private Panel panel3;
         private PictureBox pictureBox4;
@@ -740,6 +774,30 @@
         public Label label13;
         public Label label14;
         private PictureBox pictureBox2;
+        private Label label9;
+        private Label label8;
+        private Panel panel10;
+        private Panel panel9;
+        private Label label7;
+        private Panel panel6;
+        private Panel panel4;
+        private TextBox txt_apellidopaterno;
+        private Label label5;
+        private Panel panel5;
+        private TextBox txt_apellidomaterno;
+        private Label label6;
+        private Panel panel1;
+        private TextBox txt_correo;
+        private Label label3;
+        private Panel panel2;
+        private TextBox txt_telefono;
+        private Label label4;
+        private Panel panel12;
+        private Label label2;
+        private TextBox txt_nombre;
+        private TextBox txt_numcasa;
+        private TextBox txt_calle;
+        private TextBox txt_colonia;
         private Panel panel7;
         private PictureBox pictureBox9;
         private PictureBox pictureBox8;

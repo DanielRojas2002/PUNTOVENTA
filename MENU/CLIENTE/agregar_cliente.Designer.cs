@@ -48,15 +48,21 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.txt_nombre_agregarcliente = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.txt_numcasa = new System.Windows.Forms.TextBox();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.txt_calle = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.txtx_direccion_agregarcliente = new System.Windows.Forms.TextBox();
+            this.txt_colonia = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txt_apellidopaterno_agregarcliente = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txt_apellidomaterno_agregarcliente = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -71,6 +77,8 @@
             this.panel1.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -99,10 +107,10 @@
             this.panel_agregarproveedor.BackColor = System.Drawing.Color.Navy;
             this.panel_agregarproveedor.Controls.Add(this.pictureBox4);
             this.panel_agregarproveedor.Controls.Add(this.btn_crear_cliente);
-            this.panel_agregarproveedor.Location = new System.Drawing.Point(488, 713);
+            this.panel_agregarproveedor.Location = new System.Drawing.Point(565, 683);
             this.panel_agregarproveedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel_agregarproveedor.Name = "panel_agregarproveedor";
-            this.panel_agregarproveedor.Size = new System.Drawing.Size(291, 57);
+            this.panel_agregarproveedor.Size = new System.Drawing.Size(382, 57);
             this.panel_agregarproveedor.TabIndex = 73;
             // 
             // pictureBox4
@@ -127,7 +135,7 @@
             this.btn_crear_cliente.Location = new System.Drawing.Point(83, 4);
             this.btn_crear_cliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_crear_cliente.Name = "btn_crear_cliente";
-            this.btn_crear_cliente.Size = new System.Drawing.Size(206, 53);
+            this.btn_crear_cliente.Size = new System.Drawing.Size(296, 53);
             this.btn_crear_cliente.TabIndex = 50;
             this.btn_crear_cliente.Text = "AGREGAR NUEVO CLIENTE";
             this.btn_crear_cliente.UseVisualStyleBackColor = false;
@@ -161,10 +169,10 @@
             // 
             this.panel2.Controls.Add(this.txt_telefono_agregarcliente);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(329, 472);
+            this.panel2.Location = new System.Drawing.Point(329, 389);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(208, 81);
+            this.panel2.Size = new System.Drawing.Size(305, 81);
             this.panel2.TabIndex = 72;
             // 
             // txt_telefono_agregarcliente
@@ -176,7 +184,7 @@
             this.txt_telefono_agregarcliente.Location = new System.Drawing.Point(25, 27);
             this.txt_telefono_agregarcliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_telefono_agregarcliente.Name = "txt_telefono_agregarcliente";
-            this.txt_telefono_agregarcliente.Size = new System.Drawing.Size(161, 24);
+            this.txt_telefono_agregarcliente.Size = new System.Drawing.Size(236, 24);
             this.txt_telefono_agregarcliente.TabIndex = 6;
             this.txt_telefono_agregarcliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_telefono);
             // 
@@ -207,10 +215,10 @@
             // 
             this.panel1.Controls.Add(this.txt_correo_agregarcliente);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(607, 472);
+            this.panel1.Location = new System.Drawing.Point(666, 389);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(318, 81);
+            this.panel1.Size = new System.Drawing.Size(281, 81);
             this.panel1.TabIndex = 71;
             // 
             // txt_correo_agregarcliente
@@ -222,7 +230,7 @@
             this.txt_correo_agregarcliente.Location = new System.Drawing.Point(22, 27);
             this.txt_correo_agregarcliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_correo_agregarcliente.Name = "txt_correo_agregarcliente";
-            this.txt_correo_agregarcliente.Size = new System.Drawing.Size(280, 24);
+            this.txt_correo_agregarcliente.Size = new System.Drawing.Size(236, 24);
             this.txt_correo_agregarcliente.TabIndex = 6;
             this.txt_correo_agregarcliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_Correo);
             // 
@@ -298,8 +306,11 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Navy;
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.panel10);
             this.panel3.Controls.Add(this.panel7);
-            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.panel9);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel4);
@@ -322,59 +333,113 @@
             this.panel3.TabIndex = 74;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // label6
+            // label9
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label6.Location = new System.Drawing.Point(632, 319);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(170, 28);
-            this.label6.TabIndex = 61;
-            this.label6.Text = "Apellido Materno:";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.label9.Location = new System.Drawing.Point(333, 658);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(104, 28);
+            this.label9.TabIndex = 73;
+            this.label9.Text = "Num Casa:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.label8.Location = new System.Drawing.Point(333, 566);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 28);
+            this.label8.TabIndex = 73;
+            this.label8.Text = "Calle:";
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.txt_numcasa);
+            this.panel10.Location = new System.Drawing.Point(329, 683);
+            this.panel10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(197, 55);
+            this.panel10.TabIndex = 74;
+            // 
+            // txt_numcasa
+            // 
+            this.txt_numcasa.BackColor = System.Drawing.Color.White;
+            this.txt_numcasa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_numcasa.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_numcasa.ForeColor = System.Drawing.Color.Black;
+            this.txt_numcasa.Location = new System.Drawing.Point(13, 17);
+            this.txt_numcasa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_numcasa.Name = "txt_numcasa";
+            this.txt_numcasa.Size = new System.Drawing.Size(130, 24);
+            this.txt_numcasa.TabIndex = 75;
+            this.txt_numcasa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_numcasa_KeyPress_1);
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.txt_calle);
+            this.panel9.Location = new System.Drawing.Point(329, 591);
+            this.panel9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(618, 55);
+            this.panel9.TabIndex = 74;
+            // 
+            // txt_calle
+            // 
+            this.txt_calle.BackColor = System.Drawing.Color.White;
+            this.txt_calle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_calle.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_calle.ForeColor = System.Drawing.Color.Black;
+            this.txt_calle.Location = new System.Drawing.Point(13, 19);
+            this.txt_calle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_calle.Name = "txt_calle";
+            this.txt_calle.Size = new System.Drawing.Size(582, 24);
+            this.txt_calle.TabIndex = 63;
+            this.txt_calle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_calle_KeyPress_1);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label7.Location = new System.Drawing.Point(333, 575);
+            this.label7.Location = new System.Drawing.Point(333, 482);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 28);
+            this.label7.Size = new System.Drawing.Size(83, 28);
             this.label7.TabIndex = 59;
-            this.label7.Text = "Dirección:";
+            this.label7.Text = "Colonia:";
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.txtx_direccion_agregarcliente);
-            this.panel6.Location = new System.Drawing.Point(329, 600);
+            this.panel6.Controls.Add(this.txt_colonia);
+            this.panel6.Location = new System.Drawing.Point(329, 507);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(595, 85);
+            this.panel6.Size = new System.Drawing.Size(618, 55);
             this.panel6.TabIndex = 72;
             // 
-            // txtx_direccion_agregarcliente
+            // txt_colonia
             // 
-            this.txtx_direccion_agregarcliente.BackColor = System.Drawing.Color.White;
-            this.txtx_direccion_agregarcliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtx_direccion_agregarcliente.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtx_direccion_agregarcliente.ForeColor = System.Drawing.Color.Black;
-            this.txtx_direccion_agregarcliente.Location = new System.Drawing.Point(17, 13);
-            this.txtx_direccion_agregarcliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtx_direccion_agregarcliente.Multiline = true;
-            this.txtx_direccion_agregarcliente.Name = "txtx_direccion_agregarcliente";
-            this.txtx_direccion_agregarcliente.Size = new System.Drawing.Size(554, 52);
-            this.txtx_direccion_agregarcliente.TabIndex = 6;
-            this.txtx_direccion_agregarcliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtx_direccion_agregarcliente_KeyPress);
+            this.txt_colonia.BackColor = System.Drawing.Color.White;
+            this.txt_colonia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_colonia.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_colonia.ForeColor = System.Drawing.Color.Black;
+            this.txt_colonia.Location = new System.Drawing.Point(13, 17);
+            this.txt_colonia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_colonia.Name = "txt_colonia";
+            this.txt_colonia.Size = new System.Drawing.Size(582, 24);
+            this.txt_colonia.TabIndex = 62;
+            this.txt_colonia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_colonia_KeyPress_1);
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.txt_apellidopaterno_agregarcliente);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(326, 328);
+            this.panel4.Location = new System.Drawing.Point(326, 294);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(270, 81);
+            this.panel4.Size = new System.Drawing.Size(305, 81);
             this.panel4.TabIndex = 73;
             // 
             // txt_apellidopaterno_agregarcliente
@@ -386,7 +451,7 @@
             this.txt_apellidopaterno_agregarcliente.Location = new System.Drawing.Point(19, 32);
             this.txt_apellidopaterno_agregarcliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_apellidopaterno_agregarcliente.Name = "txt_apellidopaterno_agregarcliente";
-            this.txt_apellidopaterno_agregarcliente.Size = new System.Drawing.Size(232, 24);
+            this.txt_apellidopaterno_agregarcliente.Size = new System.Drawing.Size(233, 24);
             this.txt_apellidopaterno_agregarcliente.TabIndex = 6;
             this.txt_apellidopaterno_agregarcliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_APaterno);
             // 
@@ -404,10 +469,11 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.txt_apellidomaterno_agregarcliente);
-            this.panel5.Location = new System.Drawing.Point(607, 328);
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Location = new System.Drawing.Point(666, 294);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(270, 81);
+            this.panel5.Size = new System.Drawing.Size(281, 81);
             this.panel5.TabIndex = 73;
             // 
             // txt_apellidomaterno_agregarcliente
@@ -419,9 +485,20 @@
             this.txt_apellidomaterno_agregarcliente.Location = new System.Drawing.Point(25, 32);
             this.txt_apellidomaterno_agregarcliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_apellidomaterno_agregarcliente.Name = "txt_apellidomaterno_agregarcliente";
-            this.txt_apellidomaterno_agregarcliente.Size = new System.Drawing.Size(232, 24);
+            this.txt_apellidomaterno_agregarcliente.Size = new System.Drawing.Size(233, 24);
             this.txt_apellidomaterno_agregarcliente.TabIndex = 6;
             this.txt_apellidomaterno_agregarcliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_AMaterno);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.label6.Location = new System.Drawing.Point(0, -5);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(170, 28);
+            this.label6.TabIndex = 61;
+            this.label6.Text = "Apellido Materno:";
             // 
             // pictureBox3
             // 
@@ -523,6 +600,10 @@
             this.panel12.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -566,8 +647,14 @@
         private TextBox txt_apellidomaterno_agregarcliente;
         private Label label6;
         private Panel panel6;
-        private TextBox txtx_direccion_agregarcliente;
         private Label label7;
+        private Label label9;
+        private Label label8;
+        private Panel panel10;
+        private Panel panel9;
+        private TextBox txt_colonia;
+        private TextBox txt_numcasa;
+        private TextBox txt_calle;
         private Panel panel7;
         private PictureBox pictureBox5;
         private PictureBox pictureBox6;
