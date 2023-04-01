@@ -97,15 +97,17 @@ namespace PUNTOVENTA.MENU.PROVEEDOR
         private void btn_agregar_proveedor_Click(object sender, EventArgs e)
         {
 
-            if (txt_correo_agregarproveedor.Text == "" )
+            if (txt_nombre_agregarproveedor.Text == "")
+            {
+                MessageBox.Show("Ingrese el nombre del proveedor ");
+            }
+
+            else if (txt_correo_agregarproveedor.Text == "" )
             {
 
                 MessageBox.Show("Ingrese el correo del proveedor");
             }
-            else if (txt_nombre_agregarproveedor.Text == "")
-            {
-                MessageBox.Show("Ingrese el nombre del proveedor ");
-            }
+           
             else if (txt_telefono_agregarproveedor.Text == "")
             {
                 MessageBox.Show("Ingrese el telefono del proveedor ");
@@ -132,7 +134,7 @@ namespace PUNTOVENTA.MENU.PROVEEDOR
                 if (control == "1")
                 {
 
-                    MessageBox.Show("Ya Existe un Proveedor con esas Nombre", "Error");
+                    MessageBox.Show("Ya Existe un Proveedor con ese Nombre", "Error");
                 }
 
                 else if (control == "2")
@@ -162,7 +164,7 @@ namespace PUNTOVENTA.MENU.PROVEEDOR
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            Application.Exit();
         }
 
         private void txt_nombre_agregarproveedor_KeyPress(object sender, KeyPressEventArgs e)
@@ -180,7 +182,23 @@ namespace PUNTOVENTA.MENU.PROVEEDOR
         private void txt_telefono_agregarproveedor_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
-                panel_agregarproveedor.Focus();
+                btn_crear_proveedor.Focus();
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_telefono_agregarproveedor_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

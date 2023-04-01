@@ -76,10 +76,10 @@
             // 
             this.btn_regresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_regresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_regresar.Image")));
-            this.btn_regresar.Location = new System.Drawing.Point(11, 64);
+            this.btn_regresar.Location = new System.Drawing.Point(51, 64);
             this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(42, 39);
+            this.btn_regresar.Size = new System.Drawing.Size(89, 39);
             this.btn_regresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_regresar.TabIndex = 39;
             this.btn_regresar.TabStop = false;
@@ -92,10 +92,10 @@
             this.bx_proveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bx_proveedor.ForeColor = System.Drawing.Color.White;
             this.bx_proveedor.FormattingEnabled = true;
-            this.bx_proveedor.Location = new System.Drawing.Point(399, 216);
+            this.bx_proveedor.Location = new System.Drawing.Point(387, 216);
             this.bx_proveedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bx_proveedor.Name = "bx_proveedor";
-            this.bx_proveedor.Size = new System.Drawing.Size(205, 28);
+            this.bx_proveedor.Size = new System.Drawing.Size(278, 28);
             this.bx_proveedor.TabIndex = 42;
             this.bx_proveedor.SelectedIndexChanged += new System.EventHandler(this.bx_proveedor_SelectedIndexChanged);
             this.bx_proveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bx_proveedor_KeyPress);
@@ -169,7 +169,7 @@
             this.lbl_id.AutoSize = true;
             this.lbl_id.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_id.ForeColor = System.Drawing.Color.White;
-            this.lbl_id.Location = new System.Drawing.Point(106, 64);
+            this.lbl_id.Location = new System.Drawing.Point(359, 64);
             this.lbl_id.Name = "lbl_id";
             this.lbl_id.Size = new System.Drawing.Size(30, 23);
             this.lbl_id.TabIndex = 43;

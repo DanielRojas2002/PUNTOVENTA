@@ -62,7 +62,7 @@
             this.lbl_perfil.BackColor = System.Drawing.Color.Navy;
             this.lbl_perfil.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_perfil.ForeColor = System.Drawing.Color.White;
-            this.lbl_perfil.Location = new System.Drawing.Point(199, 39);
+            this.lbl_perfil.Location = new System.Drawing.Point(135, 346);
             this.lbl_perfil.Name = "lbl_perfil";
             this.lbl_perfil.Size = new System.Drawing.Size(73, 23);
             this.lbl_perfil.TabIndex = 31;
@@ -75,7 +75,7 @@
             this.txt_usuario.BackColor = System.Drawing.Color.Navy;
             this.txt_usuario.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txt_usuario.ForeColor = System.Drawing.Color.White;
-            this.txt_usuario.Location = new System.Drawing.Point(291, 39);
+            this.txt_usuario.Location = new System.Drawing.Point(227, 346);
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(95, 23);
             this.txt_usuario.TabIndex = 30;
@@ -88,7 +88,7 @@
             this.lbl_id.BackColor = System.Drawing.Color.Navy;
             this.lbl_id.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_id.ForeColor = System.Drawing.Color.White;
-            this.lbl_id.Location = new System.Drawing.Point(110, 39);
+            this.lbl_id.Location = new System.Drawing.Point(46, 346);
             this.lbl_id.Name = "lbl_id";
             this.lbl_id.Size = new System.Drawing.Size(30, 23);
             this.lbl_id.TabIndex = 29;
@@ -100,10 +100,10 @@
             this.btn_regresar.BackColor = System.Drawing.Color.Navy;
             this.btn_regresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_regresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_regresar.Image")));
-            this.btn_regresar.Location = new System.Drawing.Point(27, 19);
+            this.btn_regresar.Location = new System.Drawing.Point(46, 19);
             this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(46, 44);
+            this.btn_regresar.Size = new System.Drawing.Size(300, 44);
             this.btn_regresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_regresar.TabIndex = 28;
             this.btn_regresar.TabStop = false;

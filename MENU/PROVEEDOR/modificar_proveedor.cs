@@ -170,15 +170,17 @@ namespace PUNTOVENTA.MENU.PROVEEDOR
         {
             if (bx_proveedor.Text!="")
             {
-                if (txt_correo_proveedor.Text == "")
+                if (txt_nombre_proveedor.Text == "")
+                {
+                    MessageBox.Show("Ingrese el nombre del proveedor ");
+                }
+
+                else if (txt_correo_proveedor.Text == "")
                 {
 
                     MessageBox.Show("Ingrese el correo del proveedor");
                 }
-                else if (txt_nombre_proveedor.Text == "")
-                {
-                    MessageBox.Show("Ingrese el nombre del proveedor ");
-                }
+               
                 else if (txt_telefono_proveedor.Text == "")
                 {
                     MessageBox.Show("Ingrese el telefono del proveedor ");
@@ -270,7 +272,19 @@ namespace PUNTOVENTA.MENU.PROVEEDOR
         private void txt_telefono_proveedor_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
-                panel_modificar_proveedor.Focus();
+                btn_modificar.Focus();
+
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

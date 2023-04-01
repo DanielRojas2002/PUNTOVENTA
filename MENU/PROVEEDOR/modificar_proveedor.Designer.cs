@@ -127,10 +127,10 @@
             this.bx_proveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bx_proveedor.ForeColor = System.Drawing.Color.White;
             this.bx_proveedor.FormattingEnabled = true;
-            this.bx_proveedor.Location = new System.Drawing.Point(405, 177);
+            this.bx_proveedor.Location = new System.Drawing.Point(394, 177);
             this.bx_proveedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bx_proveedor.Name = "bx_proveedor";
-            this.bx_proveedor.Size = new System.Drawing.Size(205, 28);
+            this.bx_proveedor.Size = new System.Drawing.Size(232, 28);
             this.bx_proveedor.TabIndex = 57;
             this.bx_proveedor.SelectedIndexChanged += new System.EventHandler(this.bx_proveedor_SelectedIndexChanged);
             this.bx_proveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bx_proveedor_KeyPress);
@@ -139,10 +139,10 @@
             // 
             this.panel_modificar_proveedor.Controls.Add(this.pictureBox4);
             this.panel_modificar_proveedor.Controls.Add(this.btn_modificar);
-            this.panel_modificar_proveedor.Location = new System.Drawing.Point(350, 567);
+            this.panel_modificar_proveedor.Location = new System.Drawing.Point(332, 489);
             this.panel_modificar_proveedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel_modificar_proveedor.Name = "panel_modificar_proveedor";
-            this.panel_modificar_proveedor.Size = new System.Drawing.Size(289, 61);
+            this.panel_modificar_proveedor.Size = new System.Drawing.Size(307, 61);
             this.panel_modificar_proveedor.TabIndex = 56;
             // 
             // pictureBox4
@@ -167,7 +167,7 @@
             this.btn_modificar.Location = new System.Drawing.Point(69, 4);
             this.btn_modificar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_modificar.Name = "btn_modificar";
-            this.btn_modificar.Size = new System.Drawing.Size(221, 53);
+            this.btn_modificar.Size = new System.Drawing.Size(235, 53);
             this.btn_modificar.TabIndex = 0;
             this.btn_modificar.Text = "MODIFICAR PROVEEDOR";
             this.btn_modificar.UseVisualStyleBackColor = false;
@@ -190,7 +190,7 @@
             this.txt_usuario.AutoSize = true;
             this.txt_usuario.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txt_usuario.ForeColor = System.Drawing.Color.White;
-            this.txt_usuario.Location = new System.Drawing.Point(171, 55);
+            this.txt_usuario.Location = new System.Drawing.Point(241, 65);
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(123, 23);
             this.txt_usuario.TabIndex = 54;
@@ -202,7 +202,7 @@
             this.lbl_id.AutoSize = true;
             this.lbl_id.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_id.ForeColor = System.Drawing.Color.White;
-            this.lbl_id.Location = new System.Drawing.Point(90, 56);
+            this.lbl_id.Location = new System.Drawing.Point(580, 55);
             this.lbl_id.Name = "lbl_id";
             this.lbl_id.Size = new System.Drawing.Size(30, 23);
             this.lbl_id.TabIndex = 53;
@@ -214,7 +214,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cooper Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(138, 77);
+            this.label1.Location = new System.Drawing.Point(122, 88);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(464, 39);
             this.label1.TabIndex = 52;
@@ -227,7 +227,7 @@
             this.btn_regresar.Location = new System.Drawing.Point(14, 51);
             this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(46, 44);
+            this.btn_regresar.Size = new System.Drawing.Size(102, 44);
             this.btn_regresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_regresar.TabIndex = 51;
             this.btn_regresar.TabStop = false;
@@ -253,7 +253,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(693, 652);
+            this.panel8.Size = new System.Drawing.Size(693, 571);
             this.panel8.TabIndex = 63;
             this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             // 
@@ -262,7 +262,7 @@
             this.lbl_id_proveedor.AutoSize = true;
             this.lbl_id_proveedor.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_id_proveedor.ForeColor = System.Drawing.Color.White;
-            this.lbl_id_proveedor.Location = new System.Drawing.Point(554, 131);
+            this.lbl_id_proveedor.Location = new System.Drawing.Point(489, 136);
             this.lbl_id_proveedor.Name = "lbl_id_proveedor";
             this.lbl_id_proveedor.Size = new System.Drawing.Size(137, 23);
             this.lbl_id_proveedor.TabIndex = 77;
@@ -273,7 +273,7 @@
             // 
             this.panel2.Controls.Add(this.txt_telefono_proveedor);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(369, 460);
+            this.panel2.Location = new System.Drawing.Point(369, 390);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(270, 81);
@@ -308,7 +308,7 @@
             // 
             this.panel1.Controls.Add(this.txt_correo_proveedor);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(369, 349);
+            this.panel1.Location = new System.Drawing.Point(369, 301);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(270, 81);
@@ -343,7 +343,7 @@
             // 
             this.panel12.Controls.Add(this.txt_nombre_proveedor);
             this.panel12.Controls.Add(this.label5);
-            this.panel12.Location = new System.Drawing.Point(369, 244);
+            this.panel12.Location = new System.Drawing.Point(369, 223);
             this.panel12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(270, 81);
@@ -368,7 +368,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label5.Location = new System.Drawing.Point(13, -5);
+            this.label5.Location = new System.Drawing.Point(3, -5);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 28);
             this.label5.TabIndex = 64;
@@ -573,7 +573,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(693, 652);
+            this.ClientSize = new System.Drawing.Size(693, 571);
             this.Controls.Add(this.lblperfil);
             this.Controls.Add(this.panel8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(agregar_proveedor));
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.btn_crear_categoria = new System.Windows.Forms.Button();
+            this.btn_crear_proveedor = new System.Windows.Forms.Button();
             this.panel_agregarproveedor = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.txt_nombre_agregarproveedor = new System.Windows.Forms.TextBox();
@@ -76,29 +76,29 @@
             this.pictureBox4.TabIndex = 52;
             this.pictureBox4.TabStop = false;
             // 
-            // btn_crear_categoria
+            // btn_crear_proveedor
             // 
-            this.btn_crear_categoria.BackColor = System.Drawing.Color.Navy;
-            this.btn_crear_categoria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_crear_categoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_crear_categoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_crear_categoria.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_crear_categoria.ForeColor = System.Drawing.Color.White;
-            this.btn_crear_categoria.Location = new System.Drawing.Point(83, 4);
-            this.btn_crear_categoria.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_crear_categoria.Name = "btn_crear_categoria";
-            this.btn_crear_categoria.Size = new System.Drawing.Size(206, 53);
-            this.btn_crear_categoria.TabIndex = 50;
-            this.btn_crear_categoria.Text = "AGREGAR NUEVO PROVEEDOR";
-            this.btn_crear_categoria.UseVisualStyleBackColor = false;
-            this.btn_crear_categoria.Click += new System.EventHandler(this.btn_agregar_proveedor_Click);
+            this.btn_crear_proveedor.BackColor = System.Drawing.Color.Navy;
+            this.btn_crear_proveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_crear_proveedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_crear_proveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_crear_proveedor.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_crear_proveedor.ForeColor = System.Drawing.Color.White;
+            this.btn_crear_proveedor.Location = new System.Drawing.Point(83, 4);
+            this.btn_crear_proveedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_crear_proveedor.Name = "btn_crear_proveedor";
+            this.btn_crear_proveedor.Size = new System.Drawing.Size(206, 53);
+            this.btn_crear_proveedor.TabIndex = 50;
+            this.btn_crear_proveedor.Text = "AGREGAR NUEVO PROVEEDOR";
+            this.btn_crear_proveedor.UseVisualStyleBackColor = false;
+            this.btn_crear_proveedor.Click += new System.EventHandler(this.btn_agregar_proveedor_Click);
             // 
             // panel_agregarproveedor
             // 
             this.panel_agregarproveedor.BackColor = System.Drawing.Color.Navy;
             this.panel_agregarproveedor.Controls.Add(this.pictureBox4);
-            this.panel_agregarproveedor.Controls.Add(this.btn_crear_categoria);
-            this.panel_agregarproveedor.Location = new System.Drawing.Point(323, 552);
+            this.panel_agregarproveedor.Controls.Add(this.btn_crear_proveedor);
+            this.panel_agregarproveedor.Location = new System.Drawing.Point(323, 464);
             this.panel_agregarproveedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel_agregarproveedor.Name = "panel_agregarproveedor";
             this.panel_agregarproveedor.Size = new System.Drawing.Size(291, 57);
@@ -107,7 +107,7 @@
             // panel12
             // 
             this.panel12.Controls.Add(this.txt_nombre_agregarproveedor);
-            this.panel12.Location = new System.Drawing.Point(313, 181);
+            this.panel12.Location = new System.Drawing.Point(346, 181);
             this.panel12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(270, 81);
@@ -131,7 +131,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label2.Location = new System.Drawing.Point(317, 164);
+            this.label2.Location = new System.Drawing.Point(346, 164);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 28);
             this.label2.TabIndex = 53;
@@ -165,7 +165,7 @@
             // 
             this.panel1.Controls.Add(this.txt_correo_agregarproveedor);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(317, 316);
+            this.panel1.Location = new System.Drawing.Point(346, 265);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(270, 81);
@@ -211,10 +211,10 @@
             // 
             this.btn_regresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_regresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_regresar.Image")));
-            this.btn_regresar.Location = new System.Drawing.Point(21, 71);
+            this.btn_regresar.Location = new System.Drawing.Point(12, 67);
             this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(49, 35);
+            this.btn_regresar.Size = new System.Drawing.Size(99, 35);
             this.btn_regresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_regresar.TabIndex = 51;
             this.btn_regresar.TabStop = false;
@@ -224,7 +224,7 @@
             // 
             this.panel2.Controls.Add(this.txt_telefono_agregarproveedor);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(320, 463);
+            this.panel2.Location = new System.Drawing.Point(346, 358);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(270, 81);
@@ -241,6 +241,7 @@
             this.txt_telefono_agregarproveedor.Name = "txt_telefono_agregarproveedor";
             this.txt_telefono_agregarproveedor.Size = new System.Drawing.Size(232, 24);
             this.txt_telefono_agregarproveedor.TabIndex = 6;
+            this.txt_telefono_agregarproveedor.TextChanged += new System.EventHandler(this.txt_telefono_agregarproveedor_TextChanged);
             this.txt_telefono_agregarproveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefono_agregarproveedor_KeyPress);
             // 
             // label4
@@ -260,7 +261,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Cooper Black", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(118, 104);
+            this.label1.Location = new System.Drawing.Point(76, 106);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(521, 46);
             this.label1.TabIndex = 58;
@@ -273,7 +274,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(32, 156);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(274, 453);
+            this.pictureBox1.Size = new System.Drawing.Size(274, 365);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 53;
             this.pictureBox1.TabStop = false;
@@ -297,7 +298,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(663, 628);
+            this.panel4.Size = new System.Drawing.Size(663, 547);
             this.panel4.TabIndex = 64;
             // 
             // panel3
@@ -353,7 +354,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(663, 628);
+            this.ClientSize = new System.Drawing.Size(663, 547);
             this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "agregar_proveedor";
@@ -381,7 +382,7 @@
 
         #endregion
         private PictureBox pictureBox4;
-        private Button btn_crear_categoria;
+        private Button btn_crear_proveedor;
         private Panel panel_agregarproveedor;
         private Panel panel12;
         private TextBox txt_nombre_agregarproveedor;
@@ -400,8 +401,8 @@
         private PictureBox pictureBox1;
         private Panel panel4;
         private Panel panel3;
-        private Panel panel5;
         private PictureBox pictureBox2;
+        private Panel panel5;
         private PictureBox pictureBox3;
     }
 }
