@@ -109,7 +109,7 @@ namespace PUNTOVENTA.CLASES
                 SqlParameter[] Parametros =
                 {
                     new SqlParameter("@Accion",3),
-                     new SqlParameter("@P_FechaVenta",Parametro.FechaVenta)
+                    new SqlParameter("@P_FechaVenta",Parametro.FechaVenta)
                 };
 
                 tabla = bdContext.funcionStored("spTicket", Parametros);
@@ -119,25 +119,18 @@ namespace PUNTOVENTA.CLASES
                     lista = (from DataRow fila in tabla.Rows
                              select new dgTicket
                              {
-                                 Id_Venta = Convert.ToInt16(fila["Id_Venta"].ToString()),
-                                 Id_Producto = Convert.ToString(fila["IdProducto"].ToString()),
+                                
+                                 Id_Producto = Convert.ToString(fila["Id_Producto"].ToString()),
                                 
                                  NombreProducto = Convert.ToString(fila["NombreProducto"].ToString()),
 
-                                 CantidadComprada = Convert.ToInt16(fila["CantidadProducto"].ToString()),
+                                 CantidadComprada = Convert.ToInt16(fila["CantidadVendida"].ToString()),
 
                                  PrecioComprado = float.Parse(fila["PrecioProducto"].ToString()),
-
-                                 SubTotal = float.Parse(fila["SubTotalProducto"].ToString()),
-                                 Usuario = Convert.ToString(fila["Usuario"].ToString()),
+                                 
+                                
 
                                  DescripcionTipoVenta = Convert.ToString(fila["DescripcionTipoVenta"].ToString()),
-
-
-
-
-
-
 
                              }
                    ).ToList();

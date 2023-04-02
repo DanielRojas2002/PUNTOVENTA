@@ -615,7 +615,19 @@ namespace PUNTOVENTA.MENU.CAJA
 
                 Caja(2);
 
-                TicketCaja();
+
+                var confirmResultticket = MessageBox.Show("Desea imprimit Ticket?",
+               "Ticket Caja",
+               MessageBoxButtons.YesNo);
+
+                if (confirmResultticket == DialogResult.Yes)
+                {
+                    TicketCaja();
+                }
+
+
+
+                   
 
             }
 
@@ -674,9 +686,10 @@ namespace PUNTOVENTA.MENU.CAJA
                 {
                     Ticket1.TextoCentro(d.NombreEmpresa.ToUpper().ToString());
                  
-                    Ticket1.TextoCentro("==================================");
-                    Ticket1.TextoIzquierda("Direccion: " + d.Direccion.ToUpper().ToString());
-                    Ticket1.TextoIzquierda("Celular: " + d.Telefono.ToString());
+                  
+                    Ticket1.TextoIzquierda(d.Colonia.ToUpper().ToString());
+                    Ticket1.TextoIzquierda(d.Calle.ToUpper().ToString());
+                    Ticket1.TextoIzquierda( d.Telefono.ToString());
                     Ticket1.TextoIzquierda("");
                 }
 
@@ -685,7 +698,7 @@ namespace PUNTOVENTA.MENU.CAJA
                 Ticket1.TextoCentro("Los Precios ya contienen IVA");
                
 
-                Ticket1.TextoIzquierda(" -> Fecha de Caja: " + DateTime.Now.ToShortDateString());
+                Ticket1.TextoIzquierda("Fecha de Caja: " + DateTime.Now.ToShortDateString());
                 Ticket1.TextoIzquierda("");
             }
 
@@ -710,17 +723,21 @@ namespace PUNTOVENTA.MENU.CAJA
 
 
                 string concatenacion = "";
-                double subtotal, sub;
+                double subtotal, sub,cantidadcomprada,preciocomprado;
                 foreach (dgTicket d in listaProductosVenta)
                 {
-                    sub = double.Parse(d.SubTotal.ToString());
+                    preciocomprado = double.Parse(d.PrecioComprado.ToString());
+
+                    cantidadcomprada = Convert.ToInt16(d.CantidadComprada.ToString());
+
+                    sub = preciocomprado*cantidadcomprada;
 
                     subtotal = (double)Math.Round(sub, 2);
 
 
                     concatenacion = "(" + d.Id_Producto.ToString() + ")" + " " + d.NombreProducto.ToString();
                     Ticket1.TextoIzquierda(" ");
-                    Ticket1.TextoIzquierda("Num Venta: "+d.Id_Venta.ToString() +" "+d.DescripcionTipoVenta.ToString() + " " + d.Usuario.ToString());
+                    Ticket1.TextoIzquierda(d.DescripcionTipoVenta.ToString() );
                     Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
                     clsventas.CreaRecibo.LineasGuion();
                 }
@@ -742,7 +759,7 @@ namespace PUNTOVENTA.MENU.CAJA
 
 
 
-                
+
                 double subtotal, sub;
                 foreach (dgTicket d in listaProductosVenta2)
                 {
@@ -751,9 +768,9 @@ namespace PUNTOVENTA.MENU.CAJA
                     subtotal = (double)Math.Round(sub, 2);
 
 
-                    
+
                     Ticket1.TextoIzquierda(" ");
-                    Ticket1.TextoIzquierda("Num Venta: "+d.Id_Venta.ToString() + " " + d.DescripcionTipoVenta.ToString() + " " + d.Usuario.ToString());
+                    Ticket1.TextoIzquierda("Num Venta: " + d.Id_Venta.ToString() + " " + d.DescripcionTipoVenta.ToString() + " " + d.Usuario.ToString());
                     Ticket1.TextoIzquierda("Cliente: " + " " + d.Nombre.ToString() + " " + d.Apellido_Paterno.ToString() + " " + d.Apellido_Materno.ToString());
                     Ticket1.AgregaArticulo("", 0, 0, double.Parse(subtotal.ToString()));
                     clsventas.CreaRecibo.LineasGuion();
@@ -784,7 +801,7 @@ namespace PUNTOVENTA.MENU.CAJA
 
             
             Ticket1.ImprimirTiket(impresora);
-            MessageBox.Show("Ticket Genrado Satisfactoriamente");
+            MessageBox.Show("Ticket Generado Satisfactoriamente");
 
             RegresarVentana();
         }
