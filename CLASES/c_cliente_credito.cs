@@ -225,7 +225,11 @@ namespace PUNTOVENTA.CLASES
                                  Apellido_Paterno = Convert.ToString(fila["Apellido_Paterno"].ToString()),
 
                                  Apellido_Materno = Convert.ToString(fila["Apellido_Materno"].ToString()),
-                                 Direccion = Convert.ToString(fila["Direccion"].ToString()),
+                                 Estado = Convert.ToString(fila["Estado"].ToString()),
+                                 Municipio = Convert.ToString(fila["Municipio"].ToString()),
+                                 Colonia = Convert.ToString(fila["Colonia"].ToString()),
+                                 Calle = Convert.ToString(fila["Calle"].ToString()),
+                                 NumCasa = Convert.ToString(fila["NumCasa"].ToString()),
                                  Correo = Convert.ToString(fila["Correo"].ToString()),
                                  Telefono = Convert.ToString(fila["Telefono"].ToString()),
 
