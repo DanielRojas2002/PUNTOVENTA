@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -130,147 +131,318 @@ namespace PUNTOVENTA.MENU.REPORTES
             dataGridView_p_credito.Rows.Clear();
             _dineroventas = 0;
 
-
-            txtFechai.Text = FechaInicio.Value.ToString("dd/MM/yyyy");
-            txtFechaf.Text = fechafinal.Value.ToString("dd/MM/yyyy");
-
-            dgReportes parametro = new dgReportes
+            try
             {
-                FechaInicio = Convert.ToDateTime(txtFechai.Text),
-                FechaFinal = Convert.ToDateTime(txtFechaf.Text)
-            };
 
 
 
 
-            List<dgReportes> lista = c_reportes.LeerReporte(1, parametro);
+                txtFechai.Text = FechaInicio.Value.ToString("dd/MM/yyyy");
+                txtFechaf.Text = fechafinal.Value.ToString("dd/MM/yyyy");
 
 
-            if (lista.Count > 0)
 
-            {
-                string fechaventa;
-                float subtotal;
-                foreach (dgReportes d in lista)
+                dgReportes parametro = new dgReportes
                 {
-                    subtotal = float.Parse(d.SubTotalProducto.ToString());
-
-                    subtotal = (float)Math.Round(subtotal, 2);
-
-                    fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
-                    dataGridView_ventas.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
-                         d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), fechaventa, d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
+                    FechaInicio = Convert.ToDateTime(txtFechai.Text),
+                    FechaFinal = Convert.ToDateTime(txtFechaf.Text)
+                };
 
 
-                    _dineroventas = _dineroventas + float.Parse(d.SubTotalProducto.ToString());
+
+
+                List<dgReportes> lista = c_reportes.LeerReporte(1, parametro);
+
+
+                if (lista.Count > 0)
+
+                {
+                    string fechaventa;
+                    float subtotal;
+                    foreach (dgReportes d in lista)
+                    {
+                        subtotal = float.Parse(d.SubTotalProducto.ToString());
+
+                        subtotal = (float)Math.Round(subtotal, 2);
+
+                        fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
+                        dataGridView_ventas.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
+                             d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), fechaventa, d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
+
+
+                        _dineroventas = _dineroventas + float.Parse(d.SubTotalProducto.ToString());
+                    }
+
+
                 }
 
-
-            }
-
-            else
-            {
-
-
-
-            }
-
-            dgReportes parametro2 = new dgReportes
-            {
-                FechaInicio = Convert.ToDateTime(txtFechai.Text),
-                FechaFinal = Convert.ToDateTime(txtFechaf.Text)
-            };
-
-
-
-
-            List<dgReportes> lista2 = c_reportes.LeerReporte(6, parametro2);
-
-
-            if (lista2.Count > 0)
-
-            {
-                string fechaventa;
-                float subtotal ;
-
-                foreach (dgReportes d in lista2)
+                else
                 {
-
-
-
-                    subtotal = float.Parse(d.SubTotalProducto.ToString());
-
-                    subtotal = (float)Math.Round(subtotal, 2);
-
-                    
-
-                    fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
-
-
-                    dataGridView_p_credito.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
-                         d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), Convert.ToString("-"), fechaventa,"", d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
 
 
 
                 }
 
+                dgReportes parametro2 = new dgReportes
+                {
+                    FechaInicio = Convert.ToDateTime(txtFechai.Text),
+                    FechaFinal = Convert.ToDateTime(txtFechaf.Text)
+                };
 
 
+
+
+                List<dgReportes> lista2 = c_reportes.LeerReporte(6, parametro2);
+
+
+                if (lista2.Count > 0)
+
+                {
+                    string fechaventa;
+                    float subtotal;
+
+                    foreach (dgReportes d in lista2)
+                    {
+
+
+
+                        subtotal = float.Parse(d.SubTotalProducto.ToString());
+
+                        subtotal = (float)Math.Round(subtotal, 2);
+
+
+
+                        fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
+
+
+                        dataGridView_p_credito.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
+                             d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), Convert.ToString("-"), fechaventa, "", d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
+
+
+
+                    }
+
+
+
+                }
+
+             
+
+
+                dgReportes parametro3 = new dgReportes
+                {
+                    FechaInicio = Convert.ToDateTime(txtFechai.Text),
+                    FechaFinal = Convert.ToDateTime(txtFechaf.Text)
+
+                };
+
+
+
+
+                List<dgReportes> lista3 = c_reportes.LeerReporte(8, parametro3);
+
+
+                if (lista3.Count > 0)
+
+                {
+                    string fechaventa;
+                    float subtotal, cantidadpagada;
+
+                    foreach (dgReportes d in lista3)
+                    {
+
+
+                        fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
+                        dataGridView_p_credito.Rows.Add(d.Id_Venta.ToString(), "-", "-",
+                           "-", "-", "-", Convert.ToString(d.CantidadPagada.ToString()), fechaventa, "-", "", "");
+
+                        _dineroventas = _dineroventas + float.Parse(d.CantidadPagada.ToString());
+
+                    }
+
+
+
+                }
+
+           
+
+                _dineroventas = (float)Math.Round(_dineroventas, 2);
+
+                lbl_cantidad_vendida.Text = Convert.ToString(_dineroventas);
             }
-
-            else
+            catch
             {
 
 
+                txtFechai.Text = FechaInicio.Value.ToString("");
+                txtFechaf.Text = fechafinal.Value.ToString("");
 
-            }
+                string fechadiferenteinicio = txtFechai.Text;
+                string[] words = fechadiferenteinicio.Split('/');
+                string dia, mes, ano;
 
-
-            dgReportes parametro3 = new dgReportes
-            {
-                FechaInicio = Convert.ToDateTime(txtFechai.Text),
-                FechaFinal = Convert.ToDateTime(txtFechaf.Text)
-
-            };
-
-
+                mes = words[0];
+                dia = words[1];
+                ano = words[2];
 
 
-            List<dgReportes> lista3 = c_reportes.LeerReporte(8, parametro3);
+                txtFechai.Text=dia+"/"+mes+"/"+ano;
 
 
-            if (lista3.Count > 0)
+                string fechadiferentefinal = txtFechai.Text;
+                string[] words2 = fechadiferentefinal.Split('/');
+                string dia2, mes2, ano2;
 
-            {
-                string fechaventa;
-                float subtotal, cantidadpagada;
+                mes2 = words2[0];
+                dia2 = words2[1];
+                ano2 = words2[2];
 
-                foreach (dgReportes d in lista3)
+
+                txtFechaf.Text = dia + "/" + mes + "/" + ano;
+
+             
+
+
+                dgReportes parametro = new dgReportes
+                {
+                    FechaInicio = Convert.ToDateTime(txtFechai.Text),
+                    FechaFinal = Convert.ToDateTime(txtFechaf.Text)
+                };
+
+
+
+
+                List<dgReportes> lista = c_reportes.LeerReporte(1, parametro);
+
+
+                if (lista.Count > 0)
+
+                {
+                    string fechaventa;
+                    float subtotal;
+                    foreach (dgReportes d in lista)
+                    {
+                        subtotal = float.Parse(d.SubTotalProducto.ToString());
+
+                        subtotal = (float)Math.Round(subtotal, 2);
+
+                        fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
+                        dataGridView_ventas.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
+                             d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), fechaventa, d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
+
+
+                        _dineroventas = _dineroventas + float.Parse(d.SubTotalProducto.ToString());
+                    }
+
+
+                }
+
+                else
                 {
 
 
-                    fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
-                    dataGridView_p_credito.Rows.Add(d.Id_Venta.ToString(), "-", "-",
-                       "-", "-", "-", Convert.ToString(d.CantidadPagada.ToString()), fechaventa,"-" ,"","");
 
-                    _dineroventas = _dineroventas + float.Parse(d.CantidadPagada.ToString());
+                }
+
+                dgReportes parametro2 = new dgReportes
+                {
+                    FechaInicio = Convert.ToDateTime(txtFechai.Text),
+                    FechaFinal = Convert.ToDateTime(txtFechaf.Text)
+                };
+
+
+
+
+                List<dgReportes> lista2 = c_reportes.LeerReporte(6, parametro2);
+
+
+                if (lista2.Count > 0)
+
+                {
+                    string fechaventa;
+                    float subtotal;
+
+                    foreach (dgReportes d in lista2)
+                    {
+
+
+
+                        subtotal = float.Parse(d.SubTotalProducto.ToString());
+
+                        subtotal = (float)Math.Round(subtotal, 2);
+
+
+
+                        fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
+
+
+                        dataGridView_p_credito.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
+                             d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), Convert.ToString("-"), fechaventa, "", d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
+
+
+
+                    }
+
+
+
+                }
+
+                else
+                {
+
+
 
                 }
 
 
+                dgReportes parametro3 = new dgReportes
+                {
+                    FechaInicio = Convert.ToDateTime(txtFechai.Text),
+                    FechaFinal = Convert.ToDateTime(txtFechaf.Text)
 
+                };
+
+
+
+
+                List<dgReportes> lista3 = c_reportes.LeerReporte(8, parametro3);
+
+
+                if (lista3.Count > 0)
+
+                {
+                    string fechaventa;
+                    float subtotal, cantidadpagada;
+
+                    foreach (dgReportes d in lista3)
+                    {
+
+
+                        fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
+                        dataGridView_p_credito.Rows.Add(d.Id_Venta.ToString(), "-", "-",
+                           "-", "-", "-", Convert.ToString(d.CantidadPagada.ToString()), fechaventa, "-", "", "");
+
+                        _dineroventas = _dineroventas + float.Parse(d.CantidadPagada.ToString());
+
+                    }
+
+
+
+                }
+
+                else
+                {
+
+
+
+                }
+
+                _dineroventas = (float)Math.Round(_dineroventas, 2);
+
+                lbl_cantidad_vendida.Text = Convert.ToString(_dineroventas);
             }
+           
 
-            else
-            {
-
-
-
-            }
-
-            _dineroventas = (float)Math.Round(_dineroventas, 2);
-
-            lbl_cantidad_vendida.Text = Convert.ToString(_dineroventas);
         }
         private void reporte_venta_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -279,7 +451,8 @@ namespace PUNTOVENTA.MENU.REPORTES
 
         private void FechaInicio_ValueChanged(object sender, EventArgs e)
         {
-           
+          
+          
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -553,11 +726,11 @@ namespace PUNTOVENTA.MENU.REPORTES
                
 
             dgReportes parametro3 = new dgReportes
-                {
-                    FechaInicio = Convert.ToDateTime(txtFechai.Text),
-                    FechaFinal = Convert.ToDateTime(txtFechaf.Text)
+            {
+                FechaInicio = Convert.ToDateTime(txtFechai.Text),
+                FechaFinal = Convert.ToDateTime(txtFechaf.Text)
 
-                };
+            };
 
 
 
@@ -617,6 +790,16 @@ namespace PUNTOVENTA.MENU.REPORTES
 
 
 
+
+        }
+
+        private void fechafinal_ValueChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void txtFechai_Click(object sender, EventArgs e)
+        {
 
         }
     }
