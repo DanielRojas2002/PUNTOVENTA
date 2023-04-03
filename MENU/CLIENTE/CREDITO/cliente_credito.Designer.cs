@@ -58,6 +58,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_idusuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -98,6 +99,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lbl_idusuario);
             this.panel2.Controls.Add(this.lbl_telefono);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.lbl_correo);
@@ -415,6 +417,18 @@
             this.panel1.Size = new System.Drawing.Size(1115, 39);
             this.panel1.TabIndex = 142;
             // 
+            // lbl_idusuario
+            // 
+            this.lbl_idusuario.AutoSize = true;
+            this.lbl_idusuario.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_idusuario.ForeColor = System.Drawing.Color.White;
+            this.lbl_idusuario.Location = new System.Drawing.Point(375, 280);
+            this.lbl_idusuario.Name = "lbl_idusuario";
+            this.lbl_idusuario.Size = new System.Drawing.Size(109, 23);
+            this.lbl_idusuario.TabIndex = 175;
+            this.lbl_idusuario.Text = "idusuario";
+            this.lbl_idusuario.Visible = false;
+            // 
             // cliente_credito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -481,5 +495,6 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox4;
         private Panel panel1;
+        private Label lbl_idusuario;
     }
 }

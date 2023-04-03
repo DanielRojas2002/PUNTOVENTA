@@ -28,6 +28,8 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
         public string _totalpagado;
         public string _faltaporpagar;
 
+        public string _idusuario;
+
 
 
 
@@ -60,6 +62,12 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
         {
             get { return _faltaporpagar; }
             set { _faltaporpagar = value; lbl_total_faltante.Text = value; }
+        }
+
+        public string Usuario
+        {
+            get { return _idusuario; }
+            set { _idusuario = value; lbl_idusuario.Text = value; }
         }
 
 
@@ -543,12 +551,33 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
 
 
 
+
+
                                                 Ticket1.TextoCentro("****** LIQUIDADO   ******");
                                             }
 
                                         }
 
 
+                                        dgUsuario parametrousuario = new dgUsuario
+                                        {
+
+                                            Id_Usuario = Convert.ToInt16(lbl_idusuario.Text)
+
+                                        };
+
+                                        List<dgUsuario> listausuariovendedor = c_usuario.LeerUsuario(2, parametrousuario);
+
+                                        if (listausuariovendedor.Count > 0)
+
+                                        {
+
+                                            foreach (dgUsuario d in listausuariovendedor)
+                                            {
+
+                                                Ticket1.TextoDerecha("Cajero:" + d.Usuario.ToString());
+                                            }
+                                        }
 
 
                                         if (listaticketinfo.Count > 0)
@@ -953,7 +982,25 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
                                         }
 
 
+                                        dgUsuario parametrousuario = new dgUsuario
+                                        {
 
+                                            Id_Usuario = Convert.ToInt16(lbl_idusuario.Text)
+
+                                        };
+
+                                        List<dgUsuario> listausuariovendedor = c_usuario.LeerUsuario(2, parametrousuario);
+
+                                        if (listausuariovendedor.Count > 0)
+
+                                        {
+
+                                            foreach (dgUsuario d in listausuariovendedor)
+                                            {
+
+                                                Ticket1.TextoDerecha("Cajero:" + d.Usuario.ToString());
+                                            }
+                                        }
 
 
 
@@ -1371,6 +1418,25 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
 
 
 
+                                    dgUsuario parametrousuario = new dgUsuario
+                                    {
+
+                                        Id_Usuario = Convert.ToInt16(lbl_idusuario.Text)
+
+                                    };
+
+                                    List<dgUsuario> listausuariovendedor = c_usuario.LeerUsuario(2, parametrousuario);
+
+                                    if (listausuariovendedor.Count > 0)
+
+                                    {
+
+                                        foreach (dgUsuario d in listausuariovendedor)
+                                        {
+
+                                            Ticket1.TextoDerecha("Cajero:" + d.Usuario.ToString());
+                                        }
+                                    }
 
 
 

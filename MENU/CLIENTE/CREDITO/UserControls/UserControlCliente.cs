@@ -32,6 +32,8 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
 
         public string _municipio_cliente;
 
+        public string _id_usuario;
+
 
 
 
@@ -84,6 +86,12 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
             set { _municipio_cliente = value; lalbl_municipio.Text = value; }
         }
 
+        public string Usuario
+        {
+            get { return _id_usuario; }
+            set { _id_usuario = value; lbl_idusuario.Text = value; }
+        }
+
 
 
         public void UserControlCliente_Load(object sender, EventArgs e)
@@ -95,7 +103,8 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
         {
             dgClienteCredito parametro = new dgClienteCredito
             {
-                Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text)
+                Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text),
+                Id_Usuario= Convert.ToInt16(lbl_idusuario.Text),
             };
 
             string control = "";

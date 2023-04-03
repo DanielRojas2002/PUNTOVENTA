@@ -55,7 +55,9 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                 int idcliente;
               
                 string nombre, ap, am, estado,municipio,colonia,calle,numcasa , tel, correo;
+                string idusuario;
 
+                idusuario = lbl_id.Text;
                
 
                 foreach (dgClienteCredito d in lista)
@@ -103,6 +105,8 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                     Clientes[contadorclientes].Telefono = tel;
 
                     Clientes[contadorclientes].Correo = correo;
+
+                    Clientes[contadorclientes].Usuario = idusuario;
 
 
 

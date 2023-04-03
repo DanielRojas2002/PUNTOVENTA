@@ -124,6 +124,8 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                     Creditos[contadorcreditos].FaltaPagar = Convert.ToString(cantidadfaltante);
 
 
+                    Creditos[contadorcreditos].Usuario = lbl_idusuario.Text;
+
 
 
 
@@ -186,6 +188,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                 foreach (dgClienteCredito d in lista)
                 {
                     lbl_id_cliente.Text=d.Id_Cliente.ToString();
+                    lbl_idusuario.Text=d.Id_Usuario.ToString();
                 }
 
 

@@ -27,8 +27,9 @@ namespace PUNTOVENTA.CLASES
                 SqlParameter[] parametros =
                 {
                     new SqlParameter("@Accion",4),
-                    new SqlParameter("@P_IdCliente",Parametro.Id_Cliente)
-                   
+                    new SqlParameter("@P_IdCliente",Parametro.Id_Cliente),
+                    new SqlParameter("@P_IdUsuario",Parametro.Id_Usuario)
+
 
 
                 };
@@ -263,7 +264,8 @@ namespace PUNTOVENTA.CLASES
                              select new dgClienteCredito
                              {
                                  Id_Cliente = Convert.ToInt16(fila["Id_Cliente"].ToString()),
-                                 
+                                 Id_Usuario = Convert.ToInt16(fila["Id_Usuario"].ToString()),
+
 
 
 

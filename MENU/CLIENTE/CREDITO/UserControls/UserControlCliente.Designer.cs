@@ -48,6 +48,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lalbl_municipio = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.lbl_idusuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.SuspendLayout();
             // 
@@ -264,11 +265,24 @@
             this.label8.TabIndex = 163;
             this.label8.Text = "Municipio:";
             // 
+            // lbl_idusuario
+            // 
+            this.lbl_idusuario.AutoSize = true;
+            this.lbl_idusuario.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_idusuario.ForeColor = System.Drawing.Color.White;
+            this.lbl_idusuario.Location = new System.Drawing.Point(664, 21);
+            this.lbl_idusuario.Name = "lbl_idusuario";
+            this.lbl_idusuario.Size = new System.Drawing.Size(103, 23);
+            this.lbl_idusuario.TabIndex = 165;
+            this.lbl_idusuario.Text = "IdCliente";
+            this.lbl_idusuario.Visible = false;
+            // 
             // UserControlCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
+            this.Controls.Add(this.lbl_idusuario);
             this.Controls.Add(this.lalbl_municipio);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lbl_estado);
@@ -318,5 +332,6 @@
         private Label label4;
         private Label lalbl_municipio;
         private Label label8;
+        private Label lbl_idusuario;
     }
 }
