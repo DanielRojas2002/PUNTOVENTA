@@ -1786,7 +1786,7 @@ namespace PUNTOVENTA.MENU.VENTA
                                         Ticket1.TextoIzquierda("Colonia:" + d.Colonia.ToUpper().ToString());
                                         Ticket1.TextoIzquierda("Calle:" + d.Calle.ToUpper().ToString());
                                         Ticket1.TextoIzquierda("NumCasa:" + d.NumCasa.ToUpper().ToString());
-
+                                        Ticket1.TextoIzquierda("");
                                     }
                                 }
 
@@ -1834,7 +1834,7 @@ namespace PUNTOVENTA.MENU.VENTA
                                 Ticket1.TextoIzquierda(" ");
 
                                 float debe = float.Parse(lbl_total.Text) - float.Parse(txt_paga_con.Text);
-                                Ticket1.AgregaTotales("Cantidad que falta por pagar: ", debe);
+                                Ticket1.AgregaTotales("Falta por pagar: ", debe);
 
 
                                 if (listaticketinfo.Count > 0)
