@@ -167,7 +167,7 @@ namespace PUNTOVENTA.MENU.REPORTES
             }
 
             this.Hide();
-            Inicio formulario = new Inicio();
+            menu_reportes formulario = new menu_reportes();
             formulario.lbl_id.Text = id;
             formulario.lbl_perfil.Text = Convert.ToString(retorno2);
             formulario.txt_usuario.Text = Convert.ToString(retorno);

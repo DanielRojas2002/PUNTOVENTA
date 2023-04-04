@@ -18,7 +18,7 @@ namespace Punto_de_Venta
         public Inicio()
         {
             InitializeComponent();
-            pnl_reportes.Visible = false;
+           
 
 
         }
@@ -51,15 +51,10 @@ namespace Punto_de_Venta
 
         private void btn_reportes_Click(object sender, EventArgs e)
         {
-            if (pnl_reportes.Visible == false)
-            {
-                pnl_reportes.Visible = true;
-            }
-
-            else
-            {
-                pnl_reportes.Visible = false;
-            }
+            this.Hide();
+            menu_reportes forms = new menu_reportes();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
 
 
 
@@ -67,12 +62,12 @@ namespace Punto_de_Venta
        
         private void pnl_izq_Paint(object sender, PaintEventArgs e)
         {
-            pnl_reportes.Visible = false;
+          
         }
 
         private void pnl_der_Paint(object sender, PaintEventArgs e)
         {
-            pnl_reportes.Visible = false;
+           
         }
 
         private void lbl_id_Click(object sender, EventArgs e)
@@ -160,7 +155,7 @@ namespace Punto_de_Venta
                 pnl_seguridad.Visible = true;
 
                 pnl_r.Visible = true;
-                pnl_reportes.Visible = true;
+                btn_reportes.Visible = true;
                 pnl_provedores.Visible = true;
 
 
@@ -174,7 +169,7 @@ namespace Punto_de_Venta
                 pnl_ventas.Visible = true;
                 pnl_seguridad.Visible = false;
                 pnl_r.Visible = false;
-                pnl_reportes.Visible = false;
+                btn_reportes.Visible = false;
                 pnl_provedores.Visible = false;
 
                 pnl_caja.Visible = true;
@@ -493,6 +488,11 @@ namespace Punto_de_Venta
             {
                 btn_seguridadf6();
             }
+
+        }
+
+        private void btn_devoluciones_Click(object sender, EventArgs e)
+        {
 
         }
     }
