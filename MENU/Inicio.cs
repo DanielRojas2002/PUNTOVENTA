@@ -3,6 +3,7 @@ using PUNTOVENTA.CLASES;
 using PUNTOVENTA.ENTIDAD;
 using PUNTOVENTA.MENU.CAJA;
 using PUNTOVENTA.MENU.CLIENTE;
+using PUNTOVENTA.MENU.DEVOLUCIONES;
 using PUNTOVENTA.MENU.PRODUCTO;
 using PUNTOVENTA.MENU.PROVEEDOR;
 using PUNTOVENTA.MENU.REPORTES;
@@ -493,7 +494,10 @@ namespace Punto_de_Venta
 
         private void btn_devoluciones_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            devoluciones forms = new devoluciones();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
         }
     }
 }
