@@ -39,7 +39,7 @@
             this.txt_num_regresar = new System.Windows.Forms.NumericUpDown();
             this.lbl_precio = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lbl_precio_actual = new System.Windows.Forms.Label();
+            this.lbl_producto = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_cantidad_actual = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -193,16 +193,16 @@
             this.label2.TabIndex = 107;
             this.label2.Text = "Precio:";
             // 
-            // lbl_precio_actual
+            // lbl_producto
             // 
-            this.lbl_precio_actual.AutoSize = true;
-            this.lbl_precio_actual.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_precio_actual.ForeColor = System.Drawing.Color.White;
-            this.lbl_precio_actual.Location = new System.Drawing.Point(187, 196);
-            this.lbl_precio_actual.Name = "lbl_precio_actual";
-            this.lbl_precio_actual.Size = new System.Drawing.Size(69, 25);
-            this.lbl_precio_actual.TabIndex = 108;
-            this.lbl_precio_actual.Text = "label10";
+            this.lbl_producto.AutoSize = true;
+            this.lbl_producto.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_producto.ForeColor = System.Drawing.Color.White;
+            this.lbl_producto.Location = new System.Drawing.Point(187, 196);
+            this.lbl_producto.Name = "lbl_producto";
+            this.lbl_producto.Size = new System.Drawing.Size(69, 25);
+            this.lbl_producto.TabIndex = 108;
+            this.lbl_producto.Text = "label10";
             // 
             // label5
             // 
@@ -264,11 +264,11 @@
             this.lbl_cantidad_regresar.AutoSize = true;
             this.lbl_cantidad_regresar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_cantidad_regresar.ForeColor = System.Drawing.Color.White;
-            this.lbl_cantidad_regresar.Location = new System.Drawing.Point(350, 345);
+            this.lbl_cantidad_regresar.Location = new System.Drawing.Point(369, 345);
             this.lbl_cantidad_regresar.Name = "lbl_cantidad_regresar";
-            this.lbl_cantidad_regresar.Size = new System.Drawing.Size(69, 25);
+            this.lbl_cantidad_regresar.Size = new System.Drawing.Size(22, 25);
             this.lbl_cantidad_regresar.TabIndex = 114;
-            this.lbl_cantidad_regresar.Text = "label10";
+            this.lbl_cantidad_regresar.Text = "0";
             // 
             // label11
             // 
@@ -484,7 +484,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.lbl_cantidad_actual);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.lbl_precio_actual);
+            this.Controls.Add(this.lbl_producto);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lbl_precio);
             this.Controls.Add(this.label2);
@@ -500,6 +500,8 @@
             this.Name = "devolucion_producto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "devolucion_producto";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.devolucion_producto_FormClosing);
+            this.Load += new System.EventHandler(this.devolucion_producto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -531,7 +533,7 @@
         private NumericUpDown txt_num_regresar;
         private Label lbl_precio;
         private Label label2;
-        private Label lbl_precio_actual;
+        private Label lbl_producto;
         private Label label5;
         private Label lbl_cantidad_actual;
         private Label label7;

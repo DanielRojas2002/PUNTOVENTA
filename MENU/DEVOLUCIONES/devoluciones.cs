@@ -1,6 +1,4 @@
-﻿using DocumentFormat.OpenXml.Office2010.Excel;
-using DocumentFormat.OpenXml.Spreadsheet;
-using DocumentFormat.OpenXml.Wordprocessing;
+﻿
 using Punto_de_Venta;
 using PUNTOVENTA.CLASES;
 using PUNTOVENTA.ENTIDAD;
@@ -211,9 +209,9 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
             int idventa = Convert.ToInt16(dataGridView_ventas.CurrentRow.Cells["Col_Id_Venta"].Value.ToString());
             int idproducto = Convert.ToInt16(dataGridView_ventas.CurrentRow.Cells["Col_IdProducto"].Value.ToString());
-           
 
 
+         
 
             var valorcheckbox = true;
             dataGridView_ventas.CurrentCell.Value = dataGridView_ventas.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValue.ToString() == "True" ? false : true;
@@ -224,7 +222,7 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
             if (valorcheckbox=true)
             {
-                AbrirVentanaDevolucion(idventa, idproducto);
+                AbrirVentanaDevolucion(idproducto, idventa);
 
 
 
@@ -238,6 +236,7 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
          
         }
+       
 
         private void AbrirVentanaDevolucion(int idproducto, int idventa)
         {
@@ -292,6 +291,8 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
             }
 
+          
+
             this.Hide();
             devolucion_producto formulario = new devolucion_producto();
             formulario.lbl_id.Text = id;
@@ -309,6 +310,11 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
         private void pictureBox7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void devoluciones_FormClosing(object sender, FormClosingEventArgs e)
+        {
+             System.Windows.Forms.Application.Exit();
         }
     }
 }

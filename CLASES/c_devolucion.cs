@@ -53,7 +53,41 @@ namespace PUNTOVENTA.CLASES
 
 
             }
-      
+
+            else if (tipo == 2)
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",2),
+                    new SqlParameter("@P_IdVenta",Parametro.Id_Venta),
+                    new SqlParameter("@P_IdProducto",Parametro.IdProducto)
+                };
+
+                tabla = bdContext.funcionStored("spDevoluciones", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgDevolucion
+                             {
+                                 Id_Venta = Convert.ToInt16(fila["Id_Venta"].ToString()),
+                                 IdProducto = Convert.ToInt16(fila["IdProducto"].ToString()),
+                                 NombreProducto = Convert.ToString(fila["NombreProducto"].ToString()),
+                                 CantidadProducto = Convert.ToInt16(fila["CantidadProducto"].ToString()),
+                                 PrecioProducto = float.Parse(fila["PrecioProducto"].ToString()),
+                                 SubTotalProducto = float.Parse(fila["SubTotalProducto"].ToString()),
+                                
+
+
+
+                             }
+                   ).ToList();
+                }
+
+
+            }
+
 
 
             return lista;

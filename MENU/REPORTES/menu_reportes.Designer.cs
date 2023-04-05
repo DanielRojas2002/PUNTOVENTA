@@ -436,6 +436,7 @@
             this.Name = "menu_reportes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "menu_reportes";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.menu_reportes_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();

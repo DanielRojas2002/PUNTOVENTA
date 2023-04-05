@@ -130,5 +130,10 @@ namespace PUNTOVENTA.MENU.REPORTES
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void menu_reportes_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

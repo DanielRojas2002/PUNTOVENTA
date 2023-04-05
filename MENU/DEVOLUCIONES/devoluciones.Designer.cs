@@ -477,6 +477,7 @@
             this.Name = "devoluciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "devoluciones";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.devoluciones_FormClosing);
             this.Load += new System.EventHandler(this.devoluciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ventas)).EndInit();
