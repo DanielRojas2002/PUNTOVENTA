@@ -135,5 +135,18 @@ namespace PUNTOVENTA.MENU.REPORTES
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void btn_r_caja_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            reporte_caja forms = new reporte_caja();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
+        }
+
+        private void menu_reportes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

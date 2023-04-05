@@ -132,7 +132,7 @@
             this.FechaInicio.Name = "FechaInicio";
             this.FechaInicio.Size = new System.Drawing.Size(239, 27);
             this.FechaInicio.TabIndex = 6;
-            this.FechaInicio.Value = new System.DateTime(2023, 4, 3, 0, 0, 0, 0);
+            this.FechaInicio.Value = new System.DateTime(2023, 4, 5, 0, 0, 0, 0);
             this.FechaInicio.ValueChanged += new System.EventHandler(this.FechaInicio_ValueChanged);
             // 
             // fechafinal

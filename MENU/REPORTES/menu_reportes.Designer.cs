@@ -369,6 +369,7 @@
             this.btn_r_caja.TabIndex = 66;
             this.btn_r_caja.Text = "CAJA";
             this.btn_r_caja.UseVisualStyleBackColor = false;
+            this.btn_r_caja.Click += new System.EventHandler(this.btn_r_caja_Click);
             // 
             // pictureBox9
             // 
@@ -437,6 +438,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "menu_reportes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.menu_reportes_FormClosing);
+            this.Load += new System.EventHandler(this.menu_reportes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
