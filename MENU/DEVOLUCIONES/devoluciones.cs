@@ -107,6 +107,7 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
         private void btn_ticket_Click(object sender, EventArgs e)
         {
+
             dataGridView_ventas.Rows.Clear();
             if (txt_ticket.Text != "")
             {
@@ -146,6 +147,7 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
 
                     }
+                    //CargaTotalDevolver();
                 }
 
                 else
@@ -197,7 +199,35 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
         private void devoluciones_Load(object sender, EventArgs e)
         {
+            
+        }
+        private void CargaTotalDevolver()
+        {
 
+            dgDevolucion parametro2 = new dgDevolucion
+            {
+                Id_Venta = Convert.ToInt16(txt_ticket.Text)
+
+            };
+
+
+
+            List<dgDevolucion> lista = c_devolucion.LeerDevolucion(4, parametro2);
+
+            float preciodevolver = 0;
+
+            if (lista.Count > 0)
+
+            {
+                
+                foreach (dgDevolucion d in lista)
+                {
+                    preciodevolver = preciodevolver + float.Parse( d.SubTotalProducto.ToString());
+                   
+                }
+                lbl_dinero_a_devolver.Text = Convert.ToString(preciodevolver);
+
+            }
         }
 
         private void dataGridView_ventas_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -315,6 +345,11 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
         private void devoluciones_FormClosing(object sender, FormClosingEventArgs e)
         {
              System.Windows.Forms.Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

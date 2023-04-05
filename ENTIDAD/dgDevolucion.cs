@@ -12,9 +12,15 @@ namespace PUNTOVENTA.ENTIDAD
         public int? Id_Venta { get; set; }
         public int? IdProducto { get; set; }
 
+        public int? IdUsuario { get; set; }
+
         public int? IdEntrada { get; set; }
 
+        public int? Cantidad { get; set; }
+
         public int? IdCategoria { get; set; }
+
+        public int? Stock { get; set; }
 
         public int? IdCliente { get; set; }
         public string? NombreProducto { get; set; }
@@ -28,6 +34,8 @@ namespace PUNTOVENTA.ENTIDAD
         public string? Apellido_Materno { get; set; }
 
         public float? Total { get; set; }
+
+        public float? CantidadDevolucion { get; set; }
 
         public string? DescripcionEstatus { get; set; }
         public string? DescripcionTipoVenta { get; set; }

@@ -170,6 +170,7 @@
             this.txt_num_regresar.Name = "txt_num_regresar";
             this.txt_num_regresar.Size = new System.Drawing.Size(148, 27);
             this.txt_num_regresar.TabIndex = 5;
+            this.txt_num_regresar.ValueChanged += new System.EventHandler(this.txt_num_regresar_ValueChanged);
             // 
             // lbl_precio
             // 
@@ -435,6 +436,7 @@
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 59;
             this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // pictureBox7
             // 
@@ -448,6 +450,7 @@
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 60;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // panel1
             // 

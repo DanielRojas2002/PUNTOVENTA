@@ -277,6 +277,7 @@
             this.label3.Size = new System.Drawing.Size(173, 28);
             this.label3.TabIndex = 105;
             this.label3.Text = "Dinero a Devolver:";
+            this.label3.Visible = false;
             // 
             // lbl_dinero_a_devolver
             // 
@@ -444,6 +445,7 @@
             this.button1.TabIndex = 107;
             this.button1.Text = "DEVOLVER TODOS";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox8
             // 

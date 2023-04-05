@@ -37,13 +37,6 @@
             this.Fechacaja = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView_caja = new System.Windows.Forms.DataGridView();
-            this.Col_IdCaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CantidadAbonada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CantidadVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CantidadRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CantidadTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_FechaCaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_DescripcionCaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_generar = new System.Windows.Forms.Button();
             this.btn_exportar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -56,6 +49,14 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Col_IdCaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_CantidadVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_CantidadAbonada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_CantidadDevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_CantidadRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_CantidadTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_FechaCaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_DescripcionCaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_caja)).BeginInit();
@@ -159,8 +160,9 @@
             this.dataGridView_caja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_caja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_IdCaja,
-            this.Col_CantidadAbonada,
             this.Col_CantidadVenta,
+            this.Col_CantidadAbonada,
+            this.Col_CantidadDevolucion,
             this.Col_CantidadRetirada,
             this.Col_CantidadTotal,
             this.Col_FechaCaja,
@@ -173,69 +175,6 @@
             this.dataGridView_caja.RowTemplate.Height = 25;
             this.dataGridView_caja.Size = new System.Drawing.Size(931, 147);
             this.dataGridView_caja.TabIndex = 114;
-            // 
-            // Col_IdCaja
-            // 
-            this.Col_IdCaja.Frozen = true;
-            this.Col_IdCaja.HeaderText = "Id_Caja";
-            this.Col_IdCaja.MinimumWidth = 20;
-            this.Col_IdCaja.Name = "Col_IdCaja";
-            this.Col_IdCaja.ReadOnly = true;
-            this.Col_IdCaja.Width = 125;
-            // 
-            // Col_CantidadAbonada
-            // 
-            this.Col_CantidadAbonada.Frozen = true;
-            this.Col_CantidadAbonada.HeaderText = "CantidadAbonada";
-            this.Col_CantidadAbonada.MinimumWidth = 6;
-            this.Col_CantidadAbonada.Name = "Col_CantidadAbonada";
-            this.Col_CantidadAbonada.ReadOnly = true;
-            this.Col_CantidadAbonada.Width = 140;
-            // 
-            // Col_CantidadVenta
-            // 
-            this.Col_CantidadVenta.Frozen = true;
-            this.Col_CantidadVenta.HeaderText = "CantidadVenta";
-            this.Col_CantidadVenta.MinimumWidth = 6;
-            this.Col_CantidadVenta.Name = "Col_CantidadVenta";
-            this.Col_CantidadVenta.ReadOnly = true;
-            this.Col_CantidadVenta.Width = 125;
-            // 
-            // Col_CantidadRetirada
-            // 
-            this.Col_CantidadRetirada.Frozen = true;
-            this.Col_CantidadRetirada.HeaderText = "CantidadRetirada";
-            this.Col_CantidadRetirada.MinimumWidth = 6;
-            this.Col_CantidadRetirada.Name = "Col_CantidadRetirada";
-            this.Col_CantidadRetirada.ReadOnly = true;
-            this.Col_CantidadRetirada.Width = 125;
-            // 
-            // Col_CantidadTotal
-            // 
-            this.Col_CantidadTotal.Frozen = true;
-            this.Col_CantidadTotal.HeaderText = "CantidadTotal";
-            this.Col_CantidadTotal.MinimumWidth = 6;
-            this.Col_CantidadTotal.Name = "Col_CantidadTotal";
-            this.Col_CantidadTotal.ReadOnly = true;
-            this.Col_CantidadTotal.Width = 125;
-            // 
-            // Col_FechaCaja
-            // 
-            this.Col_FechaCaja.Frozen = true;
-            this.Col_FechaCaja.HeaderText = "FechaCaja";
-            this.Col_FechaCaja.MinimumWidth = 6;
-            this.Col_FechaCaja.Name = "Col_FechaCaja";
-            this.Col_FechaCaja.ReadOnly = true;
-            this.Col_FechaCaja.Width = 125;
-            // 
-            // Col_DescripcionCaja
-            // 
-            this.Col_DescripcionCaja.Frozen = true;
-            this.Col_DescripcionCaja.HeaderText = "Descripcion";
-            this.Col_DescripcionCaja.MinimumWidth = 6;
-            this.Col_DescripcionCaja.Name = "Col_DescripcionCaja";
-            this.Col_DescripcionCaja.ReadOnly = true;
-            this.Col_DescripcionCaja.Width = 125;
             // 
             // btn_generar
             // 
@@ -398,6 +337,78 @@
             this.panel1.Size = new System.Drawing.Size(982, 39);
             this.panel1.TabIndex = 68;
             // 
+            // Col_IdCaja
+            // 
+            this.Col_IdCaja.Frozen = true;
+            this.Col_IdCaja.HeaderText = "Id_Caja";
+            this.Col_IdCaja.MinimumWidth = 20;
+            this.Col_IdCaja.Name = "Col_IdCaja";
+            this.Col_IdCaja.ReadOnly = true;
+            this.Col_IdCaja.Width = 125;
+            // 
+            // Col_CantidadVenta
+            // 
+            this.Col_CantidadVenta.Frozen = true;
+            this.Col_CantidadVenta.HeaderText = "Venta";
+            this.Col_CantidadVenta.MinimumWidth = 6;
+            this.Col_CantidadVenta.Name = "Col_CantidadVenta";
+            this.Col_CantidadVenta.ReadOnly = true;
+            this.Col_CantidadVenta.Width = 125;
+            // 
+            // Col_CantidadAbonada
+            // 
+            this.Col_CantidadAbonada.Frozen = true;
+            this.Col_CantidadAbonada.HeaderText = "Abonado";
+            this.Col_CantidadAbonada.MinimumWidth = 6;
+            this.Col_CantidadAbonada.Name = "Col_CantidadAbonada";
+            this.Col_CantidadAbonada.ReadOnly = true;
+            this.Col_CantidadAbonada.Width = 140;
+            // 
+            // Col_CantidadDevolucion
+            // 
+            this.Col_CantidadDevolucion.Frozen = true;
+            this.Col_CantidadDevolucion.HeaderText = "Devolucion";
+            this.Col_CantidadDevolucion.MinimumWidth = 6;
+            this.Col_CantidadDevolucion.Name = "Col_CantidadDevolucion";
+            this.Col_CantidadDevolucion.ReadOnly = true;
+            this.Col_CantidadDevolucion.Width = 125;
+            // 
+            // Col_CantidadRetirada
+            // 
+            this.Col_CantidadRetirada.Frozen = true;
+            this.Col_CantidadRetirada.HeaderText = "Retirado";
+            this.Col_CantidadRetirada.MinimumWidth = 6;
+            this.Col_CantidadRetirada.Name = "Col_CantidadRetirada";
+            this.Col_CantidadRetirada.ReadOnly = true;
+            this.Col_CantidadRetirada.Width = 125;
+            // 
+            // Col_CantidadTotal
+            // 
+            this.Col_CantidadTotal.Frozen = true;
+            this.Col_CantidadTotal.HeaderText = "CantidadTotal";
+            this.Col_CantidadTotal.MinimumWidth = 6;
+            this.Col_CantidadTotal.Name = "Col_CantidadTotal";
+            this.Col_CantidadTotal.ReadOnly = true;
+            this.Col_CantidadTotal.Width = 125;
+            // 
+            // Col_FechaCaja
+            // 
+            this.Col_FechaCaja.Frozen = true;
+            this.Col_FechaCaja.HeaderText = "FechaCaja";
+            this.Col_FechaCaja.MinimumWidth = 6;
+            this.Col_FechaCaja.Name = "Col_FechaCaja";
+            this.Col_FechaCaja.ReadOnly = true;
+            this.Col_FechaCaja.Width = 125;
+            // 
+            // Col_DescripcionCaja
+            // 
+            this.Col_DescripcionCaja.Frozen = true;
+            this.Col_DescripcionCaja.HeaderText = "Descripcion";
+            this.Col_DescripcionCaja.MinimumWidth = 6;
+            this.Col_DescripcionCaja.Name = "Col_DescripcionCaja";
+            this.Col_DescripcionCaja.ReadOnly = true;
+            this.Col_DescripcionCaja.Width = 125;
+            // 
             // reporte_caja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -450,13 +461,6 @@
         private DataGridView dataGridView_caja;
         private Button btn_generar;
         private Button btn_exportar;
-        private DataGridViewTextBoxColumn Col_IdCaja;
-        private DataGridViewTextBoxColumn Col_CantidadAbonada;
-        private DataGridViewTextBoxColumn Col_CantidadVenta;
-        private DataGridViewTextBoxColumn Col_CantidadRetirada;
-        private DataGridViewTextBoxColumn Col_CantidadTotal;
-        private DataGridViewTextBoxColumn Col_FechaCaja;
-        private DataGridViewTextBoxColumn Col_DescripcionCaja;
         private TableLayoutPanel tableLayoutPanel1;
         private PictureBox cerrarapp;
         private PictureBox btn_minimzar;
@@ -467,5 +471,13 @@
         private PictureBox pictureBox6;
         private PictureBox pictureBox5;
         private Panel panel1;
+        private DataGridViewTextBoxColumn Col_IdCaja;
+        private DataGridViewTextBoxColumn Col_CantidadVenta;
+        private DataGridViewTextBoxColumn Col_CantidadAbonada;
+        private DataGridViewTextBoxColumn Col_CantidadDevolucion;
+        private DataGridViewTextBoxColumn Col_CantidadRetirada;
+        private DataGridViewTextBoxColumn Col_CantidadTotal;
+        private DataGridViewTextBoxColumn Col_FechaCaja;
+        private DataGridViewTextBoxColumn Col_DescripcionCaja;
     }
 }

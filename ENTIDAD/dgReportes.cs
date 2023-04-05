@@ -18,13 +18,15 @@ namespace PUNTOVENTA.ENTIDAD
         public float? CantidadRetirada { get; set; }
         public float? CantidadTotal { get; set; }
         public string? DescripcionCaja { get; set; }
-       
 
 
 
+        public float? CantidadDevolucion { get; set; }
         public int? IdEntrada { get; set; }
 
         public int? IdCategoria { get; set; }
+
+        public int? IdDevolucion { get; set; }
 
         public int? IdCliente { get; set; }
         public string? NombreProducto { get; set; }

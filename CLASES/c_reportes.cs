@@ -114,12 +114,12 @@ namespace PUNTOVENTA.CLASES
                                  Nombre = Convert.ToString(fila["Nombre"].ToString()),
                                  Apellido_Paterno = Convert.ToString(fila["Apellido_Paterno"].ToString()),
                                  Apellido_Materno = Convert.ToString(fila["Apellido_Materno"].ToString()),
-                                
+
                                  Id_Venta = Convert.ToInt16(fila["Id_Venta"].ToString()),
                                  CantidadPagada = float.Parse(fila["CantidadPagada"].ToString()),
                                  Total = float.Parse(fila["Total"].ToString()),
 
-                                 DescripcionEstatus= Convert.ToString(fila["Descripcion"].ToString()),
+                                 DescripcionEstatus = Convert.ToString(fila["Descripcion"].ToString()),
 
                                  Usuario = Convert.ToString(fila["Usuario"].ToString()),
 
@@ -155,10 +155,49 @@ namespace PUNTOVENTA.CLASES
                                  CantidadVenta = float.Parse(fila["CantidadVenta"].ToString()),
                                  CantidadRetirada = float.Parse(fila["CantidadRetirada"].ToString()),
                                  CantidadTotal = float.Parse(fila["CantidadTotal"].ToString()),
+                                 CantidadDevolucion = float.Parse(fila["CantidadDevolucion"].ToString()),
                                  DescripcionCaja = Convert.ToString(fila["DescripcionCaja"].ToString()),
 
 
                                  FechaCaja = Convert.ToDateTime(fila["FechaCaja"].ToString())
+
+
+                             }
+                   ).ToList();
+                }
+
+            }
+
+            else if (tipo == 44)
+            {
+
+                SqlParameter[] Parametros =
+                {
+                new SqlParameter("@Accion",6),
+                new SqlParameter("@P_FechaInicio",Parametro.FechaInicio),
+
+                };
+
+                tabla = bdContext.funcionStored("spReportes", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgReportes
+                             {
+                                 IdDevolucion= Convert.ToInt16(fila["Id_Devolucion"].ToString()),
+
+                                 Id_Venta = Convert.ToInt16(fila["Id_Venta"].ToString()),
+                                 NombreProducto = Convert.ToString(fila["NombreProducto"].ToString()),
+
+                                 CantidadPagada = float.Parse(fila["Cantidad"].ToString()),
+
+                                 PrecioVenta = float.Parse(fila["Precio"].ToString()),
+
+                                 Usuario = Convert.ToString(fila["Usuario"].ToString()),
+                              
+
+                                 FechaInicio = Convert.ToDateTime(fila["FechaDevolucion"].ToString())
 
 
                              }

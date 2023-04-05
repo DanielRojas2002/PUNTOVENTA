@@ -84,8 +84,8 @@ namespace PUNTOVENTA.MENU.REPORTES
                        
 
                         fechacaja = d.FechaCaja.Value.ToString("dd/MM/yyyy");
-                        dataGridView_caja.Rows.Add(d.IdCaja.ToString(), d.CantidadAbonada.ToString(), d.CantidadVenta.ToString(),
-                             d.CantidadRetirada.ToString(), d.CantidadTotal.ToString(), fechacaja, d.DescripcionCaja.ToString());
+                        dataGridView_caja.Rows.Add(d.IdCaja.ToString(), d.CantidadVenta.ToString(), d.CantidadAbonada.ToString(),
+                             d.CantidadDevolucion.ToString(), d.CantidadRetirada.ToString(), d.CantidadTotal.ToString(), fechacaja, d.DescripcionCaja.ToString());
 
 
                         

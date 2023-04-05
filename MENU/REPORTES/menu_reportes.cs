@@ -46,7 +46,10 @@ namespace PUNTOVENTA.MENU.REPORTES
 
         private void btn_r_devoluciones_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            reporte_devoluciones forms = new reporte_devoluciones();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
         }
 
         private void btn_regresar_Click(object sender, EventArgs e)
