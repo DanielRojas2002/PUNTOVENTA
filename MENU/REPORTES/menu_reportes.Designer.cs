@@ -397,6 +397,7 @@
             this.btn_r_numventa.TabIndex = 68;
             this.btn_r_numventa.Text = "NUM VENTA";
             this.btn_r_numventa.UseVisualStyleBackColor = false;
+            this.btn_r_numventa.Click += new System.EventHandler(this.btn_r_numventa_Click);
             // 
             // pictureBox10
             // 

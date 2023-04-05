@@ -148,5 +148,13 @@ namespace PUNTOVENTA.MENU.REPORTES
         {
 
         }
+
+        private void btn_r_numventa_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            reporte_numventa forms = new reporte_numventa();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
+        }
     }
 }

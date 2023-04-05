@@ -56,6 +56,10 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pnl_izq = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.btn_devoluciones = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.btn_caja = new System.Windows.Forms.Button();
@@ -105,10 +109,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel23 = new System.Windows.Forms.Panel();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.btn_devoluciones = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimzar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrarapp)).BeginInit();
@@ -124,6 +124,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.pnl_izq.SuspendLayout();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.panel5.SuspendLayout();
@@ -156,8 +158,6 @@
             this.pnl_caja.SuspendLayout();
             this.panel23.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -515,6 +515,57 @@
             this.pnl_izq.Size = new System.Drawing.Size(339, 730);
             this.pnl_izq.TabIndex = 2;
             this.pnl_izq.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_izq_Paint);
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.panel9);
+            this.panel7.Controls.Add(this.btn_devoluciones);
+            this.panel7.Controls.Add(this.pictureBox4);
+            this.panel7.Location = new System.Drawing.Point(12, 417);
+            this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(304, 43);
+            this.panel7.TabIndex = 8;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel9.Location = new System.Drawing.Point(39, 0);
+            this.panel9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(17, 43);
+            this.panel9.TabIndex = 2;
+            // 
+            // btn_devoluciones
+            // 
+            this.btn_devoluciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_devoluciones.FlatAppearance.BorderSize = 0;
+            this.btn_devoluciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btn_devoluciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_devoluciones.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btn_devoluciones.ForeColor = System.Drawing.Color.White;
+            this.btn_devoluciones.Location = new System.Drawing.Point(55, 0);
+            this.btn_devoluciones.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_devoluciones.Name = "btn_devoluciones";
+            this.btn_devoluciones.Size = new System.Drawing.Size(246, 43);
+            this.btn_devoluciones.TabIndex = 0;
+            this.btn_devoluciones.Text = "DEVOLUCIONES";
+            this.btn_devoluciones.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btn_devoluciones.UseVisualStyleBackColor = true;
+            this.btn_devoluciones.Click += new System.EventHandler(this.btn_devoluciones_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(32, 43);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 1;
+            this.pictureBox4.TabStop = false;
             // 
             // panel4
             // 
@@ -1086,57 +1137,6 @@
             this.pictureBox17.TabIndex = 0;
             this.pictureBox17.TabStop = false;
             // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.panel9);
-            this.panel7.Controls.Add(this.btn_devoluciones);
-            this.panel7.Controls.Add(this.pictureBox4);
-            this.panel7.Location = new System.Drawing.Point(12, 417);
-            this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(304, 43);
-            this.panel7.TabIndex = 8;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel9.Location = new System.Drawing.Point(39, 0);
-            this.panel9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(17, 43);
-            this.panel9.TabIndex = 2;
-            // 
-            // btn_devoluciones
-            // 
-            this.btn_devoluciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_devoluciones.FlatAppearance.BorderSize = 0;
-            this.btn_devoluciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btn_devoluciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_devoluciones.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.btn_devoluciones.ForeColor = System.Drawing.Color.White;
-            this.btn_devoluciones.Location = new System.Drawing.Point(55, 0);
-            this.btn_devoluciones.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_devoluciones.Name = "btn_devoluciones";
-            this.btn_devoluciones.Size = new System.Drawing.Size(246, 43);
-            this.btn_devoluciones.TabIndex = 0;
-            this.btn_devoluciones.Text = "DEVOLUCIONES";
-            this.btn_devoluciones.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btn_devoluciones.UseVisualStyleBackColor = true;
-            this.btn_devoluciones.Click += new System.EventHandler(this.btn_devoluciones_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(32, 43);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 1;
-            this.pictureBox4.TabStop = false;
-            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1168,6 +1168,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.pnl_izq.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.panel5.ResumeLayout(false);
@@ -1201,8 +1203,6 @@
             this.pnl_caja.ResumeLayout(false);
             this.panel23.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }

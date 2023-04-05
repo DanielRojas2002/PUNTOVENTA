@@ -60,6 +60,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ventas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -73,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_regresar
@@ -440,7 +442,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(206, 53);
             this.button1.TabIndex = 107;
-            this.button1.Text = "VER PRODUCTOS";
+            this.button1.Text = "DEVOLVER TODOS";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // pictureBox8
@@ -454,12 +456,24 @@
             this.pictureBox8.TabIndex = 108;
             this.pictureBox8.TabStop = false;
             // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Location = new System.Drawing.Point(405, 141);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(272, 96);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 109;
+            this.pictureBox9.TabStop = false;
+            // 
             // devoluciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(1081, 576);
+            this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.lbl_dinero_a_devolver);
@@ -492,6 +506,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -530,5 +545,6 @@
         private DataGridViewCheckBoxColumn Col_Check;
         private Button button1;
         private PictureBox pictureBox8;
+        private PictureBox pictureBox9;
     }
 }
