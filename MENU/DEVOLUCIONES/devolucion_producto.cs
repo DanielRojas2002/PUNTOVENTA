@@ -95,8 +95,7 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
         private void CargarDatosProducto()
         {
-            MessageBox.Show(lbl_id_venta.Text);
-            MessageBox.Show(lbl_idProducto.Text);
+            
 
 
             dgDevolucion parametro3 = new dgDevolucion
