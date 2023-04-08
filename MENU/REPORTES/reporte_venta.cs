@@ -538,9 +538,8 @@ namespace PUNTOVENTA.MENU.REPORTES
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-         
-
+            try
+            {
                 dgReportes parametro = new dgReportes
                 {
                     FechaInicio = Convert.ToDateTime(txtFechai.Text),
@@ -596,14 +595,14 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                 ws.Cell("F6").Value = "SubTotal";
 
-               
+
 
 
                 ws.Cell("G6").Value = "FechaVenta";
 
                 ws.Cell("H4").Value = ":EFECTIO/TRANSFERENCIA";
 
-               
+
 
                 ws.Cell("H6").Value = "Tipo Venta";
 
@@ -629,7 +628,7 @@ namespace PUNTOVENTA.MENU.REPORTES
                         fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
 
 
-                        
+
 
                         contadorcolumnas = 1;
                         fechaentrada = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
@@ -648,11 +647,11 @@ namespace PUNTOVENTA.MENU.REPORTES
                         ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadProducto.ToString();
                         contadorcolumnas = contadorcolumnas + 1;
                         ws.Cell(contadorregistros, contadorcolumnas).Value = subtotal;
-                      
+
                         contadorcolumnas = contadorcolumnas + 1;
                         ws.Cell(contadorregistros, contadorcolumnas).Value = fechaventa;
                         contadorcolumnas = contadorcolumnas + 1;
-                        
+
                         ws.Cell(contadorregistros, contadorcolumnas).Value = d.DescripcionTipoVenta.ToString();
                         contadorcolumnas = contadorcolumnas + 1;
                         ws.Cell(contadorregistros, contadorcolumnas).Value = d.Usuario.ToString();
@@ -750,7 +749,7 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                         fechaentrada = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
 
-                       
+
 
                         contadorcolumnas = 1;
 
@@ -769,7 +768,7 @@ namespace PUNTOVENTA.MENU.REPORTES
                         ws.Cell(contadorregistros, contadorcolumnas).Value = "";
                         contadorcolumnas = contadorcolumnas + 1;
                         ws.Cell(contadorregistros, contadorcolumnas).Value = fechaentrada;
-                        
+
                         contadorcolumnas = contadorcolumnas + 1;
                         ws.Cell(contadorregistros, contadorcolumnas).Value = d.DescripcionTipoVenta.ToString();
                         contadorcolumnas = contadorcolumnas + 1;
@@ -789,14 +788,14 @@ namespace PUNTOVENTA.MENU.REPORTES
 
 
 
-               
 
-            dgReportes parametro3 = new dgReportes
-            {
-                FechaInicio = Convert.ToDateTime(txtFechai.Text),
-                FechaFinal = Convert.ToDateTime(txtFechaf.Text)
 
-            };
+                dgReportes parametro3 = new dgReportes
+                {
+                    FechaInicio = Convert.ToDateTime(txtFechai.Text),
+                    FechaFinal = Convert.ToDateTime(txtFechaf.Text)
+
+                };
 
 
 
@@ -812,15 +811,15 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                     foreach (dgReportes d in lista3)
                     {
-                        
+
 
                         fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
 
 
-                        
+
 
                         contadorcolumnas = 1;
-                        
+
 
                         ws.Cell(contadorregistros, contadorcolumnas).Value = d.Id_Venta.ToString();
 
@@ -833,7 +832,7 @@ namespace PUNTOVENTA.MENU.REPORTES
                         contadorcolumnas = 8;
                         ws.Cell(contadorregistros, contadorcolumnas).Value = fechaventa;
 
-                        
+
 
 
 
@@ -848,11 +847,151 @@ namespace PUNTOVENTA.MENU.REPORTES
                 }
 
 
+
+
+
+
+                contadorregistros = contadorregistros + 3;
+                contadorcolumnas = 1;
+
+
+                ws.Range(contadorregistros, contadorcolumnas, contadorregistros, contadorcolumnas + 7).Value = "----------------------------------------";
+                contadorregistros = contadorregistros + 1;
+
+                ws.Cell(contadorregistros, contadorcolumnas).Value = "Reporte de Devolucion";
+                contadorcolumnas = contadorcolumnas + 1;
+                ws.Cell(contadorregistros, contadorcolumnas + 1).Value = ":DEVOLUCIONES";
+                contadorregistros = contadorregistros + 2;
+
+                ws.Cell(contadorregistros, contadorcolumnas + 1).Value = "Cantidad Devolucion:" + lbl_devolucion.Text;
+                contadorregistros = contadorregistros + 2;
+
+                contadorcolumnas = 1;
+
+                ws.Cell(contadorregistros, contadorcolumnas).Value = "No.Devolucion";
+                contadorcolumnas = contadorcolumnas + 1;
+
+                ws.Cell(contadorregistros, contadorcolumnas).Value = "No.Venta";
+                contadorcolumnas = contadorcolumnas + 1;
+
+                ws.Cell(contadorregistros, contadorcolumnas).Value = "No.Producto";
+                contadorcolumnas = contadorcolumnas + 1;
+
+
+                ws.Cell(contadorregistros, contadorcolumnas).Value = "Nombre Producto";
+                contadorcolumnas = contadorcolumnas + 1;
+
+                ws.Cell(contadorregistros, contadorcolumnas).Value = "Precio";
+                contadorcolumnas = contadorcolumnas + 1;
+
+                ws.Cell(contadorregistros, contadorcolumnas).Value = "Cantidad";
+                contadorcolumnas = contadorcolumnas + 1;
+
+                ws.Cell(contadorregistros, contadorcolumnas).Value = "SubTotal";
+                contadorcolumnas = contadorcolumnas + 1;
+
+                ws.Cell(contadorregistros, contadorcolumnas).Value = "Usuario";
+                contadorcolumnas = contadorcolumnas + 1;
+
+
+                ws.Cell(contadorregistros, contadorcolumnas).Value = "FechaDevolucion";
+                contadorcolumnas = contadorcolumnas + 1;
+
+
+
+
+                contadorregistros = contadorregistros + 1;
+
+
+
+
+
+
+
+                dgReportes parametrodevoluciones = new dgReportes
+                {
+                    FechaInicio = Convert.ToDateTime(txtFechai.Text),
+                    FechaFinal = Convert.ToDateTime(txtFechaf.Text)
+                };
+
+
+
+
+                List<dgReportes> listadevoluciones = c_reportes.LeerReporte(9, parametrodevoluciones);
+
+
+
+
+
+                if (listadevoluciones.Count > 0)
+
+                {
+                    string fechadevolucion;
+                    float subtotal;
+                    foreach (dgReportes d in listadevoluciones)
+                    {
+                        subtotal = float.Parse(d.SubTotalProducto.ToString());
+
+                        subtotal = (float)Math.Round(subtotal, 2);
+
+                        fechadevolucion = d.FechaDevolucion.Value.ToString("dd/MM/yyyy");
+
+                        contadorcolumnas = 1;
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.Id_Devolucion.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.Id_Venta.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.IdProducto.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.NombreProducto.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.PrecioProducto.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadProducto.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = subtotal;
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.Usuario.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = Convert.ToString(fechadevolucion);
+
+
+
+
+                        contadorregistros = contadorregistros + 1;
+                    }
+
+
+                }
+
+                else
+                {
+
+
+
+                }
+
+
+
                 wb.SaveAs(ls_archivo_excel);
                 MessageBox.Show("Excel Reportado Satisfactoriamente en : " + ls_archivo_excel);
-            
-            
+            }
+            catch
+            {
 
+            }
+         
+
+                
 
 
 
