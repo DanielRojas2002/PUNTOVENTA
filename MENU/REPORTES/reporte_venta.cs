@@ -30,6 +30,8 @@ namespace PUNTOVENTA.MENU.REPORTES
         }
 
         public float _dineroventas { get; set; }
+        public float _dinerodevolucion { get; set; }
+
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -127,7 +129,7 @@ namespace PUNTOVENTA.MENU.REPORTES
 
         private void CargaDevoluiones()
         {
-
+            _dinerodevolucion = 0;
             txtFechai.Text = FechaInicio.Value.ToString("dd/MM/yyyy");
             txtFechaf.Text = fechafinal.Value.ToString("dd/MM/yyyy");
 
@@ -165,7 +167,7 @@ namespace PUNTOVENTA.MENU.REPORTES
                          d.CantidadProducto.ToString(), d.PrecioProducto.ToString(), Convert.ToString(subtotal), d.Usuario.ToString(), fechadevolucion);
 
 
-                    _dineroventas = _dineroventas - float.Parse(d.SubTotalProducto.ToString());
+                    _dinerodevolucion = _dinerodevolucion + subtotal;
                 }
 
 
@@ -180,15 +182,12 @@ namespace PUNTOVENTA.MENU.REPORTES
 
 
 
+            _dinerodevolucion = (float)Math.Round(_dinerodevolucion, 2);
+
+            lbl_devolucion.Text = Convert.ToString(_dinerodevolucion);
 
 
 
-
-
-
-            _dineroventas = (float)Math.Round(_dineroventas, 2);
-
-            lbl_cantidad_vendida.Text = Convert.ToString(_dineroventas);
         }
 
         private void CargarVentas()

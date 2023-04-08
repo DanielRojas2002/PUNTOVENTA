@@ -88,6 +88,8 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.lbl_devolucion = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_devoluciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ventas)).BeginInit();
@@ -108,7 +110,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Heavy", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(567, 365);
+            this.label1.Location = new System.Drawing.Point(618, 366);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(22, 24);
             this.label1.TabIndex = 3;
@@ -119,7 +121,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Franklin Gothic Heavy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(227, 316);
+            this.label2.Location = new System.Drawing.Point(278, 317);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(132, 25);
             this.label2.TabIndex = 4;
@@ -130,7 +132,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Franklin Gothic Heavy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(816, 303);
+            this.label3.Location = new System.Drawing.Point(867, 304);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 25);
             this.label3.TabIndex = 5;
@@ -139,7 +141,7 @@
             // 
             // FechaInicio
             // 
-            this.FechaInicio.Location = new System.Drawing.Point(170, 365);
+            this.FechaInicio.Location = new System.Drawing.Point(221, 366);
             this.FechaInicio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FechaInicio.Name = "FechaInicio";
             this.FechaInicio.Size = new System.Drawing.Size(239, 27);
@@ -149,7 +151,7 @@
             // 
             // fechafinal
             // 
-            this.fechafinal.Location = new System.Drawing.Point(742, 365);
+            this.fechafinal.Location = new System.Drawing.Point(793, 366);
             this.fechafinal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fechafinal.Name = "fechafinal";
             this.fechafinal.Size = new System.Drawing.Size(254, 27);
@@ -158,7 +160,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(170, 415);
+            this.button1.Location = new System.Drawing.Point(221, 416);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(826, 31);
@@ -169,10 +171,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(497, 871);
+            this.button2.Location = new System.Drawing.Point(29, 871);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(506, 31);
+            this.button2.Size = new System.Drawing.Size(1177, 31);
             this.button2.TabIndex = 9;
             this.button2.Text = "Exportar a Excel";
             this.button2.UseVisualStyleBackColor = true;
@@ -183,7 +185,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cooper Black", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(322, 76);
+            this.label4.Location = new System.Drawing.Point(373, 77);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(557, 50);
             this.label4.TabIndex = 10;
@@ -192,6 +194,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.Controls.Add(this.lbl_devolucion);
+            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.dataGridView_devoluciones);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.lbl_cantidad_vendida);
@@ -335,7 +339,7 @@
             this.lbl_cantidad_vendida.AutoSize = true;
             this.lbl_cantidad_vendida.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_cantidad_vendida.ForeColor = System.Drawing.Color.Chartreuse;
-            this.lbl_cantidad_vendida.Location = new System.Drawing.Point(903, 187);
+            this.lbl_cantidad_vendida.Location = new System.Drawing.Point(865, 183);
             this.lbl_cantidad_vendida.Name = "lbl_cantidad_vendida";
             this.lbl_cantidad_vendida.Size = new System.Drawing.Size(82, 28);
             this.lbl_cantidad_vendida.TabIndex = 115;
@@ -346,7 +350,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label6.Location = new System.Drawing.Point(831, 159);
+            this.label6.Location = new System.Drawing.Point(793, 155);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(172, 28);
             this.label6.TabIndex = 114;
@@ -368,7 +372,7 @@
             this.dataGridViewTextBoxColumn16,
             this.Col_Tipoventa,
             this.dataGridViewTextBoxColumn17});
-            this.dataGridView_ventas.Location = new System.Drawing.Point(127, 505);
+            this.dataGridView_ventas.Location = new System.Drawing.Point(170, 505);
             this.dataGridView_ventas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView_ventas.Name = "dataGridView_ventas";
             this.dataGridView_ventas.ReadOnly = true;
@@ -464,7 +468,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(29, 469);
+            this.label7.Location = new System.Drawing.Point(92, 469);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(369, 32);
             this.label7.TabIndex = 112;
@@ -603,7 +607,7 @@
             this.txtFechaf.AutoSize = true;
             this.txtFechaf.Font = new System.Drawing.Font("Franklin Gothic Heavy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtFechaf.ForeColor = System.Drawing.Color.White;
-            this.txtFechaf.Location = new System.Drawing.Point(778, 251);
+            this.txtFechaf.Location = new System.Drawing.Point(829, 252);
             this.txtFechaf.Name = "txtFechaf";
             this.txtFechaf.Size = new System.Drawing.Size(127, 25);
             this.txtFechaf.TabIndex = 69;
@@ -616,7 +620,7 @@
             this.txtFechai.AutoSize = true;
             this.txtFechai.Font = new System.Drawing.Font("Franklin Gothic Heavy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtFechai.ForeColor = System.Drawing.Color.White;
-            this.txtFechai.Location = new System.Drawing.Point(278, 251);
+            this.txtFechai.Location = new System.Drawing.Point(329, 252);
             this.txtFechai.Name = "txtFechai";
             this.txtFechai.Size = new System.Drawing.Size(132, 25);
             this.txtFechai.TabIndex = 68;
@@ -629,7 +633,7 @@
             this.lbl_id.AutoSize = true;
             this.lbl_id.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_id.ForeColor = System.Drawing.Color.White;
-            this.lbl_id.Location = new System.Drawing.Point(286, 173);
+            this.lbl_id.Location = new System.Drawing.Point(337, 174);
             this.lbl_id.Name = "lbl_id";
             this.lbl_id.Size = new System.Drawing.Size(30, 23);
             this.lbl_id.TabIndex = 67;
@@ -653,7 +657,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(448, 144);
+            this.pictureBox1.Location = new System.Drawing.Point(499, 145);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(274, 248);
@@ -766,6 +770,28 @@
             this.panel7.TabIndex = 75;
             this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
+            // lbl_devolucion
+            // 
+            this.lbl_devolucion.AutoSize = true;
+            this.lbl_devolucion.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_devolucion.ForeColor = System.Drawing.Color.Red;
+            this.lbl_devolucion.Location = new System.Drawing.Point(1063, 183);
+            this.lbl_devolucion.Name = "lbl_devolucion";
+            this.lbl_devolucion.Size = new System.Drawing.Size(109, 28);
+            this.lbl_devolucion.TabIndex = 119;
+            this.lbl_devolucion.Text = "devolucion";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(1022, 155);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(199, 28);
+            this.label9.TabIndex = 118;
+            this.label9.Text = "Cantidad Devolucion:";
+            // 
             // reporte_venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -858,5 +884,7 @@
         private DataGridViewTextBoxColumn FechaUltimoPago;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private Label lbl_devolucion;
+        private Label label9;
     }
 }
