@@ -128,19 +128,25 @@ namespace PUNTOVENTA.MENU.REPORTES
         private void CargaDevoluiones()
         {
 
+            txtFechai.Text = FechaInicio.Value.ToString("dd/MM/yyyy");
+            txtFechaf.Text = fechafinal.Value.ToString("dd/MM/yyyy");
+
             dataGridView_devoluciones.Rows.Clear();
 
 
-            dgCaja parametro = new dgCaja
+            dgReportes parametro = new dgReportes
             {
-                FechaCaja = DateTime.Now
-
+                FechaInicio = Convert.ToDateTime(txtFechai.Text),
+                FechaFinal = Convert.ToDateTime(txtFechaf.Text)
             };
 
 
 
 
-            List<dgCaja> lista = c_caja.LeerCaja(9, parametro);
+            List<dgReportes> lista = c_reportes.LeerReporte(9, parametro);
+
+
+           
 
 
             if (lista.Count > 0)
@@ -148,7 +154,7 @@ namespace PUNTOVENTA.MENU.REPORTES
             {
                 string fechadevolucion;
                 float subtotal;
-                foreach (dgCaja d in lista)
+                foreach (dgReportes d in lista)
                 {
                     subtotal = float.Parse(d.SubTotalProducto.ToString());
 
@@ -333,7 +339,7 @@ namespace PUNTOVENTA.MENU.REPORTES
             }
             catch
             {
-
+                // 04/08/2023
 
                 txtFechai.Text = FechaInicio.Value.ToString("");
                 txtFechaf.Text = fechafinal.Value.ToString("");
@@ -860,6 +866,11 @@ namespace PUNTOVENTA.MENU.REPORTES
         }
 
         private void txtFechai_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
         {
 
         }

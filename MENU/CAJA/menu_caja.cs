@@ -201,7 +201,7 @@ namespace PUNTOVENTA.MENU.CAJA
                          d.CantidadProducto.ToString(), d.PrecioProducto.ToString(), Convert.ToString(subtotal), d.Usuario.ToString(), fechadevolucion);
 
 
-                    _dineroventas = _dineroventas - float.Parse(d.SubTotalProducto.ToString());
+                   
 
                     cantidaddevuelta = cantidaddevuelta + float.Parse(d.SubTotalProducto.ToString());
                 }
@@ -265,7 +265,7 @@ namespace PUNTOVENTA.MENU.CAJA
             else
             {
 
-                MessageBox.Show("No a abonado en Caja");
+               // MessageBox.Show("No a abonado en Caja");
 
             }
         }
@@ -305,7 +305,7 @@ namespace PUNTOVENTA.MENU.CAJA
             else
             {
 
-                MessageBox.Show("No a Retirado Nada");
+                //MessageBox.Show("No a Retirado Nada");
 
             }
         }
@@ -346,7 +346,7 @@ namespace PUNTOVENTA.MENU.CAJA
             else
             {
 
-                MessageBox.Show("No a abonado en Caja");
+                //MessageBox.Show("No a abonado en Caja");
 
             }
         }
@@ -437,7 +437,7 @@ namespace PUNTOVENTA.MENU.CAJA
             else
             {
 
-                MessageBox.Show("No a abonado en Caja");
+               // MessageBox.Show("No a abonado en Caja");
 
             }
         }
@@ -476,7 +476,7 @@ namespace PUNTOVENTA.MENU.CAJA
             retirado = float.Parse(lbl_retirado.Text);
             devolucion = float.Parse(lbl_devolucion.Text);
 
-            cajatotal = cantidad_vendida + abonado - retirado;
+            cajatotal = cantidad_vendida + abonado - retirado-devolucion;
 
          
 
@@ -589,21 +589,18 @@ namespace PUNTOVENTA.MENU.CAJA
         private void menu_caja_Load(object sender, EventArgs e)
         {
 
-            try
-            {
-                InsertCaja();
-            }
+            
+               
+            
 
-            catch
-            {
-
-            }
+           
 
             try
             {
                
                 CargarVentas();
-               
+                InsertCaja();
+
 
 
                 CargaAbono();

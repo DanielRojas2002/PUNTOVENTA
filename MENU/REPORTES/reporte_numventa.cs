@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +18,9 @@ namespace PUNTOVENTA.MENU.REPORTES
         public reporte_numventa()
         {
             InitializeComponent();
+
+            label10.Text = "";
+            dataGridView_devoluciones.Visible = false;
         }
 
         public float _dineroventas = 0;
@@ -25,6 +29,7 @@ namespace PUNTOVENTA.MENU.REPORTES
         private void btn_ticket_Click(object sender, EventArgs e)
         {
             dataGridView_numventa.Rows.Clear();
+            _dineroventas = 0;
             if (txt_ticket.Text != "")
             {
                 dgReportes parametro = new dgReportes
@@ -38,7 +43,7 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                 List<dgReportes> lista = c_reportes.LeerReporte(5, parametro);
 
-
+                string escredito = "";
                 if (lista.Count > 0)
 
                 {
@@ -60,9 +65,21 @@ namespace PUNTOVENTA.MENU.REPORTES
 
 
                         _dineroventas = _dineroventas + subtotal;
+                        escredito = d.DescripcionTipoVenta.ToString();
 
                     }
-                    CargaDevoluiones();
+                    if (escredito=="Credito")
+                    {
+                        label10.Text = "";
+                        dataGridView_devoluciones.Visible = false;
+                    }
+                    else
+                    {
+                        label10.Text = "DEVOLUCIONES";
+                        dataGridView_devoluciones.Visible = true;
+                        CargaDevoluiones();
+                    }
+                   
                 }
 
                 else
@@ -219,7 +236,7 @@ namespace PUNTOVENTA.MENU.REPORTES
 
             else
             {
-
+                lbl_cantidad_vendida.Text = Convert.ToString(_dineroventas);
 
 
             }

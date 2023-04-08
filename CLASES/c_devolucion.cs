@@ -142,7 +142,8 @@ namespace PUNTOVENTA.CLASES
                 SqlParameter[] Parametros =
                 {
                     new SqlParameter("@Accion",11),
-                    new SqlParameter("@P_IdVenta",Parametro.Id_Venta)
+                    new SqlParameter("@P_IdVenta",Parametro.Id_Venta),
+                    new SqlParameter("@P_IdProducto",Parametro.IdProducto)
                 };
 
                 tabla = bdContext.funcionStored("spDevoluciones", Parametros);

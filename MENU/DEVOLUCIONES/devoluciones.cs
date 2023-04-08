@@ -113,32 +113,7 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
             {
 
 
-                dgDevolucion parametro = new dgDevolucion
-                {
-                    Id_Venta = Convert.ToInt16(txt_ticket.Text)
-
-                };
-
-
-
-
-                List<dgDevolucion> lista = c_devolucion.LeerDevolucion(11, parametro);
-
-                int cantidaddevolvida=0;
-                float cantidaddevuelto = 0;
-                if (lista.Count > 0)
-
-                {
-                   
-                    foreach (dgDevolucion d in lista)
-                    {
-                        cantidaddevolvida = cantidaddevolvida+Convert.ToInt16(d.CantidadProducto.ToString());
-                        cantidaddevuelto = cantidaddevuelto+float.Parse(d.CantidadDevolucion.ToString());
-
-                    }
-
-
-                }
+               
 
                 dgDevolucion parametro2 = new dgDevolucion
                 {
@@ -155,31 +130,99 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
                 if (lista2.Count > 0)
 
                 {
+                    string idproducto = "";
                     string fechaventa;
                     float subtotal;
                     int cantidaddevolver;
                     int cantidadtotal;
                     float cantidadtotalsubtotal;
+                    int contadormensaje = 0;
+                    int cantidaddevolvida = 0;
+                    float cantidaddevuelto = 0;
+                    bool cuadrito = false;
+
                     foreach (dgDevolucion d in lista2)
                     {
-                        subtotal = float.Parse(d.SubTotalProducto.ToString());
+                        idproducto = d.IdProducto.ToString();
 
-                        subtotal = (float)Math.Round(subtotal, 2);
+                        dgDevolucion parametro = new dgDevolucion
+                        {
+                            Id_Venta = Convert.ToInt16(txt_ticket.Text),
+                            IdProducto= Convert.ToInt16(idproducto)
 
-                        cantidaddevolver = Convert.ToInt16(d.CantidadProducto.ToString());
-                        cantidadtotal = cantidaddevolver-cantidaddevolvida ;
+                        };
 
-                        cantidadtotalsubtotal = subtotal - cantidaddevuelto;
-                        fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
 
-                        dataGridView_ventas.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
-                             d.PrecioProducto.ToString(), Convert.ToString(cantidadtotal), Convert.ToString(cantidadtotalsubtotal), fechaventa, d.DescripcionTipoVenta.ToString(),
-                                 false);
 
+
+                        List<dgDevolucion> lista = c_devolucion.LeerDevolucion(11, parametro);
+
+
+                        cantidaddevolvida = 0;
+                        cantidaddevuelto = 0;
+
+                        if (lista.Count > 0)
+
+                        {
+
+                            foreach (dgDevolucion dd in lista)
+                            {
+                                cantidaddevolvida = cantidaddevolvida+ Convert.ToInt16(dd.CantidadProducto.ToString());
+                                cantidaddevuelto = cantidaddevuelto+float.Parse(dd.CantidadDevolucion.ToString());
+
+                            }
+
+
+                        }
+                        else
+                        {
+                            cantidaddevolvida = 0;
+                            cantidaddevuelto = 0;
+                        }
+
+                        if (d.DescripcionTipoVenta.ToString()!="Credito")
+                        {
+                            cantidadtotalsubtotal = 0;
+                            subtotal = float.Parse(d.SubTotalProducto.ToString());
+
+                            subtotal = (float)Math.Round(subtotal, 2);
+
+                            cantidaddevolver = Convert.ToInt16(d.CantidadProducto.ToString());
+                            cantidadtotal = cantidaddevolver - cantidaddevolvida;
+
+                            cantidadtotalsubtotal = subtotal - cantidaddevuelto;
+                            fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
+
+                            if (cantidadtotal==0)
+                            {
+                                
+                            }
+                            else
+                            {
+                                dataGridView_ventas.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
+                                d.PrecioProducto.ToString(), Convert.ToString(cantidadtotal), Convert.ToString(cantidadtotalsubtotal), fechaventa, d.DescripcionTipoVenta.ToString(),
+                                    false);
+                            }
+
+                           
+
+                        }
+                        else
+                        {
+                            contadormensaje = contadormensaje + 1;
+                            
+                        }
+                      
                   
 
 
 
+                    }
+
+                    if (contadormensaje>=1)
+                    {
+                        MessageBox.Show("No se puede devolver productos si la venta fue por credito");
+                        txt_ticket.Text = "";
                     }
                     //CargaTotalDevolver();
                 }
