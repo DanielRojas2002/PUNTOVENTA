@@ -195,6 +195,8 @@ namespace PUNTOVENTA.CLASES
 
                                  PrecioVenta = float.Parse(fila["Precio"].ToString()),
 
+                                 SubTotalProducto = float.Parse(fila["SubTotalProducto"].ToString()),
+
                                  Usuario = Convert.ToString(fila["Usuario"].ToString()),
                               
 

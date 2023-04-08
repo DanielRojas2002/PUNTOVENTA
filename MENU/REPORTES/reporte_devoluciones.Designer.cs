@@ -37,6 +37,7 @@
             this.Col_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtFechai = new System.Windows.Forms.Label();
@@ -58,6 +59,8 @@
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_devolucion = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_devoluciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
@@ -83,6 +86,7 @@
             this.btn_exportar.TabIndex = 126;
             this.btn_exportar.Text = "Exportar a Excel";
             this.btn_exportar.UseVisualStyleBackColor = true;
+            this.btn_exportar.Click += new System.EventHandler(this.btn_exportar_Click);
             // 
             // btn_generar
             // 
@@ -107,6 +111,7 @@
             this.Col_Producto,
             this.Col_Precio,
             this.Col_Cantidad,
+            this.Col_SubTotal,
             this.Col_Usuario,
             this.Col_Fecha});
             this.dataGridView_devoluciones.Location = new System.Drawing.Point(82, 403);
@@ -157,6 +162,14 @@
             this.Col_Cantidad.Name = "Col_Cantidad";
             this.Col_Cantidad.ReadOnly = true;
             this.Col_Cantidad.Width = 125;
+            // 
+            // Col_SubTotal
+            // 
+            this.Col_SubTotal.HeaderText = "SubTotal";
+            this.Col_SubTotal.MinimumWidth = 6;
+            this.Col_SubTotal.Name = "Col_SubTotal";
+            this.Col_SubTotal.ReadOnly = true;
+            this.Col_SubTotal.Width = 125;
             // 
             // Col_Usuario
             // 
@@ -422,12 +435,36 @@
             this.panel1.Size = new System.Drawing.Size(1061, 39);
             this.panel1.TabIndex = 127;
             // 
+            // lbl_devolucion
+            // 
+            this.lbl_devolucion.AutoSize = true;
+            this.lbl_devolucion.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_devolucion.ForeColor = System.Drawing.Color.Red;
+            this.lbl_devolucion.Location = new System.Drawing.Point(812, 242);
+            this.lbl_devolucion.Name = "lbl_devolucion";
+            this.lbl_devolucion.Size = new System.Drawing.Size(109, 28);
+            this.lbl_devolucion.TabIndex = 129;
+            this.lbl_devolucion.Text = "devolucion";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(771, 214);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(199, 28);
+            this.label9.TabIndex = 128;
+            this.label9.Text = "Cantidad Devolucion:";
+            // 
             // reporte_devoluciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(1061, 613);
+            this.Controls.Add(this.lbl_devolucion);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_exportar);
             this.Controls.Add(this.btn_generar);
@@ -444,6 +481,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "reporte_devoluciones";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.reporte_devoluciones_FormClosing);
+            this.Load += new System.EventHandler(this.reporte_devoluciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_devoluciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
@@ -475,13 +513,6 @@
         private PictureBox btn_regresar;
         private Label label1;
         public Label lbl_id;
-        private DataGridViewTextBoxColumn Col_IdDevolucion;
-        private DataGridViewTextBoxColumn Col_Id_Venta;
-        private DataGridViewTextBoxColumn Col_Producto;
-        private DataGridViewTextBoxColumn Col_Precio;
-        private DataGridViewTextBoxColumn Col_Cantidad;
-        private DataGridViewTextBoxColumn Col_Usuario;
-        private DataGridViewTextBoxColumn Col_Fecha;
         private TableLayoutPanel tableLayoutPanel1;
         private PictureBox cerrarapp;
         private PictureBox btn_minimzar;
@@ -494,5 +525,15 @@
         private PictureBox pictureBox9;
         private PictureBox pictureBox8;
         private Panel panel1;
+        private DataGridViewTextBoxColumn Col_IdDevolucion;
+        private DataGridViewTextBoxColumn Col_Id_Venta;
+        private DataGridViewTextBoxColumn Col_Producto;
+        private DataGridViewTextBoxColumn Col_Precio;
+        private DataGridViewTextBoxColumn Col_Cantidad;
+        private DataGridViewTextBoxColumn Col_SubTotal;
+        private DataGridViewTextBoxColumn Col_Usuario;
+        private DataGridViewTextBoxColumn Col_Fecha;
+        private Label lbl_devolucion;
+        private Label label9;
     }
 }
