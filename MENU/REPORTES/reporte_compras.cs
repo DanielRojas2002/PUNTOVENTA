@@ -209,7 +209,7 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                     fechaentrada = d.FechaEntrada.Value.ToString("dd/MM/yyyy");
                     dataGridView1.Rows.Add(d.IdEntrada.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
-                       d.Categoria.ToString(), d.CantidadProducto.ToString(), fechaentrada, d.Usuario.ToString());
+                       d.Categoria.ToString(), d.CantidadProducto.ToString(),d.TipoEntrada.ToString() ,fechaentrada, d.Usuario.ToString());
 
 
 
@@ -386,9 +386,11 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                 ws.Cell("E6").Value = "Cantidad";
 
-                ws.Cell("F6").Value = "Fecha Entrada";
+                ws.Cell("F6").Value = "Tipo Entrada";
 
-                ws.Cell("G6").Value = "Usuario";
+                ws.Cell("G6").Value = "Fecha Entrada";
+
+                ws.Cell("H6").Value = "Usuario";
 
                 int contadorcolumnas = 1;
 
@@ -410,6 +412,8 @@ namespace PUNTOVENTA.MENU.REPORTES
                     ws.Cell(contadorregistros, contadorcolumnas).Value = d.Categoria.ToString();
                     contadorcolumnas = contadorcolumnas + 1;
                     ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadProducto.ToString();
+                    contadorcolumnas = contadorcolumnas + 1;
+                    ws.Cell(contadorregistros, contadorcolumnas).Value = d.TipoEntrada.ToString();
                     contadorcolumnas = contadorcolumnas + 1;
                     ws.Cell(contadorregistros, contadorcolumnas).Value = fechaentrada;
                     contadorcolumnas = contadorcolumnas + 1;

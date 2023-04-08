@@ -111,7 +111,36 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
             dataGridView_ventas.Rows.Clear();
             if (txt_ticket.Text != "")
             {
+
+
                 dgDevolucion parametro = new dgDevolucion
+                {
+                    Id_Venta = Convert.ToInt16(txt_ticket.Text)
+
+                };
+
+
+
+
+                List<dgDevolucion> lista = c_devolucion.LeerDevolucion(11, parametro);
+
+                int cantidaddevolvida=0;
+                float cantidaddevuelto = 0;
+                if (lista.Count > 0)
+
+                {
+                   
+                    foreach (dgDevolucion d in lista)
+                    {
+                        cantidaddevolvida = cantidaddevolvida+Convert.ToInt16(d.CantidadProducto.ToString());
+                        cantidaddevuelto = cantidaddevuelto+float.Parse(d.CantidadDevolucion.ToString());
+
+                    }
+
+
+                }
+
+                dgDevolucion parametro2 = new dgDevolucion
                 {
                     Id_Venta =Convert.ToInt16(txt_ticket.Text)
 
@@ -120,26 +149,31 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
 
 
-                List<dgDevolucion> lista = c_devolucion.LeerDevolucion(1, parametro);
+                List<dgDevolucion> lista2 = c_devolucion.LeerDevolucion(1, parametro2);
 
 
-                if (lista.Count > 0)
+                if (lista2.Count > 0)
 
                 {
                     string fechaventa;
                     float subtotal;
                     int cantidaddevolver;
-                    foreach (dgDevolucion d in lista)
+                    int cantidadtotal;
+                    float cantidadtotalsubtotal;
+                    foreach (dgDevolucion d in lista2)
                     {
                         subtotal = float.Parse(d.SubTotalProducto.ToString());
 
                         subtotal = (float)Math.Round(subtotal, 2);
 
                         cantidaddevolver = Convert.ToInt16(d.CantidadProducto.ToString());
+                        cantidadtotal = cantidaddevolver-cantidaddevolvida ;
 
+                        cantidadtotalsubtotal = subtotal - cantidaddevuelto;
                         fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
+
                         dataGridView_ventas.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
-                             d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), fechaventa, d.DescripcionTipoVenta.ToString(),
+                             d.PrecioProducto.ToString(), Convert.ToString(cantidadtotal), Convert.ToString(cantidadtotalsubtotal), fechaventa, d.DescripcionTipoVenta.ToString(),
                                  false);
 
                   
@@ -164,6 +198,21 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
                 MessageBox.Show("Ingrese el Numero de Ticket");
                 txt_ticket.Text = "";
             }
+        }
+
+
+        private void CargaDevoluiones()
+        {
+
+          
+
+
+
+
+
+
+
+
         }
 
         private void btn_devolucion_Click(object sender, EventArgs e)
@@ -240,8 +289,12 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
             int idventa = Convert.ToInt16(dataGridView_ventas.CurrentRow.Cells["Col_Id_Venta"].Value.ToString());
             int idproducto = Convert.ToInt16(dataGridView_ventas.CurrentRow.Cells["Col_IdProducto"].Value.ToString());
 
+            string tipoventa = Convert.ToString(dataGridView_ventas.CurrentRow.Cells["Col_Tipoventa"].Value.ToString());
 
-         
+
+            int cantidadrestante= Convert.ToInt16(dataGridView_ventas.CurrentRow.Cells["Col_CantidadProducto"].Value.ToString());
+
+            float cantidadpreciorestante = Convert.ToInt16(dataGridView_ventas.CurrentRow.Cells["Col_SubTotalProducto"].Value.ToString());
 
             var valorcheckbox = true;
             dataGridView_ventas.CurrentCell.Value = dataGridView_ventas.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValue.ToString() == "True" ? false : true;
@@ -252,7 +305,7 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
             if (valorcheckbox=true)
             {
-                AbrirVentanaDevolucion(idproducto, idventa);
+                AbrirVentanaDevolucion(idproducto, idventa,tipoventa, cantidadrestante, cantidadpreciorestante);
 
 
 
@@ -268,7 +321,7 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
         }
        
 
-        private void AbrirVentanaDevolucion(int idproducto, int idventa)
+        private void AbrirVentanaDevolucion(int idproducto, int idventa,string tipoventa,int cantidadrestante, float cantidadpreciorestante)
         {
             string id;
             id = lbl_id.Text;
@@ -328,6 +381,9 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
             formulario.lbl_id.Text = id;
             formulario.lbl_id_venta.Text = Convert.ToString(idventa);
             formulario.lbl_idProducto.Text = Convert.ToString(idproducto);
+            formulario.lbl_tipoventa.Text = Convert.ToString(tipoventa);
+            formulario.lbl_subtotal.Text = Convert.ToString(cantidadpreciorestante);
+            formulario.lbl_cantidad_actual.Text = Convert.ToString(cantidadrestante);
 
             formulario.Show();
         }

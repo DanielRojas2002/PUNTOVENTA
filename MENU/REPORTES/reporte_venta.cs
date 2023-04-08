@@ -36,6 +36,7 @@ namespace PUNTOVENTA.MENU.REPORTES
             dataGridView_ventas.Rows.Clear();
             dataGridView_p_credito.Rows.Clear();
             CargarVentas();
+            CargaDevoluiones();
 
         }
         private void RegresarVentana()
@@ -122,6 +123,66 @@ namespace PUNTOVENTA.MENU.REPORTES
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void CargaDevoluiones()
+        {
+
+            dataGridView_devoluciones.Rows.Clear();
+
+
+            dgCaja parametro = new dgCaja
+            {
+                FechaCaja = DateTime.Now
+
+            };
+
+
+
+
+            List<dgCaja> lista = c_caja.LeerCaja(9, parametro);
+
+
+            if (lista.Count > 0)
+
+            {
+                string fechadevolucion;
+                float subtotal;
+                foreach (dgCaja d in lista)
+                {
+                    subtotal = float.Parse(d.SubTotalProducto.ToString());
+
+                    subtotal = (float)Math.Round(subtotal, 2);
+
+                    fechadevolucion = d.FechaDevolucion.Value.ToString("dd/MM/yyyy");
+                    dataGridView_devoluciones.Rows.Add(d.Id_Devolucion.ToString(), d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
+                         d.CantidadProducto.ToString(), d.PrecioProducto.ToString(), Convert.ToString(subtotal), d.Usuario.ToString(), fechadevolucion);
+
+
+                    _dineroventas = _dineroventas - float.Parse(d.SubTotalProducto.ToString());
+                }
+
+
+            }
+
+            else
+            {
+
+
+
+            }
+
+
+
+
+
+
+
+
+
+            _dineroventas = (float)Math.Round(_dineroventas, 2);
+
+            lbl_cantidad_vendida.Text = Convert.ToString(_dineroventas);
         }
 
         private void CargarVentas()

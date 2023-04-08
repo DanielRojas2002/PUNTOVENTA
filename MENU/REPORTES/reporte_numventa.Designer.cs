@@ -59,6 +59,20 @@
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView_devoluciones = new System.Windows.Forms.DataGridView();
+            this.Col_Id_Devolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbl_cantidad_vendida = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_numventa)).BeginInit();
@@ -74,6 +88,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_devoluciones)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox7
@@ -118,7 +133,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label2.Location = new System.Drawing.Point(24, 228);
+            this.label2.Location = new System.Drawing.Point(24, 208);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(171, 28);
             this.label2.TabIndex = 105;
@@ -130,7 +145,7 @@
             this.txt_ticket.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_ticket.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_ticket.ForeColor = System.Drawing.Color.Black;
-            this.txt_ticket.Location = new System.Drawing.Point(81, 272);
+            this.txt_ticket.Location = new System.Drawing.Point(81, 252);
             this.txt_ticket.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_ticket.Name = "txt_ticket";
             this.txt_ticket.Size = new System.Drawing.Size(114, 24);
@@ -151,12 +166,12 @@
             this.Col_SubTotalProducto,
             this.Col_FechaVentaProducto,
             this.Col_Tipoventa});
-            this.dataGridView_numventa.Location = new System.Drawing.Point(43, 315);
+            this.dataGridView_numventa.Location = new System.Drawing.Point(43, 335);
             this.dataGridView_numventa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView_numventa.Name = "dataGridView_numventa";
             this.dataGridView_numventa.RowHeadersWidth = 51;
             this.dataGridView_numventa.RowTemplate.Height = 25;
-            this.dataGridView_numventa.Size = new System.Drawing.Size(868, 222);
+            this.dataGridView_numventa.Size = new System.Drawing.Size(866, 222);
             this.dataGridView_numventa.TabIndex = 108;
             // 
             // Col_Id_Venta
@@ -232,7 +247,7 @@
             this.btn_ticket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ticket.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_ticket.ForeColor = System.Drawing.Color.White;
-            this.btn_ticket.Location = new System.Drawing.Point(703, 243);
+            this.btn_ticket.Location = new System.Drawing.Point(703, 230);
             this.btn_ticket.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_ticket.Name = "btn_ticket";
             this.btn_ticket.Size = new System.Drawing.Size(206, 53);
@@ -244,7 +259,7 @@
             // pictureBox10
             // 
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(638, 243);
+            this.pictureBox10.Location = new System.Drawing.Point(638, 230);
             this.pictureBox10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(70, 53);
@@ -254,7 +269,7 @@
             // 
             // btn_exportar
             // 
-            this.btn_exportar.Location = new System.Drawing.Point(403, 545);
+            this.btn_exportar.Location = new System.Drawing.Point(403, 752);
             this.btn_exportar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_exportar.Name = "btn_exportar";
             this.btn_exportar.Size = new System.Drawing.Size(506, 31);
@@ -441,12 +456,160 @@
             this.panel1.Size = new System.Drawing.Size(976, 39);
             this.panel1.TabIndex = 107;
             // 
+            // dataGridView_devoluciones
+            // 
+            this.dataGridView_devoluciones.AllowUserToAddRows = false;
+            this.dataGridView_devoluciones.AllowUserToDeleteRows = false;
+            this.dataGridView_devoluciones.AllowUserToOrderColumns = true;
+            this.dataGridView_devoluciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_devoluciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Col_Id_Devolucion,
+            this.dataGridViewTextBoxColumn18,
+            this.Col_Producto,
+            this.Col_Nombre,
+            this.Col_Cantidad,
+            this.Col_Precio,
+            this.Col_Subtotal,
+            this.dataGridViewTextBoxColumn19,
+            this.Col_Fecha});
+            this.dataGridView_devoluciones.Location = new System.Drawing.Point(43, 597);
+            this.dataGridView_devoluciones.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView_devoluciones.Name = "dataGridView_devoluciones";
+            this.dataGridView_devoluciones.ReadOnly = true;
+            this.dataGridView_devoluciones.RowHeadersWidth = 51;
+            this.dataGridView_devoluciones.RowTemplate.Height = 25;
+            this.dataGridView_devoluciones.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dataGridView_devoluciones.Size = new System.Drawing.Size(866, 147);
+            this.dataGridView_devoluciones.TabIndex = 120;
+            this.dataGridView_devoluciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_devoluciones_CellContentClick);
+            // 
+            // Col_Id_Devolucion
+            // 
+            this.Col_Id_Devolucion.HeaderText = "Id_Devolucion";
+            this.Col_Id_Devolucion.MinimumWidth = 6;
+            this.Col_Id_Devolucion.Name = "Col_Id_Devolucion";
+            this.Col_Id_Devolucion.ReadOnly = true;
+            this.Col_Id_Devolucion.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.HeaderText = "No.Venta";
+            this.dataGridViewTextBoxColumn18.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            this.dataGridViewTextBoxColumn18.Width = 125;
+            // 
+            // Col_Producto
+            // 
+            this.Col_Producto.HeaderText = "Producto";
+            this.Col_Producto.MinimumWidth = 6;
+            this.Col_Producto.Name = "Col_Producto";
+            this.Col_Producto.ReadOnly = true;
+            this.Col_Producto.Width = 125;
+            // 
+            // Col_Nombre
+            // 
+            this.Col_Nombre.HeaderText = "Nombre";
+            this.Col_Nombre.MinimumWidth = 6;
+            this.Col_Nombre.Name = "Col_Nombre";
+            this.Col_Nombre.ReadOnly = true;
+            this.Col_Nombre.Width = 125;
+            // 
+            // Col_Cantidad
+            // 
+            this.Col_Cantidad.HeaderText = "Cantidad";
+            this.Col_Cantidad.MinimumWidth = 6;
+            this.Col_Cantidad.Name = "Col_Cantidad";
+            this.Col_Cantidad.ReadOnly = true;
+            this.Col_Cantidad.Width = 125;
+            // 
+            // Col_Precio
+            // 
+            this.Col_Precio.HeaderText = "Precio";
+            this.Col_Precio.MinimumWidth = 6;
+            this.Col_Precio.Name = "Col_Precio";
+            this.Col_Precio.ReadOnly = true;
+            this.Col_Precio.Width = 125;
+            // 
+            // Col_Subtotal
+            // 
+            this.Col_Subtotal.HeaderText = "SubTotal";
+            this.Col_Subtotal.MinimumWidth = 6;
+            this.Col_Subtotal.Name = "Col_Subtotal";
+            this.Col_Subtotal.ReadOnly = true;
+            this.Col_Subtotal.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.HeaderText = "Usuario";
+            this.dataGridViewTextBoxColumn19.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
+            this.dataGridViewTextBoxColumn19.Width = 125;
+            // 
+            // Col_Fecha
+            // 
+            this.Col_Fecha.HeaderText = "Fecha";
+            this.Col_Fecha.MinimumWidth = 6;
+            this.Col_Fecha.Name = "Col_Fecha";
+            this.Col_Fecha.ReadOnly = true;
+            this.Col_Fecha.Width = 125;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(43, 561);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(254, 32);
+            this.label10.TabIndex = 119;
+            this.label10.Text = "DEVOLUCIONES";
+            // 
+            // lbl_cantidad_vendida
+            // 
+            this.lbl_cantidad_vendida.AutoSize = true;
+            this.lbl_cantidad_vendida.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_cantidad_vendida.ForeColor = System.Drawing.Color.Chartreuse;
+            this.lbl_cantidad_vendida.Location = new System.Drawing.Point(841, 181);
+            this.lbl_cantidad_vendida.Name = "lbl_cantidad_vendida";
+            this.lbl_cantidad_vendida.Size = new System.Drawing.Size(82, 28);
+            this.lbl_cantidad_vendida.TabIndex = 122;
+            this.lbl_cantidad_vendida.Text = "vendida";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.Chartreuse;
+            this.label4.Location = new System.Drawing.Point(769, 153);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(172, 28);
+            this.label4.TabIndex = 121;
+            this.label4.Text = "Cantidad Vendida:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(43, 290);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(369, 32);
+            this.label3.TabIndex = 123;
+            this.label3.Text = "PRODUCTOS VENDIDOS";
+            // 
             // reporte_numventa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.ClientSize = new System.Drawing.Size(976, 599);
+            this.ClientSize = new System.Drawing.Size(976, 791);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbl_cantidad_vendida);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dataGridView_devoluciones);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.lbl_id);
             this.Controls.Add(this.btn_exportar);
             this.Controls.Add(this.btn_ticket);
@@ -463,6 +626,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "reporte_numventa";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.reporte_numventa_FormClosing);
+            this.Load += new System.EventHandler(this.reporte_numventa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_numventa)).EndInit();
@@ -478,6 +642,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_devoluciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -515,5 +680,19 @@
         private PictureBox pictureBox9;
         private PictureBox pictureBox8;
         private Panel panel1;
+        private DataGridView dataGridView_devoluciones;
+        private DataGridViewTextBoxColumn Col_Id_Devolucion;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private DataGridViewTextBoxColumn Col_Producto;
+        private DataGridViewTextBoxColumn Col_Nombre;
+        private DataGridViewTextBoxColumn Col_Cantidad;
+        private DataGridViewTextBoxColumn Col_Precio;
+        private DataGridViewTextBoxColumn Col_Subtotal;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private DataGridViewTextBoxColumn Col_Fecha;
+        private Label label10;
+        private Label lbl_cantidad_vendida;
+        private Label label4;
+        private Label label3;
     }
 }

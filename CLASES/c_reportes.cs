@@ -82,7 +82,8 @@ namespace PUNTOVENTA.CLASES
                                  CantidadProducto = Convert.ToInt16(fila["Cantidad"].ToString()),
                                  FechaEntrada = Convert.ToDateTime(fila["FechaEntrada"].ToString()),
                                  Categoria = Convert.ToString(fila["Categoria"].ToString()),
-                                 Usuario = Convert.ToString(fila["Usuario"].ToString())
+                                 Usuario = Convert.ToString(fila["Usuario"].ToString()),
+                                 TipoEntrada= Convert.ToString(fila["TipoEntrada"].ToString())
 
 
 

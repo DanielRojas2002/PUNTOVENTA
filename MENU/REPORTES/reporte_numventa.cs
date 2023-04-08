@@ -19,6 +19,9 @@ namespace PUNTOVENTA.MENU.REPORTES
             InitializeComponent();
         }
 
+        public float _dineroventas = 0;
+       
+
         private void btn_ticket_Click(object sender, EventArgs e)
         {
             dataGridView_numventa.Rows.Clear();
@@ -41,14 +44,14 @@ namespace PUNTOVENTA.MENU.REPORTES
                 {
                     string fechaventa;
                     float subtotal;
-                    
+
                     foreach (dgReportes d in lista)
                     {
                         subtotal = float.Parse(d.SubTotalProducto.ToString());
 
                         subtotal = (float)Math.Round(subtotal, 2);
 
-                       
+
 
                         fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
                         dataGridView_numventa.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
@@ -56,9 +59,10 @@ namespace PUNTOVENTA.MENU.REPORTES
 
 
 
-
+                        _dineroventas = _dineroventas + subtotal;
 
                     }
+                    CargaDevoluiones();
                 }
 
                 else
@@ -66,11 +70,15 @@ namespace PUNTOVENTA.MENU.REPORTES
                     dataGridView_numventa.Rows.Clear();
                     MessageBox.Show("No se Encontro el Numero de Venta");
                     txt_ticket.Text = "";
+                    dataGridView_devoluciones.Rows.Clear();
+                    lbl_cantidad_vendida.Text = "";
                 }
             }
 
             else
             {
+                dataGridView_devoluciones.Rows.Clear();
+                lbl_cantidad_vendida.Text = "";
                 dataGridView_numventa.Rows.Clear();
                 MessageBox.Show("Ingrese el Numero de Ticket");
                 txt_ticket.Text = "";
@@ -162,6 +170,70 @@ namespace PUNTOVENTA.MENU.REPORTES
         private void pictureBox8_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void reporte_numventa_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CargaDevoluiones()
+        {
+
+            dataGridView_devoluciones.Rows.Clear();
+
+
+            dgCaja parametro = new dgCaja
+            {
+                Id_Venta = Convert.ToInt16(txt_ticket.Text)
+
+            };
+
+
+
+
+            List<dgCaja> lista = c_caja.LeerCaja(10, parametro);
+
+
+            if (lista.Count > 0)
+
+            {
+                string fechadevolucion;
+                float subtotal;
+                foreach (dgCaja d in lista)
+                {
+                    subtotal = float.Parse(d.SubTotalProducto.ToString());
+
+                    subtotal = (float)Math.Round(subtotal, 2);
+
+                    fechadevolucion = d.FechaDevolucion.Value.ToString("dd/MM/yyyy");
+                    dataGridView_devoluciones.Rows.Add(d.Id_Devolucion.ToString(), d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
+                         d.CantidadProducto.ToString(), d.PrecioProducto.ToString(), Convert.ToString(subtotal), d.Usuario.ToString(), fechadevolucion);
+
+
+                    _dineroventas = _dineroventas - subtotal;
+                }
+
+                lbl_cantidad_vendida.Text = Convert.ToString(_dineroventas);
+            }
+
+            else
+            {
+
+
+
+            }
+
+
+
+
+
+
+        }
+
+        private void dataGridView_devoluciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

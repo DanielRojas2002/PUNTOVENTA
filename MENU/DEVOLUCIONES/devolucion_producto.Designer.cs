@@ -61,6 +61,7 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_tipoventa = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.panel4.SuspendLayout();
@@ -473,12 +474,25 @@
             this.panel1.Size = new System.Drawing.Size(506, 39);
             this.panel1.TabIndex = 57;
             // 
+            // lbl_tipoventa
+            // 
+            this.lbl_tipoventa.AutoSize = true;
+            this.lbl_tipoventa.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_tipoventa.ForeColor = System.Drawing.Color.White;
+            this.lbl_tipoventa.Location = new System.Drawing.Point(348, 198);
+            this.lbl_tipoventa.Name = "lbl_tipoventa";
+            this.lbl_tipoventa.Size = new System.Drawing.Size(135, 23);
+            this.lbl_tipoventa.TabIndex = 118;
+            this.lbl_tipoventa.Text = "id_producto";
+            this.lbl_tipoventa.Visible = false;
+            // 
             // devolucion_producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(506, 634);
+            this.Controls.Add(this.lbl_tipoventa);
             this.Controls.Add(this.lbl_id_venta);
             this.Controls.Add(this.lbl_idProducto);
             this.Controls.Add(this.label11);
@@ -538,9 +552,7 @@
         private Label label2;
         private Label lbl_producto;
         private Label label5;
-        private Label lbl_cantidad_actual;
         private Label label7;
-        private Label lbl_subtotal;
         private Label label9;
         private Label lbl_cantidad_regresar;
         private Label label11;
@@ -558,5 +570,8 @@
         private PictureBox pictureBox8;
         private PictureBox pictureBox7;
         private Panel panel1;
+        public Label lbl_tipoventa;
+        public Label lbl_cantidad_actual;
+        public Label lbl_subtotal;
     }
 }

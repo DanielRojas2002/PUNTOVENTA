@@ -56,6 +56,44 @@ namespace PUNTOVENTA.CLASES
 
         }
 
+        public static string Rebaje(dgDevolucion Parametro)
+        {
+
+
+            string control = "";
+
+            try
+            {
+
+                DataTable tabla = new DataTable();
+
+                SqlParameter[] parametros =
+                {
+                    new SqlParameter("@Accion",6),
+                    new SqlParameter("@P_IdVenta",Parametro.Id_Venta),
+                    new SqlParameter("@P_CantidadPagada",Parametro.CantidadDevolucion),
+                    new SqlParameter("@P_FechaPago",Parametro.FechaEntrada)
+
+
+
+
+                };
+
+                tabla = bdContext.funcionStored("spDevoluciones", parametros);
+                control = tabla.Rows[0][0].ToString();
+
+
+
+            }
+
+            catch (Exception error)
+            {
+                control = error.ToString();
+            }
+            return control;
+
+        }
+
         public static List<dgDevolucion> LeerDevolucion(int tipo, dgDevolucion Parametro)
         {
 
@@ -88,6 +126,36 @@ namespace PUNTOVENTA.CLASES
                                  FechaVentaProducto = Convert.ToDateTime(fila["FechaVentaProducto"].ToString()),
                                  Usuario = Convert.ToString(fila["Usuario"].ToString()),
                                  DescripcionTipoVenta = Convert.ToString(fila["DescripcionTipoVenta"].ToString())
+
+
+
+                             }
+                   ).ToList();
+                }
+
+
+            }
+
+            if (tipo == 11)
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",11),
+                    new SqlParameter("@P_IdVenta",Parametro.Id_Venta)
+                };
+
+                tabla = bdContext.funcionStored("spDevoluciones", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgDevolucion
+                             {
+                                 
+                                 CantidadProducto = Convert.ToInt16(fila["CantidadDevuelta"].ToString()),
+                                 CantidadDevolucion = float.Parse(fila["SubTotalDevuelto"].ToString())
+                                 
 
 
 
@@ -154,6 +222,37 @@ namespace PUNTOVENTA.CLASES
                                  CantidadProducto = Convert.ToInt16(fila["Cantidad"].ToString()),
                                  PrecioProducto = float.Parse(fila["Precio"].ToString()),
                                  SubTotalProducto = float.Parse(fila["SubTotalProducto"].ToString()),
+
+
+
+
+                             }
+                   ).ToList();
+                }
+
+
+            }
+
+            else if (tipo == 5)
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",5),
+                    new SqlParameter("@P_IdVenta",Parametro.Id_Venta),
+
+                };
+
+                tabla = bdContext.funcionStored("spDevoluciones", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgDevolucion
+                             {
+                               
+                                 CantidadPagada = float.Parse(fila["CantidadPagada"].ToString())
+                                 
 
 
 

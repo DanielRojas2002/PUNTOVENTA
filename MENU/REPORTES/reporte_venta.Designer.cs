@@ -38,6 +38,17 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView_devoluciones = new System.Windows.Forms.DataGridView();
+            this.Col_Id_Devolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label10 = new System.Windows.Forms.Label();
             this.lbl_cantidad_vendida = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView_ventas = new System.Windows.Forms.DataGridView();
@@ -78,6 +89,7 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_devoluciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ventas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_p_credito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
@@ -132,7 +144,7 @@
             this.FechaInicio.Name = "FechaInicio";
             this.FechaInicio.Size = new System.Drawing.Size(239, 27);
             this.FechaInicio.TabIndex = 6;
-            this.FechaInicio.Value = new System.DateTime(2023, 4, 5, 0, 0, 0, 0);
+            this.FechaInicio.Value = new System.DateTime(2023, 4, 7, 0, 0, 0, 0);
             this.FechaInicio.ValueChanged += new System.EventHandler(this.FechaInicio_ValueChanged);
             // 
             // fechafinal
@@ -157,7 +169,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(590, 870);
+            this.button2.Location = new System.Drawing.Point(497, 871);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(506, 31);
@@ -180,6 +192,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.Controls.Add(this.dataGridView_devoluciones);
+            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.lbl_cantidad_vendida);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.dataGridView_ventas);
@@ -203,9 +217,118 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1126, 915);
+            this.panel1.Size = new System.Drawing.Size(1239, 915);
             this.panel1.TabIndex = 11;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // dataGridView_devoluciones
+            // 
+            this.dataGridView_devoluciones.AllowUserToAddRows = false;
+            this.dataGridView_devoluciones.AllowUserToDeleteRows = false;
+            this.dataGridView_devoluciones.AllowUserToOrderColumns = true;
+            this.dataGridView_devoluciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_devoluciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Col_Id_Devolucion,
+            this.dataGridViewTextBoxColumn18,
+            this.Col_Producto,
+            this.Col_Nombre,
+            this.Col_Cantidad,
+            this.Col_Precio,
+            this.Col_Subtotal,
+            this.dataGridViewTextBoxColumn19,
+            this.Col_Fecha});
+            this.dataGridView_devoluciones.Location = new System.Drawing.Point(656, 715);
+            this.dataGridView_devoluciones.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView_devoluciones.Name = "dataGridView_devoluciones";
+            this.dataGridView_devoluciones.ReadOnly = true;
+            this.dataGridView_devoluciones.RowHeadersWidth = 51;
+            this.dataGridView_devoluciones.RowTemplate.Height = 25;
+            this.dataGridView_devoluciones.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dataGridView_devoluciones.Size = new System.Drawing.Size(550, 147);
+            this.dataGridView_devoluciones.TabIndex = 117;
+            // 
+            // Col_Id_Devolucion
+            // 
+            this.Col_Id_Devolucion.HeaderText = "Id_Devolucion";
+            this.Col_Id_Devolucion.MinimumWidth = 6;
+            this.Col_Id_Devolucion.Name = "Col_Id_Devolucion";
+            this.Col_Id_Devolucion.ReadOnly = true;
+            this.Col_Id_Devolucion.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.HeaderText = "No.Venta";
+            this.dataGridViewTextBoxColumn18.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            this.dataGridViewTextBoxColumn18.Width = 125;
+            // 
+            // Col_Producto
+            // 
+            this.Col_Producto.HeaderText = "Producto";
+            this.Col_Producto.MinimumWidth = 6;
+            this.Col_Producto.Name = "Col_Producto";
+            this.Col_Producto.ReadOnly = true;
+            this.Col_Producto.Width = 125;
+            // 
+            // Col_Nombre
+            // 
+            this.Col_Nombre.HeaderText = "Nombre";
+            this.Col_Nombre.MinimumWidth = 6;
+            this.Col_Nombre.Name = "Col_Nombre";
+            this.Col_Nombre.ReadOnly = true;
+            this.Col_Nombre.Width = 125;
+            // 
+            // Col_Cantidad
+            // 
+            this.Col_Cantidad.HeaderText = "Cantidad";
+            this.Col_Cantidad.MinimumWidth = 6;
+            this.Col_Cantidad.Name = "Col_Cantidad";
+            this.Col_Cantidad.ReadOnly = true;
+            this.Col_Cantidad.Width = 125;
+            // 
+            // Col_Precio
+            // 
+            this.Col_Precio.HeaderText = "Precio";
+            this.Col_Precio.MinimumWidth = 6;
+            this.Col_Precio.Name = "Col_Precio";
+            this.Col_Precio.ReadOnly = true;
+            this.Col_Precio.Width = 125;
+            // 
+            // Col_Subtotal
+            // 
+            this.Col_Subtotal.HeaderText = "SubTotal";
+            this.Col_Subtotal.MinimumWidth = 6;
+            this.Col_Subtotal.Name = "Col_Subtotal";
+            this.Col_Subtotal.ReadOnly = true;
+            this.Col_Subtotal.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.HeaderText = "Usuario";
+            this.dataGridViewTextBoxColumn19.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
+            this.dataGridViewTextBoxColumn19.Width = 125;
+            // 
+            // Col_Fecha
+            // 
+            this.Col_Fecha.HeaderText = "Fecha";
+            this.Col_Fecha.MinimumWidth = 6;
+            this.Col_Fecha.Name = "Col_Fecha";
+            this.Col_Fecha.ReadOnly = true;
+            this.Col_Fecha.Width = 125;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(656, 679);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(254, 32);
+            this.label10.TabIndex = 116;
+            this.label10.Text = "DEVOLUCIONES";
             // 
             // lbl_cantidad_vendida
             // 
@@ -245,13 +368,13 @@
             this.dataGridViewTextBoxColumn16,
             this.Col_Tipoventa,
             this.dataGridViewTextBoxColumn17});
-            this.dataGridView_ventas.Location = new System.Drawing.Point(29, 507);
+            this.dataGridView_ventas.Location = new System.Drawing.Point(127, 505);
             this.dataGridView_ventas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView_ventas.Name = "dataGridView_ventas";
             this.dataGridView_ventas.ReadOnly = true;
             this.dataGridView_ventas.RowHeadersWidth = 51;
             this.dataGridView_ventas.RowTemplate.Height = 25;
-            this.dataGridView_ventas.Size = new System.Drawing.Size(1067, 147);
+            this.dataGridView_ventas.Size = new System.Drawing.Size(956, 147);
             this.dataGridView_ventas.TabIndex = 113;
             // 
             // dataGridViewTextBoxColumn10
@@ -382,7 +505,7 @@
             this.dataGridView_p_credito.ReadOnly = true;
             this.dataGridView_p_credito.RowHeadersWidth = 51;
             this.dataGridView_p_credito.RowTemplate.Height = 25;
-            this.dataGridView_p_credito.Size = new System.Drawing.Size(1067, 147);
+            this.dataGridView_p_credito.Size = new System.Drawing.Size(602, 147);
             this.dataGridView_p_credito.TabIndex = 110;
             this.dataGridView_p_credito.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_p_credito_CellContentClick);
             // 
@@ -554,7 +677,7 @@
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(2205, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(2202, 4);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(29, 31);
@@ -575,7 +698,7 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(2160, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(2157, 4);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(39, 31);
@@ -588,7 +711,7 @@
             this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(1781, 4);
+            this.pictureBox6.Location = new System.Drawing.Point(1778, 4);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(29, 31);
@@ -601,7 +724,7 @@
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(1734, 4);
+            this.pictureBox5.Location = new System.Drawing.Point(1731, 4);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(39, 31);
@@ -614,7 +737,7 @@
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(1040, 9);
+            this.pictureBox4.Location = new System.Drawing.Point(1155, 4);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(39, 31);
@@ -628,7 +751,7 @@
             this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(1083, 8);
+            this.pictureBox7.Location = new System.Drawing.Point(1198, 3);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(29, 31);
@@ -650,14 +773,14 @@
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1126, 43);
+            this.panel7.Size = new System.Drawing.Size(1236, 43);
             this.panel7.TabIndex = 75;
             // 
             // reporte_venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1126, 915);
+            this.ClientSize = new System.Drawing.Size(1239, 915);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -669,6 +792,7 @@
             this.Load += new System.EventHandler(this.reporte_venta_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_devoluciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ventas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_p_credito)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
@@ -733,5 +857,16 @@
         private DataGridViewTextBoxColumn FechaUltimoPago;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private DataGridView dataGridView_devoluciones;
+        private DataGridViewTextBoxColumn Col_Id_Devolucion;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private DataGridViewTextBoxColumn Col_Producto;
+        private DataGridViewTextBoxColumn Col_Nombre;
+        private DataGridViewTextBoxColumn Col_Cantidad;
+        private DataGridViewTextBoxColumn Col_Precio;
+        private DataGridViewTextBoxColumn Col_Subtotal;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private DataGridViewTextBoxColumn Col_Fecha;
+        private Label label10;
     }
 }

@@ -43,6 +43,7 @@
             this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_tipoentrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bx_productos = new System.Windows.Forms.ComboBox();
@@ -88,7 +89,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cooper Black", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(130, 76);
+            this.label4.Location = new System.Drawing.Point(229, 79);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(593, 50);
             this.label4.TabIndex = 19;
@@ -96,10 +97,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(591, 781);
+            this.button2.Location = new System.Drawing.Point(481, 781);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(218, 31);
+            this.button2.Size = new System.Drawing.Size(503, 31);
             this.button2.TabIndex = 18;
             this.button2.Text = "Exportar a Excel";
             this.button2.UseVisualStyleBackColor = true;
@@ -107,10 +108,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(55, 441);
+            this.button1.Location = new System.Drawing.Point(33, 441);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(754, 31);
+            this.button1.Size = new System.Drawing.Size(951, 31);
             this.button1.TabIndex = 17;
             this.button1.Text = "Generar Reporte";
             this.button1.UseVisualStyleBackColor = true;
@@ -118,7 +119,7 @@
             // 
             // fechafinal
             // 
-            this.fechafinal.Location = new System.Drawing.Point(561, 197);
+            this.fechafinal.Location = new System.Drawing.Point(642, 202);
             this.fechafinal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fechafinal.Name = "fechafinal";
             this.fechafinal.Size = new System.Drawing.Size(228, 27);
@@ -126,7 +127,7 @@
             // 
             // FechaInicio
             // 
-            this.FechaInicio.Location = new System.Drawing.Point(77, 197);
+            this.FechaInicio.Location = new System.Drawing.Point(158, 202);
             this.FechaInicio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FechaInicio.Name = "FechaInicio";
             this.FechaInicio.Size = new System.Drawing.Size(228, 27);
@@ -137,7 +138,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Franklin Gothic Heavy", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(602, 164);
+            this.label3.Location = new System.Drawing.Point(683, 169);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(149, 30);
             this.label3.TabIndex = 14;
@@ -148,7 +149,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Franklin Gothic Heavy", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(121, 164);
+            this.label2.Location = new System.Drawing.Point(202, 169);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(157, 30);
             this.label2.TabIndex = 13;
@@ -159,7 +160,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Heavy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(419, 184);
+            this.label1.Location = new System.Drawing.Point(500, 189);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(25, 25);
             this.label1.TabIndex = 12;
@@ -174,6 +175,7 @@
             this.NombreProducto,
             this.Col_Categoria,
             this.CantidadProducto,
+            this.Col_tipoentrada,
             this.FechaEntrada,
             this.Usuario});
             this.dataGridView1.Location = new System.Drawing.Point(33, 480);
@@ -181,7 +183,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(781, 293);
+            this.dataGridView1.Size = new System.Drawing.Size(951, 293);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -217,6 +219,7 @@
             // 
             // Col_Categoria
             // 
+            this.Col_Categoria.Frozen = true;
             this.Col_Categoria.HeaderText = "Categoria";
             this.Col_Categoria.MinimumWidth = 6;
             this.Col_Categoria.Name = "Col_Categoria";
@@ -226,11 +229,21 @@
             // CantidadProducto
             // 
             this.CantidadProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.CantidadProducto.Frozen = true;
             this.CantidadProducto.HeaderText = "Cantidad";
             this.CantidadProducto.MinimumWidth = 6;
             this.CantidadProducto.Name = "CantidadProducto";
             this.CantidadProducto.ReadOnly = true;
             this.CantidadProducto.Width = 98;
+            // 
+            // Col_tipoentrada
+            // 
+            this.Col_tipoentrada.Frozen = true;
+            this.Col_tipoentrada.HeaderText = "TipoEntrada";
+            this.Col_tipoentrada.MinimumWidth = 6;
+            this.Col_tipoentrada.Name = "Col_tipoentrada";
+            this.Col_tipoentrada.ReadOnly = true;
+            this.Col_tipoentrada.Width = 125;
             // 
             // FechaEntrada
             // 
@@ -253,10 +266,10 @@
             // bx_productos
             // 
             this.bx_productos.FormattingEnabled = true;
-            this.bx_productos.Location = new System.Drawing.Point(561, 403);
+            this.bx_productos.Location = new System.Drawing.Point(642, 360);
             this.bx_productos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bx_productos.Name = "bx_productos";
-            this.bx_productos.Size = new System.Drawing.Size(138, 28);
+            this.bx_productos.Size = new System.Drawing.Size(228, 28);
             this.bx_productos.TabIndex = 20;
             this.bx_productos.SelectedIndexChanged += new System.EventHandler(this.bx_productos_SelectedIndexChanged);
             // 
@@ -265,7 +278,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Franklin Gothic Heavy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(561, 371);
+            this.label5.Location = new System.Drawing.Point(642, 328);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 25);
             this.label5.TabIndex = 21;
@@ -276,7 +289,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Franklin Gothic Heavy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(167, 365);
+            this.label6.Location = new System.Drawing.Point(158, 328);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(111, 25);
             this.label6.TabIndex = 23;
@@ -285,10 +298,10 @@
             // bx_categoria
             // 
             this.bx_categoria.FormattingEnabled = true;
-            this.bx_categoria.Location = new System.Drawing.Point(167, 397);
+            this.bx_categoria.Location = new System.Drawing.Point(158, 360);
             this.bx_categoria.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bx_categoria.Name = "bx_categoria";
-            this.bx_categoria.Size = new System.Drawing.Size(138, 28);
+            this.bx_categoria.Size = new System.Drawing.Size(228, 28);
             this.bx_categoria.TabIndex = 22;
             this.bx_categoria.SelectedIndexChanged += new System.EventHandler(this.bx_categoria_SelectedIndexChanged);
             // 
@@ -320,7 +333,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(869, 848);
+            this.panel1.Size = new System.Drawing.Size(1029, 848);
             this.panel1.TabIndex = 24;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -329,7 +342,7 @@
             this.lbl_id_producto.AutoSize = true;
             this.lbl_id_producto.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_id_producto.ForeColor = System.Drawing.Color.White;
-            this.lbl_id_producto.Location = new System.Drawing.Point(645, 341);
+            this.lbl_id_producto.Location = new System.Drawing.Point(655, 266);
             this.lbl_id_producto.Name = "lbl_id_producto";
             this.lbl_id_producto.Size = new System.Drawing.Size(125, 23);
             this.lbl_id_producto.TabIndex = 86;
@@ -341,7 +354,7 @@
             this.lbl_id_categoria.AutoSize = true;
             this.lbl_id_categoria.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_id_categoria.ForeColor = System.Drawing.Color.White;
-            this.lbl_id_categoria.Location = new System.Drawing.Point(167, 341);
+            this.lbl_id_categoria.Location = new System.Drawing.Point(33, 266);
             this.lbl_id_categoria.Name = "lbl_id_categoria";
             this.lbl_id_categoria.Size = new System.Drawing.Size(125, 23);
             this.lbl_id_categoria.TabIndex = 85;
@@ -353,7 +366,7 @@
             this.txtFechaf.AutoSize = true;
             this.txtFechaf.Font = new System.Drawing.Font("Franklin Gothic Heavy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtFechaf.ForeColor = System.Drawing.Color.White;
-            this.txtFechaf.Location = new System.Drawing.Point(722, 139);
+            this.txtFechaf.Location = new System.Drawing.Point(803, 144);
             this.txtFechaf.Name = "txtFechaf";
             this.txtFechaf.Size = new System.Drawing.Size(127, 25);
             this.txtFechaf.TabIndex = 84;
@@ -365,7 +378,7 @@
             this.txtFechai.AutoSize = true;
             this.txtFechai.Font = new System.Drawing.Font("Franklin Gothic Heavy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtFechai.ForeColor = System.Drawing.Color.White;
-            this.txtFechai.Location = new System.Drawing.Point(193, 139);
+            this.txtFechai.Location = new System.Drawing.Point(274, 144);
             this.txtFechai.Name = "txtFechai";
             this.txtFechai.Size = new System.Drawing.Size(132, 25);
             this.txtFechai.TabIndex = 83;
@@ -377,7 +390,7 @@
             this.lbl_id.AutoSize = true;
             this.lbl_id.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_id.ForeColor = System.Drawing.Color.White;
-            this.lbl_id.Location = new System.Drawing.Point(77, 99);
+            this.lbl_id.Location = new System.Drawing.Point(258, 275);
             this.lbl_id.Name = "lbl_id";
             this.lbl_id.Size = new System.Drawing.Size(30, 23);
             this.lbl_id.TabIndex = 82;
@@ -391,7 +404,7 @@
             this.btn_regresar.Location = new System.Drawing.Point(11, 61);
             this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(49, 35);
+            this.btn_regresar.Size = new System.Drawing.Size(194, 35);
             this.btn_regresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_regresar.TabIndex = 81;
             this.btn_regresar.TabStop = false;
@@ -401,7 +414,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(326, 171);
+            this.pictureBox1.Location = new System.Drawing.Point(407, 176);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(194, 257);
@@ -423,7 +436,7 @@
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(2686, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(2846, 4);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(29, 31);
@@ -444,7 +457,7 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(2642, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(2802, 4);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(39, 31);
@@ -457,7 +470,7 @@
             this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(2262, 4);
+            this.pictureBox6.Location = new System.Drawing.Point(2422, 4);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(29, 31);
@@ -470,7 +483,7 @@
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(2216, 4);
+            this.pictureBox5.Location = new System.Drawing.Point(2376, 4);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(39, 31);
@@ -483,7 +496,7 @@
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(1427, 5);
+            this.pictureBox4.Location = new System.Drawing.Point(1587, 5);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(39, 31);
@@ -496,7 +509,7 @@
             this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(1471, 4);
+            this.pictureBox7.Location = new System.Drawing.Point(1631, 4);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(29, 31);
@@ -509,7 +522,7 @@
             this.pictureBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(787, 7);
+            this.pictureBox8.Location = new System.Drawing.Point(947, 7);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(39, 31);
@@ -523,7 +536,7 @@
             this.pictureBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(833, 7);
+            this.pictureBox9.Location = new System.Drawing.Point(993, 7);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(29, 31);
@@ -548,14 +561,14 @@
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(869, 43);
+            this.panel7.Size = new System.Drawing.Size(1029, 43);
             this.panel7.TabIndex = 76;
             // 
             // reporte_compras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 848);
+            this.ClientSize = new System.Drawing.Size(1029, 848);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -611,6 +624,7 @@
         private DataGridViewTextBoxColumn NombreProducto;
         private DataGridViewTextBoxColumn Col_Categoria;
         private DataGridViewTextBoxColumn CantidadProducto;
+        private DataGridViewTextBoxColumn Col_tipoentrada;
         private DataGridViewTextBoxColumn FechaEntrada;
         private DataGridViewTextBoxColumn Usuario;
         private Panel panel7;

@@ -119,15 +119,12 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
                 {
                     lbl_producto.Text = Convert.ToString(d.IdProducto.ToString() + " " + d.NombreProducto.ToString());
                     lbl_precio.Text = d.PrecioProducto.ToString();
-                    lbl_cantidad_actual.Text = d.CantidadProducto.ToString();
+                    
 
-                    sub = float.Parse(d.SubTotalProducto.ToString());
-
-                    subtotal = (float)Math.Round(sub, 2);
                    
-                    lbl_subtotal.Text = Convert.ToString(subtotal);
                 }
 
+                
 
             }
         }
@@ -136,55 +133,147 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
         {
             int cantidadactual = Convert.ToInt16( lbl_cantidad_actual.Text);
 
-            if (cantidadactual>=txt_num_regresar.Value)
+            if (lbl_tipoventa.Text=="Credito")
             {
-                var confirmResult = MessageBox.Show("Desea  hacer la Devolucion?",
-                    "Confirmar Devolucion!!",
-                    MessageBoxButtons.YesNo);
-
-                if (confirmResult == DialogResult.Yes)
+                if (cantidadactual >= txt_num_regresar.Value)
                 {
+                    var confirmResult = MessageBox.Show("Desea  hacer la Devolucion?",
+                        "Confirmar Devolucion!!",
+                        MessageBoxButtons.YesNo);
 
-                    int cantidadregresar = (int)txt_num_regresar.Value;
-                    float precio = float.Parse(lbl_precio.Text);
-
-
-                    float cantidaddevolucion=cantidadregresar* precio;
-                    dgDevolucion parametro = new dgDevolucion
+                    if (confirmResult == DialogResult.Yes)
                     {
-                        IdProducto = Convert.ToInt16(lbl_idProducto.Text),
-                        Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
+                        dgDevolucion parametro2 = new dgDevolucion
+                        {
+                            Id_Venta = Convert.ToInt16(lbl_id_venta.Text)
 
-                        Cantidad = Convert.ToInt16(txt_num_regresar.Value),
+                        };
 
-                        IdUsuario = Convert.ToInt16(lbl_id.Text),
-
-                        PrecioVenta = float.Parse(lbl_precio.Text),
-
-                        FechaEntrada = DateTime.Now,
-                        
-                        Stock = Convert.ToInt16(txt_num_regresar.Value),
-
-                        CantidadDevolucion = cantidaddevolucion
+                        int cantidadregresar = (int)txt_num_regresar.Value;
+                        float precio = float.Parse(lbl_precio.Text);
 
 
+                        float cantidaddevolucion = cantidadregresar * precio;
 
-                    };
+                        float cantidadpagadacredito = 0;
+                        List<dgDevolucion> lista = c_devolucion.LeerDevolucion(5, parametro2);
+
+                        if (lista.Count > 0)
+
+                        {
+
+                            foreach (dgDevolucion d in lista)
+                            {
+                                cantidadpagadacredito =float.Parse( d.CantidadPagada.ToString());
+                            }
+
+
+                        }
+
+                        if (cantidadpagadacredito> cantidaddevolucion)
+                        {
+                            dgDevolucion parametro = new dgDevolucion
+                            {
+                                IdProducto = Convert.ToInt16(lbl_idProducto.Text),
+                                Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
+                                
+                                Cantidad = Convert.ToInt16(txt_num_regresar.Value),
+
+                                IdUsuario = Convert.ToInt16(lbl_id.Text),
+
+                                PrecioVenta = float.Parse(lbl_precio.Text),
+
+                                FechaEntrada = DateTime.Now,
+
+                                Stock = Convert.ToInt16(txt_num_regresar.Value),
+
+                                CantidadDevolucion = cantidaddevolucion
 
 
 
-                    string control = "";
+                            };
 
-                    control = c_devolucion.Devolucion(parametro);
 
-                    RegresarVentana();
 
+                            string control = "";
+
+                            control = c_devolucion.Devolucion(parametro);
+
+                            control = c_devolucion.Rebaje(parametro);
+
+
+                            RegresarVentana();
+
+
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("No ha pagado suficiente credito para devolverle esa cantidad de dinero");
+                        }
+                       
+                      
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se puede regresar mas Cantidad de la comprada");
                 }
             }
             else
             {
-                MessageBox.Show("No se puede regresar mas Cantidad de la comprada");
+                if (cantidadactual >= txt_num_regresar.Value)
+                {
+                    var confirmResult = MessageBox.Show("Desea  hacer la Devolucion?",
+                        "Confirmar Devolucion!!",
+                        MessageBoxButtons.YesNo);
+
+                    if (confirmResult == DialogResult.Yes)
+                    {
+
+                        int cantidadregresar = (int)txt_num_regresar.Value;
+                        float precio = float.Parse(lbl_precio.Text);
+
+
+                        float cantidaddevolucion = cantidadregresar * precio;
+                        dgDevolucion parametro = new dgDevolucion
+                        {
+                            IdProducto = Convert.ToInt16(lbl_idProducto.Text),
+                            Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
+
+                            Cantidad = Convert.ToInt16(txt_num_regresar.Value),
+
+                            IdUsuario = Convert.ToInt16(lbl_id.Text),
+
+                            PrecioVenta = float.Parse(lbl_precio.Text),
+
+                            FechaEntrada = DateTime.Now,
+
+                            Stock = Convert.ToInt16(txt_num_regresar.Value),
+
+                            CantidadDevolucion = cantidaddevolucion
+
+
+
+                        };
+
+
+
+                        string control = "";
+
+                        control = c_devolucion.Devolucion(parametro);
+
+                        RegresarVentana();
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se puede regresar mas Cantidad de la comprada");
+                }
             }
+          
         }
 
         private void devolucion_producto_FormClosing(object sender, FormClosingEventArgs e)

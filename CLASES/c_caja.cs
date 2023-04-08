@@ -469,6 +469,76 @@ namespace PUNTOVENTA.CLASES
 
             }
 
+            else if (tipo == 9)
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",12),
+                    new SqlParameter("@P_FechaCaja",Parametro.FechaCaja)
+
+                };
+
+                tabla = bdContext.funcionStored("spCaja", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgCaja
+                             {
+                                 Id_Devolucion = Convert.ToInt16(fila["Id_Devolucion"].ToString()),
+                                 Id_Venta = Convert.ToInt16(fila["Id_Venta"].ToString()),
+                                 IdProducto = Convert.ToInt16(fila["Id_Producto"].ToString()),
+                                 NombreProducto = Convert.ToString(fila["NombreProducto"].ToString()),
+                                 CantidadProducto = Convert.ToInt16(fila["Cantidad"].ToString()),
+                                 PrecioProducto = float.Parse(fila["Precio"].ToString()),
+                                 SubTotalProducto = float.Parse(fila["SubTotalProducto"].ToString()),
+                                 FechaDevolucion = Convert.ToDateTime(fila["FechaDevolucion"].ToString()),
+
+                                 Usuario = Convert.ToString(fila["Usuario"].ToString())
+                               
+
+                             }
+                   ).ToList();
+                }
+
+            }
+
+            else if (tipo == 10)
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",13),
+                    new SqlParameter("@P_IdVenta",Parametro.Id_Venta)
+
+                };
+
+                tabla = bdContext.funcionStored("spCaja", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgCaja
+                             {
+                                 Id_Devolucion = Convert.ToInt16(fila["Id_Devolucion"].ToString()),
+                                 Id_Venta = Convert.ToInt16(fila["Id_Venta"].ToString()),
+                                 IdProducto = Convert.ToInt16(fila["Id_Producto"].ToString()),
+                                 NombreProducto = Convert.ToString(fila["NombreProducto"].ToString()),
+                                 CantidadProducto = Convert.ToInt16(fila["Cantidad"].ToString()),
+                                 PrecioProducto = float.Parse(fila["Precio"].ToString()),
+                                 SubTotalProducto = float.Parse(fila["SubTotalProducto"].ToString()),
+                                 FechaDevolucion = Convert.ToDateTime(fila["FechaDevolucion"].ToString()),
+
+                                 Usuario = Convert.ToString(fila["Usuario"].ToString())
+
+
+                             }
+                   ).ToList();
+                }
+
+            }
+
 
             return lista;
         }

@@ -193,7 +193,7 @@
             this.Fechadevolucion.Name = "Fechadevolucion";
             this.Fechadevolucion.Size = new System.Drawing.Size(257, 27);
             this.Fechadevolucion.TabIndex = 122;
-            this.Fechadevolucion.Value = new System.DateTime(2023, 4, 5, 0, 0, 0, 0);
+            this.Fechadevolucion.Value = new System.DateTime(2023, 4, 7, 0, 0, 0, 0);
             // 
             // label2
             // 

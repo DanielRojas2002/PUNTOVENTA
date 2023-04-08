@@ -169,9 +169,66 @@ namespace PUNTOVENTA.MENU.CAJA
 
             }
 
+            dataGridView_devoluciones.Rows.Clear();
+
+
+            dgCaja parametro4 = new dgCaja
+            {
+                FechaCaja = DateTime.Now
+
+            };
+
+
+
+
+            List<dgCaja> lista4 = c_caja.LeerCaja(9, parametro4);
+
+            float cantidaddevuelta = 0;
+            if (lista4.Count > 0)
+
+            {
+                string fechadevolucion;
+                float subtotal;
+                
+                foreach (dgCaja d in lista4)
+                {
+                    subtotal = float.Parse(d.SubTotalProducto.ToString());
+
+                    subtotal = (float)Math.Round(subtotal, 2);
+
+                    fechadevolucion = d.FechaDevolucion.Value.ToString("dd/MM/yyyy");
+                    dataGridView_devoluciones.Rows.Add(d.Id_Devolucion.ToString(), d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
+                         d.CantidadProducto.ToString(), d.PrecioProducto.ToString(), Convert.ToString(subtotal), d.Usuario.ToString(), fechadevolucion);
+
+
+                    _dineroventas = _dineroventas - float.Parse(d.SubTotalProducto.ToString());
+
+                    cantidaddevuelta = cantidaddevuelta + float.Parse(d.SubTotalProducto.ToString());
+                }
+
+              
+            }
+
+            else
+            {
+
+
+
+            }
+            lbl_devolucion.Text = Convert.ToString(cantidaddevuelta);
+
+
+
+
+
+
+
+
+
             _dineroventas = (float)Math.Round(_dineroventas, 2);
 
             lbl_cantidad_vendida.Text = Convert.ToString(_dineroventas);
+
         }
 
         private void CargaAbono()
@@ -412,10 +469,12 @@ namespace PUNTOVENTA.MENU.CAJA
             float abonado;
             float retirado;
             float cajatotal;
+            float devolucion;
 
             cantidad_vendida = float.Parse(lbl_cantidad_vendida.Text);
             abonado = float.Parse(lbl_abonado_total.Text);
             retirado = float.Parse(lbl_retirado.Text);
+            devolucion = float.Parse(lbl_devolucion.Text);
 
             cajatotal = cantidad_vendida + abonado - retirado;
 
@@ -475,6 +534,7 @@ namespace PUNTOVENTA.MENU.CAJA
 
             ActualizarCaja();
             CargaVentaAbonos();
+           
 
 
 
@@ -506,6 +566,7 @@ namespace PUNTOVENTA.MENU.CAJA
 
                     CargaAbono();
                     CargaVentaAbonos();
+                 
                 }
 
                 else
@@ -523,28 +584,50 @@ namespace PUNTOVENTA.MENU.CAJA
 
 
         }
+
+     
         private void menu_caja_Load(object sender, EventArgs e)
         {
+
             try
             {
-                CargarVentas();
                 InsertCaja();
+            }
+
+            catch
+            {
+
+            }
+
+            try
+            {
+               
+                CargarVentas();
+               
+
 
                 CargaAbono();
-                CargaVentaAbonos();
+              
                 CargaRetiro();
                 CargaEstatusCaja();
 
+                
+                CargaVentaAbonos();
+                
+
                 ActualizarCaja();
                 CargaVentaAbonos();
-
-
 
             }
             catch
             {
 
-            }
+            } 
+
+
+
+
+           
            
         }
 
@@ -985,6 +1068,16 @@ namespace PUNTOVENTA.MENU.CAJA
                   
                
             }
+        }
+
+        private void dataGridView_p_credito_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView_devoluciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

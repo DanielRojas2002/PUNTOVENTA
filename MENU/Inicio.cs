@@ -532,7 +532,7 @@ namespace Punto_de_Venta
 
                 else if (estatuscaja == "2")
                 {
-                    MessageBox.Show("No puede Acceder al apartado de ventas ya que la caja esta cerrada", "Advertencia");
+                    MessageBox.Show("No puede Acceder al apartado de Devoluciones ya que la caja esta cerrada", "Advertencia");
                 }
             }
 
