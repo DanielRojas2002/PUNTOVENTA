@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = ClosedXML.Excel;
 
 namespace PUNTOVENTA.MENU.REPORTES
 {
@@ -172,7 +173,285 @@ namespace PUNTOVENTA.MENU.REPORTES
 
         private void btn_exportar_Click(object sender, EventArgs e)
         {
+           
 
+            try
+            {
+               
+
+                string fechainicio = Fechacaja.Value.ToString("dd/MM/yyyy");
+              
+
+                string fechainicio3 = Fechacaja.Value.ToString("dd_MM_yyyy");
+               
+
+
+
+                string ls_archivo_excel = "C:\\C#\\R_Caja" + fechainicio3  + ".xlsx";
+                string fechaentrada;
+
+
+
+
+                var wb = new Excel.XLWorkbook();
+
+                //create 'worksheet' object
+                var ws = wb.Worksheets.Add("R_Caja" + fechainicio3 );
+
+                //read cells
+                var a = ws.Cell("A1").Value;
+                var b = ws.Cell("B1").Value;
+
+
+
+                //write cells
+                ws.Cell("A1").Value = "FILTROS";
+                ws.Cell("G4").Value = "REPORTE DE CAJA";
+                ws.Cell("A2").Value = "FECHA INICIO:";
+                ws.Cell("B2").Value = fechainicio;
+                
+
+                ws.Range("A5:G5").Value = "----------------------------------------";
+
+
+                ws.Cell("A6").Value = "No.Caja";
+                ws.Cell("B6").Value = "Venta";
+
+                ws.Cell("C6").Value = "Abonado";
+
+                ws.Cell("D6").Value = "Devolucion";
+
+
+                ws.Cell("E6").Value = "Retirado";
+
+
+                ws.Cell("F6").Value = "Cantidad Total";
+
+                ws.Cell("G6").Value = "Fecha Caja";
+
+                ws.Cell("H6").Value = "Descripcion Caja";
+
+
+
+                txtFechai.Text = Fechacaja.Value.ToString("dd/MM/yyyy");
+
+
+                int contadorcolumnas = 1;
+                int contadorregistros = 7;
+
+                dgReportes parametro = new dgReportes
+                {
+                    FechaCaja = Convert.ToDateTime(txtFechai.Text)
+
+                };
+
+
+
+
+                List<dgReportes> lista = c_reportes.LeerReporte(4, parametro);
+
+                contadorregistros = contadorregistros + 1;
+
+                if (lista.Count > 0)
+
+                {
+                    string fechacaja;
+
+                    foreach (dgReportes d in lista)
+                    {
+
+                        contadorcolumnas = 1;
+
+                        fechacaja = d.FechaCaja.Value.ToString("dd/MM/yyyy");
+                       
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.IdCaja.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadVenta.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadAbonada.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadDevolucion.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadRetirada.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadTotal.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = fechacaja;
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.DescripcionCaja.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        contadorregistros = contadorregistros + 1;
+
+                    }
+
+
+                }
+
+                else
+                {
+                    MessageBox.Show("No se Encontro Caja en el dia seleccionado");
+
+
+                }
+
+                wb.SaveAs(ls_archivo_excel);
+                MessageBox.Show("Excel Reportado Satisfactoriamente en : " + ls_archivo_excel);
+
+            }
+            catch
+            {
+
+
+                txtFechai.Text = Fechacaja.Value.ToString("");
+
+
+                string fechadiferenteinicio = txtFechai.Text;
+                string[] words = fechadiferenteinicio.Split('/');
+                string dia, mes, ano;
+
+                mes = words[0];
+                dia = words[1];
+                ano = words[2];
+
+
+                txtFechai.Text = dia + "/" + mes + "/" + ano;
+
+
+
+
+
+
+
+
+                string ls_archivo_excel = "C:\\C#\\R_Caja" + txtFechai.Text + ".xlsx";
+               
+
+
+
+                var wb = new Excel.XLWorkbook();
+
+                //create 'worksheet' object
+                var ws = wb.Worksheets.Add("R_Caja" + txtFechai.Text);
+
+                //read cells
+                var a = ws.Cell("A1").Value;
+                var b = ws.Cell("B1").Value;
+
+
+
+                //write cells
+                ws.Cell("A1").Value = "FILTROS";
+                ws.Cell("G4").Value = "REPORTE DE CAJA";
+                ws.Cell("A2").Value = "FECHA INICIO:";
+                ws.Cell("B2").Value = txtFechai.Text;
+
+
+                ws.Range("A5:G5").Value = "----------------------------------------";
+
+
+                ws.Cell("A6").Value = "No.Caja";
+                ws.Cell("B6").Value = "Venta";
+
+                ws.Cell("C6").Value = "Abonado";
+
+                ws.Cell("D6").Value = "Devolucion";
+
+
+                ws.Cell("E6").Value = "Retirado";
+
+
+                ws.Cell("F6").Value = "Cantidad Total";
+
+                ws.Cell("G6").Value = "Fecha Caja";
+
+                ws.Cell("H6").Value = "Descripcion Caja";
+
+
+
+                txtFechai.Text = Fechacaja.Value.ToString("dd/MM/yyyy");
+
+
+                int contadorcolumnas = 1;
+                int contadorregistros = 7;
+
+
+
+                dgReportes parametro = new dgReportes
+                {
+                    FechaCaja = Convert.ToDateTime(txtFechai.Text),
+
+                };
+
+
+
+
+                List<dgReportes> lista = c_reportes.LeerReporte(4, parametro);
+
+
+                if (lista.Count > 0)
+
+                {
+                    string fechacaja;
+
+                    foreach (dgReportes d in lista)
+                    {
+
+
+                        contadorcolumnas = 1;
+
+                        fechacaja = d.FechaCaja.Value.ToString("dd/MM/yyyy");
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.IdCaja.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadVenta.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadAbonada.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadDevolucion.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadRetirada.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadTotal.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = fechacaja;
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.DescripcionCaja.ToString();
+                        contadorcolumnas = contadorcolumnas + 1;
+
+                        contadorregistros = contadorregistros + 1;
+
+
+
+                    }
+
+
+                }
+
+                else
+                {
+                    MessageBox.Show("No se Encontro Caja en el dia seleccionado");
+                }
+
+                wb.SaveAs(ls_archivo_excel);
+                MessageBox.Show("Excel Reportado Satisfactoriamente en : " + ls_archivo_excel);
+
+
+            }
         }
 
         private void btn_regresar_Click(object sender, EventArgs e)
