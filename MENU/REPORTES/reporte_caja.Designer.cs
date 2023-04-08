@@ -57,6 +57,7 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_ticket = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_caja)).BeginInit();
@@ -261,10 +262,10 @@
             // 
             // btn_exportar
             // 
-            this.btn_exportar.Location = new System.Drawing.Point(437, 586);
+            this.btn_exportar.Location = new System.Drawing.Point(570, 586);
             this.btn_exportar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_exportar.Name = "btn_exportar";
-            this.btn_exportar.Size = new System.Drawing.Size(506, 31);
+            this.btn_exportar.Size = new System.Drawing.Size(400, 31);
             this.btn_exportar.TabIndex = 116;
             this.btn_exportar.Text = "Exportar a Excel";
             this.btn_exportar.UseVisualStyleBackColor = true;
@@ -409,12 +410,24 @@
             this.panel1.Size = new System.Drawing.Size(982, 39);
             this.panel1.TabIndex = 68;
             // 
+            // btn_ticket
+            // 
+            this.btn_ticket.Location = new System.Drawing.Point(39, 586);
+            this.btn_ticket.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_ticket.Name = "btn_ticket";
+            this.btn_ticket.Size = new System.Drawing.Size(400, 31);
+            this.btn_ticket.TabIndex = 117;
+            this.btn_ticket.Text = "Imprimir Ticket";
+            this.btn_ticket.UseVisualStyleBackColor = true;
+            this.btn_ticket.Click += new System.EventHandler(this.btn_ticket_Click);
+            // 
             // reporte_caja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(982, 655);
+            this.Controls.Add(this.btn_ticket);
             this.Controls.Add(this.btn_exportar);
             this.Controls.Add(this.btn_generar);
             this.Controls.Add(this.dataGridView_caja);
@@ -479,5 +492,6 @@
         private DataGridViewTextBoxColumn Col_CantidadTotal;
         private DataGridViewTextBoxColumn Col_FechaCaja;
         private DataGridViewTextBoxColumn Col_DescripcionCaja;
+        private Button btn_ticket;
     }
 }

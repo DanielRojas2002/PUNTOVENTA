@@ -783,10 +783,7 @@ namespace PUNTOVENTA.MENU.CAJA
             }
 
 
-            clsventas.CreaRecibo.LineasGuion();
-
-            clsventas.CreaRecibo.EncabezadoVenta();
-
+           
 
             dgTicket parametroticket = new dgTicket
             {
@@ -796,10 +793,15 @@ namespace PUNTOVENTA.MENU.CAJA
             List<dgTicket> listaProductosVenta = c_ticket.Ticket(3, parametroticket);
 
 
+           
             if (listaProductosVenta.Count > 0)
 
             {
+                Ticket1.TextoIzquierda("VENTAS");
+                Ticket1.TextoIzquierda("");
+                clsventas.CreaRecibo.LineasGuion();
 
+                clsventas.CreaRecibo.EncabezadoVenta();
 
 
                 string concatenacion = "";
@@ -823,6 +825,9 @@ namespace PUNTOVENTA.MENU.CAJA
                 }
             }
 
+            Ticket1.TextoIzquierda("");
+
+
 
 
             dgTicket parametroticket2 = new dgTicket
@@ -833,10 +838,20 @@ namespace PUNTOVENTA.MENU.CAJA
             List<dgTicket> listaProductosVenta2 = c_ticket.Ticket(4, parametroticket);
 
 
+            
+           
+            
             if (listaProductosVenta2.Count > 0)
 
             {
+              
+                Ticket1.TextoIzquierda("ABONOS CREDITO");
+                Ticket1.TextoIzquierda("");
+                clsventas.CreaRecibo.LineasGuion();
 
+
+                clsventas.CreaRecibo.EncabezadoVenta();
+               
 
 
 
@@ -857,10 +872,57 @@ namespace PUNTOVENTA.MENU.CAJA
                 }
             }
 
+            Ticket1.TextoIzquierda("");
+
+
+            dgTicket parametroticketdevolucion = new dgTicket
+            {
+                FechaVenta = DateTime.Now
+            };
+
+            List<dgTicket> listaProductosVentadevolucion = c_ticket.Ticket(5, parametroticketdevolucion);
+
+
+            if (listaProductosVentadevolucion.Count > 0)
+
+            {
+                Ticket1.TextoIzquierda("DEVOLUCIONES");
+                Ticket1.TextoIzquierda("");
+                clsventas.CreaRecibo.LineasGuion();
+
+
+                clsventas.CreaRecibo.EncabezadoVenta();
+
+                string concatenacion = "";
+                double subtotal, sub, cantidadcomprada, preciocomprado;
+                foreach (dgTicket d in listaProductosVentadevolucion)
+                {
+                    preciocomprado = double.Parse(d.PrecioComprado.ToString());
+
+                    cantidadcomprada = Convert.ToInt16(d.CantidadComprada.ToString());
+
+                    sub = preciocomprado * cantidadcomprada;
+
+                    subtotal = (double)Math.Round(sub, 2);
+
+
+                    concatenacion = "(" + d.Id_Producto.ToString() + ")" + " " + d.NombreProducto.ToString();
+                    Ticket1.TextoIzquierda(" ");
+                    Ticket1.TextoIzquierda(d.DescripcionTipoVenta.ToString());
+                    Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
+                    clsventas.CreaRecibo.LineasGuion();
+                }
+            }
+
+
+
             Ticket1.TextoIzquierda(" "); 
             Ticket1.AgregaTotales("Total Venta", double.Parse(lbl_cantidad_vendida.Text));
             Ticket1.TextoIzquierda(" ");
             Ticket1.AgregaTotales("Abonado con :", double.Parse(lbl_abonado_total.Text));
+
+            Ticket1.TextoIzquierda(" ");
+            Ticket1.AgregaTotales("Devolucion :", double.Parse(lbl_devolucion.Text));
 
             Ticket1.TextoIzquierda(" ");
             Ticket1.AgregaTotales("Retirado Caja", double.Parse(lbl_retirado.Text));

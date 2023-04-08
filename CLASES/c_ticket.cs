@@ -185,7 +185,43 @@ namespace PUNTOVENTA.CLASES
 
             }
 
-           
+            else if (tipo == 5) // Ticket Caja DEVOLUCION
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",5),
+                    new SqlParameter("@P_FechaVenta",Parametro.FechaVenta)
+                };
+
+                tabla = bdContext.funcionStored("spTicket", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgTicket
+                             {
+
+                                 Id_Producto = Convert.ToString(fila["Id_Producto"].ToString()),
+
+                                 NombreProducto = Convert.ToString(fila["NombreProducto"].ToString()),
+
+                                 CantidadComprada = Convert.ToInt16(fila["CantidadDevolucion"].ToString()),
+
+                                 PrecioComprado = float.Parse(fila["PrecioProducto"].ToString()),
+
+
+
+                                 DescripcionTipoVenta = Convert.ToString(fila["DescripcionTipoVenta"].ToString()),
+
+                             }
+                   ).ToList();
+                }
+
+
+            }
+
+
 
 
 

@@ -525,5 +525,363 @@ namespace PUNTOVENTA.MENU.REPORTES
 
 
         }
+
+        private void btn_ticket_Click(object sender, EventArgs e)
+        {
+
+            TicketCaja();
+        }
+
+        private void TicketCaja()
+        {
+
+            txtFechai.Text = Fechacaja.Value.ToString("dd/MM/yyyy");
+
+            string impresora = "";
+            dgImpresora parametroimpresora = new dgImpresora
+            {
+
+
+
+            };
+
+            List<dgImpresora> listaimpresora = c_impresora.LeerImpresora(1, parametroimpresora);
+
+            if (listaimpresora.Count > 0)
+
+            {
+
+
+                foreach (dgImpresora d in listaimpresora)
+                {
+
+                    impresora = d.NombreImpresora.ToString();
+
+                }
+            }
+
+            clsventas.CreaRecibo Ticket1 = new clsventas.CreaRecibo();
+
+
+            dgTicket parametroticketinfo = new dgTicket
+            {
+            };
+
+            List<dgTicket> listaticketinfo = c_ticket.Ticket(0, parametroticketinfo);
+
+         
+
+            if (listaticketinfo.Count > 0)
+
+            {
+
+
+                foreach (dgTicket d in listaticketinfo)
+                {
+                    Ticket1.TextoCentro(d.NombreEmpresa.ToUpper().ToString());
+
+
+                    Ticket1.TextoIzquierda(d.Colonia.ToUpper().ToString());
+                    Ticket1.TextoIzquierda(d.Calle.ToUpper().ToString());
+                    Ticket1.TextoIzquierda(d.Telefono.ToString());
+                    Ticket1.TextoIzquierda("");
+                }
+
+
+                Ticket1.TextoCentro("Recibo de Ventas");
+                Ticket1.TextoCentro("Los Precios ya contienen IVA");
+
+
+                Ticket1.TextoIzquierda("Fecha de Caja: " + txtFechai.Text);
+                Ticket1.TextoIzquierda("");
+            }
+
+
+         
+
+            dgTicket parametroticket = new dgTicket
+            {
+                FechaVenta = Convert.ToDateTime(txtFechai.Text)
+            };
+
+            List<dgTicket> listaProductosVenta = c_ticket.Ticket(3, parametroticket);
+
+
+
+            if (listaProductosVenta.Count > 0)
+
+            {
+                Ticket1.TextoIzquierda("VENTAS");
+                Ticket1.TextoIzquierda("");
+                clsventas.CreaRecibo.LineasGuion();
+
+                clsventas.CreaRecibo.EncabezadoVenta();
+
+
+                string concatenacion = "";
+                double subtotal, sub, cantidadcomprada, preciocomprado;
+                foreach (dgTicket d in listaProductosVenta)
+                {
+                    preciocomprado = double.Parse(d.PrecioComprado.ToString());
+
+                    cantidadcomprada = Convert.ToInt16(d.CantidadComprada.ToString());
+
+                    sub = preciocomprado * cantidadcomprada;
+
+                    subtotal = (double)Math.Round(sub, 2);
+
+
+                    concatenacion = "(" + d.Id_Producto.ToString() + ")" + " " + d.NombreProducto.ToString();
+                    Ticket1.TextoIzquierda(" ");
+                    Ticket1.TextoIzquierda(d.DescripcionTipoVenta.ToString());
+                    Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
+                    clsventas.CreaRecibo.LineasGuion();
+                }
+            }
+
+            Ticket1.TextoIzquierda("");
+
+
+
+
+            dgTicket parametroticket2 = new dgTicket
+            {
+                FechaVenta = Convert.ToDateTime(txtFechai.Text)
+            };
+
+            List<dgTicket> listaProductosVenta2 = c_ticket.Ticket(4, parametroticket);
+
+
+
+
+
+            if (listaProductosVenta2.Count > 0)
+
+            {
+
+                Ticket1.TextoIzquierda("ABONOS CREDITO");
+                Ticket1.TextoIzquierda("");
+                clsventas.CreaRecibo.LineasGuion();
+
+
+                clsventas.CreaRecibo.EncabezadoVenta();
+
+
+
+
+                double subtotal, sub;
+                foreach (dgTicket d in listaProductosVenta2)
+                {
+                    sub = double.Parse(d.SubTotal.ToString());
+
+                    subtotal = (double)Math.Round(sub, 2);
+
+
+
+                    Ticket1.TextoIzquierda(" ");
+                    Ticket1.TextoIzquierda("Num Venta: " + d.Id_Venta.ToString() + " " + d.DescripcionTipoVenta.ToString() + " " + d.Usuario.ToString());
+                    Ticket1.TextoIzquierda("Cliente: " + " " + d.Nombre.ToString() + " " + d.Apellido_Paterno.ToString() + " " + d.Apellido_Materno.ToString());
+                    Ticket1.AgregaArticulo("", 0, 0, double.Parse(subtotal.ToString()));
+                    clsventas.CreaRecibo.LineasGuion();
+                }
+            }
+
+            Ticket1.TextoIzquierda("");
+
+
+            dgTicket parametroticketdevolucion = new dgTicket
+            {
+                FechaVenta = Convert.ToDateTime(txtFechai.Text)
+            };
+
+            List<dgTicket> listaProductosVentadevolucion = c_ticket.Ticket(5, parametroticketdevolucion);
+
+
+            if (listaProductosVentadevolucion.Count > 0)
+
+            {
+                Ticket1.TextoIzquierda("DEVOLUCIONES");
+                Ticket1.TextoIzquierda("");
+                clsventas.CreaRecibo.LineasGuion();
+
+
+                clsventas.CreaRecibo.EncabezadoVenta();
+
+                string concatenacion = "";
+                double subtotal, sub, cantidadcomprada, preciocomprado;
+                foreach (dgTicket d in listaProductosVentadevolucion)
+                {
+                    preciocomprado = double.Parse(d.PrecioComprado.ToString());
+
+                    cantidadcomprada = Convert.ToInt16(d.CantidadComprada.ToString());
+
+                    sub = preciocomprado * cantidadcomprada;
+
+                    subtotal = (double)Math.Round(sub, 2);
+
+
+                    concatenacion = "(" + d.Id_Producto.ToString() + ")" + " " + d.NombreProducto.ToString();
+                    Ticket1.TextoIzquierda(" ");
+                    Ticket1.TextoIzquierda(d.DescripcionTipoVenta.ToString());
+                    Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
+                    clsventas.CreaRecibo.LineasGuion();
+                }
+            }
+            float cantidadventa = 0, cantidadabonada = 0, cantidaddevolucion = 0, cantidadretirada = 0, cantidadtotal = 0;
+
+            try
+            {
+
+
+
+
+                txtFechai.Text = Fechacaja.Value.ToString("dd/MM/yyyy");
+
+
+
+
+                dgReportes parametro = new dgReportes
+                {
+                    FechaCaja = Convert.ToDateTime(txtFechai.Text)
+
+                };
+
+
+
+
+                List<dgReportes> lista = c_reportes.LeerReporte(4, parametro);
+
+
+                if (lista.Count > 0)
+
+                {
+                    string fechacaja;
+                   
+
+                    foreach (dgReportes d in lista)
+                    {
+                        cantidadventa = float.Parse(d.CantidadVenta.ToString());
+                        cantidadabonada = float.Parse(d.CantidadAbonada.ToString());
+                        cantidaddevolucion = float.Parse(d.CantidadDevolucion.ToString());
+                        cantidadretirada = float.Parse(d.CantidadRetirada.ToString());
+                        cantidadtotal = float.Parse(d.CantidadTotal.ToString());
+
+                      
+
+
+
+                    }
+
+
+                }
+
+                else
+                {
+                    MessageBox.Show("No se Encontro Caja en el dia seleccionado");
+
+
+                }
+
+            }
+            catch
+            {
+
+
+                txtFechai.Text = Fechacaja.Value.ToString("");
+
+
+                string fechadiferenteinicio = txtFechai.Text;
+                string[] words = fechadiferenteinicio.Split('/');
+                string dia, mes, ano;
+
+                mes = words[0];
+                dia = words[1];
+                ano = words[2];
+
+
+                txtFechai.Text = dia + "/" + mes + "/" + ano;
+
+
+
+
+
+
+                dgReportes parametro = new dgReportes
+                {
+                    FechaCaja = Convert.ToDateTime(txtFechai.Text),
+
+                };
+
+
+
+
+                List<dgReportes> lista = c_reportes.LeerReporte(4, parametro);
+
+
+                if (lista.Count > 0)
+
+                {
+                    string fechacaja;
+                  
+
+                    foreach (dgReportes d in lista)
+                    {
+                        cantidadventa = float.Parse(d.CantidadVenta.ToString());
+                        cantidadabonada = float.Parse(d.CantidadAbonada.ToString());
+                        cantidaddevolucion = float.Parse(d.CantidadDevolucion.ToString());
+                        cantidadretirada = float.Parse(d.CantidadRetirada.ToString());
+                        cantidadtotal = float.Parse(d.CantidadTotal.ToString());
+
+
+
+
+
+                    }
+
+
+                }
+
+                else
+                {
+                    MessageBox.Show("No se Encontro Caja en el dia seleccionado");
+                }
+
+
+
+
+            }
+
+
+            Ticket1.TextoIzquierda(" ");
+            Ticket1.AgregaTotales("Total Venta", cantidadventa);
+            Ticket1.TextoIzquierda(" ");
+            Ticket1.AgregaTotales("Abonado con :", cantidadabonada);
+
+            Ticket1.TextoIzquierda(" ");
+            Ticket1.AgregaTotales("Devolucion :", cantidaddevolucion);
+
+            Ticket1.TextoIzquierda(" ");
+            Ticket1.AgregaTotales("Retirado Caja", cantidadretirada);
+
+            Ticket1.TextoIzquierda(" ");
+            Ticket1.AgregaTotales("Total Caja ", cantidadtotal);
+
+
+
+
+            Ticket1.TextoIzquierda(" ");
+            Ticket1.TextoCentro("=================================================");
+            Ticket1.TextoCentro("TICKET DE CAJA ");
+            Ticket1.TextoCentro("===================================================");
+            Ticket1.TextoIzquierda(" ");
+
+
+
+
+            Ticket1.ImprimirTiket(impresora);
+            MessageBox.Show("Ticket Generado Satisfactoriamente");
+
+       
+        }
     }
 }
