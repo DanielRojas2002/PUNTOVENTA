@@ -75,6 +75,7 @@ namespace PUNTOVENTA.MENU.REPORTES
                         {
                             label10.Text = "";
                             dataGridView_devoluciones.Visible = false;
+                            lbl_cantidad_vendida.Text = Convert.ToString(_dineroventas);
                         }
                         else
                         {
@@ -106,6 +107,9 @@ namespace PUNTOVENTA.MENU.REPORTES
             }
             catch
             {
+                dataGridView_devoluciones.Rows.Clear();
+                lbl_cantidad_vendida.Text = "";
+                dataGridView_numventa.Rows.Clear();
                 MessageBox.Show("Respete la sintaxis");
             }
            
@@ -518,9 +522,242 @@ namespace PUNTOVENTA.MENU.REPORTES
            
         }
 
+        private void TicketNumVenta()
+        {
+            try
+            {
+                if (txt_ticket.Text != "")
+                {
+                    string txtticket = txt_ticket.Text;
+                    string impresora = "";
+                   
+
+
+                    dgReportes parametro = new dgReportes
+                    {
+                        Id_Venta = Convert.ToInt16(txt_ticket.Text)
+
+                    };
+
+
+
+
+                    List<dgReportes> lista = c_reportes.LeerReporte(5, parametro);
+
+
+                  
+
+                    string escredito = "";
+                    string concatenacion = "";
+                    if (lista.Count > 0)
+
+                    {
+
+                        dgImpresora parametroimpresora = new dgImpresora
+                        {
+
+
+
+                        };
+
+                        List<dgImpresora> listaimpresora = c_impresora.LeerImpresora(1, parametroimpresora);
+
+                        if (listaimpresora.Count > 0)
+
+                        {
+
+
+                            foreach (dgImpresora d in listaimpresora)
+                            {
+
+                                impresora = d.NombreImpresora.ToString();
+
+                            }
+                        }
+
+                        clsventas.CreaRecibo Ticket1 = new clsventas.CreaRecibo();
+
+
+
+                        dgTicket parametroticketinfo = new dgTicket
+                        {
+                        };
+
+                        List<dgTicket> listaticketinfo = c_ticket.Ticket(0, parametroticketinfo);
+
+
+
+
+                        if (listaticketinfo.Count > 0)
+
+                        {
+
+
+                            foreach (dgTicket d in listaticketinfo)
+                            {
+                                Ticket1.TextoCentro(d.NombreEmpresa.ToUpper().ToString());
+
+
+                                Ticket1.TextoIzquierda(d.Colonia.ToUpper().ToString());
+                                Ticket1.TextoIzquierda(d.Calle.ToUpper().ToString());
+                                Ticket1.TextoIzquierda(d.Telefono.ToString());
+                                Ticket1.TextoIzquierda("");
+                            }
+
+
+                            Ticket1.TextoIzquierda("Recibo de Venta");
+                            Ticket1.TextoIzquierda("Los Precios ya contienen IVA");
+
+
+
+                            Ticket1.TextoIzquierda("");
+                        }
+
+                        Ticket1.TextoIzquierda("Recibo:" + txtticket);
+                        clsventas.CreaRecibo.EncabezadoVenta();
+                        clsventas.CreaRecibo.LineasGuion();
+
+                        string fechaventa;
+                        float subtotal;
+
+                        foreach (dgReportes d in lista)
+                        {
+                            subtotal = float.Parse(d.SubTotalProducto.ToString());
+
+                            subtotal = (float)Math.Round(subtotal, 2);
+
+                            fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
+
+                            concatenacion = "(" + d.IdProducto.ToString() + ")" + " " + d.NombreProducto.ToString();
+                            Ticket1.TextoIzquierda(" ");
+                            Ticket1.TextoIzquierda(d.DescripcionTipoVenta.ToString());
+                            Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioProducto.ToString()), Convert.ToInt16(d.CantidadProducto.ToString()), double.Parse(subtotal.ToString()));
+                            clsventas.CreaRecibo.LineasGuion();
+
+                            escredito = d.DescripcionTipoVenta.ToString();
+
+                        }
+
+
+
+                        if (escredito == "Credito")
+                        {
+
+                        }
+                        else
+                        {
+
+
+
+
+
+
+                            dgCaja parametro2 = new dgCaja
+                            {
+                                Id_Venta = Convert.ToInt16(txt_ticket.Text)
+
+                            };
+
+
+
+
+                            List<dgCaja> lista2 = c_caja.LeerCaja(10, parametro2);
+
+                            Ticket1.TextoIzquierda("");
+
+                            Ticket1.TextoIzquierda("Devoluciones");
+
+                            clsventas.CreaRecibo.EncabezadoVenta();
+                            clsventas.CreaRecibo.LineasGuion();
+
+
+                            if (lista2.Count > 0)
+
+                            {
+                                string fechadevolucion;
+
+                                foreach (dgCaja d in lista2)
+                                {
+                                    subtotal = float.Parse(d.SubTotalProducto.ToString());
+
+                                    subtotal = (float)Math.Round(subtotal, 2);
+
+                                    fechadevolucion = d.FechaDevolucion.Value.ToString("dd/MM/yyyy");
+
+                                    concatenacion = "(" + d.IdProducto.ToString() + ")" + " " + d.NombreProducto.ToString();
+                                    Ticket1.TextoIzquierda(" ");
+
+                                    Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioProducto.ToString()), Convert.ToInt16(d.CantidadProducto.ToString()), double.Parse(subtotal.ToString()));
+                                    clsventas.CreaRecibo.LineasGuion();
+                                }
+
+
+                            }
+
+                            else
+                            {
+
+
+
+                            }
+
+                        }
+
+                        Ticket1.TextoIzquierda("Cantidad Vendida:" + lbl_cantidad_vendida.Text);
+
+                        Ticket1.TextoCentro("==================================");
+                        Ticket1.TextoCentro("TICKET DE VENTA NUMVENTA ");
+                        Ticket1.TextoCentro("==================================");
+
+                        Ticket1.ImprimirTiket(impresora);
+                        MessageBox.Show("Ticket Generado Satisfactoriamente");
+
+                    }
+
+                    else
+                    {
+                        dataGridView_numventa.Rows.Clear();
+                        MessageBox.Show("No se Encontro el Numero de Venta");
+                        txt_ticket.Text = "";
+                        dataGridView_devoluciones.Rows.Clear();
+                        lbl_cantidad_vendida.Text = "";
+                    }
+                }
+
+                else
+                {
+                    dataGridView_devoluciones.Rows.Clear();
+                    lbl_cantidad_vendida.Text = "";
+                    dataGridView_numventa.Rows.Clear();
+                    MessageBox.Show("Ingrese el Numero de Ticket");
+                    txt_ticket.Text = "";
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Respete la Sintaxis");
+            }
+           
+            
+           
+               
+
+
+
+
+
+
+
+
+
+            
+
+
+        }
+
         private void btn_generar_ticket_Click(object sender, EventArgs e)
         {
-
+            TicketNumVenta();
         }
 
         private void txt_ticket_KeyPress(object sender, KeyPressEventArgs e)
