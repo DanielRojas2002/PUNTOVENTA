@@ -10,6 +10,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = ClosedXML.Excel;
 
 namespace PUNTOVENTA.MENU.REPORTES
 {
@@ -24,82 +25,90 @@ namespace PUNTOVENTA.MENU.REPORTES
         }
 
         public float _dineroventas = 0;
-       
+
 
         private void btn_ticket_Click(object sender, EventArgs e)
         {
-            dataGridView_numventa.Rows.Clear();
-            _dineroventas = 0;
-            if (txt_ticket.Text != "")
+            try
             {
-                dgReportes parametro = new dgReportes
+                dataGridView_numventa.Rows.Clear();
+                _dineroventas = 0;
+                if (txt_ticket.Text != "")
                 {
-                    Id_Venta = Convert.ToInt16(txt_ticket.Text)
-
-                };
-
-
-
-
-                List<dgReportes> lista = c_reportes.LeerReporte(5, parametro);
-
-                string escredito = "";
-                if (lista.Count > 0)
-
-                {
-                    string fechaventa;
-                    float subtotal;
-
-                    foreach (dgReportes d in lista)
+                    dgReportes parametro = new dgReportes
                     {
-                        subtotal = float.Parse(d.SubTotalProducto.ToString());
+                        Id_Venta = Convert.ToInt16(txt_ticket.Text)
 
-                        subtotal = (float)Math.Round(subtotal, 2);
-
-
-
-                        fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
-                        dataGridView_numventa.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
-                             d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), fechaventa, d.DescripcionTipoVenta.ToString());
+                    };
 
 
 
-                        _dineroventas = _dineroventas + subtotal;
-                        escredito = d.DescripcionTipoVenta.ToString();
+
+                    List<dgReportes> lista = c_reportes.LeerReporte(5, parametro);
+
+                    string escredito = "";
+                    if (lista.Count > 0)
+
+                    {
+                        string fechaventa;
+                        float subtotal;
+
+                        foreach (dgReportes d in lista)
+                        {
+                            subtotal = float.Parse(d.SubTotalProducto.ToString());
+
+                            subtotal = (float)Math.Round(subtotal, 2);
+
+
+
+                            fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
+                            dataGridView_numventa.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
+                                 d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), fechaventa, d.DescripcionTipoVenta.ToString());
+
+
+
+                            _dineroventas = _dineroventas + subtotal;
+                            escredito = d.DescripcionTipoVenta.ToString();
+
+                        }
+                        if (escredito == "Credito")
+                        {
+                            label10.Text = "";
+                            dataGridView_devoluciones.Visible = false;
+                        }
+                        else
+                        {
+                            label10.Text = "DEVOLUCIONES";
+                            dataGridView_devoluciones.Visible = true;
+                            CargaDevoluiones();
+                        }
 
                     }
-                    if (escredito=="Credito")
-                    {
-                        label10.Text = "";
-                        dataGridView_devoluciones.Visible = false;
-                    }
+
                     else
                     {
-                        label10.Text = "DEVOLUCIONES";
-                        dataGridView_devoluciones.Visible = true;
-                        CargaDevoluiones();
+                        dataGridView_numventa.Rows.Clear();
+                        MessageBox.Show("No se Encontro el Numero de Venta");
+                        txt_ticket.Text = "";
+                        dataGridView_devoluciones.Rows.Clear();
+                        lbl_cantidad_vendida.Text = "";
                     }
-                   
                 }
 
                 else
                 {
-                    dataGridView_numventa.Rows.Clear();
-                    MessageBox.Show("No se Encontro el Numero de Venta");
-                    txt_ticket.Text = "";
                     dataGridView_devoluciones.Rows.Clear();
                     lbl_cantidad_vendida.Text = "";
+                    dataGridView_numventa.Rows.Clear();
+                    MessageBox.Show("Ingrese el Numero de Ticket");
+                    txt_ticket.Text = "";
                 }
             }
-
-            else
+            catch
             {
-                dataGridView_devoluciones.Rows.Clear();
-                lbl_cantidad_vendida.Text = "";
-                dataGridView_numventa.Rows.Clear();
-                MessageBox.Show("Ingrese el Numero de Ticket");
-                txt_ticket.Text = "";
+                MessageBox.Show("Respete la sintaxis");
             }
+           
         }
 
         private void reporte_numventa_FormClosing(object sender, FormClosingEventArgs e)
@@ -255,12 +264,278 @@ namespace PUNTOVENTA.MENU.REPORTES
 
         private void btn_exportar_excel_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (txt_ticket.Text != "")
+                {
 
+
+                    var wb = new Excel.XLWorkbook();
+
+                    string ls_archivo_excel = "C:\\C#\\R_NumVenta" + txt_ticket.Text + ".xlsx";
+
+                    //create 'worksheet' object
+                    var ws = wb.Worksheets.Add("R_NumVenta" + txt_ticket.Text);
+
+                    //read cells
+                    var a = ws.Cell("A1").Value;
+                    var b = ws.Cell("B1").Value;
+
+
+
+                    //write cells
+                    ws.Cell("A1").Value = "FILTROS";
+                    ws.Cell("G4").Value = "REPORTE DE NUM VENTA";
+                    ws.Cell("A2").Value = "NO.VENTA:";
+                    ws.Cell("B2").Value = txt_ticket.Text;
+
+                    ws.Cell("M2").Value = "Cantidad Vendida:" + lbl_cantidad_vendida.Text;
+
+
+                    ws.Range("A5:G5").Value = "----------------------------------------";
+
+
+                    ws.Cell("A6").Value = "No.Venta";
+                    ws.Cell("B6").Value = "No.Producto";
+
+                    ws.Cell("C6").Value = "Nombre Producto";
+
+                    ws.Cell("D6").Value = "Precio";
+
+
+                    ws.Cell("E6").Value = "Cantidad";
+
+
+                    ws.Cell("F6").Value = "SubTotal";
+
+                    ws.Cell("G6").Value = "Fecha Venta";
+
+                    ws.Cell("H6").Value = "Tipo Venta";
+
+
+
+                    dgReportes parametro = new dgReportes
+                    {
+                        Id_Venta = Convert.ToInt16(txt_ticket.Text)
+
+                    };
+
+                    int contadorcolumnas = 1;
+                    int contadorregistros = 7;
+
+
+                    List<dgReportes> lista = c_reportes.LeerReporte(5, parametro);
+
+                    string escredito = "";
+                    if (lista.Count > 0)
+
+                    {
+                        string fechaventa;
+                        float subtotal;
+
+                        foreach (dgReportes d in lista)
+                        {
+                            subtotal = float.Parse(d.SubTotalProducto.ToString());
+
+                            subtotal = (float)Math.Round(subtotal, 2);
+
+                            fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
+
+                            contadorcolumnas = 1;
+
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = d.Id_Venta.ToString();
+                            contadorcolumnas = contadorcolumnas + 1;
+
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = d.IdProducto.ToString();
+                            contadorcolumnas = contadorcolumnas + 1;
+
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = d.NombreProducto.ToString();
+                            contadorcolumnas = contadorcolumnas + 1;
+
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = d.PrecioProducto.ToString();
+                            contadorcolumnas = contadorcolumnas + 1;
+
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadProducto.ToString();
+                            contadorcolumnas = contadorcolumnas + 1;
+
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = subtotal;
+                            contadorcolumnas = contadorcolumnas + 1;
+
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = fechaventa;
+                            contadorcolumnas = contadorcolumnas + 1;
+
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = d.DescripcionTipoVenta.ToString();
+                            contadorcolumnas = contadorcolumnas + 1;
+
+
+                            contadorregistros = contadorregistros + 1;
+                            escredito = d.DescripcionTipoVenta.ToString();
+
+                        }
+                        if (escredito == "Credito")
+                        {
+
+                        }
+                        else
+                        {
+                            contadorcolumnas = 1;
+                            contadorregistros = contadorregistros + 3;
+
+
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = "No.Devolucion";
+                            contadorcolumnas = contadorcolumnas + 1;
+
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = "No.Venta";
+                            contadorcolumnas = contadorcolumnas + 1;
+
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = "No.Producto";
+                            contadorcolumnas = contadorcolumnas + 1;
+
+
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = "Nombre Producto";
+                            contadorcolumnas = contadorcolumnas + 1;
+
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = "Cantidad";
+                            contadorcolumnas = contadorcolumnas + 1;
+
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = "Precio";
+                            contadorcolumnas = contadorcolumnas + 1;
+
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = "SubTotal";
+                            contadorcolumnas = contadorcolumnas + 1;
+
+
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = "Usuario";
+                            contadorcolumnas = contadorcolumnas + 1;
+
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = "FechaDevolucion";
+                            contadorcolumnas = contadorcolumnas + 1;
+
+
+                            contadorregistros = contadorregistros + 1;
+                            dgCaja parametro2 = new dgCaja
+                            {
+                                Id_Venta = Convert.ToInt16(txt_ticket.Text)
+
+                            };
+
+
+
+
+                            List<dgCaja> lista2 = c_caja.LeerCaja(10, parametro2);
+
+
+                            if (lista2.Count > 0)
+
+                            {
+                                string fechadevolucion;
+
+                                foreach (dgCaja d in lista2)
+                                {
+                                    subtotal = float.Parse(d.SubTotalProducto.ToString());
+
+                                    subtotal = (float)Math.Round(subtotal, 2);
+
+                                    fechadevolucion = d.FechaDevolucion.Value.ToString("dd/MM/yyyy");
+
+                                    contadorcolumnas = 1;
+                                    ws.Cell(contadorregistros, contadorcolumnas).Value = d.Id_Devolucion.ToString();
+                                    contadorcolumnas = contadorcolumnas + 1;
+
+                                    ws.Cell(contadorregistros, contadorcolumnas).Value = d.Id_Venta.ToString();
+                                    contadorcolumnas = contadorcolumnas + 1;
+
+                                    ws.Cell(contadorregistros, contadorcolumnas).Value = d.IdProducto.ToString();
+                                    contadorcolumnas = contadorcolumnas + 1;
+
+                                    ws.Cell(contadorregistros, contadorcolumnas).Value = d.NombreProducto.ToString();
+                                    contadorcolumnas = contadorcolumnas + 1;
+
+                                    ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadProducto.ToString();
+                                    contadorcolumnas = contadorcolumnas + 1;
+
+                                    ws.Cell(contadorregistros, contadorcolumnas).Value = d.PrecioProducto.ToString();
+                                    contadorcolumnas = contadorcolumnas + 1;
+
+                                    ws.Cell(contadorregistros, contadorcolumnas).Value = subtotal;
+                                    contadorcolumnas = contadorcolumnas + 1;
+
+
+
+                                    ws.Cell(contadorregistros, contadorcolumnas).Value = d.Usuario.ToString();
+                                    contadorcolumnas = contadorcolumnas + 1;
+
+                                    ws.Cell(contadorregistros, contadorcolumnas).Value = fechadevolucion;
+                                    contadorcolumnas = contadorcolumnas + 1;
+
+
+                                    contadorregistros = contadorregistros + 1;
+                                }
+
+
+                            }
+
+                            else
+                            {
+
+
+
+                            }
+
+                        }
+
+                        wb.SaveAs(ls_archivo_excel);
+                        MessageBox.Show("Excel Reportado Satisfactoriamente en : " + ls_archivo_excel);
+
+                    }
+
+                    else
+                    {
+                        dataGridView_numventa.Rows.Clear();
+                        MessageBox.Show("No se Encontro el Numero de Venta");
+                        txt_ticket.Text = "";
+                        dataGridView_devoluciones.Rows.Clear();
+                        lbl_cantidad_vendida.Text = "";
+                    }
+                }
+
+                else
+                {
+                    dataGridView_devoluciones.Rows.Clear();
+                    lbl_cantidad_vendida.Text = "";
+                    dataGridView_numventa.Rows.Clear();
+                    MessageBox.Show("Ingrese el Numero de Ticket");
+                    txt_ticket.Text = "";
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Respete la Sintaxis");
+            }
+           
+
+           
         }
 
         private void btn_generar_ticket_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_ticket_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // solo 1 punto decimal
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = false;
+            }
+          
         }
     }
 }

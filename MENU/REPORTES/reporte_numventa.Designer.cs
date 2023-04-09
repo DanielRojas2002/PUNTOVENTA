@@ -151,6 +151,7 @@
             this.txt_ticket.Name = "txt_ticket";
             this.txt_ticket.Size = new System.Drawing.Size(114, 24);
             this.txt_ticket.TabIndex = 106;
+            this.txt_ticket.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ticket_KeyPress);
             // 
             // dataGridView_numventa
             // 
