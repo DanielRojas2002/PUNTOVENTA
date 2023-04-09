@@ -45,7 +45,7 @@
             this.Col_Tipoventa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_ticket = new System.Windows.Forms.Button();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.btn_exportar = new System.Windows.Forms.Button();
+            this.btn_exportar_excel = new System.Windows.Forms.Button();
             this.lbl_id = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.cerrarapp = new System.Windows.Forms.PictureBox();
@@ -73,6 +73,7 @@
             this.lbl_cantidad_vendida = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_generar_ticket = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_numventa)).BeginInit();
@@ -267,15 +268,16 @@
             this.pictureBox10.TabIndex = 110;
             this.pictureBox10.TabStop = false;
             // 
-            // btn_exportar
+            // btn_exportar_excel
             // 
-            this.btn_exportar.Location = new System.Drawing.Point(403, 752);
-            this.btn_exportar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_exportar.Name = "btn_exportar";
-            this.btn_exportar.Size = new System.Drawing.Size(506, 31);
-            this.btn_exportar.TabIndex = 117;
-            this.btn_exportar.Text = "Exportar a Excel";
-            this.btn_exportar.UseVisualStyleBackColor = true;
+            this.btn_exportar_excel.Location = new System.Drawing.Point(497, 752);
+            this.btn_exportar_excel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_exportar_excel.Name = "btn_exportar_excel";
+            this.btn_exportar_excel.Size = new System.Drawing.Size(412, 31);
+            this.btn_exportar_excel.TabIndex = 117;
+            this.btn_exportar_excel.Text = "Exportar a Excel";
+            this.btn_exportar_excel.UseVisualStyleBackColor = true;
+            this.btn_exportar_excel.Click += new System.EventHandler(this.btn_exportar_excel_Click);
             // 
             // lbl_id
             // 
@@ -599,19 +601,31 @@
             this.label3.TabIndex = 123;
             this.label3.Text = "PRODUCTOS VENDIDOS";
             // 
+            // btn_generar_ticket
+            // 
+            this.btn_generar_ticket.Location = new System.Drawing.Point(43, 752);
+            this.btn_generar_ticket.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_generar_ticket.Name = "btn_generar_ticket";
+            this.btn_generar_ticket.Size = new System.Drawing.Size(412, 31);
+            this.btn_generar_ticket.TabIndex = 124;
+            this.btn_generar_ticket.Text = "Imprimir Ticket";
+            this.btn_generar_ticket.UseVisualStyleBackColor = true;
+            this.btn_generar_ticket.Click += new System.EventHandler(this.btn_generar_ticket_Click);
+            // 
             // reporte_numventa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(939, 791);
+            this.Controls.Add(this.btn_generar_ticket);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl_cantidad_vendida);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dataGridView_devoluciones);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.lbl_id);
-            this.Controls.Add(this.btn_exportar);
+            this.Controls.Add(this.btn_exportar_excel);
             this.Controls.Add(this.btn_ticket);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.dataGridView_numventa);
@@ -658,7 +672,7 @@
         private DataGridView dataGridView_numventa;
         private Button btn_ticket;
         private PictureBox pictureBox10;
-        private Button btn_exportar;
+        private Button btn_exportar_excel;
         private DataGridViewTextBoxColumn Col_Id_Venta;
         private DataGridViewTextBoxColumn Col_IdProducto;
         private DataGridViewTextBoxColumn Col_NombreProducto;
@@ -694,5 +708,6 @@
         private Label lbl_cantidad_vendida;
         private Label label4;
         private Label label3;
+        private Button btn_generar_ticket;
     }
 }

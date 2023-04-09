@@ -252,5 +252,15 @@ namespace PUNTOVENTA.MENU.REPORTES
         {
 
         }
+
+        private void btn_exportar_excel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_generar_ticket_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
