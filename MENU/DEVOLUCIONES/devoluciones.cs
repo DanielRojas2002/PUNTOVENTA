@@ -1,4 +1,5 @@
 ﻿
+using DocumentFormat.OpenXml.Spreadsheet;
 using Punto_de_Venta;
 using PUNTOVENTA.CLASES;
 using PUNTOVENTA.ENTIDAD;
@@ -22,6 +23,8 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
         }
 
         public float _dinerodevolucion = 0;
+
+        int _cantidadregistros = 0;
 
         private void btn_regresar_Click(object sender, EventArgs e)
         {
@@ -199,6 +202,7 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
                             }
                             else
                             {
+                                _cantidadregistros = _cantidadregistros + 1;
                                 dataGridView_ventas.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
                                 d.PrecioProducto.ToString(), Convert.ToString(cantidadtotal), Convert.ToString(cantidadtotalsubtotal), fechaventa, d.DescripcionTipoVenta.ToString(),
                                     false);
@@ -448,7 +452,122 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (txt_ticket.Text != "" )
+            {
 
+
+
+
+                var confirmResult = MessageBox.Show("Desea  hacer la Devolucion?",
+                    "Confirmar Devolucion!!",
+                    MessageBoxButtons.YesNo);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+
+
+                    int idproducto2 = 0;
+
+                    float cantidaddevolucion=0 ;
+
+                    int idventa = 0;
+                                  
+                    int cantidadrestante = 0;
+                    float cantidadpreciorestante = 0;
+
+                    string control = "";
+
+                   
+
+                    DataGridViewRow row = dataGridView_ventas.Rows[0];  // fila 
+
+                                    
+
+                    for (int i = 0; i < _cantidadregistros; i++)
+                    {
+
+                        row = dataGridView_ventas.Rows[i]; // fila 3
+
+                        idventa = Convert.ToInt16(row.Cells[0].Value);
+
+                        MessageBox.Show(Convert.ToString(idventa));
+
+
+
+                        idproducto2 = Convert.ToInt16(row.Cells[1].Value);
+
+                        MessageBox.Show(Convert.ToString(idproducto2));
+
+
+                        cantidadpreciorestante = float.Parse((string)row.Cells[3].Value);
+
+                        MessageBox.Show(Convert.ToString(cantidadpreciorestante));
+
+
+                        cantidadrestante = Convert.ToInt16(row.Cells[4].Value);
+
+                        MessageBox.Show(Convert.ToString(cantidadrestante));
+
+
+                        cantidaddevolucion = cantidadpreciorestante * cantidadrestante;
+
+
+
+                        dgDevolucion parametro3 = new dgDevolucion
+                        {
+                            IdProducto = Convert.ToInt16(idproducto2),
+                            Id_Venta = Convert.ToInt16(idventa),
+
+                            Cantidad = Convert.ToInt16(cantidadrestante),
+
+                            IdUsuario = Convert.ToInt16(lbl_id.Text),
+
+                            PrecioVenta = cantidadpreciorestante,
+
+                            FechaEntrada = DateTime.Now,
+
+                            Stock = Convert.ToInt16(cantidadrestante),
+
+                            CantidadDevolucion = cantidaddevolucion
+
+
+
+                        };
+
+                         cantidaddevolucion += cantidadrestante * cantidadpreciorestante;
+
+                       
+
+                        control = c_devolucion.Devolucion(parametro3);
+                    }
+
+                    var confirmResultticket = MessageBox.Show("Desea Imprimir Ticket?",
+                    "Confirmar Ticket!!",
+                    MessageBoxButtons.YesNo);
+
+                    if (confirmResultticket == DialogResult.Yes)
+                    {
+
+                    }
+
+
+                        RegresarVentana();
+
+                }
+
+
+
+
+
+
+            }
+
+            else
+            {
+                dataGridView_ventas.Rows.Clear();
+                MessageBox.Show("Ingrese el Numero de Ticket");
+                txt_ticket.Text = "";
+            }
         }
     }
 }
