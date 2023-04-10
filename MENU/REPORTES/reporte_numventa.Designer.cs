@@ -481,7 +481,6 @@
             this.dataGridView_devoluciones.ReadOnly = true;
             this.dataGridView_devoluciones.RowHeadersWidth = 51;
             this.dataGridView_devoluciones.RowTemplate.Height = 25;
-            this.dataGridView_devoluciones.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dataGridView_devoluciones.Size = new System.Drawing.Size(866, 147);
             this.dataGridView_devoluciones.TabIndex = 120;
             this.dataGridView_devoluciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_devoluciones_CellContentClick);
