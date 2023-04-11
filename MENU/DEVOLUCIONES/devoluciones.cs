@@ -343,7 +343,7 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
             int cantidadrestante= Convert.ToInt16(dataGridView_ventas.CurrentRow.Cells["Col_CantidadProducto"].Value.ToString());
 
-            float cantidadpreciorestante = Convert.ToInt16(dataGridView_ventas.CurrentRow.Cells["Col_SubTotalProducto"].Value.ToString());
+            float cantidadpreciorestante = float.Parse(dataGridView_ventas.CurrentRow.Cells["Col_SubTotalProducto"].Value.ToString());
 
             var valorcheckbox = true;
             dataGridView_ventas.CurrentCell.Value = dataGridView_ventas.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValue.ToString() == "True" ? false : true;
@@ -652,6 +652,8 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
                         Ticket1.TextoIzquierda("Total Venta:" + Convert.ToString(sumaventa));
 
+                        _cantidaddevolucion = (float)Math.Round(_cantidaddevolucion, 2);
+
                         Ticket1.TextoIzquierda("Cantidad a Devolver:" + _cantidaddevolucion);
 
 
@@ -725,23 +727,23 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
                             idventa = Convert.ToInt16(row.Cells[0].Value);
 
-                            MessageBox.Show(Convert.ToString(idventa));
+                           
 
 
 
                             idproducto2 = Convert.ToInt16(row.Cells[1].Value);
 
-                            MessageBox.Show(Convert.ToString(idproducto2));
+                           
 
 
                             cantidadpreciorestante = float.Parse((string)row.Cells[3].Value);
 
-                            MessageBox.Show(Convert.ToString(cantidadpreciorestante));
+                         
 
 
                             cantidadrestante = Convert.ToInt16(row.Cells[4].Value);
 
-                            MessageBox.Show(Convert.ToString(cantidadrestante));
+                           
 
 
                             cantidaddevolucion = cantidadpreciorestante * cantidadrestante;
@@ -775,6 +777,8 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
                             control = c_devolucion.Devolucion(parametro3);
                         }
+
+                        _cantidaddevolucion = (float)Math.Round(_cantidaddevolucion, 2);
 
                         MessageBox.Show("Cantidad A Devolver:" + Convert.ToString(_cantidaddevolucion));
 

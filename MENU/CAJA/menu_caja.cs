@@ -215,6 +215,10 @@ namespace PUNTOVENTA.MENU.CAJA
 
 
             }
+
+            cantidaddevuelta = (float)Math.Round(cantidaddevuelta, 2);
+
+           
             lbl_devolucion.Text = Convert.ToString(cantidaddevuelta);
 
 

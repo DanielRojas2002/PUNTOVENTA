@@ -183,66 +183,7 @@ namespace PUNTOVENTA.MENU.REPORTES
             catch
             {
 
-
-                txtFechai.Text = Fechadevolucion.Value.ToString("");
-
-
-                string fechadiferenteinicio = txtFechai.Text;
-                string[] words = fechadiferenteinicio.Split('/');
-                string dia, mes, ano;
-
-                mes = words[0];
-                dia = words[1];
-                ano = words[2];
-
-
-                txtFechai.Text = dia + "/" + mes + "/" + ano;
-
-
-
-
-
-
-                dgReportes parametro = new dgReportes
-                {
-                    FechaCaja = Convert.ToDateTime(txtFechai.Text),
-
-                };
-
-
-
-
-                List<dgReportes> lista = c_reportes.LeerReporte(44, parametro);
-
-
-                if (lista.Count > 0)
-
-                {
-                    string fechadevolucion;
-                    float subtotal;
-                    foreach (dgReportes d in lista)
-                    {
-                        subtotal = float.Parse(d.SubTotalProducto.ToString());
-                        subtotal = (float)Math.Round(subtotal, 2);
-
-                        fechadevolucion = d.FechaInicio.Value.ToString("dd/MM/yyyy");
-                        dataGridView_devoluciones.Rows.Add(d.IdDevolucion.ToString(), d.Id_Venta.ToString(), d.NombreProducto.ToString(),
-                             d.PrecioVenta.ToString(), d.CantidadPagada.ToString(), subtotal, d.Usuario.ToString(), fechadevolucion);
-
-
-                        _dinerodevolucion = _dinerodevolucion + subtotal;
-                    }
-
-
-                }
-
-                else
-                {
-                    MessageBox.Show("No se Encontraron Devoluciones en el dia seleccionado");
-                }
-
-
-                lbl_devolucion.Text = Convert.ToString(_dinerodevolucion);
+                MessageBox.Show("Error en  Fechas");
 
             }
 

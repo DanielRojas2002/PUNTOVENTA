@@ -38,6 +38,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_devolucion = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.dataGridView_devoluciones = new System.Windows.Forms.DataGridView();
             this.Col_Id_Devolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,8 +90,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.lbl_devolucion = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_devoluciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ventas)).BeginInit();
@@ -160,10 +160,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(221, 416);
+            this.button1.Location = new System.Drawing.Point(170, 416);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(826, 31);
+            this.button1.Size = new System.Drawing.Size(956, 31);
             this.button1.TabIndex = 8;
             this.button1.Text = "Generar Reporte";
             this.button1.UseVisualStyleBackColor = true;
@@ -224,6 +224,28 @@
             this.panel1.Size = new System.Drawing.Size(1239, 915);
             this.panel1.TabIndex = 11;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lbl_devolucion
+            // 
+            this.lbl_devolucion.AutoSize = true;
+            this.lbl_devolucion.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_devolucion.ForeColor = System.Drawing.Color.Red;
+            this.lbl_devolucion.Location = new System.Drawing.Point(1063, 183);
+            this.lbl_devolucion.Name = "lbl_devolucion";
+            this.lbl_devolucion.Size = new System.Drawing.Size(109, 28);
+            this.lbl_devolucion.TabIndex = 119;
+            this.lbl_devolucion.Text = "devolucion";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(1022, 155);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(199, 28);
+            this.label9.TabIndex = 118;
+            this.label9.Text = "Cantidad Devolucion:";
             // 
             // dataGridView_devoluciones
             // 
@@ -372,13 +394,13 @@
             this.dataGridViewTextBoxColumn16,
             this.Col_Tipoventa,
             this.dataGridViewTextBoxColumn17});
-            this.dataGridView_ventas.Location = new System.Drawing.Point(170, 505);
+            this.dataGridView_ventas.Location = new System.Drawing.Point(168, 505);
             this.dataGridView_ventas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView_ventas.Name = "dataGridView_ventas";
             this.dataGridView_ventas.ReadOnly = true;
             this.dataGridView_ventas.RowHeadersWidth = 51;
             this.dataGridView_ventas.RowTemplate.Height = 25;
-            this.dataGridView_ventas.Size = new System.Drawing.Size(956, 147);
+            this.dataGridView_ventas.Size = new System.Drawing.Size(958, 147);
             this.dataGridView_ventas.TabIndex = 113;
             // 
             // dataGridViewTextBoxColumn10
@@ -468,7 +490,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(92, 469);
+            this.label7.Location = new System.Drawing.Point(173, 469);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(369, 32);
             this.label7.TabIndex = 112;
@@ -769,28 +791,6 @@
             this.panel7.Size = new System.Drawing.Size(1236, 43);
             this.panel7.TabIndex = 75;
             this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
-            // 
-            // lbl_devolucion
-            // 
-            this.lbl_devolucion.AutoSize = true;
-            this.lbl_devolucion.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_devolucion.ForeColor = System.Drawing.Color.Red;
-            this.lbl_devolucion.Location = new System.Drawing.Point(1063, 183);
-            this.lbl_devolucion.Name = "lbl_devolucion";
-            this.lbl_devolucion.Size = new System.Drawing.Size(109, 28);
-            this.lbl_devolucion.TabIndex = 119;
-            this.lbl_devolucion.Text = "devolucion";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(1022, 155);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(199, 28);
-            this.label9.TabIndex = 118;
-            this.label9.Text = "Cantidad Devolucion:";
             // 
             // reporte_venta
             // 

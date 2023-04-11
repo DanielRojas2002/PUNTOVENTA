@@ -79,10 +79,10 @@
             // 
             // btn_exportar
             // 
-            this.btn_exportar.Location = new System.Drawing.Point(476, 558);
+            this.btn_exportar.Location = new System.Drawing.Point(82, 558);
             this.btn_exportar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_exportar.Name = "btn_exportar";
-            this.btn_exportar.Size = new System.Drawing.Size(506, 31);
+            this.btn_exportar.Size = new System.Drawing.Size(927, 31);
             this.btn_exportar.TabIndex = 126;
             this.btn_exportar.Text = "Exportar a Excel";
             this.btn_exportar.UseVisualStyleBackColor = true;
@@ -235,10 +235,10 @@
             // 
             this.btn_regresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_regresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_regresar.Image")));
-            this.btn_regresar.Location = new System.Drawing.Point(51, 52);
+            this.btn_regresar.Location = new System.Drawing.Point(105, 52);
             this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(444, 35);
+            this.btn_regresar.Size = new System.Drawing.Size(274, 35);
             this.btn_regresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_regresar.TabIndex = 118;
             this.btn_regresar.TabStop = false;

@@ -268,7 +268,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(167, 218);
+            this.label7.Location = new System.Drawing.Point(222, 219);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(369, 32);
             this.label7.TabIndex = 94;
