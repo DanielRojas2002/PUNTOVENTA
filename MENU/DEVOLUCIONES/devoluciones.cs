@@ -26,6 +26,8 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
         int _cantidadregistros = 0;
 
+        float _cantidaddevolucion = 0;
+
         private void btn_regresar_Click(object sender, EventArgs e)
         {
             RegresarVentana();
@@ -450,6 +452,235 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
              System.Windows.Forms.Application.Exit();
         }
 
+        private void TicketDevolucion()
+        {
+            try
+            {
+                if (txt_ticket.Text != "")
+                {
+                    string txtticket = txt_ticket.Text;
+                    string impresora = "";
+
+
+
+                    dgReportes parametro = new dgReportes
+                    {
+                        Id_Venta = Convert.ToInt16(txt_ticket.Text)
+
+                    };
+
+
+
+
+                    List<dgReportes> lista = c_reportes.LeerReporte(5, parametro);
+
+
+
+
+                    string escredito = "";
+                    string concatenacion = "";
+                    if (lista.Count > 0)
+
+                    {
+
+                        dgImpresora parametroimpresora = new dgImpresora
+                        {
+
+
+
+                        };
+
+                        List<dgImpresora> listaimpresora = c_impresora.LeerImpresora(1, parametroimpresora);
+
+                        if (listaimpresora.Count > 0)
+
+                        {
+
+
+                            foreach (dgImpresora d in listaimpresora)
+                            {
+
+                                impresora = d.NombreImpresora.ToString();
+
+                            }
+                        }
+
+                        clsventas.CreaRecibo Ticket1 = new clsventas.CreaRecibo();
+
+
+
+                        dgTicket parametroticketinfo = new dgTicket
+                        {
+                        };
+
+                        List<dgTicket> listaticketinfo = c_ticket.Ticket(0, parametroticketinfo);
+
+
+
+
+                        if (listaticketinfo.Count > 0)
+
+                        {
+
+
+                            foreach (dgTicket d in listaticketinfo)
+                            {
+                                Ticket1.TextoCentro(d.NombreEmpresa.ToUpper().ToString());
+
+
+                                Ticket1.TextoIzquierda(d.Colonia.ToUpper().ToString());
+                                Ticket1.TextoIzquierda(d.Calle.ToUpper().ToString());
+                                Ticket1.TextoIzquierda(d.Telefono.ToString());
+                                Ticket1.TextoIzquierda("");
+                            }
+
+
+                            Ticket1.TextoIzquierda("Recibo de Devolucion");
+                            Ticket1.TextoIzquierda("Los Precios ya contienen IVA");
+
+
+
+                            Ticket1.TextoIzquierda("");
+                        }
+
+                        Ticket1.TextoIzquierda("Recibo:" + txtticket);
+                        clsventas.CreaRecibo.EncabezadoVenta();
+                        clsventas.CreaRecibo.LineasGuion();
+
+                        string fechaventa;
+                        float subtotal;
+
+                        float sumaventa = 0;
+                        float sumadevolucion = 0;
+
+                        Ticket1.TextoIzquierda("Ventas");
+
+                        foreach (dgReportes d in lista)
+                        {
+                            subtotal = float.Parse(d.SubTotalProducto.ToString());
+
+                            subtotal = (float)Math.Round(subtotal, 2);
+
+                            sumaventa = sumaventa + subtotal;
+
+                            fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
+
+                            concatenacion = "(" + d.IdProducto.ToString() + ")" + " " + d.NombreProducto.ToString();
+                            Ticket1.TextoIzquierda(" ");
+                            Ticket1.TextoIzquierda(d.DescripcionTipoVenta.ToString());
+                            Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioProducto.ToString()), Convert.ToInt16(d.CantidadProducto.ToString()), double.Parse(subtotal.ToString()));
+                            clsventas.CreaRecibo.LineasGuion();
+
+                            escredito = d.DescripcionTipoVenta.ToString();
+
+                        }
+
+
+
+                        if (escredito == "Credito")
+                        {
+
+                        }
+                        else
+                        {
+
+
+
+
+
+
+                            dgCaja parametro2 = new dgCaja
+                            {
+                                Id_Venta = Convert.ToInt16(txt_ticket.Text)
+
+                            };
+
+
+
+
+                            List<dgCaja> lista2 = c_caja.LeerCaja(10, parametro2);
+
+                            Ticket1.TextoIzquierda("");
+
+                            Ticket1.TextoIzquierda("Devoluciones");
+
+                            clsventas.CreaRecibo.EncabezadoVenta();
+                            clsventas.CreaRecibo.LineasGuion();
+
+
+                            if (lista2.Count > 0)
+
+                            {
+                                string fechadevolucion;
+
+                                foreach (dgCaja d in lista2)
+                                {
+                                    subtotal = float.Parse(d.SubTotalProducto.ToString());
+
+                                    subtotal = (float)Math.Round(subtotal, 2);
+
+                                    sumadevolucion = sumadevolucion + subtotal;
+                                    fechadevolucion = d.FechaDevolucion.Value.ToString("dd/MM/yyyy");
+
+                                    concatenacion = "(" + d.IdProducto.ToString() + ")" + " " + d.NombreProducto.ToString();
+                                    Ticket1.TextoIzquierda(" ");
+
+                                    Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioProducto.ToString()), Convert.ToInt16(d.CantidadProducto.ToString()), double.Parse(subtotal.ToString()));
+                                    clsventas.CreaRecibo.LineasGuion();
+                                }
+
+
+                            }
+
+                            else
+                            {
+
+
+
+                            }
+
+                        }
+
+                        float sumarestanteventa = 0;
+
+                        sumarestanteventa = sumaventa - sumadevolucion;
+
+                        float sumadevolucionsinlonuevo = 0;
+
+
+
+
+                        Ticket1.TextoIzquierda("Total Venta:" + Convert.ToString(sumaventa));
+
+                        Ticket1.TextoIzquierda("Cantidad a Devolver:" + _cantidaddevolucion);
+
+
+
+
+
+                        Ticket1.TextoCentro("==================================");
+                        Ticket1.TextoCentro("TICKET DE DEVOLUCION ");
+                        Ticket1.TextoCentro("==================================");
+
+                        Ticket1.ImprimirTiket(impresora);
+                        MessageBox.Show("Ticket Generado Satisfactoriamente");
+
+                    }
+
+
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Respete la Sintaxis");
+            }
+
+
+
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -469,6 +700,8 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
 
                         int idproducto2 = 0;
+
+                        _cantidaddevolucion = 0;
 
                         float cantidaddevolucion = 0;
 
@@ -536,26 +769,28 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
                             };
 
-                            cantidaddevolucion += cantidadrestante * cantidadpreciorestante;
+                            _cantidaddevolucion += cantidaddevolucion;
 
 
 
                             control = c_devolucion.Devolucion(parametro3);
                         }
 
+                        MessageBox.Show("Cantidad A Devolver:" + Convert.ToString(_cantidaddevolucion));
+
                         var confirmResultticket = MessageBox.Show("Desea Imprimir Ticket?",
                         "Confirmar Ticket!!",
                         MessageBoxButtons.YesNo);
 
-                        MessageBox.Show("Cantidad A Devolver:"+ Convert.ToString(cantidaddevolucion));
+                        
 
                         if (confirmResultticket == DialogResult.Yes)
                         {
-                            // HACER UN TICKET DE LO QUE DEVOLVIO POR EL NUMERO TIKECT Y PASARLE CUANTO DINERO VA A DEVOLVER cantidaddevolucion
+                            TicketDevolucion();
 
                         }
 
-
+                       
                         RegresarVentana();
 
                     }
