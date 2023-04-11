@@ -432,11 +432,11 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Cooper Black", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(9, 118);
+            this.label10.Location = new System.Drawing.Point(6, 118);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(146, 15);
+            this.label10.Size = new System.Drawing.Size(190, 15);
             this.label10.TabIndex = 90;
-            this.label10.Text = "CODIGO PRODUCTO:";
+            this.label10.Text = "CODIGO ULTIMOS DIGITOS:";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // txt_codigoproducto
