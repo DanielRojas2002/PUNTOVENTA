@@ -84,6 +84,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
         private void CargaSubTotal(float total)
         {
+            total = (float)Math.Round(total, 2);
             lbl_total.Text = Convert.ToString(total);
         }
 
