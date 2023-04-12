@@ -20,6 +20,7 @@ namespace PUNTOVENTA.MENU.REPORTES
         public reporte_devoluciones()
         {
             InitializeComponent();
+            Fechadevolucion.Value = DateTime.Now;
         }
 
         public float _dinerodevolucion { get; set; }

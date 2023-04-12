@@ -18,6 +18,7 @@ namespace PUNTOVENTA.MENU.REPORTES
         public reporte_caja()
         {
             InitializeComponent();
+            Fechacaja.Value = DateTime.Now;
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)

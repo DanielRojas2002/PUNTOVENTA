@@ -22,6 +22,8 @@ namespace PUNTOVENTA.MENU.REPORTES
         public reporte_venta()
         {
             InitializeComponent();
+            FechaInicio.Value = DateTime.Now;
+            fechafinal.Value = DateTime.Now;
         }
 
         private void reporte_venta_Load(object sender, EventArgs e)
