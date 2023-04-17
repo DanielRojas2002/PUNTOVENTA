@@ -9,7 +9,7 @@ namespace PUNTOVENTA.ENTIDAD
     public class dgCaja
     {
         public int? Id_Venta { get; set; }
-        public int? IdProducto { get; set; }
+        public string? IdProducto { get; set; }
 
 
 

@@ -161,7 +161,7 @@ namespace PUNTOVENTA.MENU.REPORTES
                 parametro.FechaFinal = Convert.ToDateTime(txtFechaf.Text);
 
                 parametro.IdCategoria = Convert.ToInt16(lbl_id_categoria.Text);
-                parametro.IdProducto = Convert.ToInt16(lbl_id_producto.Text);
+                parametro.IdProducto = Convert.ToString(lbl_id_producto.Text);
 
                
             }
@@ -173,7 +173,7 @@ namespace PUNTOVENTA.MENU.REPORTES
                 parametro.FechaFinal = Convert.ToDateTime(txtFechaf.Text);
 
                 parametro.IdCategoria = Convert.ToInt16(lbl_id_categoria.Text);
-                parametro.IdProducto = 0;
+                parametro.IdProducto = "";
 
                
 
@@ -186,7 +186,7 @@ namespace PUNTOVENTA.MENU.REPORTES
                 parametro.FechaFinal = Convert.ToDateTime(txtFechaf.Text);
 
                 parametro.IdCategoria = 0;
-                parametro.IdProducto = 0;
+                parametro.IdProducto = "";
 
               
             }
@@ -294,7 +294,7 @@ namespace PUNTOVENTA.MENU.REPORTES
                 parametro.FechaFinal = Convert.ToDateTime(txtFechaf.Text);
 
                 parametro.IdCategoria = Convert.ToInt16(lbl_id_categoria.Text);
-                parametro.IdProducto = Convert.ToInt16(lbl_id_producto.Text);
+                parametro.IdProducto = Convert.ToString(lbl_id_producto.Text);
 
 
             }
@@ -306,7 +306,7 @@ namespace PUNTOVENTA.MENU.REPORTES
                 parametro.FechaFinal = Convert.ToDateTime(txtFechaf.Text);
 
                 parametro.IdCategoria = Convert.ToInt16(lbl_id_categoria.Text);
-                parametro.IdProducto = 0;
+                parametro.IdProducto = "";
 
 
 
@@ -319,7 +319,7 @@ namespace PUNTOVENTA.MENU.REPORTES
                 parametro.FechaFinal = Convert.ToDateTime(txtFechaf.Text);
 
                 parametro.IdCategoria = 0;
-                parametro.IdProducto = 0;
+                parametro.IdProducto = "";
 
 
             }

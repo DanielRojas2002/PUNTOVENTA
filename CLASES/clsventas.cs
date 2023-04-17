@@ -70,12 +70,12 @@ namespace PUNTOVENTA.CLASES
                     parte1 = par1.Remove(50, cort);          
                 }
                 else { parte1 = par1; }                      
-                max = (int)(50 - parte1.Length) / 2;         
+                max = (int)(40 - parte1.Length) / 2;         
                 for (int i = 0; i < max; i++)                
                 {
                     recibo += " ";                           
                 }                                           
-                line.AppendLine(recibo += parte1 + "\n");
+                line.AppendLine(recibo += parte1 );
 
             }
             public void TextoExtremos(string par1, string par2)
@@ -114,7 +114,7 @@ namespace PUNTOVENTA.CLASES
                 else { parte1 = par1; }                      
                 recibo = parte1;
                 parte2 = total.ToString("c");
-                max = 50 - (parte1.Length + parte2.Length);
+                max = 40 - (parte1.Length + parte2.Length);
                 for (int i = 0; i < max; i++)                
                 {
                     recibo += " ";                           

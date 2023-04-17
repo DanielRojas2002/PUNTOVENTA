@@ -771,15 +771,15 @@ namespace PUNTOVENTA.MENU.CAJA
                     Ticket1.TextoCentro(d.NombreEmpresa.ToUpper().ToString());
                  
                   
-                    Ticket1.TextoIzquierda(d.Colonia.ToUpper().ToString());
-                    Ticket1.TextoIzquierda(d.Calle.ToUpper().ToString());
-                    Ticket1.TextoIzquierda( d.Telefono.ToString());
+                    Ticket1.TextoCentro(d.Colonia.ToUpper().ToString());
+                    Ticket1.TextoCentro(d.Calle.ToUpper().ToString());
+                    Ticket1.TextoCentro( d.Telefono.ToString());
                     Ticket1.TextoIzquierda("");
                 }
 
 
-                Ticket1.TextoCentro("Recibo de Ventas");
-                Ticket1.TextoCentro("Los Precios ya contienen IVA");
+                Ticket1.TextoIzquierda("Recibo de Ventas");
+                Ticket1.TextoIzquierda("Los Precios ya contienen IVA");
                
 
                 Ticket1.TextoIzquierda("Fecha de Caja: " + DateTime.Now.ToShortDateString());
@@ -806,6 +806,7 @@ namespace PUNTOVENTA.MENU.CAJA
                 clsventas.CreaRecibo.LineasGuion();
 
                 clsventas.CreaRecibo.EncabezadoVenta();
+                Ticket1.TextoIzquierda("");
 
 
                 string concatenacion = "";
@@ -821,10 +822,13 @@ namespace PUNTOVENTA.MENU.CAJA
                     subtotal = (double)Math.Round(sub, 2);
 
 
-                    concatenacion = "(" + d.Id_Producto.ToString() + ")" + " " + d.NombreProducto.ToString();
-                    Ticket1.TextoIzquierda(" ");
-                    Ticket1.TextoIzquierda(d.DescripcionTipoVenta.ToString() );
-                    Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
+                    concatenacion =  d.NombreProducto.ToString();
+
+
+
+                    Ticket1.TextoIzquierda(d.DescripcionTipoVenta.ToString());
+                    Ticket1.TextoIzquierda(concatenacion);
+                    Ticket1.AgregaArticulo("(" + d.Id_Producto.ToString() + ")" , double.Parse(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
                     clsventas.CreaRecibo.LineasGuion();
                 }
             }
@@ -910,10 +914,11 @@ namespace PUNTOVENTA.MENU.CAJA
                     subtotal = (double)Math.Round(sub, 2);
 
 
-                    concatenacion = "(" + d.Id_Producto.ToString() + ")" + " " + d.NombreProducto.ToString();
-                    Ticket1.TextoIzquierda(" ");
-                    Ticket1.TextoIzquierda(d.DescripcionTipoVenta.ToString());
-                    Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
+                    concatenacion =  d.NombreProducto.ToString();
+                 
+                    Ticket1.TextoIzquierda(d.DescripcionTipoVenta.ToString() );
+                    Ticket1.TextoIzquierda(concatenacion);
+                    Ticket1.AgregaArticulo("(" + d.Id_Producto.ToString() + ")", double.Parse(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
                     clsventas.CreaRecibo.LineasGuion();
                 }
             }
@@ -938,9 +943,9 @@ namespace PUNTOVENTA.MENU.CAJA
 
 
             Ticket1.TextoIzquierda(" ");
-            Ticket1.TextoCentro("=================================================");
+            Ticket1.TextoCentro("========================");
             Ticket1.TextoCentro("TICKET DE CAJA ");
-            Ticket1.TextoCentro("===================================================");
+            Ticket1.TextoCentro("========================");
             Ticket1.TextoIzquierda(" ");
            
 
