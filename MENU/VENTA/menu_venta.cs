@@ -1191,7 +1191,7 @@ namespace PUNTOVENTA.MENU.VENTA
                             {
                                 Ticket1.TextoIzquierda(" ");
 
-
+                                Ticket1.TextoCentro("------------");
                                 foreach (dgTicket d in listaticketinfo)
                                 {
 
@@ -1201,7 +1201,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
                                 }
 
-                                Ticket1.TextoIzquierda(" ");
+                                Ticket1.TextoCentro("------------");
 
 
                             }
@@ -1501,7 +1501,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
                         {
                             Ticket1.TextoIzquierda(" ");
-
+                            Ticket1.TextoCentro("------------");
 
                             foreach (dgTicket d in listaticketinfo)
                             {
@@ -1511,8 +1511,8 @@ namespace PUNTOVENTA.MENU.VENTA
 
 
                             }
-
-                            Ticket1.TextoIzquierda(" ");
+                            Ticket1.TextoCentro("------------");
+                          
 
 
                         }

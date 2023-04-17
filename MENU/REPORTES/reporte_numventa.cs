@@ -68,6 +68,9 @@ namespace PUNTOVENTA.MENU.REPORTES
 
 
                             _dineroventas = _dineroventas + subtotal;
+
+                            _dineroventas = (float)Math.Round(_dineroventas, 2);
+
                             escredito = d.DescripcionTipoVenta.ToString();
 
                         }
@@ -240,8 +243,10 @@ namespace PUNTOVENTA.MENU.REPORTES
                     dataGridView_devoluciones.Rows.Add(d.Id_Devolucion.ToString(), d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
                          d.CantidadProducto.ToString(), d.PrecioProducto.ToString(), Convert.ToString(subtotal), d.Usuario.ToString(), fechadevolucion);
 
-
+                    
                     _dineroventas = _dineroventas - subtotal;
+                    _dineroventas = (float)Math.Round(_dineroventas, 2);
+
                 }
 
                 lbl_cantidad_vendida.Text = Convert.ToString(_dineroventas);
@@ -598,9 +603,9 @@ namespace PUNTOVENTA.MENU.REPORTES
                                 Ticket1.TextoCentro(d.NombreEmpresa.ToUpper().ToString());
 
 
-                                Ticket1.TextoIzquierda(d.Colonia.ToUpper().ToString());
-                                Ticket1.TextoIzquierda(d.Calle.ToUpper().ToString());
-                                Ticket1.TextoIzquierda(d.Telefono.ToString());
+                                Ticket1.TextoCentro(d.Colonia.ToUpper().ToString());
+                                Ticket1.TextoCentro(d.Calle.ToUpper().ToString());
+                                Ticket1.TextoCentro(d.Telefono.ToString());
                                 Ticket1.TextoIzquierda("");
                             }
 
@@ -614,11 +619,18 @@ namespace PUNTOVENTA.MENU.REPORTES
                         }
 
                         Ticket1.TextoIzquierda("Recibo:" + txtticket);
+                        Ticket1.TextoIzquierda("");
                         clsventas.CreaRecibo.EncabezadoVenta();
                         clsventas.CreaRecibo.LineasGuion();
 
                         string fechaventa;
                         float subtotal;
+                        foreach (dgReportes d in lista)
+                        {
+                            Ticket1.TextoIzquierda(d.DescripcionTipoVenta.ToString());
+                            break;
+                        }
+                        Ticket1.TextoIzquierda("");
 
                         foreach (dgReportes d in lista)
                         {
@@ -628,10 +640,11 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                             fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
 
-                            concatenacion = "(" + d.IdProducto.ToString() + ")" + " " + d.NombreProducto.ToString();
-                            Ticket1.TextoIzquierda(" ");
-                            Ticket1.TextoIzquierda(d.DescripcionTipoVenta.ToString());
-                            Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioProducto.ToString()), Convert.ToInt16(d.CantidadProducto.ToString()), double.Parse(subtotal.ToString()));
+                            concatenacion =d.NombreProducto.ToString();
+                           
+                           
+                            Ticket1.TextoIzquierda(concatenacion);
+                            Ticket1.AgregaArticulo("(" + d.IdProducto.ToString() + ")", double.Parse(d.PrecioProducto.ToString()), Convert.ToInt16(d.CantidadProducto.ToString()), double.Parse(subtotal.ToString()));
                             clsventas.CreaRecibo.LineasGuion();
 
                             escredito = d.DescripcionTipoVenta.ToString();
@@ -684,10 +697,10 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                                     fechadevolucion = d.FechaDevolucion.Value.ToString("dd/MM/yyyy");
 
-                                    concatenacion = "(" + d.IdProducto.ToString() + ")" + " " + d.NombreProducto.ToString();
-                                    Ticket1.TextoIzquierda(" ");
+                                    concatenacion =  d.NombreProducto.ToString();
+                                    Ticket1.TextoIzquierda(concatenacion);
 
-                                    Ticket1.AgregaArticulo(concatenacion, double.Parse(d.PrecioProducto.ToString()), Convert.ToInt16(d.CantidadProducto.ToString()), double.Parse(subtotal.ToString()));
+                                    Ticket1.AgregaArticulo("(" + d.IdProducto.ToString() + ")", double.Parse(d.PrecioProducto.ToString()), Convert.ToInt16(d.CantidadProducto.ToString()), double.Parse(subtotal.ToString()));
                                     clsventas.CreaRecibo.LineasGuion();
                                 }
 
@@ -705,9 +718,9 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                         Ticket1.TextoIzquierda("Cantidad Vendida:" + lbl_cantidad_vendida.Text);
 
-                        Ticket1.TextoCentro("==================================");
+                        Ticket1.TextoCentro("------------");
                         Ticket1.TextoCentro("TICKET DE VENTA NUMVENTA ");
-                        Ticket1.TextoCentro("==================================");
+                        Ticket1.TextoCentro("------------");
 
                         Ticket1.ImprimirTiket(impresora);
                         MessageBox.Show("Ticket Generado Satisfactoriamente");

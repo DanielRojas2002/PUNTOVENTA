@@ -103,7 +103,7 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
             dgDevolucion parametro3 = new dgDevolucion
             {
                 Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
-                IdProducto = Convert.ToInt16(lbl_idProducto.Text)
+                IdProducto = Convert.ToString(lbl_idProducto.Text)
                 
             };
 
@@ -381,7 +381,7 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
                     float cantidaddevolucion = cantidadregresar * precio;
                     dgDevolucion parametro = new dgDevolucion
                     {
-                        IdProducto = Convert.ToInt16(lbl_idProducto.Text),
+                        IdProducto = Convert.ToString(lbl_idProducto.Text),
                         Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
 
                         Cantidad = Convert.ToInt16(txt_num_regresar.Value),

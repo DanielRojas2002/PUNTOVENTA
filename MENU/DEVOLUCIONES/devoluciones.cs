@@ -153,7 +153,7 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
                         dgDevolucion parametro = new dgDevolucion
                         {
                             Id_Venta = Convert.ToInt16(txt_ticket.Text),
-                            IdProducto= Convert.ToInt16(idproducto)
+                            IdProducto= Convert.ToString(idproducto)
 
                         };
 
@@ -336,7 +336,7 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
 
             int idventa = Convert.ToInt16(dataGridView_ventas.CurrentRow.Cells["Col_Id_Venta"].Value.ToString());
-            int idproducto = Convert.ToInt16(dataGridView_ventas.CurrentRow.Cells["Col_IdProducto"].Value.ToString());
+            string idproducto = Convert.ToString(dataGridView_ventas.CurrentRow.Cells["Col_IdProducto"].Value.ToString());
 
             string tipoventa = Convert.ToString(dataGridView_ventas.CurrentRow.Cells["Col_Tipoventa"].Value.ToString());
 
@@ -370,7 +370,7 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
         }
        
 
-        private void AbrirVentanaDevolucion(int idproducto, int idventa,string tipoventa,int cantidadrestante, float cantidadpreciorestante)
+        private void AbrirVentanaDevolucion(string idproducto, int idventa,string tipoventa,int cantidadrestante, float cantidadpreciorestante)
         {
             string id;
             id = lbl_id.Text;
@@ -701,7 +701,7 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
                     {
 
 
-                        int idproducto2 = 0;
+                        string idproducto2 = "";
 
                         _cantidaddevolucion = 0;
 
@@ -731,7 +731,7 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
 
 
-                            idproducto2 = Convert.ToInt16(row.Cells[1].Value);
+                            idproducto2 = Convert.ToString(row.Cells[1].Value);
 
                            
 
@@ -752,7 +752,7 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
                             dgDevolucion parametro3 = new dgDevolucion
                             {
-                                IdProducto = Convert.ToInt16(idproducto2),
+                                IdProducto = Convert.ToString(idproducto2),
                                 Id_Venta = Convert.ToInt16(idventa),
 
                                 Cantidad = Convert.ToInt16(cantidadrestante),
