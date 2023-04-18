@@ -1848,7 +1848,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
                                     foreach (dgCliente d in listaticketinfocliente)
                                     {
-                                        Ticket1.TextoIzquierda("");
+                                       
                                         Ticket1.TextoIzquierda("Nombre:" + d.Nombre.ToUpper().ToString());
                                         Ticket1.TextoIzquierda("Apellido 1:" + d.Apellido_Paterno.ToUpper().ToString());
                                         Ticket1.TextoIzquierda("Apellido 2:" + d.Apellido_Materno.ToUpper().ToString());
@@ -1900,10 +1900,10 @@ namespace PUNTOVENTA.MENU.VENTA
                                 Ticket1.AgregaTotales("Total", double.Parse(lbl_total.Text));
 
 
-                                Ticket1.TextoIzquierda(" ");
+                              
                                 Ticket1.AgregaTotales("Abonado con :", double.Parse(txt_paga_con.Text));
 
-                                Ticket1.TextoIzquierda(" ");
+                               
 
                                 float debe = float.Parse(lbl_total.Text) - float.Parse(txt_paga_con.Text);
                                 Ticket1.AgregaTotales("Falta por pagar: ", debe);
