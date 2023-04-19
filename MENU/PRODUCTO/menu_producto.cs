@@ -444,12 +444,12 @@ namespace PUNTOVENTA.MENU.PRODUCTO
                    
                 
 
-                    int idproducto, idcategoria, idmedida, stock;
-                    string nombre, categoriadescripcion, medidadescripcion;
+                    int idcategoria, idmedida, stock;
+                    string nombre, categoriadescripcion, medidadescripcion, idproducto;
 
                     foreach (dgProducto d in listafiltrado)
                     {
-                        idproducto = Convert.ToInt16(d.Id_Producto.ToString());
+                        idproducto = Convert.ToString(d.Id_Producto.ToString());
                         idcategoria = Convert.ToInt16(d.Id_Categoria.ToString());
                         idmedida = Convert.ToInt16(d.Id_Medida.ToString());
                         stock = Convert.ToInt16(d.StockInicial.ToString());
@@ -642,11 +642,11 @@ namespace PUNTOVENTA.MENU.PRODUCTO
             if (lista.Count > 0)
 
             {
-                int idproducto, idcategoria, idmedida, stock;
-                string nombre, categoriadescripcion, medidadescripcion;
+                int  idcategoria, idmedida, stock;
+                string nombre, categoriadescripcion, medidadescripcion, idproducto;
                 foreach (dgProducto d in lista)
                 {
-                    idproducto = Convert.ToInt16(d.Id_Producto.ToString());
+                    idproducto = Convert.ToString(d.Id_Producto.ToString());
                     idcategoria = Convert.ToInt16(d.Id_Categoria.ToString());
                     idmedida = Convert.ToInt16(d.Id_Medida.ToString());
                     stock = Convert.ToInt16(d.StockInicial.ToString());
@@ -703,11 +703,11 @@ namespace PUNTOVENTA.MENU.PRODUCTO
             if (listainactivo.Count > 0)
 
             {
-                int idproducto, idcategoria, idmedida, stock;
-                string nombre, categoriadescripcion, medidadescripcion;
+                int idcategoria, idmedida, stock;
+                string nombre, categoriadescripcion, medidadescripcion, idproducto;
                 foreach (dgProducto d in listainactivo)
                 {
-                    idproducto = Convert.ToInt16(d.Id_Producto.ToString());
+                    idproducto = Convert.ToString(d.Id_Producto.ToString());
                     idcategoria = Convert.ToInt16(d.Id_Categoria.ToString());
                     idmedida = Convert.ToInt16(d.Id_Medida.ToString());
                     stock = Convert.ToInt16(d.StockInicial.ToString());
