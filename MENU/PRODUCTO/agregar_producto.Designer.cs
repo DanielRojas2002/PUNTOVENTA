@@ -203,7 +203,7 @@
             this.txt_codigo.Location = new System.Drawing.Point(25, 27);
             this.txt_codigo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_codigo.Name = "txt_codigo";
-            this.txt_codigo.Size = new System.Drawing.Size(124, 24);
+            this.txt_codigo.Size = new System.Drawing.Size(165, 24);
             this.txt_codigo.TabIndex = 1;
             this.txt_codigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_codigo_KeyPress);
             // 

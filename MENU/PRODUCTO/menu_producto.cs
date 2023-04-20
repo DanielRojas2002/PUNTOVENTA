@@ -523,12 +523,12 @@ namespace PUNTOVENTA.MENU.PRODUCTO
 
                   
 
-                    int idproducto, idcategoria, idmedida, stock;
-                    string nombre, categoriadescripcion, medidadescripcion;
+                    int idcategoria, idmedida, stock;
+                    string nombre, categoriadescripcion, medidadescripcion, idproducto;
 
                     foreach (dgProducto d in listafiltradoinactivos)
                     {
-                        idproducto = Convert.ToInt16(d.Id_Producto.ToString());
+                        idproducto = Convert.ToString(d.Id_Producto.ToString());
                         idcategoria = Convert.ToInt16(d.Id_Categoria.ToString());
                         idmedida = Convert.ToInt16(d.Id_Medida.ToString());
                         stock = Convert.ToInt16(d.StockInicial.ToString());

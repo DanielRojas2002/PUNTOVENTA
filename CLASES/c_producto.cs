@@ -383,6 +383,7 @@ namespace Punto_de_Venta.Clases
                 SqlParameter[] Parametros =
                 {
                     new SqlParameter("@Accion",11),
+                    new SqlParameter("@P_IdProducto",Parametro.Id_Producto),
                     new SqlParameter("@P_IdCategoria",Parametro.Id_Categoria),
                     new SqlParameter("@P_IdMedida",Parametro.Id_Medida),
                     new SqlParameter("@P_IdProveedor",Parametro.Id_Proveedor),
