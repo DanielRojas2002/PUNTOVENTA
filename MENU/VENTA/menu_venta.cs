@@ -980,6 +980,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
             if (lbl_id_tipoventa.Text == "1" && lbl_total.Text != "")
             {
+                // efectivo
                 if (txt_paga_con.Text == "" && lbl_cambio.Text == "")
                 {
                     MessageBox.Show("Debe de llenar el campo de pago");
@@ -1156,8 +1157,8 @@ namespace PUNTOVENTA.MENU.VENTA
 
                             {
 
-                                
-                               
+
+
 
                                 string concatenacion = "";
                                 double subtotal, sub;
@@ -1167,11 +1168,11 @@ namespace PUNTOVENTA.MENU.VENTA
 
                                     subtotal = (double)Math.Round(sub, 2);
 
-                                    concatenacion =  d.NombreProducto.ToString().ToUpper();
+                                    concatenacion = d.NombreProducto.ToString().ToUpper();
 
                                     Ticket1.TextoIzquierda(concatenacion);
 
-                                 
+
                                     Ticket1.AgregaArticulo("(" + d.Id_Producto.ToString() + ")", double.Parse(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
                                     clsventas.CreaRecibo.LineasGuion();
                                 }
@@ -1184,7 +1185,7 @@ namespace PUNTOVENTA.MENU.VENTA
                             Ticket1.AgregaTotales("Cambio a dar:", double.Parse(lbl_cambio.Text));
 
 
-                        
+
 
                             if (listaticketinfo.Count > 0)
 
@@ -1207,7 +1208,7 @@ namespace PUNTOVENTA.MENU.VENTA
                             }
 
 
-                          
+
 
 
                             Ticket1.ImprimirTiket(impresora);
@@ -1303,22 +1304,616 @@ namespace PUNTOVENTA.MENU.VENTA
 
 
 
-                           
+
                             MessageBox.Show("Venta Realizada Por Efectivo");
 
                             RegresarVentana();
                         }
                     }
-                     
+
                 }
 
 
             }
 
-
             else if (lbl_id_tipoventa.Text == "2" && lbl_total.Text != "")
             {
+                // tarjeta de credito
 
+                var confirm = MessageBox.Show("Desea confirmar la venta ?",
+                "Confirmar  Venta Tarjeta de Credito!!",
+                 MessageBoxButtons.YesNo);
+
+                if (confirm == DialogResult.Yes)
+                {
+
+
+                    var confirmResult = MessageBox.Show("Desea imprimir ticket?",
+                    "Confirmar Ticket Venta Tarjeta de Credito!!",
+                    MessageBoxButtons.YesNo);
+
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        dgVenta parametro = new dgVenta
+                        {
+                            Id_Usuario = Convert.ToInt16(lbl_id.Text),
+                            FechaVenta = DateTime.Now,
+                            Id_Venta = _num_venta,
+                            Total = decimal.Parse(lbl_total.Text),
+                            Cambio = 0,
+
+
+
+                        };
+
+                        string control = "";
+
+                        control = c_venta.InsertarVentaTarjetaCredito(parametro);
+
+
+                        dgVenta parametrorestarstock = new dgVenta
+                        {
+
+                            Id_Venta = _num_venta,
+
+                        };
+
+                        List<dgVenta> listaproductoscarrito = c_venta.LeerVenta(1, parametrorestarstock);
+
+                        if (listaproductoscarrito.Count > 0)
+
+                        {
+                            int cantidad;
+                            string idproducto;
+                            foreach (dgVenta d in listaproductoscarrito)
+                            {
+                                idproducto = Convert.ToString(d.Id_Producto);
+
+                                cantidad = Convert.ToInt16(d.Stock);
+
+                                dgVenta parametrorestarstockrestar = new dgVenta
+                                {
+
+                                    Id_Producto = idproducto,
+                                    Stock = cantidad
+
+                                };
+
+                                control = "";
+
+                                control = c_venta.ReducirStockProductos(parametrorestarstockrestar);
+
+
+
+
+
+                            }
+
+
+
+
+
+                        }
+
+
+                        clsventas.CreaRecibo Ticket1 = new clsventas.CreaRecibo();
+
+
+
+                        dgTicket parametroticketinfo = new dgTicket
+                        {
+                        };
+
+                        List<dgTicket> listaticketinfo = c_ticket.Ticket(0, parametroticketinfo);
+
+
+                        if (listaticketinfo.Count > 0)
+
+                        {
+
+
+                            foreach (dgTicket d in listaticketinfo)
+                            {
+                                Ticket1.TextoCentro(d.NombreEmpresa.ToUpper().ToString());
+                                Ticket1.TextoCentro(d.Colonia.ToUpper().ToString());
+                                Ticket1.TextoCentro(d.Calle.ToUpper().ToString());
+                                Ticket1.TextoCentro("Tel: " + d.Telefono.ToString());
+                                Ticket1.TextoIzquierda("");
+                            }
+
+                            foreach (dgTicket d in listaticketinfo)
+                            {
+
+                                Ticket1.TextoIzquierda("Recibo: " + _num_venta);
+
+                            }
+
+                            dgUsuario parametrousuario = new dgUsuario
+                            {
+
+                                Id_Usuario = Convert.ToInt16(lbl_id.Text)
+
+                            };
+
+                            List<dgUsuario> listausuariovendedor = c_usuario.LeerUsuario(2, parametrousuario);
+
+                            if (listausuariovendedor.Count > 0)
+
+                            {
+
+                                foreach (dgUsuario d in listausuariovendedor)
+                                {
+
+                                    Ticket1.TextoIzquierda("Cajero:" + d.Usuario.ToString());
+                                }
+                            }
+
+
+                            Ticket1.TextoIzquierda("Recibo Tarjeta Credito");
+                            Ticket1.TextoIzquierda("Los Precios ya contienen IVA");
+                            Ticket1.TextoIzquierda("Cliente: " + "Credito");
+
+                            Ticket1.TextoIzquierda("Fecha " + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString());
+                            Ticket1.TextoIzquierda("");
+                        }
+
+
+                        clsventas.CreaRecibo.LineasGuion();
+
+                        clsventas.CreaRecibo.EncabezadoVenta();
+
+
+                        dgTicket parametroticket = new dgTicket
+                        {
+                            Id_Venta = _num_venta
+                        };
+
+                        List<dgTicket> listaProductosVenta = c_ticket.Ticket(1, parametroticket);
+                        Ticket1.TextoIzquierda(" ");
+
+                        if (listaProductosVenta.Count > 0)
+
+                        {
+
+                            string concatenacion = "";
+                            double subtotal, sub;
+                            foreach (dgTicket d in listaProductosVenta)
+                            {
+                                sub = double.Parse(d.SubTotal.ToString());
+
+                                subtotal = (double)Math.Round(sub, 2);
+
+
+                                concatenacion = d.NombreProducto.ToString();
+                                Ticket1.TextoIzquierda(concatenacion);
+                                Ticket1.AgregaArticulo("(" + d.Id_Producto.ToString() + ")", double.Parse(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
+                                clsventas.CreaRecibo.LineasGuion();
+                            }
+                        }
+
+                        Ticket1.TextoIzquierda(" ");
+                        Ticket1.AgregaTotales("Total", double.Parse(lbl_total.Text));
+                        Ticket1.TextoIzquierda(" ");
+
+
+
+
+
+                        if (listaticketinfo.Count > 0)
+
+                        {
+                            Ticket1.TextoIzquierda(" ");
+                            Ticket1.TextoCentro("------------");
+
+                            foreach (dgTicket d in listaticketinfo)
+                            {
+
+                                Ticket1.TextoCentro(d.Mensaje.ToUpper().ToString());
+
+
+
+                            }
+                            Ticket1.TextoCentro("------------");
+
+
+
+                        }
+
+
+
+
+                        Ticket1.ImprimirTiket(impresora);
+
+
+                        MessageBox.Show("Venta Realizada por Tarjeta de Credito");
+
+                        RegresarVentana();
+
+                    }
+                    else
+                    {
+
+                        dgVenta parametro = new dgVenta
+                        {
+                            Id_Usuario = Convert.ToInt16(lbl_id.Text),
+                            FechaVenta = DateTime.Now,
+                            Id_Venta = _num_venta,
+                            Total = decimal.Parse(lbl_total.Text),
+                            Cambio = 0,
+
+
+
+                        };
+
+                        string control = "";
+
+                        control = c_venta.InsertarVentaTarjetaCredito(parametro);
+
+
+                        dgVenta parametrorestarstock = new dgVenta
+                        {
+
+                            Id_Venta = _num_venta,
+
+                        };
+
+                        List<dgVenta> listaproductoscarrito = c_venta.LeerVenta(1, parametrorestarstock);
+
+                        if (listaproductoscarrito.Count > 0)
+
+                        {
+                            int cantidad;
+                            string idproducto;
+                            foreach (dgVenta d in listaproductoscarrito)
+                            {
+                                idproducto = Convert.ToString(d.Id_Producto);
+
+                                cantidad = Convert.ToInt16(d.Stock);
+
+                                dgVenta parametrorestarstockrestar = new dgVenta
+                                {
+
+                                    Id_Producto = idproducto,
+                                    Stock = cantidad
+
+                                };
+
+                                control = "";
+
+                                control = c_venta.ReducirStockProductos(parametrorestarstockrestar);
+
+
+
+
+
+                            }
+
+
+
+
+
+                        }
+
+
+
+                        MessageBox.Show("Venta Realizada por Tarjeta de Credito");
+                        RegresarVentana();
+
+                    }
+                }
+                else
+                {
+
+                }
+
+
+
+
+            }
+
+
+            else if (lbl_id_tipoventa.Text == "3" && lbl_total.Text != "")
+            {
+                // tarjeta de debito
+
+                var confirm = MessageBox.Show("Desea confirmar la venta ?",
+                "Confirmar  Venta Tarjeta de Debito!!",
+                 MessageBoxButtons.YesNo);
+
+                if (confirm == DialogResult.Yes)
+                {
+
+
+                    var confirmResult = MessageBox.Show("Desea imprimir ticket?",
+                    "Confirmar Ticket Venta Tarjeta de Debito!!",
+                    MessageBoxButtons.YesNo);
+
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        dgVenta parametro = new dgVenta
+                        {
+                            Id_Usuario = Convert.ToInt16(lbl_id.Text),
+                            FechaVenta = DateTime.Now,
+                            Id_Venta = _num_venta,
+                            Total = decimal.Parse(lbl_total.Text),
+                            Cambio = 0,
+
+
+
+                        };
+
+                        string control = "";
+
+                        control = c_venta.InsertarVentaTarjetaDebito(parametro);
+
+
+                        dgVenta parametrorestarstock = new dgVenta
+                        {
+
+                            Id_Venta = _num_venta,
+
+                        };
+
+                        List<dgVenta> listaproductoscarrito = c_venta.LeerVenta(1, parametrorestarstock);
+
+                        if (listaproductoscarrito.Count > 0)
+
+                        {
+                            int cantidad;
+                            string idproducto;
+                            foreach (dgVenta d in listaproductoscarrito)
+                            {
+                                idproducto = Convert.ToString(d.Id_Producto);
+
+                                cantidad = Convert.ToInt16(d.Stock);
+
+                                dgVenta parametrorestarstockrestar = new dgVenta
+                                {
+
+                                    Id_Producto = idproducto,
+                                    Stock = cantidad
+
+                                };
+
+                                control = "";
+
+                                control = c_venta.ReducirStockProductos(parametrorestarstockrestar);
+
+
+
+
+
+                            }
+
+
+
+
+
+                        }
+
+
+                        clsventas.CreaRecibo Ticket1 = new clsventas.CreaRecibo();
+
+
+
+                        dgTicket parametroticketinfo = new dgTicket
+                        {
+                        };
+
+                        List<dgTicket> listaticketinfo = c_ticket.Ticket(0, parametroticketinfo);
+
+
+                        if (listaticketinfo.Count > 0)
+
+                        {
+
+
+                            foreach (dgTicket d in listaticketinfo)
+                            {
+                                Ticket1.TextoCentro(d.NombreEmpresa.ToUpper().ToString());
+                                Ticket1.TextoCentro(d.Colonia.ToUpper().ToString());
+                                Ticket1.TextoCentro(d.Calle.ToUpper().ToString());
+                                Ticket1.TextoCentro("Tel: " + d.Telefono.ToString());
+                                Ticket1.TextoIzquierda("");
+                            }
+
+                            foreach (dgTicket d in listaticketinfo)
+                            {
+
+                                Ticket1.TextoIzquierda("Recibo: " + _num_venta);
+
+                            }
+
+                            dgUsuario parametrousuario = new dgUsuario
+                            {
+
+                                Id_Usuario = Convert.ToInt16(lbl_id.Text)
+
+                            };
+
+                            List<dgUsuario> listausuariovendedor = c_usuario.LeerUsuario(2, parametrousuario);
+
+                            if (listausuariovendedor.Count > 0)
+
+                            {
+
+                                foreach (dgUsuario d in listausuariovendedor)
+                                {
+
+                                    Ticket1.TextoIzquierda("Cajero:" + d.Usuario.ToString());
+                                }
+                            }
+
+
+                            Ticket1.TextoIzquierda("Recibo Tarjeta Debito");
+                            Ticket1.TextoIzquierda("Los Precios ya contienen IVA");
+                            Ticket1.TextoIzquierda("Cliente: " + "Debito");
+
+                            Ticket1.TextoIzquierda("Fecha " + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString());
+                            Ticket1.TextoIzquierda("");
+                        }
+
+
+                        clsventas.CreaRecibo.LineasGuion();
+
+                        clsventas.CreaRecibo.EncabezadoVenta();
+
+
+                        dgTicket parametroticket = new dgTicket
+                        {
+                            Id_Venta = _num_venta
+                        };
+
+                        List<dgTicket> listaProductosVenta = c_ticket.Ticket(1, parametroticket);
+                        Ticket1.TextoIzquierda(" ");
+
+                        if (listaProductosVenta.Count > 0)
+
+                        {
+
+                            string concatenacion = "";
+                            double subtotal, sub;
+                            foreach (dgTicket d in listaProductosVenta)
+                            {
+                                sub = double.Parse(d.SubTotal.ToString());
+
+                                subtotal = (double)Math.Round(sub, 2);
+
+
+                                concatenacion = d.NombreProducto.ToString();
+                                Ticket1.TextoIzquierda(concatenacion);
+                                Ticket1.AgregaArticulo("(" + d.Id_Producto.ToString() + ")", double.Parse(d.PrecioComprado.ToString()), Convert.ToInt16(d.CantidadComprada.ToString()), double.Parse(subtotal.ToString()));
+                                clsventas.CreaRecibo.LineasGuion();
+                            }
+                        }
+
+                        Ticket1.TextoIzquierda(" ");
+                        Ticket1.AgregaTotales("Total", double.Parse(lbl_total.Text));
+                        Ticket1.TextoIzquierda(" ");
+
+
+
+
+
+                        if (listaticketinfo.Count > 0)
+
+                        {
+                            Ticket1.TextoIzquierda(" ");
+                            Ticket1.TextoCentro("------------");
+
+                            foreach (dgTicket d in listaticketinfo)
+                            {
+
+                                Ticket1.TextoCentro(d.Mensaje.ToUpper().ToString());
+
+
+
+                            }
+                            Ticket1.TextoCentro("------------");
+
+
+
+                        }
+
+
+
+
+                        Ticket1.ImprimirTiket(impresora);
+
+
+                        MessageBox.Show("Venta Realizada por Tarjeta de Debito");
+
+                        RegresarVentana();
+
+                    }
+                    else
+                    {
+
+                        dgVenta parametro = new dgVenta
+                        {
+                            Id_Usuario = Convert.ToInt16(lbl_id.Text),
+                            FechaVenta = DateTime.Now,
+                            Id_Venta = _num_venta,
+                            Total = decimal.Parse(lbl_total.Text),
+                            Cambio = 0,
+
+
+
+                        };
+
+                        string control = "";
+
+                        control = c_venta.InsertarVentaTarjetaDebito(parametro);
+
+
+                        dgVenta parametrorestarstock = new dgVenta
+                        {
+
+                            Id_Venta = _num_venta,
+
+                        };
+
+                        List<dgVenta> listaproductoscarrito = c_venta.LeerVenta(1, parametrorestarstock);
+
+                        if (listaproductoscarrito.Count > 0)
+
+                        {
+                            int cantidad;
+                            string idproducto;
+                            foreach (dgVenta d in listaproductoscarrito)
+                            {
+                                idproducto = Convert.ToString(d.Id_Producto);
+
+                                cantidad = Convert.ToInt16(d.Stock);
+
+                                dgVenta parametrorestarstockrestar = new dgVenta
+                                {
+
+                                    Id_Producto = idproducto,
+                                    Stock = cantidad
+
+                                };
+
+                                control = "";
+
+                                control = c_venta.ReducirStockProductos(parametrorestarstockrestar);
+
+
+
+
+
+                            }
+
+
+
+
+
+                        }
+
+
+
+                        MessageBox.Show("Venta Realizada por Tarjeta de Debito");
+                        RegresarVentana();
+
+                    }
+                }
+                else
+                {
+
+                }
+
+
+
+
+            }
+
+
+
+
+
+            else if (lbl_id_tipoventa.Text == "4" && lbl_total.Text != "")
+            {
+                // transferencia
                 if (txt_nombre_transferencia.Text == "")
                 {
                     MessageBox.Show("Ingrese el nombre del cliente para guardarlo en transferencia");
@@ -1612,11 +2207,11 @@ namespace PUNTOVENTA.MENU.VENTA
             }
 
 
-            else if (lbl_id_tipoventa.Text == "3" && lbl_total.Text != "")
+            else if (lbl_id_tipoventa.Text == "5" && lbl_total.Text != "")
             {
-                
-                
-                
+
+                // abono de credito
+
 
 
                 if (txt_paga_con.Text == "" && lbl_cambio.Text == "")
@@ -2146,6 +2741,30 @@ namespace PUNTOVENTA.MENU.VENTA
 
             else if (lbl_id_tipoventa.Text == "2")
             {
+                lbl_clienteonombre.Text = "";
+                bx_cliente.Visible = false;
+                txt_nombre_transferencia.Visible = false;
+                lbl_etiqueta_pago.Text = "";
+                txt_paga_con.Visible = false;
+                label11.Text = "";
+                label9.Text = "Total";
+                lbl_cambio.Text = "";
+            }
+
+            else if (lbl_id_tipoventa.Text == "3")
+            {
+                lbl_clienteonombre.Text = "";
+                bx_cliente.Visible = false;
+                txt_nombre_transferencia.Visible = false;
+                lbl_etiqueta_pago.Text = "";
+                txt_paga_con.Visible = false;
+                label11.Text = "";
+                label9.Text = "Total";
+                lbl_cambio.Text = "";
+            }
+
+            else if (lbl_id_tipoventa.Text == "4")
+            {
                 lbl_clienteonombre.Text = "Nombre";
                 bx_cliente.Visible = false;
                 txt_nombre_transferencia.Visible = true;
@@ -2156,7 +2775,7 @@ namespace PUNTOVENTA.MENU.VENTA
                 lbl_cambio.Text = "";
             }
 
-            else if (lbl_id_tipoventa.Text == "3")
+            else if (lbl_id_tipoventa.Text == "5")
             {
                 txt_paga_con.Text = "";
                 lbl_clienteonombre.Text = "Cliente:";

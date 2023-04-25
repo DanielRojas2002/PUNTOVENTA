@@ -94,6 +94,8 @@ namespace PUNTOVENTA.CLASES
         }
 
 
+       
+
         public static string InsertarVentaCredito(dgVenta Parametro)
         {
 
@@ -135,6 +137,86 @@ namespace PUNTOVENTA.CLASES
             return control;
 
         }
+
+        public static string InsertarVentaTarjetaDebito(dgVenta Parametro)
+        {
+
+
+            string control = "";
+
+            try
+            {
+
+                DataTable tabla = new DataTable();
+
+                SqlParameter[] parametros =
+                {
+                    new SqlParameter("@Accion",7),
+                    new SqlParameter("@P_IdVenta",Parametro.Id_Venta),
+                    new SqlParameter("@P_IdUsuario",Parametro.Id_Usuario),
+                    new SqlParameter("@P_Total",Parametro.Total),
+                    new SqlParameter("@P_FechaVenta",Parametro.FechaVenta),
+                    new SqlParameter("@P_Cambio",Parametro.Cambio)
+
+
+
+                };
+
+                tabla = bdContext.funcionStored("spVenta", parametros);
+                control = tabla.Rows[0][0].ToString();
+
+
+
+            }
+
+            catch (Exception error)
+            {
+                control = error.ToString();
+            }
+            return control;
+
+        }
+
+        public static string InsertarVentaTarjetaCredito(dgVenta Parametro)
+        {
+
+
+            string control = "";
+
+            try
+            {
+
+                DataTable tabla = new DataTable();
+
+                SqlParameter[] parametros =
+                {
+                    new SqlParameter("@Accion",6),
+                    new SqlParameter("@P_IdVenta",Parametro.Id_Venta),
+                    new SqlParameter("@P_IdUsuario",Parametro.Id_Usuario),
+                    new SqlParameter("@P_Total",Parametro.Total),
+                    new SqlParameter("@P_FechaVenta",Parametro.FechaVenta),
+                    new SqlParameter("@P_Cambio",Parametro.Cambio)
+
+
+
+
+                };
+
+                tabla = bdContext.funcionStored("spVenta", parametros);
+                control = tabla.Rows[0][0].ToString();
+
+
+
+            }
+
+            catch (Exception error)
+            {
+                control = error.ToString();
+            }
+            return control;
+
+        }
+
 
         public static string ReducirStockProductos(dgVenta Parametro)
         {

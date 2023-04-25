@@ -81,10 +81,9 @@
             // 
             this.btn_regresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_regresar.Image = ((System.Drawing.Image)(resources.GetObject("btn_regresar.Image")));
-            this.btn_regresar.Location = new System.Drawing.Point(12, 60);
-            this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_regresar.Location = new System.Drawing.Point(10, 45);
             this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(220, 35);
+            this.btn_regresar.Size = new System.Drawing.Size(192, 26);
             this.btn_regresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_regresar.TabIndex = 55;
             this.btn_regresar.TabStop = false;
@@ -96,9 +95,9 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Cooper Black", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(368, 91);
+            this.label1.Location = new System.Drawing.Point(322, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(365, 46);
+            this.label1.Size = new System.Drawing.Size(291, 36);
             this.label1.TabIndex = 57;
             this.label1.Text = "DEVOLUCIONES";
             // 
@@ -107,9 +106,9 @@
             this.lbl_id.AutoSize = true;
             this.lbl_id.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lbl_id.ForeColor = System.Drawing.Color.White;
-            this.lbl_id.Location = new System.Drawing.Point(304, 110);
+            this.lbl_id.Location = new System.Drawing.Point(266, 82);
             this.lbl_id.Name = "lbl_id";
-            this.lbl_id.Size = new System.Drawing.Size(30, 23);
+            this.lbl_id.Size = new System.Drawing.Size(25, 19);
             this.lbl_id.TabIndex = 65;
             this.lbl_id.Text = "id";
             this.lbl_id.Visible = false;
@@ -130,12 +129,11 @@
             this.Col_FechaVentaProducto,
             this.Col_Tipoventa,
             this.Col_Check});
-            this.dataGridView_ventas.Location = new System.Drawing.Point(55, 268);
-            this.dataGridView_ventas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView_ventas.Location = new System.Drawing.Point(48, 201);
             this.dataGridView_ventas.Name = "dataGridView_ventas";
             this.dataGridView_ventas.RowHeadersWidth = 51;
             this.dataGridView_ventas.RowTemplate.Height = 25;
-            this.dataGridView_ventas.Size = new System.Drawing.Size(994, 222);
+            this.dataGridView_ventas.Size = new System.Drawing.Size(927, 166);
             this.dataGridView_ventas.TabIndex = 98;
             this.dataGridView_ventas.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridView_ventas_CellBeginEdit);
             this.dataGridView_ventas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_ventas_CellContentClick);
@@ -147,7 +145,7 @@
             this.Col_Id_Venta.HeaderText = "No. Venta";
             this.Col_Id_Venta.MinimumWidth = 3;
             this.Col_Id_Venta.Name = "Col_Id_Venta";
-            this.Col_Id_Venta.Width = 102;
+            this.Col_Id_Venta.Width = 83;
             // 
             // Col_IdProducto
             // 
@@ -221,10 +219,9 @@
             this.btn_ticket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ticket.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_ticket.ForeColor = System.Drawing.Color.White;
-            this.btn_ticket.Location = new System.Drawing.Point(839, 207);
-            this.btn_ticket.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_ticket.Location = new System.Drawing.Point(795, 155);
             this.btn_ticket.Name = "btn_ticket";
-            this.btn_ticket.Size = new System.Drawing.Size(206, 53);
+            this.btn_ticket.Size = new System.Drawing.Size(180, 40);
             this.btn_ticket.TabIndex = 99;
             this.btn_ticket.Text = "VER PRODUCTOS";
             this.btn_ticket.UseVisualStyleBackColor = false;
@@ -233,10 +230,9 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(774, 207);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox7.Location = new System.Drawing.Point(738, 155);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(70, 53);
+            this.pictureBox7.Size = new System.Drawing.Size(61, 40);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 100;
             this.pictureBox7.TabStop = false;
@@ -247,9 +243,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label2.Location = new System.Drawing.Point(82, 169);
+            this.label2.Location = new System.Drawing.Point(72, 127);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(171, 28);
+            this.label2.Size = new System.Drawing.Size(136, 21);
             this.label2.TabIndex = 103;
             this.label2.Text = "Numero de Ticket:";
             // 
@@ -259,10 +255,9 @@
             this.txt_ticket.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_ticket.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_ticket.ForeColor = System.Drawing.Color.Black;
-            this.txt_ticket.Location = new System.Drawing.Point(139, 213);
-            this.txt_ticket.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_ticket.Location = new System.Drawing.Point(122, 160);
             this.txt_ticket.Name = "txt_ticket";
-            this.txt_ticket.Size = new System.Drawing.Size(114, 24);
+            this.txt_ticket.Size = new System.Drawing.Size(100, 19);
             this.txt_ticket.TabIndex = 104;
             this.txt_ticket.TextChanged += new System.EventHandler(this.txt_ticket_TextChanged);
             this.txt_ticket.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ticket_KeyPress);
@@ -272,9 +267,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label3.Location = new System.Drawing.Point(774, 81);
+            this.label3.Location = new System.Drawing.Point(677, 61);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(173, 28);
+            this.label3.Size = new System.Drawing.Size(138, 21);
             this.label3.TabIndex = 105;
             this.label3.Text = "Dinero a Devolver:";
             this.label3.Visible = false;
@@ -284,9 +279,9 @@
             this.lbl_dinero_a_devolver.AutoSize = true;
             this.lbl_dinero_a_devolver.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_dinero_a_devolver.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.lbl_dinero_a_devolver.Location = new System.Drawing.Point(818, 131);
+            this.lbl_dinero_a_devolver.Location = new System.Drawing.Point(716, 98);
             this.lbl_dinero_a_devolver.Name = "lbl_dinero_a_devolver";
-            this.lbl_dinero_a_devolver.Size = new System.Drawing.Size(71, 28);
+            this.lbl_dinero_a_devolver.Size = new System.Drawing.Size(57, 21);
             this.lbl_dinero_a_devolver.TabIndex = 106;
             this.lbl_dinero_a_devolver.Text = "Dinero";
             this.lbl_dinero_a_devolver.Visible = false;
@@ -296,13 +291,12 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(43, 29);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(38, 22);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(9, 11);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(8, 8);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // cerrarapp
@@ -310,10 +304,9 @@
             this.cerrarapp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cerrarapp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cerrarapp.Image = ((System.Drawing.Image)(resources.GetObject("cerrarapp.Image")));
-            this.cerrarapp.Location = new System.Drawing.Point(2886, 4);
-            this.cerrarapp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cerrarapp.Location = new System.Drawing.Point(2579, 3);
             this.cerrarapp.Name = "cerrarapp";
-            this.cerrarapp.Size = new System.Drawing.Size(29, 31);
+            this.cerrarapp.Size = new System.Drawing.Size(25, 23);
             this.cerrarapp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.cerrarapp.TabIndex = 0;
             this.cerrarapp.TabStop = false;
@@ -323,10 +316,9 @@
             this.btn_minimzar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_minimzar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_minimzar.Image = ((System.Drawing.Image)(resources.GetObject("btn_minimzar.Image")));
-            this.btn_minimzar.Location = new System.Drawing.Point(2841, 4);
-            this.btn_minimzar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_minimzar.Location = new System.Drawing.Point(2540, 3);
             this.btn_minimzar.Name = "btn_minimzar";
-            this.btn_minimzar.Size = new System.Drawing.Size(39, 31);
+            this.btn_minimzar.Size = new System.Drawing.Size(34, 23);
             this.btn_minimzar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_minimzar.TabIndex = 1;
             this.btn_minimzar.TabStop = false;
@@ -336,10 +328,9 @@
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1980, 4);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(1786, 3);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(29, 31);
+            this.pictureBox3.Size = new System.Drawing.Size(25, 23);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 51;
             this.pictureBox3.TabStop = false;
@@ -349,10 +340,9 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1935, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(1747, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(39, 31);
+            this.pictureBox2.Size = new System.Drawing.Size(34, 23);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 52;
             this.pictureBox2.TabStop = false;
@@ -362,10 +352,9 @@
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(1589, 4);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox4.Location = new System.Drawing.Point(1444, 3);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(29, 31);
+            this.pictureBox4.Size = new System.Drawing.Size(25, 23);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 53;
             this.pictureBox4.TabStop = false;
@@ -375,10 +364,9 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1544, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(1405, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(39, 31);
+            this.pictureBox1.Size = new System.Drawing.Size(34, 23);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 54;
             this.pictureBox1.TabStop = false;
@@ -388,10 +376,9 @@
             this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(1044, 4);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox6.Location = new System.Drawing.Point(968, 3);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(29, 31);
+            this.pictureBox6.Size = new System.Drawing.Size(25, 23);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 57;
             this.pictureBox6.TabStop = false;
@@ -402,10 +389,9 @@
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(999, 4);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox5.Location = new System.Drawing.Point(928, 3);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(39, 31);
+            this.pictureBox5.Size = new System.Drawing.Size(34, 23);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 58;
             this.pictureBox5.TabStop = false;
@@ -425,9 +411,8 @@
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1081, 39);
+            this.panel1.Size = new System.Drawing.Size(1000, 29);
             this.panel1.TabIndex = 56;
             // 
             // button1
@@ -438,10 +423,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(843, 498);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Location = new System.Drawing.Point(795, 373);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(206, 53);
+            this.button1.Size = new System.Drawing.Size(180, 40);
             this.button1.TabIndex = 107;
             this.button1.Text = "DEVOLVER TODOS";
             this.button1.UseVisualStyleBackColor = false;
@@ -450,10 +434,9 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(778, 498);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox8.Location = new System.Drawing.Point(738, 373);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(70, 53);
+            this.pictureBox8.Size = new System.Drawing.Size(61, 40);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 108;
             this.pictureBox8.TabStop = false;
@@ -461,20 +444,19 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(405, 141);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox9.Location = new System.Drawing.Point(354, 106);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(272, 96);
+            this.pictureBox9.Size = new System.Drawing.Size(238, 72);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 109;
             this.pictureBox9.TabStop = false;
             // 
             // devoluciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.ClientSize = new System.Drawing.Size(1081, 576);
+            this.ClientSize = new System.Drawing.Size(1000, 435);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox8);
@@ -490,6 +472,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_regresar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "devoluciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "devoluciones";

@@ -89,6 +89,14 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
                     {
 
                     }
+                    else if(d.Descripcion=="Tarjeta Credito")
+                    {
+
+                    }
+                    else if (d.Descripcion == "Tarjeta Debito")
+                    {
+
+                    }
                     else
                     {
                         bx_tipoventa.Items.Add(d.Descripcion.ToString());
