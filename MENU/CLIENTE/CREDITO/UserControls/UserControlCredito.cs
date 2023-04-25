@@ -219,7 +219,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
 
             }
 
-            else if (lbl_id_tipoventa.Text == "2") // transferencia
+            else if (lbl_id_tipoventa.Text == "4") // transferencia
             {
              
                 label11.Visible = false;

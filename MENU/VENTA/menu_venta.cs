@@ -1451,7 +1451,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
                             Ticket1.TextoIzquierda("Recibo Tarjeta Credito");
                             Ticket1.TextoIzquierda("Los Precios ya contienen IVA");
-                            Ticket1.TextoIzquierda("Cliente: " + "Credito");
+                            Ticket1.TextoIzquierda("Cliente: " + "Tarjeta Credito");
 
                             Ticket1.TextoIzquierda("Fecha " + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString());
                             Ticket1.TextoIzquierda("");
@@ -1747,7 +1747,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
                             Ticket1.TextoIzquierda("Recibo Tarjeta Debito");
                             Ticket1.TextoIzquierda("Los Precios ya contienen IVA");
-                            Ticket1.TextoIzquierda("Cliente: " + "Debito");
+                            Ticket1.TextoIzquierda("Cliente: " + "Tarjeta Debito");
 
                             Ticket1.TextoIzquierda("Fecha " + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString());
                             Ticket1.TextoIzquierda("");
