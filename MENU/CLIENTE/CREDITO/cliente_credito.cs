@@ -52,8 +52,9 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                     lbl_domicilio.Text = colonia + " " + calle + " " + numcasa;
                     lbl_telefono.Text = Convert.ToString(d.Telefono.ToString());
                     lbl_correo.Text = Convert.ToString(d.Correo.ToString());
+                    
 
-                
+
 
 
                 }
@@ -82,10 +83,13 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
                 int idventa,idcliente;
                 float cantidadpagada, total,cantidadfaltante;
+                string fecharegistro ;
 
-              
+                DateTime fecharegistrofecha;
 
-               
+
+
+
                 foreach (dgClienteCredito d in lista2)
                 {
 
@@ -93,7 +97,9 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                     idventa = Convert.ToInt16(d.Id_Venta.ToString());
                     cantidadpagada = float.Parse(d.CantidadPagada.ToString());
                     total = float.Parse(d.Total.ToString());
+                    fecharegistrofecha = Convert.ToDateTime(d.FechaRegistro.ToString());
 
+                    fecharegistro= fecharegistrofecha.ToString("dd/MM/yyyy");
 
                     cantidadfaltante = total - cantidadpagada;
 
@@ -122,6 +128,8 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                     Creditos[contadorcreditos].TotalVenta = Convert.ToString(total);
 
                     Creditos[contadorcreditos].FaltaPagar = Convert.ToString(cantidadfaltante);
+
+                    Creditos[contadorcreditos].FechaRegistro = Convert.ToString(fecharegistro);
 
 
                     Creditos[contadorcreditos].Usuario = lbl_idusuario.Text;

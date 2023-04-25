@@ -158,7 +158,7 @@ namespace PUNTOVENTA.CLASES
                                  Calle = Convert.ToString(fila["Calle"].ToString()),
                                  NumCasa = Convert.ToString(fila["NumCasa"].ToString()),
 
-                                
+                               
                                  Correo = Convert.ToString(fila["Correo"].ToString()),
                                  Telefono = Convert.ToString(fila["Telefono"].ToString())
                                  
@@ -192,8 +192,8 @@ namespace PUNTOVENTA.CLASES
 
                                  Id_Venta = Convert.ToInt16(fila["IdVenta"].ToString()),
                                  CantidadPagada = float.Parse(fila["CantidadPagada"].ToString()),
-                                 Total = float.Parse(fila["Total"].ToString())
-
+                                 Total = float.Parse(fila["Total"].ToString()),
+                                 FechaRegistro = Convert.ToDateTime(fila["FechaRegistro"]),
 
 
 

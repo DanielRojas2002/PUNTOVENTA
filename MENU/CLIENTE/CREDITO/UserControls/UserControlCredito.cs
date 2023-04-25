@@ -30,6 +30,8 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
 
         public string _idusuario;
 
+        public string _fecharegistro;
+
 
 
 
@@ -68,6 +70,12 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
         {
             get { return _idusuario; }
             set { _idusuario = value; lbl_idusuario.Text = value; }
+        }
+
+        public string FechaRegistro
+        {
+            get { return _fecharegistro; }
+            set { _fecharegistro = value; lbl_fechacredito.Text = value; }
         }
 
 
