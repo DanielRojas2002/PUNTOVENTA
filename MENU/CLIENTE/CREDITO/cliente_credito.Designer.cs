@@ -32,6 +32,9 @@
             this.lbl_id_cliente = new System.Windows.Forms.Label();
             this.btn_regresar = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_liquidar = new System.Windows.Forms.Button();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.lbl_cambio = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -69,6 +72,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel3.SuspendLayout();
@@ -108,6 +112,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btn_liquidar);
+            this.panel2.Controls.Add(this.pictureBox6);
+            this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.lbl_cambio);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.pictureBox1);
@@ -135,15 +142,50 @@
             this.panel2.Location = new System.Drawing.Point(14, 129);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(482, 624);
+            this.panel2.Size = new System.Drawing.Size(482, 656);
             this.panel2.TabIndex = 143;
+            // 
+            // btn_liquidar
+            // 
+            this.btn_liquidar.BackColor = System.Drawing.Color.Navy;
+            this.btn_liquidar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_liquidar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_liquidar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_liquidar.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_liquidar.ForeColor = System.Drawing.Color.White;
+            this.btn_liquidar.Location = new System.Drawing.Point(88, 602);
+            this.btn_liquidar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_liquidar.Name = "btn_liquidar";
+            this.btn_liquidar.Size = new System.Drawing.Size(370, 42);
+            this.btn_liquidar.TabIndex = 186;
+            this.btn_liquidar.Text = "LIQUIDAR";
+            this.btn_liquidar.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(12, 602);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(70, 42);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 185;
+            this.pictureBox6.TabStop = false;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel5.Location = new System.Drawing.Point(3, 453);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(503, 10);
+            this.panel5.TabIndex = 149;
             // 
             // lbl_cambio
             // 
             this.lbl_cambio.AutoSize = true;
             this.lbl_cambio.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_cambio.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.lbl_cambio.Location = new System.Drawing.Point(358, 508);
+            this.lbl_cambio.Location = new System.Drawing.Point(390, 509);
             this.lbl_cambio.Name = "lbl_cambio";
             this.lbl_cambio.Size = new System.Drawing.Size(23, 28);
             this.lbl_cambio.TabIndex = 183;
@@ -154,7 +196,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label10.Location = new System.Drawing.Point(347, 476);
+            this.label10.Location = new System.Drawing.Point(366, 477);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(84, 28);
             this.label10.TabIndex = 182;
@@ -163,10 +205,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(8, 555);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 552);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 53);
+            this.pictureBox1.Size = new System.Drawing.Size(70, 42);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 181;
             this.pictureBox1.TabStop = false;
@@ -179,10 +221,10 @@
             this.btn_abonar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_abonar.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_abonar.ForeColor = System.Drawing.Color.White;
-            this.btn_abonar.Location = new System.Drawing.Point(84, 555);
+            this.btn_abonar.Location = new System.Drawing.Point(88, 552);
             this.btn_abonar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_abonar.Name = "btn_abonar";
-            this.btn_abonar.Size = new System.Drawing.Size(370, 53);
+            this.btn_abonar.Size = new System.Drawing.Size(370, 42);
             this.btn_abonar.TabIndex = 180;
             this.btn_abonar.Text = "ABONAR";
             this.btn_abonar.UseVisualStyleBackColor = false;
@@ -192,7 +234,7 @@
             this.lbl_deuda.AutoSize = true;
             this.lbl_deuda.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_deuda.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.lbl_deuda.Location = new System.Drawing.Point(220, 508);
+            this.lbl_deuda.Location = new System.Drawing.Point(228, 504);
             this.lbl_deuda.Name = "lbl_deuda";
             this.lbl_deuda.Size = new System.Drawing.Size(81, 28);
             this.lbl_deuda.TabIndex = 179;
@@ -204,7 +246,7 @@
             this.txt_abonar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_abonar.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_abonar.ForeColor = System.Drawing.Color.Black;
-            this.txt_abonar.Location = new System.Drawing.Point(12, 508);
+            this.txt_abonar.Location = new System.Drawing.Point(31, 509);
             this.txt_abonar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_abonar.Name = "txt_abonar";
             this.txt_abonar.Size = new System.Drawing.Size(159, 24);
@@ -216,7 +258,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label6.Location = new System.Drawing.Point(8, 476);
+            this.label6.Location = new System.Drawing.Point(27, 477);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(180, 28);
             this.label6.TabIndex = 178;
@@ -227,7 +269,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label5.Location = new System.Drawing.Point(209, 476);
+            this.label5.Location = new System.Drawing.Point(228, 477);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 28);
             this.label5.TabIndex = 176;
@@ -404,7 +446,7 @@
             this.panel3.Location = new System.Drawing.Point(526, 133);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(576, 620);
+            this.panel3.Size = new System.Drawing.Size(576, 652);
             this.panel3.TabIndex = 144;
             // 
             // flowLayoutPanel_creditos
@@ -413,7 +455,7 @@
             this.flowLayoutPanel_creditos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel_creditos.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel_creditos.Name = "flowLayoutPanel_creditos";
-            this.flowLayoutPanel_creditos.Size = new System.Drawing.Size(576, 620);
+            this.flowLayoutPanel_creditos.Size = new System.Drawing.Size(576, 652);
             this.flowLayoutPanel_creditos.TabIndex = 1;
             this.flowLayoutPanel_creditos.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel_creditos_Paint);
             this.flowLayoutPanel_creditos.MouseMove += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanel_creditos_MouseMove);
@@ -431,7 +473,7 @@
             this.panel6.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel6.Location = new System.Drawing.Point(502, 107);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(18, 647);
+            this.panel6.Size = new System.Drawing.Size(15, 678);
             this.panel6.TabIndex = 149;
             // 
             // label4
@@ -546,7 +588,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.ClientSize = new System.Drawing.Size(1115, 769);
+            this.ClientSize = new System.Drawing.Size(1115, 798);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
@@ -563,6 +605,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -617,5 +660,8 @@
         private PictureBox pictureBox1;
         private Label lbl_cambio;
         private Label label10;
+        private Button btn_liquidar;
+        private PictureBox pictureBox6;
+        private Panel panel5;
     }
 }
