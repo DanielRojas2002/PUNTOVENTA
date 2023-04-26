@@ -2653,9 +2653,14 @@ namespace PUNTOVENTA.MENU.VENTA
 
             }
 
-            else
+            else if (lbl_id_tipoventa.Text == "id_tipoventa" || lbl_total.Text != "")
             {
-                MessageBox.Show("Debe Agregar Productos a la orden ");
+                MessageBox.Show("Debe Seleccionar el Metodo de Pago");
+            }
+
+            else if (lbl_total.Text == "")
+            {
+                MessageBox.Show("Debe Agregar Productos a la Orden");
             }
 
 
