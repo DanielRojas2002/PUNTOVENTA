@@ -833,7 +833,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
                 }
 
-                else if (lbl_id_tipoventa.Text == "3" && lbl_total.Text != "") // credito
+                else if (lbl_id_tipoventa.Text == "5" && lbl_total.Text != "") // credito
                 {
                    
                     lbl_cambio.Text = "";

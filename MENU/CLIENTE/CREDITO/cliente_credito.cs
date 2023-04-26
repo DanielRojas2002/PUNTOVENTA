@@ -244,5 +244,15 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
         {
            
         }
+
+        private void txt_deuda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txt_abonar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }
