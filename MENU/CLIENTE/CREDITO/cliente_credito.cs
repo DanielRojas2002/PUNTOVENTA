@@ -325,13 +325,57 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
             }
         }
 
+
+        private void CargaDeudaTicket()
+        {
+
+            dgAbonoTotal parametro = new dgAbonoTotal
+            {
+                Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text)
+            };
+
+            List<dgAbonoTotal> cantidadeudatotalticket = c_abonoTotal.LeerAbonoTotal(2, parametro);
+
+
+            if (cantidadeudatotalticket.Count > 0)
+
+            {
+                float cantidaddeudafaltante = 0;
+
+                foreach (dgAbonoTotal d in cantidadeudatotalticket)
+                {
+                    cantidaddeudafaltante = float.Parse(d.CantidadFaltanteTotal.ToString());
+                    cantidaddeudafaltante = (float)Math.Round(cantidaddeudafaltante, 2);
+
+                    lbl_deuda.Text = Convert.ToString(cantidaddeudafaltante);
+
+                }
+            }
+
+
+        }
+
         private void btn_abonar_Click(object sender, EventArgs e)
         {
+
+
             float totaldeuda = float.Parse(lbl_deuda.Text);
 
             float pago = float.Parse(txt_abonar.Text);
             float cambio = pago - totaldeuda;
             cambio = (float)Math.Round(cambio, 2);
+
+
+
+            dgAbonoTotal parametro = new dgAbonoTotal
+            {
+                Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text)
+            };
+
+            List<dgAbonoTotal> cantidadeudatotalticket = c_abonoTotal.LeerAbonoTotal(2, parametro);
+
+            // seguro venta
+          
 
             if (pago < totaldeuda)
             {
@@ -340,7 +384,70 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
 
                 // logica de ver cuanto pago y aplicarselo a pago historial y al pago mas tarde 
+                if (cantidadeudatotalticket.Count > 0)
 
+                {
+
+                    float cantidadFaltanteTotal;
+
+                    float cantidadAbonar;
+
+                    cantidadAbonar = float.Parse(txt_abonar.Text);
+                    foreach (dgAbonoTotal d in cantidadeudatotalticket)
+                    {
+                        cantidadFaltanteTotal = float.Parse(d.CantidadFaltanteTotal.ToString());
+
+
+                        if (cantidadAbonar >= cantidadFaltanteTotal)
+                        {
+                            dgClienteCredito parametro2 = new dgClienteCredito
+                            {
+                                Id_Venta = Convert.ToInt16(d.Id_Venta.ToString()),
+                                CantidadPagada = cantidadFaltanteTotal,
+                                Id_Cliente = Convert.ToInt16(d.Id_Cliente.ToString()),
+                                FechaPago = DateTime.Now,
+                                Validacion = 1,
+                                Cambio = 0
+                            };
+
+                            string control = "";
+
+                            control = c_cliente_credito.ActualizarCreditoPago(1, parametro2); // YA SE CARGO LO ABONADO EL TOTAL
+                        }
+
+                        else if (cantidadAbonar <= cantidadFaltanteTotal)
+                        {
+                            dgClienteCredito parametro2 = new dgClienteCredito
+                            {
+                                Id_Venta = Convert.ToInt16(d.Id_Venta.ToString()),
+                                CantidadPagada = cantidadAbonar,
+                                Id_Cliente = Convert.ToInt16(d.Id_Cliente.ToString()),
+                                FechaPago = DateTime.Now,
+                                Validacion = 0
+                              
+                            };
+
+                            string control = "";
+
+                            control = c_cliente_credito.ActualizarCreditoPago(1, parametro2); // YA SE CARGO LO ABONADO EL TOTAL
+                        }
+
+                        try
+                        {
+                            cantidadAbonar = cantidadAbonar - cantidadFaltanteTotal;
+                        }
+                        catch
+                        {
+
+                        }
+                        
+
+                        
+
+                    }
+                }
+
+                Cerrar();
 
             }
 
@@ -349,7 +456,23 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                 // logica de ver cuanto pago y aplicarselo a pago historial y al pago mas tarde 
                 lbl_cambio.Text = Convert.ToString(cambio);
 
+                if (cantidadeudatotalticket.Count > 0)
+
+                {
+                   
+
+                    foreach (dgAbonoTotal d in cantidadeudatotalticket)
+                    {
+                        
+                        lbl_deuda.Text = Convert.ToString("");
+
+                    }
+                }
             }
+
+            // seguro ticket
+
+
         }
     }
 }

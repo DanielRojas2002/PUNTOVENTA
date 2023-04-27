@@ -718,7 +718,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
                         {
 
 
-
+                            lbl_cambio.Text = "";
 
                             dgClienteCredito parametro2 = new dgClienteCredito
                             {
