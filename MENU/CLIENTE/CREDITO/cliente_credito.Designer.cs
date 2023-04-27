@@ -223,6 +223,7 @@
             this.btn_abonar.TabIndex = 180;
             this.btn_abonar.Text = "ABONAR";
             this.btn_abonar.UseVisualStyleBackColor = false;
+            this.btn_abonar.Click += new System.EventHandler(this.btn_abonar_Click);
             // 
             // lbl_deuda
             // 

@@ -301,26 +301,54 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                 float totaldeuda = float.Parse(lbl_deuda.Text);
 
                 float pago = float.Parse(txt_abonar.Text);
-
                 float cambio = pago - totaldeuda;
                 cambio = (float)Math.Round(cambio, 2);
-                lbl_cambio.Text = Convert.ToString(cambio);
 
                 if (pago < totaldeuda)
                 {
 
-                    lbl_cambio.ForeColor = Color.Red;
+                    lbl_cambio.Text = "0";
+
+
                 }
 
                 else
                 {
+                    
+                    lbl_cambio.Text = Convert.ToString(cambio);
 
-                    lbl_cambio.ForeColor = Color.Yellow;
                 }
             }
             catch
             {
                 lbl_cambio.Text = "";
+            }
+        }
+
+        private void btn_abonar_Click(object sender, EventArgs e)
+        {
+            float totaldeuda = float.Parse(lbl_deuda.Text);
+
+            float pago = float.Parse(txt_abonar.Text);
+            float cambio = pago - totaldeuda;
+            cambio = (float)Math.Round(cambio, 2);
+
+            if (pago < totaldeuda)
+            {
+
+                lbl_cambio.Text = "0";
+
+
+                // logica de ver cuanto pago y aplicarselo a pago historial y al pago mas tarde 
+
+
+            }
+
+            else
+            {
+                // logica de ver cuanto pago y aplicarselo a pago historial y al pago mas tarde 
+                lbl_cambio.Text = Convert.ToString(cambio);
+
             }
         }
     }
