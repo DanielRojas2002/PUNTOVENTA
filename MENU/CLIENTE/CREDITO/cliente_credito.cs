@@ -179,10 +179,39 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
         }
 
+        private void CargaTotalDeuda()
+        {
+
+            dgAbonoTotal parametro = new dgAbonoTotal
+            {
+                Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text)
+            };
+
+            List<dgAbonoTotal> cantidadeudatotal = c_abonoTotal.LeerAbonoTotal(1, parametro);
+
+
+            if (cantidadeudatotal.Count > 0)
+
+            {
+                float cantidaddeudafaltante = 0;
+
+                foreach (dgAbonoTotal d in cantidadeudatotal)
+                {
+                    cantidaddeudafaltante = float.Parse(d.CantidadFaltanteTotal.ToString());
+                    cantidaddeudafaltante = (float)Math.Round(cantidaddeudafaltante, 2);
+
+                    lbl_deuda.Text = Convert.ToString(cantidaddeudafaltante);
+
+                }
+            }
+
+
+        }
+
         private void cliente_credito_Load(object sender, EventArgs e)
         {
-           
 
+            
 
             dgClienteCredito parametro = new dgClienteCredito();
 
@@ -203,7 +232,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
             }
             CargaCantidadCreditos();
             CargaClientesCredito(_cantidad_creditos);
-
+            CargaTotalDeuda();
 
 
 
@@ -261,6 +290,37 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void txt_abonar_TextChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                float totaldeuda = float.Parse(lbl_deuda.Text);
+
+                float pago = float.Parse(txt_abonar.Text);
+
+                float cambio = pago - totaldeuda;
+                cambio = (float)Math.Round(cambio, 2);
+                lbl_cambio.Text = Convert.ToString(cambio);
+
+                if (pago < totaldeuda)
+                {
+
+                    lbl_cambio.ForeColor = Color.Red;
+                }
+
+                else
+                {
+
+                    lbl_cambio.ForeColor = Color.Yellow;
+                }
+            }
+            catch
+            {
+                lbl_cambio.Text = "";
             }
         }
     }
