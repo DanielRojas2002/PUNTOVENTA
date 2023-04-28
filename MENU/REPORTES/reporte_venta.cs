@@ -318,13 +318,15 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                     foreach (dgReportes d in lista3)
                     {
+                        cantidadpagada =float.Parse(d.CantidadPagada.ToString());
 
+                        cantidadpagada = (float)Math.Round(cantidadpagada, 2);
 
                         fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
                         dataGridView_p_credito.Rows.Add(d.Id_Venta.ToString(), "-", "-",
-                           "-", "-", "-", Convert.ToString(d.CantidadPagada.ToString()), fechaventa, "-", "", "");
+                           "-", "-", "-", Convert.ToString(cantidadpagada), fechaventa, "-", "", "");
 
-                        _dineroventas = _dineroventas + float.Parse(d.CantidadPagada.ToString());
+                        _dineroventas = _dineroventas + cantidadpagada;
 
                     }
 
