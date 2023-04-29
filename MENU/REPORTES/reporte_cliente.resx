@@ -61,7 +61,7 @@
   <data name="pictureBox7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAJYPSURBVHhe7d0F
+        vQAADr0BR/uQrQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAJYPSURBVHhe7d0F
         lB1F9j/wHfdMMrGZuLu7u7u7u5EESEgIGtzdHYITICS4s7gFZ2FZZxcWVtjd37rVv+777+wOk+/M1O2q
         rtfvvXvP+ZzDIfNuV1X3VL3prq76joSEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISE
         hISEhISEhISEhISEhISEhISEhISEhES8o7bWQ5uqrdCO1c7Srtfu/Y/Htae0Z/6D/pv+X/m/08/SZ+iz
@@ -2214,6 +2214,9 @@
     <value>True</value>
   </metadata>
   <metadata name="Id_Venta.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Col_FechaVenta.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="CantidadPagada.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

@@ -67,7 +67,7 @@ namespace PUNTOVENTA.MENU.REPORTES
                     float cantidadpagada,total;
                     foreach (dgReportes d in lista)
                     {
-
+                        fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
                         cantidadpagada = float.Parse(d.CantidadPagada.ToString());
 
                         cantidadpagada = (float)Math.Round(cantidadpagada, 2);
@@ -80,7 +80,7 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                        
                         dataGridViewClientes.Rows.Add(d.IdCliente.ToString(), d.Nombre.ToString(), d.Apellido_Paterno.ToString(),
-                            d.Apellido_Materno.ToString(), d.Id_Venta.ToString(), Convert.ToString(cantidadpagada), Convert.ToString(total), d.DescripcionEstatus.ToString(), d.Usuario.ToString());
+                            d.Apellido_Materno.ToString(), d.Id_Venta.ToString(), fechaventa, Convert.ToString(cantidadpagada), Convert.ToString(total), d.DescripcionEstatus.ToString(), d.Usuario.ToString());
 
 
 

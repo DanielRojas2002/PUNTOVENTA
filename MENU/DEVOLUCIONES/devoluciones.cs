@@ -697,8 +697,8 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
 
 
-                    var confirmResult = MessageBox.Show("Desea  hacer la Devolucion?",
-                        "Confirmar Devolucion!!",
+                    var confirmResult = MessageBox.Show("Desea Cancelar toda la Compra?",
+                        "Confirmar Devolucion Todo!!",
                         MessageBoxButtons.YesNo);
 
                     if (confirmResult == DialogResult.Yes)

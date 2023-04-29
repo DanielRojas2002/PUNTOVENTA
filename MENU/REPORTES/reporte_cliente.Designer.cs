@@ -45,6 +45,7 @@
             this.Apellido_Paterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido_Materno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id_Venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_FechaVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadPagada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -201,6 +202,9 @@
             // 
             // dataGridViewClientes
             // 
+            this.dataGridViewClientes.AllowUserToAddRows = false;
+            this.dataGridViewClientes.AllowUserToDeleteRows = false;
+            this.dataGridViewClientes.AllowUserToOrderColumns = true;
             this.dataGridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_Cliente,
@@ -208,6 +212,7 @@
             this.Apellido_Paterno,
             this.Apellido_Materno,
             this.Id_Venta,
+            this.Col_FechaVenta,
             this.CantidadPagada,
             this.Total,
             this.Descripcion,
@@ -215,16 +220,16 @@
             this.dataGridViewClientes.Location = new System.Drawing.Point(36, 326);
             this.dataGridViewClientes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridViewClientes.Name = "dataGridViewClientes";
+            this.dataGridViewClientes.ReadOnly = true;
             this.dataGridViewClientes.RowHeadersWidth = 51;
             this.dataGridViewClientes.RowTemplate.Height = 25;
-            this.dataGridViewClientes.Size = new System.Drawing.Size(904, 368);
+            this.dataGridViewClientes.Size = new System.Drawing.Size(909, 368);
             this.dataGridViewClientes.TabIndex = 11;
             this.dataGridViewClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewClientes_CellContentClick);
             // 
             // Id_Cliente
             // 
             this.Id_Cliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Id_Cliente.Frozen = true;
             this.Id_Cliente.HeaderText = "No. Cliente";
             this.Id_Cliente.MinimumWidth = 6;
             this.Id_Cliente.Name = "Id_Cliente";
@@ -234,7 +239,6 @@
             // Nombre
             // 
             this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Nombre.Frozen = true;
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.MinimumWidth = 6;
             this.Nombre.Name = "Nombre";
@@ -244,7 +248,6 @@
             // Apellido_Paterno
             // 
             this.Apellido_Paterno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Apellido_Paterno.Frozen = true;
             this.Apellido_Paterno.HeaderText = "Paterno";
             this.Apellido_Paterno.MinimumWidth = 6;
             this.Apellido_Paterno.Name = "Apellido_Paterno";
@@ -254,7 +257,6 @@
             // Apellido_Materno
             // 
             this.Apellido_Materno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Apellido_Materno.Frozen = true;
             this.Apellido_Materno.HeaderText = "Materno";
             this.Apellido_Materno.MinimumWidth = 6;
             this.Apellido_Materno.Name = "Apellido_Materno";
@@ -264,17 +266,23 @@
             // Id_Venta
             // 
             this.Id_Venta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Id_Venta.Frozen = true;
             this.Id_Venta.HeaderText = "No. Venta";
             this.Id_Venta.MinimumWidth = 6;
             this.Id_Venta.Name = "Id_Venta";
             this.Id_Venta.ReadOnly = true;
             this.Id_Venta.Width = 102;
             // 
+            // Col_FechaVenta
+            // 
+            this.Col_FechaVenta.HeaderText = "FechaVenta";
+            this.Col_FechaVenta.MinimumWidth = 6;
+            this.Col_FechaVenta.Name = "Col_FechaVenta";
+            this.Col_FechaVenta.ReadOnly = true;
+            this.Col_FechaVenta.Width = 125;
+            // 
             // CantidadPagada
             // 
             this.CantidadPagada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.CantidadPagada.Frozen = true;
             this.CantidadPagada.HeaderText = "Cant Pagada";
             this.CantidadPagada.MinimumWidth = 6;
             this.CantidadPagada.Name = "CantidadPagada";
@@ -284,7 +292,6 @@
             // Total
             // 
             this.Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Total.Frozen = true;
             this.Total.HeaderText = "Total";
             this.Total.MinimumWidth = 6;
             this.Total.Name = "Total";
@@ -294,7 +301,6 @@
             // Descripcion
             // 
             this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Descripcion.Frozen = true;
             this.Descripcion.HeaderText = "Estatus";
             this.Descripcion.MinimumWidth = 6;
             this.Descripcion.Name = "Descripcion";
@@ -304,7 +310,6 @@
             // Usuario
             // 
             this.Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Usuario.Frozen = true;
             this.Usuario.HeaderText = "Registró";
             this.Usuario.MinimumWidth = 6;
             this.Usuario.Name = "Usuario";
@@ -492,6 +497,7 @@
         private DataGridViewTextBoxColumn Apellido_Paterno;
         private DataGridViewTextBoxColumn Apellido_Materno;
         private DataGridViewTextBoxColumn Id_Venta;
+        private DataGridViewTextBoxColumn Col_FechaVenta;
         private DataGridViewTextBoxColumn CantidadPagada;
         private DataGridViewTextBoxColumn Total;
         private DataGridViewTextBoxColumn Descripcion;
