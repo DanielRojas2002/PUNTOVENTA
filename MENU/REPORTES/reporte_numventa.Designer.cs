@@ -171,6 +171,7 @@
             this.dataGridView_numventa.Location = new System.Drawing.Point(43, 335);
             this.dataGridView_numventa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView_numventa.Name = "dataGridView_numventa";
+            this.dataGridView_numventa.ReadOnly = true;
             this.dataGridView_numventa.RowHeadersWidth = 51;
             this.dataGridView_numventa.RowTemplate.Height = 25;
             this.dataGridView_numventa.Size = new System.Drawing.Size(866, 222);
@@ -183,6 +184,7 @@
             this.Col_Id_Venta.HeaderText = "No. Venta";
             this.Col_Id_Venta.MinimumWidth = 3;
             this.Col_Id_Venta.Name = "Col_Id_Venta";
+            this.Col_Id_Venta.ReadOnly = true;
             this.Col_Id_Venta.Width = 102;
             // 
             // Col_IdProducto
@@ -191,6 +193,7 @@
             this.Col_IdProducto.HeaderText = "Producto";
             this.Col_IdProducto.MinimumWidth = 6;
             this.Col_IdProducto.Name = "Col_IdProducto";
+            this.Col_IdProducto.ReadOnly = true;
             this.Col_IdProducto.Width = 98;
             // 
             // Col_NombreProducto
@@ -199,6 +202,7 @@
             this.Col_NombreProducto.HeaderText = "Nombre";
             this.Col_NombreProducto.MinimumWidth = 6;
             this.Col_NombreProducto.Name = "Col_NombreProducto";
+            this.Col_NombreProducto.ReadOnly = true;
             this.Col_NombreProducto.Width = 93;
             // 
             // Col_PrecioProducto
@@ -207,6 +211,7 @@
             this.Col_PrecioProducto.HeaderText = "Precio";
             this.Col_PrecioProducto.MinimumWidth = 6;
             this.Col_PrecioProducto.Name = "Col_PrecioProducto";
+            this.Col_PrecioProducto.ReadOnly = true;
             this.Col_PrecioProducto.Width = 79;
             // 
             // Col_CantidadProducto
@@ -215,6 +220,7 @@
             this.Col_CantidadProducto.HeaderText = "Cantidad";
             this.Col_CantidadProducto.MinimumWidth = 6;
             this.Col_CantidadProducto.Name = "Col_CantidadProducto";
+            this.Col_CantidadProducto.ReadOnly = true;
             this.Col_CantidadProducto.Width = 98;
             // 
             // Col_SubTotalProducto
@@ -223,6 +229,7 @@
             this.Col_SubTotalProducto.HeaderText = "SubTotal";
             this.Col_SubTotalProducto.MinimumWidth = 6;
             this.Col_SubTotalProducto.Name = "Col_SubTotalProducto";
+            this.Col_SubTotalProducto.ReadOnly = true;
             this.Col_SubTotalProducto.Width = 96;
             // 
             // Col_FechaVentaProducto
@@ -231,6 +238,7 @@
             this.Col_FechaVentaProducto.HeaderText = "Fecha Venta";
             this.Col_FechaVentaProducto.MinimumWidth = 6;
             this.Col_FechaVentaProducto.Name = "Col_FechaVentaProducto";
+            this.Col_FechaVentaProducto.ReadOnly = true;
             this.Col_FechaVentaProducto.Width = 117;
             // 
             // Col_Tipoventa
@@ -239,6 +247,7 @@
             this.Col_Tipoventa.HeaderText = "TipoVenta";
             this.Col_Tipoventa.MinimumWidth = 6;
             this.Col_Tipoventa.Name = "Col_Tipoventa";
+            this.Col_Tipoventa.ReadOnly = true;
             this.Col_Tipoventa.Width = 125;
             // 
             // btn_ticket

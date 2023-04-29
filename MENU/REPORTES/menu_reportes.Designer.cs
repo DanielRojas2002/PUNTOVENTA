@@ -54,6 +54,8 @@
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.btn_r_numventa = new System.Windows.Forms.Button();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.btn_abonos = new System.Windows.Forms.Button();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_regresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -68,6 +70,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_r_ventas
@@ -410,12 +413,42 @@
             this.pictureBox10.TabIndex = 69;
             this.pictureBox10.TabStop = false;
             // 
+            // btn_abonos
+            // 
+            this.btn_abonos.BackColor = System.Drawing.Color.Navy;
+            this.btn_abonos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_abonos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_abonos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_abonos.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_abonos.ForeColor = System.Drawing.Color.White;
+            this.btn_abonos.Location = new System.Drawing.Point(299, 419);
+            this.btn_abonos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_abonos.Name = "btn_abonos";
+            this.btn_abonos.Size = new System.Drawing.Size(206, 53);
+            this.btn_abonos.TabIndex = 70;
+            this.btn_abonos.Text = "ABONOS";
+            this.btn_abonos.UseVisualStyleBackColor = false;
+            this.btn_abonos.Click += new System.EventHandler(this.btn_abonos_Click);
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(234, 419);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(70, 53);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox11.TabIndex = 71;
+            this.pictureBox11.TabStop = false;
+            // 
             // menu_reportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.ClientSize = new System.Drawing.Size(749, 450);
+            this.ClientSize = new System.Drawing.Size(749, 511);
+            this.Controls.Add(this.btn_abonos);
+            this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.btn_r_numventa);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.btn_r_caja);
@@ -454,6 +487,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -485,5 +519,7 @@
         private PictureBox pictureBox9;
         private Button btn_r_numventa;
         private PictureBox pictureBox10;
+        private Button btn_abonos;
+        private PictureBox pictureBox11;
     }
 }

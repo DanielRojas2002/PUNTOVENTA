@@ -159,5 +159,13 @@ namespace PUNTOVENTA.MENU.REPORTES
             forms.lbl_id.Text = lbl_id.Text;
             forms.Show();
         }
+
+        private void btn_abonos_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            reporte_abonos forms = new reporte_abonos();
+            forms.lbl_id.Text = lbl_id.Text;
+            forms.Show();
+        }
     }
 }
