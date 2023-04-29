@@ -262,7 +262,7 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                 List<dgReportes> lista2 = c_reportes.LeerReporte(6, parametro2);
 
-
+                int fila = 0;
                 if (lista2.Count > 0)
 
                 {
@@ -272,7 +272,7 @@ namespace PUNTOVENTA.MENU.REPORTES
                     foreach (dgReportes d in lista2)
                     {
 
-
+                        fila = fila + 1;
 
                         subtotal = float.Parse(d.SubTotalProducto.ToString());
 
@@ -284,7 +284,7 @@ namespace PUNTOVENTA.MENU.REPORTES
 
 
                         dataGridView_p_credito.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
-                             d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), Convert.ToString("-"), fechaventa, "", d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
+                             d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), Convert.ToString("-"), fechaventa, d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
 
 
 
@@ -323,12 +323,18 @@ namespace PUNTOVENTA.MENU.REPORTES
                         cantidadpagada = (float)Math.Round(cantidadpagada, 2);
 
                         fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
-                        dataGridView_p_credito.Rows.Add(d.Id_Venta.ToString(), "-", "-",
-                           "-", "-", "-", Convert.ToString(cantidadpagada), fechaventa, "-", "", "");
+                        dataGridView_p_credito.Rows.Add(d.Id_Venta.ToString(), "", "",
+                           "", "", "", Convert.ToString(cantidadpagada), fechaventa, "", "");
 
                         _dineroventas = _dineroventas + cantidadpagada;
 
                     }
+                    foreach (dgReportes d in lista3)
+                    {
+                        dataGridView_p_credito.Rows[fila].DefaultCellStyle.BackColor = Color.LightYellow;
+                        fila = fila + 1;
+                    }
+                        
 
 
 

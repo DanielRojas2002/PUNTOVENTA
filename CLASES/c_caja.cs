@@ -460,6 +460,8 @@ namespace PUNTOVENTA.CLASES
 
                                  FechaVentaProducto = Convert.ToDateTime(fila["FechaVentaProducto"].ToString()),
 
+                               
+
                                  CantidadPagada = float.Parse(fila["CantidadPagada"].ToString())
 
 

@@ -42,7 +42,7 @@ namespace PUNTOVENTA.MENU.CAJA
 
           };
 
-
+          int fila = 0;
 
 
             List<dgCaja> lista = c_caja.LeerCaja(1, parametro);
@@ -99,7 +99,7 @@ namespace PUNTOVENTA.MENU.CAJA
                 {
 
 
-
+                    fila = fila + 1;
                     subtotal = float.Parse(d.SubTotalProducto.ToString());
 
                     subtotal = (float)Math.Round(subtotal, 2);
@@ -110,7 +110,7 @@ namespace PUNTOVENTA.MENU.CAJA
 
 
                     dataGridView_p_credito.Rows.Add(d.Id_Venta.ToString(), d.IdProducto.ToString(), d.NombreProducto.ToString(),
-                         d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), Convert.ToString("-"), fechaventa, "", d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
+                         d.PrecioProducto.ToString(), d.CantidadProducto.ToString(), Convert.ToString(subtotal), Convert.ToString(""), fechaventa, d.DescripcionTipoVenta.ToString(), d.Usuario.ToString());
 
 
 
@@ -134,11 +134,13 @@ namespace PUNTOVENTA.MENU.CAJA
 
             };
 
+            
+          
 
 
 
             List<dgCaja> lista3 = c_caja.LeerCaja(8, parametro2);
-
+           
 
             if (lista3.Count > 0)
 
@@ -148,21 +150,38 @@ namespace PUNTOVENTA.MENU.CAJA
 
                 foreach (dgCaja d in lista3)
                 {
+                   
+                  
+                   
+
                     cantidadpagada = float.Parse(d.CantidadPagada.ToString());
 
                     cantidadpagada = (float)Math.Round(cantidadpagada, 2);
 
                     fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
-                    dataGridView_p_credito.Rows.Add(d.Id_Venta.ToString(), "-", "-",
-                       "-", "-", "-", Convert.ToString(cantidadpagada), fechaventa, "-", "", "");
+
+                  
+
+                    dataGridView_p_credito.Rows.Add(d.Id_Venta.ToString(), "", "",
+                       "", "", "", Convert.ToString(cantidadpagada), fechaventa, "", "");
+
+                  
 
                     _dineroventas = _dineroventas + float.Parse(d.CantidadPagada.ToString());
 
                 }
 
+                foreach (dgCaja d in lista3)
+                {
+
+                    dataGridView_p_credito.Rows[fila].DefaultCellStyle.BackColor = Color.LightYellow;
+                    fila = fila + 1;
+
+                }
 
 
-            }
+
+                }
 
             else
             {
