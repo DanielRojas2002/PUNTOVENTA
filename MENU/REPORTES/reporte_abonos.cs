@@ -10,6 +10,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = ClosedXML.Excel;
 
 namespace PUNTOVENTA.MENU.REPORTES
 {
@@ -231,7 +232,153 @@ namespace PUNTOVENTA.MENU.REPORTES
         {
             if (lbl_cantidad_vendida.Text!="")
             {
+                try
+                {
 
+
+                
+
+                    string ls_archivo_excel = "C:\\C#\\R_Abonos" + txt_ticket.Text + ".xlsx";
+                    string fechaentrada;
+
+
+
+
+                    var wb = new Excel.XLWorkbook();
+
+                    //create 'worksheet' object
+                    var ws = wb.Worksheets.Add("R_Abonos" + txt_ticket.Text);
+
+                    //read cells
+
+
+
+
+                    //write cells
+                    ws.Cell("A1").Value = "FILTROS";
+                    ws.Cell("C4").Value = "REPORTE DE ABONOS";
+                    ws.Cell("A2").Value = "Ticket::";
+                    ws.Cell("B2").Value = txt_ticket.Text;
+
+
+
+                    ws.Range("A5:G5").Value = "----------------------------------------";
+
+
+                    ws.Cell("A6").Value = "Id.Pago";
+                    ws.Cell("B6").Value = "Cliente";
+
+                    ws.Cell("C6").Value = "Id Venta";
+
+                    ws.Cell("D6").Value = "Abono";
+
+                    ws.Cell("E6").Value = "Fecha Abono";
+
+
+
+
+                    int contadorcolumnas = 1;
+                    int contadorregistros = 7;
+
+
+                    dgReportes parametro = new dgReportes
+                    {
+                        Id_Venta = Convert.ToInt16(txt_ticket.Text),
+
+                    };
+
+
+
+
+                    List<dgReportes> lista = c_reportes.LeerReporte(10, parametro);
+
+
+                    if (lista.Count > 0)
+
+                    {
+                        string fechapago;
+                        float cantidadpago;
+
+                        foreach (dgReportes d in lista)
+                        {
+                            contadorcolumnas = 1;
+                            fechapago = d.FechaPago.Value.ToString("dd/MM/yyyy");
+
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = d.IdPago.ToString();
+                            contadorcolumnas = contadorcolumnas + 1;
+
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = d.NombreCliente.ToString();
+                            contadorcolumnas = contadorcolumnas + 1;
+
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = d.Id_Venta.ToString();
+                            contadorcolumnas = contadorcolumnas + 1;
+
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadPagada.ToString();
+                            contadorcolumnas = contadorcolumnas + 1;
+
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = fechapago;
+                            contadorcolumnas = contadorcolumnas + 1;
+
+
+                            contadorregistros = contadorregistros + 1;
+
+
+                        }
+                        lbl_cantidad_vendida.Text = Convert.ToString(_dineroventas);
+
+
+                        dgReportes parametro1 = new dgReportes
+                        {
+                            Id_Venta = Convert.ToInt16(txt_ticket.Text),
+
+                        };
+
+
+
+
+                        List<dgReportes> lista1 = c_reportes.LeerReporte(11, parametro1);
+
+
+                        if (lista1.Count > 0)
+
+                        {
+
+                            foreach (dgReportes dd in lista1)
+                            {
+                                ws.Cell("C3").Value = "Cantidad Deuda";
+                                ws.Cell("D3").Value = Convert.ToString(dd.Total.ToString());
+                              
+                            }
+
+
+                        }
+
+                        ws.Cell("F3").Value = "Cantidad Abonada";
+                        ws.Cell("G3").Value = lbl_cantidad_vendida.Text;
+
+
+                    }
+
+                    else
+                    {
+                        dataGridView_abonos.Rows.Clear();
+                        MessageBox.Show("No se a Abonado a este ticket o este ticket no es de Credito");
+                        txt_ticket.Text = "";
+                        lbl_totaldeuda.Text = "";
+                        lbl_cantidad_vendida.Text = "";
+                    }
+
+
+
+
+                    wb.SaveAs(ls_archivo_excel);
+                    MessageBox.Show("Excel Reportado Satisfactoriamente en : " + ls_archivo_excel);
+                }
+
+                catch
+                {
+                    MessageBox.Show("Genere antes el Reporte antes de Exportarlo al Excel");
+                }
             }
             else
             {
