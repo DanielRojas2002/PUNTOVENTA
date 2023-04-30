@@ -346,6 +346,69 @@ namespace PUNTOVENTA.CLASES
 
             }
 
+            else if (tipo == 10)
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",13),
+                    new SqlParameter("@P_IdVenta",Parametro.Id_Venta),
+                  
+
+                };
+
+                tabla = bdContext.funcionStored("spReportes", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgReportes
+                             {
+                                 IdPago = Convert.ToInt16(fila["Id_Pago"].ToString()),
+                                 IdCliente = Convert.ToInt16(fila["Id_Cliente"].ToString()),
+                                 Id_Venta = Convert.ToInt16(fila["Id_Venta"].ToString()),
+                                 NombreCliente = Convert.ToString(fila["NombreCliente"].ToString()),
+                                 CantidadPagada = float.Parse(fila["CantidadPagada"].ToString()),                             
+                                 FechaPago = Convert.ToDateTime(fila["FechaPago"].ToString()),
+
+                                 
+
+
+                             }
+                   ).ToList();
+                }
+
+            }
+
+            else if (tipo == 11)
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",14),
+                    new SqlParameter("@P_IdVenta",Parametro.Id_Venta),
+
+
+                };
+
+                tabla = bdContext.funcionStored("spReportes", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgReportes
+                             {
+                                 Total = float.Parse(fila["Total"].ToString())
+                               
+
+
+
+                             }
+                   ).ToList();
+                }
+
+            }
+
             return lista;
         }
     }

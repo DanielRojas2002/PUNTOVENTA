@@ -13,13 +13,15 @@ namespace PUNTOVENTA.ENTIDAD
 
         public int? IdCaja { get; set; }
 
+        public int? IdPago { get; set; }
+
         public float? CantidadAbonada { get; set; }
         public float? CantidadVenta { get; set; }
         public float? CantidadRetirada { get; set; }
         public float? CantidadTotal { get; set; }
         public string? DescripcionCaja { get; set; }
 
-
+        public string? NombreCliente { get; set; }
 
         public float? CantidadDevolucion { get; set; }
         public int? IdEntrada { get; set; }
@@ -59,7 +61,9 @@ namespace PUNTOVENTA.ENTIDAD
         public DateTime? FechaDevolucion { get; set; }
         public DateTime? FechaInicio { get; set; }
 
-        
+        public DateTime? FechaPago { get; set; }
+
+
 
         public DateTime? FechaEntrada { get; set; }
 

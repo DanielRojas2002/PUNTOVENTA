@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,7 +18,15 @@ namespace PUNTOVENTA.MENU.REPORTES
         public reporte_abonos()
         {
             InitializeComponent();
+
+            lbl_totaldeuda.Text = "";
+            lbl_cantidad_vendida.Text = "";
         }
+
+        public float _dineroventas = 0; 
+
+        
+
         private void RegresarVentana()
         {
 
@@ -91,7 +100,111 @@ namespace PUNTOVENTA.MENU.REPORTES
 
         private void btn_abono_Click(object sender, EventArgs e)
         {
+            try
+            {
+                dataGridView_abonos.Rows.Clear();
+                _dineroventas = 0;
+                if (txt_ticket.Text != "")
+                {
 
+
+                  
+
+                    dgReportes parametro = new dgReportes
+                    {
+                        Id_Venta = Convert.ToInt16(txt_ticket.Text),
+                       
+                    };
+
+
+
+
+                    List<dgReportes> lista = c_reportes.LeerReporte(10, parametro);
+
+                 
+                    if (lista.Count > 0)
+
+                    {
+                        string fechapago;
+                        float cantidadpago;
+
+                        foreach (dgReportes d in lista)
+                        {
+                            cantidadpago = float.Parse(d.CantidadPagada.ToString());
+
+                            cantidadpago = (float)Math.Round(cantidadpago, 2);
+
+
+
+                            fechapago = d.FechaPago.Value.ToString("dd/MM/yyyy");
+                            dataGridView_abonos.Rows.Add(d.IdPago.ToString(), d.NombreCliente.ToString(), d.Id_Venta.ToString(), Convert.ToString(cantidadpago), fechapago);
+
+
+
+                            _dineroventas = _dineroventas + cantidadpago;
+
+                            _dineroventas = (float)Math.Round(_dineroventas, 2);
+
+                           
+
+                        }
+                        lbl_cantidad_vendida.Text = Convert.ToString(_dineroventas);
+
+
+                        dgReportes parametro1 = new dgReportes
+                        {
+                            Id_Venta = Convert.ToInt16(txt_ticket.Text),
+
+                        };
+
+
+
+
+                        List<dgReportes> lista1 = c_reportes.LeerReporte(11, parametro1);
+
+
+                        if (lista1.Count > 0)
+
+                        {
+
+                            foreach (dgReportes dd in lista1)
+                            {
+                                lbl_totaldeuda.Text = Convert.ToString(dd.Total.ToString());
+                            }
+
+
+                        }
+
+
+                    }
+
+                    else
+                    {
+                        dataGridView_abonos.Rows.Clear();
+                        MessageBox.Show("No se a Abonado a este ticket o este ticket no es de Credito");
+                        txt_ticket.Text = "";
+                        lbl_totaldeuda.Text = "";
+                        lbl_cantidad_vendida.Text = "";
+                    }
+                }
+
+                else
+                {
+                    dataGridView_abonos.Rows.Clear();
+                    lbl_cantidad_vendida.Text = "";
+                    lbl_totaldeuda.Text = "";
+                    MessageBox.Show("Ingrese el Numero de Ticket");
+                    txt_ticket.Text = "";
+                }
+            }
+            catch
+            {
+                dataGridView_abonos.Rows.Clear();
+                lbl_cantidad_vendida.Text = "";
+                
+                lbl_totaldeuda.Text = "";
+                MessageBox.Show("Respete la sintaxis");
+            }
         }
 
         private void pictureBox11_Click(object sender, EventArgs e)
@@ -107,6 +220,23 @@ namespace PUNTOVENTA.MENU.REPORTES
         private void reporte_abonos_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void reporte_abonos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_exportar_excel_Click(object sender, EventArgs e)
+        {
+            if (lbl_cantidad_vendida.Text!="")
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Debe de hacer la busqueda primero");
+            }
         }
     }
 }

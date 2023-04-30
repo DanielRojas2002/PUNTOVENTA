@@ -59,6 +59,10 @@
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_cantidad_vendida = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_totaldeuda = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_abonos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -109,7 +113,7 @@
             this.btn_abono.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_abono.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_abono.ForeColor = System.Drawing.Color.White;
-            this.btn_abono.Location = new System.Drawing.Point(549, 228);
+            this.btn_abono.Location = new System.Drawing.Point(550, 273);
             this.btn_abono.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_abono.Name = "btn_abono";
             this.btn_abono.Size = new System.Drawing.Size(206, 53);
@@ -121,7 +125,7 @@
             // pictureBox10
             // 
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(484, 228);
+            this.pictureBox10.Location = new System.Drawing.Point(485, 273);
             this.pictureBox10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(70, 53);
@@ -259,6 +263,7 @@
             this.btn_exportar_excel.TabIndex = 137;
             this.btn_exportar_excel.Text = "Exportar a Excel";
             this.btn_exportar_excel.UseVisualStyleBackColor = true;
+            this.btn_exportar_excel.Click += new System.EventHandler(this.btn_exportar_excel_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -455,12 +460,60 @@
             this.panel1.Size = new System.Drawing.Size(860, 39);
             this.panel1.TabIndex = 138;
             // 
+            // lbl_cantidad_vendida
+            // 
+            this.lbl_cantidad_vendida.AutoSize = true;
+            this.lbl_cantidad_vendida.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_cantidad_vendida.ForeColor = System.Drawing.Color.Chartreuse;
+            this.lbl_cantidad_vendida.Location = new System.Drawing.Point(647, 234);
+            this.lbl_cantidad_vendida.Name = "lbl_cantidad_vendida";
+            this.lbl_cantidad_vendida.Size = new System.Drawing.Size(82, 28);
+            this.lbl_cantidad_vendida.TabIndex = 140;
+            this.lbl_cantidad_vendida.Text = "vendida";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.Chartreuse;
+            this.label4.Location = new System.Drawing.Point(523, 206);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(180, 28);
+            this.label4.TabIndex = 139;
+            this.label4.Text = "Cantidad Abonada:";
+            // 
+            // lbl_totaldeuda
+            // 
+            this.lbl_totaldeuda.AutoSize = true;
+            this.lbl_totaldeuda.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_totaldeuda.ForeColor = System.Drawing.Color.Chartreuse;
+            this.lbl_totaldeuda.Location = new System.Drawing.Point(401, 234);
+            this.lbl_totaldeuda.Name = "lbl_totaldeuda";
+            this.lbl_totaldeuda.Size = new System.Drawing.Size(82, 28);
+            this.lbl_totaldeuda.TabIndex = 142;
+            this.lbl_totaldeuda.Text = "vendida";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.Chartreuse;
+            this.label6.Location = new System.Drawing.Point(342, 206);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(122, 28);
+            this.label6.TabIndex = 141;
+            this.label6.Text = "Total Deuda:";
+            // 
             // reporte_abonos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(860, 610);
+            this.Controls.Add(this.lbl_totaldeuda);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lbl_cantidad_vendida);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_exportar_excel);
             this.Controls.Add(this.label3);
@@ -478,6 +531,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "reporte_abonos";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.reporte_abonos_FormClosing);
+            this.Load += new System.EventHandler(this.reporte_abonos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_abonos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -532,5 +586,9 @@
         private PictureBox pictureBox12;
         private PictureBox pictureBox11;
         private Panel panel1;
+        private Label lbl_cantidad_vendida;
+        private Label label4;
+        private Label lbl_totaldeuda;
+        private Label label6;
     }
 }

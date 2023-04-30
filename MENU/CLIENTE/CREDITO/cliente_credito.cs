@@ -414,7 +414,27 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
                 Ticket1.TextoIzquierda("Recibo de Abono");
                 Ticket1.TextoIzquierda("Los Precios ya contienen IVA");
-                Ticket1.TextoIzquierda("Cajero:" + lbl_idusuario.Text);
+
+                dgUsuario parametrousuario = new dgUsuario
+                {
+
+                    Id_Usuario = Convert.ToInt16(lbl_idusuario.Text)
+
+                };
+
+                List<dgUsuario> listausuariovendedor = c_usuario.LeerUsuario(2, parametrousuario);
+
+                if (listausuariovendedor.Count > 0)
+
+                {
+
+                    foreach (dgUsuario d in listausuariovendedor)
+                    {
+
+                        Ticket1.TextoIzquierda("Cajero:" + d.Usuario.ToString());
+                    }
+                }
+
 
 
                 Ticket1.TextoIzquierda("Fecha de Abono: " + DateTime.Now.ToShortDateString());
