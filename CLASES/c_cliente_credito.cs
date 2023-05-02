@@ -360,6 +360,7 @@ namespace PUNTOVENTA.CLASES
                         new SqlParameter("@Accion",9),
                         new SqlParameter("@P_IdVenta",Parametro.Id_Venta),
                         new SqlParameter("@P_IdCliente",Parametro.Id_Cliente),
+                        new SqlParameter("@P_IdTipoVenta",Parametro.Id_TipoVenta),
                         new SqlParameter("@P_FechaPago",Parametro.FechaPago),
                         new SqlParameter("@P_CantidadPagada",Parametro.CantidadPagada),
                       
@@ -400,6 +401,7 @@ namespace PUNTOVENTA.CLASES
                         new SqlParameter("@Accion",9),
                         new SqlParameter("@P_IdVenta",Parametro.Id_Venta),
                         new SqlParameter("@P_IdCliente",Parametro.Id_Cliente),
+                        new SqlParameter("@P_IdTipoVenta",Parametro.Id_TipoVenta),
                         new SqlParameter("@P_FechaPago",Parametro.FechaPago),
                         new SqlParameter("@P_CantidadPagada",Parametro.CantidadPagada),
                      

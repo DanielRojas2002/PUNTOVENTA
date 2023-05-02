@@ -642,6 +642,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                                         Id_Venta = Convert.ToInt16(d.Id_Venta.ToString()),
                                         CantidadPagada = cantidadFaltanteTotal,
                                         Id_Cliente = Convert.ToInt16(d.Id_Cliente.ToString()),
+                                        Id_TipoVenta = 1,
                                         FechaPago = DateTime.Now,
                                         Validacion = 1,
                                         Cambio = 0
@@ -665,6 +666,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                                             Id_Venta = Convert.ToInt16(d.Id_Venta.ToString()),
                                             CantidadPagada = cantidadAbonar,
                                             Id_Cliente = Convert.ToInt16(d.Id_Cliente.ToString()),
+                                            Id_TipoVenta = 1,
                                             FechaPago = DateTime.Now,
                                             Validacion = 0
 
@@ -723,6 +725,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                                     CantidadPagada = cantidadFaltanteTotal,
                                     Id_Cliente = Convert.ToInt16(d.Id_Cliente.ToString()),
                                     FechaPago = DateTime.Now,
+                                    Id_TipoVenta = 1,
                                     Validacion = 1,
                                     Cambio = 0
                                 };
@@ -814,6 +817,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                             CantidadPagada = cantidadFaltanteTotal,
                             Id_Cliente = Convert.ToInt16(d.Id_Cliente.ToString()),
                             FechaPago = DateTime.Now,
+                            Id_TipoVenta = 1,
                             Validacion = 1,
                             Cambio = 0
                         };
