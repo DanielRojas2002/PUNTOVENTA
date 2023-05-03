@@ -37,11 +37,11 @@ namespace PUNTOVENTA.ENTIDAD
 
         public int? Id_Estatus { get; set; }
 
-        public float CantidadPagada { get; set; }
+        public float? CantidadPagada { get; set; }
 
-        public float CantidadPagadaUltima { get; set; }
+        public float? CantidadPagadaUltima { get; set; }
 
-        public float Total { get; set; }
+        public float? Total { get; set; }
 
 
         public DateTime? FechaRegistro { get; set; }

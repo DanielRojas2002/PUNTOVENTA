@@ -106,6 +106,9 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
                     cantidadpagada = (float)Math.Round(cantidadpagada, 2);
                     total = float.Parse(d.Total.ToString());
+                   
+
+                    total = (float)Math.Round(total, 2);
                     fecharegistrofecha = Convert.ToDateTime(d.FechaRegistro.ToString());
 
                     fecharegistro= fecharegistrofecha.ToString("dd/MM/yyyy");
@@ -445,7 +448,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
         }
 
 
-        private void TicketCaja(int tipoticket)
+        private void TicketCaja(int tipoticket, int tipoventa)
         {
 
             string impresora = "";
@@ -501,6 +504,16 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                 Ticket1.TextoIzquierda("Recibo de Abono");
                 Ticket1.TextoIzquierda("Los Precios ya contienen IVA");
 
+                if (tipoventa == 1)
+                {
+                    Ticket1.TextoIzquierda("Abono por Efectivo");
+                }
+
+                else if (tipoventa == 4)
+                {
+                    Ticket1.TextoIzquierda("Abono por Transferencia");
+                }
+               
                 dgUsuario parametrousuario = new dgUsuario
                 {
 
@@ -564,21 +577,15 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
             if (tipoticket==1)
             {
                 Ticket1.TextoIzquierda("");
-
-
+               
 
                 Ticket1.TextoIzquierda(" ");
                 Ticket1.AgregaTotales("Abonado con:", double.Parse(txt_abonar.Text));
 
-                Ticket1.TextoIzquierda(" ");
-
-
-
+             
                 Ticket1.AgregaTotales("Deuda por Liquidar:", double.Parse(lbl_deuda.Text) - double.Parse(txt_abonar.Text));
 
 
-
-                Ticket1.TextoIzquierda(" ");
                 Ticket1.AgregaTotales("Cambio :", double.Parse(lbl_cambio.Text));
 
 
@@ -592,21 +599,15 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
             else if (tipoticket==2)
             {
                 Ticket1.TextoIzquierda("");
-
+                
 
 
                 Ticket1.TextoIzquierda(" ");
                 Ticket1.AgregaTotales("Abonado con:", double.Parse(txt_abonar.Text));
 
-                Ticket1.TextoIzquierda(" ");
-
-
 
                 Ticket1.AgregaTotales("Deuda por Liquidar:", 0);
 
-
-
-                Ticket1.TextoIzquierda(" ");
                 Ticket1.AgregaTotales("Cambio :", double.Parse(lbl_cambio.Text));
 
 
@@ -626,18 +627,11 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
 
 
-                Ticket1.TextoIzquierda(" ");
                 Ticket1.AgregaTotales("Abonado con:", double.Parse(lbl_deuda.Text));
 
-                Ticket1.TextoIzquierda(" ");
-
-
+   
 
                 Ticket1.AgregaTotales("Deuda por Liquidar:", 0);
-
-
-
-                Ticket1.TextoIzquierda(" ");
                 Ticket1.AgregaTotales("Cambio :", 0);
 
 
@@ -685,7 +679,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                         if (confirmabono == DialogResult.Yes)
                         {
                             int tipoticket = 0;
-
+                            int tipoventa = 1;
                             // si ticket
                             float totaldeuda = float.Parse(lbl_deuda.Text);
 
@@ -840,7 +834,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                             // si ticket
                             if (confirmaticket == DialogResult.Yes)
                             {
-                                TicketCaja(tipoticket);
+                                TicketCaja(tipoticket,tipoventa);
                             }
 
                             // no ticket
@@ -864,6 +858,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                 {
                     if (txt_abonar.Text != "")
                     {
+                        int tipoventa = 4;
                         var confirmabono = MessageBox.Show("Confirmar Abono?",
                         "Abono Deuda Transferencia",
                         MessageBoxButtons.YesNo);
@@ -901,7 +896,16 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                                 if (cantidadeudatotalticket.Count > 0)
 
                                 {
-                                    tipoticket = 1;
+                                    if (pago == totaldeuda)
+                                    {
+                                        tipoticket = 2;
+                                    }
+                                    else
+                                    {
+                                        
+                                        tipoticket = 1;
+                                    }
+                                   
 
                                     float cantidadFaltanteTotal;
 
@@ -987,7 +991,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                             // si ticket
                             if (confirmaticket == DialogResult.Yes)
                             {
-                                TicketCaja(tipoticket);
+                                TicketCaja(tipoticket, tipoventa);
                             }
 
                             // no ticket
@@ -1089,7 +1093,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                     // si ticket
                     if (confirmaticket == DialogResult.Yes)
                     {
-                        TicketCaja(tipoticket);
+                        TicketCaja(tipoticket,1);
                     }
 
                     // no ticket
@@ -1169,7 +1173,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                     // si ticket
                     if (confirmaticket == DialogResult.Yes)
                     {
-                        TicketCaja(tipoticket);
+                        TicketCaja(tipoticket,4);
                     }
 
                     // no ticket

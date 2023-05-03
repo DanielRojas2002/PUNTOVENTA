@@ -105,6 +105,14 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
                     {
 
                     }
+                    else if (d.Descripcion == "Liquidacion Efectivo")
+                    {
+
+                    }
+                    else if (d.Descripcion == "Liquidacion Transferencia")
+                    {
+
+                    }
                     else
                     {
                         bx_tipoventa.Items.Add(d.Descripcion.ToString());

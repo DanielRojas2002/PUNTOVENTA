@@ -15,9 +15,9 @@ namespace PUNTOVENTA.ENTIDAD
 
         public int? Id_Estatus { get; set; }
 
-        public decimal CantidadPagada { get; set; }
+        public float CantidadPagada { get; set; }
 
-        public decimal CantidadPagadaUltima { get; set; }
+        public float CantidadPagadaUltima { get; set; }
 
 
         public DateTime? FechaRegistro { get; set; }

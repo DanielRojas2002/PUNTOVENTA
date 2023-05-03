@@ -404,19 +404,31 @@ namespace PUNTOVENTA.MENU.VENTA
         private void  CargaTipoVenta()
         {
             
-                dgTipoVenta parametro = new dgTipoVenta();
+            dgTipoVenta parametro = new dgTipoVenta();
 
-                List<dgTipoVenta> lista = c_tipoventa.LeerTipoVenta(1, parametro);
+            List<dgTipoVenta> lista = c_tipoventa.LeerTipoVenta(1, parametro);
 
-                if (lista.Count > 0)
+            if (lista.Count > 0)
 
+            {
+
+                foreach (dgTipoVenta d in lista)
                 {
+                    if (d.Descripcion.ToString() == "Liquidacion Efectivo")
+                    {
 
-                    foreach (dgTipoVenta d in lista)
+                    }
+
+                    else if (d.Descripcion.ToString() == "Liquidacion Transferencia")
+                    {
+
+                    }
+                    else
                     {
                         bx_tipoventa.Items.Add(d.Descripcion.ToString());
                     }
                 }
+            }
             
 
         }
@@ -1021,8 +1033,8 @@ namespace PUNTOVENTA.MENU.VENTA
                                 Id_Usuario = Convert.ToInt16(lbl_id.Text),
                                 FechaVenta = DateTime.Now,
                                 Id_Venta = _num_venta,
-                                Total = decimal.Parse(lbl_total.Text),
-                                Cambio = decimal.Parse(lbl_cambio.Text)
+                                Total = float.Parse(lbl_total.Text),
+                                Cambio = float.Parse(lbl_cambio.Text)
 
 
                             };
@@ -1246,8 +1258,8 @@ namespace PUNTOVENTA.MENU.VENTA
                                 Id_Usuario = Convert.ToInt16(lbl_id.Text),
                                 FechaVenta = DateTime.Now,
                                 Id_Venta = _num_venta,
-                                Total = decimal.Parse(lbl_total.Text),
-                                Cambio = decimal.Parse(lbl_cambio.Text)
+                                Total = float.Parse(lbl_total.Text),
+                                Cambio = float.Parse(lbl_cambio.Text)
 
 
                             };
@@ -1339,7 +1351,7 @@ namespace PUNTOVENTA.MENU.VENTA
                             Id_Usuario = Convert.ToInt16(lbl_id.Text),
                             FechaVenta = DateTime.Now,
                             Id_Venta = _num_venta,
-                            Total = decimal.Parse(lbl_total.Text),
+                            Total = float.Parse(lbl_total.Text),
                             Cambio = 0,
 
 
@@ -1538,7 +1550,7 @@ namespace PUNTOVENTA.MENU.VENTA
                             Id_Usuario = Convert.ToInt16(lbl_id.Text),
                             FechaVenta = DateTime.Now,
                             Id_Venta = _num_venta,
-                            Total = decimal.Parse(lbl_total.Text),
+                            Total = float.Parse(lbl_total.Text),
                             Cambio = 0,
 
 
@@ -1635,7 +1647,7 @@ namespace PUNTOVENTA.MENU.VENTA
                             Id_Usuario = Convert.ToInt16(lbl_id.Text),
                             FechaVenta = DateTime.Now,
                             Id_Venta = _num_venta,
-                            Total = decimal.Parse(lbl_total.Text),
+                            Total = float.Parse(lbl_total.Text),
                             Cambio = 0,
 
 
@@ -1834,7 +1846,7 @@ namespace PUNTOVENTA.MENU.VENTA
                             Id_Usuario = Convert.ToInt16(lbl_id.Text),
                             FechaVenta = DateTime.Now,
                             Id_Venta = _num_venta,
-                            Total = decimal.Parse(lbl_total.Text),
+                            Total = float.Parse(lbl_total.Text),
                             Cambio = 0,
 
 
@@ -1932,7 +1944,7 @@ namespace PUNTOVENTA.MENU.VENTA
                             Id_Usuario = Convert.ToInt16(lbl_id.Text),
                             FechaVenta = DateTime.Now,
                             Id_Venta = _num_venta,
-                            Total = decimal.Parse(lbl_total.Text),
+                            Total = float.Parse(lbl_total.Text),
                             Cambio = 0,
                             NombreTransferencia = txt_nombre_transferencia.Text
 
@@ -2131,7 +2143,7 @@ namespace PUNTOVENTA.MENU.VENTA
                             Id_Usuario = Convert.ToInt16(lbl_id.Text),
                             FechaVenta = DateTime.Now,
                             Id_Venta = _num_venta,
-                            Total = decimal.Parse(lbl_total.Text),
+                            Total = float.Parse(lbl_total.Text),
                             Cambio = 0,
                             NombreTransferencia = txt_nombre_transferencia.Text
 
@@ -2278,7 +2290,7 @@ namespace PUNTOVENTA.MENU.VENTA
                                 FechaVenta = DateTime.Now,
                                 FechaUltimoPago = DateTime.Now,
                                
-                                Total = decimal.Parse(lbl_total.Text),
+                                Total = float.Parse(lbl_total.Text),
                                 Cambio = 0
 
 
@@ -2339,7 +2351,7 @@ namespace PUNTOVENTA.MENU.VENTA
                                     FechaUltimoPago = DateTime.Now,
                                     Id_Estatus = 2,
                                    
-                                    CantidadPagada = decimal.Parse(txt_paga_con.Text)
+                                    CantidadPagada = float.Parse(txt_paga_con.Text)
 
 
 
@@ -2552,7 +2564,7 @@ namespace PUNTOVENTA.MENU.VENTA
                                 FechaVenta = DateTime.Now,
                                 FechaUltimoPago = DateTime.Now,
                               
-                                Total = decimal.Parse(lbl_total.Text),
+                                Total = float.Parse(lbl_total.Text),
                                 Cambio = 0
 
 
@@ -2613,7 +2625,7 @@ namespace PUNTOVENTA.MENU.VENTA
                                     FechaUltimoPago = DateTime.Now,
                                     Id_Estatus = 2,
 
-                                    CantidadPagada = decimal.Parse(txt_paga_con.Text)
+                                    CantidadPagada = float.Parse(txt_paga_con.Text)
 
 
 
@@ -2884,6 +2896,11 @@ namespace PUNTOVENTA.MENU.VENTA
         private void menu_venta_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

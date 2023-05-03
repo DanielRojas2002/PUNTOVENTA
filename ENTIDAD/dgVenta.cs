@@ -26,9 +26,9 @@ namespace PUNTOVENTA.ENTIDAD
       
 
         public string? NombreTransferencia { get; set; }
-        public decimal? Total { get; set; }
+        public float? Total { get; set; }
 
-        public decimal? Cambio { get; set; }
+        public float? Cambio { get; set; }
 
         public DateTime? FechaVenta { get; set; }
 
