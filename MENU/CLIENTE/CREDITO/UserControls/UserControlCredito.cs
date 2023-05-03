@@ -1113,6 +1113,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
 
 
 
+
                                         dgClienteCredito parametro = new dgClienteCredito
                                         {
                                             Id_Venta = Convert.ToInt16(lbl_id_venta.Text),

@@ -368,6 +368,7 @@ namespace PUNTOVENTA.CLASES
                                  IdCliente = Convert.ToInt16(fila["Id_Cliente"].ToString()),
                                  Id_Venta = Convert.ToInt16(fila["Id_Venta"].ToString()),
                                  NombreCliente = Convert.ToString(fila["NombreCliente"].ToString()),
+                                 DescripcionAbono = Convert.ToString(fila["DescripcionAbono"].ToString()),
                                  CantidadPagada = float.Parse(fila["CantidadPagada"].ToString()),                             
                                  FechaPago = Convert.ToDateTime(fila["FechaPago"].ToString()),
 

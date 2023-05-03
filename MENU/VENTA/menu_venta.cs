@@ -2277,7 +2277,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
                                 FechaVenta = DateTime.Now,
                                 FechaUltimoPago = DateTime.Now,
-
+                               
                                 Total = decimal.Parse(lbl_total.Text),
                                 Cambio = 0
 
@@ -2338,7 +2338,7 @@ namespace PUNTOVENTA.MENU.VENTA
                                     FechaRegistro = DateTime.Now,
                                     FechaUltimoPago = DateTime.Now,
                                     Id_Estatus = 2,
-
+                                   
                                     CantidadPagada = decimal.Parse(txt_paga_con.Text)
 
 
@@ -2551,7 +2551,7 @@ namespace PUNTOVENTA.MENU.VENTA
 
                                 FechaVenta = DateTime.Now,
                                 FechaUltimoPago = DateTime.Now,
-
+                              
                                 Total = decimal.Parse(lbl_total.Text),
                                 Cambio = 0
 

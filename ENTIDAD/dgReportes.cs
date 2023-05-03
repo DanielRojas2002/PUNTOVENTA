@@ -11,6 +11,8 @@ namespace PUNTOVENTA.ENTIDAD
         public int? Id_Venta { get; set; }
         public string? IdProducto { get; set; }
 
+        public string? DescripcionAbono { get; set; }
+
         public int? IdCaja { get; set; }
 
         public int? IdPago { get; set; }

@@ -138,7 +138,7 @@ namespace PUNTOVENTA.MENU.REPORTES
 
 
                             fechapago = d.FechaPago.Value.ToString("dd/MM/yyyy");
-                            dataGridView_abonos.Rows.Add(d.IdPago.ToString(), d.NombreCliente.ToString(), d.Id_Venta.ToString(), Convert.ToString(cantidadpago), fechapago);
+                            dataGridView_abonos.Rows.Add(d.IdPago.ToString(), d.NombreCliente.ToString(), d.Id_Venta.ToString(),d.DescripcionAbono.ToString(), Convert.ToString(cantidadpago), fechapago);
 
 
 

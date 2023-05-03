@@ -20,6 +20,11 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
         public cliente_credito()
         {
             InitializeComponent();
+            lbl_cambio.Visible = false;
+            txt_abonar.Visible = false;
+            label6.Visible = false;
+            label10.Visible = false;
+
         }
 
         public int _cantidad_creditos;
@@ -210,12 +215,50 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
 
         }
+        private void CargaTipoVenta()
+        {
 
+            dgTipoVenta parametro = new dgTipoVenta();
+
+            List<dgTipoVenta> lista = c_tipoventa.LeerTipoVenta(1, parametro);
+
+            if (lista.Count > 0)
+
+            {
+
+                foreach (dgTipoVenta d in lista)
+                {
+                    if (d.Descripcion == "Credito")
+                    {
+
+                    }
+                    else if (d.Descripcion == "Tarjeta Credito")
+                    {
+
+                    }
+                    else if (d.Descripcion == "Tarjeta Debito")
+                    {
+
+                    }
+                    else
+                    {
+                        bx_tipoventa.Items.Add(d.Descripcion.ToString());
+                       
+
+                    }
+
+                }
+
+                bx_tipoventa.Items.Add("Liquidacion");
+            }
+
+
+        }
         private void cliente_credito_Load(object sender, EventArgs e)
         {
 
-            
 
+            CargaTipoVenta();
             dgClienteCredito parametro = new dgClienteCredito();
 
 
@@ -298,34 +341,76 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
         private void txt_abonar_TextChanged(object sender, EventArgs e)
         {
-
             try
             {
-                float totaldeuda = float.Parse(lbl_deuda.Text);
 
-                float pago = float.Parse(txt_abonar.Text);
-                float cambio = pago - totaldeuda;
-                cambio = (float)Math.Round(cambio, 2);
+                if (lbl_id_tipoventa.Text == "1")
+                {
+                    float totaldeuda = float.Parse(lbl_deuda.Text);
 
-                if (pago < totaldeuda)
+                    float pago = float.Parse(txt_abonar.Text);
+                    float cambio = pago - totaldeuda;
+                    cambio = (float)Math.Round(cambio, 2);
+
+                    if (pago < totaldeuda)
+                    {
+
+                        lbl_cambio.Text = "0";
+
+
+                    }
+
+                    else
+                    {
+
+                        lbl_cambio.Text = Convert.ToString(cambio);
+
+                    }
+                }
+                   
+
+                if (lbl_id_tipoventa.Text == "4" ) // transferencia
                 {
 
-                    lbl_cambio.Text = "0";
+                    lbl_cambio.Text = "";
 
+                    float total = float.Parse(lbl_deuda.Text);
+
+                    float pago = float.Parse(txt_abonar.Text);
+
+
+
+
+                    if (pago > total)
+                    {
+
+                        MessageBox.Show("No puede hacer una transferencia mayor a la deuda", "Advertencia");
+                        txt_abonar.Text = "";
+                    }
+
+                    else
+                    {
+
+
+                    }
 
                 }
 
-                else
-                {
-                    
-                    lbl_cambio.Text = Convert.ToString(cambio);
 
-                }
             }
             catch
             {
+
                 lbl_cambio.Text = "";
+
+
             }
+
+
+
+
+
+
         }
 
 
@@ -584,22 +669,372 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
         private void btn_abonar_Click(object sender, EventArgs e)
         {
 
-            if (txt_abonar.Text!="")
+
+            if (bx_tipoventa.Text!="")
             {
-                var confirmabono = MessageBox.Show("Confirmar Abono?",
-            "Abono Deuda",
-            MessageBoxButtons.YesNo);
+                //efectivo
+                if (lbl_id_tipoventa.Text=="1")
+                {
+                    if (txt_abonar.Text != "")
+                    {
+                        var confirmabono = MessageBox.Show("Confirmar Abono?",
+                        "Abono Deuda Efectivo",
+                        MessageBoxButtons.YesNo);
+
+                        if (confirmabono == DialogResult.Yes)
+                        {
+                            int tipoticket = 0;
+
+                            // si ticket
+                            float totaldeuda = float.Parse(lbl_deuda.Text);
+
+                            float pago = float.Parse(txt_abonar.Text);
+                            float cambio = pago - totaldeuda;
+                            cambio = (float)Math.Round(cambio, 2);
+
+
+
+                            dgAbonoTotal parametro = new dgAbonoTotal
+                            {
+                                Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text)
+                            };
+
+                            List<dgAbonoTotal> cantidadeudatotalticket = c_abonoTotal.LeerAbonoTotal(2, parametro);
+
+                            // seguro venta
+
+
+                            if (pago <= totaldeuda)
+                            {
+
+                                lbl_cambio.Text = "0";
+
+
+                                // logica de ver cuanto pago y aplicarselo a pago historial y al pago mas tarde 
+                                if (cantidadeudatotalticket.Count > 0)
+
+                                {
+                                    tipoticket = 1;
+
+                                    float cantidadFaltanteTotal;
+
+                                    float cantidadAbonar;
+
+                                    cantidadAbonar = float.Parse(txt_abonar.Text);
+                                    foreach (dgAbonoTotal d in cantidadeudatotalticket)
+                                    {
+                                        cantidadFaltanteTotal = float.Parse(d.CantidadFaltanteTotal.ToString());
+
+
+                                        if (cantidadAbonar >= cantidadFaltanteTotal)
+                                        {
+                                            dgClienteCredito parametro2 = new dgClienteCredito
+                                            {
+                                                Id_Venta = Convert.ToInt16(d.Id_Venta.ToString()),
+                                                CantidadPagada = cantidadFaltanteTotal,
+                                                Id_Cliente = Convert.ToInt16(d.Id_Cliente.ToString()),
+                                                Id_TipoVenta = 1,
+                                                FechaPago = DateTime.Now,
+                                                Validacion = 1,
+                                                Cambio = 0
+                                            };
+
+                                            string control = "";
+
+                                            control = c_cliente_credito.ActualizarCreditoPago(1, parametro2); // YA SE CARGO LO ABONADO EL TOTAL
+                                        }
+
+                                        else if (cantidadAbonar < cantidadFaltanteTotal)
+                                        {
+                                            if (cantidadAbonar <= 0)
+                                            {
+
+                                            }
+                                            else
+                                            {
+                                                dgClienteCredito parametro2 = new dgClienteCredito
+                                                {
+                                                    Id_Venta = Convert.ToInt16(d.Id_Venta.ToString()),
+                                                    CantidadPagada = cantidadAbonar,
+                                                    Id_Cliente = Convert.ToInt16(d.Id_Cliente.ToString()),
+                                                    Id_TipoVenta = 1,
+                                                    FechaPago = DateTime.Now,
+                                                    Validacion = 0
+
+                                                };
+
+                                                string control = "";
+
+                                                control = c_cliente_credito.ActualizarCreditoPago(1, parametro2); // YA SE CARGO LO ABONADO EL TOTAL
+                                            }
+                                        }
+
+                                        try
+                                        {
+                                            cantidadAbonar = cantidadAbonar - cantidadFaltanteTotal;
+
+                                        }
+                                        catch
+                                        {
+
+                                        }
+
+
+
+
+                                    }
+                                }
+
+
+
+                            }
+
+                            else
+                            {
+                                // mayor a la deuda 
+
+
+                                // logica de ver cuanto pago y aplicarselo a pago historial y al pago mas tarde 
+                                if (cantidadeudatotalticket.Count > 0)
+
+                                {
+                                    tipoticket = 2;
+                                    float cantidadFaltanteTotal;
+
+                                    float cantidadAbonar;
+
+                                    cantidadAbonar = float.Parse(txt_abonar.Text);
+                                    foreach (dgAbonoTotal d in cantidadeudatotalticket)
+                                    {
+                                        cantidadFaltanteTotal = float.Parse(d.CantidadFaltanteTotal.ToString());
+
+
+
+                                        dgClienteCredito parametro2 = new dgClienteCredito
+                                        {
+                                            Id_Venta = Convert.ToInt16(d.Id_Venta.ToString()),
+                                            CantidadPagada = cantidadFaltanteTotal,
+                                            Id_Cliente = Convert.ToInt16(d.Id_Cliente.ToString()),
+                                            FechaPago = DateTime.Now,
+                                            Id_TipoVenta = 1,
+                                            Validacion = 1,
+                                            Cambio = 0
+                                        };
+
+                                        string control = "";
+
+                                        control = c_cliente_credito.ActualizarCreditoPago(1, parametro2); // YA SE CARGO LO ABONADO EL TOTAL
+
+
+                                    }
+                                }
+
+                            }
+
+
+                            var confirmaticket = MessageBox.Show("Desea Imprimir Ticket?",
+                            "Ticket Efectivo",
+                            MessageBoxButtons.YesNo);
+
+                            // si ticket
+                            if (confirmaticket == DialogResult.Yes)
+                            {
+                                TicketCaja(tipoticket);
+                            }
+
+                            // no ticket
+                            else
+                            {
+                                Cerrar();
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe de Ingresar la Cantidad a Abonar");
+                    }
+                }
+
+
+
+                //transferencia
+                else if (lbl_id_tipoventa.Text == "4")
+                {
+                    if (txt_abonar.Text != "")
+                    {
+                        var confirmabono = MessageBox.Show("Confirmar Abono?",
+                        "Abono Deuda Transferencia",
+                        MessageBoxButtons.YesNo);
+
+                        if (confirmabono == DialogResult.Yes)
+                        {
+                            int tipoticket = 0;
+
+                            // si ticket
+                            float totaldeuda = float.Parse(lbl_deuda.Text);
+
+                            float pago = float.Parse(txt_abonar.Text);
+                          
+                            
+
+
+
+                            dgAbonoTotal parametro = new dgAbonoTotal
+                            {
+                                Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text)
+                            };
+
+                            List<dgAbonoTotal> cantidadeudatotalticket = c_abonoTotal.LeerAbonoTotal(2, parametro);
+
+                            // seguro venta
+
+
+                            if (pago <= totaldeuda)
+                            {
+
+                                lbl_cambio.Text = "0";
+
+
+                                // logica de ver cuanto pago y aplicarselo a pago historial y al pago mas tarde 
+                                if (cantidadeudatotalticket.Count > 0)
+
+                                {
+                                    tipoticket = 1;
+
+                                    float cantidadFaltanteTotal;
+
+                                    float cantidadAbonar=float.Parse(txt_abonar.Text);
+
+                                    cantidadAbonar = (float)Math.Round(cantidadAbonar, 2);
+
+                                    foreach (dgAbonoTotal d in cantidadeudatotalticket)
+                                    {
+                                        cantidadFaltanteTotal = float.Parse(d.CantidadFaltanteTotal.ToString());
+
+
+                                        if (cantidadAbonar >= cantidadFaltanteTotal)
+                                        {
+                                            dgClienteCredito parametro2 = new dgClienteCredito
+                                            {
+                                                Id_Venta = Convert.ToInt16(d.Id_Venta.ToString()),
+                                                CantidadPagada = cantidadFaltanteTotal,
+                                                Id_Cliente = Convert.ToInt16(d.Id_Cliente.ToString()),
+                                                Id_TipoVenta = 4,
+                                                FechaPago = DateTime.Now,
+                                                Validacion = 2,
+                                                Cambio = 0
+                                            };
+
+                                            string control = "";
+
+                                            control = c_cliente_credito.ActualizarCreditoPago(1, parametro2); // YA SE CARGO LO ABONADO EL TOTAL
+                                        }
+
+                                        else if (cantidadAbonar < cantidadFaltanteTotal)
+                                        {
+                                            if (cantidadAbonar <= 0)
+                                            {
+
+                                            }
+                                            else
+                                            {
+                                                dgClienteCredito parametro2 = new dgClienteCredito
+                                                {
+                                                    Id_Venta = Convert.ToInt16(d.Id_Venta.ToString()),
+                                                    CantidadPagada = cantidadAbonar,
+                                                    Id_Cliente = Convert.ToInt16(d.Id_Cliente.ToString()),
+                                                    Id_TipoVenta = 4,
+                                                    FechaPago = DateTime.Now,
+                                                    Validacion = 3
+
+                                                };
+
+                                                string control = "";
+
+                                                control = c_cliente_credito.ActualizarCreditoPago(1, parametro2); // YA SE CARGO LO ABONADO EL TOTAL
+                                            }
+                                        }
+
+                                        try
+                                        {
+                                            cantidadAbonar = cantidadAbonar - cantidadFaltanteTotal;
+
+                                        }
+                                        catch
+                                        {
+
+                                        }
+
+
+
+
+                                    }
+                                }
+
+
+
+                            }
+
+                            
+
+
+                            var confirmaticket = MessageBox.Show("Desea Imprimir Ticket?",
+                            "Ticket Transferencia ",
+                            MessageBoxButtons.YesNo);
+
+                            // si ticket
+                            if (confirmaticket == DialogResult.Yes)
+                            {
+                                TicketCaja(tipoticket);
+                            }
+
+                            // no ticket
+                            else
+                            {
+                                Cerrar();
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe de Ingresar la Cantidad a Abonar");
+                    }
+                }
+               
+
+            }
+
+            else
+            {
+                MessageBox.Show("Debe de Seleccionar el Tipo Venta");
+            }
+           
+
+
+
+          
+
+
+        }
+
+        private void btn_liquidar_Click(object sender, EventArgs e)
+        {
+
+            if (bx_tipoventa.Text == "Liquidacion")
+            {
+                var confirmabono = MessageBox.Show("Confirmar Liquidacion?",
+                 "Abono Liquidacion",
+                 MessageBoxButtons.YesNo);
 
                 if (confirmabono == DialogResult.Yes)
                 {
-                    int tipoticket = 0;
+                    int tipoticket = 3;
 
                     // si ticket
-                    float totaldeuda = float.Parse(lbl_deuda.Text);
 
-                    float pago = float.Parse(txt_abonar.Text);
-                    float cambio = pago - totaldeuda;
-                    cambio = (float)Math.Round(cambio, 2);
+
 
 
 
@@ -610,134 +1045,39 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
                     List<dgAbonoTotal> cantidadeudatotalticket = c_abonoTotal.LeerAbonoTotal(2, parametro);
 
-                    // seguro venta
 
 
-                    if (pago <= totaldeuda)
+                    // logica de ver cuanto pago y aplicarselo a pago historial y al pago mas tarde 
+                    if (cantidadeudatotalticket.Count > 0)
+
                     {
+                        tipoticket = 3;
+                        float cantidadFaltanteTotal;
 
-                        lbl_cambio.Text = "0";
 
-
-                        // logica de ver cuanto pago y aplicarselo a pago historial y al pago mas tarde 
-                        if (cantidadeudatotalticket.Count > 0)
-
+                        foreach (dgAbonoTotal d in cantidadeudatotalticket)
                         {
-                            tipoticket = 1;
+                            cantidadFaltanteTotal = float.Parse(d.CantidadFaltanteTotal.ToString());
 
-                            float cantidadFaltanteTotal;
 
-                            float cantidadAbonar;
 
-                            cantidadAbonar = float.Parse(txt_abonar.Text);
-                            foreach (dgAbonoTotal d in cantidadeudatotalticket)
+                            dgClienteCredito parametro2 = new dgClienteCredito
                             {
-                                cantidadFaltanteTotal = float.Parse(d.CantidadFaltanteTotal.ToString());
+                                Id_Venta = Convert.ToInt16(d.Id_Venta.ToString()),
+                                CantidadPagada = cantidadFaltanteTotal,
+                                Id_Cliente = Convert.ToInt16(d.Id_Cliente.ToString()),
+                                FechaPago = DateTime.Now,
+                                Id_TipoVenta = 1,
+                                Validacion = 1,
+                                Cambio = 0
+                            };
+
+                            string control = "";
+
+                            control = c_cliente_credito.ActualizarCreditoPago(1, parametro2); // YA SE CARGO LO ABONADO EL TOTAL
 
 
-                                if (cantidadAbonar >= cantidadFaltanteTotal)
-                                {
-                                    dgClienteCredito parametro2 = new dgClienteCredito
-                                    {
-                                        Id_Venta = Convert.ToInt16(d.Id_Venta.ToString()),
-                                        CantidadPagada = cantidadFaltanteTotal,
-                                        Id_Cliente = Convert.ToInt16(d.Id_Cliente.ToString()),
-                                        Id_TipoVenta = 1,
-                                        FechaPago = DateTime.Now,
-                                        Validacion = 1,
-                                        Cambio = 0
-                                    };
-
-                                    string control = "";
-
-                                    control = c_cliente_credito.ActualizarCreditoPago(1, parametro2); // YA SE CARGO LO ABONADO EL TOTAL
-                                }
-
-                                else if (cantidadAbonar < cantidadFaltanteTotal)
-                                {
-                                    if (cantidadAbonar <= 0)
-                                    {
-
-                                    }
-                                    else
-                                    {
-                                        dgClienteCredito parametro2 = new dgClienteCredito
-                                        {
-                                            Id_Venta = Convert.ToInt16(d.Id_Venta.ToString()),
-                                            CantidadPagada = cantidadAbonar,
-                                            Id_Cliente = Convert.ToInt16(d.Id_Cliente.ToString()),
-                                            Id_TipoVenta = 1,
-                                            FechaPago = DateTime.Now,
-                                            Validacion = 0
-
-                                        };
-
-                                        string control = "";
-
-                                        control = c_cliente_credito.ActualizarCreditoPago(1, parametro2); // YA SE CARGO LO ABONADO EL TOTAL
-                                    }
-                                }
-
-                                try
-                                {
-                                    cantidadAbonar = cantidadAbonar - cantidadFaltanteTotal;
-
-                                }
-                                catch
-                                {
-
-                                }
-
-
-
-
-                            }
                         }
-
-
-
-                    }
-
-                    else
-                    {
-                        // mayor a la deuda 
-
-
-                        // logica de ver cuanto pago y aplicarselo a pago historial y al pago mas tarde 
-                        if (cantidadeudatotalticket.Count > 0)
-
-                        {
-                            tipoticket = 2;
-                            float cantidadFaltanteTotal;
-
-                            float cantidadAbonar;
-
-                            cantidadAbonar = float.Parse(txt_abonar.Text);
-                            foreach (dgAbonoTotal d in cantidadeudatotalticket)
-                            {
-                                cantidadFaltanteTotal = float.Parse(d.CantidadFaltanteTotal.ToString());
-
-
-
-                                dgClienteCredito parametro2 = new dgClienteCredito
-                                {
-                                    Id_Venta = Convert.ToInt16(d.Id_Venta.ToString()),
-                                    CantidadPagada = cantidadFaltanteTotal,
-                                    Id_Cliente = Convert.ToInt16(d.Id_Cliente.ToString()),
-                                    FechaPago = DateTime.Now,
-                                    Id_TipoVenta = 1,
-                                    Validacion = 1,
-                                    Cambio = 0
-                                };
-
-                                string control = "";
-
-                                control = c_cliente_credito.ActualizarCreditoPago(1, parametro2); // YA SE CARGO LO ABONADO EL TOTAL
-
-
-                            }
-                        }
-
                     }
 
 
@@ -761,93 +1101,82 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
             }
             else
             {
-                MessageBox.Show("Debe de Ingresar la Cantidad a Abonar");
+                MessageBox.Show("Debe de tener seleccionado la opcion Liquidacion en Tipo Venta");
             }
-          
-
-
-
-          
-
-
+            
         }
 
-        private void btn_liquidar_Click(object sender, EventArgs e)
+        private void bx_tipoventa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var confirmabono = MessageBox.Show("Confirmar Liquidacion?",
-             "Abono Liquidacion",
-             MessageBoxButtons.YesNo);
 
-            if (confirmabono == DialogResult.Yes)
+            dgTipoVenta parametro = new dgTipoVenta
             {
-                int tipoticket = 3;
+                Descripcion = bx_tipoventa.Text
+            };
 
-                // si ticket
-                
+            List<dgTipoVenta> lista = c_tipoventa.LeerTipoVenta(2, parametro);
 
+            if (bx_tipoventa.Text == "Liquidacion")
+            {
+                lbl_id_tipoventa.Text = "6";
+            }
 
+            if (lista.Count > 0)
 
+            {
 
-                dgAbonoTotal parametro = new dgAbonoTotal
+                foreach (dgTipoVenta d in lista)
                 {
-                    Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text)
-                };
+                    lbl_id_tipoventa.Text = d.Id_TipoVenta.ToString();
 
-                List<dgAbonoTotal> cantidadeudatotalticket = c_abonoTotal.LeerAbonoTotal(2, parametro);
-
-
-
-                // logica de ver cuanto pago y aplicarselo a pago historial y al pago mas tarde 
-                if (cantidadeudatotalticket.Count > 0)
-
-                {
-                    tipoticket = 3;
-                    float cantidadFaltanteTotal;
-
-                
-                    foreach (dgAbonoTotal d in cantidadeudatotalticket)
-                    {
-                        cantidadFaltanteTotal = float.Parse(d.CantidadFaltanteTotal.ToString());
-
-
-
-                        dgClienteCredito parametro2 = new dgClienteCredito
-                        {
-                            Id_Venta = Convert.ToInt16(d.Id_Venta.ToString()),
-                            CantidadPagada = cantidadFaltanteTotal,
-                            Id_Cliente = Convert.ToInt16(d.Id_Cliente.ToString()),
-                            FechaPago = DateTime.Now,
-                            Id_TipoVenta = 1,
-                            Validacion = 1,
-                            Cambio = 0
-                        };
-
-                        string control = "";
-
-                        control = c_cliente_credito.ActualizarCreditoPago(1, parametro2); // YA SE CARGO LO ABONADO EL TOTAL
-
-
-                    }
+                    
                 }
 
-
-                var confirmaticket = MessageBox.Show("Desea Imprimir Ticket?",
-                "Ticket ",
-                MessageBoxButtons.YesNo);
-
-                // si ticket
-                if (confirmaticket == DialogResult.Yes)
-                {
-                    TicketCaja(tipoticket);
-                }
-
-                // no ticket
-                else
-                {
-                    Cerrar();
-                }
 
             }
+
+            if (lbl_id_tipoventa.Text == "1") // efectivo
+            {
+
+
+                lbl_cambio.Visible = true;
+                txt_abonar.Visible = true;
+                label6.Visible = true;
+                label10.Visible = true;
+                btn_abonar.Visible = true;
+
+
+            }
+
+            else if (lbl_id_tipoventa.Text == "4") // transferencia
+            {
+
+
+                lbl_cambio.Visible = false;
+                txt_abonar.Visible = true;
+                label6.Visible = true;
+                label10.Visible = false;
+                btn_abonar.Visible = true;
+
+
+            }
+
+
+            else if (lbl_id_tipoventa.Text == "6") // Liquidacion
+            {
+
+
+                lbl_cambio.Visible = false;
+                txt_abonar.Visible = false;
+
+                label6.Visible = false;
+                label10.Visible = false;
+                btn_abonar.Visible = false;
+
+
+            }
+
+          
         }
     }
 }
