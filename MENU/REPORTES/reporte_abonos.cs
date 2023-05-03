@@ -1,4 +1,6 @@
-﻿using PUNTOVENTA.CLASES;
+﻿using DocumentFormat.OpenXml.Spreadsheet;
+
+using PUNTOVENTA.CLASES;
 using PUNTOVENTA.ENTIDAD;
 using System;
 using System.Collections.Generic;
@@ -272,7 +274,9 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                     ws.Cell("D6").Value = "Abono";
 
-                    ws.Cell("E6").Value = "Fecha Abono";
+                    ws.Cell("E6").Value = "Tipo Abono";
+
+                    ws.Cell("F6").Value = "Fecha Abono";
 
 
 
@@ -311,6 +315,9 @@ namespace PUNTOVENTA.MENU.REPORTES
                             contadorcolumnas = contadorcolumnas + 1;
 
                             ws.Cell(contadorregistros, contadorcolumnas).Value = d.Id_Venta.ToString();
+                            contadorcolumnas = contadorcolumnas + 1;
+
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = d.DescripcionAbono.ToString();
                             contadorcolumnas = contadorcolumnas + 1;
 
                             ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadPagada.ToString();
@@ -373,6 +380,8 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                     wb.SaveAs(ls_archivo_excel);
                     MessageBox.Show("Excel Reportado Satisfactoriamente en : " + ls_archivo_excel);
+
+                 
                 }
 
                 catch
