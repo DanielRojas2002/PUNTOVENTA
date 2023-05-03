@@ -24,6 +24,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
             txt_abonar.Visible = false;
             label6.Visible = false;
             label10.Visible = false;
+            btn_liquidar.Visible = false;
 
         }
 
@@ -249,7 +250,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
                 }
 
-                bx_tipoventa.Items.Add("Liquidacion");
+               
             }
 
 
@@ -1021,11 +1022,11 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
         private void btn_liquidar_Click(object sender, EventArgs e)
         {
-
-            if (bx_tipoventa.Text == "Liquidacion")
+            //liquidacion efectivo
+            if (lbl_id_tipoventa.Text=="6")
             {
-                var confirmabono = MessageBox.Show("Confirmar Liquidacion?",
-                 "Abono Liquidacion",
+                var confirmabono = MessageBox.Show("Confirmar Liquidacion Efectivo?",
+                 "Abono Liquidacion Efectivo",
                  MessageBoxButtons.YesNo);
 
                 if (confirmabono == DialogResult.Yes)
@@ -1099,6 +1100,86 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
                 }
             }
+
+
+            //liquidacion transferencia
+            else if (lbl_id_tipoventa.Text == "7")
+            {
+                var confirmabono = MessageBox.Show("Confirmar Liquidacion Transferencia?",
+               "Abono Liquidacion Transferencia",
+               MessageBoxButtons.YesNo);
+
+                if (confirmabono == DialogResult.Yes)
+                {
+                    int tipoticket = 3;
+
+                    // si ticket
+
+
+
+
+
+                    dgAbonoTotal parametro = new dgAbonoTotal
+                    {
+                        Id_Cliente = Convert.ToInt16(lbl_id_cliente.Text)
+                    };
+
+                    List<dgAbonoTotal> cantidadeudatotalticket = c_abonoTotal.LeerAbonoTotal(2, parametro);
+
+
+
+                    // logica de ver cuanto pago y aplicarselo a pago historial y al pago mas tarde 
+                    if (cantidadeudatotalticket.Count > 0)
+
+                    {
+                        tipoticket = 3;
+                        float cantidadFaltanteTotal;
+
+
+                        foreach (dgAbonoTotal d in cantidadeudatotalticket)
+                        {
+                            cantidadFaltanteTotal = float.Parse(d.CantidadFaltanteTotal.ToString());
+
+
+
+                            dgClienteCredito parametro2 = new dgClienteCredito
+                            {
+                                Id_Venta = Convert.ToInt16(d.Id_Venta.ToString()),
+                                CantidadPagada = cantidadFaltanteTotal,
+                                Id_Cliente = Convert.ToInt16(d.Id_Cliente.ToString()),
+                                FechaPago = DateTime.Now,
+                                Id_TipoVenta = 4,
+                                Validacion = 1,
+                                Cambio = 0
+                            };
+
+                            string control = "";
+
+                            control = c_cliente_credito.ActualizarCreditoPago(1, parametro2); // YA SE CARGO LO ABONADO EL TOTAL
+
+
+                        }
+                    }
+
+
+                    var confirmaticket = MessageBox.Show("Desea Imprimir Ticket?",
+                    "Ticket ",
+                    MessageBoxButtons.YesNo);
+
+                    // si ticket
+                    if (confirmaticket == DialogResult.Yes)
+                    {
+                        TicketCaja(tipoticket);
+                    }
+
+                    // no ticket
+                    else
+                    {
+                        Cerrar();
+                    }
+
+                }
+            }
             else
             {
                 MessageBox.Show("Debe de tener seleccionado la opcion Liquidacion en Tipo Venta");
@@ -1116,10 +1197,6 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
             List<dgTipoVenta> lista = c_tipoventa.LeerTipoVenta(2, parametro);
 
-            if (bx_tipoventa.Text == "Liquidacion")
-            {
-                lbl_id_tipoventa.Text = "6";
-            }
 
             if (lista.Count > 0)
 
@@ -1144,6 +1221,8 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                 label6.Visible = true;
                 label10.Visible = true;
                 btn_abonar.Visible = true;
+                btn_liquidar.Visible = false;
+
 
 
             }
@@ -1157,12 +1236,13 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                 label6.Visible = true;
                 label10.Visible = false;
                 btn_abonar.Visible = true;
+                btn_liquidar.Visible = false;
 
 
             }
 
 
-            else if (lbl_id_tipoventa.Text == "6") // Liquidacion
+            else if (lbl_id_tipoventa.Text == "6") // Liquidacion efectivo
             {
 
 
@@ -1172,11 +1252,28 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                 label6.Visible = false;
                 label10.Visible = false;
                 btn_abonar.Visible = false;
+                btn_liquidar.Visible = true;
 
 
             }
 
-          
+
+            else if (lbl_id_tipoventa.Text == "7") // Liquidacion transferencia
+            {
+
+
+                lbl_cambio.Visible = false;
+                txt_abonar.Visible = false;
+
+                label6.Visible = false;
+                label10.Visible = false;
+                btn_abonar.Visible = false;
+                btn_liquidar.Visible = true;
+
+
+            }
+
+
         }
     }
 }

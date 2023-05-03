@@ -181,7 +181,7 @@
             this.bx_tipoventa.FormattingEnabled = true;
             this.bx_tipoventa.Location = new System.Drawing.Point(31, 385);
             this.bx_tipoventa.Name = "bx_tipoventa";
-            this.bx_tipoventa.Size = new System.Drawing.Size(139, 23);
+            this.bx_tipoventa.Size = new System.Drawing.Size(164, 23);
             this.bx_tipoventa.TabIndex = 187;
             this.bx_tipoventa.SelectedIndexChanged += new System.EventHandler(this.bx_tipoventa_SelectedIndexChanged);
             // 
