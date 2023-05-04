@@ -1,4 +1,5 @@
 ﻿using DocumentFormat.OpenXml.Bibliography;
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using PUNTOVENTA.CLASES;
 using PUNTOVENTA.ENTIDAD;
 using PUNTOVENTA.MENU.CAJA;
@@ -31,6 +32,7 @@ namespace Punto_de_Venta
 
         private void cerrarapp_Click(object sender, EventArgs e)
         {
+            ActualizarCaja();
             Application.Exit();
         }
 
@@ -353,6 +355,7 @@ namespace Punto_de_Venta
 
         private void btn_regresar_Click(object sender, EventArgs e)
         {
+            ActualizarCaja();
             this.Hide();
             Form1 formulario = new Form1();
             formulario.Show();
@@ -543,6 +546,174 @@ namespace Punto_de_Venta
 
 
 
+        }
+
+        private void ActualizarCaja()
+        {
+            float totalventa = 0, totalventapagos = 0, totalventadevolucion = 0, totalabonado = 0, totalretirado = 0;
+
+
+            dgCaja parametrototalventas = new dgCaja
+            {
+                FechaCaja = DateTime.Now
+
+            };
+
+
+            dgCaja parametrototalventaspagos = new dgCaja
+            {
+                FechaCaja = DateTime.Now
+
+            };
+
+            dgCaja parametrototalventasdevoluciones = new dgCaja
+            {
+                FechaCaja = DateTime.Now
+
+            };
+
+            dgCaja parametrototalventasabono = new dgCaja
+            {
+                FechaCaja = DateTime.Now
+
+            };
+
+            dgCaja parametrototalretirado = new dgCaja
+            {
+                FechaCaja = DateTime.Now
+
+            };
+
+
+
+
+            List<dgCaja> listatotalventas = c_caja.LeerCaja(14, parametrototalventas);
+
+
+            if (listatotalventas.Count > 0)
+
+            {
+
+                foreach (dgCaja d in listatotalventas)
+                {
+                    totalventa = float.Parse(d.CantidadTotal.ToString());
+                    totalventa = (float)Math.Round(totalventa, 2);
+
+                }
+            }
+
+
+
+            List<dgCaja> listatotalventaspagos = c_caja.LeerCaja(15, parametrototalventaspagos);
+
+
+            if (listatotalventaspagos.Count > 0)
+
+            {
+
+                foreach (dgCaja dd in listatotalventaspagos)
+                {
+
+                    totalventapagos = float.Parse(dd.CantidadTotal.ToString());
+                    totalventapagos = (float)Math.Round(totalventapagos, 2);
+
+                }
+            }
+
+
+
+            List<dgCaja> listatotalventasdevoluciones = c_caja.LeerCaja(16, parametrototalventas);
+
+
+            if (listatotalventasdevoluciones.Count > 0)
+
+            {
+
+                foreach (dgCaja d in listatotalventasdevoluciones)
+                {
+
+                    totalventadevolucion = float.Parse(d.CantidadTotal.ToString());
+                    totalventadevolucion = (float)Math.Round(totalventadevolucion, 2);
+
+                }
+            }
+
+
+
+            List<dgCaja> listatotalventasabono = c_caja.LeerCaja(17, parametrototalventasabono);
+
+
+            if (listatotalventasabono.Count > 0)
+
+            {
+
+                foreach (dgCaja d in listatotalventasabono)
+                {
+
+                    totalabonado = float.Parse(d.CantidadTotal.ToString());
+                    totalabonado = (float)Math.Round(totalabonado, 2);
+
+                }
+            }
+
+
+            List<dgCaja> listatotalretirado = c_caja.LeerCaja(18, parametrototalretirado);
+
+
+            if (listatotalretirado.Count > 0)
+
+            {
+
+                foreach (dgCaja d in listatotalretirado)
+                {
+
+                    totalretirado = float.Parse(d.CantidadTotal.ToString());
+                    totalretirado = (float)Math.Round(totalretirado, 2);
+
+                }
+            }
+
+            float cantidadventas = totalventa + totalventapagos;
+
+            cantidadventas = (float)Math.Round(cantidadventas, 2);
+
+            float cantidatotal = totalventa + totalventapagos + totalabonado - totalventadevolucion - totalretirado;
+
+            cantidatotal = (float)Math.Round(cantidatotal, 2);
+
+
+            dgCaja parametro = new dgCaja
+            {
+
+                CantidadTotal = cantidatotal,
+                CantidadVenta = cantidadventas,
+                CantidadDevolucion = totalventadevolucion,
+
+
+                FechaCaja = DateTime.Now
+
+            };
+
+            string control = "";
+
+            control = c_caja.ActualizarCaja2(parametro);
+        }
+
+        private void Inicio_MouseMove(object sender, MouseEventArgs e)
+        {
+
+            ActualizarCaja();
+
+        }
+
+        private void pnl_der_MouseMove(object sender, MouseEventArgs e)
+        {
+            ActualizarCaja();
+        }
+
+        private void pnl_izq_MouseMove(object sender, MouseEventArgs e)
+        {
+            ActualizarCaja();
         }
     }
 }

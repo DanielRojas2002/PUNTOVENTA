@@ -515,6 +515,7 @@
             this.pnl_izq.Size = new System.Drawing.Size(339, 730);
             this.pnl_izq.TabIndex = 2;
             this.pnl_izq.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_izq_Paint);
+            this.pnl_izq.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_izq_MouseMove);
             // 
             // panel7
             // 
@@ -1017,6 +1018,7 @@
             this.pnl_der.Size = new System.Drawing.Size(935, 730);
             this.pnl_der.TabIndex = 3;
             this.pnl_der.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_der_Paint);
+            this.pnl_der.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_der_MouseMove);
             // 
             // panel17
             // 
@@ -1153,6 +1155,7 @@
             this.Activated += new System.EventHandler(this.Inicio_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Inicio_FormClosing);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Inicio_KeyPress);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Inicio_MouseMove);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimzar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrarapp)).EndInit();

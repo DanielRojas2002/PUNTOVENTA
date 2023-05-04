@@ -90,6 +90,45 @@ namespace PUNTOVENTA.CLASES
 
         }
 
+        public static string ActualizarCaja2(dgCaja Parametro)
+        {
+
+
+            string control = "";
+
+            try
+            {
+
+                DataTable tabla = new DataTable();
+
+                SqlParameter[] parametros =
+                {
+                    new SqlParameter("@Accion",19),
+                    new SqlParameter("@P_CantidadVenta",Parametro.CantidadVenta),
+                    new SqlParameter("@P_CantidadTotal",Parametro.CantidadTotal),
+                    new SqlParameter("@P_CantidadDevolucion",Parametro.CantidadDevolucion),
+
+                    new SqlParameter("@P_FechaCaja",Parametro.FechaCaja)
+
+
+
+                };
+
+                tabla = bdContext.funcionStored("spCaja", parametros);
+                control = tabla.Rows[0][0].ToString();
+
+
+
+            }
+
+            catch (Exception error)
+            {
+                control = error.ToString();
+            }
+            return control;
+
+        }
+
 
         public static string AbonarCaja(dgCaja Parametro)
         {
@@ -540,6 +579,148 @@ namespace PUNTOVENTA.CLASES
                 }
 
             }
+
+            else if (tipo == 14)
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",14),
+                    new SqlParameter("@P_FechaCaja",Parametro.FechaCaja)
+
+                };
+
+                tabla = bdContext.funcionStored("spCaja", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgCaja
+                             {
+                                
+                                 CantidadTotal = float.Parse(fila["TotalVentaNormal"].ToString()),
+                                
+
+
+                             }
+                   ).ToList();
+                }
+
+            }
+
+            else if (tipo == 15)
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",15),
+                    new SqlParameter("@P_FechaCaja",Parametro.FechaCaja)
+
+                };
+
+                tabla = bdContext.funcionStored("spCaja", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgCaja
+                             {
+
+                                 CantidadTotal = float.Parse(fila["TotalVentaPagos"].ToString()),
+
+
+
+                             }
+                   ).ToList();
+                }
+
+            }
+
+            else if (tipo == 16)
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",16),
+                    new SqlParameter("@P_FechaCaja",Parametro.FechaCaja)
+
+                };
+
+                tabla = bdContext.funcionStored("spCaja", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgCaja
+                             {
+
+                                 CantidadTotal = float.Parse(fila["TotalDevolucion"].ToString()),
+
+
+
+                             }
+                   ).ToList();
+                }
+
+            }
+
+            else if (tipo == 17)
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",17),
+                    new SqlParameter("@P_FechaCaja",Parametro.FechaCaja)
+
+                };
+
+                tabla = bdContext.funcionStored("spCaja", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgCaja
+                             {
+
+                                 CantidadTotal = float.Parse(fila["TotalAbonada"].ToString()),
+
+
+
+                             }
+                   ).ToList();
+                }
+
+            }
+
+            else if (tipo == 18)
+            {
+
+                SqlParameter[] Parametros =
+                {
+                    new SqlParameter("@Accion",18),
+                    new SqlParameter("@P_FechaCaja",Parametro.FechaCaja)
+
+                };
+
+                tabla = bdContext.funcionStored("spCaja", Parametros);
+
+                if (tabla.Rows.Count > 0)
+                {
+                    lista = (from DataRow fila in tabla.Rows
+                             select new dgCaja
+                             {
+
+                                 CantidadTotal = float.Parse(fila["TotalRetirada"].ToString()),
+
+
+
+                             }
+                   ).ToList();
+                }
+
+            }
+
+
 
 
             return lista;

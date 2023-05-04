@@ -31,6 +31,7 @@ namespace PUNTOVENTA.ENTIDAD
         public float? CantidadTotal { get; set; }
 
         public float? CantidadPagada { get; set; }
+        public float? CantidadDevolucion { get; set; }
         public DateTime? FechaVentaProducto { get; set; }
         public DateTime? FechaInicio { get; set; }
 
