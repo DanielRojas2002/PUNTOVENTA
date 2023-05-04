@@ -163,7 +163,7 @@ namespace PUNTOVENTA.MENU.CLIENTE
                     if (control == "1")
                     {
 
-                        MessageBox.Show("No se puede eliminar este Cliente ya que cuenta con Credito sin liquidar", "Error");
+                        MessageBox.Show("No se puede eliminar este Cliente ya que tiene historial de credito", "Error");
                     }
 
                     else
