@@ -272,9 +272,11 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                     ws.Cell("C6").Value = "Id Venta";
 
-                    ws.Cell("D6").Value = "Abono";
+                    ws.Cell("D6").Value = "Tipo Abono";
 
-                    ws.Cell("E6").Value = "Tipo Abono";
+                    ws.Cell("E6").Value = "Abono";
+
+                    
 
                     ws.Cell("F6").Value = "Fecha Abono";
 
@@ -308,6 +310,11 @@ namespace PUNTOVENTA.MENU.REPORTES
                             contadorcolumnas = 1;
                             fechapago = d.FechaPago.Value.ToString("dd/MM/yyyy");
 
+                            cantidadpago = float.Parse(d.CantidadPagada.ToString());
+
+                            cantidadpago = (float)Math.Round(cantidadpago, 2);
+
+
                             ws.Cell(contadorregistros, contadorcolumnas).Value = d.IdPago.ToString();
                             contadorcolumnas = contadorcolumnas + 1;
 
@@ -320,7 +327,7 @@ namespace PUNTOVENTA.MENU.REPORTES
                             ws.Cell(contadorregistros, contadorcolumnas).Value = d.DescripcionAbono.ToString();
                             contadorcolumnas = contadorcolumnas + 1;
 
-                            ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadPagada.ToString();
+                            ws.Cell(contadorregistros, contadorcolumnas).Value = Convert.ToString(cantidadpago);
                             contadorcolumnas = contadorcolumnas + 1;
 
                             ws.Cell(contadorregistros, contadorcolumnas).Value = fechapago;

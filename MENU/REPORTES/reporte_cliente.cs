@@ -305,9 +305,9 @@ namespace PUNTOVENTA.MENU.REPORTES
                         contadorcolumnas = contadorcolumnas + 1;
                         ws.Cell(contadorregistros, contadorcolumnas).Value = d.Id_Venta.ToString();
                         contadorcolumnas = contadorcolumnas + 1;
-                        ws.Cell(contadorregistros, contadorcolumnas).Value = cantidadpagada;
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = Convert.ToString(cantidadpagada);
                         contadorcolumnas = contadorcolumnas + 1;
-                        ws.Cell(contadorregistros, contadorcolumnas).Value = total;
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = Convert.ToString(total);
                         contadorcolumnas = contadorcolumnas + 1;
                         ws.Cell(contadorregistros, contadorcolumnas).Value = d.DescripcionEstatus.ToString();
                         contadorcolumnas = contadorcolumnas + 1;

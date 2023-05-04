@@ -80,14 +80,18 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                 {
                     string fechacaja;
-                  
+                    float totalcaja;
+
+
                     foreach (dgReportes d in lista)
                     {
-                       
+                        totalcaja = float.Parse(d.CantidadTotal.ToString());
+
+                        totalcaja = (float)Math.Round(totalcaja, 2);
 
                         fechacaja = d.FechaCaja.Value.ToString("dd/MM/yyyy");
                         dataGridView_caja.Rows.Add(d.IdCaja.ToString(), d.CantidadVenta.ToString(), d.CantidadAbonada.ToString(),
-                             d.CantidadDevolucion.ToString(), d.CantidadRetirada.ToString(), d.CantidadTotal.ToString(), fechacaja, d.DescripcionCaja.ToString());
+                             d.CantidadDevolucion.ToString(), d.CantidadRetirada.ToString(),Convert.ToString(totalcaja), fechacaja, d.DescripcionCaja.ToString());
 
 
                         
@@ -206,29 +210,35 @@ namespace PUNTOVENTA.MENU.REPORTES
                 {
                     string fechacaja;
 
+                    float totalcaja;
+
                     foreach (dgReportes d in lista)
                     {
+
+                        totalcaja = float.Parse(d.CantidadTotal.ToString());
+
+                        totalcaja = (float)Math.Round(totalcaja, 2);
 
                         contadorcolumnas = 1;
 
                         fechacaja = d.FechaCaja.Value.ToString("dd/MM/yyyy");
                        
-                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.IdCaja.ToString();
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = Convert.ToString(d.IdCaja.ToString());
                         contadorcolumnas = contadorcolumnas + 1;
 
-                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadVenta.ToString();
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = Convert.ToString(d.CantidadVenta.ToString());
                         contadorcolumnas = contadorcolumnas + 1;
 
-                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadAbonada.ToString();
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = Convert.ToString(d.CantidadAbonada.ToString());
                         contadorcolumnas = contadorcolumnas + 1;
 
-                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadDevolucion.ToString();
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = Convert.ToString(d.CantidadDevolucion.ToString());
                         contadorcolumnas = contadorcolumnas + 1;
 
-                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadRetirada.ToString();
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = Convert.ToString(d.CantidadRetirada.ToString());
                         contadorcolumnas = contadorcolumnas + 1;
 
-                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadTotal.ToString();
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = Convert.ToString(totalcaja);
                         contadorcolumnas = contadorcolumnas + 1;
 
                         ws.Cell(contadorregistros, contadorcolumnas).Value = fechacaja;

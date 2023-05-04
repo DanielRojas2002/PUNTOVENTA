@@ -443,9 +443,12 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                 ws.Cell("G6").Value = "FechaVenta";
 
-                ws.Cell("H4").Value = ":EFECTIO/TRANSFERENCIA";
+                ws.Cell("H4").Value = ":EFECTIVO/TRANSFERENCIA/TARJETA CREDITO/DEBITO";
+
+                float cantidadtotal = _dineroventas - _dinerodevolucion;
 
 
+                cantidadtotal = (float)Math.Round(cantidadtotal, 2);
 
                 ws.Cell("H6").Value = "Tipo Venta";
 
@@ -453,7 +456,7 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                 ws.Cell("G2").Value = "TOTAL VENTA :";
 
-                ws.Cell("H2").Value = lbl_cantidad_vendida.Text;
+                ws.Cell("H2").Value = Convert.ToString(cantidadtotal);
 
                 int contadorcolumnas = 1;
                 int contadorregistros = 7;
@@ -461,12 +464,16 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                 {
                     string fechaventa;
-                    float subtotal;
+                    float subtotal,precioproducto;
                     foreach (dgReportes d in lista)
                     {
                         subtotal = float.Parse(d.SubTotalProducto.ToString());
 
                         subtotal = (float)Math.Round(subtotal, 2);
+
+                        precioproducto = float.Parse(d.PrecioProducto.ToString());
+
+                        precioproducto = (float)Math.Round(precioproducto, 2);
 
                         fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
 
@@ -485,11 +492,11 @@ namespace PUNTOVENTA.MENU.REPORTES
                         contadorcolumnas = contadorcolumnas + 1;
                         ws.Cell(contadorregistros, contadorcolumnas).Value = d.NombreProducto.ToString();
                         contadorcolumnas = contadorcolumnas + 1;
-                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.PrecioProducto.ToString();
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = Convert.ToString(precioproducto);
                         contadorcolumnas = contadorcolumnas + 1;
                         ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadProducto.ToString();
                         contadorcolumnas = contadorcolumnas + 1;
-                        ws.Cell(contadorregistros, contadorcolumnas).Value = subtotal;
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = Convert.ToString(subtotal);
 
                         contadorcolumnas = contadorcolumnas + 1;
                         ws.Cell(contadorregistros, contadorcolumnas).Value = fechaventa;
@@ -575,7 +582,7 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                 {
                     string fechavent, fechaultimopago;
-                    float subtotal, cantidadpagada;
+                    float subtotal, cantidadpagada, precioproducto;
 
                     foreach (dgReportes d in lista2)
                     {
@@ -587,7 +594,9 @@ namespace PUNTOVENTA.MENU.REPORTES
                         subtotal = (float)Math.Round(subtotal, 2);
 
 
+                        precioproducto = float.Parse(d.PrecioProducto.ToString());
 
+                        precioproducto = (float)Math.Round(precioproducto, 2);
 
 
                         fechaentrada = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
@@ -602,11 +611,11 @@ namespace PUNTOVENTA.MENU.REPORTES
                         contadorcolumnas = contadorcolumnas + 1;
                         ws.Cell(contadorregistros, contadorcolumnas).Value = d.NombreProducto.ToString();
                         contadorcolumnas = contadorcolumnas + 1;
-                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.PrecioProducto.ToString();
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = Convert.ToString(precioproducto);
                         contadorcolumnas = contadorcolumnas + 1;
                         ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadProducto.ToString();
                         contadorcolumnas = contadorcolumnas + 1;
-                        ws.Cell(contadorregistros, contadorcolumnas).Value = subtotal;
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = Convert.ToString(subtotal);
                         contadorcolumnas = contadorcolumnas + 1;
                         ws.Cell(contadorregistros, contadorcolumnas).Value = "";
                         contadorcolumnas = contadorcolumnas + 1;
@@ -658,7 +667,9 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                         fechaventa = d.FechaVentaProducto.Value.ToString("dd/MM/yyyy");
 
+                        cantidadpagada = float.Parse(d.CantidadPagada.ToString());
 
+                        cantidadpagada = (float)Math.Round(cantidadpagada, 2);
 
 
                         contadorcolumnas = 1;
@@ -670,7 +681,7 @@ namespace PUNTOVENTA.MENU.REPORTES
 
 
                         contadorcolumnas = 7;
-                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadPagada.ToString();
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = Convert.ToString(cantidadpagada);
 
                         contadorcolumnas = 8;
                         ws.Cell(contadorregistros, contadorcolumnas).Value = fechaventa;
@@ -770,12 +781,16 @@ namespace PUNTOVENTA.MENU.REPORTES
 
                 {
                     string fechadevolucion;
-                    float subtotal;
+                    float subtotal, precioproducto;
                     foreach (dgReportes d in listadevoluciones)
                     {
                         subtotal = float.Parse(d.SubTotalProducto.ToString());
 
                         subtotal = (float)Math.Round(subtotal, 2);
+
+                        precioproducto = float.Parse(d.PrecioProducto.ToString());
+
+                        precioproducto = (float)Math.Round(precioproducto, 2);
 
                         fechadevolucion = d.FechaDevolucion.Value.ToString("dd/MM/yyyy");
 
@@ -793,13 +808,13 @@ namespace PUNTOVENTA.MENU.REPORTES
                         ws.Cell(contadorregistros, contadorcolumnas).Value = d.NombreProducto.ToString();
                         contadorcolumnas = contadorcolumnas + 1;
 
-                        ws.Cell(contadorregistros, contadorcolumnas).Value = d.PrecioProducto.ToString();
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = Convert.ToString(precioproducto);
                         contadorcolumnas = contadorcolumnas + 1;
 
                         ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadProducto.ToString();
                         contadorcolumnas = contadorcolumnas + 1;
 
-                        ws.Cell(contadorregistros, contadorcolumnas).Value = subtotal;
+                        ws.Cell(contadorregistros, contadorcolumnas).Value = Convert.ToString(subtotal);
                         contadorcolumnas = contadorcolumnas + 1;
 
                         ws.Cell(contadorregistros, contadorcolumnas).Value = d.Usuario.ToString();

@@ -274,12 +274,16 @@ namespace PUNTOVENTA.MENU.REPORTES
 
             {
                 string fechadevolucion;
-                float subtotal;
+                float subtotal, precio;
                 foreach (dgReportes d in listadevoluciones)
                 {
                     subtotal = float.Parse(d.SubTotalProducto.ToString());
 
                     subtotal = (float)Math.Round(subtotal, 2);
+
+                    precio = float.Parse(d.PrecioProducto.ToString());
+
+                    precio = (float)Math.Round(subtotal, 2);
 
                     fechadevolucion = d.FechaDevolucion.Value.ToString("dd/MM/yyyy");
 
@@ -297,13 +301,13 @@ namespace PUNTOVENTA.MENU.REPORTES
                     ws.Cell(contadorregistros, contadorcolumnas).Value = d.NombreProducto.ToString();
                     contadorcolumnas = contadorcolumnas + 1;
 
-                    ws.Cell(contadorregistros, contadorcolumnas).Value = d.PrecioProducto.ToString();
+                    ws.Cell(contadorregistros, contadorcolumnas).Value = Convert.ToString(precio);
                     contadorcolumnas = contadorcolumnas + 1;
 
                     ws.Cell(contadorregistros, contadorcolumnas).Value = d.CantidadProducto.ToString();
                     contadorcolumnas = contadorcolumnas + 1;
 
-                    ws.Cell(contadorregistros, contadorcolumnas).Value = subtotal;
+                    ws.Cell(contadorregistros, contadorcolumnas).Value = Convert.ToString(subtotal);
                     contadorcolumnas = contadorcolumnas + 1;
 
                     ws.Cell(contadorregistros, contadorcolumnas).Value = d.Usuario.ToString();
