@@ -550,153 +550,157 @@ namespace Punto_de_Venta
 
         private void ActualizarCaja()
         {
-            float totalventa = 0, totalventapagos = 0, totalventadevolucion = 0, totalabonado = 0, totalretirado = 0;
+
+            
+                float totalventa = 0, totalventapagos = 0, totalventadevolucion = 0, totalabonado = 0, totalretirado = 0;
 
 
-            dgCaja parametrototalventas = new dgCaja
-            {
-                FechaCaja = DateTime.Now
-
-            };
-
-
-            dgCaja parametrototalventaspagos = new dgCaja
-            {
-                FechaCaja = DateTime.Now
-
-            };
-
-            dgCaja parametrototalventasdevoluciones = new dgCaja
-            {
-                FechaCaja = DateTime.Now
-
-            };
-
-            dgCaja parametrototalventasabono = new dgCaja
-            {
-                FechaCaja = DateTime.Now
-
-            };
-
-            dgCaja parametrototalretirado = new dgCaja
-            {
-                FechaCaja = DateTime.Now
-
-            };
-
-
-
-
-            List<dgCaja> listatotalventas = c_caja.LeerCaja(14, parametrototalventas);
-
-
-            if (listatotalventas.Count > 0)
-
-            {
-
-                foreach (dgCaja d in listatotalventas)
+                dgCaja parametrototalventas = new dgCaja
                 {
-                    totalventa = float.Parse(d.CantidadTotal.ToString());
-                    totalventa = (float)Math.Round(totalventa, 2);
+                    FechaCaja = DateTime.Now
 
-                }
-            }
+                };
 
 
+                dgCaja parametrototalventaspagos = new dgCaja
+                {
+                    FechaCaja = DateTime.Now
 
-            List<dgCaja> listatotalventaspagos = c_caja.LeerCaja(15, parametrototalventaspagos);
+                };
+
+                dgCaja parametrototalventasdevoluciones = new dgCaja
+                {
+                    FechaCaja = DateTime.Now
+
+                };
+
+                dgCaja parametrototalventasabono = new dgCaja
+                {
+                    FechaCaja = DateTime.Now
+
+                };
+
+                dgCaja parametrototalretirado = new dgCaja
+                {
+                    FechaCaja = DateTime.Now
+
+                };
 
 
-            if (listatotalventaspagos.Count > 0)
 
-            {
 
-                foreach (dgCaja dd in listatotalventaspagos)
+                List<dgCaja> listatotalventas = c_caja.LeerCaja(14, parametrototalventas);
+
+
+                if (listatotalventas.Count > 0)
+
                 {
 
-                    totalventapagos = float.Parse(dd.CantidadTotal.ToString());
-                    totalventapagos = (float)Math.Round(totalventapagos, 2);
+                    foreach (dgCaja d in listatotalventas)
+                    {
+                        totalventa = float.Parse(d.CantidadTotal.ToString());
+                        totalventa = (float)Math.Round(totalventa, 2);
 
+                    }
                 }
-            }
 
 
 
-            List<dgCaja> listatotalventasdevoluciones = c_caja.LeerCaja(16, parametrototalventas);
+                List<dgCaja> listatotalventaspagos = c_caja.LeerCaja(15, parametrototalventaspagos);
 
 
-            if (listatotalventasdevoluciones.Count > 0)
+                if (listatotalventaspagos.Count > 0)
 
-            {
-
-                foreach (dgCaja d in listatotalventasdevoluciones)
                 {
 
-                    totalventadevolucion = float.Parse(d.CantidadTotal.ToString());
-                    totalventadevolucion = (float)Math.Round(totalventadevolucion, 2);
+                    foreach (dgCaja dd in listatotalventaspagos)
+                    {
 
+                        totalventapagos = float.Parse(dd.CantidadTotal.ToString());
+                        totalventapagos = (float)Math.Round(totalventapagos, 2);
+
+                    }
                 }
-            }
 
 
 
-            List<dgCaja> listatotalventasabono = c_caja.LeerCaja(17, parametrototalventasabono);
+                List<dgCaja> listatotalventasdevoluciones = c_caja.LeerCaja(16, parametrototalventas);
 
 
-            if (listatotalventasabono.Count > 0)
+                if (listatotalventasdevoluciones.Count > 0)
 
-            {
-
-                foreach (dgCaja d in listatotalventasabono)
                 {
 
-                    totalabonado = float.Parse(d.CantidadTotal.ToString());
-                    totalabonado = (float)Math.Round(totalabonado, 2);
+                    foreach (dgCaja d in listatotalventasdevoluciones)
+                    {
 
+                        totalventadevolucion = float.Parse(d.CantidadTotal.ToString());
+                        totalventadevolucion = (float)Math.Round(totalventadevolucion, 2);
+
+                    }
                 }
-            }
 
 
-            List<dgCaja> listatotalretirado = c_caja.LeerCaja(18, parametrototalretirado);
+
+                List<dgCaja> listatotalventasabono = c_caja.LeerCaja(17, parametrototalventasabono);
 
 
-            if (listatotalretirado.Count > 0)
+                if (listatotalventasabono.Count > 0)
 
-            {
-
-                foreach (dgCaja d in listatotalretirado)
                 {
 
-                    totalretirado = float.Parse(d.CantidadTotal.ToString());
-                    totalretirado = (float)Math.Round(totalretirado, 2);
+                    foreach (dgCaja d in listatotalventasabono)
+                    {
 
+                        totalabonado = float.Parse(d.CantidadTotal.ToString());
+                        totalabonado = (float)Math.Round(totalabonado, 2);
+
+                    }
                 }
-            }
-
-            float cantidadventas = totalventa + totalventapagos;
-
-            cantidadventas = (float)Math.Round(cantidadventas, 2);
-
-            float cantidatotal = totalventa + totalventapagos + totalabonado - totalventadevolucion - totalretirado;
-
-            cantidatotal = (float)Math.Round(cantidatotal, 2);
 
 
-            dgCaja parametro = new dgCaja
-            {
-
-                CantidadTotal = cantidatotal,
-                CantidadVenta = cantidadventas,
-                CantidadDevolucion = totalventadevolucion,
+                List<dgCaja> listatotalretirado = c_caja.LeerCaja(18, parametrototalretirado);
 
 
-                FechaCaja = DateTime.Now
+                if (listatotalretirado.Count > 0)
 
-            };
+                {
 
-            string control = "";
+                    foreach (dgCaja d in listatotalretirado)
+                    {
 
-            control = c_caja.ActualizarCaja2(parametro);
+                        totalretirado = float.Parse(d.CantidadTotal.ToString());
+                        totalretirado = (float)Math.Round(totalretirado, 2);
+
+                    }
+                }
+
+                float cantidadventas = totalventa + totalventapagos;
+
+                cantidadventas = (float)Math.Round(cantidadventas, 2);
+
+                float cantidatotal = totalventa + totalventapagos + totalabonado - totalventadevolucion - totalretirado;
+
+                cantidatotal = (float)Math.Round(cantidatotal, 2);
+
+
+                dgCaja parametro = new dgCaja
+                {
+
+                    CantidadTotal = cantidatotal,
+                    CantidadVenta = cantidadventas,
+                    CantidadDevolucion = totalventadevolucion,
+
+
+                    FechaCaja = DateTime.Now
+
+                };
+
+                string control = "";
+
+                control = c_caja.ActualizarCaja2(parametro);
+            
+           
         }
 
         private void Inicio_MouseMove(object sender, MouseEventArgs e)

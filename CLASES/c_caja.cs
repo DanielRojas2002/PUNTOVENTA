@@ -594,16 +594,33 @@ namespace PUNTOVENTA.CLASES
 
                 if (tabla.Rows.Count > 0)
                 {
-                    lista = (from DataRow fila in tabla.Rows
-                             select new dgCaja
-                             {
-                                
-                                 CantidadTotal = float.Parse(fila["TotalVentaNormal"].ToString()),
-                                
+                    try
+                    {
+                        lista = (from DataRow fila in tabla.Rows
+                                 select new dgCaja
+                                 {
+
+                                     CantidadTotal = float.Parse(fila["TotalVentaNormal"].ToString()),
 
 
-                             }
-                   ).ToList();
+
+                                 }
+                                    ).ToList();
+                    }
+
+                    catch{
+                        lista = (from DataRow fila in tabla.Rows
+                                 select new dgCaja
+                                 {
+
+                                     CantidadTotal = 0
+
+
+
+                                 }
+                                    ).ToList();
+                    }
+                   
                 }
 
             }
@@ -622,16 +639,33 @@ namespace PUNTOVENTA.CLASES
 
                 if (tabla.Rows.Count > 0)
                 {
-                    lista = (from DataRow fila in tabla.Rows
-                             select new dgCaja
-                             {
+                    try
+                    {
+                        lista = (from DataRow fila in tabla.Rows
+                                 select new dgCaja
+                                 {
 
-                                 CantidadTotal = float.Parse(fila["TotalVentaPagos"].ToString()),
+                                     CantidadTotal = float.Parse(fila["TotalVentaPagos"].ToString()),
 
 
 
-                             }
-                   ).ToList();
+                                 }
+                                         ).ToList();
+                    }
+                    catch
+                    {
+                        lista = (from DataRow fila in tabla.Rows
+                                 select new dgCaja
+                                 {
+
+                                     CantidadTotal = 0
+
+
+
+                                 }
+                                        ).ToList();
+                    }
+                  
                 }
 
             }
@@ -650,16 +684,33 @@ namespace PUNTOVENTA.CLASES
 
                 if (tabla.Rows.Count > 0)
                 {
-                    lista = (from DataRow fila in tabla.Rows
-                             select new dgCaja
-                             {
+                    try
+                    {
+                        lista = (from DataRow fila in tabla.Rows
+                                 select new dgCaja
+                                 {
 
-                                 CantidadTotal = float.Parse(fila["TotalDevolucion"].ToString()),
+                                     CantidadTotal = float.Parse(fila["TotalDevolucion"].ToString()),
 
 
 
-                             }
-                   ).ToList();
+                                 }
+                            ).ToList();
+                    }
+                    catch
+                    {
+                        lista = (from DataRow fila in tabla.Rows
+                                 select new dgCaja
+                                 {
+
+                                     CantidadTotal = 0
+
+
+
+                                 }
+                            ).ToList();
+                    }
+                    
                 }
 
             }
@@ -678,16 +729,33 @@ namespace PUNTOVENTA.CLASES
 
                 if (tabla.Rows.Count > 0)
                 {
-                    lista = (from DataRow fila in tabla.Rows
-                             select new dgCaja
-                             {
+                    try
+                    {
+                        lista = (from DataRow fila in tabla.Rows
+                                 select new dgCaja
+                                 {
 
-                                 CantidadTotal = float.Parse(fila["TotalAbonada"].ToString()),
+                                     CantidadTotal = float.Parse(fila["TotalAbonada"].ToString()),
 
 
 
-                             }
-                   ).ToList();
+                                 }
+                        ).ToList();
+                    }
+                    catch
+                    {
+                        lista = (from DataRow fila in tabla.Rows
+                                 select new dgCaja
+                                 {
+
+                                     CantidadTotal = 0
+
+
+
+                                 }
+                            ).ToList();
+                    }
+                   
                 }
 
             }
@@ -706,16 +774,33 @@ namespace PUNTOVENTA.CLASES
 
                 if (tabla.Rows.Count > 0)
                 {
-                    lista = (from DataRow fila in tabla.Rows
-                             select new dgCaja
-                             {
+                    try
+                    {
+                        lista = (from DataRow fila in tabla.Rows
+                                 select new dgCaja
+                                 {
 
-                                 CantidadTotal = float.Parse(fila["TotalRetirada"].ToString()),
+                                     CantidadTotal = float.Parse(fila["TotalRetirada"].ToString()),
 
 
 
-                             }
-                   ).ToList();
+                                 }
+                             ).ToList();
+                    }
+                    catch
+                    {
+                        lista = (from DataRow fila in tabla.Rows
+                                 select new dgCaja
+                                 {
+
+                                     CantidadTotal = 0
+
+
+
+                                 }
+                            ).ToList();
+                    }
+                   
                 }
 
             }
