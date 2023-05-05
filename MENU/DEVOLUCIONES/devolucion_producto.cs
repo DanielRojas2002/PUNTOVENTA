@@ -368,8 +368,32 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
         {
             int cantidadactual = Convert.ToInt16( lbl_cantidad_actual.Text);
 
-            
-           
+
+            dgCaja parametrototalcaja = new dgCaja
+            {
+                FechaCaja = DateTime.Now
+
+            };
+
+            List<dgCaja> listatotalcaja = c_caja.LeerCaja(20, parametrototalcaja);
+
+            float totalcaja = 0;
+            if (listatotalcaja.Count > 0)
+
+            {
+                
+                foreach (dgCaja dd in listatotalcaja)
+                {
+
+                    totalcaja = float.Parse(dd.CantidadTotal.ToString());
+                    totalcaja = (float)Math.Round(totalcaja, 2);
+
+                }
+            }
+
+
+          
+
             if (cantidadactual >= txt_num_regresar.Value)
             {
                 var confirmResult = MessageBox.Show("Desea  hacer la Devolucion?",
@@ -385,52 +409,64 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
 
                     float cantidaddevolucion = cantidadregresar * precio;
-                    dgDevolucion parametro = new dgDevolucion
+
+
+                    if (cantidaddevolucion>totalcaja)
                     {
-                        IdProducto = Convert.ToString(lbl_idProducto.Text),
-                        Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
-
-                        Cantidad = Convert.ToInt16(txt_num_regresar.Value),
-
-                        IdUsuario = Convert.ToInt16(lbl_id.Text),
-
-                        PrecioVenta = float.Parse(lbl_precio.Text),
-
-                        FechaEntrada = DateTime.Now,
-
-                        Stock = Convert.ToInt16(txt_num_regresar.Value),
-
-                        CantidadDevolucion = cantidaddevolucion
-
-
-
-                    };
-
-
-
-                    string control = "";
-
-                    control = c_devolucion.Devolucion(parametro);
-
-                    var confirmResultticket = MessageBox.Show("Desea imprimir ticket?",
-                      "Confirmar Ticket Devolucion!!",
-                      MessageBoxButtons.YesNo);
-
-
-                    if (confirmResultticket == DialogResult.Yes)
-                    {
-                        TicketDevolucion();
-
-                        RegresarVentana();
-
+                        MessageBox.Show("No tiene tal fondo para regresar en efectivo en caja");
                     }
 
                     else
                     {
-                       
+                        dgDevolucion parametro = new dgDevolucion
+                        {
+                            IdProducto = Convert.ToString(lbl_idProducto.Text),
+                            Id_Venta = Convert.ToInt16(lbl_id_venta.Text),
 
-                        RegresarVentana();
+                            Cantidad = Convert.ToInt16(txt_num_regresar.Value),
+
+                            IdUsuario = Convert.ToInt16(lbl_id.Text),
+
+                            PrecioVenta = float.Parse(lbl_precio.Text),
+
+                            FechaEntrada = DateTime.Now,
+
+                            Stock = Convert.ToInt16(txt_num_regresar.Value),
+
+                            CantidadDevolucion = cantidaddevolucion
+
+
+
+                        };
+
+
+
+                        string control = "";
+
+                        control = c_devolucion.Devolucion(parametro);
+
+                        var confirmResultticket = MessageBox.Show("Desea imprimir ticket?",
+                          "Confirmar Ticket Devolucion!!",
+                          MessageBoxButtons.YesNo);
+
+
+                        if (confirmResultticket == DialogResult.Yes)
+                        {
+                            TicketDevolucion();
+
+                            RegresarVentana();
+
+                        }
+
+                        else
+                        {
+
+
+                            RegresarVentana();
+                        }
                     }
+
+                   
                    
 
 

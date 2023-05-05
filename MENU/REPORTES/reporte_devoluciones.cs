@@ -1,4 +1,5 @@
 ﻿using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using DocumentFormat.OpenXml.Vml;
 using Punto_de_Venta;
 using PUNTOVENTA.CLASES;
 using PUNTOVENTA.ENTIDAD;
@@ -174,9 +175,8 @@ namespace PUNTOVENTA.MENU.REPORTES
                 else
                 {
                     MessageBox.Show("No se Encontraron Devoluciones en el dia seleccionado");
-
-
                 }
+                _dinerodevolucion = (float)Math.Round(_dinerodevolucion, 2);
 
                 lbl_devolucion.Text = Convert.ToString(_dinerodevolucion);
 

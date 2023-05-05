@@ -723,7 +723,6 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
                         DataGridViewRow row = dataGridView_ventas.Rows[0];  // fila 
 
 
-
                         for (int i = 0; i < _cantidadregistros; i++)
                         {
 
@@ -731,75 +730,138 @@ namespace PUNTOVENTA.MENU.DEVOLUCIONES
 
                             idventa = Convert.ToInt16(row.Cells[0].Value);
 
-                           
+
 
 
 
                             idproducto2 = Convert.ToString(row.Cells[1].Value);
 
-                           
+
 
 
                             cantidadpreciorestante = float.Parse((string)row.Cells[3].Value);
 
-                         
+
 
 
                             cantidadrestante = Convert.ToInt16(row.Cells[4].Value);
 
-                           
-
-
-                            cantidaddevolucion = cantidadpreciorestante * cantidadrestante;
 
 
 
-                            dgDevolucion parametro3 = new dgDevolucion
-                            {
-                                IdProducto = Convert.ToString(idproducto2),
-                                Id_Venta = Convert.ToInt16(idventa),
-
-                                Cantidad = Convert.ToInt16(cantidadrestante),
-
-                                IdUsuario = Convert.ToInt16(lbl_id.Text),
-
-                                PrecioVenta = cantidadpreciorestante,
-
-                                FechaEntrada = DateTime.Now,
-
-                                Stock = Convert.ToInt16(cantidadrestante),
-
-                                CantidadDevolucion = cantidaddevolucion
-
-
-
-                            };
-
-                            _cantidaddevolucion += cantidaddevolucion;
-
-
-
-                            control = c_devolucion.Devolucion(parametro3);
+                            cantidaddevolucion = cantidaddevolucion+cantidadpreciorestante * cantidadrestante;
                         }
 
-                        _cantidaddevolucion = (float)Math.Round(_cantidaddevolucion, 2);
-
-                        MessageBox.Show("Cantidad A Devolver:" + Convert.ToString(_cantidaddevolucion));
-
-                        var confirmResultticket = MessageBox.Show("Desea Imprimir Ticket?",
-                        "Confirmar Ticket!!",
-                        MessageBoxButtons.YesNo);
-
-                        
-
-                        if (confirmResultticket == DialogResult.Yes)
+                        dgCaja parametrototalcaja = new dgCaja
                         {
-                            TicketDevolucion();
+                            FechaCaja = DateTime.Now
 
+                        };
+
+                        List<dgCaja> listatotalcaja = c_caja.LeerCaja(20, parametrototalcaja);
+
+                        float totalcaja = 0;
+                        if (listatotalcaja.Count > 0)
+
+                        {
+
+                            foreach (dgCaja dd in listatotalcaja)
+                            {
+
+                                totalcaja = float.Parse(dd.CantidadTotal.ToString());
+                                totalcaja = (float)Math.Round(totalcaja, 2);
+
+                            }
                         }
+
+
+                        if (cantidaddevolucion>totalcaja)
+                        {
+                            MessageBox.Show("No tiene tal fondo para regresar en efectivo en caja");
+                        }
+
+                        else
+                        {
+                            for (int i = 0; i < _cantidadregistros; i++)
+                            {
+
+                                row = dataGridView_ventas.Rows[i]; // fila 3
+
+                                idventa = Convert.ToInt16(row.Cells[0].Value);
+
+
+
+
+
+                                idproducto2 = Convert.ToString(row.Cells[1].Value);
+
+
+
+
+                                cantidadpreciorestante = float.Parse((string)row.Cells[3].Value);
+
+
+
+
+                                cantidadrestante = Convert.ToInt16(row.Cells[4].Value);
+
+
+
+
+                                cantidaddevolucion = cantidadpreciorestante * cantidadrestante;
+
+
+
+                                dgDevolucion parametro3 = new dgDevolucion
+                                {
+                                    IdProducto = Convert.ToString(idproducto2),
+                                    Id_Venta = Convert.ToInt16(idventa),
+
+                                    Cantidad = Convert.ToInt16(cantidadrestante),
+
+                                    IdUsuario = Convert.ToInt16(lbl_id.Text),
+
+                                    PrecioVenta = cantidadpreciorestante,
+
+                                    FechaEntrada = DateTime.Now,
+
+                                    Stock = Convert.ToInt16(cantidadrestante),
+
+                                    CantidadDevolucion = cantidaddevolucion
+
+
+
+                                };
+
+                                _cantidaddevolucion += cantidaddevolucion;
+
+
+
+                                control = c_devolucion.Devolucion(parametro3);
+                            }
+
+                            _cantidaddevolucion = (float)Math.Round(_cantidaddevolucion, 2);
+
+                            MessageBox.Show("Cantidad A Devolver:" + Convert.ToString(_cantidaddevolucion));
+
+                            var confirmResultticket = MessageBox.Show("Desea Imprimir Ticket?",
+                            "Confirmar Ticket!!",
+                            MessageBoxButtons.YesNo);
+
+
+
+                            if (confirmResultticket == DialogResult.Yes)
+                            {
+                                TicketDevolucion();
+
+                            }
+
+
+                            RegresarVentana();
+                        }
+
 
                        
-                        RegresarVentana();
 
                     }
 
