@@ -299,7 +299,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
 
 
 
-                        if (restante < pagar)
+                        if (restante <= pagar)
                         {
 
                             dgClienteCredito parametro2 = new dgClienteCredito
@@ -724,7 +724,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO.UserControls
 
                         }
 
-                        else
+                        else if (restante > pagar)
                         {
 
 

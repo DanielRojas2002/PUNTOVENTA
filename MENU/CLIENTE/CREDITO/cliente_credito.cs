@@ -699,7 +699,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
                             // seguro venta
 
 
-                            if (pago <= totaldeuda)
+                            if (pago < totaldeuda)
                             {
 
                                 lbl_cambio.Text = "0";
@@ -784,7 +784,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
                             }
 
-                            else
+                            else if (pago >= totaldeuda)
                             {
                                 // mayor a la deuda 
 
