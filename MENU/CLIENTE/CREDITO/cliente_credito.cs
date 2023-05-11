@@ -1193,7 +1193,7 @@ namespace PUNTOVENTA.MENU.CLIENTE.CREDITO
 
         private void bx_tipoventa_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            txt_abonar.Text = "";
             dgTipoVenta parametro = new dgTipoVenta
             {
                 Descripcion = bx_tipoventa.Text
